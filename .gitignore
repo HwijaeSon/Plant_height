@@ -1,0 +1,20 @@
+.venv/
+legacy/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+*.egg-info/
+
+# Generated training outputs (the audited paper outputs under */results stay tracked).
+**/results/reproduced/
+**/code/results/
+**/code/figures/
+
+# LaTeX build products.
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.pdf

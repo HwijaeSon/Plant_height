@@ -1,0 +1,11 @@
+{
+  "data_doi": "10.1186/s12870-024-05394-w",
+  "paper_seed_protocol": [1, 2, 3],
+  "logistic_initialization": "fitted on training plants only",
+  "logi_pinn_setting": {
+    "direct_ode_parameters": true,
+    "model_lr": 0.001,
+    "ode_lr": 0.0001,
+    "physics_warmup_epochs": 500
+  }
+}
