@@ -1,0 +1,15 @@
+{
+  "latent_dim": 8,
+  "g_embed_dim": 16,
+  "ode_hidden": 16,
+  "ode_layers": 1,
+  "dec_hidden": 16,
+  "enc_hidden": 32,
+  "time_mode": "calendar",
+  "lr": 0.005,
+  "weight_decay": 0.0,
+  "physic": 0.01,
+  "ymax": 0.01,
+  "mono": 0.0,
+  "epochs": 1500
+}

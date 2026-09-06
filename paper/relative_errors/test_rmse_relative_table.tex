@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Test-set errors across the three plant datasets. Each cell reports RMSE / relative error (\%), where relative error is $100\times$ the trajectory-mean RMSE divided by the split-wide mean observed target. Wheat RMSE is in metres, Arabidopsis RMSE is in centimetres, and maize RMSE is in relative UAV-height units. Bold indicates the lowest mean error within each dataset. Values are mean $\pm$ sample standard deviation over seeds 1--3; deterministic ODE baselines were fitted once. The maize result for our model uses the configuration selected by 2020 validation performance, whereas the maize baseline results retain their original fixed evaluations.}
+\label{tab:cross-dataset-relative-error}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+Model & Wheat (m / \%) & Arabidopsis (cm / \%) & Maize (relative UAV unit / \%) \\
+\midrule
+Logi-ODE & $0.10590\,/\,35.76$ & $5.179\,/\,26.00$ & $128.98\,/\,41.87$ \\
+Temp-ODE & $0.09343\,/\,31.55$ & $4.121\,/\,20.69$ & $110.29\,/\,35.80$ \\
+RF & $0.09929\pm0.00047\,/\,33.52\pm0.16$ & $2.878\pm0.010\,/\,14.45\pm0.05$ & $139.61\pm0.31\,/\,45.31\pm0.10$ \\
+LSTM-NN & $0.05667\pm0.01274\,/\,19.13\pm4.30$ & $2.951\pm0.064\,/\,14.82\pm0.32$ & $98.77\pm10.20\,/\,32.06\pm3.31$ \\
+Logi-PINN & $0.06567\pm0.00306\,/\,22.17\pm1.03$ & $2.987\pm0.126\,/\,15.00\pm0.63$ & $108.71\pm44.42\,/\,35.28\pm14.42$ \\
+\textbf{Latent Neural ODE (ours)} & $\mathbf{0.03063\pm0.00062\,/\,10.34\pm0.21}$ & $\mathbf{2.866\pm0.093\,/\,14.39\pm0.47}$ & $\mathbf{56.68\pm4.37\,/\,18.40\pm1.42}$ \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

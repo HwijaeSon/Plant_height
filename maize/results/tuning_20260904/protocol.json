@@ -1,0 +1,155 @@
+{
+  "started_unix": 1788529383.4701054,
+  "deadline_unix": 1788541383.4701054,
+  "minutes": 200.0,
+  "gpu_indices": [
+    "0",
+    "1",
+    "2"
+  ],
+  "gpu_uuids": {
+    "0": "GPU-65f6c41d-8ce0-efa3-e091-3930143576a3",
+    "1": "GPU-a68746da-f25b-24de-475c-0c7d4422ed17",
+    "2": "GPU-c4bec55f-2503-8add-22ce-4047e6920e02"
+  },
+  "split": "chronological",
+  "train_years": [
+    2018,
+    2019
+  ],
+  "val_year": 2020,
+  "test_year": 2021,
+  "phases": [
+    {
+      "name": "screen",
+      "minutes": 90,
+      "seeds": [
+        1
+      ],
+      "epochs": 1500,
+      "max_candidates": 160
+    },
+    {
+      "name": "replicate",
+      "minutes": 50,
+      "top_candidates": 8,
+      "seeds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "longer",
+      "minutes": 45,
+      "top_candidates": 3,
+      "epochs": [
+        3000,
+        4500
+      ],
+      "seeds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "final",
+      "minutes": 15
+    }
+  ],
+  "ranking": "mean validation RMSE over seeds 1,2,3; ties use SD then parameter count",
+  "checkpoint": "minimum validation RMSE every 10 epochs, no smoothing or minimum-epoch floor",
+  "test_usage": "no candidate test scores; only the frozen final winner is evaluated",
+  "search_space": {
+    "latent_dim": [
+      8,
+      16,
+      32
+    ],
+    "g_embed_dim": [
+      4,
+      8,
+      16
+    ],
+    "ode_hidden": [
+      16,
+      32,
+      64
+    ],
+    "ode_layers": [
+      1,
+      2
+    ],
+    "dec_hidden": [
+      16,
+      32
+    ],
+    "enc_hidden": [
+      8,
+      16,
+      32
+    ],
+    "time_mode": [
+      "calendar",
+      "thermal_feature",
+      "thermal_rate"
+    ],
+    "lr": [
+      0.0005,
+      0.001,
+      0.003,
+      0.005,
+      0.01
+    ],
+    "weight_decay": [
+      0.0,
+      1e-06,
+      1e-05,
+      0.0001,
+      0.001
+    ],
+    "physic": [
+      0.0,
+      0.01,
+      0.1,
+      0.5,
+      2.0,
+      5.0
+    ],
+    "ymax": [
+      0.0,
+      0.01,
+      0.1,
+      0.5
+    ],
+    "mono": [
+      0.0
+    ]
+  },
+  "base_config": {
+    "latent_dim": 16,
+    "g_embed_dim": 4,
+    "ode_hidden": 16,
+    "ode_layers": 1,
+    "dec_hidden": 16,
+    "enc_hidden": 8,
+    "time_mode": "calendar",
+    "lr": 0.01,
+    "weight_decay": 0.0001,
+    "physic": 2.0,
+    "ymax": 0.1,
+    "mono": 0.0,
+    "epochs": 1500
+  },
+  "source_sha256": {
+    "maize/code/tune_search.py": "492f666f9b19fb949f5dbbee41d1d3e980a856f76898e80b234099a4d73bcfb6",
+    "maize/code/tune_trial.py": "f6e2f5d31d507d8c63f00a99c1d9f1ae742968ab00148540f86a32ff917142eb",
+    "maize/code/data.py": "bd731ba5a43ae8b3ece742b7ecc70747d502ca14c4e8740065bdba168da96360",
+    "maize/code/run_experiment.py": "8b4c35919c21956045c273137b90bbf8ee61c659add34ed629784980ee6752c3",
+    "wheat/code/model.py": "73d5e8fa2796c937c856926994a05b6ce137152d12c06e375a122fe00e22b271",
+    "arabidopsis/code/models.py": "ac478ae8d98c494f377f01af0d0493cc08841100a93e67941f914a0922259e19",
+    "maize/data/processed/height_observations.csv": "9f36b3b28dad91625db2b1be629562c46b4af816ee20c42fb100efdd7f46b9e3",
+    "maize/data/processed/weather_daily.csv": "fdbbf0e4aa1ca2a4d803a2b8e9991d9e018a55327e878473d2d55370c10a4c65"
+  }
+}

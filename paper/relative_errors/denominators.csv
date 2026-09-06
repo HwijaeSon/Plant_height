@@ -1,0 +1,10 @@
+dataset,split,mean_target,unit,n_curves,n_scored_points,n_scored_points_without_actual_observation
+wheat,train,0.29934596283849185,m,38,2394,741
+wheat,val,0.3333121902822827,m,19,798,152
+wheat,test,0.2961872434509775,m,19,1368,475
+arabidopsis,test,19.915277807740495,cm,18,72,0
+arabidopsis,train,21.039259289844065,cm,18,72,0
+arabidopsis,val,20.13555552952716,cm,18,72,0
+maize,train,312.03453661731385,relative UAV height,804,10672,0
+maize,val,253.4607071907803,relative UAV height,402,2729,0
+maize,test,308.0874904084385,relative UAV height,402,3973,0

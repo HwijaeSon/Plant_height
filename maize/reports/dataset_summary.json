@@ -1,0 +1,129 @@
+{
+  "n_genotypes_primary": 402,
+  "n_plots_primary": 3072,
+  "n_observations_primary": 31894,
+  "n_genotype_year_curves": 1608,
+  "n_published_s3_observations": 41418,
+  "n_published_s3_active_trajectories": 3705,
+  "n_published_s4_active_trajectories": 3662,
+  "ambiguous_genotypes": [
+    "B73",
+    "ND259",
+    "PH207"
+  ],
+  "unmapped_genotype_labels": [
+    "LH132 - FILL B73"
+  ],
+  "n_ground_observations_removed_before_cohort_filter": 2797,
+  "day_grid": [
+    0,
+    95
+  ],
+  "n_time_grid": 96,
+  "n_manual_measurements": 1725,
+  "manual_plots": 40,
+  "manual_years": [
+    2020,
+    2021
+  ],
+  "target_unit": "relative UAV height; not cm or m",
+  "primary_protocol": {
+    "name": "chronological",
+    "train_years": [
+      2018,
+      2019
+    ],
+    "val_year": 2020,
+    "test_year": 2021
+  },
+  "yearly": [
+    {
+      "year": 2018,
+      "paper_flights": 14,
+      "published_flights": 11,
+      "ground_flights": 1,
+      "s3_plots_with_observations": 987,
+      "s3_genotypes": 487,
+      "s3_observations": 10239,
+      "s3_missing_slots": 1201,
+      "s4_plots_with_loess": 987,
+      "primary_genotypes": 402,
+      "primary_plots": 790,
+      "primary_observations": 7429,
+      "primary_mean_observations": 3941,
+      "primary_flights": 10,
+      "primary_min_observations_per_plot": 8,
+      "primary_max_observations_per_plot": 10,
+      "first_dap": 22,
+      "last_dap": 95,
+      "height_min": 13.8569357,
+      "height_max": 841.167897
+    },
+    {
+      "year": 2019,
+      "paper_flights": 27,
+      "published_flights": 17,
+      "ground_flights": 0,
+      "s3_plots_with_observations": 908,
+      "s3_genotypes": 477,
+      "s3_observations": 14709,
+      "s3_missing_slots": 2971,
+      "s4_plots_with_loess": 865,
+      "primary_genotypes": 402,
+      "primary_plots": 743,
+      "primary_observations": 12070,
+      "primary_mean_observations": 6731,
+      "primary_flights": 17,
+      "primary_min_observations_per_plot": 15,
+      "primary_max_observations_per_plot": 17,
+      "first_dap": 3,
+      "last_dap": 83,
+      "height_min": 12.2958396,
+      "height_max": 874.58028
+    },
+    {
+      "year": 2020,
+      "paper_flights": 12,
+      "published_flights": 8,
+      "ground_flights": 1,
+      "s3_plots_with_observations": 849,
+      "s3_genotypes": 434,
+      "s3_observations": 6294,
+      "s3_missing_slots": 2026,
+      "s4_plots_with_loess": 849,
+      "primary_genotypes": 402,
+      "primary_plots": 753,
+      "primary_observations": 4840,
+      "primary_mean_observations": 2729,
+      "primary_flights": 7,
+      "primary_min_observations_per_plot": 5,
+      "primary_max_observations_per_plot": 7,
+      "first_dap": 27,
+      "last_dap": 83,
+      "height_min": 21.1230196,
+      "height_max": 771.70534
+    },
+    {
+      "year": 2021,
+      "paper_flights": 11,
+      "published_flights": 11,
+      "ground_flights": 1,
+      "s3_plots_with_observations": 961,
+      "s3_genotypes": 475,
+      "s3_observations": 10176,
+      "s3_missing_slots": 1264,
+      "s4_plots_with_loess": 961,
+      "primary_genotypes": 402,
+      "primary_plots": 786,
+      "primary_observations": 7555,
+      "primary_mean_observations": 3973,
+      "primary_flights": 10,
+      "primary_min_observations_per_plot": 8,
+      "primary_max_observations_per_plot": 10,
+      "first_dap": 26,
+      "last_dap": 92,
+      "height_min": 19.4468467,
+      "height_max": 1264.62739
+    }
+  ]
+}

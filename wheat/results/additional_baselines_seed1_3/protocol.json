@@ -1,0 +1,84 @@
+{
+  "train_years": [
+    2018,
+    2019
+  ],
+  "val_year": 2022,
+  "test_year": 2021,
+  "n_genotypes": 19,
+  "n_training_plots": 88,
+  "h0_m": 0.0001,
+  "time": "days since start of cropped model window (DAP 115), 0..169",
+  "height_unit": "m; original unscaled wheat target",
+  "fill_in_na_at_start": true,
+  "training_objective": "per-plot balanced masked MSE; point weights = 1 / scored points in plot",
+  "evaluation": "mean of per-genotype-year masked RMSE/MAE; replicate-averaged curves",
+  "selection": "all fitting/initialization uses training data only; no validation or test tuning",
+  "logistic": {
+    "rate_bounds": [
+      0.0001,
+      0.999
+    ],
+    "K_bounds_m": [
+      0.01,
+      1.999
+    ],
+    "initial_rates": [
+      0.08,
+      0.15,
+      0.3
+    ],
+    "max_nfev": 2000
+  },
+  "temperature": {
+    "rate_bounds": [
+      0.0001,
+      2.0
+    ],
+    "K_bounds_m": [
+      0.01,
+      1.999
+    ],
+    "lower_k_bounds": [
+      275.0,
+      300.0
+    ],
+    "upper_k_bounds": [
+      301.0,
+      330.0
+    ],
+    "initial_thresholds_k": [
+      292.0,
+      303.0
+    ],
+    "integration": "daily trapezoid",
+    "max_nfev": 5000
+  },
+  "rf": {
+    "n_estimators": 100,
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "n_jobs": 2,
+    "features": [
+      "genotype one-hot",
+      "temperature",
+      "time"
+    ]
+  },
+  "implementation_reference": "same CPU baseline family and fitting rules as maize/code/run_experiment.py, applied to wheat in metres",
+  "versions": {
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "sklearn": "1.5.1"
+  },
+  "source_sha256": {
+    "wheat/code/run_additional_baselines.py": "fc9fe427db60bc7b082412b1bc959dc2cc793f39066b7b863f6219972048d0dd",
+    "wheat/code/data.py": "bfc4ad0dfb638a860e17e9ead5a917a148cbd763e6ad9b4102be63d7f1bc2696",
+    "wheat/results/final_config.json": "e374457952001c089e5317462e02307bff80a5903c2956b0adb790c6f87d927c",
+    "wheat/data/align_height_env_same_length.csv": "4f908d427313f9bad51ff0a0c7764f4e84cba0b0ae2849b62799efaa776902d1",
+    "wheat/data/kinship_matrix_astle.csv": "e88845dab6a9082510f17533a827ebf2fc64ff9eb641202b6f0b9ba472889091"
+  }
+}

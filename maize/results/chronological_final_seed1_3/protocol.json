@@ -1,0 +1,40 @@
+{
+  "split": "chronological",
+  "train_years": [
+    2018,
+    2019
+  ],
+  "val_year": 2020,
+  "test_year": 2021,
+  "n_genotypes": 402,
+  "y_scale": 874.58028,
+  "input_features": [
+    "genotype one-hot",
+    "calendar time",
+    "station temperature"
+  ],
+  "latent_epochs": 1500,
+  "reference_epochs": 3000,
+  "latent_min_epoch": 10,
+  "reference_min_epoch": 10,
+  "physics_warmup": 500,
+  "eval_every": 10,
+  "val_smooth": 1,
+  "batch_size": 1533,
+  "environment_statistics": "training unique year-days",
+  "latent_profile": "wheat/results/final_config.json: small architecture, lr .01, physics 2, ymax .1",
+  "reference_profile": "Arabidopsis reference architecture; lr .001, ODE lr .0001, direct r/K",
+  "metric": "mean of genotype-year observed-point RMSEs in original relative units",
+  "test_usage": "scored after validation-only checkpoint selection; no test-time fitting",
+  "temperature_adaptation": "daily temperature response trapezoid-integrated; fixed H0=1e-4",
+  "reference_pinn_derivative": "existing autograd(prediction.sum(), time), retained for compatibility",
+  "pinn_selection": "only epochs after physics warm-up are eligible",
+  "source_sha256": {
+    "maize/code/run_experiment.py": "8b4c35919c21956045c273137b90bbf8ee61c659add34ed629784980ee6752c3",
+    "maize/code/data.py": "bd731ba5a43ae8b3ece742b7ecc70747d502ca14c4e8740065bdba168da96360",
+    "wheat/code/model.py": "73d5e8fa2796c937c856926994a05b6ce137152d12c06e375a122fe00e22b271",
+    "arabidopsis/code/models.py": "ac478ae8d98c494f377f01af0d0493cc08841100a93e67941f914a0922259e19",
+    "maize/data/processed/height_observations.csv": "9f36b3b28dad91625db2b1be629562c46b4af816ee20c42fb100efdd7f46b9e3",
+    "maize/data/processed/weather_daily.csv": "fdbbf0e4aa1ca2a4d803a2b8e9991d9e018a55327e878473d2d55370c10a4c65"
+  }
+}

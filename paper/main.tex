@@ -25,11 +25,11 @@
 \address[inst2]{\todo{Department, University, City, Country}}
 
 \begin{abstract}
-Predicting longitudinal plant growth across genotypes and environments requires a model that can represent nonlinear continuous dynamics without assuming that a single analytical growth equation is valid for every genotype. We present a genotype- and temperature-conditioned latent neural ordinary differential equation (Neural ODE) for plant growth trajectory prediction. A one-hot genotype representation and the temperature trajectory determine an initial latent state; a neural vector field then evolves this state continuously, and a decoder maps it to plant height or stem length. A weak genotype-specific logistic residual regularizes the learned trajectory without forcing the observed phenotype itself to follow logistic dynamics. We evaluate the approach on two contrasting datasets. The wheat experiment contains 19 genotypes measured in four field seasons and uses a protocol-matched year-held-out split. The external \textit{Arabidopsis thaliana} experiment contains nine genotypes, two temperature regimes, ten plants per genotype--temperature combination, and only four stem-length measurements per plant. After validation-only architecture and hyperparameter selection, a 1,655-parameter wheat model obtained a test root mean squared error (RMSE) of $0.03063\pm0.00062$~m over three seeds, compared with $0.05667\pm0.01274$~m for LSTM-NN and $0.06567\pm0.00306$~m for Logi-PINN. On the sparse Arabidopsis benchmark, the latent model obtained a test RMSE of $2.866\pm0.093$~cm, compared with random forest ($2.878\pm0.010$~cm), Logi-PINN ($2.987\pm0.126$~cm), and LSTM-NN ($2.951\pm0.064$~cm). Prediction figures are restricted to each sample's observed time span and do not display temporal extrapolation. These results support the use of latent continuous-time dynamics across species and suggest resilience to low temporal resolution. The Arabidopsis split evaluates new biological replicates within observed genotypes and temperature regimes; unseen-genotype and unseen-temperature validation remain future work.
+Predicting longitudinal plant growth across genotypes and environments requires a model that can represent nonlinear continuous dynamics without assuming that a single analytical growth equation is valid for every genotype. We present a genotype- and temperature-conditioned latent neural ordinary differential equation (Neural ODE) for plant growth trajectory prediction. A genotype embedding and the temperature trajectory determine an initial latent state; a neural vector field evolves this state continuously, and a decoder maps it to plant height or stem length. A weak genotype-specific logistic residual regularizes the learned trajectory without forcing the phenotype itself to follow a fixed logistic equation. We evaluate the approach on three complementary datasets: a four-season wheat field experiment with 19 genotypes, a four-season unmanned-aerial-vehicle (UAV) maize experiment with 402 genotypes, and an external \textit{Arabidopsis thaliana} experiment with only four stem-length measurements per plant. Under the respective held-out protocols, the latent Neural ODE achieved the lowest mean test RMSE among the six evaluated methods on all three datasets: $0.03063\pm0.00062$~m for wheat, $56.68\pm4.37$ relative UAV-height units for maize, and $2.866\pm0.093$~cm for Arabidopsis. These correspond to relative RMSEs of $10.34\pm0.21\%$, $18.40\pm1.42\%$, and $14.39\pm0.47\%$, respectively. The maize experiment demonstrates scalability across hundreds of observed genotypes and generalization to a new year, whereas the Arabidopsis experiment tests robustness at very low temporal resolution in a different species and organ. The year-held-out experiments do not evaluate unseen genotypes, and the Arabidopsis split evaluates new plants within observed genotypes and temperature regimes.
 \end{abstract}
 
 \begin{keyword}
-plant growth \sep plant height \sep latent neural ODE \sep physics-informed learning \sep genotype--environment interaction \sep sparse time series \sep Arabidopsis thaliana \sep wheat
+plant growth \sep plant height \sep latent neural ODE \sep physics-informed learning \sep genotype--environment interaction \sep sparse time series \sep Arabidopsis thaliana \sep wheat \sep maize \sep UAV phenotyping
 \end{keyword}
 
 \end{frontmatter}
@@ -48,7 +48,7 @@ Hybrid mechanistic--machine-learning approaches offer one route to this goal. Pr
 
 Neural ordinary differential equations replace discrete hidden-state transitions with a learned continuous vector field \citep{chen2018neuralode}. Latent ODEs extend this idea by evolving an unobserved state that can represent richer dynamics than a single measured variable and are naturally compatible with irregular observation times \citep{rubanova2019latentode}. Augmenting the latent state can increase expressiveness and improve numerical behaviour \citep{dupont2019augmented}, while neural controlled differential equations formalize continuous-time responses to incoming covariates \citep{kidger2020neuralcde}. These ideas are complementary to physics-informed learning \citep{raissi2019pinn,karniadakis2021piml} and universal differential equations, which combine known and learned dynamics \citep{rackauckas2020ude}. Despite this methodological fit, latent continuous-time models have not been adequately tested for genotype-conditioned plant growth across both field-scale dense trajectories and extremely sparse external biological datasets.
 
-This study develops a shared multiple-genotype \model{} that learns temperature-conditioned dynamics in a 16-dimensional latent state. A weak logistic residual is retained as a regularizer rather than imposed as the complete state equation. We make three contributions: (i) a continuous-time architecture that predicts an entire genotype-specific growth curve from genotype, calendar time, and a known temperature scenario, without using phenotype observations from the target trajectory; (ii) a year-held-out wheat evaluation aligned with the data processing of \citet{shao2026pinn}; and (iii) an external \textit{Arabidopsis thaliana} evaluation with only four observations per plant, designed to test whether the method remains useful in a low-time-resolution regime. The second dataset concerns primary inflorescence stem length rather than rosette area, thereby testing transfer across both species and growth traits.
+This study develops a shared multiple-genotype \model{} that learns temperature-conditioned dynamics in a latent state. A weak logistic residual is retained as a regularizer rather than imposed as the complete state equation. We make four contributions: (i) a continuous-time architecture that predicts an entire genotype-specific growth curve from genotype, calendar time, and a known temperature scenario, without using phenotype observations from the target trajectory; (ii) a protocol-matched, year-held-out wheat evaluation aligned with \citet{shao2026pinn}; (iii) a year-held-out UAV maize evaluation spanning 402 genotypes, which tests whether a learned genotype-conditioned dynamical system remains effective at substantially greater genetic scale; and (iv) an external \textit{Arabidopsis thaliana} evaluation with only four observations per plant. Together, the datasets vary in species, organ, physical scale, genotype count, temporal resolution, and generalization unit.
 
 
 \section{Materials and methods}
@@ -56,16 +56,16 @@ This study develops a shared multiple-genotype \model{} that learns temperature-
 
 \subsection{Prediction task}
 
-Let $g\in\{1,\ldots,G\}$ denote genotype, $T_g(t)$ an environmental temperature trajectory, and $y_g(t_i)$ plant height or stem length observed at a subset of times $\mathcal{O}_g$. The model predicts a complete trajectory $\hat y_g(t)$ on a common integration grid. Missing phenotype times do not contribute to the data loss. The principal task is trajectory-level generalization: to a held-out year for wheat and to new biological replicate plants for Arabidopsis. In both datasets, the evaluated genotype labels are present during training.
+Let $g\in\{1,\ldots,G\}$ denote genotype, $T_g(t)$ an environmental temperature trajectory, and $y_g(t_i)$ plant height or stem length observed at a subset of times $\mathcal{O}_g$. The model predicts a complete trajectory $\hat y_g(t)$ on a common integration grid. Missing phenotype times do not contribute to the data loss. The principal task is trajectory-level generalization: to a held-out year for wheat and maize and to new biological replicate plants for Arabidopsis. In all three datasets, the evaluated genotype labels are present during training.
 
 This implementation is an offline, scenario-conditioned predictor. The temperature trajectory over the prediction interval is assumed known and is read by the initial-state encoder. No height or stem-length observation from an evaluated trajectory is used as an input. It should therefore not be interpreted as a causal real-time forecast unless the encoder is restricted to past temperature observations.
 
 \subsection{Genotype- and temperature-conditioned latent Neural ODE}
 
-Each genotype is represented by a four-dimensional embedding $\mathbf e_g$ learned from a one-hot vector. An LSTM encoder reads standardized temperature and normalized calendar time in reverse temporal order and produces the initial latent state,
+Each genotype is represented by a $d_e$-dimensional embedding $\mathbf e_g$ learned from a one-hot vector. An LSTM encoder reads standardized temperature and normalized calendar time in reverse temporal order and produces the initial latent state,
 \begin{equation}
  \mathbf z_g(0)=E_{\phi}\!\left(\{T_g(\tau_j),\tau_j\}_{j=1}^{J},\mathbf e_g\right),
- \qquad \mathbf z_g(0)\in\mathbb R^{16}.
+ \qquad \mathbf z_g(0)\in\mathbb R^{d_z}.
  \label{eq:encoder}
 \end{equation}
 The latent state evolves according to
@@ -80,7 +80,7 @@ where $f_{\theta}$ is a hyperbolic-tangent multilayer perceptron (MLP). The envi
  \hat y_g(\tau)=\operatorname{LeakyReLU}_{0.01}\!\left[D_{\psi}(\mathbf z_g(\tau))\right].
  \label{eq:decoder}
 \end{equation}
-For wheat, validation-only capacity tuning selected a 16-dimensional latent state, four-dimensional genotype embedding, one ODE hidden layer of width 16, decoder width 16, and LSTM encoder width 8, for 1,655 trainable parameters. For Arabidopsis, the external-validation experiment used the pre-tuning full-capacity instance: latent dimension 16, genotype embedding 4, two ODE hidden layers of width 32, decoder width 32, and encoder width 16, for 4,607 parameters. Thus, both experiments use the same continuous-time model and loss, while their capacity hyperparameters are reported separately.
+For wheat, validation-only capacity tuning selected a 16-dimensional latent state, four-dimensional genotype embedding, one ODE hidden layer of width 16, decoder width 16, and LSTM encoder width 8, for 1,655 trainable parameters. The maize search selected latent dimension 8, genotype embedding 8, one ODE hidden layer of width 16, decoder width 32, and encoder width 32, for 9,003 parameters. Arabidopsis used the pre-tuning full-capacity instance: latent dimension 16, genotype embedding 4, two ODE hidden layers of width 32, decoder width 32, and encoder width 16, for 4,607 parameters. All experiments use the same continuous-time model family; capacity was selected separately where a validation search was conducted.
 
 \subsection{Weak logistic regularization}
 
@@ -88,7 +88,7 @@ The latent vector field is learned freely, but the decoded phenotype is weakly e
 \begin{equation}
  r_g=\sigma(a_g), \qquad K_g=1+\tanh(b_g),
 \end{equation}
-where $r_g\in(0,1)$ and $K_g\in(0,2)$~m. The derivative of decoded height is calculated by the chain rule,
+where $r_g\in(0,1)$ and $K_g\in(0,2)$ in normalized phenotype units. The derivative of decoded height is calculated by the chain rule,
 \begin{equation}
  \frac{d\hat y_g}{dt}
  =\frac{1}{d_{\tau}}\frac{\partial D_{\psi}}{\partial\mathbf z}
@@ -104,7 +104,7 @@ where $d_{\tau}$ is the number of physical days represented by one normalized ti
  \right]^2.
  \label{eq:physics}
 \end{equation}
-Unlike a logistic ODE baseline, Eq.~\eqref{eq:physics} is a soft regularizer: the 16-dimensional neural vector field remains the trajectory-generating model.
+Unlike a logistic ODE baseline, Eq.~\eqref{eq:physics} is a soft regularizer: the latent neural vector field remains the trajectory-generating model.
 
 The observed-data term is the mean of the per-trajectory masked RMSE,
 \begin{equation}
@@ -117,16 +117,18 @@ The observed-data term is the mean of the per-trajectory masked RMSE,
 and the full objective is
 \begin{equation}
  \mathcal L=\mathcal L_{\mathrm{data}}
- +2\mathcal L_{\mathrm{phys}}
- +0.1\,\frac{1}{N}\sum_n\left|\max_j\hat y_{nj}-K_{g(n)}\right|.
+ +\lambda_{\mathrm{phys}}\mathcal L_{\mathrm{phys}}
+ +\lambda_K\,\frac{1}{N}\sum_n\left|\max_j\hat y_{nj}-K_{g(n)}\right|.
  \label{eq:loss}
 \end{equation}
-A monotonicity term and an explicit $r_g$ penalty were available but assigned zero weight in the reported configuration.
+Wheat and Arabidopsis used $\lambda_{\mathrm{phys}}=2$ and $\lambda_K=0.1$; validation-only maize tuning selected $\lambda_{\mathrm{phys}}=0.5$ and $\lambda_K=0.5$. A monotonicity term and an explicit $r_g$ penalty were available but assigned zero weight in all reported configurations.
 
 \subsection{Wheat field dataset and year-held-out protocol}
 \label{subsec:wheatdata}
 
 The wheat data originate from the Field Phenotyping Platform experiments described by \citet{roth2024thermal} and were processed following \citet{shao2026pinn}. Nineteen genotypes present in all four seasons (2018, 2019, 2021, and 2022) were retained. Height trajectories were aligned to a 285-day grid, and the first 115 positions were removed, leaving 170 daily positions. Missing positions before the first measurement were filled with the minimum observed height for that trajectory, as in the reference implementation. The only environmental channel in the reported experiment was 2-m air temperature, standardized using the training years.
+
+We retained this reference scoring convention so that the current and published model errors use the same mask. Consequently, 475 of the 1,368 wheat test scoring positions are filled positions before the first actual observation. These entries contribute to both RMSE and its relative-error denominator; the wheat values should therefore be interpreted as protocol-matched benchmark scores rather than an observation-only estimate directly comparable to the other datasets.
 
 The current model was trained on 88 plot-level trajectories from 2018 and 2019. Evaluation averaged replicate plots within each genotype--year combination, producing 38 training curves and 19 curves in each held-out year. Following split~0 of the reference GitHub implementation, model and hyperparameter selection used 2022, and the final test year was 2021. The current and reference models therefore use the same training, validation, and test years.
 
@@ -135,6 +137,15 @@ The model was optimized for 1,500 epochs with Adam, weight decay $10^{-4}$, and 
 \subsubsection{Wheat capacity and hyperparameter selection}
 
 All tuning decisions were made using validation RMSE from 2022; the 2021 test year was not used to rank configurations. First, ten capacity configurations varied latent dimension (4--16), genotype-embedding dimension (2--4), ODE width (8--32) and depth (one or two hidden layers), decoder width (8--32), and encoder width (4--16). Seeds 1 and 2 were used for screening. The Pareto candidates were then evaluated with learning rates $2\times10^{-3}$, $5\times10^{-3}$, and $10^{-2}$ and logistic-physics weights 0, 0.5, 2, and 5. The final architecture and hyperparameters were fixed before running seed 3. The reported three-seed wheat result therefore uses seeds 1--3, with latent dimension 16, genotype embedding 4, ODE width 16 and depth 1, decoder width 16, encoder width 8, learning rate $10^{-2}$, physics weight 2, and maximum-height weight 0.1. A 393-parameter micro model (latent dimension 4, genotype embedding 2, ODE width 8, decoder width 8, and encoder width 4) was retained as a reference-size efficiency ablation.
+
+\subsection{Maize UAV dataset and year-held-out protocol}
+\label{subsec:maizedata}
+
+The maize data originate from the temporally resolved UAV phenotyping study of \citet{sweet2024maize}, which surveyed approximately 500 diverse inbred lines over four field seasons. Our quality-controlled comparison retained 402 genotypes that were observed in every year and whose plot identities could be linked without ambiguity. The resulting dataset contains 3,072 plot-level trajectories and 31,894 observed relative-height values. A sample is a repeatedly measured field plot, not an individual plant. Heights are the study's relative UAV-derived values and cannot be converted to metres or centimetres from the released tables.
+
+Trajectories were represented on a 0--95 day-after-planting grid, but only the 5--17 dates actually observed for each plot contributed to the loss. Daily mean temperature, approximated from station minimum and maximum temperature, was standardized using the training years. The model was trained on 1,533 plot trajectories from 2018--2019. For evaluation, available replicate plots were averaged within genotype, year, and date, yielding 804 genotype--year curves for training evaluation, 402 validation curves for 2020, and 402 test curves for 2021. This split tests response to a new growing season across a much larger set of genotypes than the other datasets, but all 402 genotype identities are represented during training.
+
+Maize hyperparameters were selected using 2020 validation RMSE only. The time-bounded search completed 95 runs covering 67 configurations: 61 single-seed screens, three-seed confirmation of the leading configurations, and 1,500-, 3,000-, and 4,500-epoch comparisons. Among the 14 configurations completed for all three seeds, the selected 3,000-epoch model used latent dimension 8, genotype embedding 8, ODE width 16, decoder width 32, encoder width 32, learning rate $10^{-2}$, weight decay $10^{-4}$, $\lambda_{\mathrm{phys}}=0.5$, and $\lambda_K=0.5$. The final choice and three checkpoint hashes were frozen before their 2021 test errors were calculated.
 
 \subsection{Arabidopsis external low-time-resolution dataset}
 \label{subsec:arabdata}
@@ -147,9 +158,14 @@ The Arabidopsis \model{} used the full-capacity architecture specified above and
 
 \subsection{Baselines and evaluation}
 
-For wheat, we use the multiple-genotype one-hot LSTM-NN and Logi-PINN results reported by \citet{shao2026pinn} and preserved in the accompanying GitHub outputs. For Arabidopsis, the following models were fitted under the same plant split: genotype-specific logistic ODE, the paper's temperature-response ODE, random forest, the reference one-hot LSTM-NN, and Logi-PINN. Logistic $r_g$ and $K_g$ values were first fitted using training plants only and used to initialize Logi-PINN. To stabilize optimization, the prediction network used learning rate $10^{-3}$, the direct genotype-specific ODE parameters used $10^{-4}$, and the ODE parameters were frozen during a 500-epoch data-only warm-up.
+Each dataset was evaluated against the same five baseline families: genotype-specific logistic ODE (Logi-ODE), temperature-informed ODE (Temp-ODE), random forest (RF), one-hot LSTM-NN, and Logi-PINN. For wheat, the LSTM-NN and Logi-PINN rows use the first three seeds from the reference outputs of \citet{shao2026pinn}; the two process models and RF were fitted with the same split and scoring mask. All maize and Arabidopsis baselines were fitted under their corresponding split, input, and normalization protocols. Logistic parameters were estimated from training data only. The maize hyperparameter search was applied only to our model, so its comparison establishes the lowest observed error under the recorded model-specific training procedures rather than equal tuning budgets for every baseline.
 
-The primary metric is trajectory-level RMSE: RMSE is calculated separately over the observed points of each replicate-averaged trajectory and then averaged across trajectories, matching the convention of \citet{shao2026pinn}. Mean absolute error (MAE) is reported for Arabidopsis as a complementary measure. Neural models and random forest were evaluated with seeds 1--3, and values are reported as mean $\pm$ sample standard deviation across these three seeds. Logistic and temperature-informed ODE baselines are deterministic least-squares fits and were run once; manufacturing a seed variance for these models would not be meaningful. All prediction plots are clipped to the interval from the first actual observation to the last actual observation of the displayed sample. Curves between observations are interpolated model trajectories; no curve is shown outside the observed time span.
+The primary metric is trajectory-level RMSE: RMSE is calculated over observed points separately for each replicate-averaged trajectory and then averaged across trajectories, matching the convention of \citet{shao2026pinn}. To compare scales without treating metres, centimetres, and relative UAV height as interchangeable, we additionally report
+\begin{equation}
+ \mathrm{rRMSE}_s(\%)=100\,\frac{\mathrm{RMSE}_s}{\bar y_s},
+ \label{eq:rrmse}
+\end{equation}
+where $\bar y_s$ is the pooled mean of all masked targets in split $s\in\{\mathrm{train},\mathrm{validation},\mathrm{test}\}$. The denominator is fixed within a dataset and split for every model; it is used only for reporting and therefore does not alter rankings or checkpoint selection. Each results-table cell reports RMSE / rRMSE (\%). Neural models and RF were evaluated with seeds 1--3 and are reported as mean $\pm$ sample standard deviation. Logi-ODE and Temp-ODE are deterministic least-squares fits and were run once. The three prediction figures use one common model order and color mapping. They show only the six compared methods and observed targets, and every curve is clipped to the interval from the first actual observation to the last actual observation of the displayed sample. Lines between observations are model trajectories, not additional measurements.
 
 
 \section{Results}
@@ -158,65 +174,107 @@ The primary metric is trajectory-level RMSE: RMSE is calculated separately over 
 \subsection{Wheat: year-held-out plant-height prediction}
 \label{subsec:wheatresults}
 
-The tuned 1,655-parameter \model{} obtained train, validation, and test RMSEs of $0.02244\pm0.00019$, $0.03804\pm0.00067$, and $0.03063\pm0.00062$~m, respectively (Table~\ref{tab:wheat}). Relative to the original 4,647-parameter model, tuning reduced parameter count by 64.4\% while lowering mean validation and test errors. The 393-parameter micro model remained competitive at $0.03290\pm0.00141$~m test RMSE and was smaller than both reference networks. The tuned model reduced mean test RMSE by 46.0\% relative to LSTM-NN and 53.4\% relative to Logi-PINN under the matched year split.
+The tuned 1,655-parameter \model{} achieved the lowest validation and test errors in the protocol-matched wheat comparison (Table~\ref{tab:wheat}). Its test RMSE / rRMSE was $0.03063\pm0.00062$~m / $10.34\pm0.21\%$, representing a 45.9\% reduction in mean test error relative to LSTM-NN and a 53.4\% reduction relative to Logi-PINN. RF achieved the smallest training error but its test rRMSE rose to $33.52\%$, whereas the \model{} retained a low $10.34\%$ error in the held-out year. This gap indicates that interpolation of the two training seasons alone was not sufficient for year-level generalization.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
-\caption{Wheat multiple-genotype results under the matched year split: training on 2018/2019, validation on 2022, and testing on 2021. Values are mean $\pm$ sample standard deviation over seeds 1--3. RMSE is in metres. Reference rows were recalculated from the first three seed rows in the accompanying GitHub outputs.}
+\small
+\caption{Wheat trajectory errors under the matched year split: training on 2018--2019, validation on 2022, and testing on 2021. Each cell reports RMSE in metres / rRMSE (\%). Bold indicates the lowest mean in each split. Stochastic-model values are mean $\pm$ sample standard deviation over seeds 1--3; process ODEs were fitted once. The LSTM-NN and Logi-PINN RMSEs inherit the 0.001-m precision of the reference output.}
 \label{tab:wheat}
-\begin{tabular}{lrrrr}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccc}
 \toprule
-Model & Parameters & Train RMSE & Validation RMSE & Test RMSE \\
+Model & Train RMSE / rRMSE & Validation RMSE / rRMSE & Test RMSE / rRMSE \\
 \midrule
-\textbf{Tuned \model{} (ours)} & \textbf{1,655} & $\mathbf{0.02244\pm0.00019}$ & $\mathbf{0.03804\pm0.00067}$ & $\mathbf{0.03063\pm0.00062}$ \\
-Micro \model{} & 393 & $0.02473\pm0.00064$ & $0.04153\pm0.00387$ & $0.03290\pm0.00141$ \\
-Original \model{} & 4,647 & $0.02309\pm0.00063$ & $0.04210\pm0.00252$ & $0.03163\pm0.00021$ \\
-LSTM-NN (reference) & 451 & $0.03433\pm0.00058$ & $0.07400\pm0.01044$ & $0.05667\pm0.01274$ \\
-Logi-PINN (reference) & 463 & $0.03433\pm0.00252$ & $0.06633\pm0.00321$ & $0.06567\pm0.00306$ \\
+Logi-ODE & $0.09730\,/\,32.50$ & $0.05990\,/\,17.97$ & $0.10590\,/\,35.76$ \\
+Temp-ODE & $0.08982\,/\,30.01$ & $0.05741\,/\,17.23$ & $0.09343\,/\,31.55$ \\
+RF & $\mathbf{0.00487\pm0.00015\,/\,1.63\pm0.05}$ & $0.08809\pm0.00005\,/\,26.43\pm0.02$ & $0.09929\pm0.00047\,/\,33.52\pm0.16$ \\
+LSTM-NN & $0.03433\pm0.00058\,/\,11.47\pm0.19$ & $0.07400\pm0.01044\,/\,22.20\pm3.13$ & $0.05667\pm0.01274\,/\,19.13\pm4.30$ \\
+Logi-PINN & $0.03433\pm0.00252\,/\,11.47\pm0.84$ & $0.06633\pm0.00321\,/\,19.90\pm0.96$ & $0.06567\pm0.00306\,/\,22.17\pm1.03$ \\
+\model{} (ours) & $0.02244\pm0.00019\,/\,7.50\pm0.06$ & $\mathbf{0.03804\pm0.00067\,/\,11.41\pm0.20}$ & $\mathbf{0.03063\pm0.00062\,/\,10.34\pm0.21}$ \\
 \bottomrule
-\end{tabular}
-\end{table}
+\end{tabular}%
+}
+\end{table*}
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.96\textwidth]{figures/wheat_test_curves_no_extrapolation.pdf}
-\caption{Wheat predictions in the held-out 2021 season for three genotypes selected with a fixed random seed. Black points are replicate-averaged actual observations. Blue lines and bands show the mean $\pm$ one standard deviation over seeds 1--3 of the tuned \model{}. For each genotype, the prediction is plotted only from its first actual observation to its last actual observation; temporal extrapolation is not shown.}
+\caption{Wheat test observations and predictions in the held-out 2021 season for three genotypes selected with a fixed random seed. Black points are replicate-averaged observations, and colored lines are predictions from the six compared methods using the common legend. Lines for the \model{}, RF, LSTM-NN, and Logi-PINN are seed means; Temperature ODE and Logistic ODE are single deterministic fits. Every curve is restricted to the interval between the first and last actual observations.}
 \label{fig:wheatcurves}
 \end{figure*}
 
-Figure~\ref{fig:wheatcurves} shows that the compact model captured genotype-dependent onset, rapid elongation, and plateau height within the measured interval. The displayed curves deliberately end with the data. Consequently, the figure evaluates trajectory reconstruction and year-held-out prediction over observed time support, not forecasting beyond the final phenotyping date.
+Figure~\ref{fig:wheatcurves} places all six methods on the same trajectories and shows that the compact \model{} captured genotype-dependent onset, rapid elongation, and plateau height while avoiding the irregular RF interpolation and the earlier plateaus of the fixed-form ODEs in these examples. Achieving the lowest test error with only 1,655 parameters, compared with 4,647 before capacity tuning, supports parameter-efficient transfer across field seasons. The displayed curves deliberately end with the data. Consequently, this experiment establishes performance over the measured support in a new year for 19 observed genotypes, not unseen-genotype prediction or forecasting beyond the final phenotyping date.
+
+\subsection{Maize: year-held-out prediction across 402 genotypes}
+\label{subsec:maizeresults}
+
+The validation-selected maize \model{} achieved the lowest mean test error among the six evaluated methods, with RMSE / rRMSE of $56.68\pm4.37$ relative UAV-height units / $18.40\pm1.42\%$ (Table~\ref{tab:maize}). This reduced the pre-tuning test rRMSE from $25.84\pm4.26\%$ by 28.8\% and was 42.6\% lower than the next-best test result, $32.06\pm3.31\%$ from LSTM-NN. RF again fitted the training data most closely but produced the largest test error. LSTM-NN had the lowest 2020 validation error, while the \model{} ranked first in 2021; this reversal indicates substantial interannual variation and motivates future evaluation over multiple validation--test year rotations.
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Maize trajectory errors: training on 2018--2019, validation on 2020, and testing on 2021. Each cell reports RMSE in relative UAV-height units / rRMSE (\%). Bold indicates the lowest mean in each split. Stochastic-model values are mean $\pm$ sample standard deviation over seeds 1--3; process ODEs were fitted once. Only our model received the additional validation-only hyperparameter search.}
+\label{tab:maize}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+Model & Train RMSE / rRMSE & Validation RMSE / rRMSE & Test RMSE / rRMSE \\
+\midrule
+Logi-ODE & $47.29\,/\,15.15$ & $124.63\,/\,49.17$ & $128.98\,/\,41.87$ \\
+Temp-ODE & $47.35\,/\,15.17$ & $110.12\,/\,43.45$ & $110.29\,/\,35.80$ \\
+RF & $\mathbf{7.03\pm0.01\,/\,2.25\pm0.00}$ & $131.78\pm0.95\,/\,51.99\pm0.37$ & $139.61\pm0.31\,/\,45.31\pm0.10$ \\
+LSTM-NN & $42.62\pm1.73\,/\,13.66\pm0.55$ & $\mathbf{40.92\pm2.21\,/\,16.15\pm0.87}$ & $98.77\pm10.20\,/\,32.06\pm3.31$ \\
+Logi-PINN & $33.18\pm2.07\,/\,10.63\pm0.66$ & $48.14\pm8.37\,/\,19.00\pm3.30$ & $108.71\pm44.42\,/\,35.28\pm14.42$ \\
+\model{} (ours) & $41.90\pm14.37\,/\,13.43\pm4.61$ & $47.25\pm2.60\,/\,18.64\pm1.03$ & $\mathbf{56.68\pm4.37\,/\,18.40\pm1.42}$ \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/maize_test_predictions.pdf}
+\caption{Maize test observations and predictions in the held-out 2021 season for six genotypes spanning error strata fixed before tuning. Black points are genotype-mean UAV observations, and colored lines are predictions from the six compared methods using the common legend. Lines for the validation-selected \model{}, RF, LSTM-NN, and Logi-PINN are seed means; Temperature ODE and Logistic ODE are single deterministic fits. Every curve is restricted to the interval between the first and last observations.}
+\label{fig:maizecurves}
+\end{figure*}
+
+Figure~\ref{fig:maizecurves} compares the final version of every method and shows differences in inferred growth onset and late-season height across contrasting error strata. The 402-genotype evaluation is 21 times larger in genotype count than wheat and approximately 45 times larger than Arabidopsis, providing evidence that a shared latent vector field and learned genotype embeddings can scale to a genetically broad panel without fitting an independent dynamical system to every line. Because the same genotype identities occur in all four seasons, this result concerns environmental transfer across a large observed panel; genotype-held-out evaluation remains necessary before claiming prediction for novel lines.
 
 \subsection{Arabidopsis: external validation with four observations per plant}
 \label{subsec:arabresults}
 
-The \model{} achieved the lowest mean test RMSE on the Arabidopsis primary-stem dataset, $2.866\pm0.093$~cm (Table~\ref{tab:arabidopsis}). This was marginally (0.4\%) lower than random forest and 4.1\% and 2.9\% lower than stabilized Logi-PINN and LSTM-NN, respectively. The result is notable because each plant contributed only four observed time points. In contrast, the two fixed-form process baselines had substantially larger errors, with test RMSEs of 4.121~cm for the temperature-informed ODE and 5.179~cm for the logistic ODE.
+The \model{} achieved the lowest mean test error on the Arabidopsis primary-stem dataset, with RMSE / rRMSE of $2.866\pm0.093$~cm / $14.39\pm0.47\%$ (Table~\ref{tab:arabidopsis}). The margin over RF ($2.878\pm0.010$~cm / $14.45\pm0.05\%$) was only 0.4\% and should be interpreted as a close result rather than categorical superiority. Nevertheless, the \model{} also had lower mean test RMSE than LSTM-NN and Logi-PINN, while both fixed-form process models exceeded $20\%$ rRMSE. This ordering was obtained from only four observed dates per plant, making temporal sparsity the central stress test in this dataset.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
-\caption{Arabidopsis primary inflorescence stem-length results under the plant-held-out split. Errors are in centimetres. Neural and random-forest values are mean $\pm$ sample standard deviation over seeds 1--3. Deterministic ODE fits were run once and therefore have no seed standard deviation.}
+\small
+\caption{Arabidopsis primary inflorescence stem-length errors under the plant-held-out split. Each cell reports RMSE in centimetres / rRMSE (\%). Bold indicates the lowest mean in each split. Stochastic-model values are mean $\pm$ sample standard deviation over seeds 1--3; process ODEs were fitted once. Each validation and test trajectory contains four observed time points.}
 \label{tab:arabidopsis}
-\begin{tabular}{lrrrr}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccc}
 \toprule
-Model & Train RMSE & Validation RMSE & Test RMSE & Test MAE \\
+Model & Train RMSE / rRMSE & Validation RMSE / rRMSE & Test RMSE / rRMSE \\
 \midrule
-\model{} (ours) & $1.401\pm0.088$ & $3.246\pm0.006$ & $\mathbf{2.866\pm0.093}$ & $2.463\pm0.088$ \\
-Random forest & $0.153\pm0.018$ & $\mathbf{3.217\pm0.008}$ & $2.878\pm0.010$ & $\mathbf{2.347\pm0.001}$ \\
-Logi-PINN & $1.721\pm0.034$ & $3.316\pm0.075$ & $2.987\pm0.126$ & $2.523\pm0.063$ \\
-LSTM-NN & $1.701\pm0.122$ & $3.343\pm0.103$ & $2.951\pm0.064$ & $2.501\pm0.026$ \\
-Temperature-informed ODE (single fit) & $3.678$ & $4.174$ & $4.121$ & $3.500$ \\
-Logistic ODE (single fit) & $4.944$ & $5.274$ & $5.179$ & $4.502$ \\
+Logi-ODE & $4.944\,/\,23.50$ & $5.274\,/\,26.19$ & $5.179\,/\,26.00$ \\
+Temp-ODE & $3.678\,/\,17.48$ & $4.174\,/\,20.73$ & $4.121\,/\,20.69$ \\
+RF & $\mathbf{0.153\pm0.018\,/\,0.73\pm0.08}$ & $\mathbf{3.217\pm0.008\,/\,15.97\pm0.04}$ & $2.878\pm0.010\,/\,14.45\pm0.05$ \\
+LSTM-NN & $1.701\pm0.122\,/\,8.09\pm0.58$ & $3.343\pm0.103\,/\,16.60\pm0.51$ & $2.951\pm0.064\,/\,14.82\pm0.32$ \\
+Logi-PINN & $1.721\pm0.034\,/\,8.18\pm0.16$ & $3.316\pm0.075\,/\,16.47\pm0.37$ & $2.987\pm0.126\,/\,15.00\pm0.63$ \\
+\model{} (ours) & $1.401\pm0.088\,/\,6.66\pm0.42$ & $3.246\pm0.006\,/\,16.12\pm0.03$ & $\mathbf{2.866\pm0.093\,/\,14.39\pm0.47}$ \\
 \bottomrule
-\end{tabular}
-\end{table}
+\end{tabular}%
+}
+\end{table*}
 
-Random forest obtained the lowest MAE, outperforming the \model{} by 0.116~cm, while its mean RMSE was 0.012~cm higher. Thus, the RMSE difference between these models is small relative to biological variability and should not be interpreted as categorical superiority. The very low random-forest training error also indicates substantially greater interpolation capacity than its test performance would imply.
+RF attained the smallest training and validation errors, yet the \model{} attained the smallest mean test error. The absence of a corresponding advantage for RF on held-out plants, despite its near-zero training error, is consistent with stronger interpolation capacity rather than more reliable replicate-level transfer. The similar test performance of RF and the continuous-time model also shows that the main evidence here is robustness under sparse sampling, not a large numerical separation between the two methods.
 
 Condition-stratified analysis gave \model{} RMSEs of $2.144\pm0.050$~cm under nAT and $3.588\pm0.199$~cm under hAT. Random forest was better under hAT ($3.342\pm0.032$~cm) but worse under nAT ($2.414\pm0.037$~cm). The hAT trajectories begin and terminate earlier and often approach a plateau by 41 DAS, making their timing difficult to infer from four observations. Figure~\ref{fig:arabcurves} illustrates Col-0 predictions under both temperature regimes. All curves between observed points are model-based interpolation, not additional biological observations.
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.96\textwidth]{figures/arabidopsis_col0_no_extrapolation.pdf}
-\caption{Col-0 test observations and predictions under normal (nAT) and high (hAT) ambient temperature. Black points are means of the two held-out test plants. Stochastic-model lines are averages over seeds 1--3; ODE baselines are deterministic fits. Each line is clipped to the condition-specific interval between the first and last observation (nAT: 29--49 DAS; hAT: 27--41 DAS), so no temporal extrapolation is displayed.}
+\caption{Arabidopsis Col-0 test observations and predictions under normal (nAT) and high (hAT) ambient temperature. Black points are means of the two held-out test plants, and colored lines are predictions from the six compared methods using the common legend. Lines for the \model{}, RF, LSTM-NN, and Logi-PINN are seed means; Temperature ODE and Logistic ODE are single deterministic fits. Every curve is restricted to the condition-specific observation interval (nAT: 29--49 DAS; hAT: 27--41 DAS).}
 \label{fig:arabcurves}
 \end{figure*}
 
@@ -226,12 +284,12 @@ Taken together, the Arabidopsis results support resilience to low temporal resol
 \section{Conclusion}
 \label{sec:conclusion}
 
-We introduced a genotype- and temperature-conditioned latent Neural ODE for predicting plant growth trajectories. The model learns continuous dynamics in a latent space while retaining a weak logistic growth residual. In wheat, validation-only tuning reduced model size from 4,647 to 1,655 parameters and produced a three-seed year-held-out test RMSE of $0.03063\pm0.00062$~m. A 393-parameter micro model remained substantially more accurate than the similarly sized reference LSTM-NN and Logi-PINN. In an external Arabidopsis primary-stem dataset with only four measurements per plant, the latent model achieved a three-seed test RMSE of $2.866\pm0.093$~cm, marginally lower than random forest and lower than LSTM-NN and Logi-PINN. The combination of dense field data and sparse controlled-environment data suggests that latent continuous-time dynamics can provide a useful common representation across species, organs, and temporal resolutions.
+We introduced a genotype- and temperature-conditioned latent Neural ODE for predicting plant growth trajectories and evaluated it under three distinct regimes. It achieved the lowest mean test RMSE among the six compared methods in wheat, maize, and Arabidopsis, with rRMSEs of $10.34\pm0.21\%$, $18.40\pm1.42\%$, and $14.39\pm0.47\%$, respectively. The wheat result combines year-held-out accuracy with a compact 1,655-parameter model. The maize result extends the same model family to 402 genotypes and 3,072 field-plot trajectories, showing that genotype-conditioned latent dynamics can scale to a substantially broader observed panel. The Arabidopsis result remains competitive with RF despite only four measurements per plant and transfers the formulation to a different species, organ, and growth scale. Together, these results provide complementary evidence for parameter-efficient field-season transfer, high-cardinality genotype conditioning, and resilience to sparse temporal observation.
 
-Three limitations define the next experiments. First, capacity and hyperparameters were tuned on one wheat validation year; the fixed selected configuration should be evaluated over the other five year combinations without test-year retuning. Second, the Arabidopsis split holds out plants rather than genotypes or temperature regimes. Independent growth cohorts with more biological replicates, genotype-held-out validation, intermediate or fluctuating temperature treatments, and targeted sampling around bolting and rapid elongation would provide a stronger test of biological generalization. Third, the present evaluation and figures are restricted to measured temporal support and do not establish accuracy beyond the last phenotyping date. A causal forecasting variant should restrict the environmental encoder to temperatures available up to the forecast origin and evaluate explicitly defined extrapolation horizons.
+Four limitations define the next experiments. First, capacity and hyperparameters were tuned on a single validation year for wheat and maize; fixed configurations should be evaluated over additional validation--test year rotations without test-year retuning. Second, both year-held-out experiments contain the same genotype identities across years, so the 402-genotype maize result demonstrates scale across observed lines rather than prediction of unseen genotypes. Third, the Arabidopsis split holds out plants rather than genotypes or temperature regimes and averages only two test plants per genotype--temperature combination. Independent cohorts, genotype-held-out validation, and intermediate or fluctuating temperature treatments would provide stronger biological tests. Fourth, the present evaluation and figures are restricted to measured temporal support and do not establish accuracy beyond the last phenotyping date. A causal forecasting variant should restrict the environmental encoder to temperatures available up to the forecast origin and evaluate explicitly defined extrapolation horizons.
 
 \section*{Data and code availability}
-\todo{Add public repository URL, software environment, model checkpoints, processed-data scripts, and permanent identifiers for both datasets.}
+\todo{Add public repository URL, software environment, model checkpoints, processed-data scripts, and permanent identifiers for all three datasets.}
 
 \section*{Declaration of competing interest}
 The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.

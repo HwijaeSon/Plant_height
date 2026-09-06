@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "maize/code/run_experiment.py",
+    "--models",
+    "rf",
+    "--seed",
+    "1",
+    "--device",
+    "cpu"
+  ],
+  "pid": 238522,
+  "cuda_visible_devices": ""
+}

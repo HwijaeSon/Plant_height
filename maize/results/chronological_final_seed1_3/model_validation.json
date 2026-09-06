@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "restored_neural_checkpoints": [
+    "latent_seed1",
+    "latent_seed2",
+    "latent_seed3",
+    "lstm_seed1",
+    "lstm_seed2",
+    "lstm_seed3",
+    "pinn_seed1",
+    "pinn_seed2",
+    "pinn_seed3"
+  ],
+  "checkpoint_predictions": "match saved GPU outputs on 3 test curves within CPU/GPU tolerance",
+  "test_target_independence": "changing test heights and masks leaves all 9 models' predictions identical",
+  "pinn_checkpoints": "all after physics warm-up",
+  "temperature_integration": "constant-temperature identity passed",
+  "optimizer_precision": "float64 temperature parameter perturbations are nonzero",
+  "process_initial_condition": "fixed H0 identity passed"
+}

@@ -8,15 +8,24 @@ be retargeted to *Artificial Intelligence in Agriculture* by changing the
 ## Files
 
 - `main.tex`: complete English draft with Introduction, Materials and methods,
-  wheat and Arabidopsis Results, and Conclusion.
-- `references.bib`: 39 cited records.  The Introduction cites 17 papers from
+  wheat, maize, and Arabidopsis Results, and Conclusion.
+- `references.bib`: 40 cited records.  The Introduction cites 17 papers from
   *Computers and Electronics in Agriculture* and 13 from *Artificial
   Intelligence in Agriculture*, plus foundational Neural ODE, latent ODE,
   neural CDE, PINN, and universal differential-equation papers.
 - `make_figures.py`: regenerates the manuscript figures directly from the
   audited experiment outputs.
-- `figures/`: generated wheat and Arabidopsis prediction figures.  Every model
-  line is clipped to the sample's first--last observed time interval.
+- `figures/`: generated wheat, maize, and Arabidopsis prediction figures. The
+  three figures share the same six-model legend, colors, line hierarchy, and
+  observed-point marker. Every model line is clipped to the sample's
+  first--last observed time interval.
+- [relative_errors/README.md](relative_errors/README.md): existing wheat,
+  Arabidopsis, and maize errors divided by each split's mean evaluation target,
+  with CSV tables, a PNG/PDF figure, a ready-to-input LaTeX table reporting
+  `RMSE / relative error (%)`, and the original scoring-mask limitations.
+  The main maize `Ours` row uses the validation-selected tuned result; its
+  pre-tuning result is retained as a non-primary row.
+  Regenerate with `.venv/bin/python paper/relative_errors.py`.
 
 ## Compile
 
@@ -39,16 +48,19 @@ PDF was produced.
    and test 2021.  Capacity and learning/physics hyperparameters were selected
    with validation only.  Before submission, confirm the fixed 1,655-parameter
    model over the other five year combinations without test-year retuning.
-2. Replace red author, affiliation, data/code availability, and funding TODOs.
-3. Tables consistently report seeds 1--3 as mean ± sample standard deviation.
+2. The maize result uses 402 genotypes across four years and an ours-only
+   validation search. It demonstrates held-out-year performance across known
+   genotypes, not unseen-genotype prediction; keep that distinction explicit.
+3. Replace red author, affiliation, data/code availability, and funding TODOs.
+4. Tables consistently report seeds 1--3 as mean ± sample standard deviation.
    Deterministic process ODEs are explicitly marked as single fits.
-4. The Arabidopsis result is a new-plant split within observed genotypes and
+5. The Arabidopsis result is a new-plant split within observed genotypes and
    temperatures.  Keep the current wording unless genotype-held-out or
    temperature-held-out experiments are added.
-5. The environmental encoder reads the complete temperature scenario.  The
+6. The environmental encoder reads the complete temperature scenario.  The
    manuscript correctly calls this offline scenario-conditioned prediction,
    not causal real-time forecasting.
-6. Time extrapolation is not evaluated or displayed.  Prediction figures show
+7. Time extrapolation is not evaluated or displayed.  Prediction figures show
    only the interval supported by actual observations.
 
 ## Regenerate figures

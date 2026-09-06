@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "complete_runs": 5,
+  "source_hashes": "unchanged",
+  "process_fits": "all converged",
+  "predictions": "restored models match all saved arrays",
+  "metrics": "recomputed from saved arrays for all splits",
+  "holdout_targets": "mutations do not affect prediction",
+  "temperature_integration": "constant-temperature analytical check passed"
+}

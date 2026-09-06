@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "selected_candidate": "l160",
+  "validation_ranking": "recomputed from completed trials",
+  "candidate_test_evaluations": 0,
+  "final_test_evaluations": 3,
+  "checkpoint_hashes": "match frozen selection",
+  "source_hashes": "unchanged",
+  "restored_train_val_metrics": "match trial results",
+  "holdout_targets": "mutations do not affect predictions"
+}

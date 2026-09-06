@@ -1,0 +1,21 @@
+{
+  "model": "Temp-ODE",
+  "model_key": "temperature",
+  "seed": 0,
+  "target_unit": "relative UAV height",
+  "y_scale": 874.58028,
+  "n_params": 806,
+  "seconds": 0.3084985874593258,
+  "best_epoch": 0,
+  "fit_objective": "curve-balanced observed MSE",
+  "nfev": 18,
+  "train_rmse": 47.345803330887584,
+  "train_mae": 40.16993847614271,
+  "train_pooled_rmse": 48.42435658709526,
+  "val_rmse": 110.11814754161058,
+  "val_mae": 83.245413765948,
+  "val_pooled_rmse": 112.70812852969144,
+  "test_rmse": 110.29360879203124,
+  "test_mae": 86.2217515390649,
+  "test_pooled_rmse": 113.60103387443772
+}

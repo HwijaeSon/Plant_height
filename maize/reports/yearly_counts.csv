@@ -1,0 +1,5 @@
+year,paper_flights,published_flights,ground_flights,s3_plots_with_observations,s3_genotypes,s3_observations,s3_missing_slots,s4_plots_with_loess,primary_genotypes,primary_plots,primary_observations,primary_mean_observations,primary_flights,primary_min_observations_per_plot,primary_max_observations_per_plot,first_dap,last_dap,height_min,height_max
+2018,14,11,1,987,487,10239,1201,987,402,790,7429,3941,10,8,10,22,95,13.8569357,841.167897
+2019,27,17,0,908,477,14709,2971,865,402,743,12070,6731,17,15,17,3,83,12.2958396,874.58028
+2020,12,8,1,849,434,6294,2026,849,402,753,4840,2729,7,5,7,27,83,21.1230196,771.70534
+2021,11,11,1,961,475,10176,1264,961,402,786,7555,3973,10,8,10,26,92,19.4468467,1264.62739

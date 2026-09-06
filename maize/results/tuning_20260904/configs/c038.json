@@ -1,0 +1,15 @@
+{
+  "latent_dim": 32,
+  "g_embed_dim": 8,
+  "ode_hidden": 16,
+  "ode_layers": 1,
+  "dec_hidden": 16,
+  "enc_hidden": 16,
+  "time_mode": "thermal_feature",
+  "lr": 0.005,
+  "weight_decay": 0.001,
+  "physic": 2.0,
+  "ymax": 0.5,
+  "mono": 0.0,
+  "epochs": 1500
+}

@@ -1,0 +1,80 @@
+{
+  "split": "chronological",
+  "train_years": [
+    2018,
+    2019
+  ],
+  "val_year": 2020,
+  "test_year": 2021,
+  "n_genotypes": 402,
+  "day_grid": [
+    0,
+    95
+  ],
+  "environment_features": [
+    "temperature_c"
+  ],
+  "env_mean": [
+    22.01678240765625
+  ],
+  "env_std": [
+    3.547051278602562
+  ],
+  "y_scale": 874.58028,
+  "gdd_scale_c": 1126.8055555,
+  "target_unit": "relative height / y_scale",
+  "original_unit": "relative UAV height, not cm or m",
+  "days_per_tau": 95,
+  "thermal_time": "trapezoidal integral of source daily GDD_C; not published cumulative GDD",
+  "normalization_fit_on": "training years only; environment statistics use unique year-days",
+  "batches": {
+    "train": {
+      "shape_y": [
+        1533,
+        96
+      ],
+      "shape_env": [
+        1533,
+        96,
+        1
+      ],
+      "observed_targets": 19499
+    },
+    "train_eval": {
+      "shape_y": [
+        804,
+        96
+      ],
+      "shape_env": [
+        804,
+        96,
+        1
+      ],
+      "observed_targets": 10672
+    },
+    "val": {
+      "shape_y": [
+        402,
+        96
+      ],
+      "shape_env": [
+        402,
+        96,
+        1
+      ],
+      "observed_targets": 2729
+    },
+    "test": {
+      "shape_y": [
+        402,
+        96
+      ],
+      "shape_env": [
+        402,
+        96,
+        1
+      ],
+      "observed_targets": 3973
+    }
+  }
+}

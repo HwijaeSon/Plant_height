@@ -1,0 +1,38 @@
+{
+  "upstream_repository": "https://github.com/YingjieShao/PINN_for_plant_height_forecasting",
+  "upstream_commit": "3da92f51f42d3fde5e06f6fc8ce8f233490a389c",
+  "selection": "split 0; one-hot genotype; hidden/fc/embedding 5; l2 1.0; seeds 1-3",
+  "note": "Used for trajectory visualization; table RMSE values retain the upstream published summaries.",
+  "sources": {
+    "lstm_seed1": {
+      "filename": "pinn_weight_None_test_curves_NN_rerun_finalgenotype_one_hot_encodingsmooth_temp_Falseyear_split_train_lr_0.001_hidden_5_fc_hidden_5_g_embed5_num_layers_1_l2_1.0_ymax_bound_False_smooth_lossFalse_seed_1.csv",
+      "sha256": "eca01e4c714c7638b3035be5ef0cc7fd64ac83f4bd252eaa7978fa846739b501",
+      "trajectory_rmse_on_current_mask_m": 0.06176276993754446
+    },
+    "lstm_seed2": {
+      "filename": "pinn_weight_None_test_curves_NN_rerun_finalgenotype_one_hot_encodingsmooth_temp_Falseyear_split_train_lr_0.001_hidden_5_fc_hidden_5_g_embed5_num_layers_1_l2_1.0_ymax_bound_False_smooth_lossFalse_seed_2.csv",
+      "sha256": "57adf84457efb62c9aee12de9e4f3b7c88130cec07c7c9c93b1d39445737251e",
+      "trajectory_rmse_on_current_mask_m": 0.03942548423218223
+    },
+    "lstm_seed3": {
+      "filename": "pinn_weight_None_test_curves_NN_rerun_finalgenotype_one_hot_encodingsmooth_temp_Falseyear_split_train_lr_0.001_hidden_5_fc_hidden_5_g_embed5_num_layers_1_l2_1.0_ymax_bound_False_smooth_lossFalse_seed_3.csv",
+      "sha256": "96bc8db3c2fc84ffbfff5ec8fd154ca11a8e539871e4c3fcf47caa52f32673ee",
+      "trajectory_rmse_on_current_mask_m": 0.060552283949267045
+    },
+    "pinn_seed1": {
+      "filename": "pinn_weight_2_test_curves_PINN_retun_finalgenotype_one_hot_encodingsmooth_temp_Falseyear_split_train_lr_0.001_hidden_5_fc_hidden_5_g_embed5_num_layers_1_l2_1.0_ymax_bound_True_smooth_lossFalse_seed_1.csv",
+      "sha256": "a24adb87eee5f9615517301510ce0516dc2797bdae41d0cb317c63cb07c268a0",
+      "trajectory_rmse_on_current_mask_m": 0.06661161648421847
+    },
+    "pinn_seed2": {
+      "filename": "pinn_weight_2_test_curves_PINN_retun_finalgenotype_one_hot_encodingsmooth_temp_Falseyear_split_train_lr_0.001_hidden_5_fc_hidden_5_g_embed5_num_layers_1_l2_1.0_ymax_bound_True_smooth_lossFalse_seed_2.csv",
+      "sha256": "07f70da2283a823edbe8486520b37cf41c616bb58d03b4faa3e5245a1b236d0c",
+      "trajectory_rmse_on_current_mask_m": 0.06253633482295486
+    },
+    "pinn_seed3": {
+      "filename": "pinn_weight_2_test_curves_PINN_retun_finalgenotype_one_hot_encodingsmooth_temp_Falseyear_split_train_lr_0.001_hidden_5_fc_hidden_5_g_embed5_num_layers_1_l2_1.0_ymax_bound_True_smooth_lossFalse_seed_3.csv",
+      "sha256": "86d6125b3c194f4ca77dde798557eb15a8d28f24155cb4e22d052b9617116977",
+      "trajectory_rmse_on_current_mask_m": 0.060391130216104955
+    }
+  }
+}

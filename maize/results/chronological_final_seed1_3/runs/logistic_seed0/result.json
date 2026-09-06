@@ -1,0 +1,21 @@
+{
+  "model": "Logi-ODE",
+  "model_key": "logistic",
+  "seed": 0,
+  "target_unit": "relative UAV height",
+  "y_scale": 874.58028,
+  "n_params": 804,
+  "seconds": 3.7716270089149475,
+  "best_epoch": 0,
+  "fit_objective": "curve-balanced observed MSE",
+  "successful_fits": 402,
+  "train_rmse": 47.28625088016508,
+  "train_mae": 40.10157337043965,
+  "train_pooled_rmse": 48.1947144109062,
+  "val_rmse": 124.62530847371362,
+  "val_mae": 93.46928119404276,
+  "val_pooled_rmse": 127.10697532654216,
+  "test_rmse": 128.9824124057761,
+  "test_mae": 98.04283596914901,
+  "test_pooled_rmse": 132.11165494035808
+}

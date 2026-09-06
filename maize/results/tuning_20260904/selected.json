@@ -1,0 +1,33 @@
+{
+  "candidate": "l160",
+  "val_mean": 47.24654463297455,
+  "val_sd": 2.6005900072494796,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "n_params": 9003,
+  "config": {
+    "latent_dim": 8,
+    "g_embed_dim": 8,
+    "ode_hidden": 16,
+    "ode_layers": 1,
+    "dec_hidden": 32,
+    "enc_hidden": 32,
+    "time_mode": "calendar",
+    "lr": 0.01,
+    "weight_decay": 0.0001,
+    "physic": 0.5,
+    "ymax": 0.5,
+    "mono": 0.0,
+    "epochs": 3000
+  },
+  "frozen_unix": 1788540174.3177168,
+  "selection_basis": "validation only, mean of seeds 1,2,3",
+  "checkpoint_sha256": {
+    "1": "abfb0ff2fd38ca172e9ac59505c41cfad0e50a26b70a6adf13bca198e7e248ab",
+    "2": "28dcbd151d72978a80c344607163223b9f3b9df2dd261dcbb47953c4bf2ba553",
+    "3": "d6c7fcc07c5329c19f3da095badfccd277407e54f00656959216e3bf7bf1c634"
+  }
+}

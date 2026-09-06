@@ -1,0 +1,20 @@
+{
+  "model": "Latent Neural ODE (tuned)",
+  "model_key": "latent_tuned",
+  "seed": 3,
+  "candidate": "l160",
+  "best_epoch": 910,
+  "n_params": 9003,
+  "epochs": 3000,
+  "seconds": 386.68939601257443,
+  "y_scale": 874.58028,
+  "train_rmse": 34.0291310849496,
+  "train_mae": 26.70360618406169,
+  "train_pooled_rmse": 34.937119220946485,
+  "val_rmse": 47.30951622681658,
+  "val_mae": 41.487431710483655,
+  "val_pooled_rmse": 49.23476706622477,
+  "test_rmse": 54.809629725722786,
+  "test_mae": 47.49576337519399,
+  "test_pooled_rmse": 57.57845553255324
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "name": "chronological",
+    "train_years": [
+      2018,
+      2019
+    ],
+    "val_year": 2020,
+    "test_year": 2021
+  },
+  {
+    "name": "test2018_val2019",
+    "train_years": [
+      2020,
+      2021
+    ],
+    "val_year": 2019,
+    "test_year": 2018
+  },
+  {
+    "name": "test2018_val2020",
+    "train_years": [
+      2019,
+      2021
+    ],
+    "val_year": 2020,
+    "test_year": 2018
+  },
+  {
+    "name": "test2018_val2021",
+    "train_years": [
+      2019,
+      2020
+    ],
+    "val_year": 2021,
+    "test_year": 2018
+  },
+  {
+    "name": "test2019_val2018",
+    "train_years": [
+      2020,
+      2021
+    ],
+    "val_year": 2018,
+    "test_year": 2019
+  },
+  {
+    "name": "test2019_val2020",
+    "train_years": [
+      2018,
+      2021
+    ],
+    "val_year": 2020,
+    "test_year": 2019
+  },
+  {
+    "name": "test2019_val2021",
+    "train_years": [
+      2018,
+      2020
+    ],
+    "val_year": 2021,
+    "test_year": 2019
+  },
+  {
+    "name": "test2020_val2018",
+    "train_years": [
+      2019,
+      2021
+    ],
+    "val_year": 2018,
+    "test_year": 2020
+  },
+  {
+    "name": "test2020_val2019",
+    "train_years": [
+      2018,
+      2021
+    ],
+    "val_year": 2019,
+    "test_year": 2020
+  },
+  {
+    "name": "test2020_val2021",
+    "train_years": [
+      2018,
+      2019
+    ],
+    "val_year": 2021,
+    "test_year": 2020
+  },
+  {
+    "name": "test2021_val2018",
+    "train_years": [
+      2019,
+      2020
+    ],
+    "val_year": 2018,
+    "test_year": 2021
+  },
+  {
+    "name": "test2021_val2019",
+    "train_years": [
+      2018,
+      2020
+    ],
+    "val_year": 2019,
+    "test_year": 2021
+  }
+]

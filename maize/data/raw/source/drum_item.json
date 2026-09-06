@@ -1,0 +1,374 @@
+{
+  "id": "2ea4b4e4-26a6-4a6a-bc45-f24c10f7402b",
+  "uuid": "2ea4b4e4-26a6-4a6a-bc45-f24c10f7402b",
+  "name": "Temporally resolved growth patterns in diverse maize panel",
+  "handle": "11299/250609",
+  "metadata": {
+    "dc.contributor.author": [
+      {
+        "value": "Sweet, Dorothy D",
+        "language": "",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      },
+      {
+        "value": "Tirado, Sara B",
+        "language": "",
+        "authority": null,
+        "confidence": -1,
+        "place": 1
+      },
+      {
+        "value": "Cooper, Julian S",
+        "language": "",
+        "authority": null,
+        "confidence": -1,
+        "place": 2
+      },
+      {
+        "value": "Springer, Nathan M",
+        "language": "",
+        "authority": null,
+        "confidence": -1,
+        "place": 3
+      },
+      {
+        "value": "Hirsch, Cory D",
+        "language": "",
+        "authority": null,
+        "confidence": -1,
+        "place": 4
+      },
+      {
+        "value": "Hirsch, Candice N",
+        "language": "",
+        "authority": null,
+        "confidence": -1,
+        "place": 5
+      }
+    ],
+    "dc.contributor.contactemail": [
+      {
+        "value": "cnhirsch@umn.edu",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.contributor.contactname": [
+      {
+        "value": "Hirsch, Candice N",
+        "language": "",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.contributor.group": [
+      {
+        "value": "Candice Hirsch Lab",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      },
+      {
+        "value": "Cory Hirsch Lab",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 1
+      }
+    ],
+    "dc.date.accessioned": [
+      {
+        "value": "2023-01-27T17:27:30Z",
+        "language": "",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.date.available": [
+      {
+        "value": "2023-01-27T17:27:30Z",
+        "language": "",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.date.collectedbegin": [
+      {
+        "value": "2018-05-23",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.date.collectedend": [
+      {
+        "value": "2021-08-06",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.date.completed": [
+      {
+        "value": "2023-01-03",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.date.issued": [
+      {
+        "value": "2023-01-27",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.description.abstract": [
+      {
+        "value": "Plant height is used in many breeding programs for assessing plant health across environments and predicting yield, which can be used in identifying superior hybrids or evaluating abiotic stress factors. This has often been measured at a single time point when plants have reached their terminal height for the season. Collection of plant height using unoccupied aerial vehicles (UAVs) is faster, allowing for measurements throughout the growing season which could facilitate a better understanding of plant-environment interaction and responses. To assess variation in plant height and growth rate throughout development, plant height data was collected weekly for a panel of ~500 diverse inbred lines over four growing seasons. The variation in plant height throughout the season was found to be significantly explained by genotype, year, and genotype-by-year interactions throughout vegetative growth. However, the relative contributions of these different sources of variation fluctuated throughout development. This variation was further captured by Fr\u00e9chet distance values which identified genotypes with consistently high or low distances in each of the four years - high distance genotypes being more dissimilar between replications and therefore capturing more environmental variation. Genome-wide association studies revealed many significant SNPs associated with plant height and growth rate at different parts of the growing season that would not be identified by terminal height alone. When comparing growth rates estimated from plant height to growth rates estimated from another morphological characteristic, canopy cover, we found greater stability in growth curves estimated by plant height. This potentially makes canopy cover more useful for understanding environmental modulation of overall plant growth and plant height better for understanding genotypic modulation of overall plant growth. Overall, this suggests evaluations of plant growth throughout the season provide more information than terminal plant height alone.",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.description.sponsorship": [
+      {
+        "value": "Minnesota Corn Growers Association",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      },
+      {
+        "value": "National Science Foundation",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 1
+      },
+      {
+        "value": "Bayer Crop Science",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 2
+      },
+      {
+        "value": "UMII-MnDRIVE PhD Graduate Assistantship",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 3
+      }
+    ],
+    "dc.description.suggestedcitation": [
+      {
+        "value": "Sweet, Dorothy D; Tirado, Sara B; Cooper, Julian S; Springer, Nathan M; Hirsch, Cory D; Hirsch, Candice N. (2023). Temporally resolved growth patterns in diverse maize panel. Retrieved from the Data Repository for the University of Minnesota (DRUM), https://doi.org/10.13020/SKJN-QX31.",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.identifier.doi": [
+      {
+        "value": "https://doi.org/10.13020/SKJN-QX31",
+        "language": "",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.identifier.uri": [
+      {
+        "value": "https://hdl.handle.net/11299/250609",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.relation": [
+      {
+        "value": "Tirado, Sara B; Hirsch, Candice N; Springer, Nathan M. (2020). Springer Lab UAV Maize Phenotyping Project at UMN St. Paul: 2018 and 2019.",
+        "language": "",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      },
+      {
+        "value": "https://doi.org/10.13020/j01t-wq81",
+        "language": "",
+        "authority": null,
+        "confidence": -1,
+        "place": 1
+      }
+    ],
+    "dc.rights": [
+      {
+        "value": "CC0 1.0 Universal",
+        "language": "*",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.rights.uri": [
+      {
+        "value": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "language": "*",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.subject": [
+      {
+        "value": "maize",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      },
+      {
+        "value": "UAV",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 1
+      },
+      {
+        "value": "phenotyping",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 2
+      },
+      {
+        "value": "plant height",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 3
+      },
+      {
+        "value": "canopy cover",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 4
+      }
+    ],
+    "dc.title": [
+      {
+        "value": "Temporally resolved growth patterns in diverse maize panel",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.type": [
+      {
+        "value": "Dataset",
+        "language": "",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      }
+    ],
+    "dc.type.dataset": [
+      {
+        "value": "3D Imaging Data",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 0
+      },
+      {
+        "value": "Experimental Data",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 1
+      },
+      {
+        "value": "Field Study Data",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 2
+      },
+      {
+        "value": "Observational Data",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 3
+      },
+      {
+        "value": "Spatial Data",
+        "language": "en_US",
+        "authority": null,
+        "confidence": -1,
+        "place": 4
+      }
+    ]
+  },
+  "inArchive": true,
+  "discoverable": true,
+  "withdrawn": false,
+  "lastModified": "2024-05-16T15:13:37.331Z",
+  "entityType": null,
+  "type": "item",
+  "uniqueType": "core.item",
+  "_links": {
+    "accessStatus": {
+      "href": "https://conservancy.umn.edu/server/api/core/items/2ea4b4e4-26a6-4a6a-bc45-f24c10f7402b/accessStatus"
+    },
+    "bundles": {
+      "href": "https://conservancy.umn.edu/server/api/core/items/2ea4b4e4-26a6-4a6a-bc45-f24c10f7402b/bundles"
+    },
+    "identifiers": {
+      "href": "https://conservancy.umn.edu/server/api/core/items/2ea4b4e4-26a6-4a6a-bc45-f24c10f7402b/identifiers"
+    },
+    "mappedCollections": {
+      "href": "https://conservancy.umn.edu/server/api/core/items/2ea4b4e4-26a6-4a6a-bc45-f24c10f7402b/mappedCollections"
+    },
+    "owningCollection": {
+      "href": "https://conservancy.umn.edu/server/api/core/items/2ea4b4e4-26a6-4a6a-bc45-f24c10f7402b/owningCollection"
+    },
+    "relationships": {
+      "href": "https://conservancy.umn.edu/server/api/core/items/2ea4b4e4-26a6-4a6a-bc45-f24c10f7402b/relationships"
+    },
+    "version": {
+      "href": "https://conservancy.umn.edu/server/api/core/items/2ea4b4e4-26a6-4a6a-bc45-f24c10f7402b/version"
+    },
+    "templateItemOf": {
+      "href": "https://conservancy.umn.edu/server/api/core/items/2ea4b4e4-26a6-4a6a-bc45-f24c10f7402b/templateItemOf"
+    },
+    "thumbnail": {
+      "href": "https://conservancy.umn.edu/server/api/core/items/2ea4b4e4-26a6-4a6a-bc45-f24c10f7402b/thumbnail"
+    },
+    "submitter": {
+      "href": "https://conservancy.umn.edu/server/api/core/items/2ea4b4e4-26a6-4a6a-bc45-f24c10f7402b/submitter"
+    },
+    "self": {
+      "href": "https://conservancy.umn.edu/server/api/core/items/2ea4b4e4-26a6-4a6a-bc45-f24c10f7402b"
+    }
+  }
+}

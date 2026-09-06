@@ -1,0 +1,41 @@
+{
+  "definition": "100 * existing macro trajectory RMSE or MAE / pooled masked target mean within split",
+  "new_training": false,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "process_seeds": [
+    0
+  ],
+  "maize_ours": "validation-selected tuned result; pre-tuning result retained as non-primary",
+  "source_sha256": {
+    "arabidopsis/results/all_runs_seed1_3.csv": "aab1a207f766e2ef5b618630b4d2f66cd6926ea3778643d77d483ceb1207a528",
+    "arabidopsis/results/predictions_seed1_3.csv": "71dcfd4c07ea9518c17ce846c559d32233ca590a2612dcae65b49e693e9f19f1",
+    "maize/code/data.py": "bd731ba5a43ae8b3ece742b7ecc70747d502ca14c4e8740065bdba168da96360",
+    "maize/data/processed/genotypes.csv": "02854a7ae7a235e89f4f139fc3aa41ef77fd0a5e648ab83bbbf632018cb66d47",
+    "maize/data/processed/height_observations.csv": "9f36b3b28dad91625db2b1be629562c46b4af816ee20c42fb100efdd7f46b9e3",
+    "maize/data/processed/weather_daily.csv": "fdbbf0e4aa1ca2a4d803a2b8e9991d9e018a55327e878473d2d55370c10a4c65",
+    "maize/data/processed/year_splits.json": "da6ac80635ad5c295a8fa65a9fc5465d249f7439d08c9027ff894dcb28bdf524",
+    "maize/results/chronological_final_seed1_3/all_runs.csv": "71f2e36156c34bceff1212015489adb171de1d6c2abfcf8ee725d8a1001225e2",
+    "maize/results/chronological_final_seed1_3/protocol.json": "9cb6e61884ebaf2e7f0d6deecb78f75c6c5514588a713bdb9bf1fdc3a99741da",
+    "maize/results/tuning_20260904/final/all_runs.csv": "3dcb7aa59bacacedfa28ebd34f275563ced6c6dcad7a7022c877598b64ee25fb",
+    "maize/results/tuning_20260904/final/validation.json": "4b5ffc17de4edf4499e6a037463dcc90c72c59e6844ab8f4bb432c83d92022b7",
+    "maize/results/tuning_20260904/selected.json": "d0ac652269a11e5171c66af54d1531540ac6010d288872aa067d8d652dab9684",
+    "paper/relative_errors.py": "1d7e9a8f0177461ef0d7d8629a95112b88758424e6d602e0fb86bf190a2e6a1a",
+    "wheat/code/data.py": "bfc4ad0dfb638a860e17e9ead5a917a148cbd763e6ad9b4102be63d7f1bc2696",
+    "wheat/code/run_additional_baselines.py": "fc9fe427db60bc7b082412b1bc959dc2cc793f39066b7b863f6219972048d0dd",
+    "wheat/data/align_height_env_same_length.csv": "4f908d427313f9bad51ff0a0c7764f4e84cba0b0ae2849b62799efaa776902d1",
+    "wheat/data/kinship_matrix_astle.csv": "e88845dab6a9082510f17533a827ebf2fc64ff9eb641202b6f0b9ba472889091",
+    "wheat/results/additional_baselines_seed1_3/all_runs.csv": "ce7d50828b3bfffb1dc43cbcb841b6d29aaf503544d73636e6643c740c834c78",
+    "wheat/results/additional_baselines_seed1_3/protocol.json": "8a88a2601bea72ba75667465972a10e5b431578dfaa7dc1b97063953b75ed110",
+    "wheat/results/additional_baselines_seed1_3/validation.json": "c32c5eca24eba1a7e0656fd227830063d312344a73efc9a38ac090f462e82d1e",
+    "wheat/results/final_config.json": "e374457952001c089e5317462e02307bff80a5903c2956b0adb790c6f87d927c",
+    "wheat/results/paper_results_3seed.csv": "d293eb941f3992f1f8c44f7e302950bae6fb5a7a1eb957b86fea8e5288f48e29",
+    "wheat/results/reference/logi_pinn_onehot_original.csv": "3647d137771071bcf3cf21dbbbb23c764ad4b90b31399b2a013bad933d50c414",
+    "wheat/results/reference/lstm_nn_onehot_original.csv": "bf229cd9abe42f1b34e64daa4597feb9918b6e656aab4d925d7a3f7849cfa288",
+    "wheat/results/test_predictions_seed1_3.npz": "8cb8f551319844108ce34eca43553109e14c5ca8ba28dced585cc090903d4254",
+    "wheat/results/tuned_latent_ode_seed1_3.csv": "eaad40dd708132825a83dfdb487991dce15f761849034edcb53a222e94e1fdbd"
+  }
+}

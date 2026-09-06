@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "maize/code/run_experiment.py",
+    "--models",
+    "process",
+    "--device",
+    "cpu"
+  ],
+  "pid": 226338,
+  "cuda_visible_devices": ""
+}

@@ -18,3 +18,18 @@ paper/*.blg
 paper/*.log
 paper/*.out
 paper/*.pdf
+
+# Reproducible large/intermediate experiment artifacts. Compact metrics,
+# configurations, predictions, checkpoints, and final figures remain tracked.
+**/results/**/forest.joblib
+**/results/**/logs/
+maize/results/smoke*/
+maize/results/smoke*.log
+maize/results/chronological_seed1_3/
+maize/results/chronological_common_selection_seed1_3/
+maize/results/tuning_20260904/trials/
+
+# Third-party repository snapshots without an explicit redistribution license.
+# download_data.py fetches these locally when needed.
+maize/data/raw/github/
+maize/data/raw/source/WiDiv_analysis.Rmd

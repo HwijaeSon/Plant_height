@@ -1,0 +1,18 @@
+{
+  "model": "Logi-ODE",
+  "model_key": "logistic",
+  "seed": 0,
+  "seconds": 0.16097209230065346,
+  "n_params": 38,
+  "target_unit": "m",
+  "converged": true,
+  "train_rmse": 0.09729733451872254,
+  "train_mae": 0.06159817284683897,
+  "train_pooled_rmse": 0.09986160149222219,
+  "val_rmse": 0.05990081417829319,
+  "val_mae": 0.03986454164508415,
+  "val_pooled_rmse": 0.06689045797463294,
+  "test_rmse": 0.10590423039354163,
+  "test_mae": 0.06659496486787604,
+  "test_pooled_rmse": 0.10958217050885151
+}

@@ -1,0 +1,21 @@
+{
+  "model": "RF",
+  "model_key": "rf",
+  "seed": 1,
+  "target_unit": "relative UAV height",
+  "y_scale": 874.58028,
+  "n_params": null,
+  "seconds": 82.60366574674845,
+  "best_epoch": 0,
+  "n_trees": 100,
+  "n_tree_nodes": 1740098,
+  "train_rmse": 7.0257575970788535,
+  "train_mae": 5.412765653122704,
+  "train_pooled_rmse": 8.905997483607226,
+  "val_rmse": 132.87085164638168,
+  "val_mae": 109.03225632111844,
+  "val_pooled_rmse": 135.26808364879716,
+  "test_rmse": 139.9204486507237,
+  "test_mae": 117.99025435798671,
+  "test_pooled_rmse": 143.44829204282755
+}

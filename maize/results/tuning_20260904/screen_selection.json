@@ -1,0 +1,194 @@
+[
+  {
+    "candidate": "c056",
+    "val_mean": 49.738562040512384,
+    "val_sd": 0.0,
+    "seeds": [
+      1
+    ],
+    "n_params": 6955,
+    "config": {
+      "latent_dim": 16,
+      "g_embed_dim": 8,
+      "ode_hidden": 32,
+      "ode_layers": 1,
+      "dec_hidden": 32,
+      "enc_hidden": 16,
+      "time_mode": "thermal_rate",
+      "lr": 0.003,
+      "weight_decay": 1e-05,
+      "physic": 0.01,
+      "ymax": 0.5,
+      "mono": 0.0,
+      "epochs": 1500
+    }
+  },
+  {
+    "candidate": "c054",
+    "val_mean": 50.87676132150602,
+    "val_sd": 0.0,
+    "seeds": [
+      1
+    ],
+    "n_params": 5347,
+    "config": {
+      "latent_dim": 16,
+      "g_embed_dim": 4,
+      "ode_hidden": 64,
+      "ode_layers": 1,
+      "dec_hidden": 32,
+      "enc_hidden": 8,
+      "time_mode": "thermal_rate",
+      "lr": 0.0005,
+      "weight_decay": 0.0,
+      "physic": 0.1,
+      "ymax": 0.5,
+      "mono": 0.0,
+      "epochs": 1500
+    }
+  },
+  {
+    "candidate": "c030",
+    "val_mean": 51.664136317043535,
+    "val_sd": 0.0,
+    "seeds": [
+      1
+    ],
+    "n_params": 8083,
+    "config": {
+      "latent_dim": 16,
+      "g_embed_dim": 4,
+      "ode_hidden": 16,
+      "ode_layers": 1,
+      "dec_hidden": 32,
+      "enc_hidden": 32,
+      "time_mode": "calendar",
+      "lr": 0.005,
+      "weight_decay": 0.0,
+      "physic": 0.5,
+      "ymax": 0.5,
+      "mono": 0.0,
+      "epochs": 1500
+    }
+  },
+  {
+    "candidate": "c042",
+    "val_mean": 51.9492211830104,
+    "val_sd": 0.0,
+    "seeds": [
+      1
+    ],
+    "n_params": 8531,
+    "config": {
+      "latent_dim": 8,
+      "g_embed_dim": 4,
+      "ode_hidden": 32,
+      "ode_layers": 2,
+      "dec_hidden": 16,
+      "enc_hidden": 32,
+      "time_mode": "thermal_rate",
+      "lr": 0.001,
+      "weight_decay": 1e-06,
+      "physic": 0.1,
+      "ymax": 0.5,
+      "mono": 0.0,
+      "epochs": 1500
+    }
+  },
+  {
+    "candidate": "c049",
+    "val_mean": 51.99160717241886,
+    "val_sd": 0.0,
+    "seeds": [
+      1
+    ],
+    "n_params": 6371,
+    "config": {
+      "latent_dim": 32,
+      "g_embed_dim": 4,
+      "ode_hidden": 32,
+      "ode_layers": 2,
+      "dec_hidden": 16,
+      "enc_hidden": 8,
+      "time_mode": "calendar",
+      "lr": 0.0005,
+      "weight_decay": 1e-06,
+      "physic": 0.1,
+      "ymax": 0.01,
+      "mono": 0.0,
+      "epochs": 1500
+    }
+  },
+  {
+    "candidate": "c052",
+    "val_mean": 52.221798298786666,
+    "val_sd": 0.0,
+    "seeds": [
+      1
+    ],
+    "n_params": 9003,
+    "config": {
+      "latent_dim": 8,
+      "g_embed_dim": 8,
+      "ode_hidden": 16,
+      "ode_layers": 1,
+      "dec_hidden": 32,
+      "enc_hidden": 32,
+      "time_mode": "calendar",
+      "lr": 0.01,
+      "weight_decay": 0.0001,
+      "physic": 0.5,
+      "ymax": 0.5,
+      "mono": 0.0,
+      "epochs": 1500
+    }
+  },
+  {
+    "candidate": "c047",
+    "val_mean": 52.4177579031489,
+    "val_sd": 0.0,
+    "seeds": [
+      1
+    ],
+    "n_params": 5347,
+    "config": {
+      "latent_dim": 16,
+      "g_embed_dim": 4,
+      "ode_hidden": 64,
+      "ode_layers": 1,
+      "dec_hidden": 32,
+      "enc_hidden": 8,
+      "time_mode": "calendar",
+      "lr": 0.003,
+      "weight_decay": 0.001,
+      "physic": 0.1,
+      "ymax": 0.5,
+      "mono": 0.0,
+      "epochs": 1500
+    }
+  },
+  {
+    "candidate": "c038",
+    "val_mean": 52.78737677976526,
+    "val_sd": 0.0,
+    "seeds": [
+      1
+    ],
+    "n_params": 7163,
+    "config": {
+      "latent_dim": 32,
+      "g_embed_dim": 8,
+      "ode_hidden": 16,
+      "ode_layers": 1,
+      "dec_hidden": 16,
+      "enc_hidden": 16,
+      "time_mode": "thermal_feature",
+      "lr": 0.005,
+      "weight_decay": 0.001,
+      "physic": 2.0,
+      "ymax": 0.5,
+      "mono": 0.0,
+      "epochs": 1500
+    }
+  }
+]

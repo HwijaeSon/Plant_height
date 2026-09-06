@@ -45,5 +45,27 @@ machine-readable configuration is in `results/final_config.json`.
 - `results/test_predictions_seed1_3.npz`: predictions used by the paper plot.
 - `results/checkpoints/`: exact checkpoints for seeds 1--3.
 - `results/reference/`: original one-hot LSTM-NN and Logi-PINN output tables.
+  The compact test-trajectory archive used by the manuscript figure records
+  its upstream commit and source-file hashes in the adjacent provenance JSON.
 - `results/TUNING_RESULTS.md`: validation-only capacity and hyperparameter
   selection summary.
+
+## Additional process and RF baselines
+
+Logi-ODE, Temp-ODE, and RF complete the six-model RMSE comparison using the
+same 2018/2019 training, 2022 validation, and 2021 test split. The original
+initial-fill scoring mask is retained. ODE parameters are fitted once on
+training plots, and RF uses 100 trees with seeds 1--3. The temperature model
+integrates the daily temperature response over the cropped 170-day window.
+
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python wheat/code/run_additional_baselines.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python paper/relative_errors.py
+```
+
+Completed results are protected from accidental overwrite; use `--output`
+with a new directory to repeat fitting. Model parameters, RF models, all
+split predictions, RMSE/MAE, and verification records are in
+`results/additional_baselines_seed1_3/`. These are new local baseline fits;
+the LSTM-NN and Logi-PINN entries retain their original reference results.
+See the [three-dataset relative-error table](../paper/relative_errors/README.md).

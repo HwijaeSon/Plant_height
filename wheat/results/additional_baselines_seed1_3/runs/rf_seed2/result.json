@@ -1,0 +1,19 @@
+{
+  "model": "RF",
+  "model_key": "rf",
+  "seed": 2,
+  "seconds": 0.843481045216322,
+  "n_params": null,
+  "target_unit": "m",
+  "n_trees": 100,
+  "n_tree_nodes": 365000,
+  "train_rmse": 0.0050110650715386885,
+  "train_mae": 0.0026732327441777353,
+  "train_pooled_rmse": 0.005457676267629093,
+  "val_rmse": 0.08814390644466627,
+  "val_mae": 0.06047767801732496,
+  "val_pooled_rmse": 0.09068327568226793,
+  "test_rmse": 0.0992967254922497,
+  "test_mae": 0.05390610369623328,
+  "test_pooled_rmse": 0.100300284529107
+}

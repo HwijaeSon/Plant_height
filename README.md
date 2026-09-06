@@ -14,6 +14,7 @@ The public-facing files are organized by dataset:
 │   ├── data/       # supplementary workbook and processed stem lengths
 │   ├── code/       # preprocessing, baselines, training, plotting
 │   └── results/    # 3-seed paper outputs, fitted ODE parameters, figures
+├── maize/          # Sweet et al. (2024) data and 3-seed model comparison
 ├── paper/          # LaTeX manuscript, bibliography, and final figures
 └── legacy/         # exploratory and superseded experiments (git-ignored)
 ```
@@ -38,6 +39,25 @@ Dataset-specific commands and result provenance are documented in
 [`wheat/README.md`](wheat/README.md) and
 [`arabidopsis/README.md`](arabidopsis/README.md). The manuscript notes are in
 [`paper/README.md`](paper/README.md).
+
+The additional [maize dataset](maize/README.md) includes a completed
+year-held-out comparison: 402 shared genotypes, 3,072 plot trajectories, and
+31,894 observed targets. Its UAV heights use relative units, not metres.
+Source-file discrepancies and preprocessing are documented in the
+[maize data report](maize/reports/dataset_report.md).
+The [maize model comparison](maize/results/chronological_final_seed1_3/comparison.md)
+reports a 2021 test RMSE of `79.611 ± 13.117` relative-height units for our
+latent Neural ODE versus `98.767 ± 10.196` for LSTM-NN (seeds 1--3).
+The subsequent [ours-only maize tuning](maize/results/tuning_20260904/final/README.md)
+selected the configuration using 2020 validation only and reduced its 2021
+test rRMSE from `25.84 ± 4.26%` to `18.40 ± 1.42%`.
+
+The [three-dataset relative-error comparison](paper/relative_errors/README.md)
+expresses the existing RMSE and MAE as percentages of each evaluation split's
+mean target. Its main maize `Ours` row now uses that validation-selected tuned
+result; the pre-tuning row remains in the full table. It includes all available
+baselines and explicitly documents the initial fill points in the original
+wheat scoring mask.
 
 ## Audited paper results
 
