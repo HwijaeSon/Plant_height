@@ -82,29 +82,70 @@ where $f_{\theta}$ is a hyperbolic-tangent multilayer perceptron (MLP). The envi
 \end{equation}
 For wheat, validation-only capacity tuning selected a 16-dimensional latent state, four-dimensional genotype embedding, one ODE hidden layer of width 16, decoder width 16, and LSTM encoder width 8, for 1,655 trainable parameters. The maize search selected latent dimension 8, genotype embedding 8, one ODE hidden layer of width 16, decoder width 32, and encoder width 32, for 9,003 parameters. Arabidopsis used the pre-tuning full-capacity instance: latent dimension 16, genotype embedding 4, two ODE hidden layers of width 32, decoder width 32, and encoder width 16, for 4,607 parameters. All experiments use the same continuous-time model family; capacity was selected separately where a validation search was conducted.
 
-\subsection{Weak logistic regularization}
+\subsection{Observable-space logistic regularization and derivative computation}
 
-The latent vector field is learned freely, but the decoded phenotype is weakly encouraged to resemble genotype-specific logistic growth. A parameter head maps the genotype embedding to
+The latent vector field is learned freely, while the decoded phenotype is weakly encouraged to have a genotype-specific logistic growth rate. For clarity, let
+\begin{equation}
+ G_{\psi}(\mathbf z)
+ =\operatorname{LeakyReLU}_{0.01}\!\left[D_{\psi}(\mathbf z)\right]
+\end{equation}
+denote the complete scalar decoder in Eq.~\eqref{eq:decoder}, including its output activation, and let $\mathbf F_{\theta}$ denote the right-hand side of Eq.~\eqref{eq:ode}. The decoder has no explicit time input, so its dependence on time is entirely through the latent trajectory. For trajectory $n$, belonging to genotype $g(n)$, we therefore have
+\begin{equation}
+ \hat y_n(\tau)=G_{\psi}\!\left(\mathbf z_n(\tau)\right),
+ \qquad
+ \frac{d\hat y_n}{d\tau}
+ =\nabla_{\mathbf z}G_{\psi}\!\left(\mathbf z_n(\tau)\right)^{\!\top}
+ \mathbf F_{\theta}\!\left(\mathbf z_n(\tau),T_n(\tau),
+ \mathbf e_{g(n)},\tau\right).
+ \label{eq:decoder_chain_tau}
+\end{equation}
+Equation~\eqref{eq:decoder_chain_tau} is the directional derivative of the decoder along the learned latent flow. It does not assume that any individual latent coordinate represents height or follows logistic dynamics.
+
+The ODE is solved on normalized time $\tau\in[0,1]$, whereas the logistic growth rate is expressed per physical day. If $t=t_0+S\tau$, where $S=t_{\mathrm{last}}-t_0$ is the physical duration of the integration interval, a second application of the chain rule gives
+\begin{equation}
+ \frac{d\hat y_n}{dt}
+ =\frac{1}{S}\frac{d\hat y_n}{d\tau}
+ =\frac{1}{S}
+ \nabla_{\mathbf z}G_{\psi}\!\left(\mathbf z_n(\tau)\right)^{\!\top}
+ \mathbf F_{\theta}\!\left(\mathbf z_n(\tau),T_n(\tau),
+ \mathbf e_{g(n)},\tau\right).
+ \label{eq:decoder_chain_day}
+\end{equation}
+The values of $S$ were 169, 95, and 22 days for wheat, maize, and Arabidopsis, respectively. This conversion is necessary because a derivative with respect to normalized time would otherwise change merely when the length of the study interval changed.
+
+The derivative in Eq.~\eqref{eq:decoder_chain_day} is evaluated by automatic differentiation rather than by finite differences of predicted or observed heights. At every daily integration node $(n,j)$, the vector field is re-evaluated at the stored latent state to obtain $\mathbf F_{\theta}(\mathbf z_{nj},T_{nj},\mathbf e_{g(n)},\tau_j)$. In the same forward computation, reverse-mode automatic differentiation evaluates the decoder gradient $\nabla_{\mathbf z}G_{\psi}(\mathbf z_{nj})$. Operationally, the implementation forms
+\begin{equation}
+ Q=\sum_{n=1}^{N}\sum_{j=1}^{J}G_{\psi}(\mathbf z_{nj}),
+ \qquad
+ \frac{\partial Q}{\partial\mathbf z_{nj}}
+ =\nabla_{\mathbf z}G_{\psi}(\mathbf z_{nj}),
+ \label{eq:autodiff_decoder}
+\end{equation}
+where the equality follows because the decoder is applied independently to each trajectory--time pair. The elementwise inner product of this gradient and the vector field gives $d\hat y_n/d\tau$, which is divided by $S$ to obtain $d\hat y_n/dt$. Thus, no derivative target is estimated from sparse, irregular, or noisy phenotype measurements, and no finite-difference interval has to be chosen. The LeakyReLU decoder is piecewise differentiable, so the same operation differentiates the entire decoder, including the output activation.
+
+The derivative computation is retained in the training computation graph. In particular, the automatic-differentiation call is made with graph construction enabled, and the fixed-step Runge--Kutta operations are not detached. Back-propagating the final objective can therefore update the decoder, the neural vector field, the initial-state temperature encoder, and the genotype embedding through the derivative residual. It also updates the genotype-specific logistic parameter head described below. This is what allows a loss defined on $d\hat y/dt$ to train the original model parameters even though height derivatives are never provided as observations.
+
+A small MLP maps each genotype embedding to two constrained logistic parameters,
 \begin{equation}
  r_g=\sigma(a_g), \qquad K_g=1+\tanh(b_g),
+ \label{eq:logistic_parameters}
 \end{equation}
-where $r_g\in(0,1)$ and $K_g\in(0,2)$ in normalized phenotype units. The derivative of decoded height is calculated by the chain rule,
+where $r_g\in(0,1)$ day$^{-1}$ and $K_g\in(0,2)$ in the units used to train the phenotype output. Those units are metres for wheat and Arabidopsis and training-scaled relative-height units for maize; maize predictions are multiplied by the training-set scale factor for reporting. The pointwise logistic residual is
 \begin{equation}
- \frac{d\hat y_g}{dt}
- =\frac{1}{d_{\tau}}\frac{\partial D_{\psi}}{\partial\mathbf z}
-  \frac{d\mathbf z_g}{d\tau},
+ \varepsilon_{nj}
+ =\frac{d\hat y_n(t_j)}{dt}
+ -r_{g(n)}\hat y_n(t_j)
+ \left(1-\frac{\hat y_n(t_j)}{K_{g(n)}}\right),
 \end{equation}
-where $d_{\tau}$ is the number of physical days represented by one normalized time unit. The physics residual is
+and the corresponding physics loss is
 \begin{equation}
  \mathcal L_{\mathrm{phys}}
- =\frac{1}{N J}\sum_{g,j}
- \left[
- \frac{d\hat y_g(t_j)}{dt}
- -r_g\hat y_g(t_j)\left(1-\frac{\hat y_g(t_j)}{K_g}\right)
- \right]^2.
+ =\frac{1}{N J}\sum_{n=1}^{N}\sum_{j=1}^{J}\varepsilon_{nj}^{2}.
  \label{eq:physics}
 \end{equation}
-Unlike a logistic ODE baseline, Eq.~\eqref{eq:physics} is a soft regularizer: the latent neural vector field remains the trajectory-generating model.
+The $J$ integration nodes act as deterministic collocation points. Consequently, Eq.~\eqref{eq:physics} is evaluated at every daily grid point of every training trajectory, including days at which phenotype is unobserved. It is not evaluated at the intermediate stage states used inside the Runge--Kutta update, and validation and test targets never enter this loss. In the sparse Arabidopsis setting, for example, four measured stem lengths determine the data term, but the physics term can still regularize the predicted daily trajectory over the full 23-day grid. These unobserved-grid residuals add a growth-shape prior rather than additional phenotype information.
+
+Unlike a logistic ODE baseline, Eq.~\eqref{eq:physics} does not generate the trajectory and is not imposed as a hard equality. The learned, temperature-conditioned latent vector field remains the trajectory-generating model, and the residual only penalizes disagreement between its decoded instantaneous growth rate and a logistic reference rate. The model can therefore depart from logistic behaviour when this improves agreement with the observed trajectories.
 
 The observed-data term is the mean of the per-trajectory masked RMSE,
 \begin{equation}
@@ -118,10 +159,16 @@ and the full objective is
 \begin{equation}
  \mathcal L=\mathcal L_{\mathrm{data}}
  +\lambda_{\mathrm{phys}}\mathcal L_{\mathrm{phys}}
- +\lambda_K\,\frac{1}{N}\sum_n\left|\max_j\hat y_{nj}-K_{g(n)}\right|.
+ +\lambda_K\mathcal L_K,
  \label{eq:loss}
 \end{equation}
-Wheat and Arabidopsis used $\lambda_{\mathrm{phys}}=2$ and $\lambda_K=0.1$; validation-only maize tuning selected $\lambda_{\mathrm{phys}}=0.5$ and $\lambda_K=0.5$. A monotonicity term and an explicit $r_g$ penalty were available but assigned zero weight in all reported configurations.
+where
+\begin{equation}
+ \mathcal L_K
+ =\frac{1}{N}\sum_{n=1}^{N}
+ \left|\max_j\hat y_{nj}-K_{g(n)}\right|
+\end{equation}
+ties the genotype-specific carrying capacity to the largest predicted phenotype on each training trajectory. The distinction between the two principal terms is important: $\mathcal L_{\mathrm{data}}$ uses only positions selected by the observation mask $m_{nj}$, whereas $\mathcal L_{\mathrm{phys}}$ and $\mathcal L_K$ use the complete predicted grid. Wheat and Arabidopsis used $\lambda_{\mathrm{phys}}=2$ and $\lambda_K=0.1$; validation-only maize tuning selected $\lambda_{\mathrm{phys}}=0.5$ and $\lambda_K=0.5$. These terms were active from the first training epoch. A monotonicity term and an explicit $r_g$ penalty were available in the implementation but assigned zero weight in all reported configurations. Adam weight decay of $10^{-4}$ was applied separately to the trainable parameters.
 
 \subsection{Wheat field dataset and year-held-out protocol}
 \label{subsec:wheatdata}
