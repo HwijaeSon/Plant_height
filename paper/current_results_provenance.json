@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "sources_sha256": {
+    "experiments/phytoode_config.json": "adce6a4fb9a05bdaa030f00228b5e142b74f1f59fe9a911aa8a57dedc4cd8d0c",
+    "experiments/results/joint_lambda_tuning_20260908/all_baselines.csv": "2f2544f64224c6c8cc5540887deb9911cd86df9d65301fe4f2bc9435488dcf46",
+    "experiments/results/adopted_phytoode_20260908/comparison.csv": "7d8e6b15f50a0c88189ac01d9a274fa93f27ac91b353005651cdb4744ceb79a1",
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/final/selected_phyto/seed1/predictions.npz": "0cbdd07068243bba781277d18f653617b19d1382726e687e4dc07fd4f5b6ccef",
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/final/selected_phyto/seed2/predictions.npz": "01eb19f328bc0d8ee3d01c83ad7b4682ecef8971bbb394ddf3d9906598325c53",
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/final/selected_phyto/seed3/predictions.npz": "b0d1613bf2c63cc916d242b1730e7e27b837e12aaea3627d93f6829209d69835"
+  },
+  "checks": [
+    "18 current PhytoODE/control cells match the source mean and sample SD",
+    "Bold markings match the lowest mean among the seven main-table models",
+    "Arabidopsis condition-specific scores recomputed from adopted predictions",
+    "LaTeX braces, labels and references checked"
+  ],
+  "latex_compilation": "not performed: no local LaTeX engine",
+  "new_training_runs": 0
+}

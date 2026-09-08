@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import importlib.util
+import json
 import sys
 
 import matplotlib.pyplot as plt
@@ -13,6 +14,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 OUT = Path(__file__).resolve().parent / "figures"
 OUT.mkdir(exist_ok=True)
+PROFILE = json.loads((ROOT / "experiments/phytoode_config.json").read_text())
 
 # Fixed across all three manuscript figures. The sequence is arranged so a
 # four-column Matplotlib legend has the same two-row order as the paper legend.
@@ -96,6 +98,26 @@ def save_figure(fig, stem):
     plt.close(fig)
 
 
+def adopted_test_predictions(dataset):
+    """Read the audited predictions attached to the adopted checkpoint seeds."""
+    config = PROFILE["datasets"][dataset]
+    trials = ROOT / Path(config["historical_joint_selection"]).parent / "final/selected_phyto"
+    arrays = []
+    metadata = None
+    for seed in config["seeds"]:
+        result = json.loads((trials / f"seed{seed}/result.json").read_text())
+        assert (result["lambda_ode"], result["lambda_k"]) == (config["lambda_ode"], config["lambda_k"])
+        assert result["checkpoint_sha256"] == config["checkpoints"][str(seed)]["sha256"]
+        with np.load(trials / f"seed{seed}/predictions.npz", allow_pickle=False) as saved:
+            current = {key: saved[key] for key in ("test_target", "test_mask", "test_genotype")}
+            if metadata is not None:
+                for key in current:
+                    np.testing.assert_array_equal(current[key], metadata[key])
+            metadata = current
+            arrays.append(saved["test"])
+    return np.stack(arrays), metadata
+
+
 def wheat_examples():
     ours = np.load(ROOT / "wheat/results/test_predictions_seed1_3.npz")
     reference = np.load(
@@ -103,6 +125,10 @@ def wheat_examples():
     )
     genotypes = ours["genotype"].astype(int)
     np.testing.assert_array_equal(reference["genotype"], genotypes)
+    adopted, metadata = adopted_test_predictions("wheat")
+    np.testing.assert_array_equal(metadata["test_genotype"], genotypes)
+    np.testing.assert_array_equal(metadata["test_mask"], ours["mask"])
+    np.testing.assert_array_equal(metadata["test_target"], ours["y"])
 
     baseline_root = ROOT / "wheat/results/additional_baselines_seed1_3/runs"
 
@@ -112,7 +138,7 @@ def wheat_examples():
         )["test"]
 
     predictions = {
-        "Latent Neural ODE": ours["pred"].mean(axis=0),
+        "Latent Neural ODE": adopted.mean(axis=0),
         "Random forest": np.mean(
             [load_baseline("rf", seed) for seed in (1, 2, 3)], axis=0
         ),
@@ -165,6 +191,7 @@ def wheat_examples():
 
 
 def arabidopsis_examples():
+    adopted, metadata = adopted_test_predictions("arabidopsis")
     data = pd.read_csv(ROOT / "arabidopsis/results/predictions_seed1_3.csv")
     data = data[(data["split"] == "test") & (data["genotype"] == "Col-0")]
     stochastic = {"Latent Neural ODE (ours)", "RF", "Logi-PINN", "LSTM-NN"}
@@ -197,6 +224,16 @@ def arabidopsis_examples():
                 .groupby("day_after_sowing", as_index=False)
                 .predicted_length_m.mean()
             )
+            if name == "Latent Neural ODE":
+                observed_mask = np.isin(np.arange(27, 50), observed.day_after_sowing)
+                matches = ((metadata["test_genotype"] == "Col-0")
+                           & np.all(metadata["test_mask"].astype(bool) == observed_mask, axis=1))
+                assert matches.sum() == 1
+                index = int(np.flatnonzero(matches)[0])
+                np.testing.assert_allclose(metadata["test_target"][index, observed_mask],
+                                           observed.observed_length_m, atol=1e-8)
+                curve["predicted_length_m"] = adopted[:, index].mean(axis=0)[
+                    curve.day_after_sowing.to_numpy(dtype=int) - 27]
             ax.plot(
                 curve.day_after_sowing,
                 curve.predicted_length_m * 100,
@@ -222,6 +259,8 @@ def arabidopsis_examples():
 
 
 def maize_examples():
+    assert (PROFILE["datasets"]["maize"]["lambda_ode"],
+            PROFILE["datasets"]["maize"]["lambda_k"]) == (0.5, 0.5)
     spec = importlib.util.spec_from_file_location(
         "paper_maize_data", ROOT / "maize/code/data.py"
     )
