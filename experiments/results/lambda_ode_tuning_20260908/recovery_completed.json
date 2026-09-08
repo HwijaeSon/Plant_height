@@ -1,0 +1,6 @@
+{
+  "status": "complete",
+  "finished_unix": 1788836762.0073607,
+  "recovery_manifest_sha256": "a211ef845343099b26b7329b0efb06cd1c32b845a12ee01846f88b72c88a3f33",
+  "prefix_verification": "passed for each interrupted attempt"
+}

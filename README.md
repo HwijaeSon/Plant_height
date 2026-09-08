@@ -64,6 +64,18 @@ PhytoODE architectures and training settings with the logistic ODE residual
 removed, and with both biological loss terms removed, on all three datasets.
 It preserves paired initialization and validation-only checkpoint selection.
 
+The subsequent [ODE-residual coefficient search](experiments/results/lambda_ode_tuning_20260908/README.md)
+varies only the residual weight and selects it using three-seed validation
+errors. It compares the selected positive weight with the original weight,
+zero residual weight, and removal of both biological losses. All new candidate
+training runs exclude test evaluation; final follow-up scores reuse the test
+sets already inspected in the preceding ablation.
+The selected weights are approximately 3.162 (wheat), 500 (maize), and 0.5
+(Arabidopsis). Compared with zero residual weight, mean test error decreases
+for wheat and Arabidopsis but increases for maize, despite lower validation
+error. The search therefore does not establish a uniform test benefit from
+the ODE-residual term.
+
 ## Audited paper results
 
 - Wheat tuned latent Neural ODE (1,655 parameters; seeds 1--3): test RMSE

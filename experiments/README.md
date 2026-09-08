@@ -1,4 +1,4 @@
-# Matched physics-loss ablation
+# Physics-loss ablation and coefficient tuning
 
 `physics_ablation.py` imports the existing wheat, maize and Arabidopsis data
 loaders and latent ODE implementations. It compares the manuscript's fixed
@@ -47,3 +47,57 @@ validation-only selection and agreement between saved predictions and metrics.
 The [Korean interpretation](results/physics_ablation_20260908/interpretation_ko.md)
 distinguishes the derivative residual from maximum-height regularization and
 explains the limits of the observed three-seed differences.
+
+## Validation-only ODE-residual coefficient tuning
+
+`tune_lambda_ode.py` varies only the logistic derivative-residual coefficient.
+The maximum-height coefficient, architecture, paired initialization, optimizer,
+training length, data splits and original checkpoint selection rule stay fixed.
+Wheat and Arabidopsis run concurrently on GPU 2; maize runs on GPU 3. Each
+training invocation records only train/validation metrics.
+
+The search screens a fixed positive grid with seed 1, refines its best interval
+once, and confirms the top three positive candidates with seeds 2 and 3. The
+original coefficient and zero-residual references are reused. Final ranking
+uses three-seed mean validation RMSE and includes zero. The best positive
+coefficient and the overall winner, which may be zero, are both reported.
+All dataset selections are frozen before evaluating the selected positive
+coefficient on test once per seed.
+
+```bash
+.venv/bin/python experiments/tune_lambda_ode.py \
+  --short-gpu 2 --long-gpu 3 --maize-workers 2 \
+  --output experiments/results/lambda_ode_repeat
+.venv/bin/python experiments/lambda_ode_status.py \
+  --output experiments/results/lambda_ode_repeat
+.venv/bin/python experiments/summarize_lambda_ode.py \
+  --output experiments/results/lambda_ode_repeat
+```
+
+Use a fresh output directory. The search records source/data hashes and checks
+the original seed-1 training prefix before new trials. The final audit checks
+paired initialization, unchanged settings, validation-only selection, checkpoint
+hashes and metrics recomputed from saved predictions. Each dataset's
+`selected_config.json` stores its selected effective coefficient and checkpoint
+references. A single full-length selected-coefficient run can be reproduced with
+`lambda_ode_trial.py train --dataset DATASET --seed SEED --lambda-ode VALUE
+--output NEW_DIRECTORY`; it produces train/validation results only.
+
+The [2026-09-08 coefficient search](results/lambda_ode_tuning_20260908/README.md)
+contains all-split RMSE / relative RMSE tables, validation sensitivity and test
+comparison figures, a LaTeX table, selected configurations and an audit. Its
+[Korean interpretation](results/lambda_ode_tuning_20260908/interpretation_ko.md)
+distinguishes validation selection from observed test performance.
+
+The preceding ablation's test scores were already inspected before this search.
+These final test scores are follow-up evaluations on reused test sets, not a
+new independent confirmation. Three seeds describe initialization variation;
+they do not establish statistical significance or uncertainty across years.
+
+`resume_lambda_ode.py --output DIRECTORY` supports recovery from an interrupted
+confirmation phase before final test evaluation. It retains completed trials
+and frozen finalist lists, preserves incomplete attempts under `diagnostics/`,
+and restarts incomplete jobs with their original seeds and full schedules.
+The interrupted training prefix must match the replacement run. Recovery has
+its own manifest and code hash; it does not modify the original search protocol
+or frozen training sources. The 2026-09-08 search required one such recovery.

@@ -1,0 +1,36 @@
+{
+  "dataset": "wheat",
+  "seed": 3,
+  "lambda_ode": 3.16227766,
+  "checkpoint_sha256": "3d5925010c6277f6d0c3f634cc4ed551121c4dcbd94ca31eb86077fc56d2d3ec",
+  "selection_sha256": "d84f858f61048717cb3d84a56e7e4ab89ae40f6d7096bafc6693643d54a98224",
+  "n_params": 1655,
+  "metrics": {
+    "train": {
+      "rmse": 0.02227562433332661,
+      "mae": 0.013659933480225539,
+      "relative_error": 7.441431353241643,
+      "mean_target": 0.29934596283849185,
+      "n_curves": 38,
+      "n_scored_points": 2394
+    },
+    "val": {
+      "rmse": 0.036786218645349984,
+      "mae": 0.025798912196551387,
+      "relative_error": 11.03656563361684,
+      "mean_target": 0.3333121902822827,
+      "n_curves": 19,
+      "n_scored_points": 798
+    },
+    "test": {
+      "rmse": 0.030628078969927964,
+      "mae": 0.019793047023821925,
+      "relative_error": 10.340782612063194,
+      "mean_target": 0.2961872434509775,
+      "n_curves": 19,
+      "n_scored_points": 1368
+    }
+  },
+  "unit": "m",
+  "test_evaluations": 1
+}

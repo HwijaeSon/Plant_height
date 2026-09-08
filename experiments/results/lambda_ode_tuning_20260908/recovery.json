@@ -1,0 +1,375 @@
+{
+  "status": "planned",
+  "started_unix": 1788836089.6362197,
+  "protocol_sha256": "bbeb940fe9deb1431294f25d9c7695329b7016f664ef0726c758570918cf8792",
+  "recovery_code_sha256": "25d5a83c31b181325eda3f5252e1ffe5de3bf7aebbe0cb9ee54c7d2fb663478a",
+  "reason": "Previous controller and a training process received termination signals; sender not identified. No model numerical/OOM error was recorded.",
+  "policy": "Reuse completed trials and frozen finalists. Restart interrupted jobs from the same seed with the entire original schedule; match the recorded prefix. Preserve selection and test policies.",
+  "jobs": [
+    {
+      "lambda_ode": 3.16227766,
+      "seed": 2,
+      "dataset": "wheat",
+      "output": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed2",
+      "gpu": 2,
+      "interrupted_epoch": 578,
+      "interrupted_prefix": [
+        {
+          "epoch": 10,
+          "data_loss": 0.1995477229356765,
+          "objective": 0.2070791572332382,
+          "val_rmse": 0.1912416666746139
+        },
+        {
+          "epoch": 20,
+          "data_loss": 0.0878858715295791,
+          "objective": 0.0979401022195816,
+          "val_rmse": 0.1049784570932388
+        },
+        {
+          "epoch": 30,
+          "data_loss": 0.0741932541131973,
+          "objective": 0.0808582603931427,
+          "val_rmse": 0.1030181124806404
+        },
+        {
+          "epoch": 40,
+          "data_loss": 0.0541885830461978,
+          "objective": 0.0567213930189609,
+          "val_rmse": 0.0751961842179298
+        },
+        {
+          "epoch": 50,
+          "data_loss": 0.0498776733875274,
+          "objective": 0.0517619438469409,
+          "val_rmse": 0.0602867677807807
+        },
+        {
+          "epoch": 60,
+          "data_loss": 0.0416379570960998,
+          "objective": 0.0427843444049358,
+          "val_rmse": 0.0499788410961627
+        },
+        {
+          "epoch": 70,
+          "data_loss": 0.0392505265772342,
+          "objective": 0.0403797440230846,
+          "val_rmse": 0.045179083943367
+        },
+        {
+          "epoch": 80,
+          "data_loss": 0.0369403585791587,
+          "objective": 0.0381133891642093,
+          "val_rmse": 0.0461301915347576
+        },
+        {
+          "epoch": 90,
+          "data_loss": 0.0355049222707748,
+          "objective": 0.0370329730212688,
+          "val_rmse": 0.0473791100084781
+        },
+        {
+          "epoch": 100,
+          "data_loss": 0.0370417833328247,
+          "objective": 0.0389467924833297,
+          "val_rmse": 0.0436820387840271
+        },
+        {
+          "epoch": 110,
+          "data_loss": 0.0348883271217346,
+          "objective": 0.0369562581181526,
+          "val_rmse": 0.0445662699639797
+        },
+        {
+          "epoch": 120,
+          "data_loss": 0.0336464345455169,
+          "objective": 0.0356845669448375,
+          "val_rmse": 0.0469750352203846
+        },
+        {
+          "epoch": 130,
+          "data_loss": 0.0332756713032722,
+          "objective": 0.0354334488511085,
+          "val_rmse": 0.0461981520056724
+        },
+        {
+          "epoch": 140,
+          "data_loss": 0.0323939807713031,
+          "objective": 0.0344684869050979,
+          "val_rmse": 0.0484623648226261
+        },
+        {
+          "epoch": 150,
+          "data_loss": 0.0322051309049129,
+          "objective": 0.0342652276158332,
+          "val_rmse": 0.0466655865311622
+        },
+        {
+          "epoch": 160,
+          "data_loss": 0.0327183417975902,
+          "objective": 0.0349057205021381,
+          "val_rmse": 0.0429703965783119
+        },
+        {
+          "epoch": 170,
+          "data_loss": 0.0365426801145076,
+          "objective": 0.0387314595282077,
+          "val_rmse": 0.0499498210847377
+        },
+        {
+          "epoch": 180,
+          "data_loss": 0.0339542366564273,
+          "objective": 0.0362846404314041,
+          "val_rmse": 0.0527646355330944
+        },
+        {
+          "epoch": 190,
+          "data_loss": 0.0317725129425525,
+          "objective": 0.0337775386869907,
+          "val_rmse": 0.0403747037053108
+        },
+        {
+          "epoch": 200,
+          "data_loss": 0.0318182669579982,
+          "objective": 0.0336777195334434,
+          "val_rmse": 0.0476522967219352
+        },
+        {
+          "epoch": 210,
+          "data_loss": 0.031228570267558,
+          "objective": 0.0332404635846614,
+          "val_rmse": 0.0439778082072734
+        },
+        {
+          "epoch": 220,
+          "data_loss": 0.0308955423533916,
+          "objective": 0.0330347716808319,
+          "val_rmse": 0.0440453551709651
+        },
+        {
+          "epoch": 230,
+          "data_loss": 0.035312820225954,
+          "objective": 0.0372861362993717,
+          "val_rmse": 0.0500125065445899
+        },
+        {
+          "epoch": 240,
+          "data_loss": 0.0313052646815776,
+          "objective": 0.0332862213253974,
+          "val_rmse": 0.0484562069177627
+        },
+        {
+          "epoch": 250,
+          "data_loss": 0.0308180022984743,
+          "objective": 0.0327198430895805,
+          "val_rmse": 0.0433040261268615
+        },
+        {
+          "epoch": 260,
+          "data_loss": 0.0315139144659042,
+          "objective": 0.0333966016769409,
+          "val_rmse": 0.0437012612819671
+        },
+        {
+          "epoch": 270,
+          "data_loss": 0.0316277034580707,
+          "objective": 0.0336252525448799,
+          "val_rmse": 0.0422889962792396
+        },
+        {
+          "epoch": 280,
+          "data_loss": 0.0322029553353786,
+          "objective": 0.0345558412373065,
+          "val_rmse": 0.0409909822046756
+        },
+        {
+          "epoch": 290,
+          "data_loss": 0.0311798751354217,
+          "objective": 0.0331060402095317,
+          "val_rmse": 0.0448611341416835
+        },
+        {
+          "epoch": 300,
+          "data_loss": 0.0310135651379823,
+          "objective": 0.0329610407352447,
+          "val_rmse": 0.0442031361162662
+        },
+        {
+          "epoch": 310,
+          "data_loss": 0.0305519923567771,
+          "objective": 0.03248867765069,
+          "val_rmse": 0.0428061969578266
+        },
+        {
+          "epoch": 320,
+          "data_loss": 0.0304438471794128,
+          "objective": 0.0324699878692626,
+          "val_rmse": 0.0438545942306518
+        },
+        {
+          "epoch": 330,
+          "data_loss": 0.0332349687814712,
+          "objective": 0.0351551696658134,
+          "val_rmse": 0.0403717495501041
+        },
+        {
+          "epoch": 340,
+          "data_loss": 0.0308326929807662,
+          "objective": 0.0328694693744182,
+          "val_rmse": 0.0457467250525951
+        },
+        {
+          "epoch": 350,
+          "data_loss": 0.031154952943325,
+          "objective": 0.0331399664282798,
+          "val_rmse": 0.0451434440910816
+        },
+        {
+          "epoch": 360,
+          "data_loss": 0.0313402414321899,
+          "objective": 0.033288724720478,
+          "val_rmse": 0.0423424057662487
+        },
+        {
+          "epoch": 370,
+          "data_loss": 0.0306115485727787,
+          "objective": 0.0325747206807136,
+          "val_rmse": 0.0423199608922004
+        },
+        {
+          "epoch": 380,
+          "data_loss": 0.030740413814783,
+          "objective": 0.0328757725656032,
+          "val_rmse": 0.0433810278773307
+        },
+        {
+          "epoch": 390,
+          "data_loss": 0.0304903723299503,
+          "objective": 0.0323361717164516,
+          "val_rmse": 0.0430932492017746
+        },
+        {
+          "epoch": 400,
+          "data_loss": 0.0303408075124025,
+          "objective": 0.0322212800383567,
+          "val_rmse": 0.0425559394061565
+        },
+        {
+          "epoch": 410,
+          "data_loss": 0.0301683396100997,
+          "objective": 0.0319314450025558,
+          "val_rmse": 0.0425742603838443
+        },
+        {
+          "epoch": 420,
+          "data_loss": 0.0304456036537885,
+          "objective": 0.0322236791253089,
+          "val_rmse": 0.0430934056639671
+        },
+        {
+          "epoch": 430,
+          "data_loss": 0.0311558358371257,
+          "objective": 0.0328705683350563,
+          "val_rmse": 0.0400868840515613
+        },
+        {
+          "epoch": 440,
+          "data_loss": 0.0306467916816473,
+          "objective": 0.032496266067028,
+          "val_rmse": 0.0422272197902202
+        },
+        {
+          "epoch": 450,
+          "data_loss": 0.0301097445189952,
+          "objective": 0.0318462029099464,
+          "val_rmse": 0.0426695048809051
+        },
+        {
+          "epoch": 460,
+          "data_loss": 0.0303285922855138,
+          "objective": 0.0322016477584838,
+          "val_rmse": 0.0401359684765338
+        },
+        {
+          "epoch": 470,
+          "data_loss": 0.031108072027564,
+          "objective": 0.032999712973833,
+          "val_rmse": 0.0410214588046073
+        },
+        {
+          "epoch": 480,
+          "data_loss": 0.0300198048353195,
+          "objective": 0.0319025740027427,
+          "val_rmse": 0.0413840748369693
+        },
+        {
+          "epoch": 490,
+          "data_loss": 0.0298944264650344,
+          "objective": 0.0316945388913154,
+          "val_rmse": 0.0398090481758117
+        },
+        {
+          "epoch": 500,
+          "data_loss": 0.0300822723656892,
+          "objective": 0.0318637639284133,
+          "val_rmse": 0.0400030948221683
+        },
+        {
+          "epoch": 510,
+          "data_loss": 0.0298857726156711,
+          "objective": 0.0316957756876945,
+          "val_rmse": 0.0393677875399589
+        },
+        {
+          "epoch": 520,
+          "data_loss": 0.0301575772464275,
+          "objective": 0.0320321694016456,
+          "val_rmse": 0.040260050445795
+        },
+        {
+          "epoch": 530,
+          "data_loss": 0.0305572263896465,
+          "objective": 0.0323337465524673,
+          "val_rmse": 0.0398934185504913
+        },
+        {
+          "epoch": 540,
+          "data_loss": 0.0298559814691543,
+          "objective": 0.0318387150764465,
+          "val_rmse": 0.0409919880330562
+        },
+        {
+          "epoch": 550,
+          "data_loss": 0.0297657251358032,
+          "objective": 0.0316793024539947,
+          "val_rmse": 0.0406637787818908
+        },
+        {
+          "epoch": 560,
+          "data_loss": 0.0301500614732503,
+          "objective": 0.0318810977041721,
+          "val_rmse": 0.0415329821407794
+        },
+        {
+          "epoch": 570,
+          "data_loss": 0.0302151553332805,
+          "objective": 0.0322765931487083,
+          "val_rmse": 0.0394054949283599
+        }
+      ],
+      "interrupted_config_sha256": "7321655be4705368df139e5b8f6ba66add95afe2f3fb6a24dce0ec7d42d853b5",
+      "interrupted_history_sha256": "a587d3fc83cf465168525e01189ab480dbd8dc38b6ae2c8aa1665e244949b2d6",
+      "prefix_verification": "passed",
+      "status": "complete"
+    },
+    {
+      "lambda_ode": 3.16227766,
+      "seed": 3,
+      "dataset": "wheat",
+      "output": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed3",
+      "gpu": 2,
+      "status": "complete"
+    }
+  ],
+  "new_candidate_test_evaluations": 0
+}

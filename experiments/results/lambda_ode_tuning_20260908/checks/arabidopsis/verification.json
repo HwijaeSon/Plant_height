@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "epochs": 10,
+  "initial_state_sha256": "afc57179da19a4a3a9dfbcae99a6f3eca56167452d345bbf65d3dbce7312ca88",
+  "training_and_validation_prefix": "matches reference",
+  "test_evaluations": 0
+}

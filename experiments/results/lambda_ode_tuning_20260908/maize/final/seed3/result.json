@@ -1,0 +1,36 @@
+{
+  "dataset": "maize",
+  "seed": 3,
+  "lambda_ode": 500.0,
+  "checkpoint_sha256": "20ac851848d0d3acabb7440f39167a4e3e3341e9edff0e72b5a9b916f1d8429a",
+  "selection_sha256": "3c8b68890c3f3e88bf149af2778ff24efec659774ceafa48b88a85a871deafca",
+  "n_params": 9003,
+  "metrics": {
+    "train": {
+      "rmse": 40.94680762098913,
+      "mae": 33.01604819188715,
+      "relative_error": 13.122524213147344,
+      "mean_target": 312.03453661731385,
+      "n_curves": 804,
+      "n_scored_points": 10672
+    },
+    "val": {
+      "rmse": 47.40939871162836,
+      "mae": 39.08315345486126,
+      "relative_error": 18.704831702352674,
+      "mean_target": 253.46070719078034,
+      "n_curves": 402,
+      "n_scored_points": 2729
+    },
+    "test": {
+      "rmse": 60.26432613635284,
+      "mae": 51.42346564494731,
+      "relative_error": 19.560783223122456,
+      "mean_target": 308.0874904084385,
+      "n_curves": 402,
+      "n_scored_points": 3973
+    }
+  },
+  "unit": "relative UAV height",
+  "test_evaluations": 1
+}

@@ -1,0 +1,656 @@
+[
+  {
+    "dataset": "wheat",
+    "lambda_ode": 2.0,
+    "seed": 1,
+    "train_rmse": 0.0223687253892421,
+    "val_rmse": 0.0380007810890674,
+    "best_epoch": 1280,
+    "checkpoint": "experiments/results/physics_ablation_20260908/wheat/full_seed1/checkpoint.pt",
+    "checkpoint_sha256": "08faf20795b0bb9b3c86664f99853840b8d1711dc63a81e5693fb4c339bfa09c",
+    "source": "wheat/results/tuned_latent_ode_seed1_3.csv",
+    "origin": "frozen previous full-model result",
+    "prior_test_evaluated": true,
+    "test_evaluations_this_search": 0
+  },
+  {
+    "dataset": "wheat",
+    "lambda_ode": 2.0,
+    "seed": 2,
+    "train_rmse": 0.0222945418208837,
+    "val_rmse": 0.0387300811707973,
+    "best_epoch": 870,
+    "checkpoint": "wheat/results/checkpoints/tuned_latent_ode_split0_seed2.pt",
+    "checkpoint_sha256": "1947048f8fde87539fc9ee61b6248bc19b4470a86623c0c6bf0fa81733814340",
+    "source": "wheat/results/tuned_latent_ode_seed1_3.csv",
+    "origin": "frozen previous full-model result",
+    "prior_test_evaluated": true,
+    "test_evaluations_this_search": 0
+  },
+  {
+    "dataset": "wheat",
+    "lambda_ode": 2.0,
+    "seed": 3,
+    "train_rmse": 0.022659882903099,
+    "val_rmse": 0.0373889915645122,
+    "best_epoch": 910,
+    "checkpoint": "wheat/results/checkpoints/tuned_latent_ode_split0_seed3.pt",
+    "checkpoint_sha256": "0595cf4fd3276f41a73b2fee8a149713971fdb14265b7d78a4cc5d3304212755",
+    "source": "wheat/results/tuned_latent_ode_seed1_3.csv",
+    "origin": "frozen previous full-model result",
+    "prior_test_evaluated": true,
+    "test_evaluations_this_search": 0
+  },
+  {
+    "dataset": "wheat",
+    "lambda_ode": 0.0,
+    "seed": 1,
+    "train_rmse": 0.022400717796215056,
+    "val_rmse": 0.03836500484523314,
+    "best_epoch": 1280,
+    "checkpoint": "experiments/results/physics_ablation_20260908/wheat/no_ode_residual_seed1/checkpoint.pt",
+    "checkpoint_sha256": "6e99bbf4f989eaf5177e038bc0c1448e826ae42565f3736e6603833d60da9144",
+    "source": "experiments/results/physics_ablation_20260908/wheat/no_ode_residual_seed1",
+    "origin": "frozen previous zero-residual result",
+    "prior_test_evaluated": true,
+    "test_evaluations_this_search": 0
+  },
+  {
+    "dataset": "wheat",
+    "lambda_ode": 0.0,
+    "seed": 2,
+    "train_rmse": 0.022711840019137768,
+    "val_rmse": 0.03828558710043703,
+    "best_epoch": 840,
+    "checkpoint": "experiments/results/physics_ablation_20260908/wheat/no_ode_residual_seed2/checkpoint.pt",
+    "checkpoint_sha256": "da373ac701b138695f064f870f930195d08efa7c9cfd8d7e721882973e0e4502",
+    "source": "experiments/results/physics_ablation_20260908/wheat/no_ode_residual_seed2",
+    "origin": "frozen previous zero-residual result",
+    "prior_test_evaluated": true,
+    "test_evaluations_this_search": 0
+  },
+  {
+    "dataset": "wheat",
+    "lambda_ode": 0.0,
+    "seed": 3,
+    "train_rmse": 0.022467554710162655,
+    "val_rmse": 0.03660289689178307,
+    "best_epoch": 840,
+    "checkpoint": "experiments/results/physics_ablation_20260908/wheat/no_ode_residual_seed3/checkpoint.pt",
+    "checkpoint_sha256": "a192b075e20576e8e5887e1c3ef1184f3848938272488d5937f488730a94ace4",
+    "source": "experiments/results/physics_ablation_20260908/wheat/no_ode_residual_seed3",
+    "origin": "frozen previous zero-residual result",
+    "prior_test_evaluated": true,
+    "test_evaluations_this_search": 0
+  },
+  {
+    "dataset": "wheat",
+    "seed": 1,
+    "lambda_ode": 0.01,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 1320,
+    "selection_rmse": 0.03833431527018547,
+    "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
+    "checkpoint_sha256": "8e0f8f9b36ce3b5908815000a11b5f2a4ecb078f95891c061780db206bbaff87",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_0p01/seed1/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.02240522833225,
+        "mae": 0.013801631561091368,
+        "relative_error": 7.484727076255392,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.0383453557639064,
+        "mae": 0.0273970041522242,
+        "relative_error": 11.504336439489851,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.02240522833225,
+    "val_rmse": 0.0383453557639064,
+    "seconds": 332.1955090649426,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 1,
+    "lambda_ode": 0.1,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 1250,
+    "selection_rmse": 0.03827294036746025,
+    "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
+    "checkpoint_sha256": "d31edef9da18e8ae207052524e5f9ae3bcc1f273d121120d0cfacfc19f58979e",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_0p1/seed1/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.02242608108975337,
+        "mae": 0.01381216770617531,
+        "relative_error": 7.491693182397473,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.0382189789388663,
+        "mae": 0.027263515931653857,
+        "relative_error": 11.46642098703278,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.02242608108975337,
+    "val_rmse": 0.0382189789388663,
+    "seconds": 344.1680426672101,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 1,
+    "lambda_ode": 0.5,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 1220,
+    "selection_rmse": 0.038295557349920274,
+    "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
+    "checkpoint_sha256": "0358cb788f6526134f41fb0f97aa5bb7b2199e4bfb1a290098924bb0ff9890f8",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_0p5/seed1/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.02241504113408455,
+        "mae": 0.013811716117101466,
+        "relative_error": 7.488005156821936,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.03833440870815555,
+        "mae": 0.027400435677941343,
+        "relative_error": 11.50105211444264,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.02241504113408455,
+    "val_rmse": 0.03833440870815555,
+    "seconds": 333.4854644909501,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 1,
+    "lambda_ode": 1.0,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 1270,
+    "selection_rmse": 0.0382115051150322,
+    "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
+    "checkpoint_sha256": "46bad7f231a9db636aa78f0c3e08ef5fcac85261357efae0a5e6a945862deb37",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_1/seed1/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.02241311524749502,
+        "mae": 0.013821202056308716,
+        "relative_error": 7.487361792010443,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.03826707980254104,
+        "mae": 0.02729808427108786,
+        "relative_error": 11.480852161492379,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.02241311524749502,
+    "val_rmse": 0.03826707980254104,
+    "seconds": 325.5983288884163,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 1,
+    "lambda_ode": 5.0,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 1180,
+    "selection_rmse": 0.038268853724002835,
+    "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
+    "checkpoint_sha256": "f49785312ee80ce62cda4f175377acae66620bb80e34ca39fee3fdc9b4e18f97",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_5/seed1/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.022458112330986796,
+        "mae": 0.013856178562464905,
+        "relative_error": 7.5023935910249016,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.038344945615513104,
+        "mae": 0.027381493122138802,
+        "relative_error": 11.504213387166757,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.022458112330986796,
+    "val_rmse": 0.038344945615513104,
+    "seconds": 321.14393337816,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 1,
+    "lambda_ode": 10.0,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 1500,
+    "selection_rmse": 0.03845846876502037,
+    "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
+    "checkpoint_sha256": "16fee5caf37d2b0199ce2294b8a57b5fe7438f12c23f88388446c4359973af14",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_10/seed1/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.022476497400700863,
+        "mae": 0.013873359719480149,
+        "relative_error": 7.508535337364066,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.03845773598275517,
+        "mae": 0.027391204031504284,
+        "relative_error": 11.538052643734764,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.022476497400700863,
+    "val_rmse": 0.03845773598275517,
+    "seconds": 309.57870116457343,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 1,
+    "lambda_ode": 50.0,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 890,
+    "selection_rmse": 0.03976081199944019,
+    "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
+    "checkpoint_sha256": "3ba3786097e5ddae12e39ee40ed0039a3ed52ff568ce210139043ded1736b2ef",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_50/seed1/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.02162401575050457,
+        "mae": 0.013686000748269084,
+        "relative_error": 7.2237539285510675,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.038877567982612854,
+        "mae": 0.027343503137818075,
+        "relative_error": 11.664010233075295,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.02162401575050457,
+    "val_rmse": 0.038877567982612854,
+    "seconds": 330.8395042940974,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 1,
+    "lambda_ode": 100.0,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 610,
+    "selection_rmse": 0.038900502398610114,
+    "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
+    "checkpoint_sha256": "bcd2eac2633c65eaf6980fc441ae2d0598d76fea41ca139ce5249a32f921f011",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_100/seed1/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.022320840297199086,
+        "mae": 0.014117244367736106,
+        "relative_error": 7.456536271792648,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.038063546192762795,
+        "mae": 0.026591793869723646,
+        "relative_error": 11.419788205323876,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.022320840297199086,
+    "val_rmse": 0.038063546192762795,
+    "seconds": 328.7286778688431,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 1,
+    "lambda_ode": 500.0,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 600,
+    "selection_rmse": 0.053239955008029936,
+    "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
+    "checkpoint_sha256": "4f1dd433cb8dae5d6fd064c35d307481e269c746d9dd343a9ac7123fe25893f9",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_500/seed1/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.022424683785678252,
+        "mae": 0.01400409654561215,
+        "relative_error": 7.491226396721841,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.05319559766028976,
+        "mae": 0.03875826397117601,
+        "relative_error": 15.959691607810175,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.022424683785678252,
+    "val_rmse": 0.05319559766028976,
+    "seconds": 326.4108934029937,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 1,
+    "lambda_ode": 1.414213562,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 1230,
+    "selection_rmse": 0.0383583702147007,
+    "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
+    "checkpoint_sha256": "6695ceb1aa0fce28c2563d56c2f63d16b6ca6ec3844c26b267dbd2905b3c4916",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_1p414213562/seed1/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.022365887869592652,
+        "mae": 0.013785638190849048,
+        "relative_error": 7.471584937211888,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.038222526086133475,
+        "mae": 0.02725319858547181,
+        "relative_error": 11.467485198714979,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.022365887869592652,
+    "val_rmse": 0.038222526086133475,
+    "seconds": 325.3268497288227,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 1,
+    "lambda_ode": 3.16227766,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 1200,
+    "selection_rmse": 0.038140596076846126,
+    "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
+    "checkpoint_sha256": "5d2b3cdeb30c8aefac661bf777e920ee222d69004789de92cd0600f249014e8e",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed1/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.022386184487818178,
+        "mae": 0.013788065648128076,
+        "relative_error": 7.478365258560828,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.03811263869340638,
+        "mae": 0.027148517401320568,
+        "relative_error": 11.43451688974493,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.022386184487818178,
+    "val_rmse": 0.03811263869340638,
+    "seconds": 346.3125246614218,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 2,
+    "lambda_ode": 100.0,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 610,
+    "selection_rmse": 0.039597565308213234,
+    "initial_state_sha256": "e02100b513a292e9e1dc61fd855a416c04f6075ba8a99533a35d0b76a8f904a2",
+    "checkpoint_sha256": "b11e0119bc05d1165707537fced157e1d5705ee4af852c671d8d71c706859892",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_100/seed2/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.021833964573432264,
+        "mae": 0.013780612128137783,
+        "relative_error": 7.293889774358671,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.03931345168218398,
+        "mae": 0.029200022988189474,
+        "relative_error": 11.79478363779295,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.021833964573432264,
+    "val_rmse": 0.03931345168218398,
+    "seconds": 334.0473699718714,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 3,
+    "lambda_ode": 100.0,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 680,
+    "selection_rmse": 0.03930533267557621,
+    "initial_state_sha256": "f22e5f2dd4c5bdfa39732268ff60f06b28ea13cc13129165910bc8d1ffeadf87",
+    "checkpoint_sha256": "ac564f90bce0c81e34443b82346415450d5107112b7f2631f3de3a194ceaaad5",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_100/seed3/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.022409013268215476,
+        "mae": 0.014027878434706174,
+        "relative_error": 7.485991478129926,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.0394430360346463,
+        "mae": 0.02761394186554622,
+        "relative_error": 11.833661409515782,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.022409013268215476,
+    "val_rmse": 0.0394430360346463,
+    "seconds": 300.77109076082706,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 2,
+    "lambda_ode": 3.16227766,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 840,
+    "selection_rmse": 0.0383055467158556,
+    "initial_state_sha256": "e02100b513a292e9e1dc61fd855a416c04f6075ba8a99533a35d0b76a8f904a2",
+    "checkpoint_sha256": "b2b3c0e6b68031cd8c7b0b980a4ad5bf441d79c4e938f646a09b4173d7828931",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed2/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.02226628409368027,
+        "mae": 0.013616828258167313,
+        "relative_error": 7.438311137569524,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.03814238433504768,
+        "mae": 0.02766574510296602,
+        "relative_error": 11.443441148295483,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.02226628409368027,
+    "val_rmse": 0.03814238433504768,
+    "seconds": 321.03358107060194,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  },
+  {
+    "dataset": "wheat",
+    "seed": 3,
+    "lambda_ode": 3.16227766,
+    "status": "complete",
+    "epochs": 1500,
+    "best_epoch": 920,
+    "selection_rmse": 0.03690917529165745,
+    "initial_state_sha256": "f22e5f2dd4c5bdfa39732268ff60f06b28ea13cc13129165910bc8d1ffeadf87",
+    "checkpoint_sha256": "3d5925010c6277f6d0c3f634cc4ed551121c4dcbd94ca31eb86077fc56d2d3ec",
+    "checkpoint": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed3/checkpoint.pt",
+    "n_params": 1655,
+    "unit": "m",
+    "metrics": {
+      "train": {
+        "rmse": 0.02227562433332661,
+        "mae": 0.013659933480225539,
+        "relative_error": 7.441431353241643,
+        "mean_target": 0.29934596283849185,
+        "n_curves": 38,
+        "n_scored_points": 2394
+      },
+      "val": {
+        "rmse": 0.036786218645349984,
+        "mae": 0.025798912196551387,
+        "relative_error": 11.03656563361684,
+        "mean_target": 0.3333121902822827,
+        "n_curves": 19,
+        "n_scored_points": 798
+      }
+    },
+    "train_rmse": 0.02227562433332661,
+    "val_rmse": 0.036786218645349984,
+    "seconds": 302.8783132061362,
+    "peak_memory_mib": 45.38427734375,
+    "test_evaluations": 0,
+    "origin": "new validation-only trial"
+  }
+]

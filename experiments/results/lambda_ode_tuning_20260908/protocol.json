@@ -1,0 +1,84 @@
+{
+  "started_unix": 1788831460.4139655,
+  "grid": [
+    0.01,
+    0.1,
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    50.0,
+    100.0,
+    500.0
+  ],
+  "seed_screen": [
+    1
+  ],
+  "confirmation_seeds": [
+    1,
+    2,
+    3
+  ],
+  "refinement": "Once around the best positive seed-1 validation candidate; geometric midpoints to neighbors, or one decade outward at a boundary",
+  "refinement_bounds": [
+    0.001,
+    5000.0
+  ],
+  "confirmation_top_positive": 3,
+  "gpu_assignment": {
+    "wheat": 2,
+    "arabidopsis": 2,
+    "maize": 3
+  },
+  "concurrent_dataset_workers": {
+    "wheat": 1,
+    "arabidopsis": 1,
+    "maize": 2
+  },
+  "fixed": "Architecture, initialization, maximum-height coefficient, optimizer, schedule, epochs and split-specific checkpoint selection",
+  "checkpoint_selection": "Unchanged per-dataset validation rule from the manuscript",
+  "candidate_selection": "Mean final validation RMSE over seeds 1--3; ties use SD then smaller lambda; zero is included in overall ranking",
+  "test_policy": "No new candidate test evaluations. Freeze selections for all three datasets before evaluating the selected positive coefficient once per seed.",
+  "evaluation_limitation": "The existing test-set ablation results were already inspected before this follow-up search. Final test scores are follow-up evaluations on reused test sets, not a fresh independent confirmation.",
+  "source_sha256": {
+    "arabidopsis/code/latent_ode_model.py": "73d5e8fa2796c937c856926994a05b6ce137152d12c06e375a122fe00e22b271",
+    "arabidopsis/code/models.py": "ac478ae8d98c494f377f01af0d0493cc08841100a93e67941f914a0922259e19",
+    "arabidopsis/code/plot_results.py": "8b8897399c7c434eab2e04ed4ed9a6cd2b86a401c431ba09a1f4ba26bfa99fc7",
+    "arabidopsis/code/prepare_data.py": "cea53019d501828116197512dbb0b1047bfed376077f08b433b9a5a257d02b23",
+    "arabidopsis/code/run_experiment.py": "9dd4b4e9f88319615051e82b65edab2a34d9597db09b619fbeff6d184541974a",
+    "arabidopsis/data/processed/stem_length_long.csv": "02aa876a156f0f1ef19299d031d288b1e8ef543067bd4eb3c12e980d908668bb",
+    "experiments/lambda_ode_trial.py": "931d4da0695c18751fb7a4cc9a6b44d3611c688c0e3fa48ab28d3cb717e2a752",
+    "experiments/physics_ablation.py": "1094f8b2025428a3bd3f564c91cb0e62bc8b7635843544035da3ee6bc08884cb",
+    "experiments/tune_lambda_ode.py": "80591a80c6ce8e06bf6ee346d798d4023ba8a9b105fed32164a44c5877bdc86a",
+    "maize/code/data.py": "bd731ba5a43ae8b3ece742b7ecc70747d502ca14c4e8740065bdba168da96360",
+    "maize/code/download_data.py": "9b8866810f1bc3a4c4ed4104c350fd2278e60b38609108b2c3662111b5b29792",
+    "maize/code/plot_dataset.py": "06e8fe4b10e10420de92782f5591a1e5ef2f950265a2d800bbca8788124dedbd",
+    "maize/code/plot_predictions.py": "649ad72c158c0a649d7e0fbd036da923d081cdd1318941ec9744938628323148",
+    "maize/code/prepare_data.py": "25e5c470b62e59b9cf4576775ee8cf7b86faabf07aa3da831134cac3e4c80361",
+    "maize/code/run_experiment.py": "8b4c35919c21956045c273137b90bbf8ee61c659add34ed629784980ee6752c3",
+    "maize/code/summarize_results.py": "58d0b020e017f3b48360749984711fd2ec0592a82e9673cd3bb03c021da0b4e5",
+    "maize/code/tune_report.py": "44a8dfff8e73fed5f7b015d67ee542b4846a38fa6665f2c045f40d9fe027b914",
+    "maize/code/tune_search.py": "492f666f9b19fb949f5dbbee41d1d3e980a856f76898e80b234099a4d73bcfb6",
+    "maize/code/tune_trial.py": "f6e2f5d31d507d8c63f00a99c1d9f1ae742968ab00148540f86a32ff917142eb",
+    "maize/code/verify_data.py": "15ecf559082659c5acba0ee9d3eb236c3d74b4a9a7e0c6828b7ac5401a6f985e",
+    "maize/code/verify_experiment.py": "cd02fee607f33c3c4687193a775c11945039460bdd3ab824a68b4e94e19757e2",
+    "maize/data/processed/genotypes.csv": "02854a7ae7a235e89f4f139fc3aa41ef77fd0a5e648ab83bbbf632018cb66d47",
+    "maize/data/processed/height_observations.csv": "9f36b3b28dad91625db2b1be629562c46b4af816ee20c42fb100efdd7f46b9e3",
+    "maize/data/processed/weather_daily.csv": "fdbbf0e4aa1ca2a4d803a2b8e9991d9e018a55327e878473d2d55370c10a4c65",
+    "maize/data/processed/year_splits.json": "da6ac80635ad5c295a8fa65a9fc5465d249f7439d08c9027ff894dcb28bdf524",
+    "maize/results/tuning_20260904/selected.json": "d0ac652269a11e5171c66af54d1531540ac6010d288872aa067d8d652dab9684",
+    "paper/relative_errors/denominators.csv": "69fb6cb3376c54a16764c8a83933c486aeffffdfcbeca4d6d691ca540e0c3479",
+    "wheat/code/analyze.py": "5d773f4aa86581d15db556b1440919648a83caf6ccbab5fc7dc513bf7bc1759c",
+    "wheat/code/data.py": "bfc4ad0dfb638a860e17e9ead5a917a148cbd763e6ad9b4102be63d7f1bc2696",
+    "wheat/code/export_reference_predictions.py": "083c80efcdd60f631f7ce32c5096323738eb57e5a0e12de8de772539b1ef0be2",
+    "wheat/code/model.py": "73d5e8fa2796c937c856926994a05b6ce137152d12c06e375a122fe00e22b271",
+    "wheat/code/plot.py": "376bf616fdb7feb52cab710eea7c015fad8308d79ba2a130c0020355093113a5",
+    "wheat/code/run_additional_baselines.py": "fc9fe427db60bc7b082412b1bc959dc2cc793f39066b7b863f6219972048d0dd",
+    "wheat/code/test_latent_model.py": "fcff0f08b6d43634ad92273baed63013246c503c1e6baf70fddc9ad64bbe03fc",
+    "wheat/code/train.py": "e24f869fc3a5d460d9188f2f4b7e5df7f03256f234d8dde0ba2461c4a33ae665",
+    "wheat/data/align_height_env_same_length.csv": "4f908d427313f9bad51ff0a0c7764f4e84cba0b0ae2849b62799efaa776902d1",
+    "wheat/data/kinship_matrix_astle.csv": "e88845dab6a9082510f17533a827ebf2fc64ff9eb641202b6f0b9ba472889091",
+    "wheat/results/final_config.json": "e374457952001c089e5317462e02307bff80a5903c2956b0adb790c6f87d927c"
+  }
+}
