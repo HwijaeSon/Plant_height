@@ -46,7 +46,10 @@ plt.rcParams.update(
 
 def legend_handles():
     handles = [
-        Line2D([0], [0], color=COLORS[name], lw=2.2, label=name)
+        Line2D(
+            [0], [0], color=COLORS[name], lw=2.2,
+            label="PhytoODE (ours)" if name == "Latent Neural ODE" else name,
+        )
         for name in MODEL_ORDER
     ]
     handles.append(

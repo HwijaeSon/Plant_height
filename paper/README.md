@@ -1,4 +1,4 @@
-# Latent Neural ODE plant-growth manuscript draft
+# PhytoODE plant-growth manuscript draft
 
 This folder contains an Elsevier-style LaTeX draft aimed primarily at
 *Computers and Electronics in Agriculture*.  The same `elsarticle` source can
@@ -8,7 +8,8 @@ be retargeted to *Artificial Intelligence in Agriculture* by changing the
 ## Files
 
 - `main.tex`: complete English draft with Introduction, Materials and methods,
-  wheat, maize, and Arabidopsis Results, and Conclusion.
+  wheat, maize, and Arabidopsis Results, and Conclusion. The `\model` macro
+  expands to `PhytoODE`; prose treats it as a proper model name.
 - `references.bib`: 40 cited records.  The Introduction cites 17 papers from
   *Computers and Electronics in Agriculture* and 13 from *Artificial
   Intelligence in Agriculture*, plus foundational Neural ODE, latent ODE,
@@ -51,7 +52,8 @@ PDF was produced.
 2. The maize result uses 402 genotypes across four years and an ours-only
    validation search. It demonstrates held-out-year performance across known
    genotypes, not unseen-genotype prediction; keep that distinction explicit.
-3. Replace red author, affiliation, data/code availability, and funding TODOs.
+3. Author, affiliation, and funding text follows the supplied manuscript.
+   Complete the remaining data/code availability placeholder before submission.
 4. Tables consistently report seeds 1--3 as mean ± sample standard deviation.
    Deterministic process ODEs are explicitly marked as single fits.
 5. The Arabidopsis result is a new-plant split within observed genotypes and
