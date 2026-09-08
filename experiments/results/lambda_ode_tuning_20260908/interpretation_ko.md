@@ -1,6 +1,14 @@
 # ODE loss 계수 튜닝 결과 해석
 
-**계수 0 모델 대비 test 평균 오차는 밀, Arabidopsis에서 감소했다. 옥수수에서는 증가했다. 따라서 모든 데이터셋에서 ODE 잔차 손실을 넣은 모델이 최고라는 결론은 뒷받침되지 않는다.**
+**Physics loss가 없는 Latent Neural ODE(lambda_ODE = lambda_K = 0) 대비, 현재 PhytoODE의 test 평균 오차는 밀, 옥수수, Arabidopsis에서 감소했다.**
+
+## 비교 모델의 정의
+
+- **Latent Neural ODE — physics loss 없음:** lambda_ODE = 0, lambda_K = 0. 두 생물학적 손실을 모두 제거하며, 동일한 latent ODE 구조와 optimizer weight decay는 유지한다. 기존 `no_biological_loss` 실험이 이 baseline이다.
+- **PhytoODE — K loss만 유지:** lambda_ODE = 0, lambda_K > 0. ODE 잔차만 제거한 부분 ablation이며, physics loss를 전부 제거한 baseline이 아니다.
+- **PhytoODE:** 두 손실을 모두 유지한다. 이번 튜닝은 lambda_K를 고정하고 lambda_ODE만 선택했다.
+
+앞선 요약에서 K loss를 유지한 부분 ablation을 중심으로 비교한 탓에, 원래 요청한 physics loss 전체 제거 baseline과 혼동될 수 있었다. 표·그림·캡션의 명칭과 주 비교 대상을 바로잡았다. 두 계수를 모두 0으로 둔 9개 기존 학습을 재사용하며 수치, checkpoint, 계수 선택은 변경하지 않았다.
 
 이번 실험에서는 latent Neural ODE 구조를 유지하고 logistic ODE 잔차 손실의 계수만 조절했다. 최대높이 손실 계수는 밀·Arabidopsis 0.1, 옥수수 0.5로 고정했다. 데이터 loss만 사용하는 비교 모델도 latent ODE 구조를 사용한다.
 
@@ -10,31 +18,37 @@
 
 ### 밀
 
-양의 계수 후보 중 validation 평균 RMSE로 선택된 값은 2 → **3.16228**이다. 선택 모델의 validation RMSE는 0.0376804, 계수 0 모델은 0.0377512이다. 0까지 포함한 전체 validation 최적 계수는 **3.16228**이다.
+Validation 평균 RMSE로 선택된 ODE 계수는 2 → **3.16228**이다. 선택 모델의 validation RMSE는 0.0376804, physics loss가 없는 baseline은 0.0383418이다. lambda_K를 원래 값으로 고정한 ODE 계수 탐색(0 포함)의 최적값은 **3.16228**이다.
 
-선택 모델의 test RMSE는 **0.0303217 ± 0.00066237 m**, relative RMSE는 **10.237 ± 0.224%**이다. 계수 0 모델 대비 test 평균 오차 감소율은 +0.49%이며, 같은 시드끼리 비교하면 2/3개에서 더 낮다. 감소율이 음수이면 선택된 physics 모델의 평균 test 오차가 더 높다는 뜻이다.
+선택 모델의 test RMSE는 **0.0303217 ± 0.00066237 m**, relative RMSE는 **10.237 ± 0.224%**이다. Physics loss가 없는 baseline 대비 test 평균 오차 감소율은 +1.91%이며, 같은 시드끼리 비교하면 3/3개에서 더 낮다.
+
+별도로 K loss만 유지한 부분 ablation 대비 감소율은 +0.49%, 튜닝 전 PhytoODE 대비 감소율은 +1.00%이다. 감소율이 음수이면 현재 튜닝 모델의 오차가 더 높다는 뜻이다.
 
 ### 옥수수
 
-양의 계수 후보 중 validation 평균 RMSE로 선택된 값은 0.5 → **500**이다. 선택 모델의 validation RMSE는 44.9427, 계수 0 모델은 48.1427이다. 0까지 포함한 전체 validation 최적 계수는 **500**이다.
+Validation 평균 RMSE로 선택된 ODE 계수는 0.5 → **500**이다. 선택 모델의 validation RMSE는 44.9427, physics loss가 없는 baseline은 60.7529이다. lambda_K를 원래 값으로 고정한 ODE 계수 탐색(0 포함)의 최적값은 **500**이다.
 
-선택 모델의 test RMSE는 **60.5258 ± 7.49953 relative UAV height**, relative RMSE는 **19.646 ± 2.434%**이다. 계수 0 모델 대비 test 평균 오차 감소율은 -8.40%이며, 같은 시드끼리 비교하면 0/3개에서 더 낮다. 감소율이 음수이면 선택된 physics 모델의 평균 test 오차가 더 높다는 뜻이다.
+선택 모델의 test RMSE는 **60.5258 ± 7.49953 relative UAV height**, relative RMSE는 **19.646 ± 2.434%**이다. Physics loss가 없는 baseline 대비 test 평균 오차 감소율은 +10.70%이며, 같은 시드끼리 비교하면 3/3개에서 더 낮다.
+
+별도로 K loss만 유지한 부분 ablation 대비 감소율은 -8.40%, 튜닝 전 PhytoODE 대비 감소율은 -6.78%이다. 감소율이 음수이면 현재 튜닝 모델의 오차가 더 높다는 뜻이다.
 
 ### Arabidopsis
 
-양의 계수 후보 중 validation 평균 RMSE로 선택된 값은 2 → **0.5**이다. 선택 모델의 validation RMSE는 3.19147, 계수 0 모델은 3.24149이다. 0까지 포함한 전체 validation 최적 계수는 **0.5**이다.
+Validation 평균 RMSE로 선택된 ODE 계수는 2 → **0.5**이다. 선택 모델의 validation RMSE는 3.19147, physics loss가 없는 baseline은 3.27778이다. lambda_K를 원래 값으로 고정한 ODE 계수 탐색(0 포함)의 최적값은 **0.5**이다.
 
-선택 모델의 test RMSE는 **2.79967 ± 0.0163463 cm**, relative RMSE는 **14.058 ± 0.082%**이다. 계수 0 모델 대비 test 평균 오차 감소율은 +1.85%이며, 같은 시드끼리 비교하면 3/3개에서 더 낮다. 감소율이 음수이면 선택된 physics 모델의 평균 test 오차가 더 높다는 뜻이다.
+선택 모델의 test RMSE는 **2.79967 ± 0.0163463 cm**, relative RMSE는 **14.058 ± 0.082%**이다. Physics loss가 없는 baseline 대비 test 평균 오차 감소율은 +6.46%이며, 같은 시드끼리 비교하면 3/3개에서 더 낮다.
+
+별도로 K loss만 유지한 부분 ablation 대비 감소율은 +1.85%, 튜닝 전 PhytoODE 대비 감소율은 +2.31%이다. 감소율이 음수이면 현재 튜닝 모델의 오차가 더 높다는 뜻이다.
 
 ## 논문에서 주장할 수 있는 범위
 
-양의 계수가 0보다 validation에서 좋았는지와 test에서 좋았는지는 구분해서 보고해야 한다. 모든 데이터셋에서 physics loss가 우수하다는 결론은 해당 비교 결과가 뒷받침할 때만 가능하다. 계수 선택은 미리 정한 validation 절차로 완료했으며 test 순위로 계수를 다시 바꾸지 않았다.
+현재 결과는 보고된 설정에서 두 physics loss를 포함한 PhytoODE가 physics loss를 모두 제거한 동일한 latent Neural ODE보다 세 데이터셋의 평균 test 오차가 낮음을 보여준다. 이 비교는 두 손실의 공동 효과를 평가한다. ODE 잔차 항 자체가 모든 데이터셋에서 이롭다거나, lambda_ODE 튜닝이 모든 데이터셋의 test 오차를 줄였다는 의미는 아니다. 특히 옥수수에서는 튜닝 후 모델이 K-loss-only 모델 및 튜닝 전 PhytoODE보다 test 오차가 높다. 계수는 미리 정한 validation 절차로 선택했으며 test 순위로 다시 바꾸지 않았다.
 
 이전 ablation의 test 결과를 확인한 뒤 시작한 후속 튜닝이다. 따라서 이번 test 점수는 기존 test set을 재사용한 평가이며, 새로운 독립 검증으로 제시하면 안 된다. 3개 시드의 표준편차는 초기화 변동성이고 통계적 유의성 또는 새로운 연도에 대한 불확실성을 확정하지 않는다. 독립 연도 또는 반복된 외부 분할로 확인하면 physics loss의 일반화 효과를 더 강하게 주장할 수 있다.
 
 ODE 잔차만 제거한 비교는 최대높이 손실이 있는 조건에서 잔차 항의 효과를 평가한다. 두 biological loss를 모두 제거한 비교는 두 항의 공동 효과이므로, 그 차이를 전부 ODE 잔차 덕분이라고 해석해서는 안 된다. 이번 결과만으로 latent ODE 구조 자체의 필요성을 입증할 수도 없다.
 
-Train / validation / test 전체 비교는 `README.md`, 기존 baseline까지 포함한 표는 `all_baselines.md`, LaTeX 표는 `lambda_ode_table.tex`에 있다. 기존 원고의 결과와 이번 후속 튜닝 결과는 별도 파일로 보존했다.
+Train / validation / test 전체 비교는 `README.md`, 기존 baseline까지 포함한 표는 `all_baselines.md`에 있다. Physics loss 전체 제거 baseline과의 주 비교 LaTeX 표는 `physics_vs_latent_ode_table.tex`이며, 부분 ablation까지 포함한 표는 `lambda_ode_table.tex`이다. 기존 원고의 결과와 이번 후속 튜닝 결과는 별도 파일로 보존했다.
 
 ## 실행 중단과 복구
 

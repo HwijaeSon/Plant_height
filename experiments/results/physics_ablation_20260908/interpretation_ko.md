@@ -1,5 +1,11 @@
 # Physics loss 제거 실험 결과
 
+**Physics loss가 없는 Latent Neural ODE baseline은
+`lambda_ODE = lambda_K = 0`으로 두 항을 모두 제거한 모델이다.**
+이 기준으로는 기존 PhytoODE가 세 데이터셋 모두 평균 test 오차가 낮다.
+ODE 잔차만 제거하고 K loss를 유지한 모델은 별도의 부분 ablation이며,
+physics loss 전체 제거 baseline으로 부르면 안 된다.
+
 세 데이터셋에서 같은 구조, 초기 가중치, 데이터 분할, 학습 횟수와
 validation 기반 체크포인트 선택 규칙을 유지했다. 제거 조건마다 시드
 1–3을 실행했으며, 기존 PhytoODE의 시드 1도 다시 학습해 원래 선택 epoch와
@@ -13,8 +19,8 @@ train/validation/test 전체 값은 [전체 보고서](README.md)에 있다.
 | 조건 | 밀 (m / %) | 옥수수 (relative UAV unit / %) | Arabidopsis (cm / %) |
 |---|---:|---:|---:|
 | 기존 PhytoODE | 0.03063 / 10.34 | 56.68 / 18.40 | 2.866 / 14.39 |
-| ODE 미분 잔차만 제거 | **0.03047 / 10.29** | **55.83 / 18.12** | **2.852 / 14.32** |
-| 생물학적 손실 두 항 모두 제거 | 0.03091 / 10.44 | 67.78 / 22.00 | 2.993 / 15.03 |
+| PhytoODE — K loss만 유지 (부분 ablation) | **0.03047 / 10.29** | **55.83 / 18.12** | **2.852 / 14.32** |
+| Latent Neural ODE — physics loss 없음 (두 계수 모두 0) | 0.03091 / 10.44 | 67.78 / 22.00 | 2.993 / 15.03 |
 
 첫 제거 조건은 logistic ODE 미분 잔차의 가중치만 0으로 만들고 최대높이
 일치 항은 유지한다. 두 번째는 두 항의 가중치를 모두 0으로 만든 순수

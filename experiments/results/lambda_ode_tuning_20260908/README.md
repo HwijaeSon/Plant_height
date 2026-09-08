@@ -1,18 +1,35 @@
 # Validation-selected ODE-residual coefficient tuning
 
-**Against the zero-residual model, the validation-selected positive coefficient lowers mean test error for Wheat, Arabidopsis. It raises mean test error for Maize; tuning does not make the ODE-residual model uniformly best on test.**
+**Against Latent Neural ODE without physics loss (lambda_ODE = lambda_K = 0), validation-selected PhytoODE lowers mean test error for Wheat, Maize, Arabidopsis.**
+
+The primary no-physics baseline removes both biological losses. The separately retained **PhytoODE (K loss only)** ablation has lambda_ODE = 0 and lambda_K > 0. It must not be called Latent Neural ODE without physics loss. This terminology correction reuses the already-completed both-zero runs; it does not change any model, coefficient selection, checkpoint or numeric result.
 
 Only the logistic derivative-residual coefficient was varied. Architecture, paired initialization, maximum-height coefficient, optimizer, schedule, training length, data splits, masks and validation checkpoint rules match the previous ablation.
 
 Completed 47 new full-length training trials in 1.47 hours, followed by nine final evaluations. Wheat and Arabidopsis ran concurrently on GPU 2; maize used GPU 3.
 
+## Primary comparison: PhytoODE versus Latent Neural ODE without physics loss
+
+Cells are three-seed mean RMSE ± sample SD / relative RMSE (%) ± sample SD. Bold marks the lower mean within each dataset and split for these two models. The main baseline sets both lambda_ODE and lambda_K to zero; PhytoODE uses the validation-selected ODE coefficient and the original positive K coefficient. Both retain the same latent ODE architecture and optimizer weight decay. Original PhytoODE and the K-loss-only partial ablation are included in the full table below.
+
+| Dataset (RMSE unit) | Model | Train | Validation | Test |
+|---|---|---:|---:|---:|
+| Wheat (m) | Latent Neural ODE (no physics) | **0.02108 ± 0.00006 / 7.04 ± 0.02** | 0.03834 ± 0.00087 / 11.50 ± 0.26 | 0.03091 ± 0.00023 / 10.44 ± 0.08 |
+| Wheat (m) | Tuned PhytoODE | 0.02231 ± 0.00007 / 7.45 ± 0.02 | **0.03768 ± 0.00077 / 11.30 ± 0.23** | **0.03032 ± 0.00066 / 10.24 ± 0.22** |
+| Maize (relative UAV height) | Latent Neural ODE (no physics) | 43.25 ± 5.76 / 13.86 ± 1.85 | 60.75 ± 10.03 / 23.97 ± 3.96 | 67.78 ± 13.62 / 22.00 ± 4.42 |
+| Maize (relative UAV height) | Tuned PhytoODE | **39.20 ± 3.40 / 12.56 ± 1.09** | **44.94 ± 3.14 / 17.73 ± 1.24** | **60.53 ± 7.50 / 19.65 ± 2.43** |
+| Arabidopsis (cm) | Latent Neural ODE (no physics) | **1.188 ± 0.028 / 5.64 ± 0.13** | 3.278 ± 0.047 / 16.28 ± 0.23 | 2.993 ± 0.066 / 15.03 ± 0.33 |
+| Arabidopsis (cm) | Tuned PhytoODE | 1.421 ± 0.030 / 6.75 ± 0.14 | **3.191 ± 0.033 / 15.85 ± 0.16** | **2.800 ± 0.016 / 14.06 ± 0.08** |
+
+This comparison measures the combined effect of both biological losses under the reported settings; it does not isolate the ODE residual. In maize, the K-loss-only partial ablation still has lower test error than tuned PhytoODE, and tuning worsens test error relative to original PhytoODE. Thus, superiority to the no-physics baseline is distinct from a claim that increasing the ODE weight improves all datasets. The baseline was not independently retuned.
+
 ## Search and selection
 
-The fixed positive grid was 0.01, 0.1, 0.5, 1, 2, 5, 10, 50, 100 and 500. Original positive-coefficient and zero-residual results were reused. Seed 1 screened the grid, followed by one refinement using geometric midpoints around its best positive validation coefficient (one decade outward at a grid boundary). The three best positive seed-1 candidates were confirmed with seeds 2 and 3. All coefficients with three seeds, including zero and the original coefficient, entered the final validation ranking. The positive coefficient with the lowest mean validation RMSE was selected; the overall winner including zero is reported separately.
+The fixed positive grid was 0.01, 0.1, 0.5, 1, 2, 5, 10, 50, 100 and 500. Original positive-coefficient and zero-residual results were reused. Seed 1 screened the grid, followed by one refinement using geometric midpoints around its best positive validation coefficient (one decade outward at a grid boundary). The three best positive seed-1 candidates were confirmed with seeds 2 and 3. All coefficients with three seeds, including zero and the original coefficient, entered the final validation ranking with lambda_K fixed at its original positive value. The positive coefficient with the lowest mean validation RMSE was selected; the winner including zero under that same fixed-K condition is reported separately. The already-completed both-zero no-physics baseline is a distinct comparison; relabeling it does not change the frozen selection procedure.
 
 No new candidate was evaluated on test during search. All three dataset selections and checkpoint hashes were frozen before any final test evaluation. **The previous ablation's test results had already been inspected before this follow-up search: these are reused-test follow-up scores, not an independent confirmation.**
 
-| Dataset | Original ODE coefficient | Selected positive coefficient | Overall validation winner (including zero) | Fixed maximum-height coefficient |
+| Dataset | Original ODE coefficient | Selected positive coefficient | Fixed-K validation winner (ODE coefficient 0 included) | Fixed maximum-height coefficient |
 |---|---:|---:|---:|---:|
 | Wheat | 2 | 3.16228 | 3.16228 | 0.1 |
 | Maize | 0.5 | 500 | 500 | 0.5 |
@@ -24,7 +41,7 @@ The original controller and one wheat confirmation run received termination sign
 
 ![Validation coefficient search](validation_lambda.png)
 
-The gray points show seed-1 screening values. Blue points and error bars show the mean and sample SD for coefficients evaluated with all three seeds. The dashed line is the three-seed mean at zero; the selected positive coefficient is marked. A screened candidate with only one seed is not eligible for final selection.
+The gray points show seed-1 screening values. Blue points and error bars show the mean and sample SD for coefficients evaluated with all three seeds. The dashed line is the three-seed mean at lambda_ODE = 0 with the original lambda_K retained (the K-loss-only partial ablation); it is not the no-physics baseline. The selected positive coefficient is marked. A screened candidate with only one seed is not eligible for final selection.
 
 ## Train / validation / test
 
@@ -34,20 +51,20 @@ Cells are **RMSE ± sample SD / relative RMSE (%) ± sample SD**, across seeds 1
 |---|---|---:|---:|---:|
 | Wheat (m) | Original PhytoODE | 0.02244 ± 0.00019 / 7.50 ± 0.06 | 0.03804 ± 0.00067 / 11.41 ± 0.20 | 0.03063 ± 0.00062 / 10.34 ± 0.21 |
 | Wheat (m) | Tuned PhytoODE | 0.02231 ± 0.00007 / 7.45 ± 0.02 | **0.03768 ± 0.00077 / 11.30 ± 0.23** | **0.03032 ± 0.00066 / 10.24 ± 0.22** |
-| Wheat (m) | Without ODE residual | 0.02253 ± 0.00016 / 7.53 ± 0.05 | 0.03775 ± 0.00100 / 11.33 ± 0.30 | 0.03047 ± 0.00047 / 10.29 ± 0.16 |
-| Wheat (m) | Without biological losses | **0.02108 ± 0.00006 / 7.04 ± 0.02** | 0.03834 ± 0.00087 / 11.50 ± 0.26 | 0.03091 ± 0.00023 / 10.44 ± 0.08 |
+| Wheat (m) | PhytoODE (K loss only) | 0.02253 ± 0.00016 / 7.53 ± 0.05 | 0.03775 ± 0.00100 / 11.33 ± 0.30 | 0.03047 ± 0.00047 / 10.29 ± 0.16 |
+| Wheat (m) | Latent Neural ODE (no physics) | **0.02108 ± 0.00006 / 7.04 ± 0.02** | 0.03834 ± 0.00087 / 11.50 ± 0.26 | 0.03091 ± 0.00023 / 10.44 ± 0.08 |
 | Maize (relative UAV height) | Original PhytoODE | 41.90 ± 14.37 / 13.43 ± 4.61 | 47.25 ± 2.60 / 18.64 ± 1.03 | 56.68 ± 4.37 / 18.40 ± 1.42 |
 | Maize (relative UAV height) | Tuned PhytoODE | 39.20 ± 3.40 / 12.56 ± 1.09 | **44.94 ± 3.14 / 17.73 ± 1.24** | 60.53 ± 7.50 / 19.65 ± 2.43 |
-| Maize (relative UAV height) | Without ODE residual | **38.09 ± 8.62 / 12.21 ± 2.76** | 48.14 ± 4.53 / 18.99 ± 1.79 | **55.83 ± 6.15 / 18.12 ± 2.00** |
-| Maize (relative UAV height) | Without biological losses | 43.25 ± 5.76 / 13.86 ± 1.85 | 60.75 ± 10.03 / 23.97 ± 3.96 | 67.78 ± 13.62 / 22.00 ± 4.42 |
+| Maize (relative UAV height) | PhytoODE (K loss only) | **38.09 ± 8.62 / 12.21 ± 2.76** | 48.14 ± 4.53 / 18.99 ± 1.79 | **55.83 ± 6.15 / 18.12 ± 2.00** |
+| Maize (relative UAV height) | Latent Neural ODE (no physics) | 43.25 ± 5.76 / 13.86 ± 1.85 | 60.75 ± 10.03 / 23.97 ± 3.96 | 67.78 ± 13.62 / 22.00 ± 4.42 |
 | Arabidopsis (cm) | Original PhytoODE | 1.401 ± 0.088 / 6.66 ± 0.42 | 3.246 ± 0.006 / 16.12 ± 0.03 | 2.866 ± 0.093 / 14.39 ± 0.47 |
 | Arabidopsis (cm) | Tuned PhytoODE | 1.421 ± 0.030 / 6.75 ± 0.14 | **3.191 ± 0.033 / 15.85 ± 0.16** | **2.800 ± 0.016 / 14.06 ± 0.08** |
-| Arabidopsis (cm) | Without ODE residual | 1.416 ± 0.060 / 6.73 ± 0.29 | 3.241 ± 0.109 / 16.10 ± 0.54 | 2.852 ± 0.043 / 14.32 ± 0.22 |
-| Arabidopsis (cm) | Without biological losses | **1.188 ± 0.028 / 5.64 ± 0.13** | 3.278 ± 0.047 / 16.28 ± 0.23 | 2.993 ± 0.066 / 15.03 ± 0.33 |
+| Arabidopsis (cm) | PhytoODE (K loss only) | 1.416 ± 0.060 / 6.73 ± 0.29 | 3.241 ± 0.109 / 16.10 ± 0.54 | 2.852 ± 0.043 / 14.32 ± 0.22 |
+| Arabidopsis (cm) | Latent Neural ODE (no physics) | **1.188 ± 0.028 / 5.64 ± 0.13** | 3.278 ± 0.047 / 16.28 ± 0.23 | 2.993 ± 0.066 / 15.03 ± 0.33 |
 
 ![Test relative errors](test_relative_errors.png)
 
-Bars show three-seed means and sample SD; paired points connect the same initialization seed. All four variants retain the latent Neural ODE architecture. The zero-residual variant retains the maximum-height penalty; the final variant removes both biological losses. If the search retains the original coefficient, original and tuned rows use the same reevaluated checkpoints and scores; scorer-rounding differences are not counted as improvements.
+Bars show three-seed means and sample SD; paired points connect the same initialization seed. All four variants retain the latent Neural ODE architecture. PhytoODE (K loss only) retains the maximum-height penalty and removes only the ODE residual. Latent Neural ODE (no physics) removes both biological losses. If the search retains the original coefficient, original and tuned rows use the same reevaluated checkpoints and scores; scorer-rounding differences are not counted as improvements.
 
 ## Paired test comparisons
 
@@ -56,14 +73,14 @@ Positive error reduction means the tuned model has lower mean error.
 | Dataset | Reference | Error reduction (%) | Seeds favoring tuned model |
 |---|---|---:|---:|
 | Wheat | Original PhytoODE | +1.00 | 3/3 |
-| Wheat | Without ODE residual | +0.49 | 2/3 |
-| Wheat | Without biological losses | +1.91 | 3/3 |
+| Wheat | PhytoODE (K loss only) | +0.49 | 2/3 |
+| Wheat | Latent Neural ODE (no physics) | +1.91 | 3/3 |
 | Maize | Original PhytoODE | -6.78 | 1/3 |
-| Maize | Without ODE residual | -8.40 | 0/3 |
-| Maize | Without biological losses | +10.70 | 3/3 |
+| Maize | PhytoODE (K loss only) | -8.40 | 0/3 |
+| Maize | Latent Neural ODE (no physics) | +10.70 | 3/3 |
 | Arabidopsis | Original PhytoODE | +2.31 | 3/3 |
-| Arabidopsis | Without ODE residual | +1.85 | 3/3 |
-| Arabidopsis | Without biological losses | +6.46 | 3/3 |
+| Arabidopsis | PhytoODE (K loss only) | +1.85 | 3/3 |
+| Arabidopsis | Latent Neural ODE (no physics) | +6.46 | 3/3 |
 
 Three seeds measure initialization variation, not uncertainty across independent years or experiments. This comparison alone does not establish statistical significance or superiority of the latent ODE architecture over a model without an ODE. Single held-out years and previously seen test scores limit generalization claims. Wheat preserves the original initial-fill scoring mask (475 of 1,368 test points are pre-observation fill); maize and Arabidopsis score observed points only. Arabidopsis holds out plants within known genotype/temperature combinations.
 

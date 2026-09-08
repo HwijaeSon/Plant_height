@@ -4,13 +4,17 @@
 loaders and latent ODE implementations. It compares the manuscript's fixed
 PhytoODE settings with two loss ablations:
 
-| Variant | Logistic derivative residual | Maximum-height consistency |
-|---|---|---|
-| `full` | Original coefficient | Original coefficient |
-| `no_ode_residual` | Zero | Original coefficient |
-| `no_biological_loss` | Zero | Zero |
+| Variant | Report label | Logistic derivative residual | Maximum-height consistency |
+|---|---|---|---|
+| `full` | PhytoODE | Original coefficient | Original coefficient |
+| `no_ode_residual` | PhytoODE (K loss only); partial ablation | Zero | Original coefficient |
+| `no_biological_loss` | Latent Neural ODE (no physics); main baseline | Zero | Zero |
 
-The last row is the pure data-trained latent ODE. Optimizer weight decay is
+The main **Latent Neural ODE without physics loss** baseline is the last row:
+`lambda_ODE = lambda_K = 0`. Removing only the ODE residual is a partial ablation
+that still contains a physics loss. Both-zero runs already exist for all three
+datasets and seeds 1--3; the reporting clarification requires no new training.
+Optimizer weight decay is
 unchanged. The auxiliary logistic head remains instantiated in every variant
 to preserve parameter initialization; it receives no gradients when both
 biological losses are absent. All variants have identical prediction
@@ -88,6 +92,10 @@ contains all-split RMSE / relative RMSE tables, validation sensitivity and test
 comparison figures, a LaTeX table, selected configurations and an audit. Its
 [Korean interpretation](results/lambda_ode_tuning_20260908/interpretation_ko.md)
 distinguishes validation selection from observed test performance.
+The primary [PhytoODE versus no-physics Latent Neural ODE table](results/lambda_ode_tuning_20260908/physics_vs_latent_ode_table.tex)
+uses the both-zero baseline. The full ablation table separately retains the
+K-loss-only model and original PhytoODE, including the less favorable maize
+tuning results.
 
 The preceding ablation's test scores were already inspected before this search.
 These final test scores are follow-up evaluations on reused test sets, not a

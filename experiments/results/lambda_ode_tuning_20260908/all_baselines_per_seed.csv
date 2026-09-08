@@ -125,60 +125,60 @@ arabidopsis,Original PhytoODE,2,test,2.97303535044193,14.92841515515489,cm
 arabidopsis,Original PhytoODE,3,train,1.31068415939807,6.229706765535966,cm
 arabidopsis,Original PhytoODE,3,val,3.24489921331405,16.11527036617226,cm
 arabidopsis,Original PhytoODE,3,test,2.81664989888668,14.143161476722806,cm
-wheat,Without ODE residual,1,train,0.022400717796215,7.4832202792396,m
-wheat,Without ODE residual,1,val,0.0383650048452331,11.510231537808968,m
-wheat,Without ODE residual,1,test,0.0309359151428715,10.444715573306508,m
-wheat,Without biological losses,1,train,0.0211413229033328,7.062504769686634,m
-wheat,Without biological losses,1,val,0.0381146212652062,11.43511169901313,m
-wheat,Without biological losses,1,test,0.0309484322577339,10.4489416549961,m
-wheat,Without ODE residual,2,train,0.0227118400191377,7.587154275867632,m
-wheat,Without ODE residual,2,val,0.038285587100437,11.486404703054182,m
-wheat,Without ODE residual,2,test,0.03000124605413,10.129148610377465,m
-wheat,Without biological losses,2,train,0.0210705649527114,7.038867253432722,m
-wheat,Without biological losses,2,val,0.0393031568619317,11.791694995807326,m
-wheat,Without biological losses,2,test,0.0306643444111199,10.35302670494492,m
-wheat,Without ODE residual,3,train,0.0224675547101626,7.505547927594643,m
-wheat,Without ODE residual,3,val,0.036602896891783,10.981565618942412,m
-wheat,Without ODE residual,3,test,0.0304770420326095,10.289788877303184,m
-wheat,Without biological losses,3,train,0.0210274084650799,7.024450326869794,m
-wheat,Without biological losses,3,val,0.0376075882863876,11.28299215655382,m
-wheat,Without biological losses,3,test,0.0311251294056224,10.508598899457334,m
-maize,Without ODE residual,1,train,48.02247032886719,15.390113815434162,relative UAV height
-maize,Without ODE residual,1,val,52.687717393670354,20.78733148724793,relative UAV height
-maize,Without ODE residual,1,test,62.472483433892926,20.277513816309696,relative UAV height
-maize,Without biological losses,1,train,36.97312922771411,11.84905030979272,relative UAV height
-maize,Without biological losses,1,val,71.45554021900843,28.191959618113,relative UAV height
-maize,Without biological losses,1,test,83.35206057214337,27.054672184723135,relative UAV height
-maize,Without ODE residual,2,train,33.65499509634442,10.785663491352452,relative UAV height
-maize,Without ODE residual,2,val,43.63496936568703,17.21567411742559,relative UAV height
-maize,Without ODE residual,2,test,50.32287640273362,16.33395641478966,relative UAV height
-maize,Without biological losses,2,train,48.28487824231892,15.47420960697584,relative UAV height
-maize,Without biological losses,2,val,59.22411755795673,23.366192817168557,relative UAV height
-maize,Without biological losses,2,test,58.079623389527285,18.851665581270375,relative UAV height
-maize,Without ODE residual,3,train,32.59564968974754,10.446167287476763,relative UAV height
-maize,Without ODE residual,3,val,48.10530910218127,18.9793951241414,relative UAV height
-maize,Without ODE residual,3,test,54.70479530217074,17.756253338831566,relative UAV height
-maize,Without biological losses,3,train,44.49743797878962,14.260420805073345,relative UAV height
-maize,Without biological losses,3,val,51.57918456159949,20.349972638076697,relative UAV height
-maize,Without biological losses,3,test,61.912529269451966,20.095762144504192,relative UAV height
-arabidopsis,Without ODE residual,1,train,1.3688791355845265,6.506308595404321,cm
-arabidopsis,Without ODE residual,1,val,3.307534662666499,16.426339257520198,cm
-arabidopsis,Without ODE residual,1,test,2.835341686199669,14.237017999807431,cm
-arabidopsis,Without biological losses,1,train,1.18551244400163,5.634763218940378,cm
-arabidopsis,Without biological losses,1,val,3.244257551583023,16.11208365632417,cm
-arabidopsis,Without biological losses,1,test,3.022882019707089,15.178708772679949,cm
-arabidopsis,Without ODE residual,2,train,1.4835628871706226,7.051402650314588,cm
-arabidopsis,Without ODE residual,2,val,3.115847370633276,15.4743551329594,cm
-arabidopsis,Without ODE residual,2,test,2.8206211828253167,14.163102368218144,cm
-arabidopsis,Without biological losses,2,train,1.1604223947304673,5.515509737030613,cm
-arabidopsis,Without biological losses,2,val,3.2581472468956663,16.18106459550052,cm
-arabidopsis,Without biological losses,2,test,2.917312089438548,14.64861357999572,cm
-arabidopsis,Without ODE residual,3,train,1.3942223848722832,6.626765541813981,cm
-arabidopsis,Without ODE residual,3,val,3.301093046454978,16.394348006014496,cm
-arabidopsis,Without ODE residual,3,test,2.9010959512177497,14.567187961044548,cm
-arabidopsis,Without biological losses,3,train,1.216690281779793,5.782952075537687,cm
-arabidopsis,Without biological losses,3,val,3.33094080085902,16.542582080610917,cm
-arabidopsis,Without biological losses,3,test,3.0392978690349306,15.261137195151973,cm
+wheat,PhytoODE (K loss only),1,train,0.022400717796215,7.4832202792396,m
+wheat,PhytoODE (K loss only),1,val,0.0383650048452331,11.510231537808968,m
+wheat,PhytoODE (K loss only),1,test,0.0309359151428715,10.444715573306508,m
+wheat,Latent Neural ODE (no physics),1,train,0.0211413229033328,7.062504769686634,m
+wheat,Latent Neural ODE (no physics),1,val,0.0381146212652062,11.43511169901313,m
+wheat,Latent Neural ODE (no physics),1,test,0.0309484322577339,10.4489416549961,m
+wheat,PhytoODE (K loss only),2,train,0.0227118400191377,7.587154275867632,m
+wheat,PhytoODE (K loss only),2,val,0.038285587100437,11.486404703054182,m
+wheat,PhytoODE (K loss only),2,test,0.03000124605413,10.129148610377465,m
+wheat,Latent Neural ODE (no physics),2,train,0.0210705649527114,7.038867253432722,m
+wheat,Latent Neural ODE (no physics),2,val,0.0393031568619317,11.791694995807326,m
+wheat,Latent Neural ODE (no physics),2,test,0.0306643444111199,10.35302670494492,m
+wheat,PhytoODE (K loss only),3,train,0.0224675547101626,7.505547927594643,m
+wheat,PhytoODE (K loss only),3,val,0.036602896891783,10.981565618942412,m
+wheat,PhytoODE (K loss only),3,test,0.0304770420326095,10.289788877303184,m
+wheat,Latent Neural ODE (no physics),3,train,0.0210274084650799,7.024450326869794,m
+wheat,Latent Neural ODE (no physics),3,val,0.0376075882863876,11.28299215655382,m
+wheat,Latent Neural ODE (no physics),3,test,0.0311251294056224,10.508598899457334,m
+maize,PhytoODE (K loss only),1,train,48.02247032886719,15.390113815434162,relative UAV height
+maize,PhytoODE (K loss only),1,val,52.687717393670354,20.78733148724793,relative UAV height
+maize,PhytoODE (K loss only),1,test,62.472483433892926,20.277513816309696,relative UAV height
+maize,Latent Neural ODE (no physics),1,train,36.97312922771411,11.84905030979272,relative UAV height
+maize,Latent Neural ODE (no physics),1,val,71.45554021900843,28.191959618113,relative UAV height
+maize,Latent Neural ODE (no physics),1,test,83.35206057214337,27.054672184723135,relative UAV height
+maize,PhytoODE (K loss only),2,train,33.65499509634442,10.785663491352452,relative UAV height
+maize,PhytoODE (K loss only),2,val,43.63496936568703,17.21567411742559,relative UAV height
+maize,PhytoODE (K loss only),2,test,50.32287640273362,16.33395641478966,relative UAV height
+maize,Latent Neural ODE (no physics),2,train,48.28487824231892,15.47420960697584,relative UAV height
+maize,Latent Neural ODE (no physics),2,val,59.22411755795673,23.366192817168557,relative UAV height
+maize,Latent Neural ODE (no physics),2,test,58.079623389527285,18.851665581270375,relative UAV height
+maize,PhytoODE (K loss only),3,train,32.59564968974754,10.446167287476763,relative UAV height
+maize,PhytoODE (K loss only),3,val,48.10530910218127,18.9793951241414,relative UAV height
+maize,PhytoODE (K loss only),3,test,54.70479530217074,17.756253338831566,relative UAV height
+maize,Latent Neural ODE (no physics),3,train,44.49743797878962,14.260420805073345,relative UAV height
+maize,Latent Neural ODE (no physics),3,val,51.57918456159949,20.349972638076697,relative UAV height
+maize,Latent Neural ODE (no physics),3,test,61.912529269451966,20.095762144504192,relative UAV height
+arabidopsis,PhytoODE (K loss only),1,train,1.3688791355845265,6.506308595404321,cm
+arabidopsis,PhytoODE (K loss only),1,val,3.307534662666499,16.426339257520198,cm
+arabidopsis,PhytoODE (K loss only),1,test,2.835341686199669,14.237017999807431,cm
+arabidopsis,Latent Neural ODE (no physics),1,train,1.18551244400163,5.634763218940378,cm
+arabidopsis,Latent Neural ODE (no physics),1,val,3.244257551583023,16.11208365632417,cm
+arabidopsis,Latent Neural ODE (no physics),1,test,3.022882019707089,15.178708772679949,cm
+arabidopsis,PhytoODE (K loss only),2,train,1.4835628871706226,7.051402650314588,cm
+arabidopsis,PhytoODE (K loss only),2,val,3.115847370633276,15.4743551329594,cm
+arabidopsis,PhytoODE (K loss only),2,test,2.8206211828253167,14.163102368218144,cm
+arabidopsis,Latent Neural ODE (no physics),2,train,1.1604223947304673,5.515509737030613,cm
+arabidopsis,Latent Neural ODE (no physics),2,val,3.2581472468956663,16.18106459550052,cm
+arabidopsis,Latent Neural ODE (no physics),2,test,2.917312089438548,14.64861357999572,cm
+arabidopsis,PhytoODE (K loss only),3,train,1.3942223848722832,6.626765541813981,cm
+arabidopsis,PhytoODE (K loss only),3,val,3.301093046454978,16.394348006014496,cm
+arabidopsis,PhytoODE (K loss only),3,test,2.9010959512177497,14.567187961044548,cm
+arabidopsis,Latent Neural ODE (no physics),3,train,1.216690281779793,5.782952075537687,cm
+arabidopsis,Latent Neural ODE (no physics),3,val,3.33094080085902,16.542582080610917,cm
+arabidopsis,Latent Neural ODE (no physics),3,test,3.0392978690349306,15.261137195151973,cm
 wheat,Tuned PhytoODE,1,train,0.022386184487818178,7.478365258560828,m
 wheat,Tuned PhytoODE,1,val,0.03811263869340638,11.43451688974493,m
 wheat,Tuned PhytoODE,1,test,0.030775371466045358,10.390512132619596,m

@@ -18,7 +18,7 @@ DATASETS = list(BASE)
 LABELS = dict(wheat="Wheat", maize="Maize", arabidopsis="Arabidopsis")
 UNITS = dict(wheat="m", maize="relative UAV height", arabidopsis="cm")
 NAMES = dict(full="Original PhytoODE", tuned="Tuned PhytoODE",
-             no_ode_residual="Without ODE residual", no_biological_loss="Without biological losses")
+             no_ode_residual="PhytoODE (K loss only)", no_biological_loss="Latent Neural ODE (no physics)")
 ORDER = ["full", "tuned", "no_ode_residual", "no_biological_loss"]
 COLORS = ["#999999", "#0072BD", "#D95319", "#009E73"]
 
@@ -250,31 +250,54 @@ def main():
 
 def write_tables(out, summary, coefficients, changes, new_trials, completed):
     table = summary.set_index(["dataset", "variant", "split"])
-    test_changes = changes[changes.split.eq("test") & changes.reference.eq("no_ode_residual")]
+    test_changes = changes[changes.split.eq("test") & changes.reference.eq("no_biological_loss")]
     lower = [LABELS[r.dataset] for r in test_changes.itertuples() if r.error_reduction_percent > 0]
     higher = [LABELS[r.dataset] for r in test_changes.itertuples() if r.error_reduction_percent < 0]
-    outcome = "Against the zero-residual model, the validation-selected positive coefficient lowers mean test error for "+", ".join(lower)+"."
+    outcome = "Against Latent Neural ODE without physics loss (lambda_ODE = lambda_K = 0), validation-selected PhytoODE lowers mean test error for "+", ".join(lower)+"."
     if higher:
-        outcome += " It raises mean test error for "+", ".join(higher)+"; tuning does not make the ODE-residual model uniformly best on test."
+        outcome += " It raises mean test error for "+", ".join(higher)+"."
 
-    def cell(dataset, variant, split, latex=False):
+    def cell(dataset, variant, split, latex=False, variants=ORDER):
         row = table.loc[dataset, variant, split]
         digits = dict(wheat=5, maize=2, arabidopsis=3)[dataset]
         pm = r"\pm" if latex else " ± "
         value = f"{row.rmse_mean:.{digits}f}{pm}{row.rmse_sd:.{digits}f} / {row.relative_error_mean:.2f}{pm}{row.relative_error_sd:.2f}"
-        best = min(table.loc[dataset, name, split].rmse_mean for name in ORDER)
+        best = min(table.loc[dataset, name, split].rmse_mean for name in variants)
         if row.rmse_mean == best:
             return r"$\mathbf{"+value+"}$" if latex else "**"+value+"**"
         return "$"+value+"$" if latex else value
 
     text = ["# Validation-selected ODE-residual coefficient tuning", "",
         "**"+outcome+"**", "",
+        "The primary no-physics baseline removes both biological losses. The separately retained **PhytoODE (K loss only)** ablation has lambda_ODE = 0 and lambda_K > 0. It must not be called Latent Neural ODE without physics loss. This terminology correction reuses the already-completed both-zero runs; it does not change any model, coefficient selection, checkpoint or numeric result.", "",
         "Only the logistic derivative-residual coefficient was varied. Architecture, paired initialization, maximum-height coefficient, optimizer, schedule, training length, data splits, masks and validation checkpoint rules match the previous ablation.", "",
         f"Completed {new_trials} new full-length training trials in {completed['seconds']/3600:.2f} hours, followed by nine final evaluations. Wheat and Arabidopsis ran concurrently on GPU 2; maize used GPU 3.", "",
+        "## Primary comparison: PhytoODE versus Latent Neural ODE without physics loss", "",
+        "Cells are three-seed mean RMSE ± sample SD / relative RMSE (%) ± sample SD. Bold marks the lower mean within each dataset and split for these two models. The main baseline sets both lambda_ODE and lambda_K to zero; PhytoODE uses the validation-selected ODE coefficient and the original positive K coefficient. Both retain the same latent ODE architecture and optimizer weight decay. Original PhytoODE and the K-loss-only partial ablation are included in the full table below.", "",
+        "| Dataset (RMSE unit) | Model | Train | Validation | Test |", "|---|---|---:|---:|---:|"]
+    primary = ["no_biological_loss", "tuned"]
+    primary_summary = summary[summary.variant.isin(primary)].copy()
+    selected = coefficients.set_index("dataset")
+    primary_summary["model"] = primary_summary.variant.map(NAMES)
+    primary_summary["lambda_ode"] = [0. if r.variant == "no_biological_loss" else selected.loc[r.dataset].selected_positive_lambda_ode for r in primary_summary.itertuples()]
+    primary_summary["lambda_K"] = [0. if r.variant == "no_biological_loss" else selected.loc[r.dataset].lambda_ymax for r in primary_summary.itertuples()]
+    primary_summary.to_csv(out/"physics_vs_latent_ode.csv", index=False)
+    primary_tex = [r"\begin{table}[t]", r"\centering", r"\small", r"\setlength{\tabcolsep}{4pt}",
+        r"\caption{PhytoODE versus the same latent Neural ODE trained without physics loss ($\lambda_{\mathrm{ODE}}=\lambda_K=0$). Entries are RMSE $\pm$ SD / relative RMSE (\%) $\pm$ SD over seeds 1--3; bold marks the lower mean for each dataset and split. Wheat uses metres, maize relative UAV-height units, and Arabidopsis centimetres. PhytoODE uses validation-selected ODE weights with fixed maximum-height weights. The pure-data baseline retains the same architecture and optimizer weight decay. These follow-up test scores reuse previously inspected test sets.}",
+        r"\label{tab:physics-vs-latent-ode}", r"\resizebox{\linewidth}{!}{%", r"\begin{tabular}{llccc}",
+        r"\toprule", r"Dataset & Model & Train & Validation & Test \\", r"\midrule"]
+    for dataset in DATASETS:
+        for variant in primary:
+            text.append("| "+LABELS[dataset]+" ("+UNITS[dataset]+") | "+NAMES[variant]+" | "+" | ".join(cell(dataset, variant, split, variants=primary) for split in ("train", "val", "test"))+" |")
+            primary_tex.append(LABELS[dataset]+" & "+NAMES[variant]+" & "+" & ".join(cell(dataset, variant, split, True, primary) for split in ("train", "val", "test"))+r" \\")
+        primary_tex.append(r"\bottomrule" if dataset == DATASETS[-1] else r"\midrule")
+    primary_tex += [r"\end{tabular}}", r"\end{table}"]
+    (out/"physics_vs_latent_ode_table.tex").write_text("\n".join(primary_tex)+"\n")
+    text += ["", "This comparison measures the combined effect of both biological losses under the reported settings; it does not isolate the ODE residual. In maize, the K-loss-only partial ablation still has lower test error than tuned PhytoODE, and tuning worsens test error relative to original PhytoODE. Thus, superiority to the no-physics baseline is distinct from a claim that increasing the ODE weight improves all datasets. The baseline was not independently retuned.", "",
         "## Search and selection", "",
-        "The fixed positive grid was 0.01, 0.1, 0.5, 1, 2, 5, 10, 50, 100 and 500. Original positive-coefficient and zero-residual results were reused. Seed 1 screened the grid, followed by one refinement using geometric midpoints around its best positive validation coefficient (one decade outward at a grid boundary). The three best positive seed-1 candidates were confirmed with seeds 2 and 3. All coefficients with three seeds, including zero and the original coefficient, entered the final validation ranking. The positive coefficient with the lowest mean validation RMSE was selected; the overall winner including zero is reported separately.", "",
+        "The fixed positive grid was 0.01, 0.1, 0.5, 1, 2, 5, 10, 50, 100 and 500. Original positive-coefficient and zero-residual results were reused. Seed 1 screened the grid, followed by one refinement using geometric midpoints around its best positive validation coefficient (one decade outward at a grid boundary). The three best positive seed-1 candidates were confirmed with seeds 2 and 3. All coefficients with three seeds, including zero and the original coefficient, entered the final validation ranking with lambda_K fixed at its original positive value. The positive coefficient with the lowest mean validation RMSE was selected; the winner including zero under that same fixed-K condition is reported separately. The already-completed both-zero no-physics baseline is a distinct comparison; relabeling it does not change the frozen selection procedure.", "",
         "No new candidate was evaluated on test during search. All three dataset selections and checkpoint hashes were frozen before any final test evaluation. **The previous ablation's test results had already been inspected before this follow-up search: these are reused-test follow-up scores, not an independent confirmation.**", "",
-        "| Dataset | Original ODE coefficient | Selected positive coefficient | Overall validation winner (including zero) | Fixed maximum-height coefficient |",
+        "| Dataset | Original ODE coefficient | Selected positive coefficient | Fixed-K validation winner (ODE coefficient 0 included) | Fixed maximum-height coefficient |",
         "|---|---:|---:|---:|---:|"]
     for row in coefficients.itertuples():
         text.append(f"| {LABELS[row.dataset]} | {row.original_lambda_ode:g} | {row.selected_positive_lambda_ode:.6g} | {row.selected_overall_lambda_ode:.6g} | {row.lambda_ymax:g} |")
@@ -282,12 +305,12 @@ def write_tables(out, summary, coefficients, changes, new_trials, completed):
         text += ["", "### Interrupted-run recovery", "",
             "The original controller and one wheat confirmation run received termination signals of unidentified origin. The incomplete wheat run (coefficient 3.162277660, seed 2) stopped at epoch 578 and was excluded. The 45 completed trials and two frozen dataset selections were retained. The interrupted run was restarted from the same seed for the full 1,500 epochs, and the still-pending seed-3 run was completed. The recorded interrupted prefix matches the replacement run. No optimizer, architecture, coefficient candidate, ranking rule or test policy changed. `recovery.json` retains the interrupted prefix and records the recovery procedure; `recovery_completed.json` records completion. The original frozen training/controller sources remain unchanged."]
     text += ["", "![Validation coefficient search](validation_lambda.png)", "",
-        "The gray points show seed-1 screening values. Blue points and error bars show the mean and sample SD for coefficients evaluated with all three seeds. The dashed line is the three-seed mean at zero; the selected positive coefficient is marked. A screened candidate with only one seed is not eligible for final selection.", "",
+        "The gray points show seed-1 screening values. Blue points and error bars show the mean and sample SD for coefficients evaluated with all three seeds. The dashed line is the three-seed mean at lambda_ODE = 0 with the original lambda_K retained (the K-loss-only partial ablation); it is not the no-physics baseline. The selected positive coefficient is marked. A screened candidate with only one seed is not eligible for final selection.", "",
         "## Train / validation / test", "",
         "Cells are **RMSE ± sample SD / relative RMSE (%) ± sample SD**, across seeds 1--3. Bold denotes the lowest mean among these four variants within each dataset and split. Relative RMSE is curve-averaged RMSE divided by the split's mean scored target, multiplied by 100; it is not MAPE. Maize relative UAV-height units are the target units and should not be confused with relative RMSE.", "",
         "| Dataset (RMSE unit) | Variant | Train | Validation | Test |", "|---|---|---:|---:|---:|"]
     latex = [r"\begin{table}[t]", r"\centering", r"\small", r"\setlength{\tabcolsep}{4pt}",
-        r"\caption{Validation-selected tuning of the logistic ODE-residual coefficient with all other training settings fixed. Entries are RMSE $\pm$ SD / relative RMSE (\%) $\pm$ SD for seeds 1--3. Wheat uses metres, maize relative UAV-height units, and Arabidopsis centimetres. Bold marks the lowest mean within each dataset and split. Test sets were previously inspected in the preceding ablation and are reused for this follow-up evaluation.}",
+        r"\caption{Validation-selected tuning of the logistic ODE-residual coefficient with other training settings fixed. Latent Neural ODE (no physics) sets $\lambda_{\mathrm{ODE}}=\lambda_K=0$; PhytoODE (K loss only) retains $\lambda_K>0$. Entries are RMSE $\pm$ SD / relative RMSE (\%) $\pm$ SD for seeds 1--3. Wheat uses metres, maize relative UAV-height units, and Arabidopsis centimetres. Bold marks the lowest mean within each dataset and split. Previously inspected test sets are reused for this follow-up evaluation.}",
         r"\label{tab:lambda-ode-tuning}", r"\resizebox{\linewidth}{!}{%", r"\begin{tabular}{llccc}",
         r"\toprule", r"Dataset & Variant & Train & Validation & Test \\", r"\midrule"]
     for dataset in DATASETS:
@@ -298,7 +321,7 @@ def write_tables(out, summary, coefficients, changes, new_trials, completed):
     latex += [r"\end{tabular}}", r"\end{table}"]
     (out/"lambda_ode_table.tex").write_text("\n".join(latex)+"\n")
     text += ["", "![Test relative errors](test_relative_errors.png)", "",
-        "Bars show three-seed means and sample SD; paired points connect the same initialization seed. All four variants retain the latent Neural ODE architecture. The zero-residual variant retains the maximum-height penalty; the final variant removes both biological losses. If the search retains the original coefficient, original and tuned rows use the same reevaluated checkpoints and scores; scorer-rounding differences are not counted as improvements.", "",
+        "Bars show three-seed means and sample SD; paired points connect the same initialization seed. All four variants retain the latent Neural ODE architecture. PhytoODE (K loss only) retains the maximum-height penalty and removes only the ODE residual. Latent Neural ODE (no physics) removes both biological losses. If the search retains the original coefficient, original and tuned rows use the same reevaluated checkpoints and scores; scorer-rounding differences are not counted as improvements.", "",
         "## Paired test comparisons", "", "Positive error reduction means the tuned model has lower mean error.", "",
         "| Dataset | Reference | Error reduction (%) | Seeds favoring tuned model |", "|---|---|---:|---:|"]
     for row in changes[changes.split.eq("test")].itertuples():
@@ -324,7 +347,7 @@ def plot(out, runs, summary, validation, selections):
         positive = confirmed[(confirmed.index > 0) & confirmed["count"].eq(3)]
         ax.plot(screen.lambda_ode, screen.val_rmse, "o", color="#999999", ms=4, label="Seed 1 screen")
         ax.errorbar(positive.index, positive["mean"], yerr=positive["std"], fmt="o", color="#0072BD", capsize=3, label="3 seeds: mean ± SD")
-        ax.axhline(confirmed.loc[0., "mean"], color="#D95319", ls="--", lw=1.2, label=r"$\lambda_{\mathrm{ODE}}=0$")
+        ax.axhline(confirmed.loc[0., "mean"], color="#D95319", ls="--", lw=1.2, label=r"$\lambda_{\mathrm{ODE}}=0$, K loss retained")
         winner = selections[dataset]["selected_positive"]["lambda_ode"]
         ax.axvline(winner, color="#0072BD", lw=.8, alpha=.5)
         ax.set_title(f"{LABELS[dataset]}: selected λ = {winner:.4g}")
@@ -345,7 +368,7 @@ def plot(out, runs, summary, validation, selections):
         paired = runs[runs.dataset.eq(dataset) & runs.split.eq("test")].pivot(index="seed", columns="variant", values="relative_error")
         for seed in (1, 2, 3):
             ax.plot(np.arange(4)+(seed-2)*.04, paired.loc[seed, ORDER], "o-", color="black", alpha=.35, ms=3, lw=.7)
-        ax.set_xticks(range(4), ["Original", "Tuned", "Without ODE\nresidual", "Without\nbiological losses"])
+        ax.set_xticks(range(4), ["Original\nPhytoODE", "Tuned\nPhytoODE", "PhytoODE\nK loss only", "Latent NODE\nNo physics loss"])
         ax.tick_params(axis="x", labelsize=8)
         ax.set_title(LABELS[dataset])
         ax.set_ylabel("Test relative RMSE (%)")
@@ -370,6 +393,7 @@ def all_baselines(out, runs):
     summary.to_csv(out/"all_baselines.csv", index=False)
     table = summary.set_index(["dataset", "model", "split"])
     text = ["# Comparison with existing baselines", "",
+        "Latent Neural ODE (no physics) sets both lambda_ODE and lambda_K to zero. PhytoODE (K loss only) retains lambda_K and is a separate partial ablation. Original and tuned PhytoODE retain both biological losses.", "",
         "Cells are mean RMSE / relative RMSE (%); bold marks the lowest mean within each dataset and split. RMSE units: wheat m, maize relative UAV height, Arabidopsis cm. Models with three seeds are averaged; deterministic Logistic and Temperature ODE fits have one result. Baseline metrics are reused from the existing manuscript table and were not recomputed or retuned. Full per-seed values and SD are in the companion CSV files. Final test sets were already inspected before this follow-up tuning.", "",
         "| Dataset | Model | Train | Validation | Test |", "|---|---|---:|---:|---:|"]
     model_order = list(NAMES.values()) + ["Logi-PINN", "LSTM-NN", "RF", "Temp-ODE", "Logi-ODE"]
@@ -389,31 +413,39 @@ def all_baselines(out, runs):
 def write_korean_interpretation(out, summary, coefficients, changes):
     table = summary.set_index(["dataset", "variant", "split"])
     names = dict(wheat="밀", maize="옥수수", arabidopsis="Arabidopsis")
-    test_changes = changes[changes.split.eq("test") & changes.reference.eq("no_ode_residual")]
+    test_changes = changes[changes.split.eq("test") & changes.reference.eq("no_biological_loss")]
     lower = [names[r.dataset] for r in test_changes.itertuples() if r.error_reduction_percent > 0]
     higher = [names[r.dataset] for r in test_changes.itertuples() if r.error_reduction_percent < 0]
-    outcome = "계수 0 모델 대비 test 평균 오차는 "+", ".join(lower)+"에서 감소했다."
+    outcome = "Physics loss가 없는 Latent Neural ODE(lambda_ODE = lambda_K = 0) 대비, 현재 PhytoODE의 test 평균 오차는 "+", ".join(lower)+"에서 감소했다."
     if higher:
-        outcome += " "+", ".join(higher)+"에서는 증가했다. 따라서 모든 데이터셋에서 ODE 잔차 손실을 넣은 모델이 최고라는 결론은 뒷받침되지 않는다."
+        outcome += " "+", ".join(higher)+"에서는 증가했다."
     text = ["# ODE loss 계수 튜닝 결과 해석", "",
         "**"+outcome+"**", "",
+        "## 비교 모델의 정의", "",
+        "- **Latent Neural ODE — physics loss 없음:** lambda_ODE = 0, lambda_K = 0. 두 생물학적 손실을 모두 제거하며, 동일한 latent ODE 구조와 optimizer weight decay는 유지한다. 기존 `no_biological_loss` 실험이 이 baseline이다.",
+        "- **PhytoODE — K loss만 유지:** lambda_ODE = 0, lambda_K > 0. ODE 잔차만 제거한 부분 ablation이며, physics loss를 전부 제거한 baseline이 아니다.",
+        "- **PhytoODE:** 두 손실을 모두 유지한다. 이번 튜닝은 lambda_K를 고정하고 lambda_ODE만 선택했다.", "",
+        "앞선 요약에서 K loss를 유지한 부분 ablation을 중심으로 비교한 탓에, 원래 요청한 physics loss 전체 제거 baseline과 혼동될 수 있었다. 표·그림·캡션의 명칭과 주 비교 대상을 바로잡았다. 두 계수를 모두 0으로 둔 9개 기존 학습을 재사용하며 수치, checkpoint, 계수 선택은 변경하지 않았다.", "",
         "이번 실험에서는 latent Neural ODE 구조를 유지하고 logistic ODE 잔차 손실의 계수만 조절했다. 최대높이 손실 계수는 밀·Arabidopsis 0.1, 옥수수 0.5로 고정했다. 데이터 loss만 사용하는 비교 모델도 latent ODE 구조를 사용한다.", "",
         "손실은 `L_data + lambda_ODE * L_ODE + lambda_K * L_K`이다. 계수가 크더라도 ODE 손실이 학습을 지배한다는 뜻은 아니다. 데이터 손실은 높이의 RMSE인 반면 ODE 잔차는 일별 성장률의 제곱오차이므로 수치와 단위가 다르다. 여기서 높이는 모델 내부의 단위이며 옥수수는 정규화된 높이를 사용한다. 실제 가중 손실 크기는 `loss_contributions.csv`에 기록했다. 손실 크기와 gradient 영향력도 구분해야 한다.", "",
         "## 데이터셋별 결과", ""]
     for row in coefficients.itertuples():
         dataset = row.dataset
         val_tuned = table.loc[dataset, "tuned", "val"].rmse_mean
-        val_zero = table.loc[dataset, "no_ode_residual", "val"].rmse_mean
+        val_pure = table.loc[dataset, "no_biological_loss", "val"].rmse_mean
         test_tuned = table.loc[dataset, "tuned", "test"]
-        delta = changes[changes.dataset.eq(dataset) & changes.split.eq("test") & changes.reference.eq("no_ode_residual")].iloc[0]
+        delta = changes[changes.dataset.eq(dataset) & changes.split.eq("test") & changes.reference.eq("no_biological_loss")].iloc[0]
+        partial = changes[changes.dataset.eq(dataset) & changes.split.eq("test") & changes.reference.eq("no_ode_residual")].iloc[0]
+        original = changes[changes.dataset.eq(dataset) & changes.split.eq("test") & changes.reference.eq("full")].iloc[0]
         text += [f"### {names[dataset]}", "",
-            f"양의 계수 후보 중 validation 평균 RMSE로 선택된 값은 {row.original_lambda_ode:g} → **{row.selected_positive_lambda_ode:.6g}**이다. 선택 모델의 validation RMSE는 {val_tuned:.6g}, 계수 0 모델은 {val_zero:.6g}이다. 0까지 포함한 전체 validation 최적 계수는 **{row.selected_overall_lambda_ode:.6g}**이다.", "",
-            f"선택 모델의 test RMSE는 **{test_tuned.rmse_mean:.6g} ± {test_tuned.rmse_sd:.6g} {UNITS[dataset]}**, relative RMSE는 **{test_tuned.relative_error_mean:.3f} ± {test_tuned.relative_error_sd:.3f}%**이다. 계수 0 모델 대비 test 평균 오차 감소율은 {delta.error_reduction_percent:+.2f}%이며, 같은 시드끼리 비교하면 {int(delta.tuned_better_seed_count)}/3개에서 더 낮다. 감소율이 음수이면 선택된 physics 모델의 평균 test 오차가 더 높다는 뜻이다.", ""]
+            f"Validation 평균 RMSE로 선택된 ODE 계수는 {row.original_lambda_ode:g} → **{row.selected_positive_lambda_ode:.6g}**이다. 선택 모델의 validation RMSE는 {val_tuned:.6g}, physics loss가 없는 baseline은 {val_pure:.6g}이다. lambda_K를 원래 값으로 고정한 ODE 계수 탐색(0 포함)의 최적값은 **{row.selected_overall_lambda_ode:.6g}**이다.", "",
+            f"선택 모델의 test RMSE는 **{test_tuned.rmse_mean:.6g} ± {test_tuned.rmse_sd:.6g} {UNITS[dataset]}**, relative RMSE는 **{test_tuned.relative_error_mean:.3f} ± {test_tuned.relative_error_sd:.3f}%**이다. Physics loss가 없는 baseline 대비 test 평균 오차 감소율은 {delta.error_reduction_percent:+.2f}%이며, 같은 시드끼리 비교하면 {int(delta.tuned_better_seed_count)}/3개에서 더 낮다.", "",
+            f"별도로 K loss만 유지한 부분 ablation 대비 감소율은 {partial.error_reduction_percent:+.2f}%, 튜닝 전 PhytoODE 대비 감소율은 {original.error_reduction_percent:+.2f}%이다. 감소율이 음수이면 현재 튜닝 모델의 오차가 더 높다는 뜻이다.", ""]
     text += ["## 논문에서 주장할 수 있는 범위", "",
-        "양의 계수가 0보다 validation에서 좋았는지와 test에서 좋았는지는 구분해서 보고해야 한다. 모든 데이터셋에서 physics loss가 우수하다는 결론은 해당 비교 결과가 뒷받침할 때만 가능하다. 계수 선택은 미리 정한 validation 절차로 완료했으며 test 순위로 계수를 다시 바꾸지 않았다.", "",
+        "현재 결과는 보고된 설정에서 두 physics loss를 포함한 PhytoODE가 physics loss를 모두 제거한 동일한 latent Neural ODE보다 세 데이터셋의 평균 test 오차가 낮음을 보여준다. 이 비교는 두 손실의 공동 효과를 평가한다. ODE 잔차 항 자체가 모든 데이터셋에서 이롭다거나, lambda_ODE 튜닝이 모든 데이터셋의 test 오차를 줄였다는 의미는 아니다. 특히 옥수수에서는 튜닝 후 모델이 K-loss-only 모델 및 튜닝 전 PhytoODE보다 test 오차가 높다. 계수는 미리 정한 validation 절차로 선택했으며 test 순위로 다시 바꾸지 않았다.", "",
         "이전 ablation의 test 결과를 확인한 뒤 시작한 후속 튜닝이다. 따라서 이번 test 점수는 기존 test set을 재사용한 평가이며, 새로운 독립 검증으로 제시하면 안 된다. 3개 시드의 표준편차는 초기화 변동성이고 통계적 유의성 또는 새로운 연도에 대한 불확실성을 확정하지 않는다. 독립 연도 또는 반복된 외부 분할로 확인하면 physics loss의 일반화 효과를 더 강하게 주장할 수 있다.", "",
         "ODE 잔차만 제거한 비교는 최대높이 손실이 있는 조건에서 잔차 항의 효과를 평가한다. 두 biological loss를 모두 제거한 비교는 두 항의 공동 효과이므로, 그 차이를 전부 ODE 잔차 덕분이라고 해석해서는 안 된다. 이번 결과만으로 latent ODE 구조 자체의 필요성을 입증할 수도 없다.", "",
-        "Train / validation / test 전체 비교는 `README.md`, 기존 baseline까지 포함한 표는 `all_baselines.md`, LaTeX 표는 `lambda_ode_table.tex`에 있다. 기존 원고의 결과와 이번 후속 튜닝 결과는 별도 파일로 보존했다."]
+        "Train / validation / test 전체 비교는 `README.md`, 기존 baseline까지 포함한 표는 `all_baselines.md`에 있다. Physics loss 전체 제거 baseline과의 주 비교 LaTeX 표는 `physics_vs_latent_ode_table.tex`이며, 부분 ablation까지 포함한 표는 `lambda_ode_table.tex`이다. 기존 원고의 결과와 이번 후속 튜닝 결과는 별도 파일로 보존했다."]
     if (out/"recovery_completed.json").exists():
         text += ["", "## 실행 중단과 복구", "",
             "밀의 계수 3.162277660, 시드 2 학습이 578 epoch에서 종료 신호로 중단되어 동일한 초기값과 전체 1,500 epoch 일정으로 재실행했다. 중단된 부분 실행은 완료 결과에 포함하지 않았고, 재실행의 초기 학습 기록이 중단 전 기록과 일치함을 검증했다. 기존 45개 완료 결과, 후보 목록, 계수 선택 기준과 test 평가 규칙은 유지했다. 종료 신호의 발신 원인은 확인되지 않았다."]

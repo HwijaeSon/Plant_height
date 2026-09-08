@@ -14,8 +14,8 @@ import pandas as pd
 
 from run_physics_ablation import DEFAULT_OUTPUT, ROOT, DATASETS, VARIANTS, references, verify_control
 
-NAMES = dict(full="PhytoODE", no_ode_residual="Without ODE residual",
-             no_biological_loss="Without biological losses")
+NAMES = dict(full="PhytoODE", no_ode_residual="PhytoODE (K loss only)",
+             no_biological_loss="Latent Neural ODE (no physics)")
 DATASET_NAMES = dict(wheat="Wheat", maize="Maize", arabidopsis="Arabidopsis")
 UNITS = dict(wheat="m", maize="relative UAV height", arabidopsis="cm")
 
@@ -124,11 +124,12 @@ def main():
         return "$"+value+"$" if latex else value
 
     text = ["# PhytoODE physics-loss ablation", "",
+        "**The Latent Neural ODE baseline without physics loss sets both the logistic ODE-residual coefficient and the maximum-height coefficient to zero. PhytoODE has lower mean test error than this baseline on all three datasets at the original fixed settings. The K-loss-only model is a separate partial ablation, not the no-physics baseline.**", "",
         "Three fixed seeds (1--3), paired initialization, unchanged model architecture and dataset-specific training/validation rules. Full PhytoODE rows reuse the frozen manuscript runs. A fresh full-model seed-1 control reproduces the selected epoch and all three split errors for each dataset.", "",
         "## Loss definitions", "",
         "- **PhytoODE:** data loss + logistic ODE residual + maximum-height consistency loss.",
-        "- **Without ODE residual:** set only the logistic derivative-residual coefficient to zero; keep the maximum-height consistency loss.",
-        "- **Without biological losses:** set both coefficients to zero; train with data loss and the same optimizer weight decay. This is the pure data-trained latent ODE comparison.", "",
+        "- **PhytoODE (K loss only):** lambda_ODE = 0, lambda_K > 0; retain maximum-height consistency. This is the ODE-residual-only ablation.",
+        "- **Latent Neural ODE (no physics):** lambda_ODE = lambda_K = 0; train with data loss and the same optimizer weight decay. Both biological penalties are absent.", "",
         "The auxiliary logistic parameter head is retained to preserve the architecture and random-number sequence. It does not affect predictions, and receives no gradients in the pure-data variant. The genotype embedding, temperature encoder, latent ODE, decoder, optimizer, learning-rate schedule, data splits and masks are identical across variants. There is no ablation-specific hyperparameter search.", "",
         "| Dataset | Epochs | ODE residual weight | Maximum-height weight | Checkpoint selection |",
         "|---|---:|---:|---:|---|",
@@ -140,7 +141,7 @@ def main():
         "| Dataset (RMSE unit) | Model | Train | Validation | Test |",
         "|---|---|---:|---:|---:|"]
     latex = [r"\begin{table}[t]", r"\centering", r"\small", r"\setlength{\tabcolsep}{4pt}",
-        r"\caption{Loss ablation with fixed architecture, training settings, and seeds 1--3. Entries are RMSE $\pm$ SD / relative RMSE (\%) $\pm$ SD. Wheat uses metres, maize uses relative UAV-height units, and Arabidopsis uses centimetres. The lowest mean for each dataset and split is bold.}",
+        r"\caption{Loss ablation with fixed architecture, training settings, and seeds 1--3. Latent Neural ODE (no physics) sets $\lambda_{\mathrm{ODE}}=\lambda_K=0$; the K-loss-only partial ablation retains $\lambda_K>0$. Entries are RMSE $\pm$ SD / relative RMSE (\%) $\pm$ SD. Wheat uses metres, maize relative UAV-height units, and Arabidopsis centimetres. The lowest mean for each dataset and split is bold.}",
         r"\label{tab:physics-ablation}", r"\resizebox{\linewidth}{!}{%", r"\begin{tabular}{llccc}",
         r"\toprule", r"Dataset & Model & Train & Validation & Test \\", r"\midrule"]
     for dataset in DATASETS:
@@ -157,6 +158,7 @@ def main():
     for row in changes[changes.split.eq("test")].itertuples():
         text.append(f"| {DATASET_NAMES[row.dataset]} | {NAMES[row.variant]} | {row.mean_rmse_increase:+.5f} | {row.error_increase_percent:+.2f} | {row.full_model_better_seed_count}/3 |")
     text += ["", "![Test relative errors and paired seeds](test_relative_errors.png)", "",
+        "Latent Neural ODE (no physics) removes both biological losses. PhytoODE (K loss only) retains the maximum-height term and is therefore a partial ablation. Bars show mean and sample SD; connected points identify paired seeds.", "",
         "## Interpretation limits", "",
         "The error bars show variation across initialization seeds, not independent years or a biological confidence interval. Three seeds do not establish statistical significance. Settings were originally selected for the full model; this measures removal of losses at those fixed settings, not the best achievable accuracy after independently tuning each ablation. A single held-out year is used for wheat and maize. Arabidopsis holds out plants within known genotypes and temperatures. The wheat scoring mask retains the original pre-observation fill points (475 of 1,368 test points); the other datasets score observed points only.", "",
         "The ODE-residual-only ablation isolates the derivative constraint conditional on the maximum-height term. The pure-data comparison measures the joint effect of both biological penalties. It cannot attribute the entire difference specifically to the ODE residual.", "",
@@ -180,7 +182,7 @@ def main():
         for seed in (1, 2, 3):
             ax.plot(np.arange(3)+(seed-2)*.055, paired.loc[seed, order], "o-", color="black", alpha=.35,
                     markersize=3.5, linewidth=.7)
-        ax.set_xticks(range(3), ["PhytoODE", "Without ODE\nresidual", "Without\nbiological losses"])
+        ax.set_xticks(range(3), ["PhytoODE", "PhytoODE\nK loss only", "Latent NODE\nNo physics loss"])
         ax.tick_params(axis="x", labelsize=9)
         ax.set_title(DATASET_NAMES[dataset])
         ax.set_ylabel("Test relative RMSE (%)")

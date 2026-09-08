@@ -71,10 +71,14 @@ zero residual weight, and removal of both biological losses. All new candidate
 training runs exclude test evaluation; final follow-up scores reuse the test
 sets already inspected in the preceding ablation.
 The selected weights are approximately 3.162 (wheat), 500 (maize), and 0.5
-(Arabidopsis). Compared with zero residual weight, mean test error decreases
-for wheat and Arabidopsis but increases for maize, despite lower validation
-error. The search therefore does not establish a uniform test benefit from
-the ODE-residual term.
+(Arabidopsis). **Latent Neural ODE without physics loss sets both the ODE-residual
+and maximum-height coefficients to zero.** Tuned PhytoODE has lower mean test
+error than this baseline on all three datasets. The K-loss-only model retains
+the maximum-height coefficient and is a separate partial ablation; it is not
+the no-physics baseline. Against that partial ablation, tuned PhytoODE improves
+wheat and Arabidopsis but worsens maize. Maize tuning also worsens test error
+relative to original PhytoODE, so the joint-loss comparison does not establish
+a uniform benefit from the ODE-residual term or from coefficient tuning.
 
 ## Audited paper results
 
