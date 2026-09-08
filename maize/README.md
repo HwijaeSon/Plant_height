@@ -7,7 +7,13 @@
 2018–2019년 학습 / 2020년 검증 / 2021년 시험으로 구성했다.
 높이는 **상대 UAV 높이**이며 cm/m로 해석하면 안 된다.
 
-2021년 시험 RMSE는 우리 모델 **79.611 ± 13.117**, 가장 좋은 baseline인
+현재 PhytoODE는 **λODE = 0.5, λK = 0.5**를 사용한다. 기존 해당 설정의
+시드 1–3 결과를 재사용하며, 2021년 시험 RMSE는 **56.684 ± 4.370**,
+Relative error는 **18.40 ± 1.42%**다. [현재 설정](../experiments/phytoode_config.json)과
+[Train/Validation/Test 비교표](../experiments/results/adopted_phytoode_20260908/README.md)에
+재현 명령과 계수 선택 이력을 정리했다.
+
+초기 튜닝 전 비교에서 2021년 시험 RMSE는 우리 모델 **79.611 ± 13.117**, 가장 좋은 baseline인
 LSTM-NN **98.767 ± 10.196**으로, 세 시드 평균 기준 19.40% 감소했다.
 2020년 검증 RMSE는 LSTM-NN이 더 낮다. 현재 결과는 한 개 시험 연도의 비교이며
 여러 환경에 대한 일관된 우위를 뜻하지 않는다.
@@ -43,7 +49,7 @@ LSTM-NN **98.767 ± 10.196**으로, 세 시드 평균 기준 19.40% 감소했다
 기존 `wheat/code/model.py` 입력 형식과 맞는다. 실제 forward pass를 검증했다.
 `code/run_experiment.py`가 이 로더와 기존 모델 구조를 연결한다.
 
-학습 및 비교표를 재현하려면 비어 있는 GPU 세 개를 지정한다:
+초기 튜닝 전 학습 및 비교표를 재현하려면 비어 있는 GPU 세 개를 지정한다:
 
 ```bash
 bash maize/code/run_all.sh 1 2 6

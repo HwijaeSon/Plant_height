@@ -1,5 +1,27 @@
 # Physics-loss ablation and coefficient tuning
 
+The **currently adopted PhytoODE coefficients** are stored in
+[phytoode_config.json](phytoode_config.json): wheat `(3.16227766, 0.1)`,
+maize **`(0.5, 0.5)`**, and Arabidopsis `(0.5, 0.1)`, in
+`(lambda_ODE, lambda_K)` order. Maize was explicitly set to 0.5 by the user
+after reviewing the search results. The historical joint-search validation
+winner remains recorded as `(500, 0.5)` in that experiment's frozen files.
+The [current comparison](results/adopted_phytoode_20260908/README.md) reuses
+the existing three-seed runs and compares them with the both-zero baseline.
+
+To train with the current coefficients and the existing dataset-specific
+architecture, optimizer and checkpoint selection rule:
+
+```bash
+.venv/bin/python experiments/run_phytoode.py \
+  --dataset maize --seed 1 --gpu 3 \
+  --output experiments/results/reproduced/maize_seed1
+# Add --dry-run to inspect the command without starting training.
+```
+
+The experiment launchers below reproduce their historical protocols; they
+do not read the current adoption profile.
+
 `physics_ablation.py` imports the existing wheat, maize and Arabidopsis data
 loaders and latent ODE implementations. It compares the manuscript's fixed
 PhytoODE settings with two loss ablations:
