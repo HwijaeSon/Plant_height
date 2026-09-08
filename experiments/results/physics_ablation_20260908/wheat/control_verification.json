@@ -1,0 +1,12 @@
+{
+  "dataset": "wheat",
+  "passed": true,
+  "differences": {
+    "train": 1.9533611880784285e-10,
+    "val": -6.855573539410464e-10,
+    "test": -2.629453429298101e-09
+  },
+  "tolerance": 2e-07,
+  "actual_epoch": 1280,
+  "expected_epoch": 1280
+}

@@ -1,0 +1,41 @@
+{
+  "dataset": "arabidopsis",
+  "variant": "no_ode_residual",
+  "seed": 2,
+  "status": "complete",
+  "n_params": 4607,
+  "unit": "cm",
+  "seconds": 61.630196429789066,
+  "peak_memory_mib": 30.896484375,
+  "initial_state_sha256": "5cc3eaaf430fc6e13a28f3a638c79b87cc1f1e77cf3b97f8e8cce92b36aa69b4",
+  "checkpoint_sha256": "8d2b56e45c5422e9400eba82efafd3ed55585fdaf74c8bb7284ac1c694abbf54",
+  "best_epoch": 360,
+  "epochs": 1500,
+  "test_evaluations": 1,
+  "metrics": {
+    "train": {
+      "rmse": 1.4835628871706226,
+      "mae": 1.2962444857192976,
+      "relative_error": 7.051402650314588,
+      "mean_target": 21.039259289844065,
+      "n_curves": 18,
+      "n_scored_points": 72
+    },
+    "val": {
+      "rmse": 3.115847370633276,
+      "mae": 2.6506037218900422,
+      "relative_error": 15.4743551329594,
+      "mean_target": 20.13555552952716,
+      "n_curves": 18,
+      "n_scored_points": 72
+    },
+    "test": {
+      "rmse": 2.8206211828253167,
+      "mae": 2.4276321922419206,
+      "relative_error": 14.163102368218144,
+      "mean_target": 19.915277807740495,
+      "n_curves": 18,
+      "n_scored_points": 72
+    }
+  }
+}

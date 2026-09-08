@@ -1,0 +1,12 @@
+{
+  "dataset": "arabidopsis",
+  "passed": true,
+  "differences": {
+    "train": -6.0101728038830515e-09,
+    "val": 1.2585160513722826e-07,
+    "test": -1.587663067681433e-07
+  },
+  "tolerance": 2e-05,
+  "actual_epoch": 800,
+  "expected_epoch": 800
+}

@@ -1,0 +1,41 @@
+{
+  "dataset": "maize",
+  "variant": "no_ode_residual",
+  "seed": 1,
+  "status": "complete",
+  "n_params": 9003,
+  "unit": "relative UAV height",
+  "seconds": 388.6781339645386,
+  "peak_memory_mib": 564.6953125,
+  "initial_state_sha256": "1dd853f32e85997fd04db1d1c682fd790b73c5f2e7d755f285e0cc78b41c9fbc",
+  "checkpoint_sha256": "beeea3152cad4a2760321461a71a1bc636b622adcd497acdacb02129567740be",
+  "best_epoch": 330,
+  "epochs": 3000,
+  "test_evaluations": 1,
+  "metrics": {
+    "train": {
+      "rmse": 48.022470328867186,
+      "mae": 40.863495694910824,
+      "relative_error": 15.390113815434162,
+      "mean_target": 312.03453661731385,
+      "n_curves": 804,
+      "n_scored_points": 10672
+    },
+    "val": {
+      "rmse": 52.687717393670354,
+      "mae": 45.640679281300756,
+      "relative_error": 20.78733148724793,
+      "mean_target": 253.46070719078034,
+      "n_curves": 402,
+      "n_scored_points": 2729
+    },
+    "test": {
+      "rmse": 62.472483433892926,
+      "mae": 53.10742196935476,
+      "relative_error": 20.277513816309696,
+      "mean_target": 308.0874904084385,
+      "n_curves": 402,
+      "n_scored_points": 3973
+    }
+  }
+}

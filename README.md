@@ -59,6 +59,11 @@ result; the pre-tuning row remains in the full table. It includes all available
 baselines and explicitly documents the initial fill points in the original
 wheat scoring mask.
 
+The [matched physics-loss ablation](experiments/README.md) compares the same
+PhytoODE architectures and training settings with the logistic ODE residual
+removed, and with both biological loss terms removed, on all three datasets.
+It preserves paired initialization and validation-only checkpoint selection.
+
 ## Audited paper results
 
 - Wheat tuned latent Neural ODE (1,655 parameters; seeds 1--3): test RMSE

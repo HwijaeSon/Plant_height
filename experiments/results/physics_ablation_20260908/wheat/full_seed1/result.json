@@ -1,0 +1,41 @@
+{
+  "dataset": "wheat",
+  "variant": "full",
+  "seed": 1,
+  "status": "complete",
+  "n_params": 1655,
+  "unit": "m",
+  "seconds": 342.250460062176,
+  "peak_memory_mib": 45.3837890625,
+  "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
+  "checkpoint_sha256": "08faf20795b0bb9b3c86664f99853840b8d1711dc63a81e5693fb4c339bfa09c",
+  "best_epoch": 1280,
+  "epochs": 1500,
+  "test_evaluations": 1,
+  "metrics": {
+    "train": {
+      "rmse": 0.022368725584578218,
+      "mae": 0.013777267743836842,
+      "relative_error": 7.472532908902789,
+      "mean_target": 0.29934596283849185,
+      "n_curves": 38,
+      "n_scored_points": 2394
+    },
+    "val": {
+      "rmse": 0.03800078040351004,
+      "mae": 0.027125448181480275,
+      "relative_error": 11.400957274118031,
+      "mean_target": 0.3333121902822827,
+      "n_curves": 19,
+      "n_scored_points": 798
+    },
+    "test": {
+      "rmse": 0.03078691957206077,
+      "mae": 0.02019827417116495,
+      "relative_error": 10.394411053410666,
+      "mean_target": 0.2961872434509775,
+      "n_curves": 19,
+      "n_scored_points": 1368
+    }
+  }
+}

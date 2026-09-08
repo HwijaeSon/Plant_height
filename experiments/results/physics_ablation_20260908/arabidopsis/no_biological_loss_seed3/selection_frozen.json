@@ -1,0 +1,6 @@
+{
+  "best_epoch": 360,
+  "selection_rmse": 3.2925089448690414,
+  "checkpoint_sha256": "8ed5c1cd2182b4c3541c7178a0ed8151bb40fe5c5fb70b3874e9640fc2c8623c",
+  "test_evaluations": 0
+}

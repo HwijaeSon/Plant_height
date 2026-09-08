@@ -1,0 +1,124 @@
+{
+  "status": "passed",
+  "expected_ablation_runs": 18,
+  "completed_ablation_runs": 18,
+  "full_model_controls": [
+    {
+      "dataset": "wheat",
+      "passed": true,
+      "differences": {
+        "train": 1.9533611880784285e-10,
+        "val": -6.855573539410464e-10,
+        "test": -2.629453429298101e-09
+      },
+      "tolerance": 2e-07,
+      "actual_epoch": 1280,
+      "expected_epoch": 1280
+    },
+    {
+      "dataset": "maize",
+      "passed": true,
+      "differences": {
+        "train": 0.0,
+        "val": 0.0,
+        "test": 0.0
+      },
+      "tolerance": 0.002,
+      "actual_epoch": 190,
+      "expected_epoch": 190
+    },
+    {
+      "dataset": "arabidopsis",
+      "passed": true,
+      "differences": {
+        "train": -6.0101728038830515e-09,
+        "val": 1.2585160513722826e-07,
+        "test": -1.587663067681433e-07
+      },
+      "tolerance": 2e-05,
+      "actual_epoch": 800,
+      "expected_epoch": 800
+    }
+  ],
+  "source_hashes": "unchanged",
+  "paired_initialization": "identical",
+  "architectures_and_training_settings": "identical",
+  "selection": "recomputed from validation histories",
+  "reported_metrics": "recomputed from saved predictions and original scoring denominators",
+  "test_targets": "not provided to the training loop or forward call; evaluated after checkpoint freeze",
+  "artifacts": {
+    "experiments/results/physics_ablation_20260908/wheat/no_ode_residual_seed1": {
+      "checkpoint_sha256": "6e99bbf4f989eaf5177e038bc0c1448e826ae42565f3736e6603833d60da9144",
+      "predictions_sha256": "af61a47b91143449a6e9b3a675d7a036a8bdee0071025847ea519c2ba25e2a35"
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1": {
+      "checkpoint_sha256": "77c2f910a08825113fde240de673fd1851e4ed985d83504aed5f1fd24005e279",
+      "predictions_sha256": "f56a0a6d2e014fe2b6e13d248fc09e635cf0247867ce04ce55ba5280b68834c0"
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_ode_residual_seed2": {
+      "checkpoint_sha256": "da373ac701b138695f064f870f930195d08efa7c9cfd8d7e721882973e0e4502",
+      "predictions_sha256": "4bda1e40656f6c67476e77aade43db512f252214b5390cbfdf39d03e24893302"
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2": {
+      "checkpoint_sha256": "a2246367d6af86188051d320c317f82e72e19cbd1e19d29528958d22592b9786",
+      "predictions_sha256": "cd1325f6070b574f92c895c20d06400c0c3665a106e6e18b35bb026e0197f7ba"
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_ode_residual_seed3": {
+      "checkpoint_sha256": "a192b075e20576e8e5887e1c3ef1184f3848938272488d5937f488730a94ace4",
+      "predictions_sha256": "978562a11159644aa18f61cd0110d8939d55a7822afca96e78a41da905076428"
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3": {
+      "checkpoint_sha256": "b20de666c67d0a209736d71777c7f31ad8022dac03170a558044d2711320b6ca",
+      "predictions_sha256": "60b119cb5a0d93b64f54b18935b1d0e40604c1b5183e53a54669f5e59e8cde04"
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1": {
+      "checkpoint_sha256": "beeea3152cad4a2760321461a71a1bc636b622adcd497acdacb02129567740be",
+      "predictions_sha256": "9cd88a8bf75c77f0beca04b3d93820bee29c240328e78cbc28d1fdbe7da588e5"
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1": {
+      "checkpoint_sha256": "4309d37160ab8e704cbf762dd58c184b63ab30c8772a96f75353164dbfe97b7a",
+      "predictions_sha256": "63720af63d956f9df4b374e57e41d9f841374ea8a5c9eacd8bc1a32d4ae9c138"
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2": {
+      "checkpoint_sha256": "254cbcd6c0afa5cf326eccb6cfdc4b4da9b0a9f3e544f5e6939ffb065123d44c",
+      "predictions_sha256": "052c82e3bb0ec971bf45316d3e5da70e8e55854c3f21e51e788b70c062e88e66"
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2": {
+      "checkpoint_sha256": "64a50644569895ca510e3a09e1b56eefe1efaf150b483054555f9b3a2dbd566f",
+      "predictions_sha256": "b4c46ec4fe65cbf04a7696cbbe185b3830924546cc6c802cbc29918bbe4d7528"
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3": {
+      "checkpoint_sha256": "bc93521003a6f51cf45a910c19756cd76dd7f0aee24b1434c3b57a5d1b5fff52",
+      "predictions_sha256": "4d3f9fedd7e04b21be62db40c6069b3c3b317681be16174879da4083fb64d963"
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3": {
+      "checkpoint_sha256": "752e206bafc0200c39d2de9297ef946311e93197bd70c970d68cec82472cb2ee",
+      "predictions_sha256": "02890cc5297936da17fc81254e1add73abdcbafc41cb5b2097bb2604d968bb83"
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_ode_residual_seed1": {
+      "checkpoint_sha256": "0782f9041e30cde07932b926747773fdf989edce27bb0352e2bfd2a04c7b4d9c",
+      "predictions_sha256": "c424da807bb99f04c7738788db3aebcbf6585a361c1ab0386794cd0990b000ed"
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1": {
+      "checkpoint_sha256": "8a3fa27b501a7554b89bf17d624d053d6581d1c059122196c4d38a5bfb6924e8",
+      "predictions_sha256": "471a8b71388297aa234efddce12a771563c2b6cc489e6cee3c2b80c63ecb27cd"
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_ode_residual_seed2": {
+      "checkpoint_sha256": "8d2b56e45c5422e9400eba82efafd3ed55585fdaf74c8bb7284ac1c694abbf54",
+      "predictions_sha256": "6788dbe79832ff03bba0d91ee2f0c64b92c6fd56695652783e8619d5d9b44d8a"
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2": {
+      "checkpoint_sha256": "e8f0eca1976b4cbb828a0c19e1c644d8013e41196c8a9875b64abb2b49c986ab",
+      "predictions_sha256": "0502e6e1597962c2e8cdac2bb3a5e87f089494d98d85a5a480e74dcbb0942537"
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_ode_residual_seed3": {
+      "checkpoint_sha256": "c0e53739d24ba023e3fb1ad1fbbfc8d3c7239adeb1d560d2dc657d7c6d67883c",
+      "predictions_sha256": "ad6a82674e6809fa75abdbef3d8b0e8b01e09503fc034321ea15085bae608cea"
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3": {
+      "checkpoint_sha256": "8ed5c1cd2182b4c3541c7178a0ed8151bb40fe5c5fb70b3874e9640fc2c8623c",
+      "predictions_sha256": "87180e4e4cb36126d3129c1efd6b5397372c40649aadc742241395198fab9d19"
+    }
+  },
+  "summary_code_sha256": "64b96c8688ad49b81f2d7f21fa89d6839bcff92da4831103f35b306d4ae1a700"
+}

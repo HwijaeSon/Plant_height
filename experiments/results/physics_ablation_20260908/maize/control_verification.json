@@ -1,0 +1,12 @@
+{
+  "dataset": "maize",
+  "passed": true,
+  "differences": {
+    "train": 0.0,
+    "val": 0.0,
+    "test": 0.0
+  },
+  "tolerance": 0.002,
+  "actual_epoch": 190,
+  "expected_epoch": 190
+}
