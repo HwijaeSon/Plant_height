@@ -29,6 +29,9 @@ maize/results/chronological_seed1_3/
 maize/results/chronological_common_selection_seed1_3/
 maize/results/tuning_20260904/trials/
 experiments/results/**/diagnostics/
+# Local optimizer/RNG snapshots used to resume in-progress joint-search trials.
+experiments/results/**/resume_state.pt
+experiments/results/**/*.pt.part
 
 # Third-party repository snapshots without an explicit redistribution license.
 # download_data.py fetches these locally when needed.

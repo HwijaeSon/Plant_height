@@ -1,0 +1,40 @@
+{
+  "dataset": "wheat",
+  "seed": 1,
+  "lambda_ode": 100.0,
+  "lambda_k": 0.0,
+  "status": "complete",
+  "epochs": 1500,
+  "best_epoch": 810,
+  "selection_rmse": 0.03820793740451336,
+  "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
+  "checkpoint_sha256": "231b546f2ea84ba6b99b0db888b9a571441fcfed6a7f7a08168af497cad0bd79",
+  "checkpoint": "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_100_k_0/seed1/checkpoint.pt",
+  "n_params": 1655,
+  "unit": "m",
+  "metrics": {
+    "train": {
+      "rmse": 0.02048137275710954,
+      "mae": 0.012934110933133727,
+      "relative_error": 6.84204074873727,
+      "mean_target": 0.29934596283849185,
+      "n_curves": 38,
+      "n_scored_points": 2394
+    },
+    "val": {
+      "rmse": 0.03839448461735575,
+      "mae": 0.026699877544780357,
+      "relative_error": 11.519076030444428,
+      "mean_target": 0.3333121902822827,
+      "n_curves": 19,
+      "n_scored_points": 798
+    }
+  },
+  "train_rmse": 0.02048137275710954,
+  "val_rmse": 0.03839448461735575,
+  "seconds": 338.2769906669855,
+  "peak_memory_mib": 45.38427734375,
+  "resumes": [],
+  "test_evaluations": 0,
+  "origin": "new joint validation-only trial"
+}

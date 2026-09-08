@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "full_and_both_zero_prefix": "matches previous controls",
+  "resumed_20_epoch_state_and_history": "bitwise identical to uninterrupted training",
+  "test_evaluations": 0
+}

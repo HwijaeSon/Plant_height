@@ -1,0 +1,40 @@
+{
+  "dataset": "maize",
+  "seed": 3,
+  "lambda_ode": 0.0,
+  "lambda_k": 0.05,
+  "status": "complete",
+  "epochs": 3000,
+  "best_epoch": 90,
+  "selection_rmse": 51.16844542103023,
+  "initial_state_sha256": "c1c1aa90dca2e5b2888f5e8e55f4ad33e301c99207a8849506376234d8d6bf56",
+  "checkpoint_sha256": "2a67a217e998273bc1cd2d7b4d45012be12b0432d3d66f421b4644d0a2b93d74",
+  "checkpoint": "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_0_k_0p05/seed3/checkpoint.pt",
+  "n_params": 9003,
+  "unit": "relative UAV height",
+  "metrics": {
+    "train": {
+      "rmse": 40.2257412445295,
+      "mae": 34.62707423101979,
+      "relative_error": 12.891438774888965,
+      "mean_target": 312.03453661731385,
+      "n_curves": 804,
+      "n_scored_points": 10672
+    },
+    "val": {
+      "rmse": 51.16844967240979,
+      "mae": 43.55932048630569,
+      "relative_error": 20.187921922704653,
+      "mean_target": 253.46070719078034,
+      "n_curves": 402,
+      "n_scored_points": 2729
+    }
+  },
+  "train_rmse": 40.2257412445295,
+  "val_rmse": 51.16844967240979,
+  "seconds": 458.5210128389299,
+  "peak_memory_mib": 564.69580078125,
+  "resumes": [],
+  "test_evaluations": 0,
+  "origin": "new joint validation-only trial"
+}

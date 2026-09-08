@@ -1,0 +1,39 @@
+{
+  "dataset": "maize",
+  "seed": 2,
+  "role": "selected_phyto",
+  "lambda_ode": 500.0,
+  "lambda_k": 0.5,
+  "checkpoint_sha256": "1621be30a13d896f9ca000c385102595583ebfdee57666c3412c76a1e5e4ebce",
+  "selection_sha256": "12113b17bcf2f61a338f0c967f34e0375f205827c4f211873a125f48f0a6ea7d",
+  "all_selections_sha256": "56f9063433ebb197510b3397c6d21a8350097cde31e512326050f1b2a4d6bdec",
+  "n_params": 9003,
+  "metrics": {
+    "train": {
+      "rmse": 35.282587420282944,
+      "mae": 27.82223846651295,
+      "relative_error": 11.307269958887371,
+      "mean_target": 312.03453661731385,
+      "n_curves": 804,
+      "n_scored_points": 10672
+    },
+    "val": {
+      "rmse": 41.41214890593116,
+      "mae": 33.82513552975102,
+      "relative_error": 16.338685930817736,
+      "mean_target": 253.46070719078034,
+      "n_curves": 402,
+      "n_scored_points": 2729
+    },
+    "test": {
+      "rmse": 53.16041187430474,
+      "mae": 45.83764734485885,
+      "relative_error": 17.254972541672753,
+      "mean_target": 308.0874904084385,
+      "n_curves": 402,
+      "n_scored_points": 3973
+    }
+  },
+  "unit": "relative UAV height",
+  "test_evaluations": 1
+}

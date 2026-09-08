@@ -1,0 +1,733 @@
+{
+  "status": "passed",
+  "new_full_training_trials": 112,
+  "selected_final_test_evaluations": 9,
+  "fixed_settings_and_paired_initialization": "verified",
+  "checkpoint_selection": "recomputed from validation histories",
+  "candidate_selection": "recomputed from validation-only records",
+  "predictions": "all new train/validation and selected final metrics recomputed with original masks and denominators",
+  "source_sha256": "unchanged",
+  "all_selections_frozen_before_final_tests": true,
+  "resumption_verification": "20-epoch resumed and uninterrupted states and histories were bitwise identical for every dataset",
+  "limitation": "Previously inspected test sets are reused. These are follow-up test evaluations, not independent confirmation; no test-based coefficient selection.",
+  "artifacts": {
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_0_k_0p001/seed1": {
+      "checkpoint_sha256": "0c02e5c1d4f05bd0476300a4d347f407cd0284d1ec530b1ff5b4e8e3d9bd0ae5",
+      "predictions_sha256": "8f8f4ff1e94437755b693b781da1d3807e9bb9d88e8726cb50027cf44eebda21",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_0_k_0p001/seed2": {
+      "checkpoint_sha256": "203a5de92e3b02079874c890ca16838058c49e7a1a1a36cccaeb215e47a790fb",
+      "predictions_sha256": "81766bdd7188069d50ad33f3b84277620c58afb3568043bd63c5404914a2c2bb",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_0_k_0p001/seed3": {
+      "checkpoint_sha256": "038952c9bde04ce24ced4b95c470a69a09341280297e59b3140ff049bd64ab21",
+      "predictions_sha256": "ca9c76f2b050efdb91996dbfad582879210120e3b00a61e62e554ac6a286755f",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_0_k_0p01/seed1": {
+      "checkpoint_sha256": "085a0dcbf88d0b2149597dfc3106f33c658407ebde18551cbad8d1901b99bb27",
+      "predictions_sha256": "24a8f53630c169e690f6ab27c0d9983aa561788e6c92eabfc07b5d6116adfc1e",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_0_k_1/seed1": {
+      "checkpoint_sha256": "23e0eec3272254ff2de37c942a8b06a399df27e964954137fe374167fff2b081",
+      "predictions_sha256": "bf1db9db734bc2535a9178f4d78e3927268aead78c32008fa8847264f6048232",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_0p1_k_0/seed1": {
+      "checkpoint_sha256": "89f517e9ce8f00176785eacdcc12a9f0ca2db3c37f31ded84de69094389542a2",
+      "predictions_sha256": "766a02299c7819d6c47dae73375b4b808cf1e4e230f027410664fd24f909ab89",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_0p1_k_0p001/seed1": {
+      "checkpoint_sha256": "a120435ebb1c5aa86d0027a4ed09322bccf355360745b0a2d9fb3132e0ec2cc8",
+      "predictions_sha256": "e152df6becb3e969737511c70b1eca0bc194ab63860c38afda442497bc116ac8",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_0p1_k_0p01/seed1": {
+      "checkpoint_sha256": "36ed5558b250c25500c3a1df5d3d173cad26ab49739c9ebaabc72f2542d86a83",
+      "predictions_sha256": "84630fadd16a3ef4f9587702e7328add6686f88123d47c6220ca56252d557d33",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_0p1_k_1/seed1": {
+      "checkpoint_sha256": "3e00795b1d9fa6ca2bb0b7bd195c78dd18527e3d9d4ffc698e72895ee2648797",
+      "predictions_sha256": "d6563801375268460bcd7f77764caa027cabb33a8e262a166dfc2550702bde54",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_0p7071067812_k_0p316227766/seed1": {
+      "checkpoint_sha256": "01d3e01a58784e90ef2191f7ab2ddb9a15b068b61ea14149e8d7fe507470e344",
+      "predictions_sha256": "9e986fe477735d3cbb0cabc5455006af821e426c49acd2588bd19631e930bf31",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_0p7071067812_k_0p316227766/seed2": {
+      "checkpoint_sha256": "e3712bdd2124eca840fb8146d7a11e81cb18a85fb58b4e5e66e2bfff26a36793",
+      "predictions_sha256": "115854bac68f4b056fe5fdd00314903a6298ab550fbb357b37fb6729bc4b0c72",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_0p7071067812_k_0p316227766/seed3": {
+      "checkpoint_sha256": "2612d9f7cf8b93d5221c743d3a7c245bc49f9d24cff3c1ab05dcd2736180a6e2",
+      "predictions_sha256": "ed9b6d43ad8ecead7aa1f981086791441929b4b28bd1d954d1d844ff016cbf80",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_0p7071067812_k_10/seed1": {
+      "checkpoint_sha256": "07989c5720383fe6915b09dac48f6002edbcad50b0798fc98959de524ecbb5af",
+      "predictions_sha256": "1f369d56411228471d0514e8afa94043948dac2eae5171ef2264b8ddb25ac529",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_100_k_0/seed1": {
+      "checkpoint_sha256": "231b546f2ea84ba6b99b0db888b9a571441fcfed6a7f7a08168af497cad0bd79",
+      "predictions_sha256": "e9fc7f5a358b6d32a7aaba97157443cf4e86fbc487651c8a651048bce6eafaf8",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_100_k_0p001/seed1": {
+      "checkpoint_sha256": "9166cb8df43cf717539bf7e5640373912b20ea581bfcaced73f05db75d4594d1",
+      "predictions_sha256": "74ce43588854f15007c98e73d61d906c984311b72f4d4a4b2faf97993e856fcd",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_100_k_0p01/seed1": {
+      "checkpoint_sha256": "4e8330c89e806792520cd5b07c6e0fbbe9552411f232fb48da2c8a072c75b5a5",
+      "predictions_sha256": "521f73dabcf398ad6e08127754cb53492bd8e6a4c65d42ae3de6e1c478bb107d",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_100_k_1/seed1": {
+      "checkpoint_sha256": "ad3a2b0601fbcd1bca69554f4f89beeb803201a1d9aee1532863d64b178b3a50",
+      "predictions_sha256": "23c35406c81303b37faaa7804cfadd4623a3bf809904e4a2ee8dc20dec7b55d8",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_10_k_0/seed1": {
+      "checkpoint_sha256": "4d25a174d1ab253edd99149b2ce0b8e3e1f4b710badaae8be618ca6aed272261",
+      "predictions_sha256": "8c85f90654cb27ca1aca2c5f1cb16d961d04398acad37899aa67a77d86ac897b",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_10_k_0p001/seed1": {
+      "checkpoint_sha256": "90d71cdb2445a05c3a4f028084f28c4529d71768888ce6602e122108e6010718",
+      "predictions_sha256": "cc2e4d04427d2142a40d25f1c0ab5ee2b273cc6b98bfc54b5e69b3a206a3dd10",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_10_k_0p01/seed1": {
+      "checkpoint_sha256": "5b5062fc9f64898dc91057f91cd5f32b4d1b223fc14f20087d8f240c12ea6fc9",
+      "predictions_sha256": "cb3cb0d874db05d90283cf71ec4bc90ae53ae23a9144a6b0b34dba02d13e6042",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_10_k_1/seed1": {
+      "checkpoint_sha256": "632984321f7a306bf6656669ad02727a82ef7b754087f5472eee342531778515",
+      "predictions_sha256": "2587f15f1f59a16fe611fefb0710bdbe35946fca057d61b88e474a3ff67fd377",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_1_k_0/seed1": {
+      "checkpoint_sha256": "c5f18b1b5655d57c316bddf69bd641995bbd93c3336908ef93a8644c198fc94e",
+      "predictions_sha256": "9467b173c20a901d4dc3227ef07f9433c6e883005725787a963bb6ce100afb7a",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_1_k_0p001/seed1": {
+      "checkpoint_sha256": "7fa812206e08adbff70416f725b24b5d3bbd94bbf296630dd2fe97e313f3fd5c",
+      "predictions_sha256": "fc60d3a6320b14259f56bc97b195560d81de4a7d28f3e748e0b668db94e3029d",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_1_k_0p01/seed1": {
+      "checkpoint_sha256": "fdf44c0e45b578b18b14d0f34aecc4c8da3d4cc3e496f5874f987f43d05918ce",
+      "predictions_sha256": "965989b6b97fa5a9a8de8689779a5772938e3ba95d458f8d6d4230e09bbd70ea",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_1_k_1/seed1": {
+      "checkpoint_sha256": "276e686f673cd9795157e80e993c91e0af9fae4027b2e66248b145df2477f7b8",
+      "predictions_sha256": "83d7a3cc10a54cf4b82f167d14294e2253fcc8df8955b144ef2203c790edd5aa",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_1_k_1/seed2": {
+      "checkpoint_sha256": "915b869c85ed1b2ff06e3e1e7a95818e4a20eda62a11cb4ca79e6f5358d33866",
+      "predictions_sha256": "ccde2af0fdb5badaa332e0e64eb1d30410620d431576ccef49e157fe114ee9e8",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_1_k_1/seed3": {
+      "checkpoint_sha256": "25b74d174a2984b8a54c61d00fc1023dd3870a8df6a2b4f0b6352670b761f939",
+      "predictions_sha256": "3dcc73556f9d175fd7aa23dc91b1f9e7c8e37c98feb086a874cd6ac2e42640ad",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_1p189207115_k_0p316227766/seed1": {
+      "checkpoint_sha256": "6772c8ba58af138133e122c95757f0dce3bbb73bc8e5ef7daba89a2dd6047700",
+      "predictions_sha256": "faa23118aa1c3c592878aad9ed93ca61261f71035980c21f793b2f868547b58c",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_1p189207115_k_10/seed1": {
+      "checkpoint_sha256": "375e2b7a46ef6f775c8236182e712d0b64834aac9f5a48e5ec2e56c357a00a8a",
+      "predictions_sha256": "0049d228bf28f83b748ebc6e45440133950be67c9eab4bffd69426d936437a5c",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_3p16227766_k_0/seed1": {
+      "checkpoint_sha256": "d55732a5211c8b59ac94a200df0d032e0d0712cade55d7db279c0395187f559e",
+      "predictions_sha256": "306a3f56fd4fb87d61a1314a9a2bf18abb1cf803719d55f70ae57499cf2ee716",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_3p16227766_k_0/seed2": {
+      "checkpoint_sha256": "35ebfdc08e80e42b3481e246f1cccfe2aad16567ac014c9e3a9a46b407209fcb",
+      "predictions_sha256": "807ddb35cbdff499145f16eef8a2c550d872497211922cec38bfd44016c6edac",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_3p16227766_k_0/seed3": {
+      "checkpoint_sha256": "633d20206f685322ba5537d81e34033e4556f445c800526cd2f4b2fedad678d5",
+      "predictions_sha256": "d1f6e54c692ef4f509b0c725088c8b73f6d70967c2de9013f62a782dc0bbc04a",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_3p16227766_k_0p001/seed1": {
+      "checkpoint_sha256": "860740c3dfe49a1c178b2c4b6eb4b24d4ff85cccd052040e1d62e15c7d0ebfc8",
+      "predictions_sha256": "94a9752eca1e98ae4467226da0c50d236acb735ea00d6c57768cde9755fac78b",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_3p16227766_k_0p01/seed1": {
+      "checkpoint_sha256": "469d732fb6b61147e8b3241b2d97033a44fd70ecf41f632f341c13db4ce3b705",
+      "predictions_sha256": "8e0f20e38f0e7aa87a0dfe1bce7c58131fef38683a7ed65e6ea296fe6df88b7b",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_3p16227766_k_1/seed1": {
+      "checkpoint_sha256": "b377c51ac8c5c7bec032e599fc8f86d9f4112ea5573600161998555a608f7156",
+      "predictions_sha256": "1a98caaec0ad4488dff94725159623f5bca9563bc0db3f76b51224c206f6440e",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_3p16227766_k_1/seed2": {
+      "checkpoint_sha256": "a842e3ddefb428b719aa6603a320d4c896f136bb9f5e97bb9621a24646b679ea",
+      "predictions_sha256": "5200e239fed6c93d5f40d36c452f10cbaa594871a7cc0bff16fcb4af26bdd64a",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/trials/ode_3p16227766_k_1/seed3": {
+      "checkpoint_sha256": "eb3d9f32cf010471cd59c3cc9362f2f98c54753f98adcc3850bfa4421c0a3142",
+      "predictions_sha256": "f625aac756d9cfc8c6ad6105c733fca28bc89afa97e124e29fd084166af10938",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/final/selected_phyto/seed1": {
+      "checkpoint_sha256": "5d2b3cdeb30c8aefac661bf777e920ee222d69004789de92cd0600f249014e8e",
+      "predictions_sha256": "666e871ed2df3360bb84847a1e7ed28075b5f6786b6a6fbc14930bc81b7be286",
+      "test_evaluations": 1
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/final/selected_phyto/seed2": {
+      "checkpoint_sha256": "b2b3c0e6b68031cd8c7b0b980a4ad5bf441d79c4e938f646a09b4173d7828931",
+      "predictions_sha256": "697befd2f9d8225ac342dc32e572ed646482e92c683c82b3082d88fe446fe44c",
+      "test_evaluations": 1
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/final/selected_phyto/seed3": {
+      "checkpoint_sha256": "3d5925010c6277f6d0c3f634cc4ed551121c4dcbd94ca31eb86077fc56d2d3ec",
+      "predictions_sha256": "3e75e8e3c47203a8ea1356ee0b277dc5b8d3c1acd817c3690536782e8b5471bb",
+      "test_evaluations": 1
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_0_k_0p005/seed1": {
+      "checkpoint_sha256": "418725dc9834b13c6a924d1443201fb698da058cb354b24e1aa7ad2f45614709",
+      "predictions_sha256": "b16e3a405375a74677a9bcdefc1d64166a36333a7cbba79664b3f74fe8546779",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_0_k_0p05/seed1": {
+      "checkpoint_sha256": "169d1485a6e13c90b0826e0a0e4f8fe10a2021cb535a7d91a6368e2cfe158886",
+      "predictions_sha256": "95242108f3e529769d97f2c6b80957bfd5836a9742a80d5f60f6745c29064f1a",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_0_k_0p05/seed2": {
+      "checkpoint_sha256": "a8188a92716d82a552d91a6676674fb99c15fffab27ec9de8c54a1429a1ae668",
+      "predictions_sha256": "72a82d6a483cb707351e3d96ce12e2f129f0369ece1ad75637dfd1108119c193",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_0_k_0p05/seed3": {
+      "checkpoint_sha256": "2a67a217e998273bc1cd2d7b4d45012be12b0432d3d66f421b4644d0a2b93d74",
+      "predictions_sha256": "871d88ce78f255151f3be3469b3ebaa851e41a2ba2d6642005d0b3062130f82f",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_0_k_5/seed1": {
+      "checkpoint_sha256": "8f12404b2ad71ee82152212c4880f34e3a176c5748a73eef8237d34d32846a0b",
+      "predictions_sha256": "a542a4704e590392b198e305ecad01022c71b4aa939324669e8d60d4052986f2",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_0p5_k_0/seed1": {
+      "checkpoint_sha256": "9b8b6f8c5425d40796a50f227284def018cd4940d42c146cabb5b881e8a595d3",
+      "predictions_sha256": "fd8cab25a94f947449b27f379c19c2945fa5dd3580adf51a49804120afbceba1",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_0p5_k_0p005/seed1": {
+      "checkpoint_sha256": "ff6265d20986eb0d6b9e729db82a3ddfc22f5ba58bf6075267e976ebb6e3ef54",
+      "predictions_sha256": "b19f3c6fe8da7961cddffd9387c2e1cbe113972d1c5290f0430dccfa26933f33",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_0p5_k_0p05/seed1": {
+      "checkpoint_sha256": "c877bddc063fa0e81f7fdd3f1bfe85bfb8fc8a4aa77080456f2d115750d226ae",
+      "predictions_sha256": "71fd72a0d7ba81cadc0c8ea76f9f23e8aaaf0fbcb5d4d87fd96efcaab62bb201",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_0p5_k_5/seed1": {
+      "checkpoint_sha256": "42148d4a3888da859066e06a525d839c39963992f8825ae08cacefaa28a1723f",
+      "predictions_sha256": "201ee4101163ffcb1206275d356b7884392e1dbbfc7f056ba894c53fbc809318",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_1581p13883_k_0p0158113883/seed1": {
+      "checkpoint_sha256": "49e2016e5cc43f5bde9fa5962c887725ce47f073759f5d00ca5b6f2ba4e29d5a",
+      "predictions_sha256": "26ab1683c268bbe27e8ae4e2a5118059fdb8ccd62cd3daa7d105dbd907b5c0e7",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_1581p13883_k_0p158113883/seed1": {
+      "checkpoint_sha256": "4f13bf214dbb0811162f1d23a2354883ba9ec63903ff75711f1e72071e61b93b",
+      "predictions_sha256": "5828b6d1a4867496a9c25dfc3cb8e8ba58e81066e9a9129c07bfd596a8fee3b7",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_50000_k_0p0158113883/seed1": {
+      "checkpoint_sha256": "d64d04d443c61ea35d4c88a88eeeaf637a91b45421670d9578fe1632d63069b4",
+      "predictions_sha256": "c6a8d09e0b536ac6e5071cb2e2ad3e2dfbbaccd785ed5c9f4997c263ddf6b59d",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_50000_k_0p158113883/seed1": {
+      "checkpoint_sha256": "5ee2f6047f0ee95d102b629c69a9293f619c6efd2b456675b27c1f4ead281815",
+      "predictions_sha256": "c284020dd72318ed693a2e90472c5fa4cdb1735151894b37775f4888123a3dcc",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_5000_k_0/seed1": {
+      "checkpoint_sha256": "ad77fe4777f9d7f111afe2e8d55ecb2613727e8794484d76e4b2960d86e53add",
+      "predictions_sha256": "d6f43e3f5d5587b699fb2dcbe917363d41c28dc6f60da9121067eee044a55609",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_5000_k_0p005/seed1": {
+      "checkpoint_sha256": "73d60ac6466045b12703de7b18da8601ead338c42662246fe4fb768c12c617bb",
+      "predictions_sha256": "cf3f1c47f7cc7fe811049edb71a6cc7b97ee15575b6f126621a8bd0f834e7363",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_5000_k_0p05/seed1": {
+      "checkpoint_sha256": "5c63c309fd6ee7987805343106b890b1989b1611ebeeb0d482eb4a146abf5d2d",
+      "predictions_sha256": "3135beb9333d8508bb02d93b77c6ef3eb887eda32179445b274829f58f4fe0d3",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_5000_k_0p05/seed2": {
+      "checkpoint_sha256": "02ec07b974093c8194b28f7f7333f18e99373e78d76cf879d450f415ba05bb26",
+      "predictions_sha256": "f07b267908f339801deec1cc6f037477d41167bbbd36f7a2eab6b7758ef6baa1",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_5000_k_0p05/seed3": {
+      "checkpoint_sha256": "d56a493dfa96982b9b004ca4128c1e9605ff36bcd98fe444a54a20f677ce2ec8",
+      "predictions_sha256": "58a1202e4e011f983cddc767deff5db9b7f60b5af103a5a2f95014a4f9fce71b",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_5000_k_5/seed1": {
+      "checkpoint_sha256": "f2c3e57d11bb624e64c76d859d92b0a87b94b216df7dde27bc9fd348a4c470a5",
+      "predictions_sha256": "a791b5188711eed963ea456cd912c65a485855faa2ec90d97afa2ec3a5920247",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_500_k_0/seed1": {
+      "checkpoint_sha256": "7a62cd4fa1ecae59b5b924c6c56f061b3007c4c37f16e6a85d632cd496f35147",
+      "predictions_sha256": "600a0d81948b41b3021715b4c40f2674acbb8a2d5d9a4b7c18aecc0946ec6eaf",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_500_k_0/seed2": {
+      "checkpoint_sha256": "909633eb5d0b6fb4054d7e83cec442142d71a48f804e09b3a0ae421fd24a6f29",
+      "predictions_sha256": "c289ce639315416a2a86416fc94b507fdfe785f03437a0134daad46117660b81",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_500_k_0/seed3": {
+      "checkpoint_sha256": "ecc571b239b0d82476548c9c82fac77730afdff6aee99b84388ee70a853b7e16",
+      "predictions_sha256": "85c4aa34945e74ec00ffd60d7c3a2ca65c387a6c006e75e9e02a3edb6608b1a0",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_500_k_0p005/seed1": {
+      "checkpoint_sha256": "d7ebb9f8c6ae5225490724b482cb4d1120faa1898171e0ffcd472f4bd081a2db",
+      "predictions_sha256": "75df80abed90c8f67b09c6d3b0aeef0e31dc3f533b40c7e7c1f6c73505c58ca9",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_500_k_0p005/seed2": {
+      "checkpoint_sha256": "ebe999e9103ed35fd1106b58fd1c6aed10f2ee0b79f2d9d2680bf58e433bf3cf",
+      "predictions_sha256": "52b85de532968e2f7e3bfb206023f0b2ddaf4a5d476213f86d54d76c8a212bca",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_500_k_0p005/seed3": {
+      "checkpoint_sha256": "d6d96bd8272befe744f9504c321a9a753a5681c5fec47b14abdcf341127f602b",
+      "predictions_sha256": "9dd018902e54ce9427537fb9064bd490f6bca7bb04193c458338748ddeb07720",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_500_k_0p05/seed1": {
+      "checkpoint_sha256": "26b0c433b9bebabe28fe42bece176212d5d8cbb461024da5f930c19bb9a98579",
+      "predictions_sha256": "b58f8f98b84008c571e4e7513bcb64b3e59615435db53f019e560536888892c7",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_500_k_5/seed1": {
+      "checkpoint_sha256": "68f469b444883e0f5e6814fe6b4465f6cbe6ec5ed45ea99a7fca24c2ffe5aef3",
+      "predictions_sha256": "1884fd5be46929d9cea88caa7480d20d9d8b8bc01f0908bd362d306e8e600352",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_50_k_0/seed1": {
+      "checkpoint_sha256": "8dbdd306c06f16acfcafdb7a062cae830a3cfad3468907b859b29036346ed0e9",
+      "predictions_sha256": "d3619f1d93af54fe846592cd121e7fd391fd6252f006c4ab765e28efc685fca5",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_50_k_0p005/seed1": {
+      "checkpoint_sha256": "8ad0e3597062cde23235189109c991b82345d28bc573ad8fe29f6c66664b1967",
+      "predictions_sha256": "13aaded3cae49c36eedb9f4fec55fe19c10248e097373b1b0aed70b758119c67",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_50_k_0p05/seed1": {
+      "checkpoint_sha256": "b71421cf48ff2591a430cda527c8a06592291ed2658c68cc3d1cd821165dc229",
+      "predictions_sha256": "21175f26c38322d904d97f6b35434dfe4ef7b7e2947e1fc51f6bc84da4890458",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_50_k_5/seed1": {
+      "checkpoint_sha256": "f2273eec65a530ea79686d2044e1e66ddcfd308283581995a4a0f62578e97ebf",
+      "predictions_sha256": "f2661465a5f2dad1b6f6d6b642e31223c285d80df36326077371ae79398ab9b5",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_5_k_0/seed1": {
+      "checkpoint_sha256": "8d8e19f6fd655d5d74572d7d9922ffaea251dfbdb3bf18f17dea2b08f21db5f3",
+      "predictions_sha256": "955280cfb21e719d6d47c11d039d48c14b5e587f782256e770ceedfe20f7c59d",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_5_k_0p005/seed1": {
+      "checkpoint_sha256": "a577ea9d692a96e839d7f9efa05c9e9d1803d38d6c01202cfa74ea74a3405baf",
+      "predictions_sha256": "ee6315ce4127f828e510f34dfbb6dbb4dad998a525c93dafac4480635df2e623",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_5_k_0p05/seed1": {
+      "checkpoint_sha256": "aa2473c1ab13b134ac7d3bc288155ac1755185d27ad5ae6f08cef51a095faf56",
+      "predictions_sha256": "c278596cc78fe80ef223b7799824253054a55e9c55865c11ddb5da63211060ad",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/trials/ode_5_k_5/seed1": {
+      "checkpoint_sha256": "ea7ab09ac42c3816549a42cd1714c01132e0d1f8086dd5b8c73f8295b91203eb",
+      "predictions_sha256": "c18f11534fe7ade66180dd5919669130cb695555ffd4ac09f43e407f52637b41",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/final/selected_phyto/seed1": {
+      "checkpoint_sha256": "53077cd97f2cee9d36194fe45b6cc6baab096b85137e7b411f89943e63ebdd6d",
+      "predictions_sha256": "b1f18512ede23ac569c3d45f76da09cecdc10ce1b0df94834e4207233ab7298e",
+      "test_evaluations": 1
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/final/selected_phyto/seed2": {
+      "checkpoint_sha256": "1621be30a13d896f9ca000c385102595583ebfdee57666c3412c76a1e5e4ebce",
+      "predictions_sha256": "ba45644e500b97a4ae690b095948e71810b127fd99f93af9e6bc4c4039482563",
+      "test_evaluations": 1
+    },
+    "experiments/results/joint_lambda_tuning_20260908/maize/final/selected_phyto/seed3": {
+      "checkpoint_sha256": "20ac851848d0d3acabb7440f39167a4e3e3341e9edff0e72b5a9b916f1d8429a",
+      "predictions_sha256": "48093845b265ec34c6b576de7c2b2b67356f6f7a6fc150ced03b490c71f9a3c2",
+      "test_evaluations": 1
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0_k_0p001/seed1": {
+      "checkpoint_sha256": "bb1b9a6ed22f442b1316ea27bf1b6daf1c33d0558917f3ab6f78330f5e20ad7a",
+      "predictions_sha256": "0f50fcd80722d409d6406411c4ee9ee15898b05efc571608fe64d86900d0d5fe",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0_k_0p01/seed1": {
+      "checkpoint_sha256": "8a7dc042181f226f5351ae047f94c9e4840248bac68782ac214aaef54e9d8b36",
+      "predictions_sha256": "9fdc33820c4b947fdb33e1886674c9e301c9954d6699a95a2c8ad0dc1350d7da",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0_k_0p01/seed2": {
+      "checkpoint_sha256": "f9e35b07c01e4f6fadcd2efe0e56e20183e1fdb1f883ae654da8705a011b783e",
+      "predictions_sha256": "be56fc44a79f703749737234e25e5a12bcb0d20ae15ba8501508433e2c0aaf5f",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0_k_0p01/seed3": {
+      "checkpoint_sha256": "00fead95cfb7c8acf3d2e48ba32f613a06e814f11089a7f038fa8049ee8acbe1",
+      "predictions_sha256": "507b191ed6a96e287f9104ef6fd602f52d4f66cf621066fafba107b91b1434cc",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0_k_1/seed1": {
+      "checkpoint_sha256": "b2e550c1f3420dd0faafa9b8087c5220417145ea55b751a54a2a7f86e0460102",
+      "predictions_sha256": "a035e576381bf43c8d47525971f4be5b838b3a03eb4cb91a3ce08e5611417e92",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p05_k_0/seed1": {
+      "checkpoint_sha256": "70c5bd14ef2a57560113903c8b796674f3bf8eef3267e95714609bd06757f855",
+      "predictions_sha256": "3bd9b72b85de609ac921a8ccb4e89d0977487247d3aa8482ba008ec9280cf7e5",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p05_k_0/seed2": {
+      "checkpoint_sha256": "294cf7539c3a1558d217c05cab7eec671ba747ecaafa9de42cedfa9d55213090",
+      "predictions_sha256": "12655ab4ad54b0f425eeb402536976376d10195bbfe66762180a87d74de713ba",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p05_k_0/seed3": {
+      "checkpoint_sha256": "6c3fc4ee36ec76f405afdd8e47ba7264ecba09862b3916df98258a2e9a9d3efa",
+      "predictions_sha256": "fa74282806a70a3fc1b57e7cdb4f92d63b546933aa599ac80d16a1841afec5fa",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p05_k_0p001/seed1": {
+      "checkpoint_sha256": "729bf7c3a625f4b38c79e67e1c82f13d00af57c23ae30f0f58b4bdf7c8ee30c1",
+      "predictions_sha256": "f323067657759a2be47ed3eb8fc5c1efebd2ef6b24703c0ec4a7d4a7f9810717",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p05_k_0p01/seed1": {
+      "checkpoint_sha256": "eea5c1aa12afad12c1f28e851eee9191b151c675dcdd24f6778bd097440dbdc4",
+      "predictions_sha256": "79dcb0ef65fea0d863e2569e98ff324a617e9f953b9bf5a600e89e5084b8413b",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p05_k_0p1/seed1": {
+      "checkpoint_sha256": "52b1debe88c935f41acd6ba8f4280a0f7d3c7792dea3a8fef28350fc719ca675",
+      "predictions_sha256": "da3c8a8c342e1c9c98dce9c98f67699cb68909d2d1f8ecd5df32296dcf165423",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p05_k_1/seed1": {
+      "checkpoint_sha256": "bb11e0e978e25963e6402b053b39047d8882317a1c65321bb2c42ef937f2e8e8",
+      "predictions_sha256": "b1552c1074742eed13357709134763d6210d61c765bbc1a3710fac2d3f68e79a",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p5_k_0/seed1": {
+      "checkpoint_sha256": "577d48520859214c9a8307397ae8df75c0a52455f3bd322c2d63aa9b8eae79e1",
+      "predictions_sha256": "821de4fc42ed3f0a5ee12efc361c65c01100d0e5c90d09495ff9ab35a5b71be0",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p5_k_0p001/seed1": {
+      "checkpoint_sha256": "6fb49ea4ebc8c158f512a78184464ac5998492b43fecb3e1ac8281691b220288",
+      "predictions_sha256": "22a3ad8473bdaa50feb4ecd66dfab67d55084d6b4e0af164a68f4aca776c268c",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p5_k_0p01/seed1": {
+      "checkpoint_sha256": "14fd4d1a45328051c6bf78c7b1ed038845a8a294333c9d063e49a907ae8f5716",
+      "predictions_sha256": "1abcc58f4d08fe8428ac2f82751b97067856391445cc0e59f8c9c99e091bed0f",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p5_k_0p01/seed2": {
+      "checkpoint_sha256": "34d3813f458cdbe7db7f8afac37e97bea793d8768d8bae139d1046c28228037e",
+      "predictions_sha256": "01a2589ed49c9dc37c68b8e5c91ebf50297d6901e9ac8c7fe63b4accaa100e9d",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p5_k_0p01/seed3": {
+      "checkpoint_sha256": "f541ba806dbb0f36d1d0848523166948ac0032091ae1880b6b183c9e5d870f4f",
+      "predictions_sha256": "4e4752ef8a8221d38fc2e30d7a841b75090debfdd8ec83cf20ee137eb4b085b0",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p5_k_1/seed1": {
+      "checkpoint_sha256": "92bdf48723e944d38656896a1fd734ac7850e49c1edc4a6c8a4a184f3f3cacd4",
+      "predictions_sha256": "09f4832facf5b3b7db0e446c5cd23771f367fd3b45eca052327186ae3982aa84",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_1p414213562_k_0p00316227766/seed1": {
+      "checkpoint_sha256": "6673c293cff5b2ee562614e2fdc695c872af4872d387c6cb6f0f38090c4d20e7",
+      "predictions_sha256": "85ebae180d6f356cbc157e86f411ace2ad9676fcb13f3aed56778c8818828ec9",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_1p414213562_k_0p0316227766/seed1": {
+      "checkpoint_sha256": "b69e926282ddc48bfd365ab67e812c98dccce851533e2b5631e31ee0787ade41",
+      "predictions_sha256": "acf6923a8ceffe443cb37d620ee6f071bca5bb1e15523bf3947e2b02aca62fdf",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_1p414213562_k_0p0316227766/seed2": {
+      "checkpoint_sha256": "81f1a1702a40651cd1e3a4cb68786c3c75daac75d27564e33d0e048730ae80cb",
+      "predictions_sha256": "19c348f10847007e386502af72520c6213be6072f0a989815fcecd218673f942",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_1p414213562_k_0p0316227766/seed3": {
+      "checkpoint_sha256": "cb92570bd9dee3c7d79878c6ab7fdca3be0d130a1e6ace32b49aca56c0c56727",
+      "predictions_sha256": "21b08e1077de39edcc4486bded9d0d73d87903ce40c1ff8e0bf71abde0089ae9",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_200_k_0/seed1": {
+      "checkpoint_sha256": "9d912cb68583fd40bf4b94c6c43a0e25d73f2a8f724c49e181405d10957b76e3",
+      "predictions_sha256": "558796f626424d8f99071a1fe12b1b8ccc3059530a8c33f89b4714e50415fd70",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_200_k_0p001/seed1": {
+      "checkpoint_sha256": "086ee09030f7ad23fdd78d4fbac5498060f85ca2c74724e575555cea3f2919d8",
+      "predictions_sha256": "0c923b9961218c59844aa41201013bc39c4b2781c5f7345ccc179bf2d013154e",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_200_k_0p01/seed1": {
+      "checkpoint_sha256": "2a1ae1c34f7b098db0cbc251a45fb3f4e872ea9457149868c4ea84df77ee3130",
+      "predictions_sha256": "47a4097dbcce510c4d96932b70a7792498731f4fdfed0a3b93d3ac2da71dacd7",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_200_k_0p1/seed1": {
+      "checkpoint_sha256": "435a253e27aad4a4d0b82f7562330cc5cb320499c4f3fbd647417b42002b31cc",
+      "predictions_sha256": "75a7c4967ba4bf8f524339363ca3208cd29c38ecf380c52a5eb5981b6cfade8d",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_200_k_1/seed1": {
+      "checkpoint_sha256": "e5219d521726c4fe90a5d28d2304bd8f02ca94da16d9e2b867808d83b6edf5b3",
+      "predictions_sha256": "423ede60acfa7dc08ad4f9c536268c3b254d6c1a4990b080057ec764cd34284a",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_20_k_0/seed1": {
+      "checkpoint_sha256": "31d6a653b53d29e4b730a03a26f2d706091140529cca4a1b34700d8888597ce2",
+      "predictions_sha256": "38a47ff426709ee9930f7b3d67dda5c8c7c033e5236040d7788d20b6229b7008",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_20_k_0p001/seed1": {
+      "checkpoint_sha256": "f5f1a0639dff387d0b57547ebed942b16d24664f7a6457b3f6ebc0c8ea2d75d1",
+      "predictions_sha256": "7be867797faaba941a97fbd9fff721e3c7cf06b33d4b5cae3d1b324cd17d54f5",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_20_k_0p01/seed1": {
+      "checkpoint_sha256": "3c200a3c439b4b44b7d9678d5a45b5da24009366a2e13a78caf4e2251f99497a",
+      "predictions_sha256": "26cd8ba3cad66aa538b91dbe12b17ac0f61d9ea52b19923b6a3bc064b1525c2f",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_20_k_0p1/seed1": {
+      "checkpoint_sha256": "ae329d8a4fb01879b4d3fbc2290416d52c0f20422225efc7d77032d45eed9bf3",
+      "predictions_sha256": "cd12f407c7d57fd8fc64c6aa68e55c37aa0b56c23c19ad7749e3ac9855f7b330",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_20_k_1/seed1": {
+      "checkpoint_sha256": "98440deb42afae6c503d461c6b3f708935b53fa71d310c100c72d48705a8397f",
+      "predictions_sha256": "1dfd40f1cccb50125989e823cc9ebe3391d10a930c397c3a73e264d494180367",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_2_k_0/seed1": {
+      "checkpoint_sha256": "e4eb6bdab3545f8c67efa67aa0f172f8991336b729ef569b2e9e8762505fa102",
+      "predictions_sha256": "bf0ff8b1c2dfdee2ee8f48015c936017cd568d5fe6f008ec407377aa00934513",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_2_k_0p001/seed1": {
+      "checkpoint_sha256": "a3daee818391696cfd4c61b7046d6acd90a7d9d3bb0343cae29b20b4d8cb9cf7",
+      "predictions_sha256": "9880685c5613baf8785afcaa3afe7f2f16e6438014907cded7c14598cc2b74fc",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_2_k_0p01/seed1": {
+      "checkpoint_sha256": "1b62fdd4b269c5fb0c2071b69cc01ef2d2c4e8f6f0da3a43f2cfdf19cf18873c",
+      "predictions_sha256": "9a6e846f585072977534d3a60cb44d1ace5f9e6037fc85bdba277464e89aab0d",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_2_k_0p01/seed2": {
+      "checkpoint_sha256": "66828d5ecb32b6d71b0b9628a18edf2df420e1534eccae9a77b9c0d0d39a4fff",
+      "predictions_sha256": "3263eb760639ab4d75c01d0070c4e7a06b83c3dd590967e47e48f366a4c19fd1",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_2_k_0p01/seed3": {
+      "checkpoint_sha256": "71308b1fde8464868020fe633a44ca52b8dd5406a1bc6c6a62807745c5ad0ace",
+      "predictions_sha256": "bb5569bed3397efa8e2ceb048a756461e2e1d65bde5394c59fc5b40d33ea2ec7",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_2_k_1/seed1": {
+      "checkpoint_sha256": "ec6eef389b5b21d3c55063124f3f6a047096851b608a5de7b4a54f0320763585",
+      "predictions_sha256": "4e453aadc5a3b464936d931fd0de814ddf4c8d0e2f41421c763f89616ab2a6b2",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_3p16227766_k_0p00316227766/seed1": {
+      "checkpoint_sha256": "f67f12956c677a8be1b9d6c15c5c70ae86793a3024e9402e08d7624827e416a1",
+      "predictions_sha256": "1c6edfcb1bc9805f84407b69834db8934335a203225f95fd1f603241efe5ea79",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_3p16227766_k_0p0316227766/seed1": {
+      "checkpoint_sha256": "19727bac66b38773990cc6b6fdcae9f2895211913532a00bcc8ce87c922c7657",
+      "predictions_sha256": "81d91a10be3bf74c499d0c1609d38572ba5c069c6b60e98801c087af864dac0f",
+      "test_evaluations": 0,
+      "resumptions": 0
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/final/selected_phyto/seed1": {
+      "checkpoint_sha256": "94185c958b3aae1fdcf70f7f70edea04575d8f288d5d72ae3f7c959ffc3a1c6d",
+      "predictions_sha256": "0cbdd07068243bba781277d18f653617b19d1382726e687e4dc07fd4f5b6ccef",
+      "test_evaluations": 1
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/final/selected_phyto/seed2": {
+      "checkpoint_sha256": "0158c8eeaf50ea12626cf2b441fde857943427209880361b9d74b5fde0be60ca",
+      "predictions_sha256": "01eb19f328bc0d8ee3d01c83ad7b4682ecef8971bbb394ddf3d9906598325c53",
+      "test_evaluations": 1
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/final/selected_phyto/seed3": {
+      "checkpoint_sha256": "c360222b37f644921bfc1d7f437edd0cf3c230ba03de0d28d4863cb8139bb6c5",
+      "predictions_sha256": "b0d1613bf2c63cc916d242b1730e7e27b837e12aaea3627d93f6829209d69835",
+      "test_evaluations": 1
+    }
+  },
+  "summary_code_sha256": "a5a18d679417d84dd5f8a41857fdbcba7f25645004e65316f3e10b2a0b86e744"
+}

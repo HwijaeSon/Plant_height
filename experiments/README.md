@@ -109,3 +109,50 @@ and restarts incomplete jobs with their original seeds and full schedules.
 The interrupted training prefix must match the replacement run. Recovery has
 its own manifest and code hash; it does not modify the original search protocol
 or frozen training sources. The 2026-09-08 search required one such recovery.
+
+## Joint tuning of both physics coefficients
+
+`tune_joint_lambdas.py` varies `lambda_ODE` and `lambda_K` together while
+preserving the same dataset-specific architecture, initialization, optimizer,
+epoch budget and checkpoint rule. It includes both one-loss boundaries and the
+both-zero no-physics baseline. Previous validation-only coefficient records and
+the existing both-zero controls are reused.
+
+The frozen protocol screens a 6-by-5 Cartesian grid per dataset with seed 1,
+adds one four-corner geometric refinement, and confirms the top three
+both-positive pairs and the best pair on each one-loss boundary with seeds 2
+and 3. Final selection uses three-seed mean validation RMSE. Both the best
+strictly positive pair (PhytoODE) and the overall winner are reported. All
+three dataset selections are frozen before evaluating either selected pair
+on test. The same previously inspected test sets are reused; this is a
+follow-up experiment, not independent confirmation.
+
+```bash
+.venv/bin/python experiments/tune_joint_lambdas.py \
+  --short-gpu 2 --long-gpu 3 --output experiments/results/joint_lambda_repeat
+.venv/bin/python experiments/joint_lambda_status.py \
+  --output experiments/results/joint_lambda_repeat
+# After interruption, rerun the controller with the same output and --resume.
+.venv/bin/python experiments/summarize_joint_lambdas.py \
+  --output experiments/results/joint_lambda_repeat
+```
+
+Wheat and Arabidopsis initially share GPU 2 with one trial each; after
+Arabidopsis selection freezes, two wheat trials may run concurrently. Two
+maize trials share GPU 3. Before each dataset search, the launcher checks
+historical full-model and both-zero training prefixes and verifies that
+resumed and uninterrupted 20-epoch states and histories are bitwise identical.
+The original full cosine schedule is retained even in these short checks.
+
+`joint_lambda_trial.py` saves the model, optimizer, scheduler, validation window
+and all RNG states every 100 epochs and on graceful termination. It can resume
+the same unfinished trial with `--resume`, without changing the validation
+schedule. Diagnostic tensors and optimizer snapshots stay local; completed
+checkpoints, predictions, configurations, histories and selection records are
+versioned. The original single-coefficient experiment files remain unchanged.
+
+The [joint-search report](results/joint_lambda_tuning_20260908/README.md)
+contains all-split RMSE / relative RMSE tables, a LaTeX table, selected
+configurations, validation-grid and paired-test figures, and an audit of the
+selection and prediction-derived metrics. `all_baselines.md` also includes the
+previously trained non-PhytoODE baselines, without rerunning or retuning them.

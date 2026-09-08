@@ -1,0 +1,8 @@
+{
+  "epoch": 1500,
+  "epochs": 1500,
+  "seconds": 345.9594089575112,
+  "best_epoch": 1310,
+  "best_selection_rmse": 0.09984238371253014,
+  "test_evaluations": 0
+}

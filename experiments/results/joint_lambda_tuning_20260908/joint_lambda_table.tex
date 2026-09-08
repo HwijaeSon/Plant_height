@@ -1,0 +1,31 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Joint validation-based tuning of $\lambda_{\mathrm{ODE}}$ and $\lambda_K$. Entries are three-seed mean RMSE $\pm$ SD / relative RMSE (\%) $\pm$ SD; bold marks the lowest displayed mean per dataset and split. Wheat: m; maize: relative UAV-height units; Arabidopsis: cm. The no-physics latent Neural ODE sets both coefficients to zero. Architecture and training budgets are fixed; test sets are reused from earlier experiments.}
+\label{tab:joint-physics-tuning}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llccc}
+\toprule
+Dataset & Model & Train & Validation & Test \\
+\midrule
+Wheat & Latent Neural ODE (no physics) & $\mathbf{0.02108\pm0.00006 / 7.04\pm0.02}$ & $0.03834\pm0.00087 / 11.50\pm0.26$ & $0.03091\pm0.00023 / 10.44\pm0.08$ \\
+Wheat & Original PhytoODE & $0.02244\pm0.00019 / 7.50\pm0.06$ & $0.03804\pm0.00067 / 11.41\pm0.20$ & $0.03063\pm0.00062 / 10.34\pm0.21$ \\
+Wheat & PhytoODE (K loss only) & $0.02253\pm0.00016 / 7.53\pm0.05$ & $0.03775\pm0.00100 / 11.33\pm0.30$ & $0.03047\pm0.00047 / 10.29\pm0.16$ \\
+Wheat & PhytoODE (ODE coefficient tuned) & $0.02231\pm0.00007 / 7.45\pm0.02$ & $\mathbf{0.03768\pm0.00077 / 11.30\pm0.23}$ & $\mathbf{0.03032\pm0.00066 / 10.24\pm0.22}$ \\
+Wheat & PhytoODE (joint tuning) & $0.02231\pm0.00007 / 7.45\pm0.02$ & $\mathbf{0.03768\pm0.00077 / 11.30\pm0.23}$ & $\mathbf{0.03032\pm0.00066 / 10.24\pm0.22}$ \\
+\midrule
+Maize & Latent Neural ODE (no physics) & $43.25\pm5.76 / 13.86\pm1.85$ & $60.75\pm10.03 / 23.97\pm3.96$ & $67.78\pm13.62 / 22.00\pm4.42$ \\
+Maize & Original PhytoODE & $41.90\pm14.37 / 13.43\pm4.61$ & $47.25\pm2.60 / 18.64\pm1.03$ & $56.68\pm4.37 / 18.40\pm1.42$ \\
+Maize & PhytoODE (K loss only) & $\mathbf{38.09\pm8.62 / 12.21\pm2.76}$ & $48.14\pm4.53 / 18.99\pm1.79$ & $\mathbf{55.83\pm6.15 / 18.12\pm2.00}$ \\
+Maize & PhytoODE (ODE coefficient tuned) & $39.20\pm3.40 / 12.56\pm1.09$ & $\mathbf{44.94\pm3.14 / 17.73\pm1.24}$ & $60.53\pm7.50 / 19.65\pm2.43$ \\
+Maize & PhytoODE (joint tuning) & $39.20\pm3.40 / 12.56\pm1.09$ & $\mathbf{44.94\pm3.14 / 17.73\pm1.24}$ & $60.53\pm7.50 / 19.65\pm2.43$ \\
+\midrule
+Arabidopsis & Latent Neural ODE (no physics) & $\mathbf{1.188\pm0.028 / 5.64\pm0.13}$ & $3.278\pm0.047 / 16.28\pm0.23$ & $2.993\pm0.066 / 15.03\pm0.33$ \\
+Arabidopsis & Original PhytoODE & $1.401\pm0.088 / 6.66\pm0.42$ & $3.246\pm0.006 / 16.12\pm0.03$ & $2.866\pm0.093 / 14.39\pm0.47$ \\
+Arabidopsis & PhytoODE (K loss only) & $1.416\pm0.060 / 6.73\pm0.29$ & $3.241\pm0.109 / 16.10\pm0.54$ & $2.852\pm0.043 / 14.32\pm0.22$ \\
+Arabidopsis & PhytoODE (ODE coefficient tuned) & $1.421\pm0.030 / 6.75\pm0.14$ & $\mathbf{3.191\pm0.033 / 15.85\pm0.16}$ & $\mathbf{2.800\pm0.016 / 14.06\pm0.08}$ \\
+Arabidopsis & PhytoODE (joint tuning) & $1.421\pm0.030 / 6.75\pm0.14$ & $\mathbf{3.191\pm0.033 / 15.85\pm0.16}$ & $\mathbf{2.800\pm0.016 / 14.06\pm0.08}$ \\
+\bottomrule
+\end{tabular}}
+\end{table}

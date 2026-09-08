@@ -1,0 +1,40 @@
+{
+  "dataset": "arabidopsis",
+  "seed": 1,
+  "lambda_ode": 0.5,
+  "lambda_k": 0.01,
+  "status": "complete",
+  "epochs": 1500,
+  "best_epoch": 330,
+  "selection_rmse": 3.207277581095695,
+  "initial_state_sha256": "afc57179da19a4a3a9dfbcae99a6f3eca56167452d345bbf65d3dbce7312ca88",
+  "checkpoint_sha256": "14fd4d1a45328051c6bf78c7b1ed038845a8a294333c9d063e49a907ae8f5716",
+  "checkpoint": "experiments/results/joint_lambda_tuning_20260908/arabidopsis/trials/ode_0p5_k_0p01/seed1/checkpoint.pt",
+  "n_params": 4607,
+  "unit": "cm",
+  "metrics": {
+    "train": {
+      "rmse": 1.2332276808877698,
+      "mae": 1.1151422099323502,
+      "relative_error": 5.86155464837617,
+      "mean_target": 21.039259289844065,
+      "n_curves": 18,
+      "n_scored_points": 72
+    },
+    "val": {
+      "rmse": 3.195710161506615,
+      "mae": 2.738167999026094,
+      "relative_error": 15.87098084689228,
+      "mean_target": 20.13555552952716,
+      "n_curves": 18,
+      "n_scored_points": 72
+    }
+  },
+  "train_rmse": 1.2332276808877698,
+  "val_rmse": 3.195710161506615,
+  "seconds": 60.45895617455244,
+  "peak_memory_mib": 30.89697265625,
+  "resumes": [],
+  "test_evaluations": 0,
+  "origin": "new joint validation-only trial"
+}
