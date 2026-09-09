@@ -1,0 +1,69 @@
+{
+  "protocol": "replicate",
+  "model": "phytoode",
+  "config": {
+    "model": "phytoode",
+    "lr": 0.01,
+    "weight_decay": 0.0001,
+    "epochs": 2000,
+    "architecture": {
+      "latent_dim": 8,
+      "g_embed_dim": 4,
+      "ode_hidden": 16,
+      "ode_layers": 1,
+      "dec_hidden": 16,
+      "enc_hidden": 8
+    },
+    "lambda_ode": 0.016177699755393644,
+    "lambda_k": 0.0008130467399748659
+  },
+  "seed": 3,
+  "target_type": "individual_observed_cells",
+  "n_params": 1160,
+  "best_epoch": 760,
+  "metrics": {
+    "train": {
+      "rmse": 0.756632506311808,
+      "relative_error": 13.21679305401309,
+      "mean_observed_length": 5.724781368821292,
+      "n_observations": 1052,
+      "n_case_time_groups": 70,
+      "per_curve_rmse": [
+        0.5469961569039403,
+        0.6805749038798207,
+        0.9581036060483656,
+        0.8798151107466374,
+        0.5980698378334739,
+        0.669563252151152,
+        0.9912099885722397,
+        0.8869080979630389,
+        0.6054750519893931,
+        0.8922811093199077
+      ]
+    },
+    "val": {
+      "rmse": 0.718266005637495,
+      "relative_error": 12.332626685215816,
+      "mean_observed_length": 5.824112121212121,
+      "n_observations": 330,
+      "n_case_time_groups": 70,
+      "per_curve_rmse": [
+        0.48546492529858143,
+        0.6527665722317383,
+        0.895585964486977,
+        0.8346367662396881,
+        0.478130806803866,
+        0.6249765807293606,
+        0.8937478248405187,
+        0.7544340181045188,
+        0.7124405789884489,
+        0.8309893055205366
+      ]
+    }
+  },
+  "seconds": 56.95859156176448,
+  "initial_state_sha256": "95d1b2fba85f7fae778f3b47fa5772778d2718e3140b7c35f1f111860dcf443d",
+  "checkpoint_sha256": "f5d83d385f50d1400b414e62cf489ff222406ceddce236aefa5b05ebabc82769",
+  "test_evaluations": 0,
+  "cuda_visible_devices": "9"
+}

@@ -30,7 +30,7 @@ uncertain, so the analysis uses elapsed hours rather than days after germination
 - [Extraction verification](data/processed/extraction_validation.json): all
   70 recomputed group means match the workbook's cached summary means.
 - [Frozen partitions](data/processed/splits/manifest.json).
-- [Literature basis and precise model adaptation](reports/model_rationale.md).
+- [Literature basis and precise model adaptation](reports/light_reference_notes.md).
 
 The original workbook and processed measurements are supplied as study data.
 No dataset DOI or explicit reuse license has yet been assigned. The filename
@@ -40,86 +40,87 @@ is retained for provenance and does not independently verify the collection date
 
 | Protocol | Train measurements | Validation measurements | Test measurements | Test target |
 |---|---:|---:|---:|---|
-| Replicate-group holdout | 1,052 | 330 | 436 | Ten population-mean curves, seven times each |
+| Replicate-group holdout (primary) | 1,052 | 330 | 436 | Each measured length |
+| 36 / 60 h holdout (auxiliary) | 758 | 240 | 505 | Each measured length at 36 / 60 h |
 
-Source-row groups within genotype are assigned jointly across times and both
-sheets with seed 20260909. This prevents a putative same-row trajectory from
-crossing the primary split, without asserting that row numbers identify plants.
-Partition retries check only whether every group has train/validation/test
-coverage. No height value is used to choose a partition.
+The current benchmark preserves **every measured cell as a separate target**.
+It does not impute missing phenotypes or construct replicate-mean targets.
+A curve prediction at genotype, light condition, and time is compared directly
+with each corresponding measured length. No longitudinal plant identities are
+inferred. The genotype/source-row bookkeeping groups and original seed 20260909
+remain fixed.
 
-All seven observation times occur in all three partitions. The manuscript uses this replicate-group evaluation throughout the hypocotyl section.
+The primary protocol includes all seven observation times in all partitions.
+The auxiliary protocol excludes all 36 / 60 h phenotypes from training and
+validation; 315 original replicate-test measurements at other times are unused.
+Only the primary replicate protocol is reported in the manuscript.
 
-Only training replicates form training mean targets; validation and test means
-are computed separately. All models receive the same available information.
-The primary RMSE is the mean per-genotype/condition curve RMSE. Relative RMSE
-is this value divided by the mean of the scored replicate-mean targets, times
-100. Individual-measurement RMSE is also retained, so averaging is explicit.
-Training-seed SD quantifies initialization variability, not biological uncertainty.
-Some means contain only one measurement after partitioning (ranges: train
-1–22, validation 1–7, replicate test 1–9).
+The loss is RMSE pooled over individual training measurements after dividing
+lengths by the maximum training measurement (16.018 mm). Reported RMSE is in mm;
+relative RMSE divides it by the mean of the actual scored lengths and multiplies
+by 100. This denominator does not replace any training target. Unequal replicate
+counts produce correspondingly unequal numbers of residuals. Training-seed SD
+quantifies optimization variability, not biological uncertainty.
+
+Frozen split JSON files retain the historical mean-target scoring description
+for provenance. The **current scoring definition** is in
+`code/observation_data.py` and the new experiment's `protocol.json`.
 
 ## Run
 
-The original benchmark is frozen under `results/light_growth_20260909`.
-The primary follow-up leaves its training sources, partitions, and fitted
-baseline outputs unchanged:
+Run from the repository root:
 
 ```bash
-.venv/bin/python hypocotyl/code/retune_primary.py --gpus 8 9
-# After training and frozen-choice evaluation complete:
-.venv/bin/python hypocotyl/code/summarize_primary.py
+.venv/bin/python hypocotyl/code/verify_observation_targets.py
+.venv/bin/python hypocotyl/code/run_observation_benchmark.py --gpus 8 9
+# After all training and frozen-choice evaluations finish:
+.venv/bin/python hypocotyl/code/summarize_observations.py
 .venv/bin/python paper/write_hypocotyl_results.py
 .venv/bin/python hypocotyl/code/package_release.py
 ```
 
-The follow-up screens 80 fresh PhytoODE configurations: 32 loss/learning-rate
-grid points at the original capacity and 48 stratified combinations of
-capacity, learning rate, both loss coefficients, weight decay, and training
-length. The best eight seed-1 candidates receive seeds 2 and 3. Three-seed
-mean validation RMSE selects the final candidate, with both fully confirmed
-original PhytoODE configurations eligible as incumbents. Three additional
-runs disable both physics coefficients at the selected architecture and
-training settings. This is a fixed budget of 99 new fits; it is not extended
-based on test performance. The full candidate list and stopping rule are
-recorded before training in `results/primary_retuning_20260909/protocol.json`.
+The fixed catalog contains 24 paired architecture/optimizer settings for each of
+PhytoODE and the no-physics latent ODE, 12 Light-PINN settings, four LSTM settings,
+four RF leaf sizes, and two process ODEs. All 70 are trained from scratch at seed
+1 separately for both protocols. The leading three configurations of each latent
+model and two configurations of each other stochastic baseline receive seeds 2
+and 3. Selection uses only mean validation RMSE. A strictly matched control sets
+both physics coefficients to zero at the selected PhytoODE settings.
 
-The initial test scores had already been inspected before this follow-up.
-Training and selection load training/validation targets only, but the reused
-test partition is not a fresh blinded confirmation. Other baselines retain
-their original independent searches, so this is not an equal-compute comparison.
-Use `--resume` to retain completed trials after interruption; partial attempts
-are preserved in the diagnostics directory.
-
-The recorded screening stage reused GPU worker interpreters with two workers
-per GPU to reduce launch overhead. The unchanged frozen training function was
-called for each candidate, and the original controller resumed for selection,
-confirmation, and test evaluation. `screening_runtime.json` records this
-execution detail; the default controller can reproduce the same experiment
-without the optional runtime helper.
+The complete budget is 140 screening fits, 48 confirmation fits, and any missing
+matched-control seeds. Every neural fit uses 2,000 epochs and the same checkpoint
+rule. Four persistent workers use GPUs 8 and 9, two per GPU. The catalog and source
+hashes are frozen in `results/individual_observations_20260909/protocol.json`.
+The test partitions had been inspected in preliminary analyses; no test score is
+used to rank or extend the current search. All model selections for both protocols
+freeze before new test scoring. Use `--resume` after an interruption; incomplete
+attempts are retained under diagnostics.
 
 ## Outputs
 
-- [Current primary comparison and selected settings](reports/primary_retuning_20260909/results.md).
-- [Train/validation/test metrics](reports/primary_retuning_20260909/comparison.csv),
-  including individual-measurement RMSE, the current matched loss-removal control,
-  and the earlier same-learning-rate no-physics control. The initial control
-  remains better on test than the newly tuned PhytoODE; a broad superiority
-  claim is not supported.
-- [All-genotype primary predictions](reports/primary_retuning_20260909/predictions_replicate.png).
-- [Source, metric, selection, and pairing audit](reports/primary_retuning_20260909/results_audit.json).
-- [Raw data overview](reports/data_overview.png), [partition audit](reports/partition_audit.json),
+- [Current raw-observation comparison](reports/individual_observations_20260909/results.md).
+- [Train/validation/test metrics](reports/individual_observations_20260909/comparison.csv).
+- [All-genotype primary predictions](reports/individual_observations_20260909/predictions_replicate.png).
+- [Auxiliary time-holdout predictions](reports/individual_observations_20260909/predictions_time_holdout.png).
+- [Individual predictions](reports/individual_observations_20260909/individual_predictions.csv.gz).
+- [Fitted light/dark rates](reports/individual_observations_20260909/light_growth_parameters.csv).
+- [Target verification](reports/individual_observations_20260909/target_verification.json)
+  and [result audit](reports/individual_observations_20260909/results_audit.json).
+- [Literature basis](reports/light_reference_notes.md): New Phytologist, Nature,
+  and Molecular Systems Biology; the switched equation is our stated adaptation.
+- [Raw data overview](reports/data_overview.png), [split visualizations](reports/holdout_visualization/README.md),
   and [data dictionary](DATA_DICTIONARY.md).
-- [Deposit-ready data/code ZIP](release/hypocotyl_data_code_20260909.zip).
-  The ZIP is prepared locally; this does not establish a public deposit,
-  DOI, or data-reuse license.
+- [Data/code ZIP prepared for deposit](release/hypocotyl_data_code_20260909.zip).
+
+The prediction figures show every test measurement separately. Only model
+predictions are averaged across training seeds. The split-explanation figures
+also display individual measurements without replicate-mean markers.
 
 ## Historical analysis archive
 
-The original 122 fits and 40 evaluations are retained unchanged in
-`results/light_growth_20260909`, with [their original report](reports/results.md).
-That archive includes an auxiliary time-holdout analysis that is excluded
-from the current manuscript. Its results must not be substituted for the
-replicate-group primary evaluation. The initial primary PhytoODE result
-was 0.343717 mm / 5.931501%; the original independently learning-rate-tuned
-latent ODE result was 0.336836 mm / 5.812771%.
+The mean-target experiments remain available in `results/light_growth_20260909`
+and `results/primary_retuning_20260909`, with reports under `reports/results.md`
+and `reports/primary_retuning_20260909/`. Their training sources are unchanged.
+Their main scores concern replicate means and must not be mixed into the new
+individual-observation table. The current entry point fits and scores raw
+observations for all methods; it reuses no mean-target checkpoint.

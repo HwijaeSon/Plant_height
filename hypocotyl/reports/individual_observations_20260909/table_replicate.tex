@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Hypocotyl replicate-group holdout: individual-observation RMSE (mm) / relative RMSE (\%). Each measured cell is scored separately. Stochastic models report mean $\pm$ sample SD across three seeds; process ODEs are single fits. Bold marks the smallest unrounded mean in each split. The matched control uses the selected PhytoODE architecture and training settings with both physics coefficients zero.}
+\label{tab:hypocotyl_replicate}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+Model & Train & Validation & Test \\
+\midrule
+PhytoODE & $0.754\pm0.007 / 13.16\pm0.11$ & $0.718\pm0.001 / 12.33\pm0.03$ & $0.779\pm0.006 / 13.72\pm0.11$ \\
+Latent ODE (no physics) & $0.755\pm0.002 / 13.19\pm0.03$ & $\mathbf{0.716\pm0.001 / 12.29\pm0.02}$ & $0.782\pm0.005 / 13.77\pm0.08$ \\
+Light-PINN & $0.767\pm0.005 / 13.40\pm0.08$ & $0.726\pm0.004 / 12.47\pm0.08$ & $0.793\pm0.005 / 13.97\pm0.08$ \\
+LSTM-NN & $0.739\pm0.002 / 12.91\pm0.04$ & $0.719\pm0.006 / 12.35\pm0.10$ & $\mathbf{0.774\pm0.003 / 13.64\pm0.05}$ \\
+Random forest & $\mathbf{0.731\pm0.000 / 12.77\pm0.00}$ & $0.728\pm0.000 / 12.51\pm0.01$ & $0.778\pm0.001 / 13.71\pm0.01$ \\
+Light-logistic ODE & $0.821 / 14.34$ & $0.802 / 13.77$ & $0.844 / 14.86$ \\
+Logistic ODE & $0.807 / 14.10$ & $0.771 / 13.24$ & $0.827 / 14.57$ \\
+\midrule
+Latent ODE (matched) & $0.751\pm0.005 / 13.12\pm0.09$ & $0.718\pm0.002 / 12.32\pm0.04$ & $0.777\pm0.005 / 13.69\pm0.09$ \\
+\bottomrule
+\end{tabular}}
+\end{table}

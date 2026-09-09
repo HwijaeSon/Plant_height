@@ -29,7 +29,8 @@ The additional [hypocotyl experiment](hypocotyl/README.md) uses 1,818 snapshot
 measurements across five genotypes, two light regimes and seven times at
 23°C. It compares seven methods using replicate-group holdout with all seven
 observation times in each partition. There are no verified longitudinal
-plant identifiers; the primary targets are population-mean curves.
+plant identifiers; every measured length is a separate training and evaluation target,
+with no phenotype imputation or replicate averaging.
 
 ## Environment
 
@@ -97,7 +98,7 @@ a uniform benefit from the ODE-residual term or from coefficient tuning.
   `56.684367 ± 4.369632` relative UAV-height units.
 - Arabidopsis latent Neural ODE (seeds 1--3): test RMSE
   `2.799668 ± 0.016346 cm`.
-- [Light-conditioned hypocotyl results](hypocotyl/reports/primary_retuning_20260909/results.md)
+- [Light-conditioned hypocotyl results](hypocotyl/reports/individual_observations_20260909/results.md)
   report the primary replicate evaluation, three-seed comparisons, expanded
   validation-only PhytoODE tuning, the original independently tuned no-physics
   baseline, and a control matched to the selected architecture and optimizer.

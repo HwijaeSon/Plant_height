@@ -9,9 +9,9 @@ refer to the original replicate-protocol assignments, and its colors and symbols
 show each observation's role in the displayed protocol. Cell counts are actual
 measurements, not numbers of independently identified plants.
 
-The lower panels show Col-0 observations in each light condition. Small marks are
-raw measurements; large marks are the corresponding split-specific time-point
-means. Horizontal jitter only separates overlapping observations. No individual
+The lower panels show Col-0 observations in each light condition. Every mark is
+one raw measurement; no replicate-mean markers are drawn. Horizontal jitter only
+separates overlapping observations. No individual
 plant trajectories are inferred or connected. Gray background bands indicate the
 dark intervals of the 12 h light / 12 h dark condition.
 

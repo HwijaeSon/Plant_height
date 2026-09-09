@@ -1,0 +1,8 @@
+{
+  "model": "light_pinn",
+  "lr": 0.01,
+  "lambda_ode": 0.5,
+  "lambda_k": 0.003,
+  "epochs": 2000,
+  "weight_decay": 0.0001
+}

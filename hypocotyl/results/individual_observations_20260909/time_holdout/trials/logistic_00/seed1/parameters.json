@@ -1,0 +1,135 @@
+{
+  "model": "logistic",
+  "parameters": [
+    {
+      "cases": [
+        0
+      ],
+      "parameters": [
+        0.020645464999957612,
+        1.9999999999999998,
+        0.03420080109308558
+      ],
+      "success": true,
+      "cost": 0.061296653456020936,
+      "n_training_measurements": 86
+    },
+    {
+      "cases": [
+        1
+      ],
+      "parameters": [
+        0.05095418116763736,
+        0.484393750848932,
+        0.17829545221179008
+      ],
+      "success": true,
+      "cost": 0.09907858974320496,
+      "n_training_measurements": 80
+    },
+    {
+      "cases": [
+        2
+      ],
+      "parameters": [
+        0.037647089828222416,
+        0.8221613922473178,
+        0.2278273822563289
+      ],
+      "success": true,
+      "cost": 0.30178370601416876,
+      "n_training_measurements": 81
+    },
+    {
+      "cases": [
+        3
+      ],
+      "parameters": [
+        0.06481134410160187,
+        0.76434519288633,
+        0.2048220015967819
+      ],
+      "success": true,
+      "cost": 0.22183617382842494,
+      "n_training_measurements": 77
+    },
+    {
+      "cases": [
+        4
+      ],
+      "parameters": [
+        0.014463068331532459,
+        1.9999999999999998,
+        0.03351940707486409
+      ],
+      "success": true,
+      "cost": 0.12957180057823792,
+      "n_training_measurements": 94
+    },
+    {
+      "cases": [
+        5
+      ],
+      "parameters": [
+        0.07135778859195441,
+        0.4237152656548506,
+        0.16312086588712424
+      ],
+      "success": true,
+      "cost": 0.13624772599943913,
+      "n_training_measurements": 94
+    },
+    {
+      "cases": [
+        6
+      ],
+      "parameters": [
+        0.058406421011980944,
+        0.6502765439078618,
+        0.2102337563010971
+      ],
+      "success": true,
+      "cost": 0.14677761599485498,
+      "n_training_measurements": 36
+    },
+    {
+      "cases": [
+        7
+      ],
+      "parameters": [
+        0.07315302060703614,
+        0.7335037713945772,
+        0.1064776545263636
+      ],
+      "success": true,
+      "cost": 0.06854841836695197,
+      "n_training_measurements": 24
+    },
+    {
+      "cases": [
+        8
+      ],
+      "parameters": [
+        0.05349182320932776,
+        0.801103211729816,
+        0.1914112174292505
+      ],
+      "success": true,
+      "cost": 0.2597980399159978,
+      "n_training_measurements": 100
+    },
+    {
+      "cases": [
+        9
+      ],
+      "parameters": [
+        0.0696828595967864,
+        0.9477570331819479,
+        0.14692709106538948
+      ],
+      "success": true,
+      "cost": 0.3386562296530183,
+      "n_training_measurements": 86
+    }
+  ]
+}

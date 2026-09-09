@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "data_checks": [
+    {
+      "protocol": "replicate",
+      "split": "train",
+      "n_targets": 1052,
+      "missing_grid_entries_have_zero_data_gradient": true
+    },
+    {
+      "protocol": "replicate",
+      "split": "val",
+      "n_targets": 330,
+      "missing_grid_entries_have_zero_data_gradient": true
+    },
+    {
+      "protocol": "time_holdout",
+      "split": "train",
+      "n_targets": 758,
+      "missing_grid_entries_have_zero_data_gradient": true
+    },
+    {
+      "protocol": "time_holdout",
+      "split": "val",
+      "n_targets": 240,
+      "missing_grid_entries_have_zero_data_gradient": true
+    }
+  ],
+  "heterogeneous_replicates_not_collapsed": true,
+  "imputed_phenotype_targets": 0,
+  "test_targets_loaded": false
+}

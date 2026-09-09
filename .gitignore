@@ -23,6 +23,7 @@ paper/*.pdf
 # configurations, predictions, checkpoints, and final figures remain tracked.
 **/results/**/forest.joblib
 **/results/**/logs/
+hypocotyl/results/*_runtime/
 maize/results/smoke*/
 maize/results/smoke*.log
 maize/results/chronological_seed1_3/

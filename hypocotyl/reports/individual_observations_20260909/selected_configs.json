@@ -1,0 +1,1220 @@
+{
+  "selected": {
+    "replicate": {
+      "phytoode": {
+        "config": {
+          "model": "phytoode",
+          "lr": 0.01,
+          "weight_decay": 0.0001,
+          "epochs": 2000,
+          "architecture": {
+            "latent_dim": 8,
+            "g_embed_dim": 4,
+            "ode_hidden": 16,
+            "ode_layers": 1,
+            "dec_hidden": 16,
+            "enc_hidden": 8
+          },
+          "lambda_ode": 0.016177699755393644,
+          "lambda_k": 0.0008130467399748659
+        },
+        "selected_candidate": "phytoode_06",
+        "ranking": [
+          {
+            "candidate": "phytoode_06",
+            "val_mean": 0.7182626080946246,
+            "per_seed_validation": [
+              0.7197259707724134,
+              0.7167958478739656,
+              0.718266005637495
+            ]
+          },
+          {
+            "candidate": "phytoode_22",
+            "val_mean": 0.718710257401486,
+            "per_seed_validation": [
+              0.7193978121242369,
+              0.7178366360974653,
+              0.7188963239827557
+            ]
+          },
+          {
+            "candidate": "phytoode_20",
+            "val_mean": 0.7191982416343744,
+            "per_seed_validation": [
+              0.7192787697263565,
+              0.7184567710518311,
+              0.7198591841249358
+            ]
+          }
+        ]
+      },
+      "latent_ode": {
+        "config": {
+          "model": "latent_ode",
+          "lr": 0.006,
+          "weight_decay": 0.0001,
+          "epochs": 2000,
+          "architecture": {
+            "latent_dim": 12,
+            "g_embed_dim": 4,
+            "ode_hidden": 24,
+            "ode_layers": 1,
+            "dec_hidden": 24,
+            "enc_hidden": 12
+          },
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0
+        },
+        "selected_candidate": "latent_ode_12",
+        "ranking": [
+          {
+            "candidate": "latent_ode_12",
+            "val_mean": 0.7158010821710062,
+            "per_seed_validation": [
+              0.7154861085947016,
+              0.716901210727329,
+              0.7150159271909877
+            ]
+          },
+          {
+            "candidate": "latent_ode_18",
+            "val_mean": 0.7195051340912024,
+            "per_seed_validation": [
+              0.7172413553211199,
+              0.72603918340939,
+              0.7152348635430975
+            ]
+          },
+          {
+            "candidate": "latent_ode_10",
+            "val_mean": 0.7210406819588991,
+            "per_seed_validation": [
+              0.717668975086155,
+              0.7212667058706124,
+              0.7241863649199304
+            ]
+          }
+        ]
+      },
+      "light_pinn": {
+        "config": {
+          "model": "light_pinn",
+          "lr": 0.003,
+          "lambda_ode": 0.05,
+          "lambda_k": 0.0001,
+          "epochs": 2000,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "light_pinn_04",
+        "ranking": [
+          {
+            "candidate": "light_pinn_04",
+            "val_mean": 0.7263543874051428,
+            "per_seed_validation": [
+              0.7216950194068246,
+              0.7303761362984935,
+              0.7269920065101103
+            ]
+          },
+          {
+            "candidate": "light_pinn_05",
+            "val_mean": 0.7268366564243771,
+            "per_seed_validation": [
+              0.7220407453197495,
+              0.7307996971427552,
+              0.7276695268106267
+            ]
+          }
+        ]
+      },
+      "lstm": {
+        "config": {
+          "model": "lstm",
+          "lr": 0.003,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 2000,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "lstm_01",
+        "ranking": [
+          {
+            "candidate": "lstm_01",
+            "val_mean": 0.7190184831156593,
+            "per_seed_validation": [
+              0.7125914262179535,
+              0.7222701102731772,
+              0.7221939128558473
+            ]
+          },
+          {
+            "candidate": "lstm_02",
+            "val_mean": 0.7191712086893937,
+            "per_seed_validation": [
+              0.7110052989822002,
+              0.7207915037077646,
+              0.7257168233782165
+            ]
+          }
+        ]
+      },
+      "rf": {
+        "config": {
+          "model": "rf",
+          "min_samples_leaf": 4
+        },
+        "selected_candidate": "rf_02",
+        "ranking": [
+          {
+            "candidate": "rf_02",
+            "val_mean": 0.7283497324447206,
+            "per_seed_validation": [
+              0.7281020580145756,
+              0.7288871106780489,
+              0.7280600286415374
+            ]
+          },
+          {
+            "candidate": "rf_01",
+            "val_mean": 0.7307810413054064,
+            "per_seed_validation": [
+              0.7307409137170291,
+              0.7309286859035201,
+              0.7306735242956701
+            ]
+          }
+        ]
+      },
+      "light_logistic": {
+        "config": {
+          "model": "light_logistic"
+        },
+        "selected_candidate": "light_logistic_00",
+        "ranking": [
+          {
+            "candidate": "light_logistic_00",
+            "val_mean": 0.8020021165929819,
+            "per_seed_validation": [
+              0.8020021165929819
+            ]
+          }
+        ]
+      },
+      "logistic": {
+        "config": {
+          "model": "logistic"
+        },
+        "selected_candidate": "logistic_00",
+        "ranking": [
+          {
+            "candidate": "logistic_00",
+            "val_mean": 0.7713341310846836,
+            "per_seed_validation": [
+              0.7713341310846836
+            ]
+          }
+        ]
+      },
+      "latent_ode_matched": {
+        "config": {
+          "model": "latent_ode",
+          "lr": 0.01,
+          "weight_decay": 0.0001,
+          "epochs": 2000,
+          "architecture": {
+            "latent_dim": 8,
+            "g_embed_dim": 4,
+            "ode_hidden": 16,
+            "ode_layers": 1,
+            "dec_hidden": 16,
+            "enc_hidden": 8
+          },
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0
+        },
+        "selected_candidate": "latent_ode_06",
+        "selection_basis": "All selected PhytoODE settings with both physics coefficients zero."
+      }
+    },
+    "time_holdout": {
+      "phytoode": {
+        "config": {
+          "model": "phytoode",
+          "lr": 0.01,
+          "weight_decay": 0.0001,
+          "epochs": 2000,
+          "architecture": {
+            "latent_dim": 8,
+            "g_embed_dim": 4,
+            "ode_hidden": 16,
+            "ode_layers": 1,
+            "dec_hidden": 16,
+            "enc_hidden": 8
+          },
+          "lambda_ode": 0.016177699755393644,
+          "lambda_k": 0.0008130467399748659
+        },
+        "selected_candidate": "phytoode_06",
+        "ranking": [
+          {
+            "candidate": "phytoode_06",
+            "val_mean": 0.6601600395209167,
+            "per_seed_validation": [
+              0.6602760156951903,
+              0.6627938072192319,
+              0.6574102956483282
+            ]
+          },
+          {
+            "candidate": "phytoode_14",
+            "val_mean": 0.6603598534855025,
+            "per_seed_validation": [
+              0.6592768372540169,
+              0.6617639250848099,
+              0.660038798117681
+            ]
+          },
+          {
+            "candidate": "phytoode_22",
+            "val_mean": 0.6608395580834424,
+            "per_seed_validation": [
+              0.6605134097111631,
+              0.6607701227944386,
+              0.6612351417447256
+            ]
+          }
+        ]
+      },
+      "latent_ode": {
+        "config": {
+          "model": "latent_ode",
+          "lr": 0.01,
+          "weight_decay": 0.0001,
+          "epochs": 2000,
+          "architecture": {
+            "latent_dim": 8,
+            "g_embed_dim": 4,
+            "ode_hidden": 16,
+            "ode_layers": 1,
+            "dec_hidden": 16,
+            "enc_hidden": 8
+          },
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0
+        },
+        "selected_candidate": "latent_ode_06",
+        "ranking": [
+          {
+            "candidate": "latent_ode_06",
+            "val_mean": 0.6602682753961998,
+            "per_seed_validation": [
+              0.6601944069379039,
+              0.6627048919888683,
+              0.657905527261827
+            ]
+          },
+          {
+            "candidate": "latent_ode_14",
+            "val_mean": 0.6605252192259332,
+            "per_seed_validation": [
+              0.6600216759286236,
+              0.6616375445028376,
+              0.6599164372463384
+            ]
+          },
+          {
+            "candidate": "latent_ode_20",
+            "val_mean": 0.6608421274223512,
+            "per_seed_validation": [
+              0.6607310240645552,
+              0.6616516991992607,
+              0.6601436590032375
+            ]
+          }
+        ]
+      },
+      "light_pinn": {
+        "config": {
+          "model": "light_pinn",
+          "lr": 0.01,
+          "lambda_ode": 0.5,
+          "lambda_k": 0.003,
+          "epochs": 2000,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "light_pinn_09",
+        "ranking": [
+          {
+            "candidate": "light_pinn_09",
+            "val_mean": 0.6607168676510369,
+            "per_seed_validation": [
+              0.6583748854382638,
+              0.665038692652484,
+              0.6587370248623627
+            ]
+          },
+          {
+            "candidate": "light_pinn_10",
+            "val_mean": 0.6629256190247023,
+            "per_seed_validation": [
+              0.6608803191030936,
+              0.6672865732862681,
+              0.660609964684745
+            ]
+          }
+        ]
+      },
+      "lstm": {
+        "config": {
+          "model": "lstm",
+          "lr": 0.003,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 2000,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "lstm_01",
+        "ranking": [
+          {
+            "candidate": "lstm_01",
+            "val_mean": 0.6591331156048614,
+            "per_seed_validation": [
+              0.6534898291690366,
+              0.6581734007711753,
+              0.6657361168743723
+            ]
+          },
+          {
+            "candidate": "lstm_00",
+            "val_mean": 0.6605629290433779,
+            "per_seed_validation": [
+              0.6538362254616814,
+              0.6632227614887781,
+              0.6646298001796741
+            ]
+          }
+        ]
+      },
+      "rf": {
+        "config": {
+          "model": "rf",
+          "min_samples_leaf": 4
+        },
+        "selected_candidate": "rf_02",
+        "ranking": [
+          {
+            "candidate": "rf_02",
+            "val_mean": 0.6598467030858548,
+            "per_seed_validation": [
+              0.6586172288889354,
+              0.6609525714063882,
+              0.6599703089622408
+            ]
+          },
+          {
+            "candidate": "rf_01",
+            "val_mean": 0.663783733652544,
+            "per_seed_validation": [
+              0.6630103039214434,
+              0.6647714014032139,
+              0.6635694956329745
+            ]
+          }
+        ]
+      },
+      "light_logistic": {
+        "config": {
+          "model": "light_logistic"
+        },
+        "selected_candidate": "light_logistic_00",
+        "ranking": [
+          {
+            "candidate": "light_logistic_00",
+            "val_mean": 0.7575070755575504,
+            "per_seed_validation": [
+              0.7575070755575504
+            ]
+          }
+        ]
+      },
+      "logistic": {
+        "config": {
+          "model": "logistic"
+        },
+        "selected_candidate": "logistic_00",
+        "ranking": [
+          {
+            "candidate": "logistic_00",
+            "val_mean": 0.735914000543135,
+            "per_seed_validation": [
+              0.735914000543135
+            ]
+          }
+        ]
+      },
+      "latent_ode_matched": {
+        "config": {
+          "model": "latent_ode",
+          "lr": 0.01,
+          "weight_decay": 0.0001,
+          "epochs": 2000,
+          "architecture": {
+            "latent_dim": 8,
+            "g_embed_dim": 4,
+            "ode_hidden": 16,
+            "ode_layers": 1,
+            "dec_hidden": 16,
+            "enc_hidden": 8
+          },
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0
+        },
+        "selected_candidate": "latent_ode_06",
+        "selection_basis": "All selected PhytoODE settings with both physics coefficients zero."
+      }
+    }
+  },
+  "runs": [
+    {
+      "protocol": "replicate",
+      "model": "phytoode",
+      "seed": 1,
+      "best_epoch": 1320,
+      "n_params": 1160,
+      "config": {
+        "model": "phytoode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.016177699755393644,
+        "lambda_k": 0.0008130467399748659
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/phytoode_06/seed1"
+    },
+    {
+      "protocol": "replicate",
+      "model": "phytoode",
+      "seed": 2,
+      "best_epoch": 760,
+      "n_params": 1160,
+      "config": {
+        "model": "phytoode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.016177699755393644,
+        "lambda_k": 0.0008130467399748659
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/phytoode_06/seed2"
+    },
+    {
+      "protocol": "replicate",
+      "model": "phytoode",
+      "seed": 3,
+      "best_epoch": 760,
+      "n_params": 1160,
+      "config": {
+        "model": "phytoode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.016177699755393644,
+        "lambda_k": 0.0008130467399748659
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/phytoode_06/seed3"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode",
+      "seed": 1,
+      "best_epoch": 840,
+      "n_params": 2224,
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.006,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 12,
+          "g_embed_dim": 4,
+          "ode_hidden": 24,
+          "ode_layers": 1,
+          "dec_hidden": 24,
+          "enc_hidden": 12
+        },
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/latent_ode_12/seed1"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode",
+      "seed": 2,
+      "best_epoch": 780,
+      "n_params": 2224,
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.006,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 12,
+          "g_embed_dim": 4,
+          "ode_hidden": 24,
+          "ode_layers": 1,
+          "dec_hidden": 24,
+          "enc_hidden": 12
+        },
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/latent_ode_12/seed2"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode",
+      "seed": 3,
+      "best_epoch": 1480,
+      "n_params": 2224,
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.006,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 12,
+          "g_embed_dim": 4,
+          "ode_hidden": 24,
+          "ode_layers": 1,
+          "dec_hidden": 24,
+          "enc_hidden": 12
+        },
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/latent_ode_12/seed3"
+    },
+    {
+      "protocol": "replicate",
+      "model": "light_pinn",
+      "seed": 1,
+      "best_epoch": 880,
+      "n_params": 1400,
+      "config": {
+        "model": "light_pinn",
+        "lr": 0.003,
+        "lambda_ode": 0.05,
+        "lambda_k": 0.0001,
+        "epochs": 2000,
+        "weight_decay": 0.0001
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/light_pinn_04/seed1"
+    },
+    {
+      "protocol": "replicate",
+      "model": "light_pinn",
+      "seed": 2,
+      "best_epoch": 1240,
+      "n_params": 1400,
+      "config": {
+        "model": "light_pinn",
+        "lr": 0.003,
+        "lambda_ode": 0.05,
+        "lambda_k": 0.0001,
+        "epochs": 2000,
+        "weight_decay": 0.0001
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/light_pinn_04/seed2"
+    },
+    {
+      "protocol": "replicate",
+      "model": "light_pinn",
+      "seed": 3,
+      "best_epoch": 1380,
+      "n_params": 1400,
+      "config": {
+        "model": "light_pinn",
+        "lr": 0.003,
+        "lambda_ode": 0.05,
+        "lambda_k": 0.0001,
+        "epochs": 2000,
+        "weight_decay": 0.0001
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/light_pinn_04/seed3"
+    },
+    {
+      "protocol": "replicate",
+      "model": "lstm",
+      "seed": 1,
+      "best_epoch": 880,
+      "n_params": 2421,
+      "config": {
+        "model": "lstm",
+        "lr": 0.003,
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0,
+        "epochs": 2000,
+        "weight_decay": 0.0001
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/lstm_01/seed1"
+    },
+    {
+      "protocol": "replicate",
+      "model": "lstm",
+      "seed": 2,
+      "best_epoch": 640,
+      "n_params": 2421,
+      "config": {
+        "model": "lstm",
+        "lr": 0.003,
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0,
+        "epochs": 2000,
+        "weight_decay": 0.0001
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/lstm_01/seed2"
+    },
+    {
+      "protocol": "replicate",
+      "model": "lstm",
+      "seed": 3,
+      "best_epoch": 600,
+      "n_params": 2421,
+      "config": {
+        "model": "lstm",
+        "lr": 0.003,
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0,
+        "epochs": 2000,
+        "weight_decay": 0.0001
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/lstm_01/seed3"
+    },
+    {
+      "protocol": "replicate",
+      "model": "rf",
+      "seed": 1,
+      "best_epoch": null,
+      "n_params": null,
+      "config": {
+        "model": "rf",
+        "min_samples_leaf": 4
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/rf_02/seed1"
+    },
+    {
+      "protocol": "replicate",
+      "model": "rf",
+      "seed": 2,
+      "best_epoch": null,
+      "n_params": null,
+      "config": {
+        "model": "rf",
+        "min_samples_leaf": 4
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/rf_02/seed2"
+    },
+    {
+      "protocol": "replicate",
+      "model": "rf",
+      "seed": 3,
+      "best_epoch": null,
+      "n_params": null,
+      "config": {
+        "model": "rf",
+        "min_samples_leaf": 4
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/rf_02/seed3"
+    },
+    {
+      "protocol": "replicate",
+      "model": "light_logistic",
+      "seed": 1,
+      "best_epoch": null,
+      "n_params": 25,
+      "config": {
+        "model": "light_logistic"
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/light_logistic_00/seed1"
+    },
+    {
+      "protocol": "replicate",
+      "model": "logistic",
+      "seed": 1,
+      "best_epoch": null,
+      "n_params": 30,
+      "config": {
+        "model": "logistic"
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/logistic_00/seed1"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 1,
+      "best_epoch": 1480,
+      "n_params": 1160,
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/latent_ode_06/seed1"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 2,
+      "best_epoch": 800,
+      "n_params": 1160,
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/latent_ode_06/seed2"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 3,
+      "best_epoch": 1020,
+      "n_params": 1160,
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/replicate/trials/latent_ode_06/seed3"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "phytoode",
+      "seed": 1,
+      "best_epoch": 1020,
+      "n_params": 1160,
+      "config": {
+        "model": "phytoode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.016177699755393644,
+        "lambda_k": 0.0008130467399748659
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/phytoode_06/seed1"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "phytoode",
+      "seed": 2,
+      "best_epoch": 1800,
+      "n_params": 1160,
+      "config": {
+        "model": "phytoode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.016177699755393644,
+        "lambda_k": 0.0008130467399748659
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/phytoode_06/seed2"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "phytoode",
+      "seed": 3,
+      "best_epoch": 780,
+      "n_params": 1160,
+      "config": {
+        "model": "phytoode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.016177699755393644,
+        "lambda_k": 0.0008130467399748659
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/phytoode_06/seed3"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode",
+      "seed": 1,
+      "best_epoch": 1000,
+      "n_params": 1160,
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/latent_ode_06/seed1"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode",
+      "seed": 2,
+      "best_epoch": 2000,
+      "n_params": 1160,
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/latent_ode_06/seed2"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode",
+      "seed": 3,
+      "best_epoch": 840,
+      "n_params": 1160,
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/latent_ode_06/seed3"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "light_pinn",
+      "seed": 1,
+      "best_epoch": 740,
+      "n_params": 1400,
+      "config": {
+        "model": "light_pinn",
+        "lr": 0.01,
+        "lambda_ode": 0.5,
+        "lambda_k": 0.003,
+        "epochs": 2000,
+        "weight_decay": 0.0001
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/light_pinn_09/seed1"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "light_pinn",
+      "seed": 2,
+      "best_epoch": 820,
+      "n_params": 1400,
+      "config": {
+        "model": "light_pinn",
+        "lr": 0.01,
+        "lambda_ode": 0.5,
+        "lambda_k": 0.003,
+        "epochs": 2000,
+        "weight_decay": 0.0001
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/light_pinn_09/seed2"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "light_pinn",
+      "seed": 3,
+      "best_epoch": 900,
+      "n_params": 1400,
+      "config": {
+        "model": "light_pinn",
+        "lr": 0.01,
+        "lambda_ode": 0.5,
+        "lambda_k": 0.003,
+        "epochs": 2000,
+        "weight_decay": 0.0001
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/light_pinn_09/seed3"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "lstm",
+      "seed": 1,
+      "best_epoch": 340,
+      "n_params": 2421,
+      "config": {
+        "model": "lstm",
+        "lr": 0.003,
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0,
+        "epochs": 2000,
+        "weight_decay": 0.0001
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/lstm_01/seed1"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "lstm",
+      "seed": 2,
+      "best_epoch": 520,
+      "n_params": 2421,
+      "config": {
+        "model": "lstm",
+        "lr": 0.003,
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0,
+        "epochs": 2000,
+        "weight_decay": 0.0001
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/lstm_01/seed2"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "lstm",
+      "seed": 3,
+      "best_epoch": 660,
+      "n_params": 2421,
+      "config": {
+        "model": "lstm",
+        "lr": 0.003,
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0,
+        "epochs": 2000,
+        "weight_decay": 0.0001
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/lstm_01/seed3"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "rf",
+      "seed": 1,
+      "best_epoch": null,
+      "n_params": null,
+      "config": {
+        "model": "rf",
+        "min_samples_leaf": 4
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/rf_02/seed1"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "rf",
+      "seed": 2,
+      "best_epoch": null,
+      "n_params": null,
+      "config": {
+        "model": "rf",
+        "min_samples_leaf": 4
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/rf_02/seed2"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "rf",
+      "seed": 3,
+      "best_epoch": null,
+      "n_params": null,
+      "config": {
+        "model": "rf",
+        "min_samples_leaf": 4
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/rf_02/seed3"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "light_logistic",
+      "seed": 1,
+      "best_epoch": null,
+      "n_params": 25,
+      "config": {
+        "model": "light_logistic"
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/light_logistic_00/seed1"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "logistic",
+      "seed": 1,
+      "best_epoch": null,
+      "n_params": 30,
+      "config": {
+        "model": "logistic"
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/logistic_00/seed1"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode_matched",
+      "seed": 1,
+      "best_epoch": 1000,
+      "n_params": 1160,
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/latent_ode_06/seed1"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode_matched",
+      "seed": 2,
+      "best_epoch": 2000,
+      "n_params": 1160,
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/latent_ode_06/seed2"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode_matched",
+      "seed": 3,
+      "best_epoch": 840,
+      "n_params": 1160,
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.01,
+        "weight_decay": 0.0001,
+        "epochs": 2000,
+        "architecture": {
+          "latent_dim": 8,
+          "g_embed_dim": 4,
+          "ode_hidden": 16,
+          "ode_layers": 1,
+          "dec_hidden": 16,
+          "enc_hidden": 8
+        },
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0
+      },
+      "source": "hypocotyl/results/individual_observations_20260909/time_holdout/trials/latent_ode_06/seed3"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "protocol": "time_holdout",
+  "model": "light_logistic",
+  "config": {
+    "model": "light_logistic"
+  },
+  "seed": 1,
+  "target_type": "individual_observed_cells",
+  "n_params": 25,
+  "best_epoch": null,
+  "metrics": {
+    "train": {
+      "rmse": 0.7665698574334213,
+      "relative_error": 14.825438949337782,
+      "mean_observed_length": 5.17063852242744,
+      "n_observations": 758,
+      "n_case_time_groups": 50,
+      "per_curve_rmse": [
+        0.4391168605088443,
+        0.5640394568540334,
+        0.8930820263478528,
+        0.8621567432106149,
+        0.6140530755801287,
+        0.6398537990682799,
+        0.998361326888617,
+        0.8789872352849991,
+        0.807931086824974,
+        1.0110997683484775
+      ]
+    },
+    "val": {
+      "rmse": 0.7575070755575504,
+      "relative_error": 14.324963902989232,
+      "mean_observed_length": 5.288020833333333,
+      "n_observations": 240,
+      "n_case_time_groups": 50,
+      "per_curve_rmse": [
+        0.4527511951647027,
+        0.5583928960957701,
+        0.6848173327053519,
+        0.6657675584864726,
+        0.49572406869533675,
+        0.6728069522314114,
+        1.0439663938246544,
+        0.882486851320338,
+        1.061826591023443,
+        0.9373082818007041
+      ]
+    }
+  },
+  "seconds": 0.281050369143486,
+  "initial_state_sha256": null,
+  "checkpoint_sha256": null,
+  "test_evaluations": 0,
+  "cuda_visible_devices": "9"
+}

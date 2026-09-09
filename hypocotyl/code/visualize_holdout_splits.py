@@ -90,10 +90,6 @@ def observed_example(ax, frame, condition):
         ax.scatter(part.elapsed_hours+part.jitter, part.length, s=20,
                    marker=MARKERS[role], color=COLORS[role], alpha=.36 if role != "unused" else .25,
                    linewidths=.6, zorder=2)
-        if role != "unused":
-            means = part.groupby("elapsed_hours").length.mean()
-            ax.scatter(means.index, means.values, s=90, marker=MARKERS[role], color=COLORS[role],
-                       edgecolor="#FFFFFF", linewidths=.9, zorder=4)
     ax.set_title("Col-0 · " + ("12 h light / 12 h dark" if condition == "12L12D" else "Continuous red light"),
                  fontsize=15, pad=10, loc="left")
     ax.set_xlim(-4, 76)
@@ -136,7 +132,7 @@ def main():
         diagram(fig.add_subplot(gs[0, :]), frame, protocol)
         for col, condition in enumerate(("12L12D", "cR")):
             observed_example(fig.add_subplot(gs[1, col]), frame, condition)
-        fig.text(.075, .055, "작은 점: 개별 관측  ·  큰 기호: 해당 분할의 시점별 평균  ·  좌우 흔들림: 겹침 방지", fontsize=12)
+        fig.text(.075, .055, "점 하나: 실제 관측 한 개  ·  평균 집계 없음  ·  좌우 흔들림: 겹침 방지", fontsize=12)
         fig.text(.075, .025, "원본 행은 개체 ID로 확인되지 않았으며, 개체별 궤적을 연결한 그림이 아닙니다.", fontsize=12)
         for suffix in ("png", "pdf"):
             fig.savefig(OUT / f"{protocol}_split_visualization.{suffix}", dpi=160)

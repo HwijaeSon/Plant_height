@@ -20,8 +20,11 @@ and chart-input sections are excluded from the tidy observations.
 `group_statistics.csv` additionally reports measurement count `n`, arithmetic
 `mean`, sample standard deviation `sd` (ddof=1), and `spreadsheet_mean`, the
 cached Excel AVERAGE used to verify extraction. These summaries use all
-measurements for descriptive purposes. Training never uses these full-data
-means: `data.py` recomputes each mean within its own partition.
+measurements for descriptive and extraction-verification purposes. The current
+training pipeline never uses these summaries as targets. `observation_data.py`
+retains one length and one genotype/condition/time index per measured cell.
+Missing cells do not appear in the residual vector. The earlier `data.py`
+mean-target loader remains available only to reproduce historical experiments.
 
 Missing genotype alleles, irradiance, the 12L12D spectrum, growth medium,
 independent batch identifiers and age at the first measurement are not supplied
@@ -31,10 +34,11 @@ a versioned metadata update without modifying the original workbook.
 
 The deposit bundle includes the raw workbook, tidy data, frozen partitions,
 provenance hashes, model code and its shared latent-ODE source. It does not
-include the full fitted search outputs; those remain under
-`hypocotyl/results/light_growth_20260909` in the research repository.
+include the full fitted search outputs; the current runs remain under
+`hypocotyl/results/individual_observations_20260909` in the research repository.
 To rerun with the included frozen partitions, install the dependencies and
-run `verify_model.py`, `run_all.py` and `summarize.py` from the package root
+run `verify_observation_targets.py`, `run_observation_benchmark.py` and
+`summarize_observations.py` from the package root
 (scripts are in `hypocotyl/code/`). Manuscript-updating commands in the main
 README require the full repository's `paper/` directory, which is excluded
 from this data package. Do not rerun `make_splits.py` over the frozen partition
