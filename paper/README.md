@@ -13,12 +13,18 @@ are provided for copying into an external manuscript. The maize retention
 decision, the historical validation winner `(500, 0.5)`, and prior inspection
 of the test sets are stated explicitly in Methods.
 
+The [hypocotyl extension](../hypocotyl/README.md) adds original replicate
+snapshot data at fixed 23°C under 12L12D and continuous red light. Its seven
+methods are selected using validation only before any new test scoring.
+The original three dataset results remain unchanged. The title and common
+notation now cover environmental conditioning by either temperature or light.
+
 ## Files
 
 - `main.tex`: complete English draft with Introduction, Materials and methods,
-  wheat, maize, and Arabidopsis Results, and Conclusion. The `\model` macro
+  wheat, maize, Arabidopsis stem-length and hypocotyl Results, and Conclusion. The `\model` macro
   expands to `PhytoODE`; prose treats it as a proper model name.
-- `references.bib`: 40 cited records.  The Introduction cites 17 papers from
+- `references.bib`: the original references plus the light-growth literature. The Introduction cites 17 papers from
   *Computers and Electronics in Agriculture* and 13 from *Artificial
   Intelligence in Agriculture*, plus foundational Neural ODE, latent ODE,
   neural CDE, PINN, and universal differential-equation papers.
@@ -28,6 +34,16 @@ of the test sets are stated explicitly in Methods.
   three figures share the same six-model legend, colors, line hierarchy, and
   observed-point marker. Every model line is clipped to the sample's
   first--last observed time interval.
+- `hypocotyl_methods.tex` and `hypocotyl_results.tex`: the added experiment,
+  included by `main.tex`. Its figure retains the common method colors, replaces
+  the temperature-specific process baseline with Light-logistic ODE, and
+  includes the both-zero latent ODE using a dashed line.
+- [revisions_20260909.md](revisions_20260909.md): copyable title, abstract,
+  Methods, Results, tables and conclusion additions for the light experiment.
+- `main_standalone.tex`: the complete current manuscript with the two
+  hypocotyl `\input` files expanded for pasting into external editors.
+- `overleaf_20260909.zip`: uploadable manuscript source, bibliography, and
+  the four referenced figure PDFs.
 - [relative_errors/README.md](relative_errors/README.md): **historical, before
   the follow-up coefficient study** wheat,
   Arabidopsis, and maize errors divided by each split's mean evaluation target,
@@ -51,9 +67,11 @@ pdflatex main
 pdflatex main
 ```
 
-The current machine does not contain a LaTeX engine or `elsarticle.cls`, so the
-source was checked for balanced braces and missing citation keys but no local
-PDF was produced.
+A temporary Tectonic 0.17.0 toolchain was downloaded for local PDF verification;
+the default shell still has no LaTeX engine on its path. The completed PDF is
+`main.pdf` (a local build artifact), with source hashes and remaining compiler
+warnings recorded in `compile_report_20260909.json`. The reproducible source
+files and figures are tracked in Git.
 
 ## Audit status before submission
 
@@ -78,9 +96,18 @@ PDF was produced.
    not causal real-time forecasting.
 7. Time extrapolation is not evaluated or displayed.  Prediction figures show
    only the interval supported by actual observations.
+8. Hypocotyl rows are bookkeeping groups, not verified longitudinal plant IDs.
+   Its primary targets are split-specific replicate means. The entirely
+   withheld times are 36 and 60 h; both lighting regimes are known in training.
+   The independently LR-tuned no-physics baseline and the same-LR paired
+   control are different comparisons. The public dataset URL/DOI, reuse
+   license and missing experimental metadata remain to be supplied.
 
 ## Regenerate figures
 
 ```bash
 .venv/bin/python paper/make_figures.py
+# After the separate hypocotyl training controller completes:
+.venv/bin/python hypocotyl/code/summarize.py
+.venv/bin/python paper/write_hypocotyl_results.py
 ```

@@ -1,0 +1,7 @@
+{
+  "model": "phytoode",
+  "lr": 0.003,
+  "lambda_ode": 0.5,
+  "lambda_k": 0.1,
+  "epochs": 1500
+}

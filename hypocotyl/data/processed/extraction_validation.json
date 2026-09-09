@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "source_sha256": "62b64ad2aef1467f1278b8602d56ea6c7642fabbd5fbc1409aec13e4e40277e4",
+  "measured_cells": 1818,
+  "by_sheet": {
+    "12L12D": 943,
+    "cR": 875
+  },
+  "verified_spreadsheet_means": 70,
+  "raw_rows": [
+    3,
+    44
+  ],
+  "excluded": "Summary means, SDs, t-tests, and plot-input formulas are not observations.",
+  "identity": "Cell identifiers preserve provenance; row positions do not establish repeated plant identity."
+}

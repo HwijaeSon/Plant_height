@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Hypocotyl unseen-time interpolation errors: RMSE (mm) / relative RMSE (\%). Bold marks the smallest mean in each split. Stochastic models use three seeds (mean $\pm$ sample SD); process ODEs are single deterministic fits. Scores compare population-mean curves, with individual-measurement errors reported separately.}
+\label{tab:hypocotyl_time_holdout}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+Model & Train & Validation & Test \\
+\midrule
+PhytoODE & $0.141\pm0.015 / 2.73\pm0.30$ & $0.315\pm0.011 / 6.04\pm0.20$ & $\mathbf{0.305\pm0.039 / 4.13\pm0.53}$ \\
+Latent ODE (no physics) & $0.149\pm0.025 / 2.89\pm0.49$ & $0.308\pm0.003 / 5.91\pm0.06$ & $0.310\pm0.018 / 4.20\pm0.24$ \\
+Light-PINN & $0.140\pm0.036 / 2.72\pm0.69$ & $\mathbf{0.303\pm0.003 / 5.81\pm0.06}$ & $0.308\pm0.011 / 4.17\pm0.15$ \\
+LSTM-NN & $\mathbf{0.044\pm0.027 / 0.86\pm0.52}$ & $0.314\pm0.009 / 6.02\pm0.18$ & $0.343\pm0.041 / 4.65\pm0.56$ \\
+Random forest & $0.388\pm0.017 / 7.53\pm0.33$ & $0.457\pm0.011 / 8.76\pm0.21$ & $0.809\pm0.034 / 10.96\pm0.46$ \\
+Light-logistic ODE & $0.324 / 6.28$ & $0.450 / 8.63$ & $0.493 / 6.67$ \\
+Logistic ODE & $0.334 / 6.47$ & $0.429 / 8.23$ & $0.327 / 4.43$ \\
+\bottomrule
+\end{tabular}}
+\end{table}

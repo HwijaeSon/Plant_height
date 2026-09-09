@@ -1,8 +1,8 @@
 # Genotype-conditioned latent Neural ODE for plant growth
 
 This repository contains the data, code, and audited results used for the
-wheat and *Arabidopsis thaliana* experiments in the accompanying manuscript.
-The public-facing files are organized by dataset:
+wheat, maize and *Arabidopsis thaliana* experiments in the accompanying manuscript.
+The files are organized by dataset:
 
 ```text
 .
@@ -15,15 +15,21 @@ The public-facing files are organized by dataset:
 │   ├── code/       # preprocessing, baselines, training, plotting
 │   └── results/    # 3-seed paper outputs, fitted ODE parameters, figures
 ├── maize/          # Sweet et al. (2024) data and 3-seed model comparison
+├── hypocotyl/      # original light-regime snapshots, baselines and time holdout
 ├── paper/          # LaTeX manuscript, bibliography, and final figures
 └── legacy/         # exploratory and superseded experiments (git-ignored)
 ```
 
-The two prediction tasks are deliberately different. Wheat uses a
+The prediction tasks use different generalization units. Wheat uses a
 year-held-out split across 19 genotypes. Arabidopsis uses a plant-held-out
 split across nine genotypes and two temperature regimes, with only four stem
 measurements per plant. The latter is a low-time-resolution external
 validation, not an unseen-genotype or unseen-temperature test.
+The additional [hypocotyl experiment](hypocotyl/README.md) uses 1,818 snapshot
+measurements across five genotypes, two light regimes and seven times at
+23°C. It compares seven methods using replicate-group holdout and complete
+withholding of 36- and 60-hour observations. There are no verified longitudinal
+plant identifiers; the primary targets are population-mean curves.
 
 ## Environment
 
@@ -70,8 +76,11 @@ errors. It compares the selected positive weight with the original weight,
 zero residual weight, and removal of both biological losses. All new candidate
 training runs exclude test evaluation; final follow-up scores reuse the test
 sets already inspected in the preceding ablation.
-The selected weights are approximately 3.162 (wheat), 500 (maize), and 0.5
-(Arabidopsis). **Latent Neural ODE without physics loss sets both the ODE-residual
+That historical search selected weights approximately 3.162 (wheat), 500
+(maize), and 0.5 (Arabidopsis). The current manuscript subsequently retained
+maize's original `(0.5, 0.5)` pair; see the
+[adopted configurations](experiments/phytoode_config.json).
+**Latent Neural ODE without physics loss sets both the ODE-residual
 and maximum-height coefficients to zero.** Tuned PhytoODE has lower mean test
 error than this baseline on all three datasets. The K-loss-only model retains
 the maximum-height coefficient and is a separate partial ablation; it is not
@@ -83,9 +92,14 @@ a uniform benefit from the ODE-residual term or from coefficient tuning.
 ## Audited paper results
 
 - Wheat tuned latent Neural ODE (1,655 parameters; seeds 1--3): test RMSE
-  `0.030629 ± 0.000620 m`.
+  `0.030322 ± 0.000662 m`.
+- Maize adopted latent Neural ODE (seeds 1--3): test RMSE
+  `56.684367 ± 4.369632` relative UAV-height units.
 - Arabidopsis latent Neural ODE (seeds 1--3): test RMSE
-  `2.865980 ± 0.092808 cm`.
+  `2.799668 ± 0.016346 cm`.
+- [Light-conditioned hypocotyl results](hypocotyl/reports/results.md) report
+  both protocols, three-seed comparisons, independent learning-rate tuning
+  for the no-physics model, and an additional strictly matched control.
 - Prediction figures are restricted to the observed time span; no temporal
   extrapolation is displayed.
 

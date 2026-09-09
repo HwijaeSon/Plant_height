@@ -6,6 +6,8 @@
 \usepackage{multirow}
 \usepackage{xcolor}
 \usepackage{url}
+\usepackage{placeins}
+\setlength{\emergencystretch}{3em}
 
 \journal{Computers and Electronics in Agriculture}
 
@@ -16,7 +18,7 @@
 
 \begin{frontmatter}
 
-\title{PhytoODE: Learning plant growth dynamics with genotype- and temperature-conditioned latent neural ODEs}
+\title{PhytoODE: Learning plant growth dynamics across genotypes, temperature, and light regimes}
 
 \author[inst1]{Yeoul Lim}
 \author[inst1]{Siyoung You}
@@ -27,7 +29,7 @@
 \address[inst2]{\todo{Department of Chemistry, Seoul National University, Seoul, Republic of Korea}}
 
 \begin{abstract}
-Predicting longitudinal plant growth across genotypes and environments requires a model that can represent nonlinear continuous dynamics without assuming that a single analytical growth equation is valid for every genotype. We present \model{}, a genotype- and temperature-conditioned latent neural ordinary differential equation (Neural ODE) model for plant growth trajectory prediction. A genotype embedding and the temperature trajectory determine an initial latent state; a neural vector field evolves this state continuously, and a decoder maps it to plant height or stem length. A weak genotype-specific logistic residual regularizes the learned trajectory without forcing the phenotype itself to follow a fixed logistic equation. We evaluate the approach on three complementary datasets: a four-season wheat field experiment with 19 genotypes, a four-season unmanned-aerial-vehicle (UAV) maize experiment with 402 genotypes, and an external \textit{Arabidopsis thaliana} experiment with only four stem-length measurements per plant. Under the respective held-out protocols, \model{} achieved lower mean test RMSE than five benchmark families and an architecture-matched latent ODE without physics losses: $0.03032\pm0.00066$~m for wheat, $56.68\pm4.37$ relative UAV-height units for maize, and $2.800\pm0.016$~cm for Arabidopsis. These correspond to relative RMSEs of $10.24\pm0.22\%$, $18.40\pm1.42\%$, and $14.06\pm0.08\%$, respectively. The coefficient study is a follow-up analysis on previously inspected test sets; the reported maize setting retains the original coefficients rather than the later validation-optimal pair. The maize experiment demonstrates scalability across hundreds of observed genotypes and generalization to a new year, whereas the Arabidopsis experiment tests robustness at very low temporal resolution in a different species and organ. The year-held-out experiments do not evaluate unseen genotypes, and the Arabidopsis split evaluates new plants within observed genotypes and temperature regimes.
+Predicting plant growth across genotypes and environments requires flexible dynamics under sparse observation. We present \model{}, a genotype- and environment-conditioned latent neural ordinary differential equation model. An encoder reads a known environmental scenario, a learned latent flow evolves continuously, and a decoder predicts phenotype without target-curve measurements as inputs. Logistic derivative and capacity penalties weakly regularize the decoded trajectory. Three temperature-conditioned benchmarks cover wheat with 19 genotypes, UAV maize with 402 genotypes, and Arabidopsis stem length with four observations per plant. Mean test RMSEs were $0.03032$~m, $56.68$ relative UAV-height units, and $2.800$~cm, respectively, corresponding to relative RMSEs of $10.24\%$, $18.40\%$, and $14.06\%$. These were lower than the compared benchmark families and matched no-physics controls, although the follow-up coefficient study reused previously inspected test sets. A fourth, author-collected dataset comprises 1,818 hypocotyl measurements across five genotypes and two light regimes at 23~$^{\circ}$C. We extend the growth constraint to separate light/dark rates and fit population-mean curves from replicate snapshots. With every 36-h and 60-h measurement withheld from training and validation, \model{} achieved $0.305$~mm RMSE ($4.13\%$ relative RMSE). All choices for this new comparison were frozen before test scoring. The experiments address field-season transfer, genotype-panel scale, sparse temporal sampling, and environmental-driver substitution. Evaluated genotypes and treatment regimes are represented during training; the new experiment does not establish unseen-photoperiod prediction or individual-plant trajectory recovery.
 \end{abstract}
 
 \begin{keyword}
@@ -50,7 +52,7 @@ Hybrid mechanistic--machine-learning approaches offer one route to this goal. Pr
 
 Neural ordinary differential equations replace discrete hidden-state transitions with a learned continuous vector field \citep{chen2018neuralode}. Latent ODEs extend this idea by evolving an unobserved state that can represent richer dynamics than a single measured variable and are naturally compatible with irregular observation times \citep{rubanova2019latentode}. Augmenting the latent state can increase expressiveness and improve numerical behaviour \citep{dupont2019augmented}, while neural controlled differential equations formalize continuous-time responses to incoming covariates \citep{kidger2020neuralcde}. These ideas are complementary to physics-informed learning \citep{raissi2019pinn,karniadakis2021piml} and universal differential equations, which combine known and learned dynamics \citep{rackauckas2020ude}. Despite this methodological fit, latent continuous-time models have not been adequately tested for genotype-conditioned plant growth across both field-scale dense trajectories and extremely sparse external biological datasets.
 
-We introduce \model{}, a latent neural ODE model that shares parameters across genotypes and learns temperature-conditioned growth dynamics. A weak logistic residual is retained as a regularizer rather than imposed as the complete state equation. We make four contributions: (i) a continuous-time architecture that predicts an entire genotype-specific growth curve from genotype, calendar time, and a known temperature scenario, without using phenotype observations from the target trajectory; (ii) a protocol-matched, year-held-out wheat evaluation aligned with \citet{shao2026pinn}; (iii) a year-held-out UAV maize evaluation spanning 402 genotypes, which tests whether a learned genotype-conditioned dynamical system remains effective at substantially greater genetic scale; and (iv) an external \textit{Arabidopsis thaliana} evaluation with only four observations per plant. Together, the datasets vary in species, organ, physical scale, genotype count, temporal resolution, and generalization unit.
+We introduce \model{}, a latent neural ODE model that shares parameters across genotypes and learns environment-conditioned growth dynamics. A weak logistic residual is retained as a regularizer rather than imposed as the complete state equation. We make five contributions: (i) a continuous-time architecture that predicts an entire genotype-specific growth curve from genotype, time, and a known environmental scenario, without using phenotype observations from the target trajectory; (ii) a protocol-matched, year-held-out wheat evaluation aligned with \citet{shao2026pinn}; (iii) a year-held-out UAV maize evaluation spanning 402 genotypes, which tests whether a learned genotype-conditioned dynamical system remains effective at substantially greater genetic scale; (iv) an external \textit{Arabidopsis thaliana} stem-length evaluation with only four observations per plant; and (v) an author-collected hypocotyl experiment under two light regimes at fixed temperature, with explicit withholding of complete observation times and a reproducible dataset package. Together, the datasets vary in species, organ, physical scale, genotype count, temporal resolution, and generalization unit.
 
 
 \section{Materials and methods}
@@ -58,26 +60,26 @@ We introduce \model{}, a latent neural ODE model that shares parameters across g
 
 \subsection{Prediction task}
 
-Let $g\in\{1,\ldots,G\}$ denote genotype, $T_g(t)$ an environmental temperature trajectory, and $y_g(t_i)$ plant height or stem length observed at a subset of times $\mathcal{O}_g$. The model predicts a complete trajectory $\hat y_g(t)$ on a common integration grid. Missing phenotype times do not contribute to the data loss. The principal task is trajectory-level generalization: to a held-out year for wheat and maize and to new biological replicate plants for Arabidopsis. In all three datasets, the evaluated genotype labels are present during training.
+Let $g\in\{1,\ldots,G\}$ denote genotype, $\mathbf u_g(t)$ a known environmental scenario, and $y_g(t_i)$ the observed growth phenotype at a subset of times $\mathcal{O}_g$. The environmental input is temperature in the first three datasets and illumination plus duty cycle in the hypocotyl experiment. The model predicts a complete trajectory $\hat y_g(t)$ on a common integration grid. Missing phenotype times do not contribute to the data loss. The principal task is trajectory-level generalization: to a held-out year for wheat and maize and to new biological replicate plants for Arabidopsis stem length. The hypocotyl protocols evaluate held-out replicate measurements and entirely withheld observation times. In all four datasets, the evaluated genotype labels are present during training.
 
-This implementation is an offline, scenario-conditioned predictor. The temperature trajectory over the prediction interval is assumed known and is read by the initial-state encoder. No height or stem-length observation from an evaluated trajectory is used as an input. It should therefore not be interpreted as a causal real-time forecast unless the encoder is restricted to past temperature observations.
+This implementation is an offline, scenario-conditioned predictor. The environmental scenario over the prediction interval is assumed known and is read by the initial-state encoder. No phenotype observation from an evaluated curve is used as an input. A causal real-time forecast would require restricting the encoder to information available at the forecast origin.
 
-\subsection{\model{} architecture: genotype- and temperature-conditioned latent dynamics}
+\subsection{\model{} architecture: genotype- and environment-conditioned latent dynamics}
 
-Each genotype is represented by a $d_e$-dimensional embedding $\mathbf e_g$ learned from a one-hot vector. An LSTM encoder reads standardized temperature and normalized calendar time in reverse temporal order and produces the initial latent state,
+Each genotype is represented by a $d_e$-dimensional embedding $\mathbf e_g$ learned from a one-hot vector. An LSTM encoder reads the environmental channels and normalized time in reverse temporal order and produces the initial latent state,
 \begin{equation}
- \mathbf z_g(0)=E_{\phi}\!\left(\{T_g(\tau_j),\tau_j\}_{j=1}^{J},\mathbf e_g\right),
+ \mathbf z_g(0)=E_{\phi}\!\left(\{\mathbf u_g(\tau_j),\tau_j\}_{j=1}^{J},\mathbf e_g\right),
  \qquad \mathbf z_g(0)\in\mathbb R^{d_z}.
  \label{eq:encoder}
 \end{equation}
 The latent state evolves according to
 \begin{equation}
  \frac{d\mathbf z_g}{d\tau}
- =3\tanh\!\left[f_{\theta}\!\left(\mathbf z_g(\tau),T_g(\tau),\mathbf e_g,\tau\right)\right],
+ =3\tanh\!\left[f_{\theta}\!\left(\mathbf z_g(\tau),\mathbf u_g(\tau),\mathbf e_g,\tau\right)\right],
  \qquad \tau\in[0,1],
  \label{eq:ode}
 \end{equation}
-where $f_{\theta}$ is a hyperbolic-tangent multilayer perceptron (MLP). The environmental value at intermediate solver stages is obtained by linear interpolation. A fixed-step fourth-order Runge--Kutta solver uses one substep per daily grid interval. Finally, an MLP decoder maps the latent trajectory to the phenotype,
+where $f_{\theta}$ is a hyperbolic-tangent multilayer perceptron (MLP). For temperature-conditioned experiments, standardized temperature at intermediate solver stages is obtained by linear interpolation, and a fixed-step fourth-order Runge--Kutta solver uses one substep per daily interval. Discontinuous illumination uses a 3-h grid and piecewise-constant forcing, as detailed in Section~\ref{subsec:lightmodel}. Finally, an MLP decoder maps the latent trajectory to the phenotype,
 \begin{equation}
  \hat y_g(\tau)=\operatorname{LeakyReLU}_{0.01}\!\left[D_{\psi}(\mathbf z_g(\tau))\right].
  \label{eq:decoder}
@@ -97,25 +99,25 @@ denote the complete scalar decoder in Eq.~\eqref{eq:decoder}, including its outp
  \qquad
  \frac{d\hat y_n}{d\tau}
  =\nabla_{\mathbf z}G_{\psi}\!\left(\mathbf z_n(\tau)\right)^{\!\top}
- \mathbf F_{\theta}\!\left(\mathbf z_n(\tau),T_n(\tau),
+ \mathbf F_{\theta}\!\left(\mathbf z_n(\tau),\mathbf u_n(\tau),
  \mathbf e_{g(n)},\tau\right).
  \label{eq:decoder_chain_tau}
 \end{equation}
 Equation~\eqref{eq:decoder_chain_tau} is the directional derivative of the decoder along the learned latent flow. It does not assume that any individual latent coordinate represents height or follows logistic dynamics.
 
-The ODE is solved on normalized time $\tau\in[0,1]$, whereas the logistic growth rate is expressed per physical day. If $t=t_0+S\tau$, where $S=t_{\mathrm{last}}-t_0$ is the physical duration of the integration interval, a second application of the chain rule gives
+The ODE is solved on normalized time $\tau\in[0,1]$, whereas the reference growth rate uses physical time (days for the first three datasets and hours for hypocotyls). If $t=t_0+S\tau$, where $S=t_{\mathrm{last}}-t_0$ is the physical duration of the integration interval, a second application of the chain rule gives
 \begin{equation}
  \frac{d\hat y_n}{dt}
  =\frac{1}{S}\frac{d\hat y_n}{d\tau}
  =\frac{1}{S}
  \nabla_{\mathbf z}G_{\psi}\!\left(\mathbf z_n(\tau)\right)^{\!\top}
- \mathbf F_{\theta}\!\left(\mathbf z_n(\tau),T_n(\tau),
+ \mathbf F_{\theta}\!\left(\mathbf z_n(\tau),\mathbf u_n(\tau),
  \mathbf e_{g(n)},\tau\right).
  \label{eq:decoder_chain_day}
 \end{equation}
-The values of $S$ were 169, 95, and 22 days for wheat, maize, and Arabidopsis, respectively. This conversion is necessary because a derivative with respect to normalized time would otherwise change merely when the length of the study interval changed.
+The values of $S$ were 169, 95, and 22 days for wheat, maize, and Arabidopsis stem length, respectively, and 72 hours for hypocotyl length. This conversion is necessary because a derivative with respect to normalized time would otherwise change merely when the length of the study interval changed.
 
-The derivative in Eq.~\eqref{eq:decoder_chain_day} is evaluated by automatic differentiation rather than by finite differences of predicted or observed heights. At every daily integration node $(n,j)$, the vector field is re-evaluated at the stored latent state to obtain $\mathbf F_{\theta}(\mathbf z_{nj},T_{nj},\mathbf e_{g(n)},\tau_j)$. In the same forward computation, reverse-mode automatic differentiation evaluates the decoder gradient $\nabla_{\mathbf z}G_{\psi}(\mathbf z_{nj})$. Operationally, the implementation forms
+The derivative in Eq.~\eqref{eq:decoder_chain_day} is evaluated by automatic differentiation rather than by finite differences of predicted or observed heights. At each collocation node $(n,j)$, the vector field is re-evaluated at the stored latent state to obtain $\mathbf F_{\theta}(\mathbf z_{nj},\mathbf u_{nj},\mathbf e_{g(n)},\tau_j)$. In the same forward computation, reverse-mode automatic differentiation evaluates the decoder gradient $\nabla_{\mathbf z}G_{\psi}(\mathbf z_{nj})$. Operationally, the implementation forms
 \begin{equation}
  Q=\sum_{n=1}^{N}\sum_{j=1}^{J}G_{\psi}(\mathbf z_{nj}),
  \qquad
@@ -125,9 +127,9 @@ The derivative in Eq.~\eqref{eq:decoder_chain_day} is evaluated by automatic dif
 \end{equation}
 where the equality follows because the decoder is applied independently to each trajectory--time pair. The elementwise inner product of this gradient and the vector field gives $d\hat y_n/d\tau$, which is divided by $S$ to obtain $d\hat y_n/dt$. Thus, no derivative target is estimated from sparse, irregular, or noisy phenotype measurements, and no finite-difference interval has to be chosen. The LeakyReLU decoder is piecewise differentiable, so the same operation differentiates the entire decoder, including the output activation.
 
-The derivative computation is retained in the training computation graph. In particular, the automatic-differentiation call is made with graph construction enabled, and the fixed-step Runge--Kutta operations are not detached. Back-propagating the final objective can therefore update the decoder, the neural vector field, the initial-state temperature encoder, and the genotype embedding through the derivative residual. It also updates the genotype-specific logistic parameter head described below. This is what allows a loss defined on $d\hat y/dt$ to train the original model parameters even though height derivatives are never provided as observations.
+The derivative computation is retained in the training computation graph. In particular, the automatic-differentiation call is made with graph construction enabled, and the fixed-step Runge--Kutta operations are not detached. Back-propagating the final objective can therefore update the decoder, the neural vector field, the initial-state environmental encoder, and the genotype embedding through the derivative residual. It also updates the genotype-specific logistic parameter head described below. This is what allows a loss defined on $d\hat y/dt$ to train the original model parameters even though height derivatives are never provided as observations.
 
-A small MLP maps each genotype embedding to two constrained logistic parameters,
+For the temperature-conditioned datasets, a small MLP maps each genotype embedding to two constrained logistic parameters,
 \begin{equation}
  r_g=\sigma(a_g), \qquad K_g=1+\tanh(b_g),
  \label{eq:logistic_parameters}
@@ -145,9 +147,9 @@ and the corresponding physics loss is
  =\frac{1}{N J}\sum_{n=1}^{N}\sum_{j=1}^{J}\varepsilon_{nj}^{2}.
  \label{eq:physics}
 \end{equation}
-The $J$ integration nodes act as deterministic collocation points. Consequently, Eq.~\eqref{eq:physics} is evaluated at every daily grid point of every training trajectory, including days at which phenotype is unobserved. It is not evaluated at the intermediate stage states used inside the Runge--Kutta update, and validation and test targets never enter this loss. In the sparse Arabidopsis setting, for example, four measured stem lengths determine the data term, but the physics term can still regularize the predicted daily trajectory over the full 23-day grid. These unobserved-grid residuals add a growth-shape prior rather than additional phenotype information.
+In the temperature-conditioned experiments, the $J$ integration nodes act as deterministic collocation points. Consequently, Eq.~\eqref{eq:physics} is evaluated at every daily grid point of every training trajectory, including days at which phenotype is unobserved. It is not evaluated at the intermediate stage states used inside the Runge--Kutta update, and validation and test targets never enter this loss. In the sparse Arabidopsis setting, for example, four measured stem lengths determine the data term, but the physics term can still regularize the predicted daily trajectory over the full 23-day grid. These unobserved-grid residuals add a growth-shape prior rather than additional phenotype information.
 
-Unlike a logistic ODE baseline, Eq.~\eqref{eq:physics} does not generate the trajectory and is not imposed as a hard equality. The learned, temperature-conditioned latent vector field remains the trajectory-generating model, and the residual only penalizes disagreement between its decoded instantaneous growth rate and a logistic reference rate. The model can therefore depart from logistic behaviour when this improves agreement with the observed trajectories.
+Unlike a logistic ODE baseline, Eq.~\eqref{eq:physics} does not generate the trajectory and is not imposed as a hard equality. The learned, environment-conditioned latent vector field remains the trajectory-generating model, and the residual only penalizes disagreement between its decoded instantaneous growth rate and a logistic reference rate. The model can therefore depart from logistic behaviour when this improves agreement with the observed trajectories.
 
 The observed-data term is the mean of the per-trajectory masked RMSE,
 \begin{equation}
@@ -216,15 +218,17 @@ For maize, we subsequently chose to retain the original $(0.5,0.5)$ setting afte
 
 \subsection{Baselines and evaluation}
 
-In addition to the no-physics latent ODE control, each dataset was evaluated against the same five baseline families: genotype-specific logistic ODE (Logi-ODE), temperature-informed ODE (Temp-ODE), random forest (RF), one-hot LSTM-NN, and Logi-PINN. For wheat, the LSTM-NN and Logi-PINN rows use the first three seeds from the reference outputs of \citet{shao2026pinn}; the two process models and RF were fitted with the same split and scoring mask. All maize and Arabidopsis baselines were fitted under their corresponding split, input, and normalization protocols. Logistic parameters were estimated from training data only. The maize hyperparameter search was applied only to our model, so its comparison establishes the lowest observed error under the recorded model-specific training procedures rather than equal tuning budgets for every baseline.
+In addition to the no-physics latent ODE control, each temperature-conditioned dataset was evaluated against the same five baseline families: genotype-specific logistic ODE (Logi-ODE), temperature-informed ODE (Temp-ODE), random forest (RF), one-hot LSTM-NN, and Logi-PINN. For wheat, the LSTM-NN and Logi-PINN rows use the first three seeds from the reference outputs of \citet{shao2026pinn}; the two process models and RF were fitted with the same split and scoring mask. All maize and Arabidopsis baselines were fitted under their corresponding split, input, and normalization protocols. Logistic parameters were estimated from training data only. The maize hyperparameter search was applied only to our model, so its comparison establishes the lowest observed error under the recorded model-specific training procedures rather than equal tuning budgets for every baseline.
 
 The primary metric is trajectory-level RMSE: RMSE is calculated over observed points separately for each replicate-averaged trajectory and then averaged across trajectories, matching the convention of \citet{shao2026pinn}. To compare scales without treating metres, centimetres, and relative UAV height as interchangeable, we additionally report
 \begin{equation}
  \mathrm{rRMSE}_s(\%)=100\,\frac{\mathrm{RMSE}_s}{\bar y_s},
  \label{eq:rrmse}
 \end{equation}
-where $\bar y_s$ is the pooled mean of all masked targets in split $s\in\{\mathrm{train},\mathrm{validation},\mathrm{test}\}$. The denominator is fixed within a dataset and split for every model; it is used only for reporting and therefore does not alter rankings or checkpoint selection. Each results-table cell reports RMSE / rRMSE (\%). Neural models and RF were evaluated with seeds 1--3 and are reported as mean $\pm$ sample standard deviation. Logi-ODE and Temp-ODE are deterministic least-squares fits and were run once. The three prediction figures use one common model order and color mapping. They show PhytoODE, the five benchmark families, and observed targets; the no-physics control is reported in the tables, and every curve is clipped to the interval from the first actual observation to the last actual observation of the displayed sample. Lines between observations are model trajectories, not additional measurements.
+where $\bar y_s$ is the pooled mean of all masked targets in the training, validation, or test split $s$. The denominator is fixed within a dataset and split for every model; it is used only for reporting and therefore does not alter rankings or checkpoint selection. Each results-table cell reports RMSE / rRMSE (\%). Neural models and RF were evaluated with seeds 1--3 and are reported as mean $\pm$ sample standard deviation. Logi-ODE and Temp-ODE are deterministic least-squares fits and were run once. The three temperature-experiment figures use one common model order and color mapping. They show PhytoODE, the five benchmark families, and observed targets; the no-physics control is reported in the tables, and every curve is clipped to the interval from the first actual observation to the last actual observation of the displayed sample. Lines between observations are model trajectories, not additional measurements.
 
+
+\input{hypocotyl_methods}
 
 \section{Results}
 \label{sec:results}
@@ -342,6 +346,8 @@ When evaluated separately by temperature regime, \model{} achieved RMSEs of $2.1
 Taken together, the Arabidopsis results support resilience to low temporal resolution in a species and organ distinct from the wheat development dataset. However, this evidence is bounded: all nine genotypes and both temperature regimes occur in training, validation, and test splits, and each test curve averages only two plants. The experiment therefore supports cross-species, sparse-trajectory applicability but not genotype or environmental extrapolation.
 
 
+\input{hypocotyl_results}
+
 \subsection{Contribution of the physics regularizers}
 \label{subsec:physicsablationresults}
 
@@ -350,12 +356,14 @@ Relative to the matched latent ODE with both physics coefficients set to zero, t
 \section{Conclusion}
 \label{sec:conclusion}
 
-We introduced \model{}, a genotype- and temperature-conditioned latent neural ODE model for predicting plant growth trajectories, and evaluated it under three distinct regimes. It achieved lower mean test RMSE than the five benchmark families and the matched no-physics latent ODE in wheat, maize, and Arabidopsis, with rRMSEs of $10.24\pm0.22\%$, $18.40\pm1.42\%$, and $14.06\pm0.08\%$, respectively. The wheat result combines year-held-out accuracy with a compact 1,655-parameter model. The maize result extends the same model family to 402 genotypes and 3,072 field-plot trajectories, showing that genotype-conditioned latent dynamics can scale to a substantially broader observed panel. The Arabidopsis result remains competitive with RF despite only four measurements per plant and transfers the formulation to a different species, organ, and growth scale. Together, these results provide complementary evidence for parameter-efficient field-season transfer, high-cardinality genotype conditioning, and resilience to sparse temporal observation.
+We introduced \model{}, a genotype- and environment-conditioned latent neural ODE model for predicting plant growth trajectories. The three temperature-conditioned benchmarks and the additional light-conditioned hypocotyl experiment test distinct observation settings. It achieved lower mean test RMSE than the five benchmark families and the matched no-physics latent ODE in wheat, maize, and Arabidopsis, with rRMSEs of $10.24\pm0.22\%$, $18.40\pm1.42\%$, and $14.06\pm0.08\%$, respectively. The wheat result combines year-held-out accuracy with a compact 1,655-parameter model. The maize result extends the same model family to 402 genotypes and 3,072 field-plot trajectories, showing that genotype-conditioned latent dynamics can scale to a substantially broader observed panel. The Arabidopsis result remains competitive with RF despite only four measurements per plant and transfers the formulation to a different species, organ, and growth scale. Together, these results provide complementary evidence for parameter-efficient field-season transfer, high-cardinality genotype conditioning, and resilience to sparse temporal observation.
+
+The hypocotyl experiment extends the formulation to explicit illumination at fixed temperature and to population curves constructed from replicate snapshots. Its test relative RMSEs were $5.93\%$ for held-out replicate measurements and $4.13\%$ for entirely withheld observation times. This supports assessment under a new forcing variable and observation structure, while the accompanying data package makes extraction and partitioning inspectable. The biological conclusions remain limited to the observed genotypes and lighting regimes; unknown plant identities and batch structure and incomplete light metadata require further experimental documentation.
 
 Four limitations define the next experiments. First, capacity and hyperparameters were tuned on a single validation year for wheat and maize, and the subsequent coefficient study reused previously inspected test sets. The retained maize setting also differs from the later validation optimum. Fixed configurations and independently tuned controls should therefore be evaluated over additional validation--test year rotations and independent cohorts. Second, both year-held-out experiments contain the same genotype identities across years, so the 402-genotype maize result demonstrates scale across observed lines rather than prediction of unseen genotypes. Third, the Arabidopsis split holds out plants rather than genotypes or temperature regimes and averages only two test plants per genotype--temperature combination. Independent cohorts, genotype-held-out validation, and intermediate or fluctuating temperature treatments would provide stronger biological tests. Fourth, the present evaluation and figures are restricted to measured temporal support and do not establish accuracy beyond the last phenotyping date. A causal forecasting variant should restrict the environmental encoder to temperatures available up to the forecast origin and evaluate explicitly defined extrapolation horizons.
 
 \section*{Data and code availability}
-\todo{Add public repository URL, software environment, model checkpoints, processed-data scripts, and permanent identifiers for all three datasets.}
+The three published datasets are identified in Sections~\ref{subsec:wheatdata}--\ref{subsec:arabdata}. For the new hypocotyl dataset, we have prepared the original workbook, cell-resolved measurements, metadata, frozen partitions, extraction checks, and analysis code for release alongside the model configurations, checkpoints, and prediction arrays. A verified public repository URL or permanent dataset identifier and a data-reuse license must be added before publication; public availability is not asserted in this draft.
 
 \section*{Declaration of competing interest}
 The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.

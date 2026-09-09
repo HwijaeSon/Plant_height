@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "observation_sets_disjoint": true,
+  "replicate_row_groups_disjoint": true,
+  "time_holdout_times_absent_from_train_and_val": true,
+  "groups": {
+    "replicate": {
+      "train": {
+        "observations": 1052,
+        "min_replicates_per_mean": 1,
+        "max_replicates_per_mean": 22
+      },
+      "val": {
+        "observations": 330,
+        "min_replicates_per_mean": 1,
+        "max_replicates_per_mean": 7
+      },
+      "test": {
+        "observations": 436,
+        "min_replicates_per_mean": 1,
+        "max_replicates_per_mean": 9
+      }
+    },
+    "time_holdout": {
+      "train": {
+        "observations": 758,
+        "min_replicates_per_mean": 1,
+        "max_replicates_per_mean": 22
+      },
+      "val": {
+        "observations": 240,
+        "min_replicates_per_mean": 1,
+        "max_replicates_per_mean": 7
+      },
+      "test": {
+        "observations": 505,
+        "min_replicates_per_mean": 13,
+        "max_replicates_per_mean": 33
+      }
+    }
+  }
+}

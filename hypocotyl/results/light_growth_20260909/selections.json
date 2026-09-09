@@ -1,0 +1,668 @@
+{
+  "status": "all_validation_selections_frozen",
+  "frozen_unix": 1788939447.3561788,
+  "selected": {
+    "replicate": {
+      "phytoode": {
+        "config": {
+          "model": "phytoode",
+          "lr": 0.01,
+          "lambda_ode": 50.0,
+          "lambda_k": 0.01,
+          "epochs": 1500
+        },
+        "ranking": [
+          {
+            "candidate": "phytoode_12",
+            "val_mean": 0.31256993907292546,
+            "per_seed_validation": [
+              0.32029404332146005,
+              0.3065717102389938,
+              0.31084406365832246
+            ]
+          },
+          {
+            "candidate": "phytoode_08",
+            "val_mean": 0.3156921781968779,
+            "per_seed_validation": [
+              0.31772247457260583,
+              0.3231667660155063,
+              0.30618729400252154
+            ]
+          }
+        ],
+        "selected_candidate": "phytoode_12"
+      },
+      "latent_ode": {
+        "config": {
+          "model": "latent_ode",
+          "lr": 0.003,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 1500
+        },
+        "ranking": [
+          {
+            "candidate": "latent_ode_00",
+            "val_mean": 0.3112868247149502,
+            "per_seed_validation": [
+              0.3144837129064496,
+              0.30428200649380044,
+              0.3150947547446007
+            ]
+          },
+          {
+            "candidate": "latent_ode_01",
+            "val_mean": 0.31371563258978996,
+            "per_seed_validation": [
+              0.308297602486015,
+              0.32412543347112954,
+              0.30872386181222533
+            ]
+          }
+        ],
+        "selected_candidate": "latent_ode_00"
+      },
+      "light_pinn": {
+        "config": {
+          "model": "light_pinn",
+          "lr": 0.01,
+          "lambda_ode": 5.0,
+          "lambda_k": 0.01,
+          "epochs": 1500
+        },
+        "ranking": [
+          {
+            "candidate": "light_pinn_10",
+            "val_mean": 0.31820722473385116,
+            "per_seed_validation": [
+              0.3187881602915823,
+              0.3209308921883027,
+              0.31490262172166855
+            ]
+          },
+          {
+            "candidate": "light_pinn_08",
+            "val_mean": 0.3223726573474113,
+            "per_seed_validation": [
+              0.31907666866902773,
+              0.32475045252542734,
+              0.3232908508477788
+            ]
+          }
+        ],
+        "selected_candidate": "light_pinn_10"
+      },
+      "lstm": {
+        "config": {
+          "model": "lstm",
+          "lr": 0.01,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 1500
+        },
+        "ranking": [
+          {
+            "candidate": "lstm_01",
+            "val_mean": 0.3192730375615821,
+            "per_seed_validation": [
+              0.32336956098457176,
+              0.30772190306887626,
+              0.3267276486312983
+            ]
+          },
+          {
+            "candidate": "lstm_00",
+            "val_mean": 0.3335492590885482,
+            "per_seed_validation": [
+              0.3639592216397168,
+              0.3168079736137504,
+              0.31988058201217734
+            ]
+          }
+        ],
+        "selected_candidate": "lstm_01"
+      },
+      "rf": {
+        "config": {
+          "model": "rf",
+          "min_samples_leaf": 1
+        },
+        "ranking": [
+          {
+            "candidate": "rf_00",
+            "val_mean": 0.3914333451616095,
+            "per_seed_validation": [
+              0.3940656061242517,
+              0.3866311526839363,
+              0.3936032766766405
+            ]
+          },
+          {
+            "candidate": "rf_01",
+            "val_mean": 0.5738654236996916,
+            "per_seed_validation": [
+              0.5742750997855954,
+              0.5641998456596361,
+              0.5831213256538433
+            ]
+          }
+        ],
+        "selected_candidate": "rf_00"
+      },
+      "light_logistic": {
+        "config": {
+          "model": "light_logistic"
+        },
+        "ranking": [
+          {
+            "candidate": "light_logistic_00",
+            "val_mean": 0.4464864998929633,
+            "per_seed_validation": [
+              0.4464864998929633
+            ]
+          }
+        ],
+        "selected_candidate": "light_logistic_00"
+      },
+      "logistic": {
+        "config": {
+          "model": "logistic"
+        },
+        "ranking": [
+          {
+            "candidate": "logistic_00",
+            "val_mean": 0.40247765061584895,
+            "per_seed_validation": [
+              0.40247765061584895
+            ]
+          }
+        ],
+        "selected_candidate": "logistic_00"
+      },
+      "latent_ode_matched": {
+        "config": {
+          "model": "latent_ode",
+          "lr": 0.01,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 1500
+        },
+        "selected_candidate": "latent_ode_01",
+        "selection_basis": "Same learning rate, architecture, initialization and schedule as selected PhytoODE; both loss coefficients zero."
+      }
+    },
+    "time_holdout": {
+      "phytoode": {
+        "config": {
+          "model": "phytoode",
+          "lr": 0.01,
+          "lambda_ode": 0.5,
+          "lambda_k": 0.01,
+          "epochs": 1500
+        },
+        "ranking": [
+          {
+            "candidate": "phytoode_08",
+            "val_mean": 0.31510228257016876,
+            "per_seed_validation": [
+              0.3105691643440162,
+              0.3271267111587818,
+              0.30761097220770817
+            ]
+          },
+          {
+            "candidate": "phytoode_12",
+            "val_mean": 0.3159695125652151,
+            "per_seed_validation": [
+              0.3106871658262314,
+              0.3285475815383649,
+              0.30867379033104897
+            ]
+          }
+        ],
+        "selected_candidate": "phytoode_08"
+      },
+      "latent_ode": {
+        "config": {
+          "model": "latent_ode",
+          "lr": 0.003,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 1500
+        },
+        "ranking": [
+          {
+            "candidate": "latent_ode_00",
+            "val_mean": 0.30828265712601477,
+            "per_seed_validation": [
+              0.309241255055376,
+              0.31077199252740495,
+              0.3048347237952634
+            ]
+          },
+          {
+            "candidate": "latent_ode_01",
+            "val_mean": 0.3084971841799448,
+            "per_seed_validation": [
+              0.31668647158732455,
+              0.3127358965869113,
+              0.2960691843655986
+            ]
+          }
+        ],
+        "selected_candidate": "latent_ode_00"
+      },
+      "light_pinn": {
+        "config": {
+          "model": "light_pinn",
+          "lr": 0.01,
+          "lambda_ode": 0.5,
+          "lambda_k": 0.01,
+          "epochs": 1500
+        },
+        "ranking": [
+          {
+            "candidate": "light_pinn_08",
+            "val_mean": 0.3033890780659437,
+            "per_seed_validation": [
+              0.30108193697185465,
+              0.30677740745912063,
+              0.3023078897668558
+            ]
+          },
+          {
+            "candidate": "light_pinn_14",
+            "val_mean": 0.3062232607460738,
+            "per_seed_validation": [
+              0.30667670015076326,
+              0.3019199164042389,
+              0.3100731656832194
+            ]
+          }
+        ],
+        "selected_candidate": "light_pinn_08"
+      },
+      "lstm": {
+        "config": {
+          "model": "lstm",
+          "lr": 0.01,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 1500
+        },
+        "ranking": [
+          {
+            "candidate": "lstm_01",
+            "val_mean": 0.31398441472587507,
+            "per_seed_validation": [
+              0.3205225555485618,
+              0.31796685232169863,
+              0.3034638363073649
+            ]
+          },
+          {
+            "candidate": "lstm_00",
+            "val_mean": 0.33418964279849267,
+            "per_seed_validation": [
+              0.3740772463233601,
+              0.30964902147521556,
+              0.31884266059690225
+            ]
+          }
+        ],
+        "selected_candidate": "lstm_01"
+      },
+      "rf": {
+        "config": {
+          "model": "rf",
+          "min_samples_leaf": 1
+        },
+        "ranking": [
+          {
+            "candidate": "rf_00",
+            "val_mean": 0.4569046462199437,
+            "per_seed_validation": [
+              0.46760737344347475,
+              0.44597481715566945,
+              0.45713174806068696
+            ]
+          },
+          {
+            "candidate": "rf_01",
+            "val_mean": 0.7929847958874913,
+            "per_seed_validation": [
+              0.7800628896707774,
+              0.789152843082608,
+              0.8097386549090885
+            ]
+          }
+        ],
+        "selected_candidate": "rf_00"
+      },
+      "light_logistic": {
+        "config": {
+          "model": "light_logistic"
+        },
+        "ranking": [
+          {
+            "candidate": "light_logistic_00",
+            "val_mean": 0.45030799002241517,
+            "per_seed_validation": [
+              0.45030799002241517
+            ]
+          }
+        ],
+        "selected_candidate": "light_logistic_00"
+      },
+      "logistic": {
+        "config": {
+          "model": "logistic"
+        },
+        "ranking": [
+          {
+            "candidate": "logistic_00",
+            "val_mean": 0.42940453598363043,
+            "per_seed_validation": [
+              0.42940453598363043
+            ]
+          }
+        ],
+        "selected_candidate": "logistic_00"
+      },
+      "latent_ode_matched": {
+        "config": {
+          "model": "latent_ode",
+          "lr": 0.01,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 1500
+        },
+        "selected_candidate": "latent_ode_01",
+        "selection_basis": "Same learning rate, architecture, initialization and schedule as selected PhytoODE; both loss coefficients zero."
+      }
+    }
+  },
+  "runs": [
+    {
+      "protocol": "replicate",
+      "model": "phytoode",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/phytoode_12/seed1",
+      "result_sha256": "b6aa2283fad3fec5ebc662058ef89d93ac275fda6ce928fc1a05ad14ab3389cf"
+    },
+    {
+      "protocol": "replicate",
+      "model": "phytoode",
+      "seed": 2,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/phytoode_12/seed2",
+      "result_sha256": "063cfe4728063a47b07954b1e6fe79a0fd301075ad25d0a504f24da53a27ee26"
+    },
+    {
+      "protocol": "replicate",
+      "model": "phytoode",
+      "seed": 3,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/phytoode_12/seed3",
+      "result_sha256": "b1581246606e6acf34da8b09a0d3b265e425b0fda8e1354a4c66e6ccdddfa5c1"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/latent_ode_00/seed1",
+      "result_sha256": "5509ddaf20231e8bd11c3bde0531ce201dbc0d2d5cc44b933e2044751702833b"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode",
+      "seed": 2,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/latent_ode_00/seed2",
+      "result_sha256": "64fa11509f17e075c14102d5a13529f6fa11fc82ffacfc9a8fff03376393fbe4"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode",
+      "seed": 3,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/latent_ode_00/seed3",
+      "result_sha256": "91882ad49f63e2e96daa3f3970f5a71d753172bfb9909b54319fe4d0ee8529d7"
+    },
+    {
+      "protocol": "replicate",
+      "model": "light_pinn",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/light_pinn_10/seed1",
+      "result_sha256": "2427723728bf27b0d64c4e5d77799732f98d80733c64019559038e925492d9c0"
+    },
+    {
+      "protocol": "replicate",
+      "model": "light_pinn",
+      "seed": 2,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/light_pinn_10/seed2",
+      "result_sha256": "5a1b05e485189a21ea9b9f68e2b3981ab88e579fdb3affe722f75c9bfcc0c497"
+    },
+    {
+      "protocol": "replicate",
+      "model": "light_pinn",
+      "seed": 3,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/light_pinn_10/seed3",
+      "result_sha256": "f409438ce16e01ca58d27b71c986f343eef2b46bcfe6d3710fa25c0c0bf1dc85"
+    },
+    {
+      "protocol": "replicate",
+      "model": "lstm",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/lstm_01/seed1",
+      "result_sha256": "0b205ed73d28e9f51efdb0f6ba881e7c00873fd704c71a8f193f367ff8d4e1d1"
+    },
+    {
+      "protocol": "replicate",
+      "model": "lstm",
+      "seed": 2,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/lstm_01/seed2",
+      "result_sha256": "37b06d0f4bc2a6c38c28d37d1674bbe74e7e9963366db576b6dc55843d4099ec"
+    },
+    {
+      "protocol": "replicate",
+      "model": "lstm",
+      "seed": 3,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/lstm_01/seed3",
+      "result_sha256": "6d11efde3b03a83dd8160ceae54e79f3201a754f280f2aeed59bd8fe6152df71"
+    },
+    {
+      "protocol": "replicate",
+      "model": "rf",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/rf_00/seed1",
+      "result_sha256": "c6ab67b2ff27070acd3d7c95e4041aecf6d4c8ef20a2e52aa78528708edc4a58"
+    },
+    {
+      "protocol": "replicate",
+      "model": "rf",
+      "seed": 2,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/rf_00/seed2",
+      "result_sha256": "9fe2ea2e867888e2e30f443a991da91edd249b76b8d3c29707367dc2fa34401c"
+    },
+    {
+      "protocol": "replicate",
+      "model": "rf",
+      "seed": 3,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/rf_00/seed3",
+      "result_sha256": "77a90d23549c5c48f816c83f3cba0943b59c686d0e8e088978a378d0c23ea2e2"
+    },
+    {
+      "protocol": "replicate",
+      "model": "light_logistic",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/light_logistic_00/seed1",
+      "result_sha256": "5d3b1989d26299a53dbda605abdc43873a0c2b8bd13e9b98f081d3bfa1c31360"
+    },
+    {
+      "protocol": "replicate",
+      "model": "logistic",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/logistic_00/seed1",
+      "result_sha256": "30969bc4b2bd9c110e3981e20691e0d60744fe7b37678f758810e32dbbc9da42"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/latent_ode_01/seed1",
+      "result_sha256": "2ae54c118b6a77092d321b9a12463e212d0efd67e95b090b53c35f681022d2c7"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 2,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/latent_ode_01/seed2",
+      "result_sha256": "c5406115eb1768d14792afc7e3aa03bb7b2c911f85101b226b03c7dc3678dd2d"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 3,
+      "path": "hypocotyl/results/light_growth_20260909/replicate/trials/latent_ode_01/seed3",
+      "result_sha256": "cfe470b9f8015919f556cbacc28e683b578803da95dedff919d332a73ad8fc62"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "phytoode",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/phytoode_08/seed1",
+      "result_sha256": "8b5714851e4e19063a49241841f5f5d8d96e2a9a92cb50a93754ded351e77528"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "phytoode",
+      "seed": 2,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/phytoode_08/seed2",
+      "result_sha256": "b5f5e28a4f74f94f3f083f7c5f33ce5769b9987dbc3ed55ee4b3c5888acbb1e4"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "phytoode",
+      "seed": 3,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/phytoode_08/seed3",
+      "result_sha256": "ec6292624332d43b39316b4e4aeb8df66d37e3ef034b43b1623912a9f39ef57a"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/latent_ode_00/seed1",
+      "result_sha256": "3e5790ba51f13377ec02e358a6202af82a9b61ae73f091ec51fb25eb3f840731"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode",
+      "seed": 2,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/latent_ode_00/seed2",
+      "result_sha256": "efe6868b5b0d398060cbbc0f238b353ab267dd7f0e0cd12370efb99cd0971ea7"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode",
+      "seed": 3,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/latent_ode_00/seed3",
+      "result_sha256": "8d4bb26c4c4922fa38966bedb69a07a970175b34c6a6e0178f10aab3c254582b"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "light_pinn",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/light_pinn_08/seed1",
+      "result_sha256": "69fa871bd39d2f333755730b9f05364b984c2d11005b34a9110e8e8f8ddaf1f3"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "light_pinn",
+      "seed": 2,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/light_pinn_08/seed2",
+      "result_sha256": "54eda07d09e652048ffd2ecdebe95d4b6e5bc81b86fff2488670acba645c5854"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "light_pinn",
+      "seed": 3,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/light_pinn_08/seed3",
+      "result_sha256": "d7270030ef257e8401aaabe5f05035cd7f9d95eae856c6d9553c26e58e669b20"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "lstm",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/lstm_01/seed1",
+      "result_sha256": "84a821d77c675edce1a8e935bbb7e417674715ce15fe054fb51f12aa86ad892c"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "lstm",
+      "seed": 2,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/lstm_01/seed2",
+      "result_sha256": "404b65e5d9491be6467532e8038b4be9da31bdd2ceaf182cd45a3d5101ece29c"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "lstm",
+      "seed": 3,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/lstm_01/seed3",
+      "result_sha256": "84366c77030359f51442923317778832bda307638721c16f27bcf2280b1847da"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "rf",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/rf_00/seed1",
+      "result_sha256": "c96873b53caaa09490b3af640beca5b5d9f8039dfe1486b0989e1bcc30efc5ca"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "rf",
+      "seed": 2,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/rf_00/seed2",
+      "result_sha256": "f7f1f2adbe3440e25352083b9de15f25fc0707414139144fa53220742b220bbf"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "rf",
+      "seed": 3,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/rf_00/seed3",
+      "result_sha256": "0b0f39e1bcbdb3946f9f0e9f5bac120a94ed3749f58ab5dfc4e529e16b8c41a6"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "light_logistic",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/light_logistic_00/seed1",
+      "result_sha256": "27ec6ef13babf2049b5f96581eaf0b2b2c46f7a8ec4febc878a9676bc7121b84"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "logistic",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/logistic_00/seed1",
+      "result_sha256": "1031ac51b06c9580034abfe24a2a1048f4c286f9bdbd28098a74ca1dee6dd81d"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode_matched",
+      "seed": 1,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/latent_ode_01/seed1",
+      "result_sha256": "248c90a1d1ff63742b16d51ad48ea2bd118c296fd590f60029e56d45c395e82f"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode_matched",
+      "seed": 2,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/latent_ode_01/seed2",
+      "result_sha256": "f966f841aa4fa43a46ed7df6c1fbc1a8f57704ba5f369f476705807391494fd6"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode_matched",
+      "seed": 3,
+      "path": "hypocotyl/results/light_growth_20260909/time_holdout/trials/latent_ode_01/seed3",
+      "result_sha256": "e6bfe9481fee0594616e0da4f2a0529e95872fd22b95d4846fb9ed6b593c2d7a"
+    }
+  ]
+}

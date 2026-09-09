@@ -1,0 +1,161 @@
+{
+  "status": "complete",
+  "workers": 4,
+  "selection_sha256": "4905e67195407130b7c20826f952b3441e2a188e042b1f3cc1aed6e418dd58b2",
+  "evaluator_sha256": "204e6fcbd2770b337f1ff0b2766007a70655a436e4c1dadb961dcf23689f84dc",
+  "orchestration_sha256": "48dfc185184c4f3593933866372e6d14aca10f187f96f9d77c097f68bdf49fcc",
+  "completed_records": [
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 2,
+      "result_sha256": "74c63e461522aa2fab96900b340f6d79bea70694f0bb480ad21087d928f02079"
+    },
+    {
+      "protocol": "replicate",
+      "model": "light_logistic",
+      "seed": 1,
+      "result_sha256": "22df867a4d5cd912c45b7ae0eeab9400b5a4d6bb4e780defb8191abf613eae9b"
+    },
+    {
+      "protocol": "replicate",
+      "model": "logistic",
+      "seed": 1,
+      "result_sha256": "a60484512ec093fe0050d7b7f631cdcf75055e453774532b267820409c52a2a0"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 1,
+      "result_sha256": "3155310846d5ea845d21da2377f8d514b267be7dad7437de35e58b9c69c8ce3d"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 3,
+      "result_sha256": "3c57e7063c68e81983157bee13ca1f66a7e6484eb0e38ec29ea6ba7ec0391fdb"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "phytoode",
+      "seed": 2,
+      "result_sha256": "c140ee7f8cecf80fbc4ac6c442784316d4cf54ae1d30ed823d8fa8fd04f96c1e"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "phytoode",
+      "seed": 3,
+      "result_sha256": "b0192f27d3a81af28764752bad6ea21ce24e06b6a716fbe110a7b46184d103d2"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "phytoode",
+      "seed": 1,
+      "result_sha256": "57d26b3cf25e497c84bc1df10a73d08cce25ff29eac2b70e2b36d78b2fab64c5"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode",
+      "seed": 2,
+      "result_sha256": "68506b7701c978370fe45c6fc9b7ee1a9f1ee22ca4ed412d058bf9c73d9126c9"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode",
+      "seed": 1,
+      "result_sha256": "f2d93ae0b685ac0eb3dd35112450fc7a066c2c1add7c520f7ea1f04b897f2998"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode",
+      "seed": 3,
+      "result_sha256": "21453d046d489bf7a9c28ffba0eb8c04d9bbee396360cfe52d7e38e32bf17258"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "light_pinn",
+      "seed": 1,
+      "result_sha256": "50c29cf70521837edb2b4c39a107a158e65ea61d4b87048eceb208a0c0ebd937"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "light_pinn",
+      "seed": 3,
+      "result_sha256": "9565f6f3e20baa3b1ac0d73c95bffbbeddd67d7532a589b8c530be0033575c59"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "lstm",
+      "seed": 2,
+      "result_sha256": "81a8a361f326b8f1625e11fae4867d06677e5f3794ab4c327e8f545fb9bb8a75"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "light_pinn",
+      "seed": 2,
+      "result_sha256": "47ceef2361f395af837576ec75a9448b79949a4cdf685de9c64ddaa7fe4d8b32"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "lstm",
+      "seed": 1,
+      "result_sha256": "40b507998afe672a7a3e6265715641c1f023171a2261bf930dd98692bc00377e"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "lstm",
+      "seed": 3,
+      "result_sha256": "f60ab7a2e05c6f5b404b2ae1298babcf472bd8c3b50bde2039bb5e79d1814043"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "rf",
+      "seed": 2,
+      "result_sha256": "27f15cd70ea9fa7c607e245b4f761a2772b958ab8c07577d272abaf8cdf9d917"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "rf",
+      "seed": 3,
+      "result_sha256": "8bf5a2df9f9d7c1ecc604290ff30ed7cd099d36b59e99798822b0a783fa2a329"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "rf",
+      "seed": 1,
+      "result_sha256": "4d03850e0319118a58235a0e7ee80634a981ed63eeb903de6236637a5361651b"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "logistic",
+      "seed": 1,
+      "result_sha256": "8c5dede5b155ab61d202d0999626a5746b331fe2ad36751bafc2af2cdcd40377"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "light_logistic",
+      "seed": 1,
+      "result_sha256": "951db6eb73e7df5cff011dad339147f6922f88c8e932ddd9c6d29e438420573d"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode_matched",
+      "seed": 2,
+      "result_sha256": "c52c8a5e4a117420cd173380601308cc4c54b9e8f4e2d96d91c1375e29914e33"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode_matched",
+      "seed": 3,
+      "result_sha256": "9a84b3bd09765e37d73a9744357896cd38168414c211f54bb576accd4c651bc1"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode_matched",
+      "seed": 1,
+      "result_sha256": "84b4b7953bdd18e56cb9247fe01022fa5aeeaa977ef4d162ed0fbf1f500f7cd9"
+    }
+  ],
+  "seconds": 14.552939891815186,
+  "note": "After all choices froze, the existing controller was paused after its active evaluation. Remaining evaluations called the unchanged evaluator in one CPU interpreter, then the controller resumed. Sources, predictions and selection were unchanged."
+}

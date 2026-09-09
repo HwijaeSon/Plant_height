@@ -1,0 +1,69 @@
+\subsection{Hypocotyl growth: sparse replicate snapshots and light forcing}
+\label{subsec:hypocotylresults}
+
+The additional experiment extends the environmental input from temperature to an explicit lighting schedule, while changing the observation unit from verified plant/plot trajectories to genotype--condition means assembled from replicate snapshots. Table~\ref{tab:hypocotyl_replicate} evaluates held-out replicate measurements; Table~\ref{tab:hypocotyl_time_holdout} evaluates the two times absent from both training and validation.
+
+For replicate-group holdout, validation selected learning rate 0.01 and $(\lambda_{\mathrm{ODE}},\lambda_K)=(50,0.01)$. \model{} achieved test RMSE / relative RMSE of $0.344\pm0.008$~mm / $5.93\pm0.14\%$. The smallest mean test error was attained by the independently tuned no-physics latent ODE ($0.337\pm0.003$~mm / $5.81\pm0.05\%$); the physics-regularized model therefore did not lead this comparison. Its mean RMSE was 2.04\% higher than that of the independently learning-rate-tuned no-physics latent ODE.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Hypocotyl replicate-group holdout errors: RMSE (mm) / relative RMSE (\%). Bold marks the smallest mean in each split. Stochastic models use three seeds (mean $\pm$ sample SD); process ODEs are single deterministic fits. Scores compare population-mean curves, with individual-measurement errors reported separately.}
+\label{tab:hypocotyl_replicate}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+Model & Train & Validation & Test \\
+\midrule
+PhytoODE & $0.207\pm0.034 / 3.57\pm0.58$ & $0.313\pm0.007 / 5.35\pm0.12$ & $0.344\pm0.008 / 5.93\pm0.14$ \\
+Latent ODE (no physics) & $0.212\pm0.024 / 3.66\pm0.41$ & $\mathbf{0.311\pm0.006 / 5.33\pm0.10}$ & $\mathbf{0.337\pm0.003 / 5.81\pm0.05}$ \\
+Light-PINN & $0.204\pm0.019 / 3.52\pm0.33$ & $0.318\pm0.003 / 5.45\pm0.05$ & $0.347\pm0.015 / 5.99\pm0.26$ \\
+LSTM-NN & $\mathbf{0.148\pm0.010 / 2.55\pm0.17}$ & $0.319\pm0.010 / 5.47\pm0.17$ & $0.352\pm0.004 / 6.07\pm0.07$ \\
+Random forest & $0.290\pm0.008 / 5.00\pm0.13$ & $0.391\pm0.004 / 6.70\pm0.07$ & $0.401\pm0.011 / 6.91\pm0.19$ \\
+Light-logistic ODE & $0.361 / 6.22$ & $0.446 / 7.64$ & $0.465 / 8.03$ \\
+Logistic ODE & $0.338 / 5.82$ & $0.402 / 6.89$ & $0.439 / 7.57$ \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+
+For unseen-time interpolation, validation selected learning rate 0.01 and $(\lambda_{\mathrm{ODE}},\lambda_K)=(0.5,0.01)$. \model{} achieved test RMSE / relative RMSE of $0.305\pm0.039$~mm / $4.13\pm0.53\%$. This was the smallest mean test error among the seven methods under this protocol. Its mean RMSE was 1.61\% lower than that of the independently learning-rate-tuned no-physics latent ODE.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Hypocotyl unseen-time interpolation errors: RMSE (mm) / relative RMSE (\%). Bold marks the smallest mean in each split. Stochastic models use three seeds (mean $\pm$ sample SD); process ODEs are single deterministic fits. Scores compare population-mean curves, with individual-measurement errors reported separately.}
+\label{tab:hypocotyl_time_holdout}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+Model & Train & Validation & Test \\
+\midrule
+PhytoODE & $0.141\pm0.015 / 2.73\pm0.30$ & $0.315\pm0.011 / 6.04\pm0.20$ & $\mathbf{0.305\pm0.039 / 4.13\pm0.53}$ \\
+Latent ODE (no physics) & $0.149\pm0.025 / 2.89\pm0.49$ & $0.308\pm0.003 / 5.91\pm0.06$ & $0.310\pm0.018 / 4.20\pm0.24$ \\
+Light-PINN & $0.140\pm0.036 / 2.72\pm0.69$ & $\mathbf{0.303\pm0.003 / 5.81\pm0.06}$ & $0.308\pm0.011 / 4.17\pm0.15$ \\
+LSTM-NN & $\mathbf{0.044\pm0.027 / 0.86\pm0.52}$ & $0.314\pm0.009 / 6.02\pm0.18$ & $0.343\pm0.041 / 4.65\pm0.56$ \\
+Random forest & $0.388\pm0.017 / 7.53\pm0.33$ & $0.457\pm0.011 / 8.76\pm0.21$ & $0.809\pm0.034 / 10.96\pm0.46$ \\
+Light-logistic ODE & $0.324 / 6.28$ & $0.450 / 8.63$ & $0.493 / 6.67$ \\
+Logistic ODE & $0.334 / 6.47$ & $0.429 / 8.23$ & $0.327 / 4.43$ \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\linewidth]{figures/hypocotyl_light_interpolation.pdf}
+\caption{Hypocotyl predictions for the wild type (Col-0) and the defined MLB construct under 12L12D and continuous red light (cR). These panels illustrate the unseen-time protocol: hollow gray points are training replicate means at 0, 12, 24, 48 and 72~h; black points are test means at 36 and 60~h, which were absent from both training and validation. Colored lines are three-seed mean predictions, except for the single-fit process ODEs. Gray shading marks darkness in 12L12D. Curves describe population means, not tracked individual plants. All five genotypes are shown in the accompanying full-panel figures.}
+\label{fig:hypocotyllight}
+\end{figure}
+
+In the stricter paired comparison at the selected learning rate and initial weights, the no-physics control achieved $0.335\pm0.002$~mm / $5.78\pm0.03\%$ for replicate holdout and $0.345\pm0.038$~mm / $4.68\pm0.51\%$ for unseen-time interpolation. Relative to these controls, \model{} had 2.69\% higher mean RMSE in replicate holdout and 11.60\% lower mean RMSE in time interpolation. These changes concern the combined derivative and capacity penalties. The ablation does not isolate the derivative penalty alone. The benefit therefore depends on the observation protocol, and the small differences between independently tuned neural models require confirmation in additional biological batches.
+
+For comparison with the population-mean scores, pooled individual-measurement RMSE for \model{} was $0.784\pm0.005$~mm in the replicate holdout and $0.925\pm0.012$~mm at withheld times. Averaging replicates reduces the biological variation present in individual lengths, so the primary scores must not be interpreted as individual-plant prediction errors.
+
+The withheld-time experiment provides an explicit test of interpolation from five observation times, beyond merely reporting performance on a 12-h measurement grid. The original workbook, cell-resolved extraction, verified summaries and frozen partitions also provide a reproducible author-collected dataset package. These are distinct contributions from the field-season and temperature experiments. Nevertheless, both lighting regimes and all five genotypes occur during training, and a single temperature does not identify temperature dependence. The unspecified 12L12D spectrum prevents separation of photoperiod and spectral effects. Twelve-hour sampling cannot resolve within-cycle circadian peaks, and unknown longitudinal identities and batch structure preclude claims about individual dynamics or independent-cohort generalization. The light-switched reference should consequently be interpreted as an effective growth constraint, rather than a recovered molecular clock.
+
+As a numerical check, halving the integration step from 3 to 1.5~h while preserving the original scenario encoder changed the selected \model{} predictions by at most 0.000004~mm across the six protocol--seed fits. This check evaluates solver discretization sensitivity, not biological uncertainty.
+
+\FloatBarrier

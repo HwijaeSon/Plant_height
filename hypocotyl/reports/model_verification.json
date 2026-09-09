@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "checks": [
+    "RK4 integrates piecewise-constant light exposure exactly through all six switches",
+    "Decoded directional derivative matches a centered directional finite-difference check",
+    "Physics loss gradients reach embedding, encoder, vector field, decoder and logistic head",
+    "Both-zero latent model has identical initialization and no auxiliary-head gradients",
+    "Coordinate Light-PINN derivative and second-order backpropagation are valid"
+  ],
+  "new_training_runs": 0
+}

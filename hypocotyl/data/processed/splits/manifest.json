@@ -1,0 +1,72 @@
+{
+  "status": "frozen_before_training",
+  "split_seed": 20260909,
+  "protocols": {
+    "replicate": {
+      "protocol": "replicate",
+      "split_seed": 20260909,
+      "counts": {
+        "train": 1052,
+        "val": 330,
+        "test": 436
+      },
+      "height_scale_mm": 16.018,
+      "train_hours": [
+        0,
+        12,
+        24,
+        36,
+        48,
+        60,
+        72
+      ],
+      "test_hours": [
+        0,
+        12,
+        24,
+        36,
+        48,
+        60,
+        72
+      ],
+      "grouping": "Same genotype/source-row bookkeeping groups remain together across all times and sheets in the replicate protocol. Row groups are not verified plant IDs.",
+      "scoring": "Mean per-genotype/condition curve RMSE against split-specific replicate means; rRMSE divides by the pooled mean of those scored group-mean targets. Individual-observation RMSE is secondary."
+    },
+    "time_holdout": {
+      "protocol": "time_holdout",
+      "split_seed": 20260909,
+      "counts": {
+        "train": 758,
+        "val": 240,
+        "test": 505
+      },
+      "height_scale_mm": 16.018,
+      "train_hours": [
+        0,
+        12,
+        24,
+        48,
+        72
+      ],
+      "test_hours": [
+        36,
+        60
+      ],
+      "grouping": "Same genotype/source-row bookkeeping groups remain together across all times and sheets in the replicate protocol. Row groups are not verified plant IDs.",
+      "scoring": "Mean per-genotype/condition curve RMSE against split-specific replicate means; rRMSE divides by the pooled mean of those scored group-mean targets. Individual-observation RMSE is secondary."
+    }
+  },
+  "source_sha256": "0eaa8ff944bedea45b5bbc7d996aae331f8bbf2c62e5ca7eb1bf06d573c559ee",
+  "files_sha256": {
+    "data/processed/splits/replicate/config.json": "0f73ddace455faf667350c682c3e9934d89339c56d00fa4707951c39fa4dd5b9",
+    "data/processed/splits/replicate/test.csv": "a6f0cbb552ea9dbde05f9ac45eec66f4c6eaeac54b709534881604f9bb70de65",
+    "data/processed/splits/replicate/train.csv": "d573504517a817cad2fba950d15783869da802b02949f9fc2080a900b17acd0d",
+    "data/processed/splits/replicate/val.csv": "5b857607545f44d9a7ed8767b195369e411dc399152e96a7ab64d0981390e0bd",
+    "data/processed/splits/row_assignments.csv": "03609f678ac2a17373c34110b00516683849febfc3a37adcc11803665b80c02e",
+    "data/processed/splits/time_holdout/config.json": "468af51e8ce3b6777cff243e2b8a4fc13eff7a711bba75c742c6edf98c93589c",
+    "data/processed/splits/time_holdout/test.csv": "6ccc7b24d5ba38be5b411e48920c5aeca27adc6b6f28e8ca12483378a267eea0",
+    "data/processed/splits/time_holdout/train.csv": "b1ad53a6339c046a4d96e6057e6c6764d8a67ce858b90ac781905af82d30c44a",
+    "data/processed/splits/time_holdout/val.csv": "235c74fe5ef039e49a7584353e2ef2f97d56e7d77e89b7723f045b2da2e0a869"
+  },
+  "note": "Partition retries check only group coverage, never height values."
+}
