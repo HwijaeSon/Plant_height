@@ -150,8 +150,11 @@ freeze before current test scoring; previously inspected test partitions are
 explicitly acknowledged. Search budgets are unequal across the retained models.
 
 The new trainer exports the complete validation history through epoch 1,500.
-The original experiment and manuscript remain the reference; this comparison
-does not silently replace their tables or fitted models.
+The manuscript now adopts the validation-selected light-input PhytoODE for its
+primary replicate-group comparison: 0.3460 mm / 6.85% test RMSE / relative RMSE.
+The original no-input experiment remains preserved. The lower test error of the
+fixed-settings light-input variant is disclosed as an additional comparison.
+The 36/60-h holdout remains outside the primary manuscript evaluation.
 
 ```bash
 .venv/bin/python hypocotyl/code/verify_light_input.py

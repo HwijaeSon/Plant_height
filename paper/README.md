@@ -13,14 +13,25 @@ are provided for copying into an external manuscript. The maize retention
 decision, the historical validation winner `(500, 0.5)`, and prior inspection
 of the test sets are stated explicitly in Methods.
 
-The [hypocotyl extension](../hypocotyl/README.md) adds original replicate
-snapshot data at fixed 23°C under 12L12D and continuous red light. Its seven
-methods use replicate-group holdout, with all seven observation times in
-each partition. PhytoODE receives an expanded validation-only follow-up search;
-the original test partition was already inspected and baseline tuning budgets
-are retained, so the updated comparison is explicitly exploratory.
-The original three dataset results remain unchanged. The title and common
-notation now cover environmental conditioning by either temperature or light.
+The [hypocotyl extension](../hypocotyl/README.md) adds **943 author-collected
+measurements** at fixed 23°C under **12L12D only**; continuous red light is excluded.
+It includes five genotypes, seven times, and 6–38 replicate measurements per
+genotype/time. The primary manuscript holds out replicate groups and scores
+35 split-specific means per partition. PhytoODE receives binary illumination
+in its encoder and latent vector field, while its physics remains ordinary
+constant-rate logistic growth. The validation-selected model obtains
+**0.3460 ± 0.0077 mm / 6.85 ± 0.15%** test RMSE / relative RMSE, below all five
+retained baseline families. Its selected `(lambda_ODE, lambda_K)` is `(500, 0.1)`.
+The original three dataset results remain unchanged.
+
+The lower test score of the prespecified fixed-settings light-input variant
+is disclosed separately; it does not replace the validation-selected main model.
+Only PhytoODE receives the additional search and light channel. The preceding
+no-light latent ODE therefore is not an input-matched loss ablation of this model.
+The original test partition had already been inspected. The manuscript explains
+these procedures and describes public dataset release **as planned**, without
+inventing a DOI, license, or completed public deposit. The auxiliary 36/60-h
+holdout remains in the experiment report, outside the primary manuscript.
 
 ## Files
 
@@ -31,21 +42,23 @@ notation now cover environmental conditioning by either temperature or light.
   *Computers and Electronics in Agriculture* and 13 from *Artificial
   Intelligence in Agriculture*, plus foundational Neural ODE, latent ODE,
   neural CDE, PINN, and universal differential-equation papers.
-- `make_figures.py`: regenerates the manuscript figures directly from the
-  audited experiment outputs.
+- `make_figures.py`: regenerates the three temperature-experiment figures.
+  `write_hypocotyl_results.py` regenerates the current hypocotyl text, table,
+  and figure from audited light-input results.
 - `figures/`: generated wheat, maize, and Arabidopsis prediction figures. The
   three figures share the same six-model legend, colors, line hierarchy, and
   observed-point marker. Every model line is clipped to the sample's
   first--last observed time interval.
 - `hypocotyl_methods.tex` and `hypocotyl_results.tex`: the added experiment,
-  included by `main.tex`. Its figure retains the common method colors, replaces
-  the temperature-specific process baseline with Light-logistic ODE, and
-  includes the both-zero latent ODE using a dashed line.
-- [revisions_20260909.md](revisions_20260909.md): copyable abstract,
-  Methods, Results, table and conclusion replacements for the light experiment.
+  included by `main.tex`. Its figure shows all five genotypes with the selected
+  PhytoODE in blue, the five baseline families, test means, individual lengths,
+  and shaded dark intervals. The baseline is ordinary Logistic ODE.
+- [revisions_20260910.md](revisions_20260910.md): current copyable abstract,
+  Methods, Results, table/caption, conclusion and data-availability passages.
+  Earlier dated revision files reproduce the earlier experiments.
 - `main_standalone.tex`: the complete current manuscript with the two
   hypocotyl `\input` files expanded for pasting into external editors.
-- `overleaf_20260909.zip`: uploadable manuscript source, bibliography, and
+- `overleaf_20260910.zip`: current uploadable manuscript source, bibliography, and
   the four referenced figure PDFs.
 - [relative_errors/README.md](relative_errors/README.md): **historical, before
   the follow-up coefficient study** wheat,
@@ -73,7 +86,7 @@ pdflatex main
 A temporary Tectonic 0.17.0 toolchain was downloaded for local PDF verification;
 the default shell still has no LaTeX engine on its path. The completed PDF is
 `main.pdf` (a local build artifact), with source hashes and remaining compiler
-warnings recorded in `compile_report_20260909.json`. The reproducible source
+warnings recorded in `compile_report_20260910.json`. The reproducible source
 files and figures are tracked in Git.
 
 ## Audit status before submission
@@ -101,16 +114,17 @@ files and figures are tracked in Git.
    only the interval supported by actual observations.
 8. Hypocotyl rows are bookkeeping groups, not verified longitudinal plant IDs.
    Its targets are split-specific replicate means at all seven observation
-   times; both lighting regimes are known in training.
-   The independently LR-tuned no-physics baseline and the architecture/optimizer-matched paired
-   control are different comparisons. The public dataset URL/DOI, reuse
+   times, within the single 12L12D regime. Binary illumination is an explicit
+   feature of the known schedule, not evidence of transfer to a new photoperiod.
+   The no-light baseline and fixed-settings feature comparison must not be
+   presented as a matched loss ablation of the selected light-input model.
+   The public dataset URL/DOI, reuse
    license and missing experimental metadata remain to be supplied.
 
 ## Regenerate figures
 
 ```bash
 .venv/bin/python paper/make_figures.py
-# After the primary-protocol follow-up controller completes:
-.venv/bin/python hypocotyl/code/summarize_primary.py
+# The completed light-input follow-up is the current hypocotyl source:
 .venv/bin/python paper/write_hypocotyl_results.py
 ```

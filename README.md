@@ -38,6 +38,9 @@ adds the known binary illumination state, retains ordinary logistic physics,
 and tunes its hyperparameters while keeping all earlier baseline fits and
 evaluation targets unchanged. Both holdouts and a fixed-hyperparameter feature
 comparison are included; this follow-up has an additional tuning budget.
+The manuscript adopts its validation-selected model for the primary replicate
+holdout, with 0.3460 mm / 6.85% test error. The author-collected dataset and
+evaluation workflow are described as planned for public release with the article.
 
 ## Environment
 

@@ -1,0 +1,103 @@
+{
+  "status": "compiled_text_and_visual_checks_passed",
+  "pages": 32,
+  "pdf_sha256": "4d43237304841faa38a234c794245fa96300fd4c482cadc2b4d8b0d36fab3727",
+  "sources_sha256": {
+    "paper/main.tex": "c48dfd12f0487a750d865e7bb2d3f4d7c9e4f43b0a4f7bd8386411870ff02c2e",
+    "paper/hypocotyl_methods.tex": "a2156e7661a57be1a02b95bfc44ced2ffb8f5d014e1591018390fabfff9000dd",
+    "paper/hypocotyl_results.tex": "2e1a344d1c5b1c48813b2a893931517fdabe1d4abed7fc837c783193715b91f9",
+    "paper/main_standalone.tex": "adaab9e15b1e1df2e5ad6f1ce0257be1d7a3de85f41b25ac7f7652610e4b7421",
+    "paper/figures/hypocotyl_light_input.pdf": "4bd0e56c0c6a821c3e2c62f694874c254f30607e4d5e3679c0809a299ba83a80"
+  },
+  "references_resolved": true,
+  "overleaf_bundle_verified": true,
+  "original_three_results_sections_unchanged": true,
+  "primary_model": "phytoode_light",
+  "primary_protocol": "replicate",
+  "primary_test_rmse_mm": 0.3460184921317537,
+  "primary_relative_rmse_percent": 6.850467347607355,
+  "fixed_settings_comparison_disclosed": true,
+  "environmental_input_features": 1,
+  "physics": "ordinary logistic",
+  "data_publication_status": "planned",
+  "new_experiment_content_within_margins": true,
+  "word_bounds": [
+    {
+      "page": 13,
+      "min_x": 110.85428,
+      "max_x": 499.409215
+    },
+    {
+      "page": 14,
+      "min_x": 110.85429,
+      "max_x": 499.409225
+    },
+    {
+      "page": 15,
+      "min_x": 110.8543,
+      "max_x": 499.409235
+    },
+    {
+      "page": 16,
+      "min_x": 110.85426,
+      "max_x": 499.409215
+    },
+    {
+      "page": 17,
+      "min_x": 110.85426,
+      "max_x": 499.409175
+    },
+    {
+      "page": 22,
+      "min_x": 110.85427,
+      "max_x": 499.409215
+    },
+    {
+      "page": 23,
+      "min_x": 110.85429,
+      "max_x": 499.409215
+    },
+    {
+      "page": 24,
+      "min_x": 110.689348,
+      "max_x": 499.407223
+    },
+    {
+      "page": 25,
+      "min_x": 110.85428,
+      "max_x": 499.409215
+    },
+    {
+      "page": 26,
+      "min_x": 110.85428,
+      "max_x": 499.409215
+    },
+    {
+      "page": 27,
+      "min_x": 110.8543,
+      "max_x": 499.409217
+    }
+  ],
+  "visually_reviewed_pages": [
+    15,
+    16,
+    23,
+    24
+  ],
+  "figure_visual_review_completed": true,
+  "latex_warnings": [
+    "warning: main.tex:39: Overfull \\hbox (2.608pt too wide) has occurred while \\output is active",
+    "warning: main.tex:83: Underfull \\hbox (badness 2486) in paragraph at lines 81--83",
+    "warning: main.tex:367: Underfull \\hbox (badness 1360) in paragraph at lines 366--367",
+    "warning: main.tex:271: Underfull \\hbox (badness 1087) in paragraph at lines 270--271",
+    "warning: main.bbl:122: Underfull \\hbox (badness 5359) in paragraph at lines 113--122",
+    "warning: main.bbl:122: Underfull \\hbox (badness 3019) in paragraph at lines 113--122",
+    "warning: main.bbl:122: Underfull \\hbox (badness 2443) in paragraph at lines 113--122",
+    "warning: main.bbl:324: Underfull \\hbox (badness 1924) in paragraph at lines 316--324",
+    "warning: main.bbl:324: Underfull \\hbox (badness 10000) in paragraph at lines 316--324",
+    "warning: main.bbl:324: Underfull \\hbox (badness 2205) in paragraph at lines 316--324",
+    "warning: main.tex:48: Underfull \\hbox (badness 1303) in paragraph at lines 47--48",
+    "warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details."
+  ],
+  "existing_warnings": "Unchanged elsarticle frontmatter has a 2.608-pt overfull box; four legacy conference bibliography entries omit pages."
+}

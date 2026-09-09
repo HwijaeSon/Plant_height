@@ -27,7 +27,11 @@ new split-specific `train_means.csv`, `val_means.csv`, and `test_means.csv` file
 under `processed/single_condition_20260909/<protocol>/`. Their fields are
 `genotype`, `elapsed_hours`, `mean_length_mm`, and `n_observations`.
 `single_condition_data.py` uses these means as targets; missing time groups have
-no target entry. Only genotype and elapsed time enter model inputs. The earlier
+no target entry. The reference models use genotype and elapsed time. The adopted
+light-input PhytoODE additionally receives the known binary illumination state
+from `light_input_model.py`: on for 0–12, 24–36, and 48–60 h, off for the intervening
+12-h intervals, and on again at the 72-h endpoint. cR remains excluded, and
+ordinary logistic physics is retained. The earlier
 `observation_data.py` retains raw individual targets for the previous two-condition
 experiment, and `data.py` reproduces the original two-condition mean-target runs.
 
