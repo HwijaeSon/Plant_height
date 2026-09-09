@@ -1,0 +1,400 @@
+{
+  "started_unix": 1788967611.179063,
+  "gpus": [
+    8,
+    9
+  ],
+  "workers_per_gpu": 2,
+  "protocols": [
+    "replicate",
+    "time_holdout"
+  ],
+  "model": "phytoode_light",
+  "candidates": {
+    "light_00": {
+      "model": "phytoode_light",
+      "lr": 0.003,
+      "lambda_ode": 0.5,
+      "lambda_k": 0.01,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_01": {
+      "model": "phytoode_light",
+      "lr": 0.003,
+      "lambda_ode": 0.5,
+      "lambda_k": 0.1,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_02": {
+      "model": "phytoode_light",
+      "lr": 0.003,
+      "lambda_ode": 5.0,
+      "lambda_k": 0.01,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_03": {
+      "model": "phytoode_light",
+      "lr": 0.003,
+      "lambda_ode": 5.0,
+      "lambda_k": 0.1,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_04": {
+      "model": "phytoode_light",
+      "lr": 0.003,
+      "lambda_ode": 50.0,
+      "lambda_k": 0.01,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_05": {
+      "model": "phytoode_light",
+      "lr": 0.003,
+      "lambda_ode": 50.0,
+      "lambda_k": 0.1,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_06": {
+      "model": "phytoode_light",
+      "lr": 0.003,
+      "lambda_ode": 500.0,
+      "lambda_k": 0.01,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_07": {
+      "model": "phytoode_light",
+      "lr": 0.003,
+      "lambda_ode": 500.0,
+      "lambda_k": 0.1,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_08": {
+      "model": "phytoode_light",
+      "lr": 0.01,
+      "lambda_ode": 0.5,
+      "lambda_k": 0.01,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_09": {
+      "model": "phytoode_light",
+      "lr": 0.01,
+      "lambda_ode": 0.5,
+      "lambda_k": 0.1,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_10": {
+      "model": "phytoode_light",
+      "lr": 0.01,
+      "lambda_ode": 5.0,
+      "lambda_k": 0.01,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_11": {
+      "model": "phytoode_light",
+      "lr": 0.01,
+      "lambda_ode": 5.0,
+      "lambda_k": 0.1,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_12": {
+      "model": "phytoode_light",
+      "lr": 0.01,
+      "lambda_ode": 50.0,
+      "lambda_k": 0.01,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_13": {
+      "model": "phytoode_light",
+      "lr": 0.01,
+      "lambda_ode": 50.0,
+      "lambda_k": 0.1,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_14": {
+      "model": "phytoode_light",
+      "lr": 0.01,
+      "lambda_ode": 500.0,
+      "lambda_k": 0.01,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_15": {
+      "model": "phytoode_light",
+      "lr": 0.01,
+      "lambda_ode": 500.0,
+      "lambda_k": 0.1,
+      "weight_decay": 0.0001,
+      "epochs": 1500
+    },
+    "light_16": {
+      "model": "phytoode_light",
+      "lr": 0.0011794027174192893,
+      "lambda_ode": 2.1451940636552953,
+      "lambda_k": 0.0005240861214547249,
+      "weight_decay": 0.0,
+      "epochs": 1500
+    },
+    "light_17": {
+      "model": "phytoode_light",
+      "lr": 0.0014989980817447586,
+      "lambda_ode": 0.7437990712830775,
+      "lambda_k": 0.0538824543915395,
+      "weight_decay": 3.505421404806487e-05,
+      "epochs": 1500
+    },
+    "light_18": {
+      "model": "phytoode_light",
+      "lr": 0.0055176092317408875,
+      "lambda_ode": 0.21423131133974985,
+      "lambda_k": 0.000823708703397866,
+      "weight_decay": 0.00013411143757305607,
+      "epochs": 1500
+    },
+    "light_19": {
+      "model": "phytoode_light",
+      "lr": 0.010107047572954511,
+      "lambda_ode": 447.8156892500285,
+      "lambda_k": 0.003076300547899593,
+      "weight_decay": 3.2474386355433683e-06,
+      "epochs": 1500
+    },
+    "light_20": {
+      "model": "phytoode_light",
+      "lr": 0.004626143341072964,
+      "lambda_ode": 0.055340857650393295,
+      "lambda_k": 0.10159572707952533,
+      "weight_decay": 0.0007413562835250313,
+      "epochs": 1500
+    },
+    "light_21": {
+      "model": "phytoode_light",
+      "lr": 0.011580722753280686,
+      "lambda_ode": 0.020655781709990554,
+      "lambda_k": 0.18747725295521805,
+      "weight_decay": 0.00022933027661133331,
+      "epochs": 1500
+    },
+    "light_22": {
+      "model": "phytoode_light",
+      "lr": 0.015769826826798398,
+      "lambda_ode": 91.53443242099107,
+      "lambda_k": 0.02635085374792207,
+      "weight_decay": 0.00010483019180961368,
+      "epochs": 1500
+    },
+    "light_23": {
+      "model": "phytoode_light",
+      "lr": 0.003768836755031901,
+      "lambda_ode": 0.14047547815576458,
+      "lambda_k": 0.00021534278636445702,
+      "weight_decay": 6.900989920286459e-06,
+      "epochs": 1500
+    },
+    "light_24": {
+      "model": "phytoode_light",
+      "lr": 0.009080402422865392,
+      "lambda_ode": 26.274794415978302,
+      "lambda_k": 0.010721870835714261,
+      "weight_decay": 0.0,
+      "epochs": 1500
+    },
+    "light_25": {
+      "model": "phytoode_light",
+      "lr": 0.003586225525768522,
+      "lambda_ode": 38.56688875606551,
+      "lambda_k": 0.2765758377980186,
+      "weight_decay": 1.7735188259431835e-06,
+      "epochs": 1500
+    },
+    "light_26": {
+      "model": "phytoode_light",
+      "lr": 0.002833458270605725,
+      "lambda_ode": 917.1156945980633,
+      "lambda_k": 0.006002736036834286,
+      "weight_decay": 0.0002920156009413062,
+      "epochs": 1500
+    },
+    "light_27": {
+      "model": "phytoode_light",
+      "lr": 0.001989898937362557,
+      "lambda_ode": 8.261856972607095,
+      "lambda_k": 0.0001301457269169947,
+      "weight_decay": 1.745540058178548e-05,
+      "epochs": 1500
+    },
+    "light_28": {
+      "model": "phytoode_light",
+      "lr": 0.0012642906491907651,
+      "lambda_ode": 178.695312470569,
+      "lambda_k": 0.0039096580567331615,
+      "weight_decay": 1.295161632230106e-05,
+      "epochs": 1500
+    },
+    "light_29": {
+      "model": "phytoode_light",
+      "lr": 0.017346807645825142,
+      "lambda_ode": 0.8769921866840976,
+      "lambda_k": 0.0003064750883374293,
+      "weight_decay": 0.0005508079090045274,
+      "epochs": 1500
+    },
+    "light_30": {
+      "model": "phytoode_light",
+      "lr": 0.007394211424065799,
+      "lambda_ode": 0.020209095311040648,
+      "lambda_k": 0.0013301234957765256,
+      "weight_decay": 1.0923111663261197e-06,
+      "epochs": 1500
+    },
+    "light_31": {
+      "model": "phytoode_light",
+      "lr": 0.0024166585106084187,
+      "lambda_ode": 4.54045630733228,
+      "lambda_k": 0.017345205374635173,
+      "weight_decay": 5.679815834324186e-05,
+      "epochs": 1500
+    }
+  },
+  "anchors": {
+    "replicate": "light_12",
+    "time_holdout": "light_11"
+  },
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "condition": "12L12D",
+  "excluded_condition": "cR",
+  "input_features": [
+    "genotype",
+    "elapsed_time",
+    "binary_light"
+  ],
+  "target_type": "split_specific_replicate_means_12L12D_only",
+  "height_scale_mm": 13.719,
+  "architecture": "Original hidden sizes; one binary input channel added to encoder and vector field. 1103 parameters.",
+  "physics": "Ordinary logistic, one constant r and K per genotype; original capacity penalty and 23 interior residual nodes retained. At light switches the right-hand derivative is used.",
+  "forcing": "Known 12 h on / 12 h off schedule, first 0-12 h on. Each RK4 interval keeps its light state through its right-end stage.",
+  "selection": "32 seed-1 candidates per protocol. Confirm the top three plus the prior-selected no-input hyperparameter anchor with seeds 2 and 3. Choose lowest three-seed mean validation RMSE among these confirmed candidates.",
+  "stopping": "64 screening and 12-16 confirmation fits, then freeze both protocols and score test once per reported configuration and seed. No extension based on test results.",
+  "comparison": "Retained previous baselines; this PhytoODE-only follow-up has additional search budget. Anchor isolates adding the feature at fixed hyperparameters, not identical weight matrices.",
+  "prior_test_inspected": true,
+  "independent_new_test_cohort": false,
+  "baseline_refits": 0,
+  "source_sha256": {
+    "hypocotyl/code/light_input_model.py": "d710f6db9799e97cda8627dbb7c72ba7ede906c6ff2b6afaed89224020e8d003",
+    "hypocotyl/code/light_input_trial.py": "1b5c7b96c765b2251af74eeeb155a3f8bd5e00bc7418a1c94657c1dcde11e878",
+    "hypocotyl/code/run_light_input.py": "799d42b4356c38c5094a2a635d3225b4267353be2edcfc43f7c9d7ed3fdf981f",
+    "hypocotyl/code/single_condition_data.py": "a57cb1b7b47ea816988b24bc58b2137f46a8b7ffe6b43fe001a96aa2a0498251",
+    "hypocotyl/code/single_condition_models.py": "8116c31a537ee6f1c7dd2fdd8689c2d0483c636ce56c36660b8657f04e869ca2",
+    "wheat/code/model.py": "73d5e8fa2796c937c856926994a05b6ce137152d12c06e375a122fe00e22b271",
+    "hypocotyl/results/single_condition_20260909/selections.json": "13a96f5de6fcbb056261b62df41791292fd953313eaa41000e9623c3e88be58f",
+    "hypocotyl/results/single_condition_20260909/completed.json": "a4e1dc5d1361a673fecbe3b114955ea28af975b1d7b96ca7fa3085022e81b96d",
+    "hypocotyl/data/processed/single_condition_20260909/manifest.json": "f6b01d0029b30d2140555e8d942ede24bf4ca322a719561a1dc8c46e880a83af",
+    "hypocotyl/data/processed/single_condition_20260909/replicate/config.json": "f0bfeac257851ed184d9f2b9e97493d0f23e9ec0ffc2e709c809e778c30521cc",
+    "hypocotyl/data/processed/single_condition_20260909/replicate/test.csv": "be3200c7cb39ddc7d6183057d34efb19387566379edef41e6170bfcbc003e9b0",
+    "hypocotyl/data/processed/single_condition_20260909/replicate/test_means.csv": "b90d1ec71a986cac4ca0b6cc55ec6fe3034a5d116fa7f17c665eed3a58c8a1c9",
+    "hypocotyl/data/processed/single_condition_20260909/replicate/train.csv": "0af70919d2757ee882e6be5c4333835e72f3d101e7314056706724680c91b5b8",
+    "hypocotyl/data/processed/single_condition_20260909/replicate/train_means.csv": "d65a810ef8a6ed0f67b26ded6460535204c58f6920009e555ce130a2f7e68231",
+    "hypocotyl/data/processed/single_condition_20260909/replicate/val.csv": "595853bb649856643a4fd76609748207353cd3f6003d85dac51d0608f542f096",
+    "hypocotyl/data/processed/single_condition_20260909/replicate/val_means.csv": "d9c379ae2eb936e5520086869ea4fbed62bbbc3b21cd764310a672339e6e2e54",
+    "hypocotyl/data/processed/single_condition_20260909/time_holdout/config.json": "80c7ae391ce9e5d2fb255a3fa58ea55b931025b9c364caf8ff6af5fa8ea62c07",
+    "hypocotyl/data/processed/single_condition_20260909/time_holdout/test.csv": "c9706b3bd9e4d70343be529fd5c682483c65bb61754faf042f9a77ab15b8943f",
+    "hypocotyl/data/processed/single_condition_20260909/time_holdout/test_means.csv": "378b78f36972cadd588a2a25b1f7acd2d845ce0a7e4a87d81a756c60ee816a1f",
+    "hypocotyl/data/processed/single_condition_20260909/time_holdout/train.csv": "5a3b032de3d01d647f33bcda64fd795da54fa6bd8f3570073e6be893241f4605",
+    "hypocotyl/data/processed/single_condition_20260909/time_holdout/train_means.csv": "b0aa5f3f3af6dd71e9673a15c0985f61f3ab4bab6432c9508748f4b25370833f",
+    "hypocotyl/data/processed/single_condition_20260909/time_holdout/val.csv": "4e7a1d33a665162405bd426c6cf3d01c0458f0fcbf29f9523175fc63f972f12e",
+    "hypocotyl/data/processed/single_condition_20260909/time_holdout/val_means.csv": "64702a0c4f37a3335f7309d8c753afadbbdb0d70d646002325182b8456cc09e2",
+    "hypocotyl/reports/single_condition_20260909/comparison.csv": "ebae90f5f2ff1568d172ba9822480c83236f31ff4085e4ab58133113f1d57bb6",
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed1/result.json": "2d1fecdd0c1e5ae894638511b1e2fa3c21f63d77438dee9d0c132e34ffa94f7e",
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed2/result.json": "7219d7c29cefff0f0db48c5fc229f84c8beac6fc1909febacf59d124186bce50",
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed3/result.json": "b5105bec4c39e62171c72436ba468ba0d5a076ee752bcc8190e817625bd52173",
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode_matched/seed1/result.json": "bd2032bead231323f45c68881b247825b40f7a255addfac92f16c8af5cf20769",
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode_matched/seed2/result.json": "1f88c7da67b5fd27eb89e5b8c65924c7ee86cb033ba88aebbbb3d664594328d4",
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode_matched/seed3/result.json": "61fe4460b55de40dc560a97835679622324fca1a29cefeb59123135661cf53aa",
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic/seed1/result.json": "7e26fd85f7abddd956f3bd1a54caad5bbbe16a1b784f0e2a3609043f53c099ae",
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed1/result.json": "b24b6afd230398c7ee6b8373da7c9126e58729852e4b772123ef00f8ae28519a",
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed2/result.json": "9e36d88085ef57ca7b045822ab97760751253842d95090f63c676e4f2dc6d61d",
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed3/result.json": "b040ea27a851e95d90b304467bb42c5cf994ea8ded4515a86141871e777892af",
+    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed1/result.json": "56a577f9ed7ba178887a52de3af9f942541d0f6d7779f06ab92cc4e4f07d913b",
+    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed2/result.json": "1f2710bfce1f6f20488576134fc800bbc13d652bf48128a39f7f3e19e029e524",
+    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed3/result.json": "7d0f4b60b25227409226e4fd996b93a082012baf6e8ef836b38db8ddc0e063ac",
+    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed1/result.json": "6b547cf512355b4cd23ec6053da7c5cac90e36b786eb892a5efd4b4190c84a97",
+    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed2/result.json": "2c5dac825658b9fbe6f281d38457ada3d4d487d81af043644d9783fd61d4d154",
+    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed3/result.json": "1801a85d40ff2b39f7bd76d59d70f79ec00d8847eb15b1f54ad183e77aa24333",
+    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed1/result.json": "2fc41e99e9ddc6c0ff14243bef556792eec16bb028380971a42ace51a448ddaa",
+    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed2/result.json": "3c6f400c04067cebf0094a1ae9d0027361c9dfe4f0a40000a4e54032244eea53",
+    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed3/result.json": "f083b05de99ea68093facc1609b387d7b0faf116674979ffbf4e8701f443af26",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/latent_ode/seed1/result.json": "6c1c9226df6dd6b7d1a55a68c8c86ecc7d8d3d37348e9fa82a7fbeb1bb0d45ef",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/latent_ode/seed2/result.json": "fda0918aa4a8715f5236d077ccfe538e3869c8e98060774c4c193ceb739d7d16",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/latent_ode/seed3/result.json": "9618165588e8d9596b547428752b1d22e65c05406131dd5766fa8df159b8075a",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/latent_ode_matched/seed1/result.json": "9473f22011c29dc9993159170fe2ef622f002eaedddf462e60bd39da51c9afd7",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/latent_ode_matched/seed2/result.json": "64add5b8b30b17e72754565589674bd95e917970d97cd02345c6ca531b1a74af",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/latent_ode_matched/seed3/result.json": "05cdf88394735b9b1df50bce0c7f7837b33664282083ea317680c04df5291f66",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/logistic/seed1/result.json": "65ce67db96b6502a5a2a4f00ea5a43f769b51414b984f72d789c66e32fcb6c22",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/logistic_pinn/seed1/result.json": "3f855681edb5af7ce5f837ec2909ac93f9fbe746b93a626d27d1ac71574e996f",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/logistic_pinn/seed2/result.json": "f70fd2f2a8934818256b7e8c10e708ef51484330ef979b19d7532bbf1e8c8518",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/logistic_pinn/seed3/result.json": "ed08f82ba8de06d51c0e6234d9182dbf77431fefa0507ddc18b8717f14a804af",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/lstm/seed1/result.json": "b8370d526099cea4a1e0f0bd6b42623f92cd8bcfbf2cceb1f69d08f3dc096981",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/lstm/seed2/result.json": "c628e1c4c6ba0ad1310faf61c9bcde5afc50d7f890b9cd3d2f4aaaa9783acff1",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/lstm/seed3/result.json": "d36963cb077a2d94b1d1fb8da76f2d8f283c402b4dc69077e5a2c0c82e709d66",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/phytoode/seed1/result.json": "481a647054956abd75edf063b81bda98e13e8ef8fa52b4257f8197e0f0249927",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/phytoode/seed2/result.json": "a5b1f3068c281d9faccdb5e88b074111de1b9f07cffabc7e9ac4870eebb9dd75",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/phytoode/seed3/result.json": "709990b1d77934ccb2a0c4d0695839b7ea0a99d797506cb696cbb65a383a01c6",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/rf/seed1/result.json": "24560123c51ba2f08da62e07224d8c9e510887d17c0029f247c4139ad7ae7fab",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/rf/seed2/result.json": "ab4653d5f9da27ed0d53fbf4c993a0637c91288ab2ae6eb558f7a3be4bb18da9",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/rf/seed3/result.json": "0fc573d7e96ea28e930079cb5a96b98b3ede1d7b20c3e809eaa7795fd6d33783",
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed1/predictions.npz": "18acfceb08141bbe6dd0b71829aa8c007263dc16c83e854e294da4525cca0703",
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed2/predictions.npz": "80b51de22f5e959d2d7eb9a32e0737b2204d678a30bd25f6839809267fdec6fd",
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed3/predictions.npz": "4e6aca8e55be7c3cddcc7fb66be71ae837445ca9fc1d9882e8e6ec40b3b78753",
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode_matched/seed1/predictions.npz": "18acfceb08141bbe6dd0b71829aa8c007263dc16c83e854e294da4525cca0703",
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode_matched/seed2/predictions.npz": "80b51de22f5e959d2d7eb9a32e0737b2204d678a30bd25f6839809267fdec6fd",
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode_matched/seed3/predictions.npz": "4e6aca8e55be7c3cddcc7fb66be71ae837445ca9fc1d9882e8e6ec40b3b78753",
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic/seed1/predictions.npz": "85b15d33f38cc3d3714d6643eb0adcdebc604011c9bb5098cd6469e150748b87",
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed1/predictions.npz": "eb84dbd2f7c9a422f97a634b2c7719c9827935f8f7df981ef44c34e588b665cf",
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed2/predictions.npz": "de5da63445cbc24598b66e548d0c366e288b24931190cd2ecc0dedeb7d5b6d09",
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed3/predictions.npz": "53630f38d6747f86effcd44103cc73653530658a8ca0af188b87b72f5dfddfd7",
+    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed1/predictions.npz": "0fb8d6f3b0bd7bcd6d951277af04c21a1d86fa996e69003f62ff0645552a32a0",
+    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed2/predictions.npz": "d355290b89ae5c9daafb00bef0c3efa28352a5d6cca07b0637b58bc46f3b0ad6",
+    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed3/predictions.npz": "b6a1eb146d1be415c89d2a135fc4ed45a6753409973b1c21ff71f4ef078156ea",
+    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed1/predictions.npz": "916077e5a25ee6e849caae4095ba1f7990ab104df145325eb493272e093ac5b2",
+    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed2/predictions.npz": "5d9468c783b8af39c6877d0ed3c0255bd666da2421f5d6562669fe870b14a731",
+    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed3/predictions.npz": "b5a1f539a94ee70541626279bc65b35adf1a7c7d99108b80407f384685e195fb",
+    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed1/predictions.npz": "63b95d55b0504873b10a29951a86eb2ebe146fb83d7d9aad2e09df3deb37534a",
+    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed2/predictions.npz": "9b3ac00de35cddec687d5e5f1b87d1ad5d268895b05ab9b877234d68773a9a01",
+    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed3/predictions.npz": "80814d2c132db76974e558471167169c527d62cf1106d2506e9b44cce01f6fa4",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/latent_ode/seed1/predictions.npz": "ef1514534e70ff2d9cf7cd9023636d36ab761a0f94edfae68fe5bfae06064f27",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/latent_ode/seed2/predictions.npz": "48836e02f93e6c1ffb1b6ce10b006345b8a1f0031bf1e0e585f9a9f13a763133",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/latent_ode/seed3/predictions.npz": "77035f3ea95c6e9b040e96f3593c62a9d40d6919f7a7f7a732968cf91c32f541",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/latent_ode_matched/seed1/predictions.npz": "79b32be140fcf8f0f5a90333737d3ce832ba31675d6caba9e657c4b3db0e292f",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/latent_ode_matched/seed2/predictions.npz": "e761108f3314ff4809aa2b23cafedca2fe8680a3fc6272d3d2c28c8cf4c087e2",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/latent_ode_matched/seed3/predictions.npz": "0944cb62f9cd84af4e3cfaa7c9cb9e43b27205bb2455cd61c5b86a8889248404",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/logistic/seed1/predictions.npz": "d3da13bdd4c6fd609272a66574336618279e3baec11b8a25e6830955f327d1bb",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/logistic_pinn/seed1/predictions.npz": "e9ee780fa1aba0e3612443857cc3fa0a13f69e776e01bfad7586726a786e8e3d",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/logistic_pinn/seed2/predictions.npz": "f2aa0456596115d3f7723c0c70014105799d74b33747462211f39ee949229cfe",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/logistic_pinn/seed3/predictions.npz": "b6cd48c4fd8afc65adfa073e11a1893597ffa7b0f1df26fa60ddf8b405357e61",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/lstm/seed1/predictions.npz": "7e1c8b40e15f4af6991129ca02d234f0aca4ce9850faf7366cfe85803746d49d",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/lstm/seed2/predictions.npz": "5c3fe0863eb5a0ec92d989a854de3a56f945883a3b7decb02b08c91cd9303395",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/lstm/seed3/predictions.npz": "3d533f2460f44a752955c4f68b12167952a11773581d79c4e11a6b109436456f",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/phytoode/seed1/predictions.npz": "9c91754215ea244d922bec8a3a765fb8318223e718ce176051b171ebac0f36df",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/phytoode/seed2/predictions.npz": "453c695a6ed87d56d62344e468fc60c46d2f4da5bfef31c2c471dbe9ad8f7b4a",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/phytoode/seed3/predictions.npz": "122ddc842e27c61bab6a6056214a3a2ae05b8de6d2e2570d03397abd1cc2abbc",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/rf/seed1/predictions.npz": "b9c42bce69cddb693fb4334f8286e5eaa525c8e579d6a90e5c26bc0cdb7cc91a",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/rf/seed2/predictions.npz": "5f0e9d5205185a1df57d9b48d652cf2578748efada5ea619034bb06a6ab70318",
+    "hypocotyl/results/single_condition_20260909/time_holdout/final/rf/seed3/predictions.npz": "f2662bc44add4aa85bd95cd30633b24bbe41e3b4d5a1a9901f7beaa754e41b9e"
+  }
+}

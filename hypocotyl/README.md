@@ -1,15 +1,18 @@
-# Hypocotyl growth: 12L12D only, genotype and time inputs
+# Hypocotyl growth: 12L12D-only benchmarks
 
-The current comparison uses **943 measured lengths** from the author's 12 h light /
+The comparisons use **943 measured lengths** from the author's 12 h light /
 12 h dark experiment at **23°C**, across five genotypes and seven elapsed times
 (0, 12, 24, 36, 48, 60, 72 h). Length is in **mm**. The continuous-red-light (`cR`)
 sheet is excluded from this comparison. The complete original workbook remains
 preserved, including its 875 cR measurements, for provenance and earlier analyses.
 
-Models receive **genotype and elapsed time only**. There are no illumination,
+In the reference comparison, models receive **genotype and elapsed time only**. There are no illumination,
 duty-cycle, accumulated-exposure, spectrum, or temperature features. The physical
 reference is the ordinary logistic law, with one constant rate and one capacity
 per genotype. No light-switched ODE or light-conditioned PINN is included.
+An additional [PhytoODE-only follow-up](reports/light_input_20260910/results.md)
+adds the known binary light state to PhytoODE while retaining this ordinary
+logistic physics, the same data/targets, and every earlier baseline fit.
 
 ## Current targets and partitions
 
@@ -117,6 +120,54 @@ predictions are complete. The audit records this logging gap; three selected
 checkpoints lie beyond the exported history. Their stored epochs and predictions
 are verified directly. No missing history is fabricated, and a separate diagnostic
 replay was not substituted into the comparison.
+
+## PhytoODE with binary illumination input (2026-09-10)
+
+This follow-up adds **only one environmental channel** to PhytoODE: light on = 1
+and light off = 0. The first 0–12 h interval is on, followed by alternating 12 h
+intervals. cR remains excluded. The known schedule enters the encoder and latent
+vector field; phenotype observations never enter the encoder. All plants share
+the same schedule, so this channel is a deterministic function of elapsed time.
+It tests an explicit phase feature, not transfer to a different photoperiod.
+
+The same ordinary logistic derivative residual and capacity penalty are retained.
+There is one constant rate and capacity per genotype, with **no separate light and
+dark logistic rates**. The hidden sizes are unchanged; the added channel increases
+the parameter count from 1,055 to 1,103. RK4 keeps illumination constant within
+each interval, including its final stage, and switches at the next interval.
+The original 23 interior residual nodes use the right-hand derivative at switches.
+The decoder chain rule still divides by 72 to convert normalized time to hours.
+
+The fixed search screens 32 configurations per holdout: the original 16 PhytoODE
+grid combinations and 16 stratified log-space samples of learning rate,
+lambda_ODE, lambda_K, and weight decay. All fits use 1,500 epochs. The leading
+three seed-1 candidates, plus the previous selected no-input hyperparameter
+anchor when necessary, are confirmed with seeds 2 and 3. The lowest mean
+validation RMSE selects the tuned model. The anchor is also reported to separate
+the feature change at fixed settings from additional tuning. Input dimensions
+change, so identical initial weights are not claimed. Both holdouts' selections
+freeze before current test scoring; previously inspected test partitions are
+explicitly acknowledged. Search budgets are unequal across the retained models.
+
+The new trainer exports the complete validation history through epoch 1,500.
+The original experiment and manuscript remain the reference; this comparison
+does not silently replace their tables or fitted models.
+
+```bash
+.venv/bin/python hypocotyl/code/verify_light_input.py
+.venv/bin/python hypocotyl/code/run_light_input.py --gpus 8 9
+.venv/bin/python hypocotyl/code/summarize_light_input.py
+```
+
+- [Full comparison, both holdouts, train/validation/test](reports/light_input_20260910/results.md).
+- [Comparison CSV](reports/light_input_20260910/comparison.csv) and [selected settings](reports/light_input_20260910/selected_configs.json).
+- [Test-error plot](reports/light_input_20260910/test_error_comparison.png).
+- [Replicate-holdout curves](reports/light_input_20260910/predictions_replicate.png).
+- [36/60-h holdout curves](reports/light_input_20260910/predictions_time_holdout.png).
+- [PhytoODE variants, replicate](reports/light_input_20260910/phytoode_variants_replicate.png) and [36/60 h](reports/light_input_20260910/phytoode_variants_time_holdout.png).
+- [Input/derivative verification](reports/light_input_20260910/verification.json) and [results audit](reports/light_input_20260910/results_audit.json).
+- LaTeX tables: [replicate](reports/light_input_20260910/table_replicate.tex), [36/60 h](reports/light_input_20260910/table_time_holdout.tex).
+- [Compiled train/validation/test tables (PDF)](reports/light_input_20260910/tables.pdf).
 
 ## Earlier experiments
 

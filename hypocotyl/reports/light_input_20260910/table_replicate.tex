@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Replicate holdout, 12L12D only: RMSE (mm, mean $\pm$ sample SD) / relative RMSE (\%, mean) across three seeds, except the single-fit logistic ODE. Targets are split-specific replicate means. Bold marks the lowest unrounded mean in each split. Only the two added PhytoODE variants use binary illumination as an input; both retain ordinary logistic physics. Fixed settings reuse the selected no-light PhytoODE hyperparameters. The tuned variant has an additional search budget. The matched latent ODE uses the no-light PhytoODE settings with both physics coefficients zero.}
+\label{tab:hypocotyl_light_replicate}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+Model & Train & Validation & Test \\
+\midrule
+PhytoODE + light (tuned) & $0.190\pm0.008 / 3.75$ & $\mathbf{0.278\pm0.001 / 5.48}$ & $0.346\pm0.008 / 6.85$ \\
+PhytoODE + light (fixed) & $0.171\pm0.011 / 3.38$ & $0.289\pm0.007 / 5.70$ & $\mathbf{0.329\pm0.006 / 6.52}$ \\
+\midrule
+PhytoODE & $0.191\pm0.002 / 3.76$ & $0.293\pm0.001 / 5.78$ & $0.365\pm0.008 / 7.22$ \\
+Latent ODE & $0.190\pm0.007 / 3.75$ & $0.297\pm0.003 / 5.86$ & $0.368\pm0.007 / 7.28$ \\
+Logistic-PINN & $0.219\pm0.013 / 4.32$ & $0.304\pm0.002 / 6.00$ & $0.361\pm0.014 / 7.14$ \\
+LSTM-NN & $\mathbf{0.137\pm0.029 / 2.71}$ & $0.288\pm0.014 / 5.68$ & $0.361\pm0.007 / 7.15$ \\
+Random forest & $0.364\pm0.013 / 7.17$ & $0.472\pm0.027 / 9.33$ & $0.452\pm0.014 / 8.95$ \\
+Logistic ODE & $0.370 / 7.29$ & $0.408 / 8.07$ & $0.485 / 9.61$ \\
+\midrule
+Latent ODE (matched) & $0.190\pm0.007 / 3.75$ & $0.297\pm0.003 / 5.86$ & $0.368\pm0.007 / 7.28$ \\
+\bottomrule
+\end{tabular}}
+\end{table}

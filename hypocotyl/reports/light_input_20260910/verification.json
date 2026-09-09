@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "binary_light": true,
+  "condition": "12L12D",
+  "excluded_condition": "cR",
+  "target_type": "split_specific_replicate_means",
+  "test_targets_loaded": false,
+  "existing_split_indices_unchanged": true,
+  "missing_target_gradient_zero": true,
+  "parameter_count": 1103,
+  "ordinary_logistic_head_outputs": [
+    "r",
+    "K"
+  ],
+  "light_gradients_nonzero": true,
+  "schedule_effect_on_initial_model": 0.006834983825683594,
+  "chain_rule_derivative_max_abs_error": 4.051366718233612e-14,
+  "piecewise_constant_RK4_exposure_integral_checked": true,
+  "protocol_counts": {
+    "replicate": {
+      "raw_counts": {
+        "train": 547,
+        "val": 171,
+        "test": 225
+      },
+      "mean_counts": {
+        "train": 35,
+        "val": 35,
+        "test": 35
+      }
+    },
+    "time_holdout": {
+      "raw_counts": {
+        "train": 397,
+        "val": 125,
+        "test": 257
+      },
+      "mean_counts": {
+        "train": 25,
+        "val": 25,
+        "test": 10
+      }
+    }
+  }
+}

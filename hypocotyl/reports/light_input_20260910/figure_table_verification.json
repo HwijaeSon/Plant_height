@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "visually_inspected_figures": [
+    "predictions_replicate.png",
+    "predictions_time_holdout.png",
+    "test_error_comparison.png"
+  ],
+  "table_pdf_compiled": true,
+  "table_pdf_visually_inspected_pages": [
+    1
+  ],
+  "overfull_or_underfull_boxes": false,
+  "curve_axis_limits_include_data": true,
+  "checks": "All five genotype curves, both light-input variants, baseline legends, mean/individual points, dark shading, and table margins checked.",
+  "file_sha256": {
+    "hypocotyl/reports/light_input_20260910/predictions_replicate.png": "f410a56e8857992a17371c5d46fc6db26fbbe3baf0b8891b0b7b8504626f34dc",
+    "hypocotyl/reports/light_input_20260910/predictions_time_holdout.png": "0ba57450830acec6127c8a0c60019b385e5855d5a85cc7b8fb6ba6bcfba05247",
+    "hypocotyl/reports/light_input_20260910/test_error_comparison.png": "33ffe7a9a94d20494b1a11a36e3b8acaaa0230c9af15f274472ef5d13778a26e",
+    "hypocotyl/reports/light_input_20260910/tables.pdf": "4b536a3713f263c034987c1c17d6829bf04fd4f0eff0286d96a7ef77ede590ed"
+  }
+}

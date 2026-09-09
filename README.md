@@ -33,6 +33,11 @@ restored initial protocol, primary training and evaluation targets are replicate
 means calculated separately within each partition. Missing cells are omitted,
 and missing time groups are not imputed. Individual-length RMSE is reported
 separately. Source-row groups are not verified longitudinal plant identifiers.
+A [PhytoODE-only follow-up](hypocotyl/reports/light_input_20260910/results.md)
+adds the known binary illumination state, retains ordinary logistic physics,
+and tunes its hyperparameters while keeping all earlier baseline fits and
+evaluation targets unchanged. Both holdouts and a fixed-hyperparameter feature
+comparison are included; this follow-up has an additional tuning budget.
 
 ## Environment
 

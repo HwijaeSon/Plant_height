@@ -1,0 +1,8 @@
+{
+  "model": "phytoode_light",
+  "lr": 0.009080402422865392,
+  "lambda_ode": 26.274794415978302,
+  "lambda_k": 0.010721870835714261,
+  "weight_decay": 0.0,
+  "epochs": 1500
+}
