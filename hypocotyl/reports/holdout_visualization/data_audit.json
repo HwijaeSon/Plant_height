@@ -1,0 +1,116 @@
+{
+  "input_sha256": {
+    "data/processed/splits/replicate/train.csv": "d573504517a817cad2fba950d15783869da802b02949f9fc2080a900b17acd0d",
+    "data/processed/splits/replicate/val.csv": "5b857607545f44d9a7ed8767b195369e411dc399152e96a7ab64d0981390e0bd",
+    "data/processed/splits/replicate/test.csv": "a6f0cbb552ea9dbde05f9ac45eec66f4c6eaeac54b709534881604f9bb70de65",
+    "data/processed/splits/time_holdout/train.csv": "b1ad53a6339c046a4d96e6057e6c6764d8a67ce858b90ac781905af82d30c44a",
+    "data/processed/splits/time_holdout/val.csv": "235c74fe5ef039e49a7584353e2ef2f97d56e7d77e89b7723f045b2da2e0a869",
+    "data/processed/splits/time_holdout/test.csv": "6ccc7b24d5ba38be5b411e48920c5aeca27adc6b6f28e8ca12483378a267eea0"
+  },
+  "example_genotype": "Col-0",
+  "units": "mm",
+  "protocols": {
+    "replicate": {
+      "counts": {
+        "train": 1052,
+        "test": 436,
+        "val": 330
+      },
+      "counts_by_time": {
+        "train": [
+          125,
+          159,
+          170,
+          144,
+          149,
+          150,
+          155
+        ],
+        "val": [
+          40,
+          50,
+          54,
+          44,
+          48,
+          46,
+          48
+        ],
+        "test": [
+          54,
+          67,
+          70,
+          61,
+          60,
+          60,
+          64
+        ]
+      },
+      "times_hours": [
+        0,
+        12,
+        24,
+        36,
+        48,
+        60,
+        72
+      ],
+      "no_models_fitted_or_changed": true
+    },
+    "time_holdout": {
+      "counts": {
+        "train": 758,
+        "test": 505,
+        "unused": 315,
+        "val": 240
+      },
+      "counts_by_time": {
+        "train": [
+          125,
+          159,
+          170,
+          0,
+          149,
+          0,
+          155
+        ],
+        "val": [
+          40,
+          50,
+          54,
+          0,
+          48,
+          0,
+          48
+        ],
+        "test": [
+          0,
+          0,
+          0,
+          249,
+          0,
+          256,
+          0
+        ],
+        "unused": [
+          54,
+          67,
+          70,
+          0,
+          60,
+          0,
+          64
+        ]
+      },
+      "times_hours": [
+        0,
+        12,
+        24,
+        36,
+        48,
+        60,
+        72
+      ],
+      "no_models_fitted_or_changed": true
+    }
+  }
+}
