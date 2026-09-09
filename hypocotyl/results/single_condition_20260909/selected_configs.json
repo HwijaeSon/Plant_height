@@ -1,0 +1,338 @@
+{
+  "replicate": {
+    "phytoode": {
+      "config": {
+        "model": "phytoode",
+        "lr": 0.01,
+        "lambda_ode": 50.0,
+        "lambda_k": 0.01,
+        "epochs": 1500,
+        "weight_decay": 0.0001
+      },
+      "selected_candidate": "phytoode_12",
+      "ranking": [
+        {
+          "candidate": "phytoode_12",
+          "val_mean": 0.29263947543356955,
+          "per_seed_validation": [
+            0.2922862376637164,
+            0.29202582563050117,
+            0.293606363006491
+          ]
+        },
+        {
+          "candidate": "phytoode_11",
+          "val_mean": 0.2930304067488048,
+          "per_seed_validation": [
+            0.2912235651673678,
+            0.2957357544714056,
+            0.29213190060764116
+          ]
+        }
+      ]
+    },
+    "latent_ode": {
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.01,
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0,
+        "epochs": 1500,
+        "weight_decay": 0.0001
+      },
+      "selected_candidate": "latent_ode_01",
+      "ranking": [
+        {
+          "candidate": "latent_ode_01",
+          "val_mean": 0.29652949274228785,
+          "per_seed_validation": [
+            0.298935630970188,
+            0.2974736489341113,
+            0.29317919832256417
+          ]
+        },
+        {
+          "candidate": "latent_ode_00",
+          "val_mean": 0.31048045164922294,
+          "per_seed_validation": [
+            0.3099797215767898,
+            0.31272688094135603,
+            0.30873475242952303
+          ]
+        }
+      ]
+    },
+    "logistic_pinn": {
+      "config": {
+        "model": "logistic_pinn",
+        "lr": 0.003,
+        "lambda_ode": 50.0,
+        "lambda_k": 0.01,
+        "epochs": 1500,
+        "weight_decay": 0.0001
+      },
+      "selected_candidate": "logistic_pinn_04",
+      "ranking": [
+        {
+          "candidate": "logistic_pinn_04",
+          "val_mean": 0.3038820644181439,
+          "per_seed_validation": [
+            0.3013729899638139,
+            0.3046965122117424,
+            0.3055766910788755
+          ]
+        },
+        {
+          "candidate": "logistic_pinn_13",
+          "val_mean": 0.30395577324548856,
+          "per_seed_validation": [
+            0.29983263882240696,
+            0.30666189613206973,
+            0.3053727847819889
+          ]
+        }
+      ]
+    },
+    "lstm": {
+      "config": {
+        "model": "lstm",
+        "lr": 0.01,
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0,
+        "epochs": 1500,
+        "weight_decay": 0.0001
+      },
+      "selected_candidate": "lstm_01",
+      "ranking": [
+        {
+          "candidate": "lstm_01",
+          "val_mean": 0.28770785138015137,
+          "per_seed_validation": [
+            0.2964412175737488,
+            0.271329953729223,
+            0.29535238283748233
+          ]
+        },
+        {
+          "candidate": "lstm_00",
+          "val_mean": 0.3045615362475575,
+          "per_seed_validation": [
+            0.3073549278687112,
+            0.30943916028271196,
+            0.2968905205912494
+          ]
+        }
+      ]
+    },
+    "rf": {
+      "config": {
+        "model": "rf",
+        "min_samples_leaf": 1
+      },
+      "selected_candidate": "rf_00",
+      "ranking": [
+        {
+          "candidate": "rf_00",
+          "val_mean": 0.4723582237254047,
+          "per_seed_validation": [
+            0.5009780418607706,
+            0.4476129075121533,
+            0.46848372180329034
+          ]
+        },
+        {
+          "candidate": "rf_01",
+          "val_mean": 0.8613461227125295,
+          "per_seed_validation": [
+            0.8884721293204174,
+            0.8406939940938937,
+            0.8548722447232773
+          ]
+        }
+      ]
+    },
+    "logistic": {
+      "config": {
+        "model": "logistic"
+      },
+      "selected_candidate": "logistic_00",
+      "ranking": [
+        {
+          "candidate": "logistic_00",
+          "val_mean": 0.40841583818574395,
+          "per_seed_validation": [
+            0.40841583818574395
+          ]
+        }
+      ]
+    }
+  },
+  "time_holdout": {
+    "phytoode": {
+      "config": {
+        "model": "phytoode",
+        "lr": 0.01,
+        "lambda_ode": 5.0,
+        "lambda_k": 0.1,
+        "epochs": 1500,
+        "weight_decay": 0.0001
+      },
+      "selected_candidate": "phytoode_11",
+      "ranking": [
+        {
+          "candidate": "phytoode_11",
+          "val_mean": 0.26845917249619905,
+          "per_seed_validation": [
+            0.27453088153322025,
+            0.26705114824170006,
+            0.2637954877136769
+          ]
+        },
+        {
+          "candidate": "phytoode_08",
+          "val_mean": 0.2837760525492439,
+          "per_seed_validation": [
+            0.27410829463898756,
+            0.2939726811038039,
+            0.28324718190494014
+          ]
+        }
+      ]
+    },
+    "latent_ode": {
+      "config": {
+        "model": "latent_ode",
+        "lr": 0.003,
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0,
+        "epochs": 1500,
+        "weight_decay": 0.0001
+      },
+      "selected_candidate": "latent_ode_00",
+      "ranking": [
+        {
+          "candidate": "latent_ode_00",
+          "val_mean": 0.2824607123657358,
+          "per_seed_validation": [
+            0.2652289022339551,
+            0.28766095062271285,
+            0.29449228424053936
+          ]
+        },
+        {
+          "candidate": "latent_ode_01",
+          "val_mean": 0.2908035390618488,
+          "per_seed_validation": [
+            0.30536344696158757,
+            0.2827293665644023,
+            0.2843178036595566
+          ]
+        }
+      ]
+    },
+    "logistic_pinn": {
+      "config": {
+        "model": "logistic_pinn",
+        "lr": 0.01,
+        "lambda_ode": 500.0,
+        "lambda_k": 0.1,
+        "epochs": 1500,
+        "weight_decay": 0.0001
+      },
+      "selected_candidate": "logistic_pinn_15",
+      "ranking": [
+        {
+          "candidate": "logistic_pinn_15",
+          "val_mean": 0.2886674818118666,
+          "per_seed_validation": [
+            0.28087153793086717,
+            0.30245715836610765,
+            0.28267374913862486
+          ]
+        },
+        {
+          "candidate": "logistic_pinn_14",
+          "val_mean": 0.29029775428315857,
+          "per_seed_validation": [
+            0.2931744537469276,
+            0.2964799722037152,
+            0.281238836898833
+          ]
+        }
+      ]
+    },
+    "lstm": {
+      "config": {
+        "model": "lstm",
+        "lr": 0.003,
+        "lambda_ode": 0.0,
+        "lambda_k": 0.0,
+        "epochs": 1500,
+        "weight_decay": 0.0001
+      },
+      "selected_candidate": "lstm_00",
+      "ranking": [
+        {
+          "candidate": "lstm_00",
+          "val_mean": 0.2922103155821492,
+          "per_seed_validation": [
+            0.297478925569133,
+            0.2830085693286907,
+            0.2961434518486239
+          ]
+        },
+        {
+          "candidate": "lstm_01",
+          "val_mean": 0.33695299978574994,
+          "per_seed_validation": [
+            0.4279923261094636,
+            0.30150980195561894,
+            0.2813568712921674
+          ]
+        }
+      ]
+    },
+    "rf": {
+      "config": {
+        "model": "rf",
+        "min_samples_leaf": 1
+      },
+      "selected_candidate": "rf_00",
+      "ranking": [
+        {
+          "candidate": "rf_00",
+          "val_mean": 0.6263673278126206,
+          "per_seed_validation": [
+            0.6299269473751895,
+            0.5866417577132294,
+            0.6625332783494429
+          ]
+        },
+        {
+          "candidate": "rf_01",
+          "val_mean": 1.265086433587597,
+          "per_seed_validation": [
+            1.2804585589398656,
+            1.2454379271521365,
+            1.2693628146707894
+          ]
+        }
+      ]
+    },
+    "logistic": {
+      "config": {
+        "model": "logistic"
+      },
+      "selected_candidate": "logistic_00",
+      "ranking": [
+        {
+          "candidate": "logistic_00",
+          "val_mean": 0.45108924833912345,
+          "per_seed_validation": [
+            0.45108924833912345
+          ]
+        }
+      ]
+    }
+  }
+}

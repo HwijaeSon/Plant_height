@@ -21,10 +21,15 @@ and chart-input sections are excluded from the tidy observations.
 `mean`, sample standard deviation `sd` (ddof=1), and `spreadsheet_mean`, the
 cached Excel AVERAGE used to verify extraction. These summaries use all
 measurements for descriptive and extraction-verification purposes. The current
-training pipeline never uses these summaries as targets. `observation_data.py`
-retains one length and one genotype/condition/time index per measured cell.
-Missing cells do not appear in the residual vector. The earlier `data.py`
-mean-target loader remains available only to reproduce historical experiments.
+training pipeline does not use these full-dataset summaries as targets.
+`prepare_single_condition.py` filters the frozen partitions to 12L12D and stores
+new split-specific `train_means.csv`, `val_means.csv`, and `test_means.csv` files
+under `processed/single_condition_20260909/<protocol>/`. Their fields are
+`genotype`, `elapsed_hours`, `mean_length_mm`, and `n_observations`.
+`single_condition_data.py` uses these means as targets; missing time groups have
+no target entry. Only genotype and elapsed time enter model inputs. The earlier
+`observation_data.py` retains raw individual targets for the previous two-condition
+experiment, and `data.py` reproduces the original two-condition mean-target runs.
 
 Missing genotype alleles, irradiance, the 12L12D spectrum, growth medium,
 independent batch identifiers and age at the first measurement are not supplied
@@ -35,10 +40,10 @@ a versioned metadata update without modifying the original workbook.
 The deposit bundle includes the raw workbook, tidy data, frozen partitions,
 provenance hashes, model code and its shared latent-ODE source. It does not
 include the full fitted search outputs; the current runs remain under
-`hypocotyl/results/individual_observations_20260909` in the research repository.
+`hypocotyl/results/single_condition_20260909` in the research repository.
 To rerun with the included frozen partitions, install the dependencies and
-run `verify_observation_targets.py`, `run_observation_benchmark.py` and
-`summarize_observations.py` from the package root
+run `verify_single_condition.py`, `run_single_condition.py` and
+`summarize_single_condition.py` from the package root
 (scripts are in `hypocotyl/code/`). Manuscript-updating commands in the main
 README require the full repository's `paper/` directory, which is excluded
 from this data package. Do not rerun `make_splits.py` over the frozen partition

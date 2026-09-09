@@ -1,0 +1,59 @@
+{
+  "protocol": "time_holdout",
+  "model": "logistic_pinn",
+  "seed": 2,
+  "metrics": {
+    "train": {
+      "rmse": 0.12620264922887478,
+      "relative_error": 2.75946456454838,
+      "mean_target": 4.573446995849696,
+      "n_curves": 5,
+      "n_scored_group_means": 25,
+      "n_observations": 397,
+      "individual_rmse": 0.6696970154957507,
+      "per_curve_rmse": [
+        0.06281757927927109,
+        0.2357479636058692,
+        0.1130451191564169,
+        0.19232727870240962,
+        0.0270753054004071
+      ]
+    },
+    "val": {
+      "rmse": 0.30245715836610765,
+      "relative_error": 6.652531304672659,
+      "mean_target": 4.546497333333333,
+      "n_curves": 5,
+      "n_scored_group_means": 25,
+      "n_observations": 125,
+      "individual_rmse": 0.6406052584404599,
+      "per_curve_rmse": [
+        0.11185629258029821,
+        0.42423347300227116,
+        0.1545152218081588,
+        0.3446044729190363,
+        0.4770763315207738
+      ]
+    },
+    "test": {
+      "rmse": 0.4019676116570784,
+      "relative_error": 6.379354636571591,
+      "mean_target": 6.3010701639422395,
+      "n_curves": 5,
+      "n_scored_group_means": 10,
+      "n_observations": 257,
+      "individual_rmse": 0.976474282192516,
+      "per_curve_rmse": [
+        0.945741328619293,
+        0.32841694216280265,
+        0.16443012712884392,
+        0.1843668657989066,
+        0.3868827945755454
+      ]
+    }
+  },
+  "target_type": "split_specific_replicate_means_12L12D_only",
+  "test_evaluations": 1,
+  "selection_sha256": "13a96f5de6fcbb056261b62df41791292fd953313eaa41000e9623c3e88be58f",
+  "source_result_sha256": "5f5487fe9d6a3055ec2b5977ffba1cad02560da986340f94ca24003c746a76f5"
+}

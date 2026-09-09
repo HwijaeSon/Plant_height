@@ -1,0 +1,52 @@
+{
+  "replicate": {
+    "phytoode": [
+      "phytoode_11",
+      "phytoode_12"
+    ],
+    "latent_ode": [
+      "latent_ode_01",
+      "latent_ode_00"
+    ],
+    "logistic_pinn": [
+      "logistic_pinn_13",
+      "logistic_pinn_04"
+    ],
+    "lstm": [
+      "lstm_01",
+      "lstm_00"
+    ],
+    "rf": [
+      "rf_00",
+      "rf_01"
+    ],
+    "logistic": [
+      "logistic_00"
+    ]
+  },
+  "time_holdout": {
+    "phytoode": [
+      "phytoode_08",
+      "phytoode_11"
+    ],
+    "latent_ode": [
+      "latent_ode_00",
+      "latent_ode_01"
+    ],
+    "logistic_pinn": [
+      "logistic_pinn_15",
+      "logistic_pinn_14"
+    ],
+    "lstm": [
+      "lstm_00",
+      "lstm_01"
+    ],
+    "rf": [
+      "rf_00",
+      "rf_01"
+    ],
+    "logistic": [
+      "logistic_00"
+    ]
+  }
+}

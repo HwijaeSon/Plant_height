@@ -1,0 +1,45 @@
+{
+  "model": "logistic",
+  "parameters": [
+    {
+      "genotype": "Col-0",
+      "r_per_hour": 0.021089633671767048,
+      "K_normalized": 1.9999999999999998,
+      "initial_fraction": 0.039604361264697595,
+      "success": true,
+      "cost": 0.0003046563034511779
+    },
+    {
+      "genotype": "hy5",
+      "r_per_hour": 0.035601340069840885,
+      "K_normalized": 0.9874195067423462,
+      "initial_fraction": 0.22819752401291057,
+      "success": true,
+      "cost": 0.005787956532653332
+    },
+    {
+      "genotype": "MLB",
+      "r_per_hour": 0.015016470422919571,
+      "K_normalized": 1.9999999999999978,
+      "initial_fraction": 0.03808826096758618,
+      "success": true,
+      "cost": 0.0007551134156099071
+    },
+    {
+      "genotype": "EMS57",
+      "r_per_hour": 0.07016239172828614,
+      "K_normalized": 0.7288210135205829,
+      "initial_fraction": 0.1803899159259658,
+      "success": true,
+      "cost": 0.007100156892978647
+    },
+    {
+      "genotype": "phyAB",
+      "r_per_hour": 0.0533419877907464,
+      "K_normalized": 0.9385553908869583,
+      "initial_fraction": 0.18887707251763486,
+      "success": true,
+      "cost": 0.008813870798282825
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "protocol": "replicate",
+  "model": "rf",
+  "config": {
+    "model": "rf",
+    "min_samples_leaf": 1
+  },
+  "seed": 1,
+  "target_type": "split_specific_replicate_means_12L12D_only",
+  "n_params": null,
+  "best_epoch": null,
+  "metrics": {
+    "train": {
+      "rmse": 0.37932918237685354,
+      "relative_error": 7.4737866755196425,
+      "mean_target": 5.075461728381207,
+      "n_curves": 5,
+      "n_scored_group_means": 35,
+      "n_observations": 547,
+      "individual_rmse": 0.8027613430540489,
+      "per_curve_rmse": [
+        0.42192102825009314,
+        0.24145303468038273,
+        0.4772460946874708,
+        0.3255676632049274,
+        0.4304580910613936
+      ]
+    },
+    "val": {
+      "rmse": 0.5009780418607706,
+      "relative_error": 9.895581453278112,
+      "mean_target": 5.062643809523809,
+      "n_curves": 5,
+      "n_scored_group_means": 35,
+      "n_observations": 171,
+      "individual_rmse": 0.7994032477457655,
+      "per_curve_rmse": [
+        0.4564932493390058,
+        0.44164425674534447,
+        0.5077346497451779,
+        0.46268425506755484,
+        0.6363337984067703
+      ]
+    }
+  },
+  "seconds": 0.7375886328518391,
+  "initial_state_sha256": null,
+  "checkpoint_sha256": null,
+  "test_evaluations": 0,
+  "cuda_visible_devices": "8"
+}

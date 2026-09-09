@@ -1,0 +1,636 @@
+{
+  "status": "all_validation_selections_frozen",
+  "frozen_unix": 1788966258.6526804,
+  "target_type": "split_specific_replicate_means_12L12D_only",
+  "prior_test_inspected": true,
+  "selected": {
+    "replicate": {
+      "phytoode": {
+        "config": {
+          "model": "phytoode",
+          "lr": 0.01,
+          "lambda_ode": 50.0,
+          "lambda_k": 0.01,
+          "epochs": 1500,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "phytoode_12",
+        "ranking": [
+          {
+            "candidate": "phytoode_12",
+            "val_mean": 0.29263947543356955,
+            "per_seed_validation": [
+              0.2922862376637164,
+              0.29202582563050117,
+              0.293606363006491
+            ]
+          },
+          {
+            "candidate": "phytoode_11",
+            "val_mean": 0.2930304067488048,
+            "per_seed_validation": [
+              0.2912235651673678,
+              0.2957357544714056,
+              0.29213190060764116
+            ]
+          }
+        ]
+      },
+      "latent_ode": {
+        "config": {
+          "model": "latent_ode",
+          "lr": 0.01,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 1500,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "latent_ode_01",
+        "ranking": [
+          {
+            "candidate": "latent_ode_01",
+            "val_mean": 0.29652949274228785,
+            "per_seed_validation": [
+              0.298935630970188,
+              0.2974736489341113,
+              0.29317919832256417
+            ]
+          },
+          {
+            "candidate": "latent_ode_00",
+            "val_mean": 0.31048045164922294,
+            "per_seed_validation": [
+              0.3099797215767898,
+              0.31272688094135603,
+              0.30873475242952303
+            ]
+          }
+        ]
+      },
+      "logistic_pinn": {
+        "config": {
+          "model": "logistic_pinn",
+          "lr": 0.003,
+          "lambda_ode": 50.0,
+          "lambda_k": 0.01,
+          "epochs": 1500,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "logistic_pinn_04",
+        "ranking": [
+          {
+            "candidate": "logistic_pinn_04",
+            "val_mean": 0.3038820644181439,
+            "per_seed_validation": [
+              0.3013729899638139,
+              0.3046965122117424,
+              0.3055766910788755
+            ]
+          },
+          {
+            "candidate": "logistic_pinn_13",
+            "val_mean": 0.30395577324548856,
+            "per_seed_validation": [
+              0.29983263882240696,
+              0.30666189613206973,
+              0.3053727847819889
+            ]
+          }
+        ]
+      },
+      "lstm": {
+        "config": {
+          "model": "lstm",
+          "lr": 0.01,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 1500,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "lstm_01",
+        "ranking": [
+          {
+            "candidate": "lstm_01",
+            "val_mean": 0.28770785138015137,
+            "per_seed_validation": [
+              0.2964412175737488,
+              0.271329953729223,
+              0.29535238283748233
+            ]
+          },
+          {
+            "candidate": "lstm_00",
+            "val_mean": 0.3045615362475575,
+            "per_seed_validation": [
+              0.3073549278687112,
+              0.30943916028271196,
+              0.2968905205912494
+            ]
+          }
+        ]
+      },
+      "rf": {
+        "config": {
+          "model": "rf",
+          "min_samples_leaf": 1
+        },
+        "selected_candidate": "rf_00",
+        "ranking": [
+          {
+            "candidate": "rf_00",
+            "val_mean": 0.4723582237254047,
+            "per_seed_validation": [
+              0.5009780418607706,
+              0.4476129075121533,
+              0.46848372180329034
+            ]
+          },
+          {
+            "candidate": "rf_01",
+            "val_mean": 0.8613461227125295,
+            "per_seed_validation": [
+              0.8884721293204174,
+              0.8406939940938937,
+              0.8548722447232773
+            ]
+          }
+        ]
+      },
+      "logistic": {
+        "config": {
+          "model": "logistic"
+        },
+        "selected_candidate": "logistic_00",
+        "ranking": [
+          {
+            "candidate": "logistic_00",
+            "val_mean": 0.40841583818574395,
+            "per_seed_validation": [
+              0.40841583818574395
+            ]
+          }
+        ]
+      },
+      "latent_ode_matched": {
+        "config": {
+          "model": "latent_ode",
+          "lr": 0.01,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 1500,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "latent_ode_01",
+        "selection_basis": "All selected PhytoODE settings with both physics coefficients zero."
+      }
+    },
+    "time_holdout": {
+      "phytoode": {
+        "config": {
+          "model": "phytoode",
+          "lr": 0.01,
+          "lambda_ode": 5.0,
+          "lambda_k": 0.1,
+          "epochs": 1500,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "phytoode_11",
+        "ranking": [
+          {
+            "candidate": "phytoode_11",
+            "val_mean": 0.26845917249619905,
+            "per_seed_validation": [
+              0.27453088153322025,
+              0.26705114824170006,
+              0.2637954877136769
+            ]
+          },
+          {
+            "candidate": "phytoode_08",
+            "val_mean": 0.2837760525492439,
+            "per_seed_validation": [
+              0.27410829463898756,
+              0.2939726811038039,
+              0.28324718190494014
+            ]
+          }
+        ]
+      },
+      "latent_ode": {
+        "config": {
+          "model": "latent_ode",
+          "lr": 0.003,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 1500,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "latent_ode_00",
+        "ranking": [
+          {
+            "candidate": "latent_ode_00",
+            "val_mean": 0.2824607123657358,
+            "per_seed_validation": [
+              0.2652289022339551,
+              0.28766095062271285,
+              0.29449228424053936
+            ]
+          },
+          {
+            "candidate": "latent_ode_01",
+            "val_mean": 0.2908035390618488,
+            "per_seed_validation": [
+              0.30536344696158757,
+              0.2827293665644023,
+              0.2843178036595566
+            ]
+          }
+        ]
+      },
+      "logistic_pinn": {
+        "config": {
+          "model": "logistic_pinn",
+          "lr": 0.01,
+          "lambda_ode": 500.0,
+          "lambda_k": 0.1,
+          "epochs": 1500,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "logistic_pinn_15",
+        "ranking": [
+          {
+            "candidate": "logistic_pinn_15",
+            "val_mean": 0.2886674818118666,
+            "per_seed_validation": [
+              0.28087153793086717,
+              0.30245715836610765,
+              0.28267374913862486
+            ]
+          },
+          {
+            "candidate": "logistic_pinn_14",
+            "val_mean": 0.29029775428315857,
+            "per_seed_validation": [
+              0.2931744537469276,
+              0.2964799722037152,
+              0.281238836898833
+            ]
+          }
+        ]
+      },
+      "lstm": {
+        "config": {
+          "model": "lstm",
+          "lr": 0.003,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 1500,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "lstm_00",
+        "ranking": [
+          {
+            "candidate": "lstm_00",
+            "val_mean": 0.2922103155821492,
+            "per_seed_validation": [
+              0.297478925569133,
+              0.2830085693286907,
+              0.2961434518486239
+            ]
+          },
+          {
+            "candidate": "lstm_01",
+            "val_mean": 0.33695299978574994,
+            "per_seed_validation": [
+              0.4279923261094636,
+              0.30150980195561894,
+              0.2813568712921674
+            ]
+          }
+        ]
+      },
+      "rf": {
+        "config": {
+          "model": "rf",
+          "min_samples_leaf": 1
+        },
+        "selected_candidate": "rf_00",
+        "ranking": [
+          {
+            "candidate": "rf_00",
+            "val_mean": 0.6263673278126206,
+            "per_seed_validation": [
+              0.6299269473751895,
+              0.5866417577132294,
+              0.6625332783494429
+            ]
+          },
+          {
+            "candidate": "rf_01",
+            "val_mean": 1.265086433587597,
+            "per_seed_validation": [
+              1.2804585589398656,
+              1.2454379271521365,
+              1.2693628146707894
+            ]
+          }
+        ]
+      },
+      "logistic": {
+        "config": {
+          "model": "logistic"
+        },
+        "selected_candidate": "logistic_00",
+        "ranking": [
+          {
+            "candidate": "logistic_00",
+            "val_mean": 0.45108924833912345,
+            "per_seed_validation": [
+              0.45108924833912345
+            ]
+          }
+        ]
+      },
+      "latent_ode_matched": {
+        "config": {
+          "model": "latent_ode",
+          "lr": 0.01,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "epochs": 1500,
+          "weight_decay": 0.0001
+        },
+        "selected_candidate": "latent_ode_01",
+        "selection_basis": "All selected PhytoODE settings with both physics coefficients zero."
+      }
+    }
+  },
+  "runs": [
+    {
+      "protocol": "replicate",
+      "model": "phytoode",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed1",
+      "result_sha256": "b8749173e1c7f5056016763d5d91c5564f5bb1cca74bcc3486164f9d337c6756"
+    },
+    {
+      "protocol": "replicate",
+      "model": "phytoode",
+      "seed": 2,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed2",
+      "result_sha256": "fa63d0d0f1bd1407a408680ccd4a6a527be519dabbb285174639fc0d35906a9e"
+    },
+    {
+      "protocol": "replicate",
+      "model": "phytoode",
+      "seed": 3,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed3",
+      "result_sha256": "2fb54011136f89404184838b4a86fb5d3a03309fd7b816a7e9a9c67de55960e9"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1",
+      "result_sha256": "f79ae1d660a5be38ae7c4aa0b810e071aaa30e58f6a0d41a8b6bd15a29835e9d"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode",
+      "seed": 2,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2",
+      "result_sha256": "50c12f2adb5ceb2fe7929a4ca3d5e54a8a37157d274ff6a6de482fcbca020fcb"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode",
+      "seed": 3,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3",
+      "result_sha256": "d11f4116973876ec60f25ffad2a73a62674bd39b29b2d9efdfd67a43174f08ca"
+    },
+    {
+      "protocol": "replicate",
+      "model": "logistic_pinn",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed1",
+      "result_sha256": "15a05d1bd7e2a84f6d67d6eec9c44b57b32dd23afa88e7cc99dacc5febd9d3b5"
+    },
+    {
+      "protocol": "replicate",
+      "model": "logistic_pinn",
+      "seed": 2,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed2",
+      "result_sha256": "b371d6145453d1294460cea155b0df0911cfb7120b0bf170c0e846c5008667d4"
+    },
+    {
+      "protocol": "replicate",
+      "model": "logistic_pinn",
+      "seed": 3,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed3",
+      "result_sha256": "f5f25e9373ced048d66e6c676254a00eccf62e04ab8dc98650dacc455a6a2645"
+    },
+    {
+      "protocol": "replicate",
+      "model": "lstm",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed1",
+      "result_sha256": "0d1c5c9265162be02aeee849d84f9fd725cd26c1597b4a190c99a28ec9abe31c"
+    },
+    {
+      "protocol": "replicate",
+      "model": "lstm",
+      "seed": 2,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed2",
+      "result_sha256": "c6eaed5ef2e2ebfdef3bc23bd3934680268e6db50d2ebe339213c7e00995a082"
+    },
+    {
+      "protocol": "replicate",
+      "model": "lstm",
+      "seed": 3,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed3",
+      "result_sha256": "2ef292c5c0d32bdbd2cefa84de5f6d7faeb921315b424cd6a69815738abaa9a9"
+    },
+    {
+      "protocol": "replicate",
+      "model": "rf",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed1",
+      "result_sha256": "7c71b294c27fadeaf6189ac14b7634fc7455e22afc3e8e1a2be08438f6a0f447"
+    },
+    {
+      "protocol": "replicate",
+      "model": "rf",
+      "seed": 2,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed2",
+      "result_sha256": "f272711e11c329006c3849674aad72d3f0c0bada398e6e482cea2e9a1c77d2b7"
+    },
+    {
+      "protocol": "replicate",
+      "model": "rf",
+      "seed": 3,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed3",
+      "result_sha256": "18442ae0fee82718a8235665c9d7f1420c6055ad60ca92dc6362e1c59b514e72"
+    },
+    {
+      "protocol": "replicate",
+      "model": "logistic",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_00/seed1",
+      "result_sha256": "ece3147aae55f297093b4fc9b5b946516f9e494d31c8cc477fc25f1acd33ef76"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1",
+      "result_sha256": "f79ae1d660a5be38ae7c4aa0b810e071aaa30e58f6a0d41a8b6bd15a29835e9d"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 2,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2",
+      "result_sha256": "50c12f2adb5ceb2fe7929a4ca3d5e54a8a37157d274ff6a6de482fcbca020fcb"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 3,
+      "path": "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3",
+      "result_sha256": "d11f4116973876ec60f25ffad2a73a62674bd39b29b2d9efdfd67a43174f08ca"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "phytoode",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/phytoode_11/seed1",
+      "result_sha256": "57ea3a4e6da92297ade35e7313ed1ac116852270eb44d259de1e6cb9d21bbb4c"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "phytoode",
+      "seed": 2,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/phytoode_11/seed2",
+      "result_sha256": "f2f943c3888d61ea30b3fc4085c2604da3d6d6c2702c0a353a304e5458516e09"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "phytoode",
+      "seed": 3,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/phytoode_11/seed3",
+      "result_sha256": "ac7298ab2ae2924f45645ae9ff35a4fd8580c3d3323fce6943c854e0c7c500a0"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/latent_ode_00/seed1",
+      "result_sha256": "3f930d3e94bc7a0be4603f3d7b412ddbb6923ee28650e1e759a374d7a1453997"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode",
+      "seed": 2,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/latent_ode_00/seed2",
+      "result_sha256": "b703853d8b584947ca39950ea597d5fb548088a0d567001d8796d49ef13b803e"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode",
+      "seed": 3,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/latent_ode_00/seed3",
+      "result_sha256": "d946aea34ef3702fbd932068174590c57fab490945e7efb45719888a09d4a28d"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "logistic_pinn",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/logistic_pinn_15/seed1",
+      "result_sha256": "51f86d8fe8da4ca67ae6a66dd9d39c7710f11cc4710f734f47427740c4f068c6"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "logistic_pinn",
+      "seed": 2,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/logistic_pinn_15/seed2",
+      "result_sha256": "5f5487fe9d6a3055ec2b5977ffba1cad02560da986340f94ca24003c746a76f5"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "logistic_pinn",
+      "seed": 3,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/logistic_pinn_15/seed3",
+      "result_sha256": "cb31e42e56f75fc5a3e449d2fef1e17c6f1aa2c3284e2318d1a49bf2588806a7"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "lstm",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/lstm_00/seed1",
+      "result_sha256": "eb977132f026377e402663436d405671d206b04e5fa0533c290cf3b6403bc8c1"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "lstm",
+      "seed": 2,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/lstm_00/seed2",
+      "result_sha256": "6be211b5962abb8e776ae8bd767b4dea449f8c008074144f26f15e94830a81d0"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "lstm",
+      "seed": 3,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/lstm_00/seed3",
+      "result_sha256": "7ec8da7515a3a17f851d9721a28514493e4ac3eafadb4cc8baedd49eb7b19ecf"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "rf",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/rf_00/seed1",
+      "result_sha256": "532ea3b2feca01208a5766fb415c3372f7347218adfb9ced0eb0717fdba85bc7"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "rf",
+      "seed": 2,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/rf_00/seed2",
+      "result_sha256": "6deb9d0dac25abbffe2abbf655247050a52577ea708b01e907d7d29ee61d61d0"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "rf",
+      "seed": 3,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/rf_00/seed3",
+      "result_sha256": "732445b36cb781ff4f0f60befacc75dd298819a1ee5a5e57261a603626fadbe4"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "logistic",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/logistic_00/seed1",
+      "result_sha256": "0556412645e9cfcdd8608af8b2c2aa2661949ec4abdba8b075057a99f36be609"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode_matched",
+      "seed": 1,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/latent_ode_01/seed1",
+      "result_sha256": "d46ce1574b6f9e2c968454efe3cd2b04a18d6845956f50b93da766cb32c126b2"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode_matched",
+      "seed": 2,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/latent_ode_01/seed2",
+      "result_sha256": "4d67cd2ce57d1af038da059f2b7942d29869050076b388a52b3c02dcd5339480"
+    },
+    {
+      "protocol": "time_holdout",
+      "model": "latent_ode_matched",
+      "seed": 3,
+      "path": "hypocotyl/results/single_condition_20260909/time_holdout/trials/latent_ode_01/seed3",
+      "result_sha256": "10ea58afcadf23a1aaf54eb3de4e8d0bcf2aa70959a970b775ac4a2bb6456cd7"
+    }
+  ]
+}

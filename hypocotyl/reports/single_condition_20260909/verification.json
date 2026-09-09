@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "condition": "12L12D",
+  "environmental_feature_count": 0,
+  "test_targets_loaded": false,
+  "replicate_means_used": true,
+  "phenotype_imputation": false,
+  "derivative_max_abs_difference": 5.619124457252015e-16,
+  "logistic_solution_checked": true,
+  "models": {
+    "phytoode": {
+      "n_parameters": 1055,
+      "backward_finite": true
+    },
+    "latent_ode": {
+      "n_parameters": 1055,
+      "backward_finite": true
+    },
+    "logistic_pinn": {
+      "n_parameters": 1359,
+      "backward_finite": true
+    },
+    "lstm": {
+      "n_parameters": 2293,
+      "backward_finite": true
+    }
+  },
+  "protocols": {
+    "replicate": {
+      "counts": {
+        "train": 547,
+        "val": 171,
+        "test": 225
+      },
+      "mean_targets": {
+        "train": 35,
+        "val": 35,
+        "test": 35
+      },
+      "height_scale_mm": 13.719,
+      "train_val_means_verified": true,
+      "missing_target_gradient_zero": true
+    },
+    "time_holdout": {
+      "counts": {
+        "train": 397,
+        "val": 125,
+        "test": 257
+      },
+      "mean_targets": {
+        "train": 25,
+        "val": 25,
+        "test": 10
+      },
+      "height_scale_mm": 13.719,
+      "train_val_means_verified": true,
+      "missing_target_gradient_zero": true
+    }
+  }
+}

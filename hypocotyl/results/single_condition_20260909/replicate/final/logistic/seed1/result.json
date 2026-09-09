@@ -1,0 +1,59 @@
+{
+  "protocol": "replicate",
+  "model": "logistic",
+  "seed": 1,
+  "metrics": {
+    "train": {
+      "rmse": 0.37019486936741247,
+      "relative_error": 7.293816586131253,
+      "mean_target": 5.075461728381207,
+      "n_curves": 5,
+      "n_scored_group_means": 35,
+      "n_observations": 547,
+      "individual_rmse": 0.795654912754163,
+      "per_curve_rmse": [
+        0.3401362905522095,
+        0.39689954649062076,
+        0.1624925719245151,
+        0.43912894682839293,
+        0.5123169910413239
+      ]
+    },
+    "val": {
+      "rmse": 0.40841583818574395,
+      "relative_error": 8.067244182129404,
+      "mean_target": 5.062643809523809,
+      "n_curves": 5,
+      "n_scored_group_means": 35,
+      "n_observations": 171,
+      "individual_rmse": 0.7585278231344832,
+      "per_curve_rmse": [
+        0.18997386626145116,
+        0.5298224068285379,
+        0.18428140776714672,
+        0.5380367126239542,
+        0.5999647974476296
+      ]
+    },
+    "test": {
+      "rmse": 0.48517517353104206,
+      "relative_error": 9.605488607466036,
+      "mean_target": 5.051020238095239,
+      "n_curves": 5,
+      "n_scored_group_means": 35,
+      "n_observations": 225,
+      "individual_rmse": 0.8014285917364927,
+      "per_curve_rmse": [
+        0.5055112299755785,
+        0.3991121812340406,
+        0.17864029978319612,
+        0.8815428939094573,
+        0.4610692627529378
+      ]
+    }
+  },
+  "target_type": "split_specific_replicate_means_12L12D_only",
+  "test_evaluations": 1,
+  "selection_sha256": "13a96f5de6fcbb056261b62df41791292fd953313eaa41000e9623c3e88be58f",
+  "source_result_sha256": "ece3147aae55f297093b4fc9b5b946516f9e494d31c8cc477fc25f1acd33ef76"
+}

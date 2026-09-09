@@ -1,0 +1,37 @@
+{
+  "protocol": "time_holdout",
+  "condition": "12L12D",
+  "counts": {
+    "train": 397,
+    "val": 125,
+    "test": 257
+  },
+  "mean_target_counts": {
+    "train": 25,
+    "val": 25,
+    "test": 10
+  },
+  "hours": {
+    "train": [
+      0,
+      12,
+      24,
+      48,
+      72
+    ],
+    "val": [
+      0,
+      12,
+      24,
+      48,
+      72
+    ],
+    "test": [
+      36,
+      60
+    ]
+  },
+  "split_seed": 20260909,
+  "target_type": "split_specific_replicate_means",
+  "height_scale_mm": 13.719
+}

@@ -1,0 +1,120 @@
+{
+  "condition": "12L12D",
+  "excluded_condition": "cR",
+  "input_features": [
+    "genotype",
+    "elapsed_time"
+  ],
+  "target_type": "split_specific_replicate_means",
+  "prior_test_inspected": true,
+  "original_partitions": "Retained without reassignment; filter sheet == 12L12D.",
+  "source_sha256": {
+    "data/processed/splits/replicate/train.csv": "d573504517a817cad2fba950d15783869da802b02949f9fc2080a900b17acd0d",
+    "data/processed/splits/replicate/val.csv": "5b857607545f44d9a7ed8767b195369e411dc399152e96a7ab64d0981390e0bd",
+    "data/processed/splits/replicate/test.csv": "a6f0cbb552ea9dbde05f9ac45eec66f4c6eaeac54b709534881604f9bb70de65",
+    "data/processed/splits/time_holdout/train.csv": "b1ad53a6339c046a4d96e6057e6c6764d8a67ce858b90ac781905af82d30c44a",
+    "data/processed/splits/time_holdout/val.csv": "235c74fe5ef039e49a7584353e2ef2f97d56e7d77e89b7723f045b2da2e0a869",
+    "data/processed/splits/time_holdout/test.csv": "6ccc7b24d5ba38be5b411e48920c5aeca27adc6b6f28e8ca12483378a267eea0"
+  },
+  "protocols": {
+    "replicate": {
+      "protocol": "replicate",
+      "condition": "12L12D",
+      "counts": {
+        "train": 547,
+        "val": 171,
+        "test": 225
+      },
+      "mean_target_counts": {
+        "train": 35,
+        "val": 35,
+        "test": 35
+      },
+      "hours": {
+        "train": [
+          0,
+          12,
+          24,
+          36,
+          48,
+          60,
+          72
+        ],
+        "val": [
+          0,
+          12,
+          24,
+          36,
+          48,
+          60,
+          72
+        ],
+        "test": [
+          0,
+          12,
+          24,
+          36,
+          48,
+          60,
+          72
+        ]
+      },
+      "split_seed": 20260909,
+      "target_type": "split_specific_replicate_means",
+      "height_scale_mm": 13.719
+    },
+    "time_holdout": {
+      "protocol": "time_holdout",
+      "condition": "12L12D",
+      "counts": {
+        "train": 397,
+        "val": 125,
+        "test": 257
+      },
+      "mean_target_counts": {
+        "train": 25,
+        "val": 25,
+        "test": 10
+      },
+      "hours": {
+        "train": [
+          0,
+          12,
+          24,
+          48,
+          72
+        ],
+        "val": [
+          0,
+          12,
+          24,
+          48,
+          72
+        ],
+        "test": [
+          36,
+          60
+        ]
+      },
+      "split_seed": 20260909,
+      "target_type": "split_specific_replicate_means",
+      "height_scale_mm": 13.719
+    }
+  },
+  "files_sha256": {
+    "data/processed/single_condition_20260909/replicate/config.json": "f0bfeac257851ed184d9f2b9e97493d0f23e9ec0ffc2e709c809e778c30521cc",
+    "data/processed/single_condition_20260909/replicate/test.csv": "be3200c7cb39ddc7d6183057d34efb19387566379edef41e6170bfcbc003e9b0",
+    "data/processed/single_condition_20260909/replicate/test_means.csv": "b90d1ec71a986cac4ca0b6cc55ec6fe3034a5d116fa7f17c665eed3a58c8a1c9",
+    "data/processed/single_condition_20260909/replicate/train.csv": "0af70919d2757ee882e6be5c4333835e72f3d101e7314056706724680c91b5b8",
+    "data/processed/single_condition_20260909/replicate/train_means.csv": "d65a810ef8a6ed0f67b26ded6460535204c58f6920009e555ce130a2f7e68231",
+    "data/processed/single_condition_20260909/replicate/val.csv": "595853bb649856643a4fd76609748207353cd3f6003d85dac51d0608f542f096",
+    "data/processed/single_condition_20260909/replicate/val_means.csv": "d9c379ae2eb936e5520086869ea4fbed62bbbc3b21cd764310a672339e6e2e54",
+    "data/processed/single_condition_20260909/time_holdout/config.json": "80c7ae391ce9e5d2fb255a3fa58ea55b931025b9c364caf8ff6af5fa8ea62c07",
+    "data/processed/single_condition_20260909/time_holdout/test.csv": "c9706b3bd9e4d70343be529fd5c682483c65bb61754faf042f9a77ab15b8943f",
+    "data/processed/single_condition_20260909/time_holdout/test_means.csv": "378b78f36972cadd588a2a25b1f7acd2d845ce0a7e4a87d81a756c60ee816a1f",
+    "data/processed/single_condition_20260909/time_holdout/train.csv": "5a3b032de3d01d647f33bcda64fd795da54fa6bd8f3570073e6be893241f4605",
+    "data/processed/single_condition_20260909/time_holdout/train_means.csv": "b0aa5f3f3af6dd71e9673a15c0985f61f3ab4bab6432c9508748f4b25370833f",
+    "data/processed/single_condition_20260909/time_holdout/val.csv": "4e7a1d33a665162405bd426c6cf3d01c0458f0fcbf29f9523175fc63f972f12e",
+    "data/processed/single_condition_20260909/time_holdout/val_means.csv": "64702a0c4f37a3335f7309d8c753afadbbdb0d70d646002325182b8456cc09e2"
+  }
+}

@@ -1,49 +1,48 @@
-\subsection{Hypocotyl growth: individual observations under light regimes}
+\subsection{Hypocotyl growth: sparse replicate means under one fixed regime}
 \label{subsec:hypocotylresults}
 
-The author-collected experiment tests environmental-driver substitution and learning from incomplete replicate observations. Temperature was fixed at 23~$^{\circ}$C, while the known illumination schedule supplied the environmental input. All models were trained directly on the 1,052 measured training lengths. Table~\ref{tab:hypocotyl_replicate} reports errors against the 330 validation and 436 test measurements individually, without constructing replicate-mean targets. The same seven observed times and ten genotype--condition combinations occur in each partition.
+The author-collected experiment evaluates prediction of genotype-level hypocotyl growth from sparse replicate snapshots under one fixed regime. Only the 943 measurements under 12L12D at 23~$^{\circ}$C are retained. The models receive genotype and elapsed time, with no light or temperature inputs. The 547 training, 171 validation, and 225 test measurements form 35 separate replicate-mean targets in each partition. Table~\ref{tab:hypocotyl_replicate} reports the mean of five genotype-curve RMSEs against these split-specific means. These scores assess mean growth and are distinct from errors against individual lengths.
 
-Validation selected a 1,160-parameter \model{} with latent dimension 8, genotype embedding 4, vector-field width 16 and depth 1, decoder width 16, and encoder width 8. The learning rate was 0.01, weight decay 0.0001, and $(\lambda_{\mathrm{ODE}},\lambda_K)=(0.0161777,0.000813047)$. All neural candidates used 2,000 epochs and validation-selected checkpoints.
+Validation selected a learning rate of 0.01 and $(\lambda_{\mathrm{ODE}},\lambda_K)=(50,0.01)$ for the 1,055-parameter \model{}. All neural candidates used 1,500 epochs and validation-selected checkpoints.
 
-\model{} achieved test RMSE / relative RMSE of $0.7788\pm0.0061$~mm / $13.72\pm0.11\%$, compared with $0.7815\pm0.0045$~mm / $13.77\pm0.08\%$ for the independently tuned no-physics latent ODE. The smallest mean test RMSE was attained by LSTM-NN ($0.7741$~mm / $13.64\%$).
+\model{} achieved test RMSE / relative RMSE of $0.3646\pm0.0079$~mm / $7.22\pm0.16\%$, compared with $0.3679\pm0.0070$~mm / $7.28\pm0.14\%$ for the independently selected no-physics latent ODE. The smallest mean test RMSE was attained by Logistic-PINN ($0.3607$~mm / $7.14\%$).
 
 \begin{table}[t]
 \centering
 \small
-\caption{Hypocotyl replicate-group holdout: individual-observation RMSE (mm) / relative RMSE (\%). Each measured cell is scored separately. Stochastic models report mean $\pm$ sample SD across three seeds; process ODEs are single fits. Bold marks the smallest unrounded mean in each split. The matched control uses the selected PhytoODE architecture and training settings with both physics coefficients zero.}
+\caption{12L12D-only replicate-group holdout: mean genotype-curve RMSE (mm) / relative RMSE (\%), evaluated against split-specific replicate means. Stochastic methods report mean $\pm$ sample SD over three seeds; the logistic ODE is fitted once. Bold denotes the smallest unrounded mean in each split. All models use genotype and elapsed time only. The matched control shares the selected PhytoODE settings with both physics coefficients zero.}
 \label{tab:hypocotyl_replicate}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
 Model & Train & Validation & Test \\
 \midrule
-PhytoODE & $0.754\pm0.007 / 13.16\pm0.11$ & $0.718\pm0.001 / 12.33\pm0.03$ & $0.779\pm0.006 / 13.72\pm0.11$ \\
-Latent ODE (no physics) & $0.755\pm0.002 / 13.19\pm0.03$ & $\mathbf{0.716\pm0.001 / 12.29\pm0.02}$ & $0.782\pm0.005 / 13.77\pm0.08$ \\
-Light-PINN & $0.767\pm0.005 / 13.40\pm0.08$ & $0.726\pm0.004 / 12.47\pm0.08$ & $0.793\pm0.005 / 13.97\pm0.08$ \\
-LSTM-NN & $0.739\pm0.002 / 12.91\pm0.04$ & $0.719\pm0.006 / 12.35\pm0.10$ & $\mathbf{0.774\pm0.003 / 13.64\pm0.05}$ \\
-Random forest & $\mathbf{0.731\pm0.000 / 12.77\pm0.00}$ & $0.728\pm0.000 / 12.51\pm0.01$ & $0.778\pm0.001 / 13.71\pm0.01$ \\
-Light-logistic ODE & $0.821 / 14.34$ & $0.802 / 13.77$ & $0.844 / 14.86$ \\
-Logistic ODE & $0.807 / 14.10$ & $0.771 / 13.24$ & $0.827 / 14.57$ \\
+PhytoODE & $0.191\pm0.002 / 3.76\pm0.04$ & $0.293\pm0.001 / 5.78\pm0.02$ & $0.365\pm0.008 / 7.22\pm0.16$ \\
+Latent ODE (no physics) & $0.190\pm0.007 / 3.75\pm0.15$ & $0.297\pm0.003 / 5.86\pm0.06$ & $0.368\pm0.007 / 7.28\pm0.14$ \\
+Logistic-PINN & $0.219\pm0.013 / 4.32\pm0.26$ & $0.304\pm0.002 / 6.00\pm0.04$ & $\mathbf{0.361\pm0.014 / 7.14\pm0.27}$ \\
+LSTM-NN & $\mathbf{0.137\pm0.029 / 2.71\pm0.58}$ & $\mathbf{0.288\pm0.014 / 5.68\pm0.28}$ & $0.361\pm0.007 / 7.15\pm0.14$ \\
+Random forest & $0.364\pm0.013 / 7.17\pm0.26$ & $0.472\pm0.027 / 9.33\pm0.53$ & $0.452\pm0.014 / 8.95\pm0.28$ \\
+Logistic ODE & $0.370 / 7.29$ & $0.408 / 8.07$ & $0.485 / 9.61$ \\
 \midrule
-Latent ODE (matched) & $0.751\pm0.005 / 13.12\pm0.09$ & $0.718\pm0.002 / 12.32\pm0.04$ & $0.777\pm0.005 / 13.69\pm0.09$ \\
+Latent ODE (matched) & $0.190\pm0.007 / 3.75\pm0.15$ & $0.297\pm0.003 / 5.86\pm0.06$ & $0.368\pm0.007 / 7.28\pm0.14$ \\
 \bottomrule
 \end{tabular}}
 \end{table}
 
 
-The control with the same architecture, optimizer settings, initial weights, schedule, and checkpoint rule, but both physics coefficients zero, obtained $0.7769\pm0.0049$~mm / $13.69\pm0.09\%$. \model{} had 0.24\% higher mean test RMSE than this control. This comparison measures the combined contribution of the derivative and capacity penalties. The independently tuned latent ODE has the same number of screening and confirmation fits as \model{}; its configuration is selected separately by validation.
+The matched control with both physics coefficients zero obtained $0.3679\pm0.0070$~mm / $7.28\pm0.14\%$. \model{} had 0.89\% lower mean test RMSE. This comparison changes only the derivative and capacity penalties while retaining the architecture, learning rate, initial weights, schedule, and checkpoint rule. It separates their combined effect from independent learning-rate selection.
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.96\linewidth]{figures/hypocotyl_light_replicates.pdf}
-\caption{Hypocotyl predictions for Col-0 and MLB under 12L12D and continuous red light (cR). Every black point is one held-out measured length; observations are not averaged. Small horizontal offsets separate overlapping points and do not change their recorded times. Colored curves show the mean prediction across three training seeds, except for the single-fit process ODEs. Gray shading indicates darkness in 12L12D. All seven times are represented in training and validation using separate replicate groups. Each genotype--condition curve is fitted to individual measurements, without inferring longitudinal plant identities. The matched loss-removal control is reported in Table~\ref{tab:hypocotyl_replicate}; all five genotypes are shown in the accompanying full-panel figure.}
+\includegraphics[width=0.96\linewidth]{figures/hypocotyl_single_condition.pdf}
+\caption{Hypocotyl growth predictions for Col-0 and MLB in the 12L12D-only replicate-group holdout. Black points are test replicate means, which are the primary evaluation targets; faint gray points show the contributing individual measurements. Small horizontal offsets separate individual points without changing their recorded times. Colored curves average predictions over three training seeds, except the single-fit logistic ODE. All models receive genotype and elapsed time only. All seven observed times are represented in training and validation through separate replicate groups. The matched no-physics control is reported in Table~\ref{tab:hypocotyl_replicate}; the accompanying full-panel figure includes all five genotypes.}
 \label{fig:hypocotyllight}
 \end{figure}
 
-This experiment demonstrates a shared growth-prediction framework across species, organs, scales, and environmental drivers. Its seven measurement times remain sparse relative to the continuous latent dynamics, and unequal replicate counts and missing cells are handled by evaluating residuals only where measurements exist. Observation-level scoring retains the variation among measured plants. Since individual covariates are unavailable, plants with the same genotype, lighting regime, and observation time receive the same predicted length; the experiment does not establish individualized trajectory recovery.
+This experiment extends the framework to an author-collected organ-growth dataset whose measurements are sparse in time and assembled from unequal numbers of replicate plants. The model shares parameters across five genotype curves and uses the ordinary logistic reference without an environmental input stream. Missing cells are omitted when constructing each split-specific mean, and missing time groups contribute no data residual. The experiment demonstrates prediction of mean trajectories from replicate snapshots; it does not establish recovery of individual plant trajectories, unseen-genotype generalization, or transfer to another environment.
 
-The original workbook, cell-level provenance, extraction checks, and fixed partitions form a reproducible author-collected dataset package. Both light regimes and all five genotypes are represented during training. A single temperature cannot identify temperature dependence, and the unrecorded 12L12D spectrum prevents separation of spectral and photoperiod effects. The phase-specific logistic rates provide a compact reference, while 12-h sampling and unknown plant identities and batch structure limit inference about circadian timing and independent-cohort generalization.
+As a secondary check against the individual test lengths, pooled RMSE was $0.7377$~mm for \model{} and $0.7394$~mm for the independently selected no-physics latent ODE. The difference from the primary metric reflects both replicate variation and the different aggregation rules. The original workbook, cell-level provenance, filtered partitions, and analysis code form an inspectable dataset package. Independently documented batches and confirmed plant identities would be needed for stronger biological generalization claims.
 
-Halving the integration step from 3 to 1.5~h while preserving the encoder inputs changed \model{} predictions by at most 0.000010~mm across the three seeds.
+Halving the integration step from 3 to 1.5~h with fixed encoder inputs changed \model{} predictions by at most 0.000122~mm across the three seeds.
 
 \FloatBarrier

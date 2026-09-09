@@ -15,7 +15,7 @@ The files are organized by dataset:
 │   ├── code/       # preprocessing, baselines, training, plotting
 │   └── results/    # 3-seed paper outputs, fitted ODE parameters, figures
 ├── maize/          # Sweet et al. (2024) data and 3-seed model comparison
-├── hypocotyl/      # original light-regime snapshots and replicate-group evaluation
+├── hypocotyl/      # author-collected snapshots and a 12L12D-only evaluation
 ├── paper/          # LaTeX manuscript, bibliography, and final figures
 └── legacy/         # exploratory and superseded experiments (git-ignored)
 ```
@@ -25,12 +25,14 @@ year-held-out split across 19 genotypes. Arabidopsis uses a plant-held-out
 split across nine genotypes and two temperature regimes, with only four stem
 measurements per plant. The latter is a low-time-resolution external
 validation, not an unseen-genotype or unseen-temperature test.
-The additional [hypocotyl experiment](hypocotyl/README.md) uses 1,818 snapshot
-measurements across five genotypes, two light regimes and seven times at
-23°C. It compares seven methods using replicate-group holdout with all seven
-observation times in each partition. There are no verified longitudinal
-plant identifiers; every measured length is a separate training and evaluation target,
-with no phenotype imputation or replicate averaging.
+The additional [hypocotyl experiment](hypocotyl/README.md) currently uses 943
+12L12D snapshot measurements across five genotypes and seven times at 23°C.
+The cR condition is excluded. Six methods receive genotype and elapsed time only,
+with an ordinary logistic reference for PhytoODE and Logistic-PINN. Following the
+restored initial protocol, primary training and evaluation targets are replicate
+means calculated separately within each partition. Missing cells are omitted,
+and missing time groups are not imputed. Individual-length RMSE is reported
+separately. Source-row groups are not verified longitudinal plant identifiers.
 
 ## Environment
 
@@ -98,11 +100,10 @@ a uniform benefit from the ODE-residual term or from coefficient tuning.
   `56.684367 ± 4.369632` relative UAV-height units.
 - Arabidopsis latent Neural ODE (seeds 1--3): test RMSE
   `2.799668 ± 0.016346 cm`.
-- [Light-conditioned hypocotyl results](hypocotyl/reports/individual_observations_20260909/results.md)
-  report the primary replicate evaluation, three-seed comparisons, expanded
-  validation-only PhytoODE tuning, the original independently tuned no-physics
-  baseline, and a control matched to the selected architecture and optimizer.
-  This follow-up uses a previously inspected test partition and unequal search budgets.
+- [12L12D-only hypocotyl results](hypocotyl/reports/single_condition_20260909/results.md)
+  report both holdouts, all three splits, three-seed comparisons, and a matched
+  no-physics control. The restored initial search uses previously inspected
+  partitions and unequal candidate budgets across model families.
 - Prediction figures are restricted to the observed time span; no temporal
   extrapolation is displayed.
 
