@@ -15,7 +15,7 @@ The files are organized by dataset:
 │   ├── code/       # preprocessing, baselines, training, plotting
 │   └── results/    # 3-seed paper outputs, fitted ODE parameters, figures
 ├── maize/          # Sweet et al. (2024) data and 3-seed model comparison
-├── hypocotyl/      # original light-regime snapshots, baselines and time holdout
+├── hypocotyl/      # original light-regime snapshots and replicate-group evaluation
 ├── paper/          # LaTeX manuscript, bibliography, and final figures
 └── legacy/         # exploratory and superseded experiments (git-ignored)
 ```
@@ -27,8 +27,8 @@ measurements per plant. The latter is a low-time-resolution external
 validation, not an unseen-genotype or unseen-temperature test.
 The additional [hypocotyl experiment](hypocotyl/README.md) uses 1,818 snapshot
 measurements across five genotypes, two light regimes and seven times at
-23°C. It compares seven methods using replicate-group holdout and complete
-withholding of 36- and 60-hour observations. There are no verified longitudinal
+23°C. It compares seven methods using replicate-group holdout with all seven
+observation times in each partition. There are no verified longitudinal
 plant identifiers; the primary targets are population-mean curves.
 
 ## Environment
@@ -97,9 +97,11 @@ a uniform benefit from the ODE-residual term or from coefficient tuning.
   `56.684367 ± 4.369632` relative UAV-height units.
 - Arabidopsis latent Neural ODE (seeds 1--3): test RMSE
   `2.799668 ± 0.016346 cm`.
-- [Light-conditioned hypocotyl results](hypocotyl/reports/results.md) report
-  both protocols, three-seed comparisons, independent learning-rate tuning
-  for the no-physics model, and an additional strictly matched control.
+- [Light-conditioned hypocotyl results](hypocotyl/reports/primary_retuning_20260909/results.md)
+  report the primary replicate evaluation, three-seed comparisons, expanded
+  validation-only PhytoODE tuning, the original independently tuned no-physics
+  baseline, and a control matched to the selected architecture and optimizer.
+  This follow-up uses a previously inspected test partition and unequal search budgets.
 - Prediction figures are restricted to the observed time span; no temporal
   extrapolation is displayed.
 

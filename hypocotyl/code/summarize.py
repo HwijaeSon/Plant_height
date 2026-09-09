@@ -187,7 +187,8 @@ def main():
         (report/f'table_{p}.tex').write_text(table(comparison,p))
         plot_predictions(out,selection,p,report/f'predictions_{p}')
     (ROOT/'paper/figures').mkdir(parents=True,exist_ok=True)
-    plot_predictions(out,selection,'time_holdout',ROOT/'paper/figures/hypocotyl_light_interpolation',compact=True)
+    # Historical time-holdout analysis is archived outside the manuscript.
+    plot_predictions(out,selection,'time_holdout',report/'predictions_time_holdout_compact',compact=True)
     pd.DataFrame(paired).to_csv(report/'paired_loss_ablation.csv',index=False)
     pd.DataFrame(refinements).to_csv(report/'integration_refinement.csv',index=False)
     atomic(report/'results_audit.json',dict(status='passed',unique_selected_training_runs=len(audited),

@@ -41,7 +41,6 @@ is retained for provenance and does not independently verify the collection date
 | Protocol | Train measurements | Validation measurements | Test measurements | Test target |
 |---|---:|---:|---:|---|
 | Replicate-group holdout | 1,052 | 330 | 436 | Ten population-mean curves, seven times each |
-| Unseen-time interpolation | 758 | 240 | 505 | Ten population-mean curves at 36 and 60 h |
 
 Source-row groups within genotype are assigned jointly across times and both
 sheets with seed 20260909. This prevents a putative same-row trajectory from
@@ -49,11 +48,7 @@ crossing the primary split, without asserting that row numbers identify plants.
 Partition retries check only whether every group has train/validation/test
 coverage. No height value is used to choose a partition.
 
-The time-holdout protocol trains and validates only at 0, 12, 24, 48 and 72 h.
-All observations at 36 and 60 h are reserved for testing; 315 measurements in
-the primary test partition at the other five times are unused in this protocol.
-The two protocols share a source dataset and are complementary analyses,
-not independent biological replications.
+All seven observation times occur in all three partitions. The manuscript uses this replicate-group evaluation throughout the hypocotyl section.
 
 Only training replicates form training mean targets; validation and test means
 are computed separately. All models receive the same available information.
@@ -62,65 +57,69 @@ is this value divided by the mean of the scored replicate-mean targets, times
 100. Individual-measurement RMSE is also retained, so averaging is explicit.
 Training-seed SD quantifies initialization variability, not biological uncertainty.
 Some means contain only one measurement after partitioning (ranges: train
-1–22, validation 1–7, replicate test 1–9). The withheld-time test means use
-13–33 measurements each. These two test targets have different averaging
-precision as well as different temporal support.
+1–22, validation 1–7, replicate test 1–9).
 
 ## Run
 
+The original benchmark is frozen under `results/light_growth_20260909`.
+The primary follow-up leaves its training sources, partitions, and fitted
+baseline outputs unchanged:
+
 ```bash
-.venv/bin/python hypocotyl/code/prepare_data.py
-# Run once into a fresh split directory; frozen partitions reject overwrite.
-.venv/bin/python hypocotyl/code/make_splits.py
-.venv/bin/python hypocotyl/code/verify_model.py
-.venv/bin/python hypocotyl/code/run_all.py --gpus 8 9
-# Only after the controller has completed and frozen all selections:
-.venv/bin/python hypocotyl/code/summarize.py
+.venv/bin/python hypocotyl/code/retune_primary.py --gpus 8 9
+# After training and frozen-choice evaluation complete:
+.venv/bin/python hypocotyl/code/summarize_primary.py
 .venv/bin/python paper/write_hypocotyl_results.py
 .venv/bin/python hypocotyl/code/package_release.py
 ```
 
-The controller screens learning rates and physics coefficients using seed 1,
-confirms the top two candidates with seeds 2--3, and ranks completed candidates
-by mean validation RMSE. It freezes every model selection for both protocols
-before scoring test targets. Process fits are deterministic single runs;
-neural models and random forest use three seeds. Use `--resume` to retain
-completed trials after an interruption; incomplete attempts are preserved.
+The follow-up screens 80 fresh PhytoODE configurations: 32 loss/learning-rate
+grid points at the original capacity and 48 stratified combinations of
+capacity, learning rate, both loss coefficients, weight decay, and training
+length. The best eight seed-1 candidates receive seeds 2 and 3. Three-seed
+mean validation RMSE selects the final candidate, with both fully confirmed
+original PhytoODE configurations eligible as incumbents. Three additional
+runs disable both physics coefficients at the selected architecture and
+training settings. This is a fixed budget of 99 new fits; it is not extended
+based on test performance. The full candidate list and stopping rule are
+recorded before training in `results/primary_retuning_20260909/protocol.json`.
 
-The original wheat, maize and Arabidopsis stem-length training sources and
-frozen experiment results remain separate from this new benchmark.
+The initial test scores had already been inspected before this follow-up.
+Training and selection load training/validation targets only, but the reused
+test partition is not a fresh blinded confirmation. Other baselines retain
+their original independent searches, so this is not an equal-compute comparison.
+Use `--resume` to retain completed trials after interruption; partial attempts
+are preserved in the diagnostics directory.
+
+The recorded screening stage reused GPU worker interpreters with two workers
+per GPU to reduce launch overhead. The unchanged frozen training function was
+called for each candidate, and the original controller resumed for selection,
+confirmation, and test evaluation. `screening_runtime.json` records this
+execution detail; the default controller can reproduce the same experiment
+without the optional runtime helper.
 
 ## Outputs
 
-The completed comparison contains 122 training/fitting runs and 40 frozen-choice
-evaluations. PhytoODE's test RMSE / relative RMSE is **0.344 mm / 5.93%** for
-replicate holdout and **0.305 mm / 4.13%** for withheld-time interpolation.
-It has the lowest mean among the seven main methods in the time test; the
-independently tuned no-physics latent ODE is better in replicate holdout
-(0.337 mm / 5.81%). Differences among the leading neural models are small
-relative to seed variability. This supports a protocol-dependent conclusion,
-not a claim of uniform superiority from physics regularization.
-
-The selected `(lambda_ODE, lambda_K)` pairs are `(50, 0.01)` and `(0.5, 0.01)`,
-respectively, with learning rate `0.01` in both protocols. The corresponding
-same-LR, same-initialization no-physics controls score 0.335 and 0.345 mm.
-Final CPU evaluation was accelerated by calling the unchanged evaluator in
-one interpreter after selection froze; [the runtime record](results/light_growth_20260909/evaluation_runtime.json)
-documents this. The default controller reproduces the same evaluations
-sequentially.
-
-- [Comparison tables and seed statistics](reports/results.md).
-- [Full train/validation/test metrics](reports/comparison.csv), including
-  individual-measurement RMSE and the separately matched loss-removal control.
-- [Selected configurations](reports/selected_configs.csv) and
-  [paired loss comparisons](reports/paired_loss_ablation.csv).
-- [Raw data overview](reports/data_overview.png),
-  [replicate predictions](reports/predictions_replicate.png), and
-  [withheld-time predictions](reports/predictions_time_holdout.png).
-- [Metric/selection audit](reports/results_audit.json),
-  [partition audit](reports/partition_audit.json), and
-  [solver refinement](reports/integration_refinement.csv).
-- [Data dictionary](DATA_DICTIONARY.md) and a
-  [deposit-ready data/code ZIP](release/hypocotyl_data_code_20260909.zip).
+- [Current primary comparison and selected settings](reports/primary_retuning_20260909/results.md).
+- [Train/validation/test metrics](reports/primary_retuning_20260909/comparison.csv),
+  including individual-measurement RMSE, the current matched loss-removal control,
+  and the earlier same-learning-rate no-physics control. The initial control
+  remains better on test than the newly tuned PhytoODE; a broad superiority
+  claim is not supported.
+- [All-genotype primary predictions](reports/primary_retuning_20260909/predictions_replicate.png).
+- [Source, metric, selection, and pairing audit](reports/primary_retuning_20260909/results_audit.json).
+- [Raw data overview](reports/data_overview.png), [partition audit](reports/partition_audit.json),
+  and [data dictionary](DATA_DICTIONARY.md).
+- [Deposit-ready data/code ZIP](release/hypocotyl_data_code_20260909.zip).
   The ZIP is prepared locally; this does not establish a public deposit,
   DOI, or data-reuse license.
+
+## Historical analysis archive
+
+The original 122 fits and 40 evaluations are retained unchanged in
+`results/light_growth_20260909`, with [their original report](reports/results.md).
+That archive includes an auxiliary time-holdout analysis that is excluded
+from the current manuscript. Its results must not be substituted for the
+replicate-group primary evaluation. The initial primary PhytoODE result
+was 0.343717 mm / 5.931501%; the original independently learning-rate-tuned
+latent ODE result was 0.336836 mm / 5.812771%.

@@ -15,7 +15,10 @@ of the test sets are stated explicitly in Methods.
 
 The [hypocotyl extension](../hypocotyl/README.md) adds original replicate
 snapshot data at fixed 23°C under 12L12D and continuous red light. Its seven
-methods are selected using validation only before any new test scoring.
+methods use replicate-group holdout, with all seven observation times in
+each partition. PhytoODE receives an expanded validation-only follow-up search;
+the original test partition was already inspected and baseline tuning budgets
+are retained, so the updated comparison is explicitly exploratory.
 The original three dataset results remain unchanged. The title and common
 notation now cover environmental conditioning by either temperature or light.
 
@@ -38,8 +41,8 @@ notation now cover environmental conditioning by either temperature or light.
   included by `main.tex`. Its figure retains the common method colors, replaces
   the temperature-specific process baseline with Light-logistic ODE, and
   includes the both-zero latent ODE using a dashed line.
-- [revisions_20260909.md](revisions_20260909.md): copyable title, abstract,
-  Methods, Results, tables and conclusion additions for the light experiment.
+- [revisions_20260909.md](revisions_20260909.md): copyable abstract,
+  Methods, Results, table and conclusion replacements for the light experiment.
 - `main_standalone.tex`: the complete current manuscript with the two
   hypocotyl `\input` files expanded for pasting into external editors.
 - `overleaf_20260909.zip`: uploadable manuscript source, bibliography, and
@@ -52,8 +55,8 @@ notation now cover environmental conditioning by either temperature or light.
   The main maize `Ours` row uses the validation-selected tuned result; its
   pre-tuning result is retained as a non-primary row.
   Regenerate with `.venv/bin/python paper/relative_errors.py`.
-  That script reproduces the historical table. The current full comparison
-  is [current_results.csv](current_results.csv); current PhytoODE/control
+  That script reproduces the historical table. The current comparison for the
+  three temperature-conditioned datasets is [current_results.csv](current_results.csv); current PhytoODE/control
   scores are sourced from the [adoption report](../experiments/results/adopted_phytoode_20260908/README.md).
 
 ## Compile
@@ -97,9 +100,9 @@ files and figures are tracked in Git.
 7. Time extrapolation is not evaluated or displayed.  Prediction figures show
    only the interval supported by actual observations.
 8. Hypocotyl rows are bookkeeping groups, not verified longitudinal plant IDs.
-   Its primary targets are split-specific replicate means. The entirely
-   withheld times are 36 and 60 h; both lighting regimes are known in training.
-   The independently LR-tuned no-physics baseline and the same-LR paired
+   Its targets are split-specific replicate means at all seven observation
+   times; both lighting regimes are known in training.
+   The independently LR-tuned no-physics baseline and the architecture/optimizer-matched paired
    control are different comparisons. The public dataset URL/DOI, reuse
    license and missing experimental metadata remain to be supplied.
 
@@ -107,7 +110,7 @@ files and figures are tracked in Git.
 
 ```bash
 .venv/bin/python paper/make_figures.py
-# After the separate hypocotyl training controller completes:
-.venv/bin/python hypocotyl/code/summarize.py
+# After the primary-protocol follow-up controller completes:
+.venv/bin/python hypocotyl/code/summarize_primary.py
 .venv/bin/python paper/write_hypocotyl_results.py
 ```

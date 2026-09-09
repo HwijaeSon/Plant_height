@@ -1,0 +1,102 @@
+{
+  "status": "all_validation_selections_frozen",
+  "frozen_unix": 1788948970.1462836,
+  "prior_test_inspected": true,
+  "chosen_sha256": "a646009037c68aced2288c6ce4d11206c67096258a6dc477ee746e5eabe8dd9a",
+  "runs": [
+    {
+      "protocol": "replicate",
+      "model": "phytoode",
+      "seed": 1,
+      "path": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_065/seed1",
+      "result_sha256": "b59778291da609251f83d61a272ed10323f0d5a74e4b57d4774004a2ab6414b2"
+    },
+    {
+      "protocol": "replicate",
+      "model": "phytoode",
+      "seed": 2,
+      "path": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_065/seed2",
+      "result_sha256": "79e8347137174ae42949af20cd6863d047e24a130db6472e216a36a5e64a30f2"
+    },
+    {
+      "protocol": "replicate",
+      "model": "phytoode",
+      "seed": 3,
+      "path": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_065/seed3",
+      "result_sha256": "b3ef8efc2f5693b6aed93f20ffac6163470342b1aa0c1a034c9bb73aac7a031e"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 1,
+      "path": "hypocotyl/results/primary_retuning_20260909/trials/latent_ode_matched/seed1",
+      "result_sha256": "141614d01af50b0dc65780aec47567e231e8418068dfcd33d40829d850ef3aea"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 2,
+      "path": "hypocotyl/results/primary_retuning_20260909/trials/latent_ode_matched/seed2",
+      "result_sha256": "044b29d767536c1191b4b45454892b395bc652b92a6202434306032ace44aa47"
+    },
+    {
+      "protocol": "replicate",
+      "model": "latent_ode_matched",
+      "seed": 3,
+      "path": "hypocotyl/results/primary_retuning_20260909/trials/latent_ode_matched/seed3",
+      "result_sha256": "2307b3921701542584472a1481c71e8d111b4ad47d5be46e4bac3a30295a1dd7"
+    }
+  ],
+  "selected": {
+    "replicate": {
+      "phytoode": {
+        "candidate": "phytoode_065",
+        "config": {
+          "model": "phytoode",
+          "lr": 0.0015527014849295356,
+          "lambda_ode": 0.12644235454360606,
+          "lambda_k": 0.002702328745365828,
+          "weight_decay": 0.00036574216923513037,
+          "epochs": 3000,
+          "architecture": {
+            "latent_dim": 12,
+            "g_embed_dim": 4,
+            "ode_hidden": 24,
+            "ode_layers": 1,
+            "dec_hidden": 24,
+            "enc_hidden": 12
+          }
+        },
+        "val_mean": 0.3002909283242297,
+        "per_seed_validation": [
+          0.3011831029316472,
+          0.30111117017068795,
+          0.298578511870354
+        ],
+        "paths": [
+          "hypocotyl/results/primary_retuning_20260909/trials/phytoode_065/seed1",
+          "hypocotyl/results/primary_retuning_20260909/trials/phytoode_065/seed2",
+          "hypocotyl/results/primary_retuning_20260909/trials/phytoode_065/seed3"
+        ]
+      },
+      "latent_ode_matched": {
+        "config": {
+          "model": "latent_ode",
+          "lr": 0.0015527014849295356,
+          "lambda_ode": 0.0,
+          "lambda_k": 0.0,
+          "weight_decay": 0.00036574216923513037,
+          "epochs": 3000,
+          "architecture": {
+            "latent_dim": 12,
+            "g_embed_dim": 4,
+            "ode_hidden": 24,
+            "ode_layers": 1,
+            "dec_hidden": 24,
+            "enc_hidden": 12
+          }
+        }
+      }
+    }
+  }
+}

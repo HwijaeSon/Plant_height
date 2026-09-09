@@ -1,0 +1,16 @@
+{
+  "model": "latent_ode",
+  "lr": 0.0015527014849295356,
+  "lambda_ode": 0.0,
+  "lambda_k": 0.0,
+  "weight_decay": 0.00036574216923513037,
+  "epochs": 3000,
+  "architecture": {
+    "latent_dim": 12,
+    "g_embed_dim": 4,
+    "ode_hidden": 24,
+    "ode_layers": 1,
+    "dec_hidden": 24,
+    "enc_hidden": 12
+  }
+}

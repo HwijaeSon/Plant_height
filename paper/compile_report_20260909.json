@@ -1,28 +1,33 @@
 {
   "status": "compiled_and_visually_reviewed",
   "engine": "Tectonic 0.17.0",
-  "pdf_sha256": "0c567233492caa63358f8abca279784769f044f3458f1464555deeb3b4015c42",
+  "pdf_sha256": "1ce2113d81bed316a772189ba2abf9e0a60b799cb5771c5b18a13b3bc4b9201f",
   "source_sha256": {
-    "paper/main.tex": "52bbdfbe78ad6864017fabaac640bdf58b67e2dba42bfece8f51b68e12993318",
-    "paper/main_standalone.tex": "b50aacf27ec70b124632b2e3f79f468c33825c04d8224459daa4480ddcc4b652",
-    "paper/hypocotyl_methods.tex": "b270c53432836f13723573bd64f1b267f76b8564d134a78f21aaed7e02bcdcdb",
-    "paper/hypocotyl_results.tex": "bfbccf46dc629a330001b9141145617a9bf88c424d135dca47d85416a59239c5",
+    "paper/main.tex": "856ae1e9428f4d688a49f83067128ccd8f2a0b7bd3036b8a0c35c0e9c0a17c32",
+    "paper/main_standalone.tex": "1d557c05a4bb1ff038064abca817cf0b8bc8b6ed53610b0b907e71fd7fccaf37",
+    "paper/hypocotyl_methods.tex": "b101020aae6c80be7352d7447d46ef3cac228667b82eef4c861d7e554ad344e7",
+    "paper/hypocotyl_results.tex": "f95486e8c03d3f63cbc90712006bb05cf4a4913d3c9ca88534d90ad7066ad0de",
     "paper/references.bib": "0e65c48ae643462638bcd8d3edcc895f4bf2484bf7dc011e452f531fc47cb91d",
-    "paper/overleaf_20260909.zip": "f5147e73d8fa9d46f27e5f24bdbff9519b3811c94899194bd25bf56e8dfc51c7",
+    "paper/overleaf_20260909.zip": "7864ea2d33ecdb1ba4a6624b8c26c7f92c06b827fd9f187f32cfb5f5ab97acfb",
+    "paper/figures/wheat_test_curves_no_extrapolation.pdf": "eb38faf8adf3e4728eb32e15a0f83f7c51b45590e4cbb62e6d1aa9740fed2c63",
     "paper/figures/maize_test_predictions.pdf": "04b1e330ffea807eb5d0de8fde36b6a982aa3531ed6c6589d4b34f13dad3287b",
     "paper/figures/arabidopsis_col0_no_extrapolation.pdf": "ba6a73e9f435ce4179d5ee2583d331f5cb88241cd89591fe1ce845ee2c5c7415",
-    "paper/figures/wheat_test_curves_no_extrapolation.pdf": "eb38faf8adf3e4728eb32e15a0f83f7c51b45590e4cbb62e6d1aa9740fed2c63",
-    "paper/figures/hypocotyl_light_interpolation.pdf": "e29939765282b495a93dbcd8b2e5c991ca091b0a906b2f8b9b452cfecb318d98"
+    "paper/figures/hypocotyl_light_replicates.pdf": "aed2569cd93af1ef799d177930cbaa515e14aed5f90f936284c4d05f38c06630"
   },
-  "hypocotyl_figure_page": 22,
+  "hypocotyl_figure_page": 23,
   "references_start_page": 26,
   "new_table_pages": [
-    21,
-    23
+    22
   ],
   "labels_and_citations_verified": true,
   "overleaf_archive_verified": true,
+  "time_holdout_evaluation_removed": true,
   "remaining_warnings": [
+    "warning: hypocotyl_methods:38: Underfull \\hbox (badness 1342) in paragraph at lines 37--38",
+    "warning: hypocotyl_methods:38: Underfull \\hbox (badness 1688) in paragraph at lines 37--38",
+    "warning: hypocotyl_methods:38: Underfull \\hbox (badness 1776) in paragraph at lines 37--38",
+    "warning: hypocotyl_methods:38: Underfull \\hbox (badness 1831) in paragraph at lines 37--38",
+    "warning: hypocotyl_methods:38: Underfull \\hbox (badness 1845) in paragraph at lines 37--38",
     "warning: hypocotyl_methods:7: Underfull \\hbox (badness 1009) in paragraph at lines 6--7",
     "warning: main.bbl:112: Underfull \\hbox (badness 2443) in paragraph at lines 103--112",
     "warning: main.bbl:112: Underfull \\hbox (badness 3019) in paragraph at lines 103--112",
@@ -43,5 +48,6 @@
     "Warning--empty pages in kidger2020neuralcde",
     "Warning--empty pages in rubanova2019latentode"
   ],
-  "note": "New tables and figure were visually inspected within the text margins. The class output routine retains a 2.608 pt first-page box warning; four pre-existing conference bibliography records lack page fields."
+  "note": "Primary table and figure reviewed within body margins. The table retains the earlier no-physics control, which has the lowest mean test error. Current PhytoODE effectively ties the validation-selected original baseline. A 2.608 pt first-page class warning and four existing bibliography page-field warnings remain.",
+  "historical_no_physics_control_retained": true
 }

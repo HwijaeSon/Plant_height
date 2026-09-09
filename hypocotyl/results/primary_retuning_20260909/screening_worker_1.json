@@ -1,0 +1,87 @@
+[
+  {
+    "candidate": "phytoode_034",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_034.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_034/seed1"
+  },
+  {
+    "candidate": "phytoode_049",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_049.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_049/seed1"
+  },
+  {
+    "candidate": "phytoode_061",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_061.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_061/seed1"
+  },
+  {
+    "candidate": "phytoode_071",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_071.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_071/seed1"
+  },
+  {
+    "candidate": "phytoode_013",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_013.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_013/seed1"
+  },
+  {
+    "candidate": "phytoode_017",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_017.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_017/seed1"
+  },
+  {
+    "candidate": "phytoode_021",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_021.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_021/seed1"
+  },
+  {
+    "candidate": "phytoode_025",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_025.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_025/seed1"
+  },
+  {
+    "candidate": "phytoode_029",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_029.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_029/seed1"
+  },
+  {
+    "candidate": "phytoode_037",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_037.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_037/seed1"
+  },
+  {
+    "candidate": "phytoode_048",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_048.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_048/seed1"
+  },
+  {
+    "candidate": "phytoode_065",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_065.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_065/seed1"
+  },
+  {
+    "candidate": "phytoode_076",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_076.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_076/seed1"
+  },
+  {
+    "candidate": "phytoode_039",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_039.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_039/seed1"
+  },
+  {
+    "candidate": "phytoode_046",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_046.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_046/seed1"
+  },
+  {
+    "candidate": "phytoode_056",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_056.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_056/seed1"
+  },
+  {
+    "candidate": "phytoode_069",
+    "config": "hypocotyl/results/primary_retuning_20260909/configs/phytoode_069.json",
+    "output": "hypocotyl/results/primary_retuning_20260909/trials/phytoode_069/seed1"
+  }
+]

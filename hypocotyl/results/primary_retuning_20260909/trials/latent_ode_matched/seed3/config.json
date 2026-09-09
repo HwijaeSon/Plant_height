@@ -1,0 +1,54 @@
+{
+  "config": {
+    "model": "latent_ode",
+    "lr": 0.0015527014849295356,
+    "lambda_ode": 0.0,
+    "lambda_k": 0.0,
+    "weight_decay": 0.00036574216923513037,
+    "epochs": 3000,
+    "architecture": {
+      "latent_dim": 12,
+      "g_embed_dim": 4,
+      "ode_hidden": 24,
+      "ode_layers": 1,
+      "dec_hidden": 24,
+      "enc_hidden": 12
+    }
+  },
+  "seed": 3,
+  "protocol": "replicate",
+  "data_config": {
+    "protocol": "replicate",
+    "split_seed": 20260909,
+    "counts": {
+      "train": 1052,
+      "val": 330,
+      "test": 436
+    },
+    "height_scale_mm": 16.018,
+    "train_hours": [
+      0,
+      12,
+      24,
+      36,
+      48,
+      60,
+      72
+    ],
+    "test_hours": [
+      0,
+      12,
+      24,
+      36,
+      48,
+      60,
+      72
+    ],
+    "grouping": "Same genotype/source-row bookkeeping groups remain together across all times and sheets in the replicate protocol. Row groups are not verified plant IDs.",
+    "scoring": "Mean per-genotype/condition curve RMSE against split-specific replicate means; rRMSE divides by the pooled mean of those scored group-mean targets. Individual-observation RMSE is secondary."
+  },
+  "cuda_visible_devices": "9",
+  "gpu_name": "NVIDIA RTX A5000",
+  "initial_state_sha256": "1d4d3ba451a5836e37858816def417bf1a9f1bb2f4a1ae2b62f7d3339acfa1d9",
+  "test_targets_loaded": false
+}

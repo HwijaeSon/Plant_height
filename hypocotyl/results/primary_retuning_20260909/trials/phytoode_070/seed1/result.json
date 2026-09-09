@@ -1,0 +1,70 @@
+{
+  "protocol": "replicate",
+  "config": {
+    "model": "phytoode",
+    "lr": 0.015096878185644702,
+    "lambda_ode": 0.02072025793913417,
+    "lambda_k": 0.00012367518461969172,
+    "weight_decay": 0.0001257164498603961,
+    "epochs": 4500,
+    "architecture": {
+      "latent_dim": 8,
+      "g_embed_dim": 4,
+      "ode_hidden": 16,
+      "ode_layers": 1,
+      "dec_hidden": 16,
+      "enc_hidden": 8
+    }
+  },
+  "seed": 1,
+  "best_epoch": 540,
+  "n_params": 1160,
+  "metrics": {
+    "train": {
+      "rmse": 0.1517967275906932,
+      "relative_error": 2.616319662315827,
+      "mean_target": 5.801918235645976,
+      "n_curves": 10,
+      "n_scored_group_means": 70,
+      "n_observations": 1052,
+      "individual_rmse": 0.7419948012924638,
+      "per_curve_rmse": [
+        0.2672171496597666,
+        0.15622369940525052,
+        0.15884181508208525,
+        0.17644863920227127,
+        0.13925404482959305,
+        0.1115432256017405,
+        0.13506903515094582,
+        0.1221800928575323,
+        0.12734214410876618,
+        0.12384743000898059
+      ]
+    },
+    "val": {
+      "rmse": 0.324562369257714,
+      "relative_error": 5.556741147155767,
+      "mean_target": 5.84087616576925,
+      "n_curves": 10,
+      "n_scored_group_means": 70,
+      "n_observations": 330,
+      "individual_rmse": 0.7269927836196097,
+      "per_curve_rmse": [
+        0.1505280914032478,
+        0.2025821278003189,
+        0.4515123388569868,
+        0.4477172972917337,
+        0.21027656608379808,
+        0.25383325211293856,
+        0.35065003768901226,
+        0.45671643816290275,
+        0.4098077700811128,
+        0.3119997730950883
+      ]
+    }
+  },
+  "seconds": 136.12518110126257,
+  "initial_state_sha256": "36fec46260e5553d598966ba432c3aaa8ea4db8af8b03db6569cc1952e5aaa72",
+  "checkpoint_sha256": "8e82aa72671aa8fd8b0a64c7387a06fd305a57414a9e17deb517dbdc9b462feb",
+  "test_evaluations": 0
+}

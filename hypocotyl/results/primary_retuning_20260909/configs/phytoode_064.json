@@ -1,0 +1,16 @@
+{
+  "model": "phytoode",
+  "lr": 0.0017133798365101844,
+  "lambda_ode": 0.1888186476883439,
+  "lambda_k": 2.6258328561768665e-05,
+  "weight_decay": 3.018886345356528e-05,
+  "epochs": 3000,
+  "architecture": {
+    "latent_dim": 8,
+    "g_embed_dim": 4,
+    "ode_hidden": 16,
+    "ode_layers": 1,
+    "dec_hidden": 16,
+    "enc_hidden": 8
+  }
+}

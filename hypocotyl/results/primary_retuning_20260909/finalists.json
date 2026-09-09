@@ -1,0 +1,334 @@
+{
+  "candidates": [
+    "phytoode_033",
+    "phytoode_018",
+    "phytoode_022",
+    "phytoode_016",
+    "phytoode_065",
+    "phytoode_051",
+    "phytoode_037",
+    "phytoode_020"
+  ],
+  "seed1_ranking": [
+    {
+      "candidate": "phytoode_033",
+      "validation_rmse": 0.28271711392124
+    },
+    {
+      "candidate": "phytoode_018",
+      "validation_rmse": 0.2966441201022456
+    },
+    {
+      "candidate": "phytoode_022",
+      "validation_rmse": 0.29816624690468296
+    },
+    {
+      "candidate": "phytoode_016",
+      "validation_rmse": 0.2997592940742117
+    },
+    {
+      "candidate": "phytoode_065",
+      "validation_rmse": 0.3011831029316472
+    },
+    {
+      "candidate": "phytoode_051",
+      "validation_rmse": 0.303167455652314
+    },
+    {
+      "candidate": "phytoode_037",
+      "validation_rmse": 0.3035315483825453
+    },
+    {
+      "candidate": "phytoode_020",
+      "validation_rmse": 0.3038083513825721
+    },
+    {
+      "candidate": "phytoode_017",
+      "validation_rmse": 0.3039647626548877
+    },
+    {
+      "candidate": "phytoode_071",
+      "validation_rmse": 0.3040185578573415
+    },
+    {
+      "candidate": "phytoode_049",
+      "validation_rmse": 0.30429444059975436
+    },
+    {
+      "candidate": "phytoode_023",
+      "validation_rmse": 0.3048242873252684
+    },
+    {
+      "candidate": "phytoode_048",
+      "validation_rmse": 0.3052161857830803
+    },
+    {
+      "candidate": "phytoode_035",
+      "validation_rmse": 0.30534240095081683
+    },
+    {
+      "candidate": "phytoode_069",
+      "validation_rmse": 0.30605559603360794
+    },
+    {
+      "candidate": "phytoode_057",
+      "validation_rmse": 0.3071493338608976
+    },
+    {
+      "candidate": "phytoode_061",
+      "validation_rmse": 0.3086479445700419
+    },
+    {
+      "candidate": "phytoode_019",
+      "validation_rmse": 0.30920789277225547
+    },
+    {
+      "candidate": "phytoode_078",
+      "validation_rmse": 0.3096547524366705
+    },
+    {
+      "candidate": "phytoode_028",
+      "validation_rmse": 0.30970688077152125
+    },
+    {
+      "candidate": "phytoode_026",
+      "validation_rmse": 0.3100272384534166
+    },
+    {
+      "candidate": "phytoode_021",
+      "validation_rmse": 0.31013877907595033
+    },
+    {
+      "candidate": "phytoode_055",
+      "validation_rmse": 0.31054703314837495
+    },
+    {
+      "candidate": "phytoode_063",
+      "validation_rmse": 0.3105909092989552
+    },
+    {
+      "candidate": "phytoode_060",
+      "validation_rmse": 0.31140567650617357
+    },
+    {
+      "candidate": "phytoode_072",
+      "validation_rmse": 0.3115094703941905
+    },
+    {
+      "candidate": "phytoode_042",
+      "validation_rmse": 0.3122148290189367
+    },
+    {
+      "candidate": "phytoode_008",
+      "validation_rmse": 0.31317622919117777
+    },
+    {
+      "candidate": "phytoode_027",
+      "validation_rmse": 0.31325173825237296
+    },
+    {
+      "candidate": "phytoode_010",
+      "validation_rmse": 0.3157922234834471
+    },
+    {
+      "candidate": "phytoode_046",
+      "validation_rmse": 0.3158940098157274
+    },
+    {
+      "candidate": "phytoode_066",
+      "validation_rmse": 0.3161078783674431
+    },
+    {
+      "candidate": "phytoode_024",
+      "validation_rmse": 0.3161225884446678
+    },
+    {
+      "candidate": "phytoode_009",
+      "validation_rmse": 0.31632338296043316
+    },
+    {
+      "candidate": "phytoode_054",
+      "validation_rmse": 0.31632959247882914
+    },
+    {
+      "candidate": "phytoode_006",
+      "validation_rmse": 0.3166668707760598
+    },
+    {
+      "candidate": "phytoode_012",
+      "validation_rmse": 0.31669673783549285
+    },
+    {
+      "candidate": "phytoode_041",
+      "validation_rmse": 0.3170629271767819
+    },
+    {
+      "candidate": "phytoode_013",
+      "validation_rmse": 0.3171572059489247
+    },
+    {
+      "candidate": "phytoode_076",
+      "validation_rmse": 0.31727493251234334
+    },
+    {
+      "candidate": "phytoode_064",
+      "validation_rmse": 0.31762548714961464
+    },
+    {
+      "candidate": "phytoode_004",
+      "validation_rmse": 0.3176668484220954
+    },
+    {
+      "candidate": "phytoode_011",
+      "validation_rmse": 0.31808768061869436
+    },
+    {
+      "candidate": "phytoode_002",
+      "validation_rmse": 0.3181025219817155
+    },
+    {
+      "candidate": "phytoode_000",
+      "validation_rmse": 0.31815692768285764
+    },
+    {
+      "candidate": "phytoode_015",
+      "validation_rmse": 0.31836763248323896
+    },
+    {
+      "candidate": "phytoode_067",
+      "validation_rmse": 0.31847954364397324
+    },
+    {
+      "candidate": "phytoode_007",
+      "validation_rmse": 0.3187695856615738
+    },
+    {
+      "candidate": "phytoode_001",
+      "validation_rmse": 0.31886290426324837
+    },
+    {
+      "candidate": "phytoode_005",
+      "validation_rmse": 0.31890406115956643
+    },
+    {
+      "candidate": "phytoode_045",
+      "validation_rmse": 0.3191781922809571
+    },
+    {
+      "candidate": "phytoode_014",
+      "validation_rmse": 0.31935614928087996
+    },
+    {
+      "candidate": "phytoode_003",
+      "validation_rmse": 0.3195297501691359
+    },
+    {
+      "candidate": "phytoode_039",
+      "validation_rmse": 0.32000394620973094
+    },
+    {
+      "candidate": "phytoode_025",
+      "validation_rmse": 0.32068961299126963
+    },
+    {
+      "candidate": "phytoode_077",
+      "validation_rmse": 0.3207152861740637
+    },
+    {
+      "candidate": "phytoode_030",
+      "validation_rmse": 0.3208198464405131
+    },
+    {
+      "candidate": "phytoode_059",
+      "validation_rmse": 0.32210512934132735
+    },
+    {
+      "candidate": "phytoode_031",
+      "validation_rmse": 0.32236610242765124
+    },
+    {
+      "candidate": "phytoode_032",
+      "validation_rmse": 0.32245750720312616
+    },
+    {
+      "candidate": "phytoode_029",
+      "validation_rmse": 0.32318329912915794
+    },
+    {
+      "candidate": "phytoode_070",
+      "validation_rmse": 0.324562369257714
+    },
+    {
+      "candidate": "phytoode_036",
+      "validation_rmse": 0.32584724369233986
+    },
+    {
+      "candidate": "phytoode_044",
+      "validation_rmse": 0.32623534591070635
+    },
+    {
+      "candidate": "phytoode_073",
+      "validation_rmse": 0.32808632270867555
+    },
+    {
+      "candidate": "phytoode_050",
+      "validation_rmse": 0.32851997761695495
+    },
+    {
+      "candidate": "phytoode_040",
+      "validation_rmse": 0.32859055131763953
+    },
+    {
+      "candidate": "phytoode_062",
+      "validation_rmse": 0.3319818454563846
+    },
+    {
+      "candidate": "phytoode_068",
+      "validation_rmse": 0.3322950783176358
+    },
+    {
+      "candidate": "phytoode_038",
+      "validation_rmse": 0.33251884277323096
+    },
+    {
+      "candidate": "phytoode_034",
+      "validation_rmse": 0.33347702704117343
+    },
+    {
+      "candidate": "phytoode_074",
+      "validation_rmse": 0.3377973999291191
+    },
+    {
+      "candidate": "phytoode_043",
+      "validation_rmse": 0.349748224656378
+    },
+    {
+      "candidate": "phytoode_047",
+      "validation_rmse": 0.38943728344249773
+    },
+    {
+      "candidate": "phytoode_079",
+      "validation_rmse": 0.398926458381864
+    },
+    {
+      "candidate": "phytoode_052",
+      "validation_rmse": 0.4018621719110861
+    },
+    {
+      "candidate": "phytoode_056",
+      "validation_rmse": 0.41719125210971014
+    },
+    {
+      "candidate": "phytoode_053",
+      "validation_rmse": 0.4241978635291387
+    },
+    {
+      "candidate": "phytoode_058",
+      "validation_rmse": 0.43169244184649125
+    },
+    {
+      "candidate": "phytoode_075",
+      "validation_rmse": 0.45169200189469033
+    }
+  ]
+}

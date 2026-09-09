@@ -1,0 +1,1315 @@
+{
+  "started_unix": 1788944816.1433623,
+  "protocol": "replicate",
+  "gpus": [
+    8,
+    9
+  ],
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "candidates": {
+    "phytoode_000": {
+      "model": "phytoode",
+      "lr": 0.001,
+      "lambda_ode": 0.05,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_001": {
+      "model": "phytoode",
+      "lr": 0.001,
+      "lambda_ode": 0.05,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_002": {
+      "model": "phytoode",
+      "lr": 0.001,
+      "lambda_ode": 0.5,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_003": {
+      "model": "phytoode",
+      "lr": 0.001,
+      "lambda_ode": 0.5,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_004": {
+      "model": "phytoode",
+      "lr": 0.001,
+      "lambda_ode": 5.0,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_005": {
+      "model": "phytoode",
+      "lr": 0.001,
+      "lambda_ode": 5.0,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_006": {
+      "model": "phytoode",
+      "lr": 0.001,
+      "lambda_ode": 50.0,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_007": {
+      "model": "phytoode",
+      "lr": 0.001,
+      "lambda_ode": 50.0,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_008": {
+      "model": "phytoode",
+      "lr": 0.003,
+      "lambda_ode": 0.05,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_009": {
+      "model": "phytoode",
+      "lr": 0.003,
+      "lambda_ode": 0.05,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_010": {
+      "model": "phytoode",
+      "lr": 0.003,
+      "lambda_ode": 0.5,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_011": {
+      "model": "phytoode",
+      "lr": 0.003,
+      "lambda_ode": 0.5,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_012": {
+      "model": "phytoode",
+      "lr": 0.003,
+      "lambda_ode": 5.0,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_013": {
+      "model": "phytoode",
+      "lr": 0.003,
+      "lambda_ode": 5.0,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_014": {
+      "model": "phytoode",
+      "lr": 0.003,
+      "lambda_ode": 50.0,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_015": {
+      "model": "phytoode",
+      "lr": 0.003,
+      "lambda_ode": 50.0,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_016": {
+      "model": "phytoode",
+      "lr": 0.006,
+      "lambda_ode": 0.05,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_017": {
+      "model": "phytoode",
+      "lr": 0.006,
+      "lambda_ode": 0.05,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_018": {
+      "model": "phytoode",
+      "lr": 0.006,
+      "lambda_ode": 0.5,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_019": {
+      "model": "phytoode",
+      "lr": 0.006,
+      "lambda_ode": 0.5,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_020": {
+      "model": "phytoode",
+      "lr": 0.006,
+      "lambda_ode": 5.0,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_021": {
+      "model": "phytoode",
+      "lr": 0.006,
+      "lambda_ode": 5.0,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_022": {
+      "model": "phytoode",
+      "lr": 0.006,
+      "lambda_ode": 50.0,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_023": {
+      "model": "phytoode",
+      "lr": 0.006,
+      "lambda_ode": 50.0,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_024": {
+      "model": "phytoode",
+      "lr": 0.01,
+      "lambda_ode": 0.05,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_025": {
+      "model": "phytoode",
+      "lr": 0.01,
+      "lambda_ode": 0.05,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_026": {
+      "model": "phytoode",
+      "lr": 0.01,
+      "lambda_ode": 0.5,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_027": {
+      "model": "phytoode",
+      "lr": 0.01,
+      "lambda_ode": 0.5,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_028": {
+      "model": "phytoode",
+      "lr": 0.01,
+      "lambda_ode": 5.0,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_029": {
+      "model": "phytoode",
+      "lr": 0.01,
+      "lambda_ode": 5.0,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_030": {
+      "model": "phytoode",
+      "lr": 0.01,
+      "lambda_ode": 50.0,
+      "lambda_k": 0.0001,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_031": {
+      "model": "phytoode",
+      "lr": 0.01,
+      "lambda_ode": 50.0,
+      "lambda_k": 0.003,
+      "epochs": 3000,
+      "weight_decay": 0.0001,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_032": {
+      "model": "phytoode",
+      "lr": 0.004861086963401822,
+      "lambda_ode": 35.63758801749605,
+      "lambda_k": 1.9444319661225433e-05,
+      "weight_decay": 0.0002604949144691953,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 2,
+        "ode_hidden": 8,
+        "ode_layers": 1,
+        "dec_hidden": 8,
+        "enc_hidden": 4
+      }
+    },
+    "phytoode_033": {
+      "model": "phytoode",
+      "lr": 0.005744383330514113,
+      "lambda_ode": 0.014450937234510212,
+      "lambda_k": 0.005802803511063826,
+      "weight_decay": 0.0002924765095463484,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_034": {
+      "model": "phytoode",
+      "lr": 0.01888210142890805,
+      "lambda_ode": 0.36980516549434383,
+      "lambda_k": 0.0049858268800265495,
+      "weight_decay": 0.002957955616136651,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_035": {
+      "model": "phytoode",
+      "lr": 0.0010463168439441785,
+      "lambda_ode": 2.4411327516276202,
+      "lambda_k": 3.3985281384285176e-05,
+      "weight_decay": 1.0451339007553593e-06,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 12,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 1,
+        "dec_hidden": 24,
+        "enc_hidden": 12
+      }
+    },
+    "phytoode_036": {
+      "model": "phytoode",
+      "lr": 0.006329153272193824,
+      "lambda_ode": 0.04835010302592467,
+      "lambda_k": 0.014363509020067057,
+      "weight_decay": 4.346889016377434e-06,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 16,
+        "g_embed_dim": 4,
+        "ode_hidden": 32,
+        "ode_layers": 1,
+        "dec_hidden": 32,
+        "enc_hidden": 16
+      }
+    },
+    "phytoode_037": {
+      "model": "phytoode",
+      "lr": 0.002418103432675115,
+      "lambda_ode": 0.012343405051966011,
+      "lambda_k": 7.875270201316043e-05,
+      "weight_decay": 1.6387193875588342e-06,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 2,
+        "dec_hidden": 24,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_038": {
+      "model": "phytoode",
+      "lr": 0.0032107872752794512,
+      "lambda_ode": 1.179138104267166,
+      "lambda_k": 0.008051506148882906,
+      "weight_decay": 2.229172883140176e-06,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 2,
+        "ode_hidden": 8,
+        "ode_layers": 1,
+        "dec_hidden": 8,
+        "enc_hidden": 4
+      }
+    },
+    "phytoode_039": {
+      "model": "phytoode",
+      "lr": 0.014291023798838792,
+      "lambda_ode": 11.852795089626408,
+      "lambda_k": 0.0004222892212804382,
+      "weight_decay": 6.001127259064079e-06,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_040": {
+      "model": "phytoode",
+      "lr": 0.013120516670384543,
+      "lambda_ode": 1.3682829537770806,
+      "lambda_k": 0.0001635637845917627,
+      "weight_decay": 0.0023646685239675155,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_041": {
+      "model": "phytoode",
+      "lr": 0.0005478749245531407,
+      "lambda_ode": 0.0726007544609616,
+      "lambda_k": 1.01351139757557e-05,
+      "weight_decay": 0.0010729593346298204,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 12,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 1,
+        "dec_hidden": 24,
+        "enc_hidden": 12
+      }
+    },
+    "phytoode_042": {
+      "model": "phytoode",
+      "lr": 0.004451361885299616,
+      "lambda_ode": 0.031655945567576844,
+      "lambda_k": 0.02935585520792305,
+      "weight_decay": 0.0001543635126707839,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 16,
+        "g_embed_dim": 4,
+        "ode_hidden": 32,
+        "ode_layers": 1,
+        "dec_hidden": 32,
+        "enc_hidden": 16
+      }
+    },
+    "phytoode_043": {
+      "model": "phytoode",
+      "lr": 0.0006578007267123113,
+      "lambda_ode": 23.366248022479265,
+      "lambda_k": 0.0008592001881077272,
+      "weight_decay": 0.0013888626874823389,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 2,
+        "dec_hidden": 24,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_044": {
+      "model": "phytoode",
+      "lr": 0.009389246828600525,
+      "lambda_ode": 5.540884179821415,
+      "lambda_k": 0.0005744476239963965,
+      "weight_decay": 4.734658178422955e-06,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 2,
+        "ode_hidden": 8,
+        "ode_layers": 1,
+        "dec_hidden": 8,
+        "enc_hidden": 4
+      }
+    },
+    "phytoode_045": {
+      "model": "phytoode",
+      "lr": 0.010703232956062677,
+      "lambda_ode": 0.0560920804082759,
+      "lambda_k": 0.00019667146756812494,
+      "weight_decay": 0.0014772467648488893,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_046": {
+      "model": "phytoode",
+      "lr": 0.009102853476052055,
+      "lambda_ode": 0.38331348681544264,
+      "lambda_k": 0.0014957311318458963,
+      "weight_decay": 5.449870406347701e-05,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_047": {
+      "model": "phytoode",
+      "lr": 0.0006299730153228642,
+      "lambda_ode": 0.49145850271703434,
+      "lambda_k": 0.018567520481960448,
+      "weight_decay": 0.003988028085794502,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 12,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 1,
+        "dec_hidden": 24,
+        "enc_hidden": 12
+      }
+    },
+    "phytoode_048": {
+      "model": "phytoode",
+      "lr": 0.0009882670515486919,
+      "lambda_ode": 2.7539877665354533,
+      "lambda_k": 0.00023092141822558985,
+      "weight_decay": 1.2376624043433937e-06,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 16,
+        "g_embed_dim": 4,
+        "ode_hidden": 32,
+        "ode_layers": 1,
+        "dec_hidden": 32,
+        "enc_hidden": 16
+      }
+    },
+    "phytoode_049": {
+      "model": "phytoode",
+      "lr": 0.0020640713194320865,
+      "lambda_ode": 0.04175192695602864,
+      "lambda_k": 0.0016481240937020322,
+      "weight_decay": 1.2343037578356227e-05,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 2,
+        "dec_hidden": 24,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_050": {
+      "model": "phytoode",
+      "lr": 0.003589611753870233,
+      "lambda_ode": 0.15396468656699305,
+      "lambda_k": 0.0018784106780032987,
+      "weight_decay": 1.9479282064432935e-06,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 2,
+        "ode_hidden": 8,
+        "ode_layers": 1,
+        "dec_hidden": 8,
+        "enc_hidden": 4
+      }
+    },
+    "phytoode_051": {
+      "model": "phytoode",
+      "lr": 0.00370454123964929,
+      "lambda_ode": 0.009120124334057957,
+      "lambda_k": 0.011030832478877301,
+      "weight_decay": 0.00048811744026929735,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_052": {
+      "model": "phytoode",
+      "lr": 0.0011455105713068419,
+      "lambda_ode": 44.85851800609396,
+      "lambda_k": 0.0035445512229127576,
+      "weight_decay": 0.005404156044871701,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_053": {
+      "model": "phytoode",
+      "lr": 0.0029045300082249062,
+      "lambda_ode": 17.58067919985539,
+      "lambda_k": 0.0022166961726271367,
+      "weight_decay": 0.00658960862585939,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 12,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 1,
+        "dec_hidden": 24,
+        "enc_hidden": 12
+      }
+    },
+    "phytoode_054": {
+      "model": "phytoode",
+      "lr": 0.015918350416798958,
+      "lambda_ode": 79.99507102795883,
+      "lambda_k": 0.00010327240841617688,
+      "weight_decay": 3.1685062746815574e-06,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 16,
+        "g_embed_dim": 4,
+        "ode_hidden": 32,
+        "ode_layers": 1,
+        "dec_hidden": 32,
+        "enc_hidden": 16
+      }
+    },
+    "phytoode_055": {
+      "model": "phytoode",
+      "lr": 0.0007521727207928399,
+      "lambda_ode": 0.636827348421694,
+      "lambda_k": 0.00029716785413662605,
+      "weight_decay": 1.1522827100193557e-05,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 2,
+        "dec_hidden": 24,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_056": {
+      "model": "phytoode",
+      "lr": 0.008470702561763807,
+      "lambda_ode": 106.7019805971262,
+      "lambda_k": 0.008957593405610163,
+      "weight_decay": 0.0033271663595622002,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 2,
+        "ode_hidden": 8,
+        "ode_layers": 1,
+        "dec_hidden": 8,
+        "enc_hidden": 4
+      }
+    },
+    "phytoode_057": {
+      "model": "phytoode",
+      "lr": 0.0012779575704898148,
+      "lambda_ode": 5.22227662323683,
+      "lambda_k": 0.0036145148814894124,
+      "weight_decay": 0.00044568200492942637,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_058": {
+      "model": "phytoode",
+      "lr": 0.000504683520962315,
+      "lambda_ode": 16.626136967163585,
+      "lambda_k": 1.291231358716223e-05,
+      "weight_decay": 0.00866540645000792,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_059": {
+      "model": "phytoode",
+      "lr": 0.011200638775592624,
+      "lambda_ode": 206.26566082653594,
+      "lambda_k": 0.00012648138433179825,
+      "weight_decay": 1.901197072694857e-05,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 12,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 1,
+        "dec_hidden": 24,
+        "enc_hidden": 12
+      }
+    },
+    "phytoode_060": {
+      "model": "phytoode",
+      "lr": 0.0007064583369080972,
+      "lambda_ode": 3.471853049472127,
+      "lambda_k": 0.0002728331262387566,
+      "weight_decay": 0.0005732460414684057,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 16,
+        "g_embed_dim": 4,
+        "ode_hidden": 32,
+        "ode_layers": 1,
+        "dec_hidden": 32,
+        "enc_hidden": 16
+      }
+    },
+    "phytoode_061": {
+      "model": "phytoode",
+      "lr": 0.0008384706617123737,
+      "lambda_ode": 0.0973202942808594,
+      "lambda_k": 0.0011876902444432431,
+      "weight_decay": 4.47296742725758e-05,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 2,
+        "dec_hidden": 24,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_062": {
+      "model": "phytoode",
+      "lr": 0.0008734998983456803,
+      "lambda_ode": 0.023708152764618334,
+      "lambda_k": 0.0009942893957401134,
+      "weight_decay": 7.817379642141503e-05,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 2,
+        "ode_hidden": 8,
+        "ode_layers": 1,
+        "dec_hidden": 8,
+        "enc_hidden": 4
+      }
+    },
+    "phytoode_063": {
+      "model": "phytoode",
+      "lr": 0.0030518661128382325,
+      "lambda_ode": 0.007611478661618383,
+      "lambda_k": 0.0007393971428202567,
+      "weight_decay": 6.143846894009498e-05,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_064": {
+      "model": "phytoode",
+      "lr": 0.0017133798365101844,
+      "lambda_ode": 0.1888186476883439,
+      "lambda_k": 2.6258328561768665e-05,
+      "weight_decay": 3.018886345356528e-05,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_065": {
+      "model": "phytoode",
+      "lr": 0.0015527014849295356,
+      "lambda_ode": 0.12644235454360606,
+      "lambda_k": 0.002702328745365828,
+      "weight_decay": 0.00036574216923513037,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 12,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 1,
+        "dec_hidden": 24,
+        "enc_hidden": 12
+      }
+    },
+    "phytoode_066": {
+      "model": "phytoode",
+      "lr": 0.005231247136050769,
+      "lambda_ode": 140.36749047922595,
+      "lambda_k": 7.025407155592707e-05,
+      "weight_decay": 3.0721801180005854e-06,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 16,
+        "g_embed_dim": 4,
+        "ode_hidden": 32,
+        "ode_layers": 1,
+        "dec_hidden": 32,
+        "enc_hidden": 16
+      }
+    },
+    "phytoode_067": {
+      "model": "phytoode",
+      "lr": 0.007900549573475617,
+      "lambda_ode": 358.99106314270784,
+      "lambda_k": 0.006595306235220708,
+      "weight_decay": 2.3845354811640354e-05,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 2,
+        "dec_hidden": 24,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_068": {
+      "model": "phytoode",
+      "lr": 0.001638677860479247,
+      "lambda_ode": 267.2503134801039,
+      "lambda_k": 0.023083683379203152,
+      "weight_decay": 9.100378001299194e-05,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 2,
+        "ode_hidden": 8,
+        "ode_layers": 1,
+        "dec_hidden": 8,
+        "enc_hidden": 4
+      }
+    },
+    "phytoode_069": {
+      "model": "phytoode",
+      "lr": 0.0021937669906496784,
+      "lambda_ode": 58.32843424247333,
+      "lambda_k": 5.620465511401827e-05,
+      "weight_decay": 7.337826794393326e-06,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_070": {
+      "model": "phytoode",
+      "lr": 0.015096878185644702,
+      "lambda_ode": 0.02072025793913417,
+      "lambda_k": 0.00012367518461969172,
+      "weight_decay": 0.0001257164498603961,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_071": {
+      "model": "phytoode",
+      "lr": 0.007191575240306155,
+      "lambda_ode": 168.12985899486682,
+      "lambda_k": 0.0005313427816862824,
+      "weight_decay": 3.21744180376103e-05,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 12,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 1,
+        "dec_hidden": 24,
+        "enc_hidden": 12
+      }
+    },
+    "phytoode_072": {
+      "model": "phytoode",
+      "lr": 0.006187380551274758,
+      "lambda_ode": 7.047603920726573,
+      "lambda_k": 4.906754554144955e-05,
+      "weight_decay": 0.00019210032755205013,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 16,
+        "g_embed_dim": 4,
+        "ode_hidden": 32,
+        "ode_layers": 1,
+        "dec_hidden": 32,
+        "enc_hidden": 16
+      }
+    },
+    "phytoode_073": {
+      "model": "phytoode",
+      "lr": 0.001978671155612463,
+      "lambda_ode": 46.952711987480015,
+      "lambda_k": 2.0690496140442444e-05,
+      "weight_decay": 0.0009902998502695042,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 2,
+        "dec_hidden": 24,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_074": {
+      "model": "phytoode",
+      "lr": 0.0012071386112182173,
+      "lambda_ode": 0.24061907127307072,
+      "lambda_k": 0.013085421439297813,
+      "weight_decay": 1.669833164164352e-05,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 2,
+        "ode_hidden": 8,
+        "ode_layers": 1,
+        "dec_hidden": 8,
+        "enc_hidden": 4
+      }
+    },
+    "phytoode_075": {
+      "model": "phytoode",
+      "lr": 0.004268810266447199,
+      "lambda_ode": 441.27888778849604,
+      "lambda_k": 0.01955580824160695,
+      "weight_decay": 0.008006186914927334,
+      "epochs": 4500,
+      "architecture": {
+        "latent_dim": 4,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_076": {
+      "model": "phytoode",
+      "lr": 0.0013895555681321357,
+      "lambda_ode": 0.8224479842704912,
+      "lambda_k": 1.5510498496164454e-05,
+      "weight_decay": 0.0007578406935848006,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 16,
+        "ode_layers": 1,
+        "dec_hidden": 16,
+        "enc_hidden": 8
+      }
+    },
+    "phytoode_077": {
+      "model": "phytoode",
+      "lr": 0.017420872861126462,
+      "lambda_ode": 9.406935400472047,
+      "lambda_k": 0.0003566658263447405,
+      "weight_decay": 8.846334587429279e-06,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 12,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 1,
+        "dec_hidden": 24,
+        "enc_hidden": 12
+      }
+    },
+    "phytoode_078": {
+      "model": "phytoode",
+      "lr": 0.0026045953772588296,
+      "lambda_ode": 1.8281228755065837,
+      "lambda_k": 3.147968833961827e-05,
+      "weight_decay": 0.00010216240106964092,
+      "epochs": 3000,
+      "architecture": {
+        "latent_dim": 16,
+        "g_embed_dim": 4,
+        "ode_hidden": 32,
+        "ode_layers": 1,
+        "dec_hidden": 32,
+        "enc_hidden": 16
+      }
+    },
+    "phytoode_079": {
+      "model": "phytoode",
+      "lr": 0.012054311804543987,
+      "lambda_ode": 0.005674315216815251,
+      "lambda_k": 4.443590795123628e-05,
+      "weight_decay": 0.002142552890191534,
+      "epochs": 2000,
+      "architecture": {
+        "latent_dim": 8,
+        "g_embed_dim": 4,
+        "ode_hidden": 24,
+        "ode_layers": 2,
+        "dec_hidden": 24,
+        "enc_hidden": 8
+      }
+    }
+  },
+  "source_sha256": {
+    "hypocotyl/code/retune_model.py": "20ef8569552b433aa2d2f4e1d15f391006e1cf96fb7fc5b6f15f360b18cdc436",
+    "hypocotyl/code/retune_trial.py": "ff0bfdd1c127faf86b7b20e2c4bdb2cfe29958150a4edbe7c65f4f62ce927309",
+    "hypocotyl/code/retune_primary.py": "f07aaad52d578dc0e7e2ddec5418885429cf8f213dd0eadb111cfcf472da9813",
+    "hypocotyl/code/models.py": "0b2e8a0596fa5de222ac7678f7f6860b36c50b73e776acd9514e5a9e9c897712",
+    "hypocotyl/code/data.py": "3be3e5694a45cb8a382bbbd4307b615945c61265c862962162dc0f4c6cf93179",
+    "hypocotyl/code/trial.py": "204e6fcbd2770b337f1ff0b2766007a70655a436e4c1dadb961dcf23689f84dc",
+    "wheat/code/model.py": "73d5e8fa2796c937c856926994a05b6ce137152d12c06e375a122fe00e22b271",
+    "hypocotyl/data/processed/splits/replicate/train.csv": "d573504517a817cad2fba950d15783869da802b02949f9fc2080a900b17acd0d",
+    "hypocotyl/data/processed/splits/replicate/val.csv": "5b857607545f44d9a7ed8767b195369e411dc399152e96a7ab64d0981390e0bd",
+    "hypocotyl/data/processed/splits/replicate/test.csv": "a6f0cbb552ea9dbde05f9ac45eec66f4c6eaeac54b709534881604f9bb70de65",
+    "hypocotyl/data/processed/splits/replicate/config.json": "0f73ddace455faf667350c682c3e9934d89339c56d00fa4707951c39fa4dd5b9"
+  },
+  "screening": "80 fresh candidates at seed 1; confirm the best 8 with seeds 2 and 3.",
+  "selection": "Lowest mean validation RMSE across all three seeds; also retain both fully confirmed original PhytoODE candidates as eligible incumbents.",
+  "matched_control": "Selected architecture, learning rate, weight decay, epochs, initialization and checkpoint rule, with both physics coefficients zero; no separate search.",
+  "stopping": "Fixed 80 screening + 16 confirmation + 3 matched-control fits; do not extend or switch candidates based on test performance.",
+  "prior_test_inspected": true,
+  "interpretation": "Exploratory follow-up on an already inspected test partition, not a fresh blinded confirmation. Baselines retain their original searches; compute budgets differ.",
+  "test_access": "No new test scores until PhytoODE and matched-control configurations are frozen."
+}
