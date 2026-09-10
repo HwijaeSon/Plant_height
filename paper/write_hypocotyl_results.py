@@ -1,5 +1,5 @@
-"""Current manuscript exporter: validation-selected PhytoODE with light input."""
-from write_hypocotyl_light_input import main
+"""Compatibility entry point: export the current, editorially revised manuscript."""
+from export_manuscript import main
 
 if __name__ == "__main__":
     main()

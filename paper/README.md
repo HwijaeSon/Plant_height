@@ -43,8 +43,13 @@ holdout remains in the experiment report, outside the primary manuscript.
   Intelligence in Agriculture*, plus foundational Neural ODE, latent ODE,
   neural CDE, PINN, and universal differential-equation papers.
 - `make_figures.py`: regenerates the three temperature-experiment figures.
-  `write_hypocotyl_results.py` regenerates the current hypocotyl text, table,
-  and figure from audited light-input results.
+- `export_manuscript.py`: exports the edited LaTeX files to the standalone source
+  and Overleaf bundle without rewriting prose. `write_hypocotyl_results.py`
+  is a compatibility entry point for this exporter. The LaTeX files are the
+  authoritative manuscript sources after the language revision.
+- `write_hypocotyl_light_input.py`: historical experiment-to-manuscript writer.
+  Its `main()` predates the language revision and must not be used to export
+  the current paper; its `make_figure()` remains available for figure regeneration.
 - `figures/`: generated wheat, maize, and Arabidopsis prediction figures. The
   three figures share the same six-model legend, colors, line hierarchy, and
   observed-point marker. Every model line is clipped to the sample's
@@ -53,9 +58,10 @@ holdout remains in the experiment report, outside the primary manuscript.
   included by `main.tex`. Its figure shows all five genotypes with the selected
   PhytoODE in blue, the five baseline families, test means, individual lengths,
   and shaded dark intervals. The baseline is ordinary Logistic ODE.
-- [revisions_20260910.md](revisions_20260910.md): current copyable abstract,
-  Methods, Results, table/caption, conclusion and data-availability passages.
-  Earlier dated revision files reproduce the earlier experiments.
+- [revisions_language_20260910.md](revisions_language_20260910.md): language-revision
+  notes and links to the complete revised LaTeX. [revisions_20260910.md](revisions_20260910.md)
+  records the experiment update before language editing; earlier revision files
+  reproduce earlier experiments.
 - `main_standalone.tex`: the complete current manuscript with the two
   hypocotyl `\input` files expanded for pasting into external editors.
 - `overleaf_20260910.zip`: current uploadable manuscript source, bibliography, and
@@ -125,6 +131,8 @@ files and figures are tracked in Git.
 
 ```bash
 .venv/bin/python paper/make_figures.py
-# The completed light-input follow-up is the current hypocotyl source:
-.venv/bin/python paper/write_hypocotyl_results.py
+# Regenerate only the hypocotyl figure, preserving edited prose:
+.venv/bin/python -c "import sys; sys.path.insert(0, 'paper'); from write_hypocotyl_light_input import make_figure; make_figure()"
+# Package the current LaTeX, bibliography, and figure assets:
+.venv/bin/python paper/export_manuscript.py --date 20260910
 ```
