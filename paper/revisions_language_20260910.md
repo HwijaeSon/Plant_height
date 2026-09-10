@@ -14,6 +14,8 @@
 - 실험 진행 과정처럼 읽히는 `again achieved`, `the preceding experiment`,
   `bookkeeping assignments`, `Four limitations define the next experiments`
   등의 표현을 구체적인 연구 방법과 결과 중심으로 수정했습니다.
+- 초록에서는 세부 성능 수치, 샘플 수, 온도·시간 조건의 숫자를 제외하고
+  연구 문제, 방법, 평가의 의의, 핵심 결과와 데이터 공개 계획을 요약했습니다.
 - 본문에서는 `unregularized latent ODE`, `mean test RMSE`, `rRMSE`,
   `sparse temporal sampling` 등의 용어를 일관되게 사용했습니다.
   표와 그림의 기존 모델 명칭은 유지했습니다.
