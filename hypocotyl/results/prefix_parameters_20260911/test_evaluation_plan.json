@@ -1,0 +1,69 @@
+{
+  "lambda_selection_sha256": "d49f0070c6601f6ad181ef6e534fbec16c8d4948244c8779d1eddeb4dab22778",
+  "jobs": [
+    {
+      "drop_fraction": 0.0,
+      "seed": 1,
+      "training_path": "search/lambda_100/seed1",
+      "checkpoint_sha256": "eac4ff5b332b40a90eef5b29dd7f542fc995f0f0cc8ddb7734f987539c3871c7",
+      "output": "selected/drop_0/seed1"
+    },
+    {
+      "drop_fraction": 0.0,
+      "seed": 2,
+      "training_path": "search/lambda_100/seed2",
+      "checkpoint_sha256": "8cfbf1d985ff575dca2d937624d3c9cf33a5631a4fc7a6f9d1c78a7b19d83cd5",
+      "output": "selected/drop_0/seed2"
+    },
+    {
+      "drop_fraction": 0.0,
+      "seed": 3,
+      "training_path": "search/lambda_100/seed3",
+      "checkpoint_sha256": "2734898de5aa99a80aa089db9d297a92ec2ac75cd326720e4731199a07ac2b1f",
+      "output": "selected/drop_0/seed3"
+    },
+    {
+      "drop_fraction": 0.25,
+      "seed": 1,
+      "training_path": "transfer/drop_25/seed1",
+      "checkpoint_sha256": "ad2f8f80374f29e6a33237b2fba33c355106d2a94fa6ac01684fba92d3ba8344",
+      "output": "selected/drop_25/seed1"
+    },
+    {
+      "drop_fraction": 0.25,
+      "seed": 2,
+      "training_path": "transfer/drop_25/seed2",
+      "checkpoint_sha256": "99fb5f48bb85f84ad69723ee4dce864c617ca0e0c9d11397421cb8715498f7b1",
+      "output": "selected/drop_25/seed2"
+    },
+    {
+      "drop_fraction": 0.25,
+      "seed": 3,
+      "training_path": "transfer/drop_25/seed3",
+      "checkpoint_sha256": "309423a0eb661ba5adae74b63a1424ed464387739d52fe8f3c570c771fbf8677",
+      "output": "selected/drop_25/seed3"
+    },
+    {
+      "drop_fraction": 0.5,
+      "seed": 1,
+      "training_path": "transfer/drop_50/seed1",
+      "checkpoint_sha256": "5ab43b820e73b7d8c7e2d03f9858f7e5b1ea444e115a3817f25f157dedf8c6dc",
+      "output": "selected/drop_50/seed1"
+    },
+    {
+      "drop_fraction": 0.5,
+      "seed": 2,
+      "training_path": "transfer/drop_50/seed2",
+      "checkpoint_sha256": "fe587a347739b11c31c43c325966b70dea2bc0a22807dba6d95f65ac4b7f3f29",
+      "output": "selected/drop_50/seed2"
+    },
+    {
+      "drop_fraction": 0.5,
+      "seed": 3,
+      "training_path": "transfer/drop_50/seed3",
+      "checkpoint_sha256": "568b4bf8b5de89f2ce8d9cb9b44fac610569e40f6345658a65cf1a8502b6d9e1",
+      "output": "selected/drop_50/seed3"
+    }
+  ],
+  "note": "All nine checkpoints and the coefficient are frozen before test scoring."
+}

@@ -2,21 +2,120 @@
 
 **Learning plant growth dynamics across genotypes and observation regimes**
 
-This is the submission snapshot of the code, selected models, and author-collected
-dataset for the PhytoODE manuscript. PhytoODE combines genotype-conditioned latent
+This repository contains the code, selected models, and author-collected
+dataset for the PhytoODE manuscript, together with separately recorded follow-up
+experiments. PhytoODE combines genotype-conditioned latent
 neural ODE dynamics with logistic derivative and carrying-capacity regularization
 in phenotype space. Environmental inputs are temperature for the published
-datasets and binary illumination for the hypocotyl experiment. Hypocotyl models
+datasets; the hypocotyl experiments compare models with and without binary
+illumination. Hypocotyl models
 also receive each plant's observed 0–36 h lengths and presence masks to forecast
 later individual lengths.
 
-This snapshot contains the experiments reported in the manuscript. The complete
+The pinned submission snapshot contains the manuscript experiments. The complete
 development history and exploratory experiments are archived at
 [development commit `9671ca4`](https://github.com/HwijaeSon/Plant_height/tree/9671ca42605ad6ab1543c527daa6466fa3e80e06).
 This snapshot contains code, data, configurations, checkpoints, and machine-readable
 results, with README documentation for reproduction. The final configuration is defined by [`configs/paper.json`](configs/paper.json).
 The code-and-data submission version is tagged `submission-20260911-prefix-forecast`. Verification
 results are recorded in [`submission/validation.json`](submission/validation.json).
+
+## Follow-up: individual logistic parameters from the observed prefix
+
+The follow-up tagged `experiment-20260911-prefix-parameters` conditions the
+PhytoODE r/K head on genotype **and** the observed 0–36 h lengths and masks,
+sets `lambda_K=0`, and searches only `lambda_ODE`. The original manuscript
+snapshot is available at `submission-20260911-prefix-forecast`; its reproduction
+commands below use `configs/paper.json`. The follow-up uses the separate
+`configs/hypocotyl_prefix_parameters_20260911.json` profile and commands here.
+
+For the **light-input variant**, ten coefficients (0.01–1000) were compared with three seeds using 48-h validation.
+The selected coefficient is **100**. It was transferred unchanged to both
+additional-missingness conditions. Only PhytoODE was retrained; all baseline
+scores are retained from the preceding experiment. The new model has 1,231
+parameters, including the individual parameter head.
+
+| Additional prefix removal | Previous PhytoODE test RMSE (mm) | New PhytoODE test RMSE (mm) | New relative RMSE |
+|---|---:|---:|---:|
+| Natural missingness | 1.703 | 1.280 ± 0.052 | 17.15 ± 0.70% |
+| 25% | 1.702 | 1.299 ± 0.187 | 17.40 ± 2.51% |
+| 50% | 1.575 | 1.422 ± 0.166 | 19.06 ± 2.22% |
+
+The changes improve mean test error relative to the preceding PhytoODE in all
+three conditions. The no-light latent ODE has lower mean test error under natural
+missingness and 25% removal; Logistic-PINN has the lowest mean at 50% removal.
+This is a combined model/regularization/search follow-up on the same dataset,
+with coefficient selection using validation only.
+
+```bash
+# Access the follow-up from a checkout of the submission tag.
+git fetch origin tag experiment-20260911-prefix-parameters
+git checkout experiment-20260911-prefix-parameters
+
+# Evaluate the bundled, validation-selected follow-up model.
+python hypocotyl/code/prefix_parameter_trial.py evaluate \
+  --checkpoint hypocotyl/results/prefix_parameters_20260911/selected/drop_0/seed1/checkpoint.pt \
+  --output outputs/individual-parameter-evaluation
+
+# Reproduce its coefficient search and missingness evaluation (36 training fits).
+python hypocotyl/code/run_prefix_parameter_search.py --gpus 0 1 2 \
+  --output outputs/individual-parameter-search
+
+# Plot the bundled search, individual trajectories, and baseline comparison.
+python hypocotyl/code/report_prefix_parameters.py \
+  --output outputs/individual-parameter-report --figures outputs/individual-parameter-figures
+```
+
+[Full protocol and reproduction details](hypocotyl/reports/prefix_parameters_20260911/README.md) ·
+[Train/validation/test tables and coefficient search](hypocotyl/reports/prefix_parameters_20260911/comparison.md)
+
+### Removing the light input
+
+The second variant removes illumination from both the prefix encoder and latent
+vector field, while retaining the initial-length r/K head and `lambda_K=0`.
+The same ten-coefficient validation search independently selects **lambda_ODE=100**.
+This equals the predefined fixed reference from the light-input variant, so the
+fixed-coefficient and separately selected comparisons coincide. The no-light
+model has **1,183 parameters**. Time remains an input; all plants share the same
+12L12D cycle.
+
+Test cells below are **RMSE (mm) / relative RMSE (%)**, averaged across three seeds.
+The complete report includes standard deviations and train/validation scores.
+
+| Model | Natural missingness | +25% prefix removal | +50% prefix removal |
+|---|---:|---:|---:|
+| PhytoODE, prefix r/K, with light | 1.280 / 17.15% | 1.299 / 17.40% | 1.422 / 19.06% |
+| PhytoODE, prefix r/K, without light | 1.150 / 15.41% | 1.317 / 17.65% | **1.224 / 16.40%** |
+| Previous no-light latent ODE | **1.143 / 15.31%** | **1.235 / 16.55%** | 1.292 / 17.32% |
+| Previous Logistic-PINN | 1.336 / 17.90% | 1.277 / 17.11% | 1.248 / 16.72% |
+
+Omitting illumination reduces PhytoODE's mean test error under natural missingness
+and 50% additional removal, but slightly increases it at 25%. The no-light
+PhytoODE has the lowest mean at 50% removal among all evaluated models. The
+differences from the strongest baselines are small relative to seed/mask variation;
+these results do not establish consistent or statistically significant superiority.
+All six baselines and the preceding genotype-head PhytoODE are reused unchanged.
+
+```bash
+# Evaluate the bundled no-light model on CPU.
+python hypocotyl/code/no_light_prefix_trial.py evaluate \
+  --checkpoint hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_0/seed1/checkpoint.pt \
+  --output outputs/no-light-prefix-evaluation
+
+# Reproduce the 30-fit search, six transfer fits, and frozen test evaluations.
+python hypocotyl/code/run_no_light_prefix_search.py --gpus 0 1 2 \
+  --output outputs/no-light-prefix-search
+
+# Plot both feature variants, all baselines, and the coefficient searches.
+python hypocotyl/code/report_no_light_prefix.py \
+  --output outputs/no-light-prefix-report --figures outputs/no-light-prefix-figures
+
+# Verify training objectives, masking, source hashes, and all nine checkpoints.
+python hypocotyl/code/audit_no_light_prefix.py
+```
+
+[No-light protocol](hypocotyl/reports/prefix_parameters_no_light_20260911/README.md) ·
+[All-model train/validation/test comparison](hypocotyl/reports/prefix_parameters_no_light_20260911/comparison.md)
 
 ## Installation
 

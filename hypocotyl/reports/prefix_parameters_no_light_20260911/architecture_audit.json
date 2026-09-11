@@ -1,0 +1,23 @@
+[
+  {
+    "seed": 1,
+    "n_params": 1183,
+    "old_no_light_initialization_preserved": true,
+    "illumination_invariant": true,
+    "masked_placeholder_invariant": true
+  },
+  {
+    "seed": 2,
+    "n_params": 1183,
+    "old_no_light_initialization_preserved": true,
+    "illumination_invariant": true,
+    "masked_placeholder_invariant": true
+  },
+  {
+    "seed": 3,
+    "n_params": 1183,
+    "old_no_light_initialization_preserved": true,
+    "illumination_invariant": true,
+    "masked_placeholder_invariant": true
+  }
+]

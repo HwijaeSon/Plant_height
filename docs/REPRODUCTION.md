@@ -157,3 +157,28 @@ ordering. CUDA/CPU kernels can produce different initial weights or optimization
 trajectories. Reported standard deviations describe initialization variation (and paired
 mask variation in the hypocotyl removal study), not biological cohorts. Use the bundled checkpoints to evaluate the submitted fits on another
 machine, and retain the reported precision when comparing results.
+
+## Individual-parameter PhytoODE follow-up
+
+`hypocotyl/code/prefix_parameter_model.py` adds masked initial lengths to the
+r/K head. `prefix_parameter_trial.py` trains with `lambda_K=0` and reports only
+training/validation until final evaluation. `run_prefix_parameter_search.py`
+freezes the ten-coefficient, three-seed search and then transfers the selected
+coefficient unchanged to both added-missingness settings. It freezes nine
+checkpoint hashes before test evaluation. `report_prefix_parameters.py` compares
+the selected models with the unchanged earlier baseline outputs.
+
+The complete protocol, commands, and current scores are in
+[`hypocotyl/reports/prefix_parameters_20260911`](../hypocotyl/reports/prefix_parameters_20260911/README.md).
+Use the explicitly named follow-up scripts for this experiment; `run.py` retains
+the pinned manuscript configurations in `configs/paper.json`.
+
+The additional no-light comparison uses `no_light_prefix_model.py`,
+`no_light_prefix_trial.py`, and `run_no_light_prefix_search.py`. Both the prefix
+encoder and latent vector field omit illumination, while the prefix-conditioned
+r/K head and `lambda_K=0` are retained. The same ten-coefficient grid is searched
+using validation only. The validation winner and a predefined coefficient of 100
+are evaluated across all missingness conditions, deduplicating identical fits.
+Use `report_no_light_prefix.py` to export both feature variants alongside all
+unchanged baselines, and `audit_no_light_prefix.py` to verify the artifacts.
+See [the no-light protocol](../hypocotyl/reports/prefix_parameters_no_light_20260911/README.md).

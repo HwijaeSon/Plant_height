@@ -1,0 +1,53 @@
+{
+  "experiment": "prefix_parameters_no_light_20260911",
+  "data_protocol": "prefix_forecast_20260911",
+  "model": "phytoode_prefix_parameters_no_light",
+  "parameter_head_inputs": "genotype embedding (4), observed scaled prefix lengths (4), prefix presence masks (4)",
+  "parameter_head_architecture": [
+    12,
+    8,
+    2
+  ],
+  "initialization": "Preserve genotype weights and all core initialization; new prefix/mask columns start at zero.",
+  "lambda_k": 0.0,
+  "lambda_ode_grid": [
+    0.01,
+    0.1,
+    0.5,
+    1.0,
+    5.0,
+    10.0,
+    50.0,
+    100.0,
+    500.0,
+    1000.0
+  ],
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "search_drop_fraction": 0.0,
+  "evaluation_drop_fractions": [
+    0.0,
+    0.25,
+    0.5
+  ],
+  "mask_seed_rule": "20260910 + training seed; unchanged paired masks from the preceding benchmark",
+  "candidate_selection": "Lowest mean actual 48-h validation RMSE over all three seeds under natural missingness; ties favor smaller lambda_ode.",
+  "missingness_protocol": "Evaluate both the natural-missingness validation winner and the fixed coefficient 100 under the same three missingness conditions; deduplicate identical coefficients.",
+  "test_policy": "Train all candidates and transfer runs with train/validation only. Freeze both coefficient variants and all unique checkpoint hashes before test scoring.",
+  "common": {
+    "epochs": 1500,
+    "lr": 0.01,
+    "weight_decay": 0.0001,
+    "eval_every": 20,
+    "min_epoch": 200,
+    "val_smooth": 3,
+    "gradient_clip": 1.0
+  },
+  "scope": "Only PhytoODE: remove explicit illumination from encoder and vector field, retain individual prefix r/K head and lambda_K=0, and search the same lambda_ODE grid.",
+  "illumination_input": false,
+  "fixed_lambda_reference": 100.0,
+  "fixed_reference_rationale": "The validation-selected coefficient from the completed light-input follow-up; frozen before no-light search."
+}

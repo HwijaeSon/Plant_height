@@ -1,0 +1,292 @@
+{
+  "search_fits": 30,
+  "transfer_fits": 6,
+  "selected_test_evaluations": 9,
+  "selected_lambda_ode": 100.0,
+  "lambda_k": 0.0,
+  "source_sha_verified": true,
+  "minimum_three_seed_validation_selected": true,
+  "training_checks": [
+    {
+      "path": "search/lambda_0p01/seed1",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_0p01/seed3",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_0p01/seed2",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_0p1/seed3",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_0p1/seed2",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_0p1/seed1",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_0p5/seed1",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_0p5/seed2",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_0p5/seed3",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_1/seed2",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_1/seed3",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_1/seed1",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_5/seed3",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_5/seed2",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_5/seed1",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_10/seed2",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_10/seed3",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_10/seed1",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_50/seed1",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_50/seed3",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_50/seed2",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_100/seed1",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_100/seed2",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_100/seed3",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_500/seed3",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_500/seed1",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_500/seed2",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_1000/seed1",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_1000/seed3",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "search/lambda_1000/seed2",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "transfer/drop_25/seed2",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "transfer/drop_25/seed1",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "transfer/drop_25/seed3",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "transfer/drop_50/seed3",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "transfer/drop_50/seed2",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    },
+    {
+      "path": "transfer/drop_50/seed1",
+      "validation_only": true,
+      "no_capacity_term_in_objective": true,
+      "selected_epoch_verified": true
+    }
+  ],
+  "checkpoint_checks": [
+    {
+      "path": "selected/drop_0/seed1",
+      "checkpoint_max_abs_mm": 0.0,
+      "masked_placeholder_invariant": true,
+      "coefficient_shared_across_missingness": true,
+      "learned_prefix_column_norm": 1.1208802461624146
+    },
+    {
+      "path": "selected/drop_0/seed2",
+      "checkpoint_max_abs_mm": 0.0,
+      "masked_placeholder_invariant": true,
+      "coefficient_shared_across_missingness": true,
+      "learned_prefix_column_norm": 0.9903274774551392
+    },
+    {
+      "path": "selected/drop_0/seed3",
+      "checkpoint_max_abs_mm": 0.0,
+      "masked_placeholder_invariant": true,
+      "coefficient_shared_across_missingness": true,
+      "learned_prefix_column_norm": 0.9241088628768921
+    },
+    {
+      "path": "selected/drop_25/seed1",
+      "checkpoint_max_abs_mm": 0.0,
+      "masked_placeholder_invariant": true,
+      "coefficient_shared_across_missingness": true,
+      "learned_prefix_column_norm": 0.9224534034729004
+    },
+    {
+      "path": "selected/drop_25/seed2",
+      "checkpoint_max_abs_mm": 0.0,
+      "masked_placeholder_invariant": true,
+      "coefficient_shared_across_missingness": true,
+      "learned_prefix_column_norm": 0.8220763802528381
+    },
+    {
+      "path": "selected/drop_25/seed3",
+      "checkpoint_max_abs_mm": 0.0,
+      "masked_placeholder_invariant": true,
+      "coefficient_shared_across_missingness": true,
+      "learned_prefix_column_norm": 0.6900359392166138
+    },
+    {
+      "path": "selected/drop_50/seed1",
+      "checkpoint_max_abs_mm": 0.0,
+      "masked_placeholder_invariant": true,
+      "coefficient_shared_across_missingness": true,
+      "learned_prefix_column_norm": 0.7921664714813232
+    },
+    {
+      "path": "selected/drop_50/seed2",
+      "checkpoint_max_abs_mm": 0.0,
+      "masked_placeholder_invariant": true,
+      "coefficient_shared_across_missingness": true,
+      "learned_prefix_column_norm": 0.741032063961029
+    },
+    {
+      "path": "selected/drop_50/seed3",
+      "checkpoint_max_abs_mm": 0.0,
+      "masked_placeholder_invariant": true,
+      "coefficient_shared_across_missingness": true,
+      "learned_prefix_column_norm": 0.5075377821922302
+    }
+  ]
+}
