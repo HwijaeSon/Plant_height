@@ -139,167 +139,175 @@
       }
     },
     "hypocotyl": {
+      "protocol": "prefix_forecast_20260911",
+      "lambda_ode": 500.0,
+      "lambda_k": 0.1,
+      "configuration_file": "configs/hypocotyl_forecast.json",
       "models": {
         "phytoode": {
           "config": {
-            "model": "phytoode_light",
+            "epochs": 1500,
+            "weight_decay": 0.0001,
+            "eval_every": 20,
+            "min_epoch": 200,
+            "val_smooth": 3,
             "lr": 0.01,
             "lambda_ode": 500.0,
             "lambda_k": 0.1,
-            "weight_decay": 0.0001,
-            "epochs": 1500
+            "model": "phytoode"
           },
           "checkpoints": {
             "1": {
-              "path": "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed1/checkpoint.pt",
-              "sha256": "30af71fb6e6600fa5081df9a881fcf9930dae18e485b6fc96151377669a987b3"
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed1/checkpoint.pt",
+              "sha256": "4098f3496427f901a7fb5a4ce4eb75297f7a626b8d590c1177d0da749f477d92"
             },
             "2": {
-              "path": "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed2/checkpoint.pt",
-              "sha256": "2ff86ee8a3059dd72a6593320c72d44b26fc8d5fc6ed928cc2fbb5c090c6c67a"
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed2/checkpoint.pt",
+              "sha256": "12d439cba5599c9f56c0da716b4b1fb8cd9b567a62fa79569e79c9f9f83344cd"
             },
             "3": {
-              "path": "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed3/checkpoint.pt",
-              "sha256": "008d179670fc55a8c93d342e76d03135f2750bff473980725676dcccf9ec4a1f"
-            }
-          }
-        },
-        "phytoode_light_fixed": {
-          "config": {
-            "model": "phytoode_light",
-            "lr": 0.01,
-            "lambda_ode": 50.0,
-            "lambda_k": 0.01,
-            "weight_decay": 0.0001,
-            "epochs": 1500
-          },
-          "checkpoints": {
-            "1": {
-              "path": "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed1/checkpoint.pt",
-              "sha256": "bd3bad44caa1bae7bd58b2e90367b3858bfdb5b68367cc6d2ad36971eb7a83e7"
-            },
-            "2": {
-              "path": "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed2/checkpoint.pt",
-              "sha256": "24e544db95de5404da2c79ca3074034af770f5acf741fbb5336428d294d9eed1"
-            },
-            "3": {
-              "path": "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed3/checkpoint.pt",
-              "sha256": "afac4f7d5270e66eb39b3c7a6296819ad5d7136e344e02f8495a44bd021b744b"
-            }
-          }
-        },
-        "phytoode_no_light": {
-          "config": {
-            "model": "phytoode",
-            "lr": 0.01,
-            "lambda_ode": 50.0,
-            "lambda_k": 0.01,
-            "epochs": 1500,
-            "weight_decay": 0.0001
-          },
-          "checkpoints": {
-            "1": {
-              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed1/checkpoint.pt",
-              "sha256": "dc7d1df5839d1f60262d5a97f4dd9bfd3b3ff890b4ce4f2f80fbf6b21b2d14a1"
-            },
-            "2": {
-              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed2/checkpoint.pt",
-              "sha256": "99615815148ffddf74e05b50d0a18972de0c423441fac629fa30277ae3816fc1"
-            },
-            "3": {
-              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed3/checkpoint.pt",
-              "sha256": "bf55a2f7f0afb493cc9b951d9ffb626291fd96d9b0262e08ae77a1e0acf70efc"
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed3/checkpoint.pt",
+              "sha256": "e5b8a460670038f38bc397f961d4e1b0ea8f0887659cd5391498f8d325ea3d66"
             }
           }
         },
         "latent_ode": {
           "config": {
-            "model": "latent_ode",
+            "epochs": 1500,
+            "weight_decay": 0.0001,
+            "eval_every": 20,
+            "min_epoch": 200,
+            "val_smooth": 3,
             "lr": 0.01,
             "lambda_ode": 0.0,
             "lambda_k": 0.0,
-            "epochs": 1500,
-            "weight_decay": 0.0001
+            "model": "latent_ode"
           },
           "checkpoints": {
             "1": {
-              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1/checkpoint.pt",
-              "sha256": "123350f4a84dcdd59e8044d6d08bf9a165db86d2e5d226f443c2a8589e5f7c66"
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed1/checkpoint.pt",
+              "sha256": "92357ae897845e839c5f65d33a29b14b1f4a168a18be20937bc93c725d25d6bf"
             },
             "2": {
-              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2/checkpoint.pt",
-              "sha256": "da37fd7789854d69548e2adf45e267aea7af5bb3cff17691a9da072170bee7c7"
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed2/checkpoint.pt",
+              "sha256": "257554d0d1f598998a5bd0f4d733532f9de7c9d4b44e92edeec8a387ecd4c656"
             },
             "3": {
-              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3/checkpoint.pt",
-              "sha256": "3ac1646cf0c2c96da8c323122eba80af418d58bc45fc21d330f9dd4740e95046"
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed3/checkpoint.pt",
+              "sha256": "a2d28feb9822594cabca4ffa224eedb9a74ba38433b8ed996961e57a2884e54d"
             }
           }
         },
         "logistic_pinn": {
           "config": {
-            "model": "logistic_pinn",
+            "epochs": 1500,
+            "weight_decay": 0.0001,
+            "eval_every": 20,
+            "min_epoch": 200,
+            "val_smooth": 3,
             "lr": 0.003,
             "lambda_ode": 50.0,
             "lambda_k": 0.01,
-            "epochs": 1500,
-            "weight_decay": 0.0001
+            "model": "logistic_pinn"
           },
           "checkpoints": {
             "1": {
-              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed1/checkpoint.pt",
-              "sha256": "c681bd7a8cd73aff2b42adb086004243414fde83c3bc73d60b7bb258193e7c05"
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed1/checkpoint.pt",
+              "sha256": "927e3af94a9010307e302c2867432bb53ae33ecfbeb27c479cb471e2c1dbcd11"
             },
             "2": {
-              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed2/checkpoint.pt",
-              "sha256": "c9210ec02301e77f3f8f49190e375ce391880447559978c54a7f1f8c16e2b914"
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed2/checkpoint.pt",
+              "sha256": "ba944278b31b79a4066c31a780a382ccbcfcc2ae03f94b971e698afaca6cad4a"
             },
             "3": {
-              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed3/checkpoint.pt",
-              "sha256": "8c5889fe9b547ef2f08d25e2aa83863afbd85592191f728403cd84adc579c1ef"
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed3/checkpoint.pt",
+              "sha256": "79230397de56b43886760d4fccebeee5cb1030091c733256658f401d0aec8570"
             }
           }
         },
         "lstm": {
           "config": {
-            "model": "lstm",
+            "epochs": 1500,
+            "weight_decay": 0.0001,
+            "eval_every": 20,
+            "min_epoch": 200,
+            "val_smooth": 3,
             "lr": 0.01,
             "lambda_ode": 0.0,
             "lambda_k": 0.0,
-            "epochs": 1500,
-            "weight_decay": 0.0001
+            "model": "lstm"
           },
           "checkpoints": {
             "1": {
-              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed1/checkpoint.pt",
-              "sha256": "7f84b749fbdad0a265a9c168baef3a65d8bc6e208213ac85a78258eca8c12144"
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed1/checkpoint.pt",
+              "sha256": "9e1e4bb2fcddef5cb63ee531f06c6b7ee7c111a64f5a08ffe591e22954582d6c"
             },
             "2": {
-              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed2/checkpoint.pt",
-              "sha256": "7734b997aca3fa87897882afede7a20e772f5ffed245fff308ca0a14acd426c0"
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed2/checkpoint.pt",
+              "sha256": "16a5f24d27a45002133e22665ea710baf23bee2ef70ad74be8b2d23ff08264d3"
             },
             "3": {
-              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed3/checkpoint.pt",
-              "sha256": "94cfb8ee4a3aeaa384b761c477e98bd42a665e1d7cb6c38795cf73f2dc7a460d"
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed3/checkpoint.pt",
+              "sha256": "cd89b61c492769639dd00d0ad066636a330d1c67f6f338ebeaf51853e8dd1a97"
             }
           }
         },
         "rf": {
           "config": {
-            "model": "rf",
-            "min_samples_leaf": 1
+            "epochs": 1500,
+            "weight_decay": 0.0001,
+            "eval_every": 20,
+            "min_epoch": 200,
+            "val_smooth": 3,
+            "lr": 0.0,
+            "lambda_ode": 0.0,
+            "lambda_k": 0.0,
+            "model": "rf"
           },
           "checkpoints": {}
         },
         "logistic": {
           "config": {
+            "epochs": 1500,
+            "weight_decay": 0.0001,
+            "eval_every": 20,
+            "min_epoch": 200,
+            "val_smooth": 3,
+            "lr": 0.0,
+            "lambda_ode": 0.0,
+            "lambda_k": 0.0,
             "model": "logistic"
           },
           "checkpoints": {}
+        },
+        "latent_ode_light": {
+          "config": {
+            "epochs": 1500,
+            "weight_decay": 0.0001,
+            "eval_every": 20,
+            "min_epoch": 200,
+            "val_smooth": 3,
+            "lr": 0.01,
+            "lambda_ode": 0.0,
+            "lambda_k": 0.0,
+            "model": "latent_ode_light"
+          },
+          "checkpoints": {
+            "1": {
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed1/checkpoint.pt",
+              "sha256": "312775afe4262b4dbfa2242a90eebab83c16c75dab8944146352651db3839854"
+            },
+            "2": {
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed2/checkpoint.pt",
+              "sha256": "9d2d894770d9249a99dc251048fe3d0dc9ba31c85118b8530ce193eec9973912"
+            },
+            "3": {
+              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed3/checkpoint.pt",
+              "sha256": "9d869179d99c5c06bbc91a4a05c610d747111992423259e9d60aa83be4511bb7"
+            }
+          }
         }
-      },
-      "protocol": "replicate",
-      "condition": "12L12D"
+      }
     }
   }
 }

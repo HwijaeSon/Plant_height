@@ -15,11 +15,11 @@ in `submission/source_files.json`; it contains the complete search histories.
 | Maize cohort extraction and station temperatures | `maize/code/prepare_data.py`, `maize/code/data.py` |
 | Arabidopsis stem-length preprocessing and plant partition | `arabidopsis/code/prepare_data.py`, `arabidopsis/code/run_experiment.py` |
 | Temperature-dataset architectures and training schedules | `experiments/physics_ablation.py: setup`, `configs/paper.json` |
-| Hypocotyl ordinary logistic reference and baseline models | `hypocotyl/code/single_condition_models.py`, `single_condition_baselines.py` |
-| Hypocotyl illumination-conditioned vector field and switch handling | `hypocotyl/code/light_input_model.py` |
-| Hypocotyl split-specific targets and metrics | `hypocotyl/code/single_condition_data.py` |
+| Hypocotyl ordinary logistic reference and baseline models | `hypocotyl/code/forecast_models.py` |
+| Hypocotyl illumination-conditioned vector field and switch handling | `hypocotyl/code/forecast_models.py: PrefixLatentODE` |
+| Hypocotyl prefix, temporal targets, missing masks, and metrics | `hypocotyl/code/forecast_data.py` |
 | Fixed-configuration training / selected checkpoint evaluation | `run.py` |
-| Four manuscript tables | `results/comparison_temperature.csv`, `hypocotyl/reports/light_input_20260910/comparison.csv` |
+| Four manuscript tables | `results/comparison_temperature.csv`, `hypocotyl/reports/prefix_forecast_20260911/comparison.csv` |
 | Temperature prediction figures | `visualization/temperature.py` |
 | Hypocotyl prediction figure | `visualization/hypocotyl.py: make_figure` |
 
@@ -45,7 +45,8 @@ Use `maize` or `arabidopsis` for the corresponding matched architecture, and rep
 with seeds 2 and 3. Both `lambda_ode` and `lambda_k` are zero; optimizer weight
 decay remains unchanged. The auxiliary parameter head is retained to preserve
 the architecture and random initialization sequence. For hypocotyls the retained
-latent ODE has no light input, so it is not an input-matched loss ablation.
+latent ODE has no light input, so it is a separate no-light comparator. Use `latent_ode_light` for the input-matched
+control with both physics coefficients zero.
 
 ### Wheat
 
@@ -106,10 +107,30 @@ python run.py train --dataset hypocotyl --model latent_ode --seed 1 \
 ```
 
 Repeat stochastic models with seeds 2 and 3; Logistic ODE is fitted once.
-All configurations are fixed to those selected for the manuscript. Additional
-feature comparisons use `--model phytoode_no_light` and
-`--model phytoode_light_fixed`. The latter has a lower recorded test error but a
-higher validation error than the primary configuration and is reported separately.
+The current models receive each plant's masked 0–36 h prefix. All configurations
+are frozen in `configs/hypocotyl_forecast.json`; the preceding hyperparameters
+were retained without a new search on this temporal split. PhytoODE and
+`latent_ode_light` also receive illumination. Train the latter with the same
+command, changing `--model`. Both its physics coefficients are zero.
+
+For the added-missingness study use `--drop-fraction 0.25` or `0.5`. The default
+mask seed is `20260910 + training_seed`; the same values are hidden across models.
+All methods are refitted for each mask. Logistic ODE is fitted once naturally and
+three times at each added-missingness level because the masks differ.
+
+```bash
+python hypocotyl/code/run_forecast_benchmark.py --gpus 0 1 2 \
+  --output outputs/retrained-forecast-benchmark
+python hypocotyl/code/report_forecast.py \
+  --results outputs/retrained-forecast-benchmark \
+  --output outputs/retrained-forecast-report --figures outputs/retrained-forecast-figures
+```
+
+The complete benchmark performs 61 fits. A frozen run plan records code hashes,
+models, seeds, and masks; resuming skips completed runs and rejects changes to
+the frozen plan. Incomplete run directories require inspection before restarting.
+Only GPUs explicitly listed with `--gpus` are used; two workers per GPU are the
+default. Classical baselines run on CPU.
 
 ## Stored runs and regenerated reports
 
@@ -133,6 +154,6 @@ decay, gradient clipping at 1, and validation-based checkpoint selection. For
 wheat and Arabidopsis, recurrent weights were initialized on the training device;
 maize used CPU recurrent initialization before transfer. `run.py` preserves this
 ordering. CUDA/CPU kernels can produce different initial weights or optimization
-trajectories. Reported uncertainty is across initialization seeds, not biological
-cohorts. Use the bundled checkpoints to evaluate the submitted fits on another
+trajectories. Reported standard deviations describe initialization variation (and paired
+mask variation in the hypocotyl removal study), not biological cohorts. Use the bundled checkpoints to evaluate the submitted fits on another
 machine, and retain the reported precision when comparing results.

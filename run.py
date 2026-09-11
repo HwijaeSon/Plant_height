@@ -36,34 +36,18 @@ class Problem:
         np.random.seed(seed)
         torch.manual_seed(seed)
         torch.cuda.manual_seed_all(seed)
-        if dataset == "hypocotyl":
-            sys.path.insert(0, str(ROOT / "hypocotyl/code"))
-            import single_condition_data as data
-            import single_condition_models as models
-            import light_input_model as light
-            self.data_module, self.models_module = data, models
-            self.data_config, self.x, self.batches = data.load("replicate", device=device)
-            self.scale = self.data_config["height_scale_mm"]
-            self.config = dict(self.reference["config"])
-            self.neural = self.config["model"] not in ("rf", "logistic")
-            if self.config["model"] == "phytoode_light":
-                self.x, self.model = light.inputs(device=device), light.build(self.config)
-            elif self.neural:
-                self.model = models.build(self.config)
-            self.config.update(eval_every=20, min_epoch=200, val_smooth=3, unit="mm")
-        else:
-            sys.path.insert(0, str(ROOT / "experiments"))
-            import physics_ablation as original
-            self.original = original
-            self.core, self.loss_fn, model_args, self.config, self.raw, self.batches = original.setup(dataset, device)
-            self.scale = self.config["scale"]
-            self.neural = True
-            self.model = self.core.LatentODEHeightModel(**model_args)
-            self.config.update(lambda_ode=profile["lambda_ode"], lambda_k=profile["lambda_k"])
-            if name == "latent_ode":
-                self.config.update(lambda_ode=0., lambda_k=0.)
-            elif name == "capacity_only":
-                self.config.update(lambda_ode=0.)
+        sys.path.insert(0, str(ROOT / "experiments"))
+        import physics_ablation as original
+        self.original = original
+        self.core, self.loss_fn, model_args, self.config, self.raw, self.batches = original.setup(dataset, device)
+        self.scale = self.config["scale"]
+        self.neural = True
+        self.model = self.core.LatentODEHeightModel(**model_args)
+        self.config.update(lambda_ode=profile["lambda_ode"], lambda_k=profile["lambda_k"])
+        if name == "latent_ode":
+            self.config.update(lambda_ode=0., lambda_k=0.)
+        elif name == "capacity_only":
+            self.config.update(lambda_ode=0.)
         if self.neural:
             # Preserve CPU recurrent initialization for maize and device-side
             # recurrent initialization for the other manuscript experiments.
@@ -88,13 +72,9 @@ class Problem:
                            torch_version=torch.__version__, n_params=self.n_params)
 
     def forward(self, batch=None):
-        if self.dataset == "hypocotyl":
-            return self.model(**self.x)
         return self.original.forward(self.model, batch)
 
     def data_loss(self, output, batch):
-        if self.dataset == "hypocotyl":
-            return self.data_module.curve_rmse(output["pred"], batch)
         return self.loss_fn(output["pred"], batch["y"], batch["mask"])
 
     def objective(self, output, batch):
@@ -102,13 +82,9 @@ class Problem:
         ode, capacity = self.config["lambda_ode"], self.config["lambda_k"]
         total = data_loss
         if ode > 0 or capacity > 0:
-            if self.dataset == "hypocotyl":
-                residual, maximum = self.models_module.physics_losses(self.model, output, self.x)
-                total = total + ode * residual + capacity * maximum
-            else:
-                weights = dict(physic=ode, ymax=capacity, r=0., mono=0.)
-                components = self.core.physics_losses(self.model, output, batch["env"], weights)
-                total = total + sum(components.values())
+            weights = dict(physic=ode, ymax=capacity, r=0., mono=0.)
+            components = self.core.physics_losses(self.model, output, batch["env"], weights)
+            total = total + sum(components.values())
         return data_loss, total
 
     def training_batch(self):
@@ -124,42 +100,22 @@ class Problem:
         if self.neural:
             self.model.eval()
         with torch.no_grad():
-            if self.dataset == "hypocotyl":
-                _, _, batches = self.data_module.load("replicate", splits=splits)
-                prediction = fixed_prediction if fixed_prediction is not None else self.forward()["pred"].cpu().numpy()
-                metrics = {key: self.data_module.score(prediction, batch, self.scale) for key, batch in batches.items()}
-                predictions = dict(prediction=prediction, **self.data_module.save_targets(batches))
-            else:
-                for split in splits:
-                    key = "train_eval" if split == "train" else split
-                    raw = self.raw[key]
-                    batch = {name: torch.as_tensor(raw[name], dtype=torch.long if name == "g_idx" else torch.float32,
-                                                   device=self.device) for name in ("g_idx", "env", "s", "ds")}
-                    prediction = self.forward(batch)["pred"].cpu().numpy()
-                    metrics[split], _ = self.original.score(prediction, raw, self.scale)
-                    predictions[key] = prediction
-                    for name in ("y", "mask", "genotype"):
-                        predictions[key + ("_target" if name == "y" else "_" + name)] = raw[name]
+            for split in splits:
+                key = "train_eval" if split == "train" else split
+                raw = self.raw[key]
+                batch = {name: torch.as_tensor(raw[name], dtype=torch.long if name == "g_idx" else torch.float32,
+                                               device=self.device) for name in ("g_idx", "env", "s", "ds")}
+                prediction = self.forward(batch)["pred"].cpu().numpy()
+                metrics[split], _ = self.original.score(prediction, raw, self.scale)
+                predictions[key] = prediction
+                for name in ("y", "mask", "genotype"):
+                    predictions[key + ("_target" if name == "y" else "_" + name)] = raw[name]
         np.savez_compressed(out / "predictions.npz", **predictions)
         return metrics
 
 
 def train(problem, args):
     cfg, out = problem.config, args.output
-    if not problem.neural:
-        if args.mode == "smoke":
-            raise ValueError("Use train for the inexpensive process/RF baselines")
-        import single_condition_baselines as baselines
-        if cfg["model"] == "rf":
-            import joblib
-            prediction, fitted = baselines.fit_forest(problem.batches["train"], args.seed, cfg["min_samples_leaf"])
-            joblib.dump(fitted, out / "forest.joblib")
-        else:
-            prediction, parameters = baselines.fit_logistic(problem.batches["train"])
-            write_json(out / "parameters.json", {"parameters": parameters})
-        metrics = problem.evaluate(out, fixed_prediction=prediction)
-        write_json(out / "result.json", dict(config=cfg, status="complete", metrics=metrics))
-        return
     epochs = args.steps if args.mode == "smoke" else cfg["epochs"]
     optimizer = torch.optim.Adam(problem.model.parameters(), lr=cfg["lr"], weight_decay=cfg["weight_decay"])
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=cfg["epochs"])
@@ -218,6 +174,8 @@ def main():
     parser.add_argument("--device", default="cpu", help="cpu or cuda:N (visible device numbering)")
     parser.add_argument("--checkpoint", type=Path, help="Evaluate a newly trained checkpoint instead of the bundled one")
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--drop-fraction", type=float, default=0., help="Hypocotyl prefix observations to remove")
+    parser.add_argument("--mask-seed", type=int, help="Default: 20260910 + training seed")
     parser.add_argument("--steps", type=int, default=2, help="Training iterations in smoke mode only")
     args = parser.parse_args()
     if args.seed < 0 or args.steps < 1:
@@ -227,6 +185,26 @@ def main():
     device = torch.device(args.device)
     if device.type == "cuda" and not torch.cuda.is_available():
         parser.error("CUDA is unavailable; use --device cpu or install a matching CUDA PyTorch build")
+    if args.dataset == "hypocotyl":
+        sys.path.insert(0, str(ROOT / "hypocotyl/code"))
+        import forecast_trial
+        if args.mask_seed is None:
+            args.mask_seed = 20260910 + args.seed
+        if args.mode == "evaluate" and args.checkpoint is None:
+            record_path = ROOT / "hypocotyl/results/prefix_forecast_20260911" / f"drop_{round(args.drop_fraction*100)}" / args.model / f"seed{args.seed}" / "checkpoint.pt"
+            if args.drop_fraction not in [0., .25, .5] or not record_path.is_file():
+                parser.error("No bundled neural checkpoint for this model, seed, or missingness condition; pass --checkpoint")
+            manifest = json.loads((ROOT / "submission/manifest.json").read_text())
+            record = manifest["files"].get(str(record_path.relative_to(ROOT)))
+            if record and sha(record_path) != record["sha256"]:
+                raise ValueError("Bundled checkpoint checksum mismatch")
+            args.checkpoint = record_path
+        forecast_trial.run(args)
+        result = json.loads((args.output / "result.json").read_text())
+        print(json.dumps({"status": result["status"], "metrics": {k:v['rmse'] for k,v in result['metrics'].items() if 'rmse' in v}}, indent=2))
+        return
+    if args.drop_fraction != 0 or args.mask_seed is not None:
+        parser.error("Missingness options currently apply to hypocotyl only")
     torch.set_num_threads(2)
     problem = Problem(args.dataset, args.model, device, args.seed)
     if not problem.neural and device.type != "cpu":

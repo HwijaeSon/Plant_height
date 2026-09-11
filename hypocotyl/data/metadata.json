@@ -1,11 +1,28 @@
 {
-  "dataset": "Author-provided Arabidopsis hypocotyl snapshot measurements",
+  "dataset": "Author-collected longitudinal Arabidopsis hypocotyl measurements",
   "length_unit": "mm",
   "temperature_c": 23.0,
-  "elapsed_hours": [0, 12, 24, 36, 48, 60, 72],
+  "elapsed_hours": [
+    0,
+    12,
+    24,
+    36,
+    48,
+    60,
+    72
+  ],
   "conditions": {
-    "12L12D": {"light_hours": 12, "dark_hours": 12, "first_interval": "light", "spectrum": "not specified"},
-    "cR": {"light_hours": 24, "dark_hours": 0, "spectrum": "continuous red light"}
+    "12L12D": {
+      "light_hours": 12,
+      "dark_hours": 12,
+      "first_interval": "light",
+      "spectrum": "not specified"
+    },
+    "cR": {
+      "light_hours": 24,
+      "dark_hours": 0,
+      "spectrum": "continuous red light"
+    }
   },
   "genotypes": {
     "Col-0": "Columbia-0 wild type",
@@ -15,8 +32,9 @@
     "phyAB": "phyA/phyB double mutant; alleles not specified"
   },
   "age_at_zero": "Unconfirmed; the contributor recalls approximately three days, so only elapsed hours are used.",
-  "plant_identity": "No verified longitudinal plant identifiers. Source rows are retained for conservative partitioning, not interpreted as plant trajectories.",
+  "plant_identity": "Contributor confirmed on 2026-09-11 that genotype and original Excel row identify the same plant across 0--72 h.",
   "biological_batches": "Not recorded in the supplied workbook",
   "light_intensity": "Not recorded in the supplied workbook",
-  "confirmation": "Contributor clarified units, first light interval, cR meaning, and MLB construct on 2026-09-09."
+  "confirmation": "Contributor clarified units, first light interval, cR meaning, and MLB construct on 2026-09-09. Longitudinal identity and prefix-forecast protocol confirmed on 2026-09-11.",
+  "current_protocol": "prefix_forecast_20260911; 0--36 h input/training, 48 h validation, 60/72 h test; individual measured lengths only"
 }

@@ -6,20 +6,22 @@ This is the submission snapshot of the code, selected models, and author-collect
 dataset for the PhytoODE manuscript. PhytoODE combines genotype-conditioned latent
 neural ODE dynamics with logistic derivative and carrying-capacity regularization
 in phenotype space. Environmental inputs are temperature for the published
-datasets and binary illumination for the hypocotyl experiment.
+datasets and binary illumination for the hypocotyl experiment. Hypocotyl models
+also receive each plant's observed 0–36 h lengths and presence masks to forecast
+later individual lengths.
 
 This snapshot contains the experiments reported in the manuscript. The complete
 development history and exploratory experiments are archived at
 [development commit `9671ca4`](https://github.com/HwijaeSon/Plant_height/tree/9671ca42605ad6ab1543c527daa6466fa3e80e06).
 This snapshot contains code, data, configurations, checkpoints, and machine-readable
 results, with README documentation for reproduction. The final configuration is defined by [`configs/paper.json`](configs/paper.json).
-The code-and-data submission version is tagged `submission-20260911-code-data`. Verification
+The code-and-data submission version is tagged `submission-20260911-prefix-forecast`. Verification
 results are recorded in [`submission/validation.json`](submission/validation.json).
 
 ## Installation
 
 ```bash
-git clone --depth 1 --branch submission-20260911-code-data \
+git clone --depth 1 --branch submission-20260911-prefix-forecast \
   https://github.com/HwijaeSon/Plant_height.git
 cd Plant_height
 python3.12 -m venv .venv
@@ -48,7 +50,7 @@ The author-collected data and the selected checkpoints are included; no external
 download is needed for this example.
 
 ```bash
-# Verify extraction from the workbook, partition membership, and mean targets.
+# Verify individual trajectories, missingness, and temporal partitions.
 python scripts/prepare_hypocotyl.py
 
 # Evaluate the submitted PhytoODE checkpoint on CPU.
@@ -74,11 +76,13 @@ labelled **not paper results**. They retain the full learning-rate schedule.
 | Wheat | 19 genotypes across four field seasons | Train: 2018–2019; validation: 2022; test: 2021 | Air temperature | m |
 | Maize | 402 genotypes, 3,072 plot trajectories, 31,894 measurements | Train: 2018–2019; validation: 2020; test: 2021 | Air temperature | Relative UAV height |
 | Arabidopsis stem length | 9 genotypes, two temperature regimes, 180 plants, four measurements per plant | Plants 1–6: train; 7–8: validation; 9–10: test | Temperature regime | cm |
-| Author-collected hypocotyl length | 943 measurements, five genotypes, seven times | 547/171/225 measurements in train/validation/test; 35 mean targets per partition | Binary light under 12L12D at 23°C | mm |
+| Author-collected hypocotyl length | 157 plants, 942 retained measurements, five genotypes | Input/train: 0–36 h (551); validation: 48 h (128); test: 60/72 h (263) | Binary light under 12L12D at 23°C | mm |
 
-All evaluated genotype identities occur during training. The hypocotyl manuscript
-experiment uses **12L12D only and replicate-group holdout**. Continuous red light
-and the exploratory 36/60-hour holdout are excluded from the submission evaluation.
+All evaluated genotype identities occur during training. The hypocotyl experiment
+uses **12L12D only, individual longitudinal plants, and future-time holdout**.
+The contributor confirmed that genotype and Excel row identify the same plant
+across times. Missing lengths are neither averaged into genotype targets nor
+imputed. A plant needs at least one observed 0–36 h value to be included.
 Details and the data dictionary are in [`hypocotyl/README.md`](hypocotyl/README.md).
 
 ### Download the published datasets
@@ -144,15 +148,16 @@ python run.py train --dataset arabidopsis --seed 1 --device cuda:0 \
 
 Use seeds `1`, `2`, and `3` in separate output directories for the manuscript's
 three-seed evaluation. The default model is `phytoode`; `--model latent_ode` sets
-both physics coefficients to zero. For hypocotyls this baseline uses genotype and
-time without illumination, matching its manuscript input specification.
+both physics coefficients to zero. For hypocotyls, `latent_ode` omits illumination;
+`--model latent_ode_light` preserves the exact PhytoODE architecture, illumination
+inputs, initialization, and optimizer and removes both physics penalties.
 
 | Dataset | λ_ODE | λ_K | Epochs | Parameters |
 |---|---:|---:|---:|---:|
 | Wheat | 3.16227766 | 0.1 | 1,500 | 1,655 |
 | Maize | 0.5 | 0.5 | 3,000 | 9,003 |
 | Arabidopsis stem length | 0.5 | 0.1 | 1,500 | 4,607 |
-| Hypocotyl length | 500 | 0.1 | 1,500 | 1,103 |
+| Hypocotyl length | 500 | 0.1 | 1,500 | 1,167 |
 
 Training uses the paper's architecture, optimizer, learning-rate schedule,
 gradient clipping, and dataset-specific validation checkpoint rule. It saves the
@@ -208,37 +213,66 @@ Expected PhytoODE test scores are mean ± sample standard deviation over seeds 1
 | Wheat | 0.03032 ± 0.00066 m | 10.24 ± 0.22% |
 | Maize | 56.68 ± 4.37 relative UAV-height units | 18.40 ± 1.42% |
 | Arabidopsis stem length | 2.800 ± 0.016 cm | 14.06 ± 0.08% |
-| Hypocotyl length | 0.346 ± 0.008 mm | 6.85 ± 0.15% |
+| Hypocotyl length | 1.703 ± 0.085 mm | 22.82 ± 1.13% |
 
 RMSE is averaged over trajectories. Relative RMSE is `100 × mean trajectory
 RMSE / mean scored target`, calculated separately for each partition; it is not
 MAPE. The denominator is shared by all models within a dataset and partition.
-Hypocotyl targets are partition-specific genotype/time replicate means, not
-individual lengths. The latter are reported as a separate pooled RMSE.
+Hypocotyl targets are observed individual lengths; primary RMSE averages per-plant
+masked RMSE, and pooled observation-level RMSE is recorded separately. Natural
+missingness results favor PhytoODE at 48-h validation and the no-light latent ODE
+at 60/72-h test; PhytoODE is not the best test model for this dataset.
+
+## Missing-prefix robustness
+
+Every hypocotyl baseline was retrained after removing 25% or 50% of the available
+0–36 h values from both inputs and training targets. Masks are paired across
+models, nested by severity, and retain at least one value per plant. The total
+missing fraction is 12.3% naturally, 34.2% after 25% removal, and 56.2% after 50%
+removal. The 48/60/72 h targets remain unchanged. Scaling uses retained training
+observations only. Hyperparameters are fixed; only checkpoints use validation.
+
+```bash
+python run.py train --dataset hypocotyl --model phytoode --seed 1 \
+  --drop-fraction 0.5 --device cuda:0 --output outputs/hypocotyl-missing
+python run.py evaluate --dataset hypocotyl --model latent_ode_light --seed 1 \
+  --drop-fraction 0.5 --output outputs/hypocotyl-matched-evaluation
+python hypocotyl/code/report_forecast.py \
+  --output outputs/forecast-report --figures outputs/forecast-figures
+```
+
+With 50% additional removal, PhytoODE's test RMSE is **1.575 ± 0.150 mm**, versus
+**2.010 ± 0.168 mm** for its matched unregularized light-input control (21.7% lower).
+Logistic-PINN has the lowest overall test RMSE in that condition, 1.248 ± 0.118 mm.
+The matched comparison supports a benefit of the combined regularizers under
+heavy prefix missingness, not universal superiority. Full model/condition tables
+are in `hypocotyl/reports/prefix_forecast_20260911/comparison.md`.
 
 ## Interpretation and reproducibility
 
 - Wheat retains the reference initial-fill mask: 475 of 1,368 scored test
-  positions precede the first actual observation. Other datasets use observed
-  targets. Missing tensor entries with zero masks are placeholders, not imputed
-  zero-length training targets.
-- The environmental encoder uses the known environmental sequence over the
-  prediction interval. These experiments assess scenario-conditioned prediction
-  within observed time intervals, not prospective forecasting or unseen-genotype
-  prediction.
-- The coefficient studies and hypocotyl extension reused previously inspected
-  test partitions. The maize `(0.5, 0.5)` setting was retained after the later
-  search and was not that search's validation optimum. The temperature-dataset
-  unregularized controls were not independently retuned.
-- Hypocotyl PhytoODE received the illumination feature and additional tuning;
-  its retained baselines did not. This is a comparison of complete predictors,
-  not a matched isolation of the physics-loss effect. The fixed-hyperparameter
-  illumination comparison is included separately because it is discussed in the
-  manuscript.
-- Standard deviations describe training-seed variation, not uncertainty across
-  independent experiments. Retraining on another platform need not reproduce
-  every reported digit; bundled checkpoints and predictions preserve the exact
-  submitted runs.
+  positions precede the first actual observation. The other datasets use observed
+  targets. Masked zeros are storage placeholders, not imputed training targets.
+- The three temperature experiments use the known environmental sequence without
+  target-trajectory phenotype inputs. Hypocotyl forecasting uses early observed
+  individual lengths plus a prescribed photoperiod; future phenotypes never enter
+  the encoder. All evaluated genotypes are represented during training.
+- The earlier coefficient studies reused inspected test partitions. The maize
+  `(0.5, 0.5)` setting was retained after a later search and was not that search's
+  validation optimum. Temperature-dataset controls were not independently retuned.
+- The current hypocotyl experiment changes the evaluation task and target unit.
+  Previous genotype-mean scores cannot be compared numerically with these
+  individual-plant future-time errors. Earlier code and results remain available
+  at Git tag `submission-20260911-code-data`.
+- Hypocotyl hyperparameters are retained from the previous experiment, with no
+  new search on this temporal split. The matched `latent_ode_light` ablation
+  differs from PhytoODE only in its two physics coefficients; `latent_ode` also
+  omits light and is a separate complete-predictor comparison.
+- Standard deviations reflect three initialization seeds under natural
+  missingness and three paired mask/initialization realizations after additional
+  removal. They are not biological-cohort confidence intervals. Bundled
+  checkpoints preserve the reported runs; retraining on different hardware may
+  change numerical results.
 
 ## Data and citation
 

@@ -1,8 +1,9 @@
 {
-  "version": "submission-20260911-code-data",
-  "branch": "codex/submission-20260911",
+  "version": "submission-20260911-prefix-forecast",
+  "branch": "codex/hypocotyl-individual-plants-20260911",
   "source_development_commit": "9671ca42605ad6ab1543c527daa6466fa3e80e06",
-  "description": "Hashes of submitted files, excluding this manifest itself, downloaded external inputs, and local execution outputs.",
+  "preceding_release": "submission-20260911-code-data",
+  "description": "Code, data, checkpoints, and reproducibility documents for current manuscript experiments; excludes manuscript assets, external downloads, and local outputs.",
   "files": {
     ".gitattributes": {
       "sha256": "34adb1002cea37c4521bd11aa8b73fbbbd35f0facef6aeae24570f996d53491e",
@@ -13,12 +14,12 @@
       "bytes": 483
     },
     "CITATION.cff": {
-      "sha256": "09b605f8b7fef2a297635a505cc364c5d50f0aa6640a310f63ee31f74aae5994",
-      "bytes": 641
+      "sha256": "e90d2df2f6391cb23c921b24b0e2206206dd9c8b775680c79f96eb20b6c623b6",
+      "bytes": 653
     },
     "README.md": {
-      "sha256": "d02119a4e5e6fd93d467eb0168903d74fa0877063de2caf2e73bfa3fac6b563f",
-      "bytes": 12990
+      "sha256": "87d8c1bb1163d8906473ef688acd2eb55f1b237d854dc1a6c7c9ecdfdbee8183",
+      "bytes": 15245
     },
     "THIRD_PARTY.md": {
       "sha256": "c8b82eea7e6c4f5f9cbba0799ca621d2e03d6edb58028b75853c50777a156c1e",
@@ -56,13 +57,17 @@
       "sha256": "2f470e5b102da1b87988df63ba60f0873060dcd23b07cd52764c219d01c1b0f9",
       "bytes": 7311
     },
+    "configs/hypocotyl_forecast.json": {
+      "sha256": "fc7ae96dc2c609095a7ca992ee96309821f804a034beadb53ed332952268bdb4",
+      "bytes": 1557
+    },
     "configs/paper.json": {
-      "sha256": "f0a053012fa77b2d47f0adab4c767acf86107967c7590f324cb697f08e7f0341",
-      "bytes": 12947
+      "sha256": "33efbc6efa38be2ce16d73eceeceb09be24857103744b84e50532e1603d31cf2",
+      "bytes": 12754
     },
     "docs/REPRODUCTION.md": {
-      "sha256": "3987e19f96263096cb63947d3f33194f6d949834d53e10418b965980b446ea43",
-      "bytes": 7354
+      "sha256": "ef707b63b8419b189f12d34a215aea1d91f58375093263c3aa9da3a1d0e741e7",
+      "bytes": 8568
     },
     "experiments/physics_ablation.py": {
       "sha256": "1094f8b2025428a3bd3f564c91cb0e62bc8b7635843544035da3ee6bc08884cb",
@@ -581,652 +586,1896 @@
       "bytes": 182
     },
     "hypocotyl/README.md": {
-      "sha256": "34774bf872f160c74a195361d97809b2f4b2a0d1e43134704ddc6a14dee4bc08",
-      "bytes": 5272
+      "sha256": "9cf20970201dca7a3b2e6208a8aaf083c331a6c3018d4c3ca4e04f95178ad0b5",
+      "bytes": 7584
     },
-    "hypocotyl/code/light_input_model.py": {
-      "sha256": "d710f6db9799e97cda8627dbb7c72ba7ede906c6ff2b6afaed89224020e8d003",
-      "bytes": 2811
+    "hypocotyl/code/audit_forecast.py": {
+      "sha256": "622a426e611024e9a8f244e5644ecb3251af0166788a782ae55013aea602a6a7",
+      "bytes": 2586
     },
-    "hypocotyl/code/prepare_data.py": {
-      "sha256": "d1b11485a6ceb67dadf964c2b64d5665cea07174d9254e5871c5c81ebaa5716e",
-      "bytes": 3017
+    "hypocotyl/code/audit_forecast_artifacts.py": {
+      "sha256": "ae22faed46f8f411eee62975b85ac449821fa0703e0e6e9d349702b37cd12ffa",
+      "bytes": 2929
     },
-    "hypocotyl/code/single_condition_baselines.py": {
-      "sha256": "f9d8a438c768e64116a2781ffa27de279984c5f7df47c00c6a10c05351ae3f38",
-      "bytes": 1916
+    "hypocotyl/code/forecast_data.py": {
+      "sha256": "510c81198c795f0906f453b914408c68454e2c980ddd9a4ddf21d6198af4e4b3",
+      "bytes": 8553
     },
-    "hypocotyl/code/single_condition_data.py": {
-      "sha256": "a57cb1b7b47ea816988b24bc58b2137f46a8b7ffe6b43fe001a96aa2a0498251",
-      "bytes": 2921
+    "hypocotyl/code/forecast_models.py": {
+      "sha256": "74a04a153b3b9ad1e635608a05e301f394df4caad059dc65f4885fdb1da238d8",
+      "bytes": 7215
+    },
+    "hypocotyl/code/forecast_trial.py": {
+      "sha256": "1184e608d5b227a22addf8c906e2e5c62df9aa630f619d40754bc9c7b103d28b",
+      "bytes": 9209
+    },
+    "hypocotyl/code/report_forecast.py": {
+      "sha256": "3bacbe13d570e6343c5ee212f21f0f53d23a778ead8d589d9246c949f0df1d1a",
+      "bytes": 9840
+    },
+    "hypocotyl/code/run_forecast_benchmark.py": {
+      "sha256": "bb034e1bb730642b09897d0d04390eaee2276552416830eeb3bb9120a8c5e811",
+      "bytes": 3763
     },
     "hypocotyl/code/single_condition_models.py": {
       "sha256": "8116c31a537ee6f1c7dd2fdd8689c2d0483c636ce56c36660b8657f04e869ca2",
       "bytes": 4186
     },
     "hypocotyl/data/metadata.json": {
-      "sha256": "7026b1027b06758b60d79471a8999c542a0cb80c46f6fa491c26adddaec612b7",
-      "bytes": 1181
+      "sha256": "77f0df8d460169a8d2f278e3ad1e947a58945dabaff45deffacdf83660c45118",
+      "bytes": 1461
     },
-    "hypocotyl/data/observations_12L12D.csv": {
-      "sha256": "b6e58d2330a7357830b1b03c94c7ccc5dc00055ec0fa00e552fa1663ed98dace",
-      "bytes": 44362
+    "hypocotyl/data/processed/prefix_forecast_20260911/config.json": {
+      "sha256": "d1ca484d812dfbee7b7a137440ccacecb477f865ab3d26acaf550005c7e94ddf",
+      "bytes": 1515
     },
-    "hypocotyl/data/processed/single_condition_20260909/replicate/config.json": {
-      "sha256": "f0bfeac257851ed184d9f2b9e97493d0f23e9ec0ffc2e709c809e778c30521cc",
-      "bytes": 592
+    "hypocotyl/data/processed/prefix_forecast_20260911/excluded_observations.csv": {
+      "sha256": "523238a7fe8906436d61642b502c4a12a249942e778f3905e96d3b64f854db88",
+      "bytes": 125
     },
-    "hypocotyl/data/processed/single_condition_20260909/replicate/test.csv": {
-      "sha256": "be3200c7cb39ddc7d6183057d34efb19387566379edef41e6170bfcbc003e9b0",
-      "bytes": 10536
+    "hypocotyl/data/processed/prefix_forecast_20260911/observations.csv": {
+      "sha256": "36c1240b866f0a2c62691815c60012701a1987ab30c58f174bd6ba0131517030",
+      "bytes": 48478
     },
-    "hypocotyl/data/processed/single_condition_20260909/replicate/test_means.csv": {
-      "sha256": "b90d1ec71a986cac4ca0b6cc55ec6fe3034a5d116fa7f17c665eed3a58c8a1c9",
-      "bytes": 838
+    "hypocotyl/data/processed/prefix_forecast_20260911/plants.csv": {
+      "sha256": "ff4373bc9a0a4b152b21cab4e667cbd7be9c10013590cf2ae4f35f2f087d7a4d",
+      "bytes": 3822
     },
-    "hypocotyl/data/processed/single_condition_20260909/replicate/train.csv": {
-      "sha256": "0af70919d2757ee882e6be5c4333835e72f3d101e7314056706724680c91b5b8",
-      "bytes": 26097
+    "hypocotyl/data/processed/prefix_forecast_20260911/test.csv": {
+      "sha256": "3ab04a1dc495152d581406981579bfa445bb5db932df801452fc9403b18752f8",
+      "bytes": 13944
     },
-    "hypocotyl/data/processed/single_condition_20260909/replicate/train_means.csv": {
-      "sha256": "d65a810ef8a6ed0f67b26ded6460535204c58f6920009e555ce130a2f7e68231",
-      "bytes": 997
+    "hypocotyl/data/processed/prefix_forecast_20260911/train.csv": {
+      "sha256": "249e4ebd984c20752562c9acc7b4314017c040ab270cfa06d2f5814413509ec0",
+      "bytes": 28294
     },
-    "hypocotyl/data/processed/single_condition_20260909/replicate/val.csv": {
-      "sha256": "595853bb649856643a4fd76609748207353cd3f6003d85dac51d0608f542f096",
-      "bytes": 7917
-    },
-    "hypocotyl/data/processed/single_condition_20260909/replicate/val_means.csv": {
-      "sha256": "d9c379ae2eb936e5520086869ea4fbed62bbbc3b21cd764310a672339e6e2e54",
-      "bytes": 829
+    "hypocotyl/data/processed/prefix_forecast_20260911/val.csv": {
+      "sha256": "44ecd25986fa03ed183de993b280876a3dbe44cc093b1d81035472d8173baaf0",
+      "bytes": 6436
     },
     "hypocotyl/data/raw/hypocotyl_growth_20230403.xlsx": {
       "sha256": "62b64ad2aef1467f1278b8602d56ea6c7642fabbd5fbc1409aec13e4e40277e4",
       "bytes": 72180
     },
-    "hypocotyl/data/split_assignments.csv": {
-      "sha256": "0f8409077c10d32bd4b2e992cc15b326d55e697d7ee90f0476f63dda14d1dbad",
-      "bytes": 15508
+    "hypocotyl/reports/prefix_forecast_20260911/artifact_audit.json": {
+      "sha256": "f512c12aa796b409620bbdd1aae71224beb561307fdc2dcee59cbc12caedecdf",
+      "bytes": 10465
     },
-    "hypocotyl/reports/light_input_20260910/comparison.csv": {
-      "sha256": "19f2ce923b39968c252686dc63d370b936b86f4c34e6e8854fb64d9ffc24a1a6",
-      "bytes": 4023
+    "hypocotyl/reports/prefix_forecast_20260911/comparison.csv": {
+      "sha256": "6147488d4d1045375e222ee3e44f9e3b6b4db8267d7094d19741c6466fc9cbc3",
+      "bytes": 14478
     },
-    "hypocotyl/reports/light_input_20260910/integration_refinement.csv": {
-      "sha256": "7502856a29735e50d3f9db1dce5537a11e056181939b4130f28f6016465c484e",
-      "bytes": 517
+    "hypocotyl/reports/prefix_forecast_20260911/comparison.md": {
+      "sha256": "884392a9c46d86bacf851c0c56a6069cf82a60a83fade6f1433e448526eefbe8",
+      "bytes": 3319
     },
-    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light/seed1/predictions.npz": {
-      "sha256": "95b338ef90e94f4d0a56949d476c61754d57b184d83e18804053bb1e10332a68",
-      "bytes": 2995
+    "hypocotyl/reports/prefix_forecast_20260911/data_audit.json": {
+      "sha256": "828b4b6495f146f41af7031a8a6b92507460335181941caa6800d955cff03ac0",
+      "bytes": 2219
     },
-    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light/seed1/result.json": {
-      "sha256": "cfa8e5a030abf98a9e5d5daa60f2b4b75bedafe0e61ad0266603b2c81ce629f4",
-      "bytes": 1692
+    "hypocotyl/reports/prefix_forecast_20260911/paired_physics_comparison.csv": {
+      "sha256": "53fe5c18b03b86ed0120d8c546647719c0ef1afbed72e4f32379cc2ff5b47cf4",
+      "bytes": 1307
     },
-    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light/seed2/predictions.npz": {
-      "sha256": "8adaf5a4be4e88bd33061500d7a77e3a839ca07968481cac3cf9db280cdde2b1",
-      "bytes": 3004
+    "hypocotyl/reports/prefix_forecast_20260911/per_run_metrics.csv": {
+      "sha256": "7420763092ee47d10739a679d5af83406f0c1d4ce5e673ad5f65ebd1a71d92eb",
+      "bytes": 19134
     },
-    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light/seed2/result.json": {
-      "sha256": "6d104966460ba550023a774506aa4dd2b799609fe3c928aab0aa7a8812aac244",
-      "bytes": 1693
+    "hypocotyl/results/prefix_forecast_20260911/completion.json": {
+      "sha256": "090266858219eb0635dd21fa171b4b0c78d5a86883a707378930ecf9e7d096e3",
+      "bytes": 44
     },
-    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light/seed3/predictions.npz": {
-      "sha256": "ae85ddd6800fddb857c26914a435e119a255d7316842954773a2bb8014948c67",
-      "bytes": 2997
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed1.log": {
+      "sha256": "539db4069e365c884e0b6d42a1e506b8095656498dfa264062b6ff46729ee097",
+      "bytes": 839
     },
-    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light/seed3/result.json": {
-      "sha256": "b29901b34256a2b6c25857b84d39f60a82e2010c5dedb63fef48a1eb6bb77aa2",
-      "bytes": 1692
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed1/checkpoint.pt": {
+      "sha256": "92357ae897845e839c5f65d33a29b14b1f4a168a18be20937bc93c725d25d6bf",
+      "bytes": 13365
     },
-    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light_anchor/seed1/predictions.npz": {
-      "sha256": "5b20d582472f6d85e4dc4bea9da2d0b53f7a567568f396e02105ab1da20202bf",
-      "bytes": 2998
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed1/config.json": {
+      "sha256": "3fbbaebfd8b12d27dfb3ab0938b17808e7b3be9cab5d35d960518b97ea5314d9",
+      "bytes": 2576
     },
-    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light_anchor/seed1/result.json": {
-      "sha256": "0c4344d416add9149d198457a2954c36769316c84ea42da3776954007fefdc98",
-      "bytes": 1703
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed1/history.csv": {
+      "sha256": "1789339e68b696ea70ef59b759cdaad719840ffca9fc7abd0a16538eb00182ae",
+      "bytes": 7304
     },
-    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light_anchor/seed2/predictions.npz": {
-      "sha256": "c679a1588eec276701596bac9a6cab5111bd108651725860b2afc9ab505e241c",
-      "bytes": 2999
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed1/predictions.npz": {
+      "sha256": "147f850a39b72fcd01784279fbd1a908f89c7a3d35913a6ba73b05b52c14c864",
+      "bytes": 24078
     },
-    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light_anchor/seed2/result.json": {
-      "sha256": "ade2363f4706a04e29b2bda7b5c1d07550b973017be897c3fdcd48e448f47f75",
-      "bytes": 1702
-    },
-    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light_anchor/seed3/predictions.npz": {
-      "sha256": "d938774699638839264fe6164873494225b1fad5f19326a35fbfc4fd785d4843",
-      "bytes": 2997
-    },
-    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light_anchor/seed3/result.json": {
-      "sha256": "623bf9a7c16fde8ec0b2adf2697e251e4c70e6134c742191179a25771edd16cc",
-      "bytes": 1702
-    },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed1/checkpoint.pt": {
-      "sha256": "bd3bad44caa1bae7bd58b2e90367b3858bfdb5b68367cc6d2ad36971eb7a83e7",
-      "bytes": 10997
-    },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed1/history.csv": {
-      "sha256": "3659ea01fbc4a610d1cad9bb68338d072d5f18f01c9e0b0912c52cbc1351af0f",
-      "bytes": 12848
-    },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed1/predictions.npz": {
-      "sha256": "6ebf93879170e7b73a86b8521dc2f6896e61615d4b4f529bd6799cdc43845827",
-      "bytes": 2239
-    },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed1/progress.json": {
-      "sha256": "3584e00b836b5ca5145b7ea981e56fb18d6ea9ddded86a2fae14a3c391776824",
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed1/progress.json": {
+      "sha256": "ae2869f77f89bea1c3add1443bf6171c0bda27a53f5f340646509452db1d4160",
       "bytes": 116
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed1/result.json": {
-      "sha256": "211882afe819c1bbaac7981da531e298ce9427106c6132a82cc0d5b55e8b0621",
-      "bytes": 1781
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed1/result.json": {
+      "sha256": "45603d96d278110bb94435fe0ef488fa934b86223c3cdd33f369047681016fdf",
+      "bytes": 15789
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed2/checkpoint.pt": {
-      "sha256": "24e544db95de5404da2c79ca3074034af770f5acf741fbb5336428d294d9eed1",
-      "bytes": 10997
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed1/selection.json": {
+      "sha256": "f83aea6aa9e11d5e37ec5eaceb1a7e521a63852ca5f0308334a8ba03f0f76406",
+      "bytes": 180
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed2/history.csv": {
-      "sha256": "f50ae25a541a170ebe68166dc3bc295ffd9bed7927723cf18aef0b99bbb0c7d8",
-      "bytes": 12870
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed2.log": {
+      "sha256": "c5cc7bd9261f321cb12bb34474ee1651530106e88dec47516c4d779505470c90",
+      "bytes": 838
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed2/predictions.npz": {
-      "sha256": "3a1f9fd1a19db08284c65e1390bdf9fe90d0d6126bdcb96f3a7194c234208628",
-      "bytes": 2240
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed2/checkpoint.pt": {
+      "sha256": "257554d0d1f598998a5bd0f4d733532f9de7c9d4b44e92edeec8a387ecd4c656",
+      "bytes": 13365
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed2/progress.json": {
-      "sha256": "cc07147d02766cb22011d91c8cedc3432b8efd7609826543286e6a47b839b0fc",
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed2/config.json": {
+      "sha256": "cdf4692c7020ce1b93389b024c6b3acc474c318c012263a87707bee74d3e8162",
+      "bytes": 2576
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed2/history.csv": {
+      "sha256": "e8e50d136df9399070a96d461a405b9e566e419c937fedeb497525cc27a2bb56",
+      "bytes": 7292
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed2/predictions.npz": {
+      "sha256": "772816e655813651ce10474c9db3743afb8def041096663a658dbf220e01862e",
+      "bytes": 24039
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed2/progress.json": {
+      "sha256": "7129157e1884c7318d6564217652bf0d443f16adf4ff324df1d6ced1567d3eba",
       "bytes": 116
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed2/result.json": {
-      "sha256": "e7811e83efecbbcc0937a4331af257cac863e0c910031a077a1b888f820ea2c6",
-      "bytes": 1778
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed2/result.json": {
+      "sha256": "369af8169c2cf561f195358c45f528c93f62787104f8e286ced4668c7e5f870c",
+      "bytes": 15779
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed3/checkpoint.pt": {
-      "sha256": "afac4f7d5270e66eb39b3c7a6296819ad5d7136e344e02f8495a44bd021b744b",
-      "bytes": 10997
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed2/selection.json": {
+      "sha256": "6740e7aa6872bcd923ff3bc375a8c91d39e190d25534dba9098c99740c61bcf5",
+      "bytes": 180
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed3/history.csv": {
-      "sha256": "87e02068f3e0a2a867e6cb87e9711c2ed44a7312951a1fe85fdcfd276048f6f5",
-      "bytes": 12849
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed3.log": {
+      "sha256": "7e311a8f21fb2058d4fbf9beb38aa518d06a63ba0026bf4e5cda4565ea1dceb9",
+      "bytes": 838
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed3/predictions.npz": {
-      "sha256": "03c62e04f99d901367ceb868f1ad3a99a4d210c9f4d9e0f35d85e05debf18a9a",
-      "bytes": 2238
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed3/checkpoint.pt": {
+      "sha256": "a2d28feb9822594cabca4ffa224eedb9a74ba38433b8ed996961e57a2884e54d",
+      "bytes": 13365
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed3/progress.json": {
-      "sha256": "8c221d03c5c0193b88a906918af2d48a68341b57d55aca1a346965380aba0f84",
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed3/config.json": {
+      "sha256": "d4989b2c6c681eec3f395c02f0b3df11ea3fce5e83a5ca632a5adb9bb8df2133",
+      "bytes": 2576
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed3/history.csv": {
+      "sha256": "eb9a49e5ec1909cf4d39912839db21da2fd734739ba744415efbef64541c5ce2",
+      "bytes": 7287
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed3/predictions.npz": {
+      "sha256": "7e4297ea35e4e410b4aff3f375d88610a62f2a1d75f50d4589931ca055b303be",
+      "bytes": 24062
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed3/progress.json": {
+      "sha256": "db3ef4a30a8773c6449786d1ac62493667706d8cccf853c4e21572c3310fd4d1",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed3/result.json": {
+      "sha256": "6ce5be061b7cefc833c96c2dde5cb2406b013c843f8da1b86dc0c2e84df9b25a",
+      "bytes": 15762
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed3/selection.json": {
+      "sha256": "1b495ad38730c68ee363cd1abf20fd7dfb74addaa8227b5d25617f44732f854a",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed1.log": {
+      "sha256": "a0877d689c58ca2e738841375120e15e8c35b2d500e51a3b8f859b5da33f7e82",
+      "bytes": 927
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed1/checkpoint.pt": {
+      "sha256": "312775afe4262b4dbfa2242a90eebab83c16c75dab8944146352651db3839854",
+      "bytes": 13557
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed1/config.json": {
+      "sha256": "f6fd46a5708965f68664c1d6e0d6f340fc595eb488974f01f727c7e482c471a5",
+      "bytes": 2582
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed1/history.csv": {
+      "sha256": "ed3ec05e3a461f564ff5fac7844568464734bc3a987080e886f99de16328b66f",
+      "bytes": 7312
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed1/predictions.npz": {
+      "sha256": "2571b1ca2aa329b5221cf709d3fea4c67c840704a1374b8d862d87ba5557fd00",
+      "bytes": 24050
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed1/progress.json": {
+      "sha256": "e8bd21f8617fa72e0ef07e72cda6303ce891229d009d11f4af9fa7c6626d959a",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed1/result.json": {
+      "sha256": "c1a6cff2e41b358e73f897b2d653151ee1c318060d3fad8e96aaebca8d7dceb9",
+      "bytes": 15784
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed1/selection.json": {
+      "sha256": "35ec877dfff7702200ac86bf5d885718acacf8340ff242604d9f6eea98917f1c",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed2.log": {
+      "sha256": "710e25d35beb35675562f7313806c89d8e2bf398e5f734fa00e9271efc37896a",
+      "bytes": 929
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed2/checkpoint.pt": {
+      "sha256": "9d2d894770d9249a99dc251048fe3d0dc9ba31c85118b8530ce193eec9973912",
+      "bytes": 13557
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed2/config.json": {
+      "sha256": "17495941a0f1042f9837b01e82d1afff1de1b33c198010ed6ce9fe8d00d4828b",
+      "bytes": 2582
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed2/history.csv": {
+      "sha256": "60bafb4758ab3de826806b33bf8e67f59a9d5da1e4e45473ff47e7cfe31f982b",
+      "bytes": 7284
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed2/predictions.npz": {
+      "sha256": "dc04cfc40dfd6217548ec5d9b5a58fe501546bcd5ee711441303251313f366e6",
+      "bytes": 24041
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed2/progress.json": {
+      "sha256": "cb2f92b9b78cf9c122427d34876526f11bbaaf39e5f3964a3419ca7cdf5e402b",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed2/result.json": {
+      "sha256": "fe74f8606504cd8f2ebb655a1fa3aa08af182845491aad95afc412d9e7058cc6",
+      "bytes": 15773
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed2/selection.json": {
+      "sha256": "e6372c37b6d068f6e9495c3ee7ba072f79c3b048c7f00723268abc27d4071296",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed3.log": {
+      "sha256": "ab6aa2fa836ffca3d67046d7bd945ef4439d7a487cada821e0b367f13e1cd64d",
+      "bytes": 928
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed3/checkpoint.pt": {
+      "sha256": "9d869179d99c5c06bbc91a4a05c610d747111992423259e9d60aa83be4511bb7",
+      "bytes": 13557
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed3/config.json": {
+      "sha256": "b24840f728ccce1a0e7de866fd9c38cc0e97f7a359c0406451d86e3f11e6e93e",
+      "bytes": 2582
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed3/history.csv": {
+      "sha256": "9a971af13958765d12c7d3a2389045f15bc37129eee75ad3932732ede6cdb3ec",
+      "bytes": 7274
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed3/predictions.npz": {
+      "sha256": "6d6b455d1a9aff26b10dd97803a1bed6fb4dd902daa399042863e03602f6d4a1",
+      "bytes": 24052
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed3/progress.json": {
+      "sha256": "3b0d515be06c7351fc724c5fce9a8564e8b3bc1f4a978c9210ac58ebf3d53dac",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed3/result.json": {
+      "sha256": "477e9688eaf33eba53d5c6f794c67ac453fcd12ed6fb69a10829480561e45464",
+      "bytes": 15780
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed3/selection.json": {
+      "sha256": "55689c253d50e6f1eacdbfea14198797b0980afefe7c51a2f757f098f178c429",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic/seed1.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic/seed1/config.json": {
+      "sha256": "9490faed565093fe02dc372cc7ce32ee1dc2961d3517545330877ab14f12f9d6",
+      "bytes": 2474
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic/seed1/parameters.json": {
+      "sha256": "4f35be4cec7dd0a4e7a64c083a1cf0802dc62dace4116eb1555de87fbe37389c",
+      "bytes": 7683
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic/seed1/predictions.npz": {
+      "sha256": "d4be628c44efc0bddc2761ef242aa464a77c2d2751be010836f6f81f8d9b7404",
+      "bytes": 39709
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic/seed1/result.json": {
+      "sha256": "4843ef28b33cd1c12b018cd876c88b0e88dadafba381a0a19223f4de2a4a981d",
+      "bytes": 15580
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic/seed1/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed1.log": {
+      "sha256": "c99823490a53e80dbf56935d1ad39c3e3c59d38a4941b4a4d1b24df2f937fb3c",
+      "bytes": 883
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed1/checkpoint.pt": {
+      "sha256": "927e3af94a9010307e302c2867432bb53ae33ecfbeb27c479cb471e2c1dbcd11",
+      "bytes": 13173
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed1/config.json": {
+      "sha256": "f63831e5c1fb6aa1d0a4e426e297f917ecc82cdf8a4978b060a80e435f216fd6",
+      "bytes": 2582
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed1/history.csv": {
+      "sha256": "0f8e924c4a89616051b175948131f79495cae9ca9d86f37a635a8f368e1b9c3c",
+      "bytes": 9859
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed1/predictions.npz": {
+      "sha256": "225a80e4101fd015f74dd25924e8a52c92d864f9921a6ca609798db562edeb09",
+      "bytes": 24079
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed1/progress.json": {
+      "sha256": "03635db6fc6940f431a10f5f6f48dfb6a6178494e12a3201c019ac057cee5e2e",
       "bytes": 117
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed3/result.json": {
-      "sha256": "0b41e35e71f461b4cea0f8adb2e9d6a90dfd662d6643c28863303d5eea6c201f",
-      "bytes": 1777
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed1/result.json": {
+      "sha256": "c2b92299e3ebba143f41f107d0502457d4cf727529e971753448d25d21b3f3f0",
+      "bytes": 15793
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed1/checkpoint.pt": {
-      "sha256": "30af71fb6e6600fa5081df9a881fcf9930dae18e485b6fc96151377669a987b3",
-      "bytes": 10997
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed1/selection.json": {
+      "sha256": "f9d0c7e3c036cea99dda48dfe5f429a773ac6f916c17a899c153ddbb5980b614",
+      "bytes": 180
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed1/history.csv": {
-      "sha256": "2aa85a463e0918a101ba06eedcf7f799f7861ecd6152fec83a91b0a483f2220e",
-      "bytes": 12802
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed2.log": {
+      "sha256": "df68492156de8422d245328054167d125ccb46dcba224922931c9dafb042631b",
+      "bytes": 882
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed1/predictions.npz": {
-      "sha256": "219e73159d1360732cd4f6502abaec3664b7726f8c2fed27e069d1b3e0ab709a",
-      "bytes": 2236
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed2/checkpoint.pt": {
+      "sha256": "ba944278b31b79a4066c31a780a382ccbcfcc2ae03f94b971e698afaca6cad4a",
+      "bytes": 13173
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed1/progress.json": {
-      "sha256": "ccb8b36b5dc2d0761503c7cf1cc9daf52c42b74cfe1e559bb456bbefeb86be51",
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed2/config.json": {
+      "sha256": "431d860779f193987e1bff390b217b3d2075902dc9e0c15e57322befada9c40b",
+      "bytes": 2582
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed2/history.csv": {
+      "sha256": "ef532befc3f7169995969c7eaa196c1b23a03d6763dcad53375ffa1a684fcc22",
+      "bytes": 9883
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed2/predictions.npz": {
+      "sha256": "84c2ab0d08bf054a45ea0ec557bfe60ddc37afc2fe98842ac854a9e0592809f8",
+      "bytes": 24048
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed2/progress.json": {
+      "sha256": "9b1577e68bb5030d0b7c6467ef7a23ee59d07f489c6c97c133a23051c7a0184d",
+      "bytes": 118
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed2/result.json": {
+      "sha256": "eb070324acd608ce7004084b995dd703634b06b792bf491cb3c600f8a9fead88",
+      "bytes": 15786
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed2/selection.json": {
+      "sha256": "8841bed1da35a1ddc9b91f80a130ee093bae042bed050f0430e9b9330e64194d",
+      "bytes": 181
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed3.log": {
+      "sha256": "837b6a4dbe95995db1f6a2307324866bfcffcd65f63d4856f1c938aba0868c8f",
+      "bytes": 883
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed3/checkpoint.pt": {
+      "sha256": "79230397de56b43886760d4fccebeee5cb1030091c733256658f401d0aec8570",
+      "bytes": 13173
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed3/config.json": {
+      "sha256": "cd9242afeea2a187ab9278c49c9b04ff322b51f909989cb3deea49cede937cc5",
+      "bytes": 2582
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed3/history.csv": {
+      "sha256": "8c21147111607da0e0b942bae3ab2506527a5377bc5ba486291f06cb9d3d3e0d",
+      "bytes": 9896
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed3/predictions.npz": {
+      "sha256": "27388bd20a92e5e24c7f0dfc263988ee053df921af0173dd2158383b88a8b6d0",
+      "bytes": 24056
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed3/progress.json": {
+      "sha256": "94cd82de10015e28d0b9b2d5a4a559fc8754df83917d031fa11035f156fbae52",
+      "bytes": 118
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed3/result.json": {
+      "sha256": "ac72b02e8ab0fccc2b47b95886dd0d88566e3c1f398a9a07841c7325bd73546d",
+      "bytes": 15825
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed3/selection.json": {
+      "sha256": "1cdd0328bcbaa2e313e66cae0ab44e67c6aecc324a230ee93af7afad3970685d",
+      "bytes": 181
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed1.log": {
+      "sha256": "c484cda2ed553a2e8c6ec63976f28d489fbf8bc7036c306b188b61a6f451d63d",
+      "bytes": 749
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed1/checkpoint.pt": {
+      "sha256": "9e1e4bb2fcddef5cb63ee531f06c6b7ee7c111a64f5a08ffe591e22954582d6c",
+      "bytes": 18485
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed1/config.json": {
+      "sha256": "f1be705e49eaebd50a18b7b21de86041302098d019feb33adb42844c8e5163f8",
+      "bytes": 2570
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed1/history.csv": {
+      "sha256": "069038067f707d8834b4d4a06febb45d93609c194c1814c40b6c57d1a71c040f",
+      "bytes": 7317
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed1/predictions.npz": {
+      "sha256": "2cf63380314e4200fa3859f6207a7f9fc279abef6c06b712fc1e392cab75cf3d",
+      "bytes": 24050
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed1/progress.json": {
+      "sha256": "a0ba1117703fb59d4ffe3ee23386b8a2a5e8917a8f8ddf0222fbf403ab896ef0",
       "bytes": 116
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed1/result.json": {
-      "sha256": "9822529352202a97a5730f493c7409488a4a818330c94ba92f9fa5adc62b0662",
-      "bytes": 1776
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed1/result.json": {
+      "sha256": "f435563a19acd460328db55c6dca72196ce88f1416d85e7d7b0210338ff771c3",
+      "bytes": 15753
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed2/checkpoint.pt": {
-      "sha256": "2ff86ee8a3059dd72a6593320c72d44b26fc8d5fc6ed928cc2fbb5c090c6c67a",
-      "bytes": 10997
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed1/selection.json": {
+      "sha256": "b393b29ea334e311973ec146d8e2ee9e65d49ee17eb54e33bd5eab3341172b8f",
+      "bytes": 180
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed2/history.csv": {
-      "sha256": "05e091492368692f5bc09f9123285858490c50ccd06d5b68c812ffc779f7fcec",
-      "bytes": 12772
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed2.log": {
+      "sha256": "8514a5f7434c272fc246edc87fd485b9aea38b9f3005230408398123e5cd0f89",
+      "bytes": 747
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed2/predictions.npz": {
-      "sha256": "8f2f5e1f727fd94412d206c35a37f8625a05588ca8e3a3762afcbf2c4a508488",
-      "bytes": 2245
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed2/checkpoint.pt": {
+      "sha256": "16a5f24d27a45002133e22665ea710baf23bee2ef70ad74be8b2d23ff08264d3",
+      "bytes": 18485
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed2/progress.json": {
-      "sha256": "476dc1397eeae9c1fd33f5784eb02b36fc96939daa6ba312bf34a7101867060e",
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed2/config.json": {
+      "sha256": "e514bbf4626f31b354970bccac550c2c41729e51c1a2358e8f2a0455e15270c1",
+      "bytes": 2570
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed2/history.csv": {
+      "sha256": "b4c42c8f14e669835c41a241f83ffe3c62b3655298fc9c7a91d554b4d3bccfde",
+      "bytes": 7309
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed2/predictions.npz": {
+      "sha256": "e11aa36013e8c63d59f47ddc80ddbdbde523a7877488c5f782ff74084eb1af50",
+      "bytes": 24025
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed2/progress.json": {
+      "sha256": "f06529e0cf6ea84075b4ff3d6550612f98335d792a1bc6ab3a85de393eede46f",
       "bytes": 116
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed2/result.json": {
-      "sha256": "bb7de98935724f13756eb308cf7b47cdce9df6e37599827086cb6331ef121526",
-      "bytes": 1778
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed2/result.json": {
+      "sha256": "8b8d1578458a226ad6bb07dd779dcaaf1d08720537cba8c2cbefe7c2859b84cf",
+      "bytes": 15764
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed3/checkpoint.pt": {
-      "sha256": "008d179670fc55a8c93d342e76d03135f2750bff473980725676dcccf9ec4a1f",
-      "bytes": 10997
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed2/selection.json": {
+      "sha256": "79b1bcf4f0e6e24d4aa26a9c8312119c4e9f890fe5281aa62986b1a286aaca10",
+      "bytes": 180
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed3/history.csv": {
-      "sha256": "3595730cb454953a7eb55c2554fb8f89ad80114aaf088bd858cec3c24b98f890",
-      "bytes": 12768
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed3.log": {
+      "sha256": "8465a271886a91064df9c551230ec0a4b12de35051ff8ac14ae628e5695c0695",
+      "bytes": 748
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed3/predictions.npz": {
-      "sha256": "dc7ae9c32f592ea42986a084206e26d506aa06eefce9af6cfd324be963f66e98",
-      "bytes": 2238
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed3/checkpoint.pt": {
+      "sha256": "cd89b61c492769639dd00d0ad066636a330d1c67f6f338ebeaf51853e8dd1a97",
+      "bytes": 18485
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed3/progress.json": {
-      "sha256": "9ee451e064a9e1d04f77e8a2ba0d23ee685ad9a8108b88935482c4cb038993fc",
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed3/config.json": {
+      "sha256": "3d5fb8ed8419b66df41e3ed46513b8f737821e523bd4a2e5bbdfd4eb64b0a3a6",
+      "bytes": 2570
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed3/history.csv": {
+      "sha256": "b854222e873c94732ec8557d6a0805fcb2406751e12429eb7d6dfc282d5ccbe5",
+      "bytes": 7316
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed3/predictions.npz": {
+      "sha256": "d41bce211d4c7810b976221a9a753e8d2abd496c98333e22242bb4e497f71fda",
+      "bytes": 24075
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed3/progress.json": {
+      "sha256": "b7fb82ff64e981aa1fc937f46c7c9084bb3639eb084cbe6f8005ac9d07874b1f",
+      "bytes": 117
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed3/result.json": {
+      "sha256": "18d779a01789063daa0fc858cfc60122858775685509e6552519dca4af879771",
+      "bytes": 15748
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed3/selection.json": {
+      "sha256": "c8673f36e9b70a73624b7aaf146c1d4cf2fcf142612ce4032d97c27ca906a900",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed1.log": {
+      "sha256": "8e65609642bee9f530247bc7c67f73d7c8011f2ae13de8845a36fa30053c43e1",
+      "bytes": 808
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed1/checkpoint.pt": {
+      "sha256": "4098f3496427f901a7fb5a4ce4eb75297f7a626b8d590c1177d0da749f477d92",
+      "bytes": 13557
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed1/config.json": {
+      "sha256": "9189c3c14803e0ee6dd3399d5ba079d09a6dd1218de9a634f9d1c34cf47d2feb",
+      "bytes": 2576
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed1/history.csv": {
+      "sha256": "00cb2344932489a74126e82d0e06644749694b5f3ed30d7c713d57f16f17d3a7",
+      "bytes": 9925
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed1/predictions.npz": {
+      "sha256": "b72f25f9b736eb45a172b8106d811edcfd512011268533d5be646168e7e259cb",
+      "bytes": 24016
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed1/progress.json": {
+      "sha256": "7a11e4374f460429319d8bc8f8a5204dcf798f726c5f7f65403706f680a0a241",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed1/result.json": {
+      "sha256": "a57024c76ec518719d4e18f49da07927f671b57d39a34bd555359758d938a6f1",
+      "bytes": 15748
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed1/selection.json": {
+      "sha256": "3c551a7a6c63e2f52826c8745fd8f8aaa474fc14bfc6126d421396b0cdd9e84b",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed2.log": {
+      "sha256": "73715336ce7de7469c4942863273e1be26f4b0ebe1b89f53e35e87589ff4f0b3",
+      "bytes": 807
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed2/checkpoint.pt": {
+      "sha256": "12d439cba5599c9f56c0da716b4b1fb8cd9b567a62fa79569e79c9f9f83344cd",
+      "bytes": 13557
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed2/config.json": {
+      "sha256": "44cbbaaae7b8f1391f088c9017861fb604326ab708314ff335f10fd81e607eee",
+      "bytes": 2576
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed2/history.csv": {
+      "sha256": "55923587ada9d010570329335dbad18f5770448ea6aace104a2b04a85e301483",
+      "bytes": 9905
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed2/predictions.npz": {
+      "sha256": "05d4b0d7005c802fd33e8363665c58671224113ae5d8e82b77fd09aba6d0d198",
+      "bytes": 24000
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed2/progress.json": {
+      "sha256": "5c11f92892d72872a45eef0a41afe57aff044a1647bc4833f541f7cd01993fcd",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed2/result.json": {
+      "sha256": "09c33e53bc946eaff942422b3d72d72f51126a70701f1d67b7fe064dd9226fcc",
+      "bytes": 15801
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed2/selection.json": {
+      "sha256": "8afb7380bc71fcad166aa043e012b77b50f2f217c11df5fee0fe28c68be8e71d",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed3.log": {
+      "sha256": "e436cad4c8b31e45c34ef04308896965c84998a5843fcb8596fc92ee3f10313a",
+      "bytes": 808
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed3/checkpoint.pt": {
+      "sha256": "e5b8a460670038f38bc397f961d4e1b0ea8f0887659cd5391498f8d325ea3d66",
+      "bytes": 13557
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed3/config.json": {
+      "sha256": "6d3f9cabf0adad72285c4801a332496ae3d9f37c1b9d32c3adef8f2975656e72",
+      "bytes": 2576
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed3/history.csv": {
+      "sha256": "373647530f1311fdd925032a7694c515f88663fa76b25031f26694da33dfefc0",
+      "bytes": 9939
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed3/predictions.npz": {
+      "sha256": "0094abded2ac4b12d4a386f3f644742f6c1d2bb3506227a06b075f75793c95d6",
+      "bytes": 24028
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed3/progress.json": {
+      "sha256": "2e1ac772aeb8230dd8a2e5a161010ac05505d1beda31637a488cec4acd891fd6",
+      "bytes": 118
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed3/result.json": {
+      "sha256": "20a8d5e129bd10a5fdfa4ab565eb88fdd420dda48f923266866d66fdafa25f86",
+      "bytes": 15786
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/phytoode/seed3/selection.json": {
+      "sha256": "ad66811bc4c39a45ceb895a5e45135c3a5cb312832e8710a9be9d0870cd513f9",
+      "bytes": 181
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed1.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed1/config.json": {
+      "sha256": "3ce0c1455091f5e43d2150334413f08cd856c2752b14e53bdf21a96efb2e9eb9",
+      "bytes": 2469
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed1/predictions.npz": {
+      "sha256": "4b4118c10cf62c81c8075539993594e3b60594e11847f35af45b6f157d6e2417",
+      "bytes": 15116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed1/result.json": {
+      "sha256": "ce348f607c48b1afa9d9913c5c6ad06d79d54ae993b7064bc15a83b081e3dd1c",
+      "bytes": 15761
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed1/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed2.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed2/config.json": {
+      "sha256": "3061d2dc5bd2b2a0e9a8e0371d5d8af20e6dd1f66f22b83fb95b7c46e0505468",
+      "bytes": 2469
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed2/predictions.npz": {
+      "sha256": "599939f6f64356186fee22efa6f8b25d977e623f5b4c965a52a0c10679a07a21",
+      "bytes": 15173
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed2/result.json": {
+      "sha256": "e0e3d32167a078224454b6537898820cf87645be721d8cd94b59e8ec7869021f",
+      "bytes": 15737
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed2/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed3.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed3/config.json": {
+      "sha256": "a870c1ecf1d3aa146f09bc6af8a22fa5493d3889916b16cc8b81b79f9df990e7",
+      "bytes": 2469
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed3/predictions.npz": {
+      "sha256": "368ed761cd599c72920caf3ba625ee9ce2f430d9c359bd4a955dd645b3b106fa",
+      "bytes": 15107
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed3/result.json": {
+      "sha256": "29000a54a9caf203fcea5be9636ffadd7e719dbcc9699f62b0f7e489f668bd64",
+      "bytes": 15723
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_0/rf/seed3/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed1.log": {
+      "sha256": "4d00f20d6c5e4a70cae89c3470d401cc3fef81f378f6f6872b79ff9aec9be32e",
+      "bytes": 853
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed1/checkpoint.pt": {
+      "sha256": "dec9e0ae9605ae5a91e9eccc87fab17c3b4419c606052375f65428e897af78db",
+      "bytes": 16053
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed1/config.json": {
+      "sha256": "02625d6efd8b2a6a374d1899a67c7dd738579a7a671679f5762cfdd545574a8a",
+      "bytes": 5308
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed1/history.csv": {
+      "sha256": "8c30b020ed9e8f473b8d09404ffe7a128cb20ed530741edb19914b02efac045f",
+      "bytes": 7288
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed1/predictions.npz": {
+      "sha256": "74667a3af0f0bf98f4781c1b6e60d07831710d680d6e188303e60788d2ad8fe7",
+      "bytes": 23586
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed1/progress.json": {
+      "sha256": "08001ca08c08fc9bd320ef1f067f1095ccdac2f8e6d199c91fde356e5f11e30f",
+      "bytes": 114
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed1/result.json": {
+      "sha256": "71d928de884531123ac7243a5750f2b237b005480c5192007e32873d9e876336",
+      "bytes": 18808
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed1/selection.json": {
+      "sha256": "1c2f415278023e970edf932f2188ab938e3c3c6203c07467dccd0fc71a335cfc",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed2.log": {
+      "sha256": "a8cce865ca118af0710cf78f1a41159e4f344e7e7834679eec06702c7d69aa1c",
+      "bytes": 853
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed2/checkpoint.pt": {
+      "sha256": "49076cf48858baaaeea9db048e230c3a78a10fbd29663b71a30d056039947beb",
+      "bytes": 16053
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed2/config.json": {
+      "sha256": "a28fada549f75a1bafd14b4c8e6e51bb3ca8c2d5f5c75676360bbf1ed403d140",
+      "bytes": 5302
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed2/history.csv": {
+      "sha256": "03a3d6182a33514792329384f85f0f68f8651dda5e6fff1a966d854235be04eb",
+      "bytes": 7275
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed2/predictions.npz": {
+      "sha256": "bfe0d2c15a9b0ad7bba235a2147cbdc28ce3fd8e3ccf7c809638ae70dfeb828e",
+      "bytes": 23548
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed2/progress.json": {
+      "sha256": "a7e66999738965b05f5e96885d39ede06597b3765dfd4d61172757723fc1af92",
       "bytes": 115
     },
-    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed3/result.json": {
-      "sha256": "fe276bc013f253a02f10c9bfb9a9f99787c378e6cad503cb453bbfc4f83b1ca2",
-      "bytes": 1775
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed1/predictions.npz": {
-      "sha256": "18acfceb08141bbe6dd0b71829aa8c007263dc16c83e854e294da4525cca0703",
-      "bytes": 2996
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed1/result.json": {
-      "sha256": "2d1fecdd0c1e5ae894638511b1e2fa3c21f63d77438dee9d0c132e34ffa94f7e",
-      "bytes": 1685
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed2/predictions.npz": {
-      "sha256": "80b51de22f5e959d2d7eb9a32e0737b2204d678a30bd25f6839809267fdec6fd",
-      "bytes": 3002
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed2/result.json": {
-      "sha256": "7219d7c29cefff0f0db48c5fc229f84c8beac6fc1909febacf59d124186bce50",
-      "bytes": 1688
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed3/predictions.npz": {
-      "sha256": "4e6aca8e55be7c3cddcc7fb66be71ae837445ca9fc1d9882e8e6ec40b3b78753",
-      "bytes": 2996
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed3/result.json": {
-      "sha256": "b5105bec4c39e62171c72436ba468ba0d5a076ee752bcc8190e817625bd52173",
-      "bytes": 1689
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/logistic/seed1/predictions.npz": {
-      "sha256": "85b15d33f38cc3d3714d6643eb0adcdebc604011c9bb5098cd6469e150748b87",
-      "bytes": 3496
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/logistic/seed1/result.json": {
-      "sha256": "7e26fd85f7abddd956f3bd1a54caad5bbbe16a1b784f0e2a3609043f53c099ae",
-      "bytes": 1684
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed1/predictions.npz": {
-      "sha256": "eb84dbd2f7c9a422f97a634b2c7719c9827935f8f7df981ef44c34e588b665cf",
-      "bytes": 2995
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed1/result.json": {
-      "sha256": "b24b6afd230398c7ee6b8373da7c9126e58729852e4b772123ef00f8ae28519a",
-      "bytes": 1689
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed2/predictions.npz": {
-      "sha256": "de5da63445cbc24598b66e548d0c366e288b24931190cd2ecc0dedeb7d5b6d09",
-      "bytes": 3000
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed2/result.json": {
-      "sha256": "9e36d88085ef57ca7b045822ab97760751253842d95090f63c676e4f2dc6d61d",
-      "bytes": 1692
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed3/predictions.npz": {
-      "sha256": "53630f38d6747f86effcd44103cc73653530658a8ca0af188b87b72f5dfddfd7",
-      "bytes": 3001
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed3/result.json": {
-      "sha256": "b040ea27a851e95d90b304467bb42c5cf994ea8ded4515a86141871e777892af",
-      "bytes": 1686
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed1/predictions.npz": {
-      "sha256": "0fb8d6f3b0bd7bcd6d951277af04c21a1d86fa996e69003f62ff0645552a32a0",
-      "bytes": 3001
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed1/result.json": {
-      "sha256": "56a577f9ed7ba178887a52de3af9f942541d0f6d7779f06ab92cc4e4f07d913b",
-      "bytes": 1684
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed2/predictions.npz": {
-      "sha256": "d355290b89ae5c9daafb00bef0c3efa28352a5d6cca07b0637b58bc46f3b0ad6",
-      "bytes": 2999
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed2/result.json": {
-      "sha256": "1f2710bfce1f6f20488576134fc800bbc13d652bf48128a39f7f3e19e029e524",
-      "bytes": 1682
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed3/predictions.npz": {
-      "sha256": "b6a1eb146d1be415c89d2a135fc4ed45a6753409973b1c21ff71f4ef078156ea",
-      "bytes": 2994
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed3/result.json": {
-      "sha256": "7d0f4b60b25227409226e4fd996b93a082012baf6e8ef836b38db8ddc0e063ac",
-      "bytes": 1682
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed1/predictions.npz": {
-      "sha256": "916077e5a25ee6e849caae4095ba1f7990ab104df145325eb493272e093ac5b2",
-      "bytes": 3000
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed1/result.json": {
-      "sha256": "6b547cf512355b4cd23ec6053da7c5cac90e36b786eb892a5efd4b4190c84a97",
-      "bytes": 1682
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed2/predictions.npz": {
-      "sha256": "5d9468c783b8af39c6877d0ed3c0255bd666da2421f5d6562669fe870b14a731",
-      "bytes": 3003
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed2/result.json": {
-      "sha256": "2c5dac825658b9fbe6f281d38457ada3d4d487d81af043644d9783fd61d4d154",
-      "bytes": 1690
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed3/predictions.npz": {
-      "sha256": "b5a1f539a94ee70541626279bc65b35adf1a7c7d99108b80407f384685e195fb",
-      "bytes": 2998
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed3/result.json": {
-      "sha256": "1801a85d40ff2b39f7bd76d59d70f79ec00d8847eb15b1f54ad183e77aa24333",
-      "bytes": 1687
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed1/predictions.npz": {
-      "sha256": "63b95d55b0504873b10a29951a86eb2ebe146fb83d7d9aad2e09df3deb37534a",
-      "bytes": 2995
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed1/result.json": {
-      "sha256": "2fc41e99e9ddc6c0ff14243bef556792eec16bb028380971a42ace51a448ddaa",
-      "bytes": 1680
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed2/predictions.npz": {
-      "sha256": "9b3ac00de35cddec687d5e5f1b87d1ad5d268895b05ab9b877234d68773a9a01",
-      "bytes": 3031
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed2/result.json": {
-      "sha256": "3c6f400c04067cebf0094a1ae9d0027361c9dfe4f0a40000a4e54032244eea53",
-      "bytes": 1675
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed3/predictions.npz": {
-      "sha256": "80814d2c132db76974e558471167169c527d62cf1106d2506e9b44cce01f6fa4",
-      "bytes": 3016
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed3/result.json": {
-      "sha256": "f083b05de99ea68093facc1609b387d7b0faf116674979ffbf4e8701f443af26",
-      "bytes": 1672
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1/checkpoint.pt": {
-      "sha256": "123350f4a84dcdd59e8044d6d08bf9a165db86d2e5d226f443c2a8589e5f7c66",
-      "bytes": 10805
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1/history.csv": {
-      "sha256": "5bcd5cf708b5b807fc48c42539e01e9eb6d58606a05751bb269eabc7bc351cea",
-      "bytes": 6532
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1/predictions.npz": {
-      "sha256": "9b34325c4d5245387ed63aaea87a69647ac8faf1561a3c9eb1626f822382b5c7",
-      "bytes": 2237
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1/progress.json": {
-      "sha256": "d95d050bb5235504557f8aaba6e1fb98952dc50e5ca3f22d6d4f480c21d2b4d8",
-      "bytes": 95
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1/result.json": {
-      "sha256": "f79ae1d660a5be38ae7c4aa0b810e071aaa30e58f6a0d41a8b6bd15a29835e9d",
-      "bytes": 1501
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2/checkpoint.pt": {
-      "sha256": "da37fd7789854d69548e2adf45e267aea7af5bb3cff17691a9da072170bee7c7",
-      "bytes": 10805
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2/history.csv": {
-      "sha256": "c0bbc38cc220547a54bbc1f625648b759b82b660905e459cad230c8904e4dd88",
-      "bytes": 6540
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2/predictions.npz": {
-      "sha256": "caae0e5987e7575c94c49c3bcf877a9ea708d053ab0fedf94d777a3b2b58258d",
-      "bytes": 2243
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2/progress.json": {
-      "sha256": "1b8d7376ba075c43795de2d900c4ce5e25732652087a4c3dc8bed65b565bfe97",
-      "bytes": 95
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2/result.json": {
-      "sha256": "50c12f2adb5ceb2fe7929a4ca3d5e54a8a37157d274ff6a6de482fcbca020fcb",
-      "bytes": 1505
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3/checkpoint.pt": {
-      "sha256": "3ac1646cf0c2c96da8c323122eba80af418d58bc45fc21d330f9dd4740e95046",
-      "bytes": 10805
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3/history.csv": {
-      "sha256": "13ab969d7e6108c0ee4d4d9b2501d0341f9152b5e2333f251227f0796754c925",
-      "bytes": 6545
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3/predictions.npz": {
-      "sha256": "b49ac3eeff114f57fadef31988bb64ecfa4511e52fc91f1b566f295f93e8c020",
-      "bytes": 2237
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3/progress.json": {
-      "sha256": "7e2be946554763990c0a654f1211772f877a3586c0971cccff28f4e77e675036",
-      "bytes": 95
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3/result.json": {
-      "sha256": "d11f4116973876ec60f25ffad2a73a62674bd39b29b2d9efdfd67a43174f08ca",
-      "bytes": 1504
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_00/seed1/parameters.json": {
-      "sha256": "abf1140e41b76d50f28a9da91be32ab2e0120a0e1e5ab3a47b10c1105c6214ed",
-      "bytes": 1187
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_00/seed1/predictions.npz": {
-      "sha256": "fe35e955757fc32e5d8d517042fb08df57f685912df8524c3dd8cca4a8396ba3",
-      "bytes": 2737
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_00/seed1/result.json": {
-      "sha256": "ece3147aae55f297093b4fc9b5b946516f9e494d31c8cc477fc25f1acd33ef76",
-      "bytes": 1266
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed1/checkpoint.pt": {
-      "sha256": "c681bd7a8cd73aff2b42adb086004243414fde83c3bc73d60b7bb258193e7c05",
-      "bytes": 9845
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed1/history.csv": {
-      "sha256": "5d7d44c50569cbe8fcc29ccd0d5722f4e14a51666996bbc2eae792a59df707ac",
-      "bytes": 9003
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed1/predictions.npz": {
-      "sha256": "86674ab2f9ebc0d3734cd647aaf59de05c74d69126b7ed42419d06cebc04f1cf",
-      "bytes": 2236
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed1/progress.json": {
-      "sha256": "b9a541d9b514d02af36c6ee7d779b758b2dfceda53ebf56ddc65b711356df632",
-      "bytes": 94
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed1/result.json": {
-      "sha256": "15a05d1bd7e2a84f6d67d6eec9c44b57b32dd23afa88e7cc99dacc5febd9d3b5",
-      "bytes": 1512
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed2/checkpoint.pt": {
-      "sha256": "c9210ec02301e77f3f8f49190e375ce391880447559978c54a7f1f8c16e2b914",
-      "bytes": 9845
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed2/history.csv": {
-      "sha256": "e13f5d28e3c57986ff60071ba9b4603db8d7e5d8b4d6b7c64d89102f0bd5f754",
-      "bytes": 8931
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed2/predictions.npz": {
-      "sha256": "a7d304db4e439b66f477a2f794570bda49cfa007cb595c17e1a2aa44ee953593",
-      "bytes": 2241
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed2/progress.json": {
-      "sha256": "8074b070dc35990e180f7b5c3d1d18472927f88dbe1ab7aaa14a27f3e0aad3bf",
-      "bytes": 95
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed2/result.json": {
-      "sha256": "b371d6145453d1294460cea155b0df0911cfb7120b0bf170c0e846c5008667d4",
-      "bytes": 1515
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed3/checkpoint.pt": {
-      "sha256": "8c5889fe9b547ef2f08d25e2aa83863afbd85592191f728403cd84adc579c1ef",
-      "bytes": 9845
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed3/history.csv": {
-      "sha256": "1e7649ab0f7e526828eea54baba5c303067ade9072bfea729c4b532bda545ce8",
-      "bytes": 8918
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed3/predictions.npz": {
-      "sha256": "14e50426aaf40e4c55353c8e7e4cc3373a79f83f3dddecadb23b18b96e718dbc",
-      "bytes": 2242
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed3/progress.json": {
-      "sha256": "e3991d8ade4beed611c135f23053e2701a9d50b453a3ed7089d83eaa4b4f1704",
-      "bytes": 96
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed3/result.json": {
-      "sha256": "f5f25e9373ced048d66e6c676254a00eccf62e04ab8dc98650dacc455a6a2645",
-      "bytes": 1511
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed1/checkpoint.pt": {
-      "sha256": "7f84b749fbdad0a265a9c168baef3a65d8bc6e208213ac85a78258eca8c12144",
-      "bytes": 14133
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed1/history.csv": {
-      "sha256": "64438accfac98dec713b7f0f654fc47d9044f7e7dd986f40ef76c12b54d617aa",
-      "bytes": 6542
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed1/predictions.npz": {
-      "sha256": "66c2060942631c90cf8423acad6fe5b82eb17822e265aa8c1a6d5cde2cc4c235",
-      "bytes": 2242
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed1/progress.json": {
-      "sha256": "dd97c7148b8f9d83ac9b0104c23d3d4be20e481e88afedd64585e5230afab186",
-      "bytes": 95
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed1/result.json": {
-      "sha256": "0d1c5c9265162be02aeee849d84f9fd725cd26c1597b4a190c99a28ec9abe31c",
-      "bytes": 1494
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed2/checkpoint.pt": {
-      "sha256": "7734b997aca3fa87897882afede7a20e772f5ffed245fff308ca0a14acd426c0",
-      "bytes": 14133
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed2/history.csv": {
-      "sha256": "9fc610e94313b785702b65fd568ab88bd44a14a2a1ff17cad5bbfb5c9a87544d",
-      "bytes": 6539
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed2/predictions.npz": {
-      "sha256": "771f819a11142a60d481ca2a195ca757be4568d1acbd8372b0f4419d232bc852",
-      "bytes": 2240
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed2/progress.json": {
-      "sha256": "b8d65dc93b2935a229b17df4981dac74d932500d207cf6ba6a211a9e28e43425",
-      "bytes": 95
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed2/result.json": {
-      "sha256": "c6eaed5ef2e2ebfdef3bc23bd3934680268e6db50d2ebe339213c7e00995a082",
-      "bytes": 1494
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed3/checkpoint.pt": {
-      "sha256": "94cfb8ee4a3aeaa384b761c477e98bd42a665e1d7cb6c38795cf73f2dc7a460d",
-      "bytes": 14133
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed3/history.csv": {
-      "sha256": "ebe949af7a1ff51ed5e4bfe764360fd83e98c841644eed8eba4f5e980326edd4",
-      "bytes": 6585
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed3/predictions.npz": {
-      "sha256": "d327bfe27b2602ec43adceb87e6dccbe9f188cc2bdbc7b6b3d2cd3b96591477e",
-      "bytes": 2235
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed3/progress.json": {
-      "sha256": "dfda710dc64b84fbd2c202ad405ed57e03a36016f90a9d20a9815c76e8a6c60f",
-      "bytes": 96
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed3/result.json": {
-      "sha256": "2ef292c5c0d32bdbd2cefa84de5f6d7faeb921315b424cd6a69815738abaa9a9",
-      "bytes": 1494
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed1/checkpoint.pt": {
-      "sha256": "dc7d1df5839d1f60262d5a97f4dd9bfd3b3ff890b4ce4f2f80fbf6b21b2d14a1",
-      "bytes": 10805
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed1/history.csv": {
-      "sha256": "f65238a9a5ceb57c5ec4e0fef24428522f66e54bc9f9073b82a3f85b86b03a2b",
-      "bytes": 9039
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed1/predictions.npz": {
-      "sha256": "ac12db569707959a5045db15e643c2e1c735ba8d421277264f864c12aec3da49",
-      "bytes": 2241
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed1/progress.json": {
-      "sha256": "72fd78c3bcbc7631e21c2e3885550b7c1e9fc36f05b57decad00a4d888f2648e",
-      "bytes": 96
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed1/result.json": {
-      "sha256": "b8749173e1c7f5056016763d5d91c5564f5bb1cca74bcc3486164f9d337c6756",
-      "bytes": 1500
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed2/checkpoint.pt": {
-      "sha256": "99615815148ffddf74e05b50d0a18972de0c423441fac629fa30277ae3816fc1",
-      "bytes": 10805
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed2/history.csv": {
-      "sha256": "5dc48af0b201e601ce9b0854a846a800e60936165aea7acdb9eefba7f3e1a447",
-      "bytes": 9030
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed2/predictions.npz": {
-      "sha256": "b1278fda788b652fb479697a37e6a96781508626945eeff36bc803843ed8aca2",
-      "bytes": 2244
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed2/progress.json": {
-      "sha256": "3e11b286f7f9be908afeb202d52bab86ec5dc0b6a6ca517a5f2bfc82eff216ec",
-      "bytes": 95
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed2/result.json": {
-      "sha256": "fa63d0d0f1bd1407a408680ccd4a6a527be519dabbb285174639fc0d35906a9e",
-      "bytes": 1507
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed3/checkpoint.pt": {
-      "sha256": "bf55a2f7f0afb493cc9b951d9ffb626291fd96d9b0262e08ae77a1e0acf70efc",
-      "bytes": 10805
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed3/history.csv": {
-      "sha256": "d67881e8e4d9425ab0ed9c29a40e4d0ef1c43aa86f959d29fea7691e3d3c7856",
-      "bytes": 9022
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed3/predictions.npz": {
-      "sha256": "4afe259282a390427a0481e80d8fc57e0fc5e0338dafac519b482b11596438f3",
-      "bytes": 2239
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed3/progress.json": {
-      "sha256": "c530de607b1c756c20fe57072d8ba4053f78c05e0b48afabc55c6d5194f206c3",
-      "bytes": 96
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed3/result.json": {
-      "sha256": "2fb54011136f89404184838b4a86fb5d3a03309fd7b816a7e9a9c67de55960e9",
-      "bytes": 1503
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed1/predictions.npz": {
-      "sha256": "9dcd1b099e4daf4a3e559af76377d550f7a2e6cfa07995b14ea429071d96f2b1",
-      "bytes": 2236
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed1/result.json": {
-      "sha256": "7c71b294c27fadeaf6189ac14b7634fc7455e22afc3e8e1a2be08438f6a0f447",
-      "bytes": 1284
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed2/predictions.npz": {
-      "sha256": "3a5ca7c6015c3b18cde49669a8bd76df9376d54bbe184ae1aabf04cd64c53d7a",
-      "bytes": 2272
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed2/result.json": {
-      "sha256": "f272711e11c329006c3849674aad72d3f0c0bada398e6e482cea2e9a1c77d2b7",
-      "bytes": 1279
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed3/predictions.npz": {
-      "sha256": "1078a69d6d35b677ce29cc701617af6c72b33172463978942be9a490023274c3",
-      "bytes": 2257
-    },
-    "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed3/result.json": {
-      "sha256": "18442ae0fee82718a8235665c9d7f1420c6055ad60ca92dc6362e1c59b514e72",
-      "bytes": 1280
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed2/result.json": {
+      "sha256": "2d4a4b04399362a42b01016a3121c1be6cc3af3ccf706f41eb275f314b3b565f",
+      "bytes": 18783
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed2/selection.json": {
+      "sha256": "3e763b512d2b2ba4043a4f6b5ea0ec733aa825322ca3c6536e77db162eaee3d9",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed3.log": {
+      "sha256": "7dfadfd9ece4f9ecfc044ed4b84fd333823b4c900c46ac7a8045ff4fbc753e91",
+      "bytes": 854
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed3/checkpoint.pt": {
+      "sha256": "3704e61b6331a06f718d6a67a2a7293091790a215aa4c9193078008de9d2030d",
+      "bytes": 16053
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed3/config.json": {
+      "sha256": "83a36554655ac9d12485b0ee2a0dfed07f514f47beb04e9b34cc5aae56435b5d",
+      "bytes": 5309
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed3/history.csv": {
+      "sha256": "f92dd147d73fc424bb97188c1dda3d6e7645bf83be95bb4ecdd2cd8595198d42",
+      "bytes": 7285
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed3/predictions.npz": {
+      "sha256": "590b912d598501b4f91eb80e807879494a873caa2d70c696396614343a7e8742",
+      "bytes": 23591
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed3/progress.json": {
+      "sha256": "3bc000e7154c32728b511b33562b2a2a048d5aa1dc61cc943ea8549f20177976",
+      "bytes": 117
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed3/result.json": {
+      "sha256": "4e5bb725e45328c91a063536b29404481a543a370b53ea6795cd700ba7fdcc17",
+      "bytes": 18781
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode/seed3/selection.json": {
+      "sha256": "43ee786031e695b119b5656dcb714a9b7f3e170271ed5ef9b3628157f4bd7edc",
+      "bytes": 179
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed1.log": {
+      "sha256": "bdc4337ae4aeacced21309c8233ad69e1298d4c263c29cfb93b492df16a01a46",
+      "bytes": 944
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed1/checkpoint.pt": {
+      "sha256": "8b96fb7d0361e1059e9ba15dbda4e90fe6b21053e9b574c9137e6763a323e86e",
+      "bytes": 16245
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed1/config.json": {
+      "sha256": "c3f9afcfdc290924bcfea6034a16a13a15425a303fce2e9fba5e5bf9df70cba0",
+      "bytes": 5314
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed1/history.csv": {
+      "sha256": "39c17e5f1d07a3d3c799da0f0bed9abe7d0a7c5833d7b48c786f304e19b3be90",
+      "bytes": 7290
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed1/predictions.npz": {
+      "sha256": "84935c30022cc5d4debcffff1033a64be75c7554ffc5f2dfca13206f465633c7",
+      "bytes": 23524
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed1/progress.json": {
+      "sha256": "6ea6e09a924e438bfef0cfee3f0cf033485b72cf42ebb94eebdf22a6e3bf3d35",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed1/result.json": {
+      "sha256": "80e181470a510951b54ba8e2674f3a7e792f81cd5c3c5641a445997afea03876",
+      "bytes": 18791
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed1/selection.json": {
+      "sha256": "63f18a0193222462298a95791a9c9095be4b5719900597599adc7c5046782ed1",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed2.log": {
+      "sha256": "6d117e20cb670318e3be23ad156d275ae22047534958d0973f25624e3c58b18c",
+      "bytes": 943
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed2/checkpoint.pt": {
+      "sha256": "270ea404b817073ca732d31e9c2ff82c1a12bbdc57cf81c662ad8194eb97f152",
+      "bytes": 16245
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed2/config.json": {
+      "sha256": "0ea11d266413d0074f073d2ac2307792f3c238f50dcf069fbf3fcc9813b4d63e",
+      "bytes": 5308
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed2/history.csv": {
+      "sha256": "2edb0e750acd68a39134a5d9d12184318486eab198b1c1271bd0e0ee43e84071",
+      "bytes": 7296
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed2/predictions.npz": {
+      "sha256": "7984f076b8495af585e768c3fd74a38c63ab1b79ff43a2b592fe1a0ee43d730e",
+      "bytes": 23532
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed2/progress.json": {
+      "sha256": "b95bfb51dcd0a9f89963708c413b5eeb79bb407a048982ec462dea2dbc0494e2",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed2/result.json": {
+      "sha256": "9cbef80fbd5e0721aa39e178547d373a0477ec28663b6743fafee53a20269236",
+      "bytes": 18780
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed2/selection.json": {
+      "sha256": "86cb87d4d8caa7004cb1b2945e51c22e64ca660cd70a127530adfc94f21d3a98",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed3.log": {
+      "sha256": "fe16f5444d5f5665277e1f16513bb8e7420a476957c914a817d15ae82099758e",
+      "bytes": 943
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed3/checkpoint.pt": {
+      "sha256": "489fc94cf8d8a4210ebef5cebd86d71defaad1afe32cbdda98bca1a874ced596",
+      "bytes": 16245
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed3/config.json": {
+      "sha256": "36e8bec88b2a290ab525b925f994be6a6df7298f6335885321f585f7a9f09ae6",
+      "bytes": 5315
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed3/history.csv": {
+      "sha256": "213012947326b1ce98367ea927d8b91d57db30149b55d160125df78dcafc4897",
+      "bytes": 7310
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed3/predictions.npz": {
+      "sha256": "b0865a366ad87ad5975e7ccb37ddaaad8d02fdd4c797870ce8d3a82f100c02ed",
+      "bytes": 23474
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed3/progress.json": {
+      "sha256": "2e4367b5faf517ae9ac73b1353735ed3e84b425673590ba442a348e3c88f514d",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed3/result.json": {
+      "sha256": "918945927bec7d580a717d93248de5187f18f23ef07178c9d79f59ea9bf21d01",
+      "bytes": 18796
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/latent_ode_light/seed3/selection.json": {
+      "sha256": "39808b08ad0b1930d8f655cb176ba6bb90fcbb5bc454882ca531625e46661d69",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed1.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed1/config.json": {
+      "sha256": "7403d5601773e6f49e3cfa3a469addf847edbeb11afead126f8b63ca97f61e73",
+      "bytes": 5206
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed1/parameters.json": {
+      "sha256": "f242e4b9a644ccd866b0f77a611cb4bab09e5259364967583809837b2921c06d",
+      "bytes": 7727
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed1/predictions.npz": {
+      "sha256": "51c39edbd6651941b094bf53faf5ee1c1ade9b23c8d0969f4dbe74f6a50b7b5e",
+      "bytes": 39193
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed1/result.json": {
+      "sha256": "cfb3d4f32e7a43a9920cfcb8d5314202e4fd393deb40fd58abf2996eae83ecc4",
+      "bytes": 18663
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed1/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed2.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed2/config.json": {
+      "sha256": "1a46626934937c3d405399724100e5ab5a539ebd9de158bd2453111e566fae4b",
+      "bytes": 5200
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed2/parameters.json": {
+      "sha256": "f769d3be5cb7f1c5feb9f7031c8c25fe20bf25453e2a4dfc10a6bfa7e8d27fe7",
+      "bytes": 7691
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed2/predictions.npz": {
+      "sha256": "2749bd3862004fc28018b018ff1f601c999326da444b1b2aa60e821aa96da56e",
+      "bytes": 39235
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed2/result.json": {
+      "sha256": "c0ab4d6aa92989cc5c418dbb21979bf57f4fe58bb43b76dfadd545c9d5f0e405",
+      "bytes": 18668
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed2/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed3.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed3/config.json": {
+      "sha256": "da3936fd523d1540454e973d89ab2a0b50e7c73a3da85ad765f994f3c4818fb6",
+      "bytes": 5207
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed3/parameters.json": {
+      "sha256": "b817638d0996ada850a3903c82cf9c768b43b27703c9123b8490e891e80d3a59",
+      "bytes": 7719
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed3/predictions.npz": {
+      "sha256": "16a63e76d9c3e6d02da007ffae022d34e0c0c93d8473cd88ea85326da7f3cfc1",
+      "bytes": 39189
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed3/result.json": {
+      "sha256": "632be1bd8fe6dc77e6e642bb126f5bbc0c0f5c1449a8d925fbcf687f116e05c9",
+      "bytes": 18662
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic/seed3/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed1.log": {
+      "sha256": "3f49f184186e207877aa67a5b197b423035bcf3c522b1bf2d404368dc2f47db9",
+      "bytes": 899
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed1/checkpoint.pt": {
+      "sha256": "3bfa90d87672a07e27068386b5f8706ddf1cc755b2d403a9a3eadc9795859dc3",
+      "bytes": 15733
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed1/config.json": {
+      "sha256": "ed1f0f7825516fbf288734d8726b5badb53c5f3fdc0ed32a34f059685027f1fd",
+      "bytes": 5314
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed1/history.csv": {
+      "sha256": "679543c3a382fbf887ac361420ed4d9d04f0241f25bbfd27d2ebbd1389ad303b",
+      "bytes": 9844
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed1/predictions.npz": {
+      "sha256": "3b51c9877491381bd3463f8e088449b08b6e2c9137ef08b39581b276f44583c4",
+      "bytes": 23596
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed1/progress.json": {
+      "sha256": "d8ef077ef7d4793eb0e72e78444fa71f3c856908237ed0d354a8896eeaf15aee",
+      "bytes": 118
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed1/result.json": {
+      "sha256": "028975472843c045a58322eb4cffc282a531e714019c494d043782c33cd6cc62",
+      "bytes": 18841
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed1/selection.json": {
+      "sha256": "23357efd3f9fc930aa81c666ca51c741d075eb5ba841d5b90f51f35e6fb01911",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed2.log": {
+      "sha256": "fb060712f2922e7ed2258c08f514042507b3930b757dd498820f28e052564ee4",
+      "bytes": 897
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed2/checkpoint.pt": {
+      "sha256": "b9911cf62df8c4f4102f0bc864b20f6b4e218988a1c589b518660124294bbe8d",
+      "bytes": 15733
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed2/config.json": {
+      "sha256": "14c9c16b1192810b3b0d08f9ea1738456eff5924a09d53cd285f63fa97ee22eb",
+      "bytes": 5308
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed2/history.csv": {
+      "sha256": "f7d38a80c8860d5eb226e721a38f429a511b755249fd7613e7ba00d198c4ca11",
+      "bytes": 9860
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed2/predictions.npz": {
+      "sha256": "8a6cda170b05a89f6f104aea44e8b8de9210728cf2cf4e3d350d0b0f9ac4b728",
+      "bytes": 23557
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed2/progress.json": {
+      "sha256": "11bc8292de02f068147149829bac1da9d3e47bad9bd6c46ce66d7dcc7c878cfa",
+      "bytes": 118
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed2/result.json": {
+      "sha256": "c5220a7a50f0894216ebf5b7e68138f1b80b1d52ddee0c1e9e9a3a7979c70593",
+      "bytes": 18815
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed2/selection.json": {
+      "sha256": "65d375c4e8182a913d68eeff99b9c8245853e6418ad51ca27b11d122f367a313",
+      "bytes": 181
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed3.log": {
+      "sha256": "64d17666326b2363ab20c1a0f3c83cbf9d73e099e335f3299afb1134c60ee633",
+      "bytes": 898
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed3/checkpoint.pt": {
+      "sha256": "865b476f7c527ad58a95defc773d194e0294be48a0987eea6acacdbc0a2a33ad",
+      "bytes": 15733
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed3/config.json": {
+      "sha256": "3889aa08e9cff853e4389308b104f33bafe5908e1469f20266f4650b0c557360",
+      "bytes": 5315
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed3/history.csv": {
+      "sha256": "47ce854cc488fcd383091989d7e9860b7aabedf0db1b0ebdb16479f08c4fc114",
+      "bytes": 9842
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed3/predictions.npz": {
+      "sha256": "77651523d37c1b7e67fb2dd79529d9284de872546cf1166d4ea250d6c41f2d46",
+      "bytes": 23550
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed3/progress.json": {
+      "sha256": "afa00a2013c47540a325f2caeb6d0e2be24b78b2652676b5d335955bcbca142d",
+      "bytes": 118
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed3/result.json": {
+      "sha256": "80a98b4c371e75c66355e9a47a903bc636fa05264f2f15c4d2c9c8babb1ac8c6",
+      "bytes": 18833
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/logistic_pinn/seed3/selection.json": {
+      "sha256": "e41e965fc3fcac746a44c6284f48049f534037d65612967abbf07adaa1af453d",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed1.log": {
+      "sha256": "cff0fd0c8ae3cd69732f2ea9b02df37dcb0ac9784c9d1ee828b0c93eb1850ca3",
+      "bytes": 762
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed1/checkpoint.pt": {
+      "sha256": "667def9de6127a11dfbbc9addd50de2f6ec1abef619e37323198dd978f55cd19",
+      "bytes": 21045
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed1/config.json": {
+      "sha256": "520c05e93d257a02d3d91f03f74672438c66a03a48cf5e6b4a4de9c373d8e88b",
+      "bytes": 5302
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed1/history.csv": {
+      "sha256": "8244fa568286b20a64f70ae1f8f39e1520ce0dd0882f123331624a16a30e3f29",
+      "bytes": 7273
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed1/predictions.npz": {
+      "sha256": "bbfa08fb18d62beef110ee2bff1942132819e70bd20a4d449ff30afc5b68db60",
+      "bytes": 23543
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed1/progress.json": {
+      "sha256": "dbdd1cb53fd5c3cc2401d0624d9997a45e619195ccea3028f1a9dd97f7321d6d",
+      "bytes": 117
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed1/result.json": {
+      "sha256": "0b6ffa6a462bd98d65bdc0737c78aeeb76e074ff23a419815f8970fe5a6d54c7",
+      "bytes": 18753
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed1/selection.json": {
+      "sha256": "2766c983af5669f36c00dfd1d24438c43f814da8c9b51535fcad8a2a115705a3",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed2.log": {
+      "sha256": "e87be9ea64c3d971584e87aca6dc11d823bfdc5ccd791d9066e6fb56fc999a4d",
+      "bytes": 762
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed2/checkpoint.pt": {
+      "sha256": "397ea068e9002dcdb1390ef88c273d3cfa37593c6b6b87fd88449c2e174b4b1c",
+      "bytes": 21045
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed2/config.json": {
+      "sha256": "3da0c34b00faba0447d5b1948d0bb07c9dd2b97890e93495234efe5338606e58",
+      "bytes": 5296
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed2/history.csv": {
+      "sha256": "833c88aff6ad4e96f78ed58c1d3d0c81ec44b737509b49db89068e2867e06d94",
+      "bytes": 7290
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed2/predictions.npz": {
+      "sha256": "e39e7b44e24769099727f7e48f3cba3bd005c660d87ab84241a277bfbdbfa055",
+      "bytes": 23509
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed2/progress.json": {
+      "sha256": "168c3d3cd4d78b9c4ee923befebd81c7377c0aa40258427498ac407cd2018367",
+      "bytes": 117
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed2/result.json": {
+      "sha256": "ca881ccaa9513dca8918b52addb04d089e92ca3c5c512892f15eb738fef8d8d3",
+      "bytes": 18742
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed2/selection.json": {
+      "sha256": "b55e6f1c467ee40768c3cc2633c8524bc8dc1812218c8832d15929224eba725e",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed3.log": {
+      "sha256": "d79d6d029cca9ce09f992e82539ead691582aacfb20f5891226dd5454f9e8d04",
+      "bytes": 763
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed3/checkpoint.pt": {
+      "sha256": "9f160fd141a5370536bdd62de3be64beafcab15ca869a68fdfd824ebf1731261",
+      "bytes": 21045
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed3/config.json": {
+      "sha256": "bd75359ff1fc8f8f89a388101fccf0ff42d85f54f8532a882a9292f0b32f4eb2",
+      "bytes": 5303
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed3/history.csv": {
+      "sha256": "75f8a0355c9aaef939c7b81abeae0546db88090eb6423e0e6a6932389f939185",
+      "bytes": 7285
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed3/predictions.npz": {
+      "sha256": "5bc8b914a2710af4783b11cffa0fabc3dad7e4efcdf1b687a4bb6d94bad98f14",
+      "bytes": 23560
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed3/progress.json": {
+      "sha256": "936d1af5fb2252ae9f1efdacd07cbee2b5a84eea7aa51ad7d9ac47fbb86ec0c9",
+      "bytes": 117
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed3/result.json": {
+      "sha256": "66483564a9cf65c02ac597c85255046c5d88d05616026beaaa2fbb311dd30665",
+      "bytes": 18755
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/lstm/seed3/selection.json": {
+      "sha256": "850d8dd32baeab9df8144ba69f4aff379999f011c75dc3843922923ee6812f46",
+      "bytes": 179
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed1.log": {
+      "sha256": "9a00350406a3251087d1cd527bb67d8f8fc6519ec70db2cb79c5dfad1b8cae1c",
+      "bytes": 823
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed1/checkpoint.pt": {
+      "sha256": "4b767ae6017bd19c0355b05ecccd3050678d27c4ee12178f15c7f38ead2f5fb3",
+      "bytes": 16245
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed1/config.json": {
+      "sha256": "c354a87d8625b41cd40b78a0789e5c4381ae15a9d8201529f8bf2f661a587c3c",
+      "bytes": 5308
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed1/history.csv": {
+      "sha256": "ca4ad3135d951f702caf52301f230b22971ef75d482a6d7da62c8196073acce9",
+      "bytes": 9946
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed1/predictions.npz": {
+      "sha256": "8267fb1fa1c74525cecaa43e8beca3c9058adfba9c8e99951cac430c7b660d40",
+      "bytes": 23522
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed1/progress.json": {
+      "sha256": "5d5ceb26d7abf81fb95212e68eae568a706a92fdda6473c3c9faffc0d0659d13",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed1/result.json": {
+      "sha256": "994bbd29aa3478c91226327667738baf3fbb1f1cc08267271b97f20c6e22a4ae",
+      "bytes": 18786
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed1/selection.json": {
+      "sha256": "d5c48fb938fc4ef34708a5f8e22250b16f2209e417ae269484d22cbd964cf21c",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed2.log": {
+      "sha256": "5a512213e94bcedfd114e83d22f793afa347d3f9ec378765dfa6b8ec36a5adaa",
+      "bytes": 824
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed2/checkpoint.pt": {
+      "sha256": "8922735468524f05b830f38f89ba38b719d648009b7dd562b3644a90e247e8cb",
+      "bytes": 16245
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed2/config.json": {
+      "sha256": "33e337ad693613e0d370cdd582d7c5b25f3ece71318226ad13559c25791d2eaf",
+      "bytes": 5302
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed2/history.csv": {
+      "sha256": "91a8e70a64cecbcec7c230b3b12a8c0154004c627cf115165dfb7c37fa695306",
+      "bytes": 9941
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed2/predictions.npz": {
+      "sha256": "7a3d003990553369efabef51a275320ddf36829f036edc3acb24e080dd47476a",
+      "bytes": 23538
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed2/progress.json": {
+      "sha256": "f40fc5db7b072a4b364820a62937b081f9e4753b1be4aa0b619119163535930d",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed2/result.json": {
+      "sha256": "1235df059fd9d7e7eed4c41c91d536fea0238b45d2323afd3098a893b80a3d07",
+      "bytes": 18778
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed2/selection.json": {
+      "sha256": "9fa8d73530e5f9877f467f9a2eb863cb41154bc74e8d01bca9e023ff8b249c90",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed3.log": {
+      "sha256": "b4debd1ad6092a64c2c0d634859bbbab610d8a0b6fe46863f42d11cf174e14a0",
+      "bytes": 822
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed3/checkpoint.pt": {
+      "sha256": "9a0d2eb23b0eb845092d7b93f0f2f1e82205f7078661c700ba2bf7777a59139f",
+      "bytes": 16245
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed3/config.json": {
+      "sha256": "b15464e080d4f9f6c4dbeb12b8e59fe6e7317c088766518b2a304025d792d55c",
+      "bytes": 5309
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed3/history.csv": {
+      "sha256": "6be3fed67e43531a51b25e618cdbe59933d587820d18a549ec440abb8d083b17",
+      "bytes": 9902
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed3/predictions.npz": {
+      "sha256": "453f65e1a0426d8516e3cf936d9d6db437f3467a91fc8d73097433612ecf1447",
+      "bytes": 23514
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed3/progress.json": {
+      "sha256": "565f526018c0bb128eaf0e5ebdd2a08ba022c9b90025315f8a9e41a21d78af25",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed3/result.json": {
+      "sha256": "6717d6fe4ae78d8e9489a441b49026674fedabc8be3864f8574d3f21f0c7b98b",
+      "bytes": 18779
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/phytoode/seed3/selection.json": {
+      "sha256": "9693b1c9e58b6207b92eca5e57f71eefee25b65294ad61ec847e52f5c1711caf",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed1.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed1/config.json": {
+      "sha256": "dd1d687e9dd8ac37055c715612da834f374129998e07998ca6a6b6edece29dd9",
+      "bytes": 5201
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed1/predictions.npz": {
+      "sha256": "0badafb3e29e1b4a65b28d3ab80107b4800ca2ecb7a59d1c48afc2e4197b02cf",
+      "bytes": 14876
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed1/result.json": {
+      "sha256": "b484743ef9210365850f409d5efd45729110d5cc760ed6e1d216bd75abae0f67",
+      "bytes": 18695
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed1/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed2.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed2/config.json": {
+      "sha256": "19a2dba9758ca66060c939e92d550767dd1271f6084c0ce820ddaea0df1b490d",
+      "bytes": 5195
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed2/predictions.npz": {
+      "sha256": "060da520331c3a35de6894f55da9d4f6de7691b990566c0df22eb2f556e643b7",
+      "bytes": 14991
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed2/result.json": {
+      "sha256": "581b24ffa340890ca3cefdd8a0c691c7d4550b37b41a9d8a2e631a036873a0bf",
+      "bytes": 18694
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed2/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed3.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed3/config.json": {
+      "sha256": "8a53d5fa76b99110e7aa4096982ea7fcfffb66dcd5494e966581964baa17f7c9",
+      "bytes": 5202
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed3/predictions.npz": {
+      "sha256": "ebf6ae63684eaebe5a8f7e3d31724fe08ea6d58d6fe61d072bf35e96404aceb7",
+      "bytes": 14778
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed3/result.json": {
+      "sha256": "92f958df5693c5d39e624bc8b87ba6eda163cc790df1bb8a2ffcfe0a8eaad3c0",
+      "bytes": 18704
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_25/rf/seed3/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed1.log": {
+      "sha256": "892dfb1330888c08577e3b9df4e0ce5c28a51a31f02007b193018215da236e8a",
+      "bytes": 837
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed1/checkpoint.pt": {
+      "sha256": "d3bcf23f928e29df3ca7d14695b4f249dab54f780605a075330745541d062924",
+      "bytes": 18805
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed1/config.json": {
+      "sha256": "a8c2d6f2e724fa6f02ac9ca9179b0bf2165882af054fa7a68f2eae9eaea1c451",
+      "bytes": 8028
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed1/history.csv": {
+      "sha256": "5bafdefc845c96941a408fca071f8432fc81310b448d9c5212bbd56f11aa74fa",
+      "bytes": 7302
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed1/predictions.npz": {
+      "sha256": "ef3dc7b8afc2ac28054054cfb08a35cde31f4b646c52555a81dd56fc243a6296",
+      "bytes": 22523
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed1/progress.json": {
+      "sha256": "4ac1eee62154c0f14fe2e4daec5c972b06d01727f55a4d711aad61021316b97b",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed1/result.json": {
+      "sha256": "9101084526aafd54f5416ae284a1961122f7a5034da286cfcd76c709d5acc12b",
+      "bytes": 21797
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed1/selection.json": {
+      "sha256": "4fae09a47853715794635e64fc7a3fc9e83438577a572e76a46733858c52b50b",
+      "bytes": 179
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed2.log": {
+      "sha256": "5e8d1ebbed94d138830d8d518b10347eabe8facf2245195357cc2c9db66cbad8",
+      "bytes": 838
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed2/checkpoint.pt": {
+      "sha256": "b65d4be2d3b06d1a1a21101ed747ed9826746044e60fcf87e357fa295da70dfe",
+      "bytes": 18805
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed2/config.json": {
+      "sha256": "87a9b0b036c8708a56b0cacf149ab2abdced9e385f800a65f87fd5731b23b175",
+      "bytes": 8026
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed2/history.csv": {
+      "sha256": "b3e3c7250cda77957a2fa18fd16f1850724132782e9bd1a9c177c7decd839c65",
+      "bytes": 7326
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed2/predictions.npz": {
+      "sha256": "a9ada8377498e01741363f8e55f8f3e16c137625ad00cb2a29f3c3db6344d94b",
+      "bytes": 22585
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed2/progress.json": {
+      "sha256": "242eb74a46dc6dcfc266a9b84e27d41752daf35e1f61b4fb306f1c5d1749e42e",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed2/result.json": {
+      "sha256": "33d7eb38b0011c8e782505d7033033d7ddba234c1a0cc146595a93e4bcac386f",
+      "bytes": 21797
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed2/selection.json": {
+      "sha256": "3d03ea8fdc1f55ac3aeb1a676540533d9fc4ef2a2262c0e62d1befe2b3cbc49f",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed3.log": {
+      "sha256": "6614d2740604b9068d65a9e5dd74f408b63756cfa18a44642481a43b9020bd38",
+      "bytes": 839
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed3/checkpoint.pt": {
+      "sha256": "bde35a412ddcd7e95fc0be9bb18f033f88aad8da84472365a6985bf631a16ab9",
+      "bytes": 18805
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed3/config.json": {
+      "sha256": "d9ecdc426d65105c2f5886f46d7cdb35ec095a1b292d38bf26baf6b8786e80b9",
+      "bytes": 8035
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed3/history.csv": {
+      "sha256": "59160f2f4118f4382bdd2e99d805b05850bd8fbfa7b7b7c90e6e0cf47af04d1a",
+      "bytes": 7312
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed3/predictions.npz": {
+      "sha256": "dfdd6af854d0b81a1fd9a865f4cd671c7e7a91e77a13a2e75b0bfaa00b011e20",
+      "bytes": 21940
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed3/progress.json": {
+      "sha256": "035d6c7f53968ebafa782d129891f59c5dd9a904962269f85b4c2bad7d5e64da",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed3/result.json": {
+      "sha256": "cf0330c4f53f7d581a7f277cf97b46ae18c72881c8d6f028321961d088e87e74",
+      "bytes": 21755
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode/seed3/selection.json": {
+      "sha256": "86d5b13675b81dba578cb90a59dad2efd4494d731fdbe610880441ae317d6ca7",
+      "bytes": 179
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed1.log": {
+      "sha256": "310dac65d0b6a989b95b07c50c1979017200847c2815cc41a6d02a9172ff5095",
+      "bytes": 926
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed1/checkpoint.pt": {
+      "sha256": "ab289f149d2a74d6229def4039b8987a6c92b8db6cc30f2950bb6a3be0c48be2",
+      "bytes": 18997
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed1/config.json": {
+      "sha256": "34342051fae2cdb4851754c3351e615d5ad58a70325bdb200dfeb5a2b5b0aed8",
+      "bytes": 8034
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed1/history.csv": {
+      "sha256": "63651b8808ea0e9738c7aa52bdc98ae7f411619f6afa975e6c96ae714111434a",
+      "bytes": 7299
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed1/predictions.npz": {
+      "sha256": "3b7493145bdee5032e5d4b1809cb15a38e2239811172187bbdff149c92f35745",
+      "bytes": 22455
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed1/progress.json": {
+      "sha256": "b4ff72eeb10f025c77a9b8c03989dfc265c9b98822b68bd3305072963249377f",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed1/result.json": {
+      "sha256": "464c2620f205be2637f5aca3971ecdb06918c635b55825bb204b5ba2a25fbe4d",
+      "bytes": 21728
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed1/selection.json": {
+      "sha256": "ed89841cdb8bde0c193d78016cd105a617b0f282c6295c65975eef8597262f34",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed2.log": {
+      "sha256": "9d457ed5ee1ecb9b10d27f9de4c93ba4b25da1aeb735d8778d62c6b1a58b20af",
+      "bytes": 928
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed2/checkpoint.pt": {
+      "sha256": "e85da23f67dc7a2b817bee6f6758fa120761be6d8b5bcb7c00b99fb327276b0f",
+      "bytes": 18997
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed2/config.json": {
+      "sha256": "4ce70e2f09480b0fe72fcabaf9f958b8fdc3c5169d64df17188f13e322b1da18",
+      "bytes": 8032
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed2/history.csv": {
+      "sha256": "f4f00fb65ff7f77f78ee48e1b39279c0f2388f9b328c077b0bb589c56630a976",
+      "bytes": 7335
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed2/predictions.npz": {
+      "sha256": "9fc6cecbf8f65b7686b768b2942257af3243a5a254749ac7e867584bad63c07e",
+      "bytes": 22478
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed2/progress.json": {
+      "sha256": "8b75503f03784298d8a93c796dacbf0778c0a5b9a72826a98ce3a9dd9aadde1b",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed2/result.json": {
+      "sha256": "da6aa88dd933ffb46bcd6b42ff3385a79b2c17c8abe485d56c6ab9a69cf3d056",
+      "bytes": 21765
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed2/selection.json": {
+      "sha256": "fa6726e9d775058d993023180bfbb4c3eb8d5801c03abad7e9fb4817c636a18d",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed3.log": {
+      "sha256": "5239f05c3064149c3f98e3a6056a6ab893aacbf66d3aa8eac7524606a32dfc02",
+      "bytes": 929
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed3/checkpoint.pt": {
+      "sha256": "a73eda698ef791ae82125832dbec8d1d491bc4dae95116288dfc4fc659db7305",
+      "bytes": 18997
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed3/config.json": {
+      "sha256": "38edfa89ca08c204e20688cd2cc996177bb59b209fd7fd97db036249c05c050d",
+      "bytes": 8041
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed3/history.csv": {
+      "sha256": "f8905939368d3472bb50671214feadb5602862c61d8b53341c8c021984d4f8d6",
+      "bytes": 7304
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed3/predictions.npz": {
+      "sha256": "c0e081bd2027a8881303695741fdb042091a8a34f378a6a9dd4c7abf58e548b0",
+      "bytes": 21903
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed3/progress.json": {
+      "sha256": "5b9eafc83c7f22f621135d7d7dc9b9e932f48026edaadbfa27793ebc3bb173c0",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed3/result.json": {
+      "sha256": "927f7219c19d0646af139ec794e7477926b82f9229dc2bf2ad96889a9a26153f",
+      "bytes": 21767
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/latent_ode_light/seed3/selection.json": {
+      "sha256": "47bed9e3e7e6e1a076ae1cd87e5567466472999ca19eb5e1f9da80968658b358",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed1.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed1/config.json": {
+      "sha256": "002673596424744538a71265a7e675890fcae9c20c2df412a7359d43b8e94718",
+      "bytes": 7926
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed1/parameters.json": {
+      "sha256": "0d8a1254d1c020dab68a0ffdb5d7ce39d08e73ff2725b00f350a4d8df51357dc",
+      "bytes": 7692
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed1/predictions.npz": {
+      "sha256": "622d1b6fcd9348051eac6d1cbe7fddbfd6029ec77c79e7fe48b24f728b2d498e",
+      "bytes": 37940
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed1/result.json": {
+      "sha256": "7ae9af21714190526d2c8edab6fb3555d27efa48a7889668a85f599862a5ba80",
+      "bytes": 21787
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed1/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed2.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed2/config.json": {
+      "sha256": "652f6573252daf198d7ddd12d73156a10c8bec1048829f489b930ce141c4156c",
+      "bytes": 7924
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed2/parameters.json": {
+      "sha256": "07cde04ce2c2c4aad24045606c17983b99d97e7d1d1ba2ef2df1a9dfcd2a346c",
+      "bytes": 7670
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed2/predictions.npz": {
+      "sha256": "f56d018322cf3e5490f23ad6f51a055f3446ff1e2db98ad9ca510d255b24eda2",
+      "bytes": 38046
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed2/result.json": {
+      "sha256": "b4f10efe4aacee5e586937d4c49b7675b77ec796da9fe01e7ee321f6f1f4afd7",
+      "bytes": 21814
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed2/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed3.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed3/config.json": {
+      "sha256": "c5d53322442117bb35a6d86d14caa4335a82f6a288c06031d4781e05044adb10",
+      "bytes": 7933
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed3/parameters.json": {
+      "sha256": "a4c5aee7b6308dec0244fa40f52fc3b8ccb449ee392ceed2f37fa4c3d201f52d",
+      "bytes": 7674
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed3/predictions.npz": {
+      "sha256": "077db07da154c04b8e5172ae9c660a85cc2616c89e564deb95e0da0ffc593b58",
+      "bytes": 37269
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed3/result.json": {
+      "sha256": "c4fdff503535e368ab7c07aba4556968b8cfea0d6734b11109c6ebc13651ed12",
+      "bytes": 21774
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic/seed3/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed1.log": {
+      "sha256": "cc97812d37845ed3c175c865e438a7ea0281b9de285c898510be360bea7a1dc5",
+      "bytes": 883
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed1/checkpoint.pt": {
+      "sha256": "3f94c8b92af1bbb02bbc31e8ea2471ee49ce3ac847be7602da96ab423f00738e",
+      "bytes": 18421
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed1/config.json": {
+      "sha256": "637feb5dd8ed6f640577a7450ca7284a5570340572b836b8144398cc0a1093db",
+      "bytes": 8034
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed1/history.csv": {
+      "sha256": "82198fda6d3b1676934387cc5afe9aa9e035a6b2326241e981f1656bf90f7dcc",
+      "bytes": 9879
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed1/predictions.npz": {
+      "sha256": "5a7824b47c7a783f79878918353d25f685aa641c9531c10039b122542f59350c",
+      "bytes": 22542
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed1/progress.json": {
+      "sha256": "27ea75ff717fa8ef80c9de3dc7b0168cf681d3229fcc9ff7857f220cb452deb6",
+      "bytes": 117
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed1/result.json": {
+      "sha256": "e9f4afddfe87b397476b5c9552b18e41ef59037f1befa4382167b225524285f1",
+      "bytes": 21798
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed1/selection.json": {
+      "sha256": "723974cc2135b7de3f08335be9caa50ff28b586f81ca6c16e47f4bf3fcc74a09",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed2.log": {
+      "sha256": "1c7eca4a51f73a10f2dd07bb3549e57d1bbac159cec4eff3c7d661c18095043a",
+      "bytes": 883
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed2/checkpoint.pt": {
+      "sha256": "1561eae70328d881e57e595c6d4efa51018744c4b1b7fb8831c4ede346220bb8",
+      "bytes": 18421
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed2/config.json": {
+      "sha256": "ef1187309868a2e68ade06d1600ef950ca883520022fa7f5b434e4d49cf86fd4",
+      "bytes": 8032
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed2/history.csv": {
+      "sha256": "7600c0b7b6abf6c6a223520ce6311d83a1b4e793429b6abc969c1c6694a4671c",
+      "bytes": 9849
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed2/predictions.npz": {
+      "sha256": "78e23ce357c2d5eabc5a42fcee0b6f8ffbde4dafb4c254ee5227fd0498ad0f55",
+      "bytes": 22571
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed2/progress.json": {
+      "sha256": "1f8f6b60e3ed3843f5f7b822b491f8b4c7fc845088b0abcb4eea9d4754d797ad",
+      "bytes": 115
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed2/result.json": {
+      "sha256": "7f5031b42d1b14340a71f4a22864dd4c83297690716274c13c61702dde8ae811",
+      "bytes": 21819
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed2/selection.json": {
+      "sha256": "e83806f994369b7921d073cf7b8772034d7b20dc0b3bd2116e5e0bafba633ea6",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed3.log": {
+      "sha256": "e486463dee2174644f863601deb4ae699bb75a6f6d274c64b0ce6df58f02f41c",
+      "bytes": 882
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed3/checkpoint.pt": {
+      "sha256": "fb469ead9738f842dd1a4e0573231b5922fd3e1613eade96bd09be12b6c9d918",
+      "bytes": 18421
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed3/config.json": {
+      "sha256": "76dcf9eed834aedb6e15792687583de27f43ecfc0acb3811245240b32396ad04",
+      "bytes": 8041
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed3/history.csv": {
+      "sha256": "5ec2e59602faff658d7af243e251106883b2f30631f78774e80e311619d93a6f",
+      "bytes": 9860
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed3/predictions.npz": {
+      "sha256": "6d8647df8ff6590764da80307f378d649eb09ae6cdfca9e51fdad04bdc54ae58",
+      "bytes": 21962
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed3/progress.json": {
+      "sha256": "9833d55f67757880552c110a905802d333f096cbdf16a70c1649a152dabe5213",
+      "bytes": 118
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed3/result.json": {
+      "sha256": "2864d0a6f54a86ea3ddd6261207d68116adc6c0714ecd36b856067b61b6c72f4",
+      "bytes": 21867
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/logistic_pinn/seed3/selection.json": {
+      "sha256": "d8a311897d3c35c40d4a2240977e00457b4a1a881f6a5c6ba7da0fb6a9cf496c",
+      "bytes": 181
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed1.log": {
+      "sha256": "b774c4efa6dcb02159e5a8f0057f2d710cee09fcac80db2e8b3752a24c3b5e86",
+      "bytes": 745
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed1/checkpoint.pt": {
+      "sha256": "86f32c8eb0ad20b507779e568fe94ed6d0e2e47b6f2821ed1afe5ae550556b3b",
+      "bytes": 23797
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed1/config.json": {
+      "sha256": "a5d9b581a9d6d674f24528e60e92efffbb5ceee64a26604b5e3dcc63e5369f08",
+      "bytes": 8022
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed1/history.csv": {
+      "sha256": "e1934dd8cc5c5aac82466f1b99f1c0c9656ba1f03fa52d75afa1e877326e5857",
+      "bytes": 7318
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed1/predictions.npz": {
+      "sha256": "b082e52c4bc4b3a1319667f023619ccdad449118072d357ab45796e5f54dcc9f",
+      "bytes": 22494
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed1/progress.json": {
+      "sha256": "3d29ad5e27aa017bddf68c8e03620196434e127f04247614dbcf8db1c0e5ca16",
+      "bytes": 117
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed1/result.json": {
+      "sha256": "db796e94a7c8490853c97f8f8a27feac1fdcdfea60eecc2fb369b472a44062af",
+      "bytes": 21727
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed1/selection.json": {
+      "sha256": "30413bcd228beecb7ee5c3521530e2f19ba69e9c6d1e52ba309066f57bc0b83a",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed2.log": {
+      "sha256": "ba00a25e7daade6633912bcd1f081ace26721707b51e1c507a29074c566da775",
+      "bytes": 748
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed2/checkpoint.pt": {
+      "sha256": "65b21ce7754c17b212bb51ba7b43dc259504c243ae9a642f4e0bf7c5452d18d1",
+      "bytes": 23797
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed2/config.json": {
+      "sha256": "72308388e119a91693d737bdf350b2d5295a32224d43cd94d04b6dac0b2668c9",
+      "bytes": 8020
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed2/history.csv": {
+      "sha256": "b03baeec67405bcc17a5d741c46d29d2fd9d76f16fb4f5d0d588307609253e5d",
+      "bytes": 7337
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed2/predictions.npz": {
+      "sha256": "f6965ad76e312f76d2cebe1be8bbbdbaacc550668cf52cd8ad01d8d4c4e1a9e6",
+      "bytes": 22514
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed2/progress.json": {
+      "sha256": "0dc51e6c29e6cf7445c8896b141c5dfa0b6f95dded29cbcbb848c97f36d11c09",
+      "bytes": 117
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed2/result.json": {
+      "sha256": "6e4cd8a917d4c116fb6e1e7940d02781b1faef07e6be7988de8139967c842fef",
+      "bytes": 21798
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed2/selection.json": {
+      "sha256": "ebcf5e5c45f2e10b539c8a0a5d6c82f13f52fb5feca892e76ec643d2e52df9d7",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed3.log": {
+      "sha256": "c3c911c46059cff373581551cdfa4c37668f2768bc137d78296745da2c6a79e3",
+      "bytes": 749
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed3/checkpoint.pt": {
+      "sha256": "0a7da50724b2f31e1df12c8fffe69a62167a0e3988ba935e6ede9f810d91a5dc",
+      "bytes": 23797
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed3/config.json": {
+      "sha256": "bb29456c83138fdacec2b24d301f8cd66ebad4f91425699184fa9943079b9bca",
+      "bytes": 8029
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed3/history.csv": {
+      "sha256": "b56f525d991c09c9d8e0a7602788b2b90c30a2eadc9557542f6ee1cdbd819690",
+      "bytes": 7302
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed3/predictions.npz": {
+      "sha256": "b1e5c22789816d8fc52ea7592815413e2d714707ea19ba0aaa1c173aaafb3ea7",
+      "bytes": 21910
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed3/progress.json": {
+      "sha256": "739963258bab5001e484b869a40d427d053cd2f662cb76a5e0e7f527cbe4a824",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed3/result.json": {
+      "sha256": "5be3e4af7c2dab18a3ffd6e2394ac7346c37c6cab0659e0151c694fa68e4d1a1",
+      "bytes": 21759
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/lstm/seed3/selection.json": {
+      "sha256": "104436ad435b983be3e73e08b762286d0125a25aeee51206a08d1b0c02136be6",
+      "bytes": 179
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed1.log": {
+      "sha256": "8a15a45d65338cead5b182b171c839705d0d1e638afdbb3e96b1e7fea7cc22b7",
+      "bytes": 808
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed1/checkpoint.pt": {
+      "sha256": "a4d6349ab3bd576f72ba7fc9c6a094db0b312cf1e7266f65138c45d19a9752e3",
+      "bytes": 18997
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed1/config.json": {
+      "sha256": "8c31cf6a0e388647850ad626c60a6ba3a2f2e2afe44da0204b018acfa35a48c4",
+      "bytes": 8028
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed1/history.csv": {
+      "sha256": "8bd800ab2135d1b346b091c6b05459f83f967d35e42330b08f75533337612d23",
+      "bytes": 9960
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed1/predictions.npz": {
+      "sha256": "10b295baa37692d8d7f8c6e440728cff76f7d70bfbff62680c33c69c62a4226d",
+      "bytes": 22460
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed1/progress.json": {
+      "sha256": "e11d5e34922c4cb9560001f500a1bd3f065b2766c384f1a9c0a2ed36615d0363",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed1/result.json": {
+      "sha256": "4a7402045f3400229ae25e8bb25851d906d19ac731545096ae62b840f293fe4a",
+      "bytes": 21799
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed1/selection.json": {
+      "sha256": "621a3095a3cbc694430c88d2aaaf61ed2420ef9fff52e3bafcd2d176642d0c2b",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed2.log": {
+      "sha256": "5052823b3cca279756dfee125184eb01c1bf899cb05241c6f50237dc0b1b76f3",
+      "bytes": 809
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed2/checkpoint.pt": {
+      "sha256": "68198a19fe8561be1879849ba768e6b0e4c3bfe5e786943fd6117bc9987046df",
+      "bytes": 18997
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed2/config.json": {
+      "sha256": "f84e95243257f342ca2e43e105f2839dbb40954625c3aa62a405777c3f4f0305",
+      "bytes": 8026
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed2/history.csv": {
+      "sha256": "bcf0afcc895372ca1173cfe71fc2432a7855bb7f2b42568a571754299fb1b520",
+      "bytes": 9948
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed2/predictions.npz": {
+      "sha256": "4ae62d5986957ba8e18389c959541c0d0c869da9490fe0f1e940a20b223fa24d",
+      "bytes": 22537
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed2/progress.json": {
+      "sha256": "aad7a26e76a6fb3adb6a574a66dc6c2594b5669669267f29f0e4bec5f78d8665",
+      "bytes": 117
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed2/result.json": {
+      "sha256": "ddc23c32dbbbe282c89e175330422a158e5a81f84317427842d7b4b78dfa32be",
+      "bytes": 21813
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed2/selection.json": {
+      "sha256": "f8ed31dc83ec3646771294bb7e8b69aacd22362a9b9498c06657de8adc1b6472",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed3.log": {
+      "sha256": "6e2acc20887dfd53473f57f5ba9c01b8a43b6a1d2e612f2b0345c6ba115f01f1",
+      "bytes": 807
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed3/checkpoint.pt": {
+      "sha256": "2ce9abcc0bec52bf8dc7229eaedbf70c31f55f1a2f52c8b85830dddc13bb49c5",
+      "bytes": 18997
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed3/config.json": {
+      "sha256": "fdf421516eaed3e8ed7ef36bd0fcf127740b961d09afc89ff3cd46b3442cea43",
+      "bytes": 8035
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed3/history.csv": {
+      "sha256": "f23c424dc3222bd41717315b2d300796801fbade2ad79f63a34882d7a591ab33",
+      "bytes": 9931
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed3/predictions.npz": {
+      "sha256": "501caa7d6ee847a3dfcdadbcffefdb1057b98c4f70678b02939cac30a09c1fae",
+      "bytes": 21936
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed3/progress.json": {
+      "sha256": "addfdf63e622a293e273a2c7ed696490cb7efa26d2fc3cc63c8ab1c9e04e3a29",
+      "bytes": 116
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed3/result.json": {
+      "sha256": "ba3d8353209afe592d9b7da5402edcb9fb0e5fd11786909537bb40b25ab80b9b",
+      "bytes": 21790
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/phytoode/seed3/selection.json": {
+      "sha256": "471550cb6b2a6a4d544017cb4b9302f93b068749bf2e76345c2f8b177fbfdc64",
+      "bytes": 180
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed1.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed1/config.json": {
+      "sha256": "c468b2b44cf87ccf5e6a11bdbd955687c7e1e592f1c1633134317349c789fedf",
+      "bytes": 7921
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed1/predictions.npz": {
+      "sha256": "a9e34a2f0484b4e06618b2980088d023738cff7b4b5f2b960017e1b8aa701bbd",
+      "bytes": 13775
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed1/result.json": {
+      "sha256": "21ba5b4a79f82f521e461d89415f014603ebdd1d2df82cd38ab6487e10074752",
+      "bytes": 21666
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed1/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed2.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed2/config.json": {
+      "sha256": "68bd3a12d60ec78012f1c730487e7955fcf7abc0afa4b3cfac62373c4ebb523c",
+      "bytes": 7919
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed2/predictions.npz": {
+      "sha256": "14f9ca7a6e54821cfc059dd901ce63c0845b5e7546987dfc9baba06972d2be2f",
+      "bytes": 14072
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed2/result.json": {
+      "sha256": "dd8243fe0a872aae41e2d694ce97f6e8061c1e3f9f56e375fe2efffcb2dd0474",
+      "bytes": 21649
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed2/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed3.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed3/config.json": {
+      "sha256": "d685c7d940e56ecf8df61f573c6e5099556dba6f8072691f57d9d81a11f184d2",
+      "bytes": 7928
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed3/predictions.npz": {
+      "sha256": "0ae1fbd87e76b28fb6e06af5bb334afbb0a2fb129e3ac2677d3089c561ee2ea8",
+      "bytes": 13746
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed3/result.json": {
+      "sha256": "30d7ab7004829d2b3b0daa0426337f7bec9dd7964ad0142875cb96d3079a8ec1",
+      "bytes": 21658
+    },
+    "hypocotyl/results/prefix_forecast_20260911/drop_50/rf/seed3/selection.json": {
+      "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
+      "bytes": 72
+    },
+    "hypocotyl/results/prefix_forecast_20260911/plan.json": {
+      "sha256": "59b899cbc9f98594adb87d19dc36e972d67b35aef588017c7b4f571db92e9ca2",
+      "bytes": 9898
     },
     "maize/code/data.py": {
       "sha256": "bd731ba5a43ae8b3ece742b7ecc70747d502ca14c4e8740065bdba168da96360",
@@ -1469,15 +2718,15 @@
       "bytes": 6003
     },
     "run.py": {
-      "sha256": "081d44f435cbdb7336f14b9c1bc1af2cde971c9b77c34bb7138e5f3395dad174",
-      "bytes": 13500
+      "sha256": "607e217a8d1e98614bff9b2a354d0c4d69b2814b7a67c0c2db124b97780d1609",
+      "bytes": 12398
     },
     "scripts/download_data.py": {
       "sha256": "c8a2a8fb8d5c87e0deb486ee68068a9835c26fe1c5c9a60f8b73c5f294d17999",
       "bytes": 3251
     },
     "scripts/make_figures.py": {
-      "sha256": "7e91b6feebf3e085927508d34a52ec72604eaf087b4083f679e22157157212dd",
+      "sha256": "56a4f416179699cc2c089f5aa179c8d38e454822c837e7c35761578d9decc31f",
       "bytes": 1114
     },
     "scripts/prepare_data.py": {
@@ -1485,28 +2734,28 @@
       "bytes": 1614
     },
     "scripts/prepare_hypocotyl.py": {
-      "sha256": "34a3c2da39679be378e8d1eeab383363e585610c924e8ca5d07446026170cdc2",
-      "bytes": 3920
+      "sha256": "c9824680077d9e7fbbc1475e54f04b7200ef2b74398c88b90bc2171e61a23c9c",
+      "bytes": 1037
     },
     "scripts/report_results.py": {
-      "sha256": "bbe1a29868f1142181f7adfa0ee1648c7ee0870799bc5a2a2e87ad1371a4a5a5",
-      "bytes": 2744
+      "sha256": "631f67164a38a6bce7a7c9e3c622d46fb30c7591e8ff3c8a671792c394de6f6c",
+      "bytes": 2803
     },
     "scripts/verify_submission.py": {
       "sha256": "c36a6da99cd8b7dcfdecd9b5d0220bbe916acf85b93f67d4abcee2e53239b3e6",
       "bytes": 892
     },
     "submission/source_files.json": {
-      "sha256": "fa057225dd7c89a3e3a4667b4bba155ab73cd75fa80083f4a31f481acaf52e9a",
-      "bytes": 61391
+      "sha256": "6d3a8cb609600304b16867fb70b4dd07783b21a4a6a6581c87eef2f5cd5338e9",
+      "bytes": 36262
     },
     "submission/validation.json": {
-      "sha256": "ca99b77db2394a31c2bdc36780b4d9e67c853a8eacdd3fbd098da1ef48d6f007",
-      "bytes": 9162
+      "sha256": "382a8c983af938e80a5fc29d4f8822200093fd29b7e7531bbbf95e20517d49d9",
+      "bytes": 4385
     },
     "visualization/hypocotyl.py": {
-      "sha256": "f50579bb117b6f95baf0a6669e9d9f471e265842eaf4b3b411aafc94710d2b75",
-      "bytes": 3697
+      "sha256": "3d9dcfb86a3f4ae6a7f13311e72be6460c0e3b691586b942116b0303e05fd754",
+      "bytes": 289
     },
     "visualization/temperature.py": {
       "sha256": "f4c8a1d9fa4c9d098babae5f4fc61cb5ecec975abc5f12b8ae74accfc157f0c7",
@@ -1632,6 +2881,5 @@
       "sha256": "8cb8f551319844108ce34eca43553109e14c5ca8ba28dced585cc090903d4254",
       "bytes": 44134
     }
-  },
-  "default_branch": "main"
+  }
 }

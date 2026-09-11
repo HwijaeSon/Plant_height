@@ -1,0 +1,23 @@
+lstm/drop0.5/seed1: 100/1500 val=0.9520
+lstm/drop0.5/seed1: 200/1500 val=1.3724
+lstm/drop0.5/seed1: 300/1500 val=1.6328
+lstm/drop0.5/seed1: 400/1500 val=1.9529
+lstm/drop0.5/seed1: 500/1500 val=1.9505
+lstm/drop0.5/seed1: 600/1500 val=2.0993
+lstm/drop0.5/seed1: 700/1500 val=2.1697
+lstm/drop0.5/seed1: 800/1500 val=2.1966
+lstm/drop0.5/seed1: 900/1500 val=2.2734
+lstm/drop0.5/seed1: 1000/1500 val=2.3036
+lstm/drop0.5/seed1: 1100/1500 val=2.3315
+lstm/drop0.5/seed1: 1200/1500 val=2.3582
+lstm/drop0.5/seed1: 1300/1500 val=2.3606
+lstm/drop0.5/seed1: 1400/1500 val=2.3627
+lstm/drop0.5/seed1: 1500/1500 val=2.3635
+{
+  "status": "complete",
+  "metrics": {
+    "train": 0.265044340129163,
+    "val": 1.372355029939441,
+    "test": 2.979844214783112
+  }
+}

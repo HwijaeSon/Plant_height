@@ -1,0 +1,62 @@
+{
+  "protocol": "prefix_forecast_20260911",
+  "configuration_selection": "Hyperparameters retained from the preceding experiment; no new hyperparameter search. Checkpoint epochs selected with 48 h validation only.",
+  "common": {
+    "epochs": 1500,
+    "weight_decay": 0.0001,
+    "eval_every": 20,
+    "min_epoch": 200,
+    "val_smooth": 3
+  },
+  "models": {
+    "phytoode": {
+      "lr": 0.01,
+      "lambda_ode": 500.0,
+      "lambda_k": 0.1
+    },
+    "latent_ode": {
+      "lr": 0.01,
+      "lambda_ode": 0.0,
+      "lambda_k": 0.0
+    },
+    "logistic_pinn": {
+      "lr": 0.003,
+      "lambda_ode": 50.0,
+      "lambda_k": 0.01
+    },
+    "lstm": {
+      "lr": 0.01,
+      "lambda_ode": 0.0,
+      "lambda_k": 0.0
+    },
+    "rf": {
+      "lr": 0.0,
+      "lambda_ode": 0.0,
+      "lambda_k": 0.0
+    },
+    "logistic": {
+      "lr": 0.0,
+      "lambda_ode": 0.0,
+      "lambda_k": 0.0
+    },
+    "latent_ode_light": {
+      "lr": 0.01,
+      "lambda_ode": 0.0,
+      "lambda_k": 0.0
+    }
+  },
+  "conditions": [
+    0.0,
+    0.25,
+    0.5
+  ],
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "mask_seed_rule": "20260910 + training seed; shared across all models; nested removals across severity levels",
+  "physics": "ordinary logistic with genotype-specific r and capacity; prefix-conditioned individual latent state; all 23 interior nodes",
+  "data_loss": "mean per-plant masked RMSE on observed 0--36 h targets",
+  "input": "genotype, four prefix lengths, four masks, time; PhytoODE and matched Latent ODE also receive prescribed binary illumination"
+}

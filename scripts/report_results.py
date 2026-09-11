@@ -12,12 +12,11 @@ def main():
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     frame = pd.read_csv(ROOT / "results/comparison_temperature.csv")
-    hyp = pd.read_csv(ROOT / "hypocotyl/reports/light_input_20260910/comparison.csv")
-    hyp = hyp[hyp.protocol.eq("replicate") & hyp.model.isin([
-        "phytoode_light", "latent_ode", "logistic_pinn", "lstm", "rf", "logistic"])].copy()
-    hyp["dataset"] = "hypocotyl"
-    hyp["model"] = hyp.model.replace(dict(phytoode_light="PhytoODE", latent_ode="Latent ODE (no physics)",
-        logistic_pinn="Logistic-PINN", lstm="LSTM-NN", rf="RF", logistic="Logi-ODE"))
+    hyp = pd.read_csv(ROOT / "hypocotyl/reports/prefix_forecast_20260911/comparison.csv")
+    hyp[hyp.additional_prefix_drop.ne(0)].to_csv(args.output / "hypocotyl_missingness.csv", index=False)
+    hyp = hyp[hyp.additional_prefix_drop.eq(0)].copy()
+    hyp["model"] = hyp.model.replace(dict(phytoode="PhytoODE", latent_ode="Latent ODE (no light)",
+        latent_ode_light="Latent ODE (+ light)", logistic_pinn="Logistic-PINN", lstm="LSTM-NN", rf="RF", logistic="Logi-ODE"))
     columns = ["dataset", "model", "split", "rmse_mean", "rmse_sd", "relative_error_mean", "relative_error_sd", "n_seeds"]
     frame = pd.concat([frame[columns], hyp[columns]], ignore_index=True)
     frame.to_csv(args.output / "comparison.csv", index=False)
@@ -26,7 +25,7 @@ def main():
         part = frame[frame.dataset.eq(dataset)]
         decimals = {"wheat": 5, "maize": 2, "arabidopsis": 3, "hypocotyl": 3}[dataset]
         markdown += [f"## {dataset}", "", "| Model | Train | Validation | Test |", "|---|---:|---:|---:|"]
-        order = ["Logi-ODE", "Temp-ODE", "RF", "LSTM-NN", "Logi-PINN", "Logistic-PINN", "Latent ODE (no physics)", "PhytoODE"]
+        order = ["Logi-ODE", "Temp-ODE", "RF", "LSTM-NN", "Logi-PINN", "Logistic-PINN", "Latent ODE (no physics)", "Latent ODE (no light)", "Latent ODE (+ light)", "PhytoODE"]
         for model in [name for name in order if name in set(part.model)]:
             md_cells = []
             for split in ["train", "val", "test"]:

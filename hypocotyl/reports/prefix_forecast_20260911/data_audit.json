@@ -1,0 +1,104 @@
+{
+  "workbook_reextraction_exact": true,
+  "counts": {
+    "train": {
+      "plants": 157,
+      "observations": 551
+    },
+    "val": {
+      "plants": 128,
+      "observations": 128
+    },
+    "test": {
+      "plants": 136,
+      "observations": 263
+    }
+  },
+  "masked_input_invariance": {
+    "phytoode": {
+      "exact": true,
+      "n_parameters": 1167
+    },
+    "latent_ode_light": {
+      "exact": true,
+      "n_parameters": 1167
+    },
+    "latent_ode": {
+      "exact": true,
+      "n_parameters": 1119
+    },
+    "logistic_pinn": {
+      "exact": true,
+      "n_parameters": 1615
+    },
+    "lstm": {
+      "exact": true,
+      "n_parameters": 2805
+    }
+  },
+  "mask_checks": [
+    {
+      "seed": 1,
+      "drop": 0,
+      "retained_prefix_observations": 551,
+      "missing_fraction": 0.1226114649681529,
+      "height_scale_mm": 9.602
+    },
+    {
+      "seed": 1,
+      "drop": 0.25,
+      "retained_prefix_observations": 413,
+      "missing_fraction": 0.34235668789808915,
+      "height_scale_mm": 9.375
+    },
+    {
+      "seed": 1,
+      "drop": 0.5,
+      "retained_prefix_observations": 275,
+      "missing_fraction": 0.5621019108280254,
+      "height_scale_mm": 9.031
+    },
+    {
+      "seed": 2,
+      "drop": 0,
+      "retained_prefix_observations": 551,
+      "missing_fraction": 0.1226114649681529,
+      "height_scale_mm": 9.602
+    },
+    {
+      "seed": 2,
+      "drop": 0.25,
+      "retained_prefix_observations": 413,
+      "missing_fraction": 0.34235668789808915,
+      "height_scale_mm": 9.602
+    },
+    {
+      "seed": 2,
+      "drop": 0.5,
+      "retained_prefix_observations": 275,
+      "missing_fraction": 0.5621019108280254,
+      "height_scale_mm": 9.602
+    },
+    {
+      "seed": 3,
+      "drop": 0,
+      "retained_prefix_observations": 551,
+      "missing_fraction": 0.1226114649681529,
+      "height_scale_mm": 9.602
+    },
+    {
+      "seed": 3,
+      "drop": 0.25,
+      "retained_prefix_observations": 413,
+      "missing_fraction": 0.34235668789808915,
+      "height_scale_mm": 9.602
+    },
+    {
+      "seed": 3,
+      "drop": 0.5,
+      "retained_prefix_observations": 275,
+      "missing_fraction": 0.5621019108280254,
+      "height_scale_mm": 8.704
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+phytoode/drop0.5/seed1: 100/1500 val=0.6725
+phytoode/drop0.5/seed1: 200/1500 val=0.5641
+phytoode/drop0.5/seed1: 300/1500 val=0.5436
+phytoode/drop0.5/seed1: 400/1500 val=0.6270
+phytoode/drop0.5/seed1: 500/1500 val=0.6299
+phytoode/drop0.5/seed1: 600/1500 val=0.6386
+phytoode/drop0.5/seed1: 700/1500 val=0.6390
+phytoode/drop0.5/seed1: 800/1500 val=0.6582
+phytoode/drop0.5/seed1: 900/1500 val=0.6691
+phytoode/drop0.5/seed1: 1000/1500 val=0.6668
+phytoode/drop0.5/seed1: 1100/1500 val=0.6592
+phytoode/drop0.5/seed1: 1200/1500 val=0.6664
+phytoode/drop0.5/seed1: 1300/1500 val=0.6677
+phytoode/drop0.5/seed1: 1400/1500 val=0.6678
+phytoode/drop0.5/seed1: 1500/1500 val=0.6681
+{
+  "status": "complete",
+  "metrics": {
+    "train": 0.2998992378006264,
+    "val": 0.5436562832363415,
+    "test": 1.5452070321941922
+  }
+}

@@ -1,0 +1,23 @@
+latent_ode_light/drop0.5/seed2: 100/1500 val=0.8419
+latent_ode_light/drop0.5/seed2: 200/1500 val=0.7665
+latent_ode_light/drop0.5/seed2: 300/1500 val=1.2094
+latent_ode_light/drop0.5/seed2: 400/1500 val=1.0070
+latent_ode_light/drop0.5/seed2: 500/1500 val=0.9353
+latent_ode_light/drop0.5/seed2: 600/1500 val=1.0594
+latent_ode_light/drop0.5/seed2: 700/1500 val=0.8747
+latent_ode_light/drop0.5/seed2: 800/1500 val=0.9404
+latent_ode_light/drop0.5/seed2: 900/1500 val=0.9361
+latent_ode_light/drop0.5/seed2: 1000/1500 val=0.9400
+latent_ode_light/drop0.5/seed2: 1100/1500 val=0.9306
+latent_ode_light/drop0.5/seed2: 1200/1500 val=0.9295
+latent_ode_light/drop0.5/seed2: 1300/1500 val=0.9306
+latent_ode_light/drop0.5/seed2: 1400/1500 val=0.9306
+latent_ode_light/drop0.5/seed2: 1500/1500 val=0.9308
+{
+  "status": "complete",
+  "metrics": {
+    "train": 0.3725019015173587,
+    "val": 0.7665079623593484,
+    "test": 1.8238757642994563
+  }
+}
