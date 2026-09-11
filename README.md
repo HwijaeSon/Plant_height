@@ -17,17 +17,19 @@ development history and exploratory experiments are archived at
 [development commit `9671ca4`](https://github.com/HwijaeSon/Plant_height/tree/9671ca42605ad6ab1543c527daa6466fa3e80e06).
 This snapshot contains code, data, configurations, checkpoints, and machine-readable
 results, with README documentation for reproduction. The final configuration is defined by [`configs/paper.json`](configs/paper.json).
-The current code-and-data submission version is tagged `submission-20260911-lambda100`. Verification
+The current code-and-data submission version is tagged `submission-20260911-logistic-forecast`. Verification
 results are recorded in [`submission/validation.json`](submission/validation.json).
 
 ## Current manuscript configuration
 
-For hypocotyls, the manuscript uses **no light input**, the individual
-prefix-conditioned r/K head, **lambda_ODE=100**, and **lambda_K=0**. The public
+For hypocotyls, the manuscript predicts individual length from genotype, elapsed
+time, and the masked 0–36 h prefix, using an individual r/K head, **lambda_ODE=100**, and **lambda_K=0**. The public
 `phytoode` model name in `run.py` loads and trains this 1,183-parameter model.
-The six baseline configurations and all three temperature-dataset experiments
-retain their preceding results. The earlier genotype-head/light-input manuscript
-snapshot remains available at `submission-20260911-prefix-forecast`.
+The five baselines are Latent ODE, Logistic-PINN, LSTM-NN, Random forest, and
+Logistic ODE. Their results and all three temperature-dataset experiments are
+unchanged. The original manuscript snapshot remains available at
+`submission-20260911-prefix-forecast`. Historical variants are excluded from
+the current six-model tables and figures.
 
 The initial ten-coefficient validation search selected 100. A later expanded
 search selected 10,000 by validation; the manuscript retains 100 after review
@@ -37,6 +39,9 @@ preserved below and in the linked reports.
 
 [Current train/validation/test tables](hypocotyl/reports/adopted_lambda100_20260911/comparison.md) ·
 [Checkpoint and retention record](hypocotyl/reports/adopted_lambda100_20260911/adoption.json)
+
+<details>
+<summary>Archived follow-up experiments and coefficient-search history</summary>
 
 ## Follow-up: individual logistic parameters from the observed prefix
 
@@ -182,10 +187,12 @@ python hypocotyl/code/expanded_no_light_trial.py evaluate \
 [Expanded-search protocol](hypocotyl/reports/expanded_no_light_lambda_20260911/README.md) ·
 [All candidates and train/validation/test results](hypocotyl/reports/expanded_no_light_lambda_20260911/comparison.md)
 
+</details>
+
 ## Installation
 
 ```bash
-git clone --depth 1 --branch submission-20260911-lambda100 \
+git clone --depth 1 --branch submission-20260911-logistic-forecast \
   https://github.com/HwijaeSon/Plant_height.git
 cd Plant_height
 python3.12 -m venv .venv
@@ -312,16 +319,16 @@ python run.py train --dataset arabidopsis --seed 1 --device cuda:0 \
 
 Use seeds `1`, `2`, and `3` in separate output directories for the manuscript's
 three-seed evaluation. The default model is `phytoode`; `--model latent_ode` sets
-both physics coefficients to zero. For hypocotyls, `latent_ode` shares the no-light predictive backbone;
-`--model latent_ode_light` preserves the exact PhytoODE architecture, illumination
-inputs, initialization, and optimizer and removes both physics penalties.
+both physics coefficients to zero. For hypocotyls, `latent_ode` shares the
+predictive backbone, inputs, initialization, and optimizer settings; its unused
+auxiliary head has 64 fewer parameters than PhytoODE.
 
 | Dataset | λ_ODE | λ_K | Epochs | Parameters |
 |---|---:|---:|---:|---:|
 | Wheat | 3.16227766 | 0.1 | 1,500 | 1,655 |
 | Maize | 0.5 | 0.5 | 3,000 | 9,003 |
 | Arabidopsis stem length | 0.5 | 0.1 | 1,500 | 4,607 |
-| Hypocotyl length | 500 | 0.1 | 1,500 | 1,167 |
+| Hypocotyl length | 100 | 0 | 1,500 | 1,183 |
 
 Training uses the paper's architecture, optimizer, learning-rate schedule,
 gradient clipping, and dataset-specific validation checkpoint rule. It saves the
@@ -385,7 +392,7 @@ MAPE. The denominator is shared by all models within a dataset and partition.
 Hypocotyl targets are observed individual lengths; primary RMSE averages per-plant
 masked RMSE, and pooled observation-level RMSE is recorded separately. Natural
 missingness results give PhytoODE the lowest mean 48-h validation error and a
-60/72-h test error close to the no-light latent ODE. PhytoODE has the lowest
+60/72-h test error close to the latent ODE. PhytoODE has the lowest
 mean test error at 50% additional prefix removal among the evaluated predictors.
 
 ## Missing-prefix robustness
@@ -408,11 +415,11 @@ python hypocotyl/code/report_adopted_hypocotyl.py \
 ```
 
 With 50% additional removal, PhytoODE's test RMSE is **1.224 ± 0.169 mm**,
-versus **1.292 ± 0.357 mm** for the no-light latent ODE and **1.248 ± 0.118 mm**
+versus **1.292 ± 0.357 mm** for the latent ODE and **1.248 ± 0.118 mm**
 for Logistic-PINN. It has the lowest mean in this condition, but the differences
 are modest relative to seed/mask variation and are not consistent across all
 three paired runs. Natural missingness and 25% additional removal favor the
-no-light latent ODE by mean test error. Full model/condition tables are in
+latent ODE by mean test error. Full model/condition tables are in
 `hypocotyl/reports/adopted_lambda100_20260911/comparison.md`.
 
 ## Interpretation and reproducibility
@@ -422,7 +429,7 @@ no-light latent ODE by mean test error. Full model/condition tables are in
   targets. Masked zeros are storage placeholders, not imputed training targets.
 - The three temperature experiments use the known environmental sequence without
   target-trajectory phenotype inputs. Hypocotyl forecasting uses early observed
-  individual lengths and masks without an explicit light channel; future phenotypes never enter
+  individual lengths, masks, and elapsed time; future phenotypes never enter
   the encoder. All evaluated genotypes are represented during training.
 - The earlier coefficient studies reused inspected test partitions. The maize
   `(0.5, 0.5)` setting was retained after a later search and was not that search's
@@ -433,10 +440,9 @@ no-light latent ODE by mean test error. Full model/condition tables are in
   at Git tag `submission-20260911-code-data`.
 - Hypocotyl coefficient 100 was selected in the initial grid and retained after
   reviewing a wider search and its test results. The wider grid's validation
-  winner was 10,000. The no-light latent ODE shares the predictive backbone and
+  winner was 10,000. The latent ODE shares the predictive backbone and
   initialization; PhytoODE adds 64 auxiliary parameter-head weights. Baselines
-  were not independently retuned. The light-input latent ODE is a separate
-  feature variant, not the input-matched control for the retained PhytoODE.
+  were not independently retuned.
 - Standard deviations reflect three initialization seeds under natural
   missingness and three paired mask/initialization realizations after additional
   removal. They are not biological-cohort confidence intervals. Bundled

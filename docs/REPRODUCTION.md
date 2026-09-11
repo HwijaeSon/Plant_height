@@ -16,7 +16,7 @@ in `submission/source_files.json`; it contains the complete search histories.
 | Arabidopsis stem-length preprocessing and plant partition | `arabidopsis/code/prepare_data.py`, `arabidopsis/code/run_experiment.py` |
 | Temperature-dataset architectures and training schedules | `experiments/physics_ablation.py: setup`, `configs/paper.json` |
 | Hypocotyl ordinary logistic reference and baseline models | `hypocotyl/code/forecast_models.py` |
-| Hypocotyl no-light dynamics and individual prefix-conditioned r/K head | `hypocotyl/code/no_light_prefix_model.py`, `prefix_parameter_model.py` |
+| Hypocotyl latent dynamics and individual prefix-conditioned r/K head | `hypocotyl/code/no_light_prefix_model.py`, `prefix_parameter_model.py` |
 | Hypocotyl prefix, temporal targets, missing masks, and metrics | `hypocotyl/code/forecast_data.py` |
 | Fixed-configuration training / selected checkpoint evaluation | `run.py` |
 | Four manuscript tables | `results/comparison_temperature.csv`, `hypocotyl/reports/adopted_lambda100_20260911/comparison.csv` |
@@ -44,9 +44,9 @@ python run.py train --dataset wheat --model latent_ode --seed 1 \
 Use `maize` or `arabidopsis` for the corresponding matched architecture, and repeat
 with seeds 2 and 3. Both `lambda_ode` and `lambda_k` are zero; optimizer weight
 decay remains unchanged. The auxiliary parameter head is retained to preserve
-the architecture and random initialization sequence. For hypocotyls the no-light latent ODE shares the retained PhytoODE predictive
+the architecture and random initialization sequence. For hypocotyls the latent ODE shares the retained PhytoODE predictive
 backbone, inputs and initialization, but its unused auxiliary head has 64 fewer
-parameters. `latent_ode_light` is a separate illumination-input variant.
+parameters.
 
 ### Wheat
 
@@ -109,9 +109,8 @@ python run.py train --dataset hypocotyl --model latent_ode --seed 1 \
 Repeat stochastic models with seeds 2 and 3; Logistic ODE is fitted once.
 The current models receive each plant's masked 0–36 h prefix. Baseline settings
 are frozen in `configs/hypocotyl_forecast.json` and were retained without another
-search. Only `latent_ode_light` additionally receives illumination; train it with
-the same command, changing `--model`. Both its physics coefficients are zero.
-The default PhytoODE uses the no-light prefix-conditioned parameter head and
+search. The five baselines are Latent ODE, Logistic-PINN, LSTM-NN, Random
+forest, and Logistic ODE. The default PhytoODE uses the prefix-conditioned parameter head and
 coefficients `(100, 0)`, resolved through `configs/paper.json`.
 
 For the added-missingness study use `--drop-fraction 0.25` or `0.5`. The default

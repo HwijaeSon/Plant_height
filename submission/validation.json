@@ -29,7 +29,7 @@
       ]
     }
   },
-  "version": "submission-20260911-lambda100",
+  "version": "submission-20260911-logistic-forecast",
   "inherited_external_verification": "submission-20260911-code-data; external inputs and their preprocessing unchanged",
   "hypocotyl_data": {
     "workbook_reextraction_exact": true,
@@ -165,8 +165,8 @@
     }
   },
   "comparison_export": {
-    "main_rows": 84,
-    "additional_missingness_rows": 42,
+    "main_rows": 81,
+    "additional_missingness_rows": 36,
     "formats": [
       "csv",
       "markdown"
@@ -293,6 +293,30 @@
     "current_phytoode_cpu_checkpoint_evaluation": "passed",
     "no_light_baseline_cpu_checkpoint_evaluation": "passed",
     "full_comparison_export": "passed",
+    "local_research_files_required": false
+  },
+  "logistic_forecast_presentation": {
+    "preceding_commit": "8b082e5ae9298757507fbf4ce00690a3a73e15d7",
+    "model_count": 6,
+    "hypocotyl_comparison_rows": 54,
+    "main_comparison_rows": 81,
+    "additional_missingness_rows": 36,
+    "training_and_checkpoint_files_changed": false,
+    "retained_numeric_results_unchanged": true,
+    "checkpoint_hashes_verified": 9,
+    "illumination_comparator_in_manuscript": false,
+    "photoperiod_plot_annotations": false,
+    "figure_example_plants_unchanged": true,
+    "full_five_figure_command": "passed",
+    "temperature_figure_pngs_byte_identical": true,
+    "figures_visually_inspected": true,
+    "manuscript_assets_in_code_release": false
+  },
+  "logistic_forecast_clean_export": {
+    "git_tree_before_this_validation_record": "d27a320aedf20a124e9e0a10c7ddcbbec5f8df7e",
+    "manifest_files_verified": 1905,
+    "full_comparison_export": "passed",
+    "six_model_figure_and_report_export": "passed",
     "local_research_files_required": false
   }
 }

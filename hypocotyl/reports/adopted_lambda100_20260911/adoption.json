@@ -52,5 +52,22 @@
         "sha256": "a6832836ce5c95864a420cad004ad118344f8c35ad70bc268658b3b387d18c30"
       }
     }
-  }
+  },
+  "comparison_models": [
+    "logistic",
+    "rf",
+    "lstm",
+    "logistic_pinn",
+    "latent_ode",
+    "phytoode"
+  ],
+  "comparison_labels": {
+    "logistic": "Logistic ODE",
+    "rf": "Random forest",
+    "lstm": "LSTM-NN",
+    "logistic_pinn": "Logistic-PINN",
+    "latent_ode": "Latent ODE",
+    "phytoode": "PhytoODE"
+  },
+  "presentation_revision": "Six-model individual growth forecasting comparison; illumination-input baseline and photoperiod annotations excluded. Model checkpoints, targets, and retained scores unchanged."
 }

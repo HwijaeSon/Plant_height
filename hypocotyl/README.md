@@ -44,8 +44,8 @@ origin is 36 h; test horizons are 24 and 36 h beyond that origin. Training error
 measures reconstruction of the observed input prefix.
 
 A predictor receives genotype, four masked prefix lengths, four presence masks,
-and time. The retained PhytoODE uses no explicit illumination input; the
-`latent_ode_light` comparator additionally receives the known binary schedule. A unique plant ID is not a model input.
+and time. The manuscript compares PhytoODE, Latent ODE, Logistic-PINN, LSTM-NN,
+Random forest, and Logistic ODE on these inputs. A unique plant ID is not a model input.
 Different plants of one genotype can produce different trajectories through their
 numeric prefix. Zero tensor entries with mask zero are placeholders and make no
 contribution to data loss or scored errors.
@@ -76,10 +76,9 @@ The retained PhytoODE has a 12→8→2 auxiliary head that receives the genotype
 embedding, four masked initial lengths and four masks, and estimates individual
 constant r/K values. It has **1,183 parameters**, `lambda_ODE=100`, and
 `lambda_K=0`. The capacity remains learned through the derivative residual;
-there is no finite-window maximum/capacity penalty. The no-light latent ODE
+there is no finite-window maximum/capacity penalty. The latent ODE
 shares the predictive backbone, initialization and input features, with both
 physics coefficients zero and an unused genotype-only head (64 fewer parameters).
-The light-input latent ODE is a separate feature variant.
 
 The initial ten-coefficient validation search selected 100. A subsequent
 22-coefficient search selected 10,000 by validation, but its test error increased.
@@ -146,12 +145,12 @@ python hypocotyl/code/report_adopted_hypocotyl.py \
   --output outputs/forecast-report --figures outputs/forecast-figures
 ```
 
-Other model names are `latent_ode` (without illumination), `logistic_pinn`,
+Other model names are `latent_ode`, `logistic_pinn`,
 `lstm`, `rf`, and `logistic`. Classical baselines use CPU. Neural models train
 for 1,500 epochs; RF uses 300 trees. Logistic ODE uses genotype-specific rate and
 capacity and one fitted initial length per plant. PhytoODE's logistic
 regularizer uses individual rate/capacity values inferred from genotype and
-initial observations. It does not estimate separate light/dark rates. The
+initial observations. Rates and capacities are constant along each predicted trajectory. The
 residual is applied at 23 interior 3-h grid nodes, including unobserved times.
 See `code/no_light_prefix_model.py`, `code/prefix_parameter_model.py`, and
 `code/no_light_prefix_trial.py`. `run.py` fixes the manuscript coefficient at 100.

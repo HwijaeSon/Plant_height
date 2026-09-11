@@ -1,9 +1,9 @@
 {
-  "version": "submission-20260911-lambda100",
-  "branch": "codex/hypocotyl-manuscript-lambda100-20260911",
+  "version": "submission-20260911-logistic-forecast",
+  "branch": "codex/hypocotyl-logistic-presentation-20260911",
   "source_development_commit": "9671ca42605ad6ab1543c527daa6466fa3e80e06",
-  "preceding_release": "experiment-20260911-expanded-lambda",
-  "description": "Current manuscript code/data with retained no-light prefix-conditioned PhytoODE lambda_ODE=100 and lambda_K=0. All preceding coefficient-search records are preserved, including expanded validation winner 10000. Excludes manuscript assets, external downloads and generated figures.",
+  "preceding_release": "submission-20260911-lambda100",
+  "description": "Six-model hypocotyl manuscript comparison with individual prefix-conditioned latent dynamics and logistic derivative regularization, lambda_ODE=100 and lambda_K=0. Historical experiments are retained separately. Excludes manuscript assets, external downloads and generated figures.",
   "files": {
     ".gitattributes": {
       "sha256": "34adb1002cea37c4521bd11aa8b73fbbbd35f0facef6aeae24570f996d53491e",
@@ -14,12 +14,12 @@
       "bytes": 483
     },
     "CITATION.cff": {
-      "sha256": "8e8bb1b49365c3b311b3dbe7072529a3aee00d8885871d2647eec22bbdfb2784",
-      "bytes": 641
+      "sha256": "3c55118ed6969ad3edf5f37e45bcb03a08868aec614260a3cb2db2c47e3745b7",
+      "bytes": 657
     },
     "README.md": {
-      "sha256": "83ab7e5a678a6c4896d9a35c6a9569f3a55c3901b6b331ed19ce9b0823785386",
-      "bytes": 24633
+      "sha256": "ad8a10d188419ad27337ed64239936fa2dce57fd0cc3e8a3f47bdac26f7d2490",
+      "bytes": 24687
     },
     "THIRD_PARTY.md": {
       "sha256": "c8b82eea7e6c4f5f9cbba0799ca621d2e03d6edb58028b75853c50777a156c1e",
@@ -74,12 +74,12 @@
       "bytes": 1905
     },
     "configs/paper.json": {
-      "sha256": "f5cf8ac0fd1adc32766e259f9b197f90d551e1379e583d5aecd34b9412dcf91b",
-      "bytes": 15709
+      "sha256": "13acd42ed08047fe951398513681efed3431675f5ebe8c451821a7a019443e44",
+      "bytes": 14761
     },
     "docs/REPRODUCTION.md": {
-      "sha256": "313649015798c11f9ca5ce7b896a7a74d4fbdafbbf20883a62affeff9cdd23fa",
-      "bytes": 11408
+      "sha256": "bfb0070462be73d49f330967d1b18101f0e4b81770ef73dd058dfc9a567c0582",
+      "bytes": 11267
     },
     "experiments/physics_ablation.py": {
       "sha256": "1094f8b2025428a3bd3f564c91cb0e62bc8b7635843544035da3ee6bc08884cb",
@@ -598,8 +598,8 @@
       "bytes": 182
     },
     "hypocotyl/README.md": {
-      "sha256": "109027dd5d53711e5dd910b3780bbd8b2380cc116e2ab05c4f2dcc373ab3b072",
-      "bytes": 8547
+      "sha256": "64a09ab360523d1f07ba4adb8a053d08823194f2ad6c38bef9db31a4d5123c65",
+      "bytes": 8453
     },
     "hypocotyl/code/audit_expanded_no_light.py": {
       "sha256": "7b32fbd96cce53c6158ec6371fe4e57a82a978af0d403aea8d9891c0640ad652",
@@ -654,8 +654,8 @@
       "bytes": 8287
     },
     "hypocotyl/code/report_adopted_hypocotyl.py": {
-      "sha256": "a68fbac7744134c45d0774d42a2056e9ee36adf381bc799ae9a96c7d9202fd43",
-      "bytes": 3493
+      "sha256": "b68b919799dc5cc298988a99faa019037fb2db9a97ea1b0d92d53b7caf816fc3",
+      "bytes": 7596
     },
     "hypocotyl/code/report_expanded_no_light.py": {
       "sha256": "a845d431eac28e9c879efd6113bafe298cd0e92f34363b621c84264911588942",
@@ -730,16 +730,16 @@
       "bytes": 72180
     },
     "hypocotyl/reports/adopted_lambda100_20260911/adoption.json": {
-      "sha256": "7cdefe4bb9a4c3f7d622a927d498d08f3e26242cb9b59f9d2bf787f1a6bf77e9",
-      "bytes": 2930
+      "sha256": "09acd535b335902067c55ffa7c715d33461b686b3dc3e603818b5343befb606f",
+      "bytes": 3468
     },
     "hypocotyl/reports/adopted_lambda100_20260911/comparison.csv": {
-      "sha256": "9f059ffb0d16a100c034832467aca2455f3d6fb1ff746d930069bb64571ff32d",
-      "bytes": 14215
+      "sha256": "cd6f20015644bb32814aed1bf0e6df804e05e40774b6244de550350832ef4aa8",
+      "bytes": 11965
     },
     "hypocotyl/reports/adopted_lambda100_20260911/comparison.md": {
-      "sha256": "7cdace74de6f28dc46b26edf03624cbabd54533418d9b384a2ca48c946459166",
-      "bytes": 3584
+      "sha256": "17aef88bb1e7064126b01f8f3450e33aad58bdfe2c2add306fb5103615fbd1fe",
+      "bytes": 3181
     },
     "hypocotyl/reports/expanded_no_light_lambda_20260911/README.md": {
       "sha256": "43f07df0e5353b160e02f62286964bf00d0518546c9074a8ed23dbbee1a58f21",
@@ -7482,20 +7482,20 @@
       "bytes": 1037
     },
     "scripts/report_results.py": {
-      "sha256": "16d8193b132555150a802eea39a85d21cdd4fc159b2adc4a72afd1b31c25c78b",
-      "bytes": 2805
+      "sha256": "4df9d7d95509e52a80a65a5a74352ea417c9efda00b5e906cdd7a214b88556c7",
+      "bytes": 2719
     },
     "scripts/verify_submission.py": {
       "sha256": "c36a6da99cd8b7dcfdecd9b5d0220bbe916acf85b93f67d4abcee2e53239b3e6",
       "bytes": 892
     },
     "submission/source_files.json": {
-      "sha256": "045f6f34684fc13fce84fc2f305515bfd56c9d1dda4030ffb9da70318d34b9a0",
-      "bytes": 37140
+      "sha256": "ae2eb2ee2f3939bf722bbb1ebcde235734b22081c4530168a49b622f73123479",
+      "bytes": 37411
     },
     "submission/validation.json": {
-      "sha256": "65fd972eef12182f94b843a25046bae157a9ad4628d577abd8a3302f95884fcd",
-      "bytes": 9745
+      "sha256": "0921313cf7b90b4a6dda8dd3911fad514d70fed17fc5c9e464092f570ef1fc9d",
+      "bytes": 10757
     },
     "visualization/hypocotyl.py": {
       "sha256": "15c55b95e228573f1c1ceee278f56df0f62d648d8aa3b7134553779b3e16f61b",

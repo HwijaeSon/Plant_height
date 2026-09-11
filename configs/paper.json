@@ -324,39 +324,20 @@
             "model": "logistic"
           },
           "checkpoints": {}
-        },
-        "latent_ode_light": {
-          "config": {
-            "epochs": 1500,
-            "weight_decay": 0.0001,
-            "eval_every": 20,
-            "min_epoch": 200,
-            "val_smooth": 3,
-            "lr": 0.01,
-            "lambda_ode": 0.0,
-            "lambda_k": 0.0,
-            "model": "latent_ode_light"
-          },
-          "checkpoints": {
-            "1": {
-              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed1/checkpoint.pt",
-              "sha256": "312775afe4262b4dbfa2242a90eebab83c16c75dab8944146352651db3839854"
-            },
-            "2": {
-              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed2/checkpoint.pt",
-              "sha256": "9d2d894770d9249a99dc251048fe3d0dc9ba31c85118b8530ce193eec9973912"
-            },
-            "3": {
-              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode_light/seed3/checkpoint.pt",
-              "sha256": "9d869179d99c5c06bbc91a4a05c610d747111992423259e9d60aa83be4511bb7"
-            }
-          }
         }
       },
       "illumination_input": false,
       "parameter_head_inputs": "genotype embedding, masked 0--36 h lengths, presence masks",
       "result_report": "hypocotyl/reports/adopted_lambda100_20260911/comparison.csv",
-      "adoption_record": "hypocotyl/reports/adopted_lambda100_20260911/adoption.json"
+      "adoption_record": "hypocotyl/reports/adopted_lambda100_20260911/adoption.json",
+      "comparison_models": [
+        "logistic",
+        "rf",
+        "lstm",
+        "logistic_pinn",
+        "latent_ode",
+        "phytoode"
+      ]
     }
   }
 }
