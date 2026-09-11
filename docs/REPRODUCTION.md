@@ -16,10 +16,10 @@ in `submission/source_files.json`; it contains the complete search histories.
 | Arabidopsis stem-length preprocessing and plant partition | `arabidopsis/code/prepare_data.py`, `arabidopsis/code/run_experiment.py` |
 | Temperature-dataset architectures and training schedules | `experiments/physics_ablation.py: setup`, `configs/paper.json` |
 | Hypocotyl ordinary logistic reference and baseline models | `hypocotyl/code/forecast_models.py` |
-| Hypocotyl illumination-conditioned vector field and switch handling | `hypocotyl/code/forecast_models.py: PrefixLatentODE` |
+| Hypocotyl no-light dynamics and individual prefix-conditioned r/K head | `hypocotyl/code/no_light_prefix_model.py`, `prefix_parameter_model.py` |
 | Hypocotyl prefix, temporal targets, missing masks, and metrics | `hypocotyl/code/forecast_data.py` |
 | Fixed-configuration training / selected checkpoint evaluation | `run.py` |
-| Four manuscript tables | `results/comparison_temperature.csv`, `hypocotyl/reports/prefix_forecast_20260911/comparison.csv` |
+| Four manuscript tables | `results/comparison_temperature.csv`, `hypocotyl/reports/adopted_lambda100_20260911/comparison.csv` |
 | Temperature prediction figures | `visualization/temperature.py` |
 | Hypocotyl prediction figure | `visualization/hypocotyl.py: make_figure` |
 
@@ -44,9 +44,9 @@ python run.py train --dataset wheat --model latent_ode --seed 1 \
 Use `maize` or `arabidopsis` for the corresponding matched architecture, and repeat
 with seeds 2 and 3. Both `lambda_ode` and `lambda_k` are zero; optimizer weight
 decay remains unchanged. The auxiliary parameter head is retained to preserve
-the architecture and random initialization sequence. For hypocotyls the retained
-latent ODE has no light input, so it is a separate no-light comparator. Use `latent_ode_light` for the input-matched
-control with both physics coefficients zero.
+the architecture and random initialization sequence. For hypocotyls the no-light latent ODE shares the retained PhytoODE predictive
+backbone, inputs and initialization, but its unused auxiliary head has 64 fewer
+parameters. `latent_ode_light` is a separate illumination-input variant.
 
 ### Wheat
 
@@ -107,11 +107,12 @@ python run.py train --dataset hypocotyl --model latent_ode --seed 1 \
 ```
 
 Repeat stochastic models with seeds 2 and 3; Logistic ODE is fitted once.
-The current models receive each plant's masked 0–36 h prefix. All configurations
-are frozen in `configs/hypocotyl_forecast.json`; the preceding hyperparameters
-were retained without a new search on this temporal split. PhytoODE and
-`latent_ode_light` also receive illumination. Train the latter with the same
-command, changing `--model`. Both its physics coefficients are zero.
+The current models receive each plant's masked 0–36 h prefix. Baseline settings
+are frozen in `configs/hypocotyl_forecast.json` and were retained without another
+search. Only `latent_ode_light` additionally receives illumination; train it with
+the same command, changing `--model`. Both its physics coefficients are zero.
+The default PhytoODE uses the no-light prefix-conditioned parameter head and
+coefficients `(100, 0)`, resolved through `configs/paper.json`.
 
 For the added-missingness study use `--drop-fraction 0.25` or `0.5`. The default
 mask seed is `20260910 + training_seed`; the same values are hidden across models.
@@ -126,7 +127,11 @@ python hypocotyl/code/report_forecast.py \
   --output outputs/retrained-forecast-report --figures outputs/retrained-forecast-figures
 ```
 
-The complete benchmark performs 61 fits. A frozen run plan records code hashes,
+The commands above reproduce the archived original benchmark, including its
+genotype-only, light-input PhytoODE. For the current manuscript PhytoODE, use
+`run.py train --dataset hypocotyl --model phytoode` for seeds 1–3 and each
+removal level; `report_adopted_hypocotyl.py` exports the recorded current tables
+and figures. The archived complete benchmark performs 61 fits. A frozen run plan records code hashes,
 models, seeds, and masks; resuming skips completed runs and rejects changes to
 the frozen plan. Incomplete run directories require inspection before restarting.
 Only GPUs explicitly listed with `--gpus` are used; two workers per GPU are the
@@ -134,8 +139,8 @@ default. Classical baselines run on CPU.
 
 ## Stored runs and regenerated reports
 
-The submission preserves selected checkpoints and predictions, not the full
-hyperparameter-search tree. Their original dated paths are retained to preserve
+The submission preserves selected checkpoints and predictions, as well as the
+three recorded hypocotyl coefficient-search trees. Their original dated paths are retained to preserve
 provenance. `configs/paper.json` resolves the checkpoints used by `run.py`.
 Histories are included where present in the original selected runs; no missing
 training records have been fabricated.
@@ -170,8 +175,9 @@ the selected models with the unchanged earlier baseline outputs.
 
 The complete protocol, commands, and current scores are in
 [`hypocotyl/reports/prefix_parameters_20260911`](../hypocotyl/reports/prefix_parameters_20260911/README.md).
-Use the explicitly named follow-up scripts for this experiment; `run.py` retains
-the pinned manuscript configurations in `configs/paper.json`.
+Use the explicitly named follow-up scripts for this experiment; `run.py` uses
+the retained no-light coefficient 100 in `configs/paper.json`; the prior
+manuscript snapshot remains at tag `submission-20260911-prefix-forecast`.
 
 The additional no-light comparison uses `no_light_prefix_model.py`,
 `no_light_prefix_trial.py`, and `run_no_light_prefix_search.py`. Both the prefix

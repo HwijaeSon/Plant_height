@@ -236,7 +236,7 @@
     "wheat/results/reference/lstm_nn_onehot_original.csv"
   ],
   "derived_files": {
-    "visualization/hypocotyl.py": "Wrapper around current individual-prefix and controlled-missingness plot generator, hypocotyl/code/report_forecast.py."
+    "visualization/hypocotyl.py": "Wrapper around the retained coefficient-100 report and figure exporter, hypocotyl/code/report_adopted_hypocotyl.py."
   },
   "renamed_sources": {
     "results/comparison_temperature.csv": {
@@ -248,10 +248,10 @@
       "source_sha256": "769f51b4c478bb35e3aed80b60e5790918b700acdaf56eb5dd4980ca907a0929"
     }
   },
-  "preceding_release": "experiment-20260911-prefix-parameters",
+  "preceding_release": "experiment-20260911-expanded-lambda",
   "current_protocol": "prefix_forecast_20260911",
   "forecast_sources": "hypocotyl/results/prefix_forecast_20260911/plan.json",
-  "note": "retained_sources hashes identify original development files; final release hashes are in manifest.json. Superseded hypocotyl mean-target code and results remain in tag submission-20260911-code-data. The preceding individual-prefix manuscript snapshot remains pinned in configs/paper.json; both later feature variants have separate profiles.",
+  "note": "retained_sources hashes identify original development files; final release hashes are in manifest.json. Superseded hypocotyl mean-target code and results remain in tag submission-20260911-code-data. The original individual-prefix manuscript snapshot remains at submission-20260911-prefix-forecast. configs/paper.json now uses the retained no-light coefficient 100 with individual prefix-conditioned r/K and lambda_K=0. All three subsequent coefficient-search records are preserved; 100 is not the expanded-search validation optimum.",
   "prefix_parameter_sources": "hypocotyl/results/prefix_parameters_20260911/plan.json",
   "current_followups": [
     "prefix_parameters_20260911",
@@ -259,5 +259,6 @@
     "expanded_no_light_lambda_20260911"
   ],
   "no_light_prefix_parameter_sources": "hypocotyl/results/prefix_parameters_no_light_20260911/plan.json",
-  "expanded_no_light_sources": "hypocotyl/results/expanded_no_light_lambda_20260911/plan.json"
+  "expanded_no_light_sources": "hypocotyl/results/expanded_no_light_lambda_20260911/plan.json",
+  "manuscript_configuration": "hypocotyl/reports/adopted_lambda100_20260911/adoption.json"
 }

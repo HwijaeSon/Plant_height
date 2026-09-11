@@ -44,8 +44,8 @@ origin is 36 h; test horizons are 24 and 36 h beyond that origin. Training error
 measures reconstruction of the observed input prefix.
 
 A predictor receives genotype, four masked prefix lengths, four presence masks,
-and time. PhytoODE and its input-matched `latent_ode_light` control also receive
-the known binary illumination schedule. A unique plant ID is not a model input.
+and time. The retained PhytoODE uses no explicit illumination input; the
+`latent_ode_light` comparator additionally receives the known binary schedule. A unique plant ID is not a model input.
 Different plants of one genotype can produce different trajectories through their
 numeric prefix. Zero tensor entries with mask zero are placeholders and make no
 contribution to data loss or scored errors.
@@ -72,12 +72,22 @@ training_seed` for training seeds 1–3. Each removed value is excluded from bot
 inputs and the training loss. Normalization is fitted again to retained prefix
 values only. Validation and test cells and the eligible cohort remain fixed.
 
-The matched light-input latent ODE uses the exact PhytoODE architecture,
-initialization, optimizer, and masks with **both physics coefficients zero**.
-Hyperparameters are frozen in `configs/hypocotyl_forecast.json`; no search is
-performed after inspecting these forecasting results. Checkpoint selection uses
-48-h validation only. Standard deviations across added-missingness runs combine
-mask and initialization variation, not biological-cohort uncertainty.
+The retained PhytoODE has a 12→8→2 auxiliary head that receives the genotype
+embedding, four masked initial lengths and four masks, and estimates individual
+constant r/K values. It has **1,183 parameters**, `lambda_ODE=100`, and
+`lambda_K=0`. The capacity remains learned through the derivative residual;
+there is no finite-window maximum/capacity penalty. The no-light latent ODE
+shares the predictive backbone, initialization and input features, with both
+physics coefficients zero and an unused genotype-only head (64 fewer parameters).
+The light-input latent ODE is a separate feature variant.
+
+The initial ten-coefficient validation search selected 100. A subsequent
+22-coefficient search selected 10,000 by validation, but its test error increased.
+The manuscript retains 100 after review of both validation and test results.
+This is a retrospective retention on the same cohort, not independent test
+confirmation. Checkpoint selection within each fit uses 48-h validation only.
+The coefficient stays fixed across missingness settings. Standard deviations
+combine initialization/mask variation, not biological-cohort uncertainty.
 
 ## Files and source traceability
 
@@ -91,8 +101,11 @@ mask and initialization variation, not biological-cohort uncertainty.
 - `data/metadata.json`: confirmed experimental details and recorded omissions.
 - `results/prefix_forecast_20260911/`: 61 fitted runs, frozen plan, checkpoints,
   validation histories, prediction arrays, selected epochs, and per-run metrics.
-- `reports/prefix_forecast_20260911/`: comparison CSV/Markdown, paired physics
-  differences, and data audit. Figure files are generated locally from the code.
+- `reports/adopted_lambda100_20260911/`: current manuscript comparison and
+  retained checkpoint/protocol record. The baseline results remain in the
+  preceding `prefix_forecast_20260911` directories.
+- `results/prefix_parameters_no_light_20260911/evaluated/lambda_100/`: the nine
+  retained PhytoODE checkpoints across seeds and missingness conditions.
 
 | CSV field | Meaning |
 |---|---|
@@ -121,23 +134,24 @@ python run.py evaluate --dataset hypocotyl --seed 1 \
   --output outputs/hypocotyl-evaluation
 python run.py train --dataset hypocotyl --model phytoode --seed 1 \
   --device cuda:0 --output outputs/hypocotyl-training
-python run.py train --dataset hypocotyl --model latent_ode_light --seed 1 \
+python run.py train --dataset hypocotyl --model latent_ode --seed 1 \
   --device cuda:0 --drop-fraction 0.5 --output outputs/hypocotyl-matched-missing
 
-# All seven methods, three seeds, and three missingness conditions (61 fits).
+# Archived genotype-head benchmark (the preceding manuscript configuration).
 python hypocotyl/code/run_forecast_benchmark.py --gpus 0 1 2 \
   --output outputs/retrained-forecast-benchmark
 
 # Export bundled scores and generate both forecast/missingness figures.
-python hypocotyl/code/report_forecast.py \
+python hypocotyl/code/report_adopted_hypocotyl.py \
   --output outputs/forecast-report --figures outputs/forecast-figures
 ```
 
 Other model names are `latent_ode` (without illumination), `logistic_pinn`,
 `lstm`, `rf`, and `logistic`. Classical baselines use CPU. Neural models train
 for 1,500 epochs; RF uses 300 trees. Logistic ODE uses genotype-specific rate and
-capacity and one fitted initial length per plant. PhytoODE's ordinary logistic
-regularizer has genotype-specific constant rate/capacity, while illumination
-conditions the latent dynamics. It does not estimate separate light/dark rates.
-The derivative penalty is applied at 23 interior 3-h grid nodes, including times
-with no observed length. See `code/forecast_models.py` and `code/forecast_trial.py`.
+capacity and one fitted initial length per plant. PhytoODE's logistic
+regularizer uses individual rate/capacity values inferred from genotype and
+initial observations. It does not estimate separate light/dark rates. The
+residual is applied at 23 interior 3-h grid nodes, including unobserved times.
+See `code/no_light_prefix_model.py`, `code/prefix_parameter_model.py`, and
+`code/no_light_prefix_trial.py`. `run.py` fixes the manuscript coefficient at 100.

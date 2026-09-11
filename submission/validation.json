@@ -29,7 +29,7 @@
       ]
     }
   },
-  "version": "experiment-20260911-expanded-lambda",
+  "version": "submission-20260911-lambda100",
   "inherited_external_verification": "submission-20260911-code-data; external inputs and their preprocessing unchanged",
   "hypocotyl_data": {
     "workbook_reextraction_exact": true,
@@ -247,6 +247,52 @@
     "expanded_search_and_checkpoint_audit": "passed",
     "cpu_checkpoint_evaluation": "passed",
     "all_model_report_export": "passed",
+    "local_research_files_required": false
+  },
+  "historical_checks_note": "hypocotyl_training and the initial hypocotyl_data.masked_input_invariance records refer to prefix_forecast_20260911. Subsequent follow-ups and the currently adopted configuration are identified in separate records below.",
+  "adopted_lambda100": {
+    "configuration": "hypocotyl/reports/adopted_lambda100_20260911/adoption.json",
+    "lambda_ode": 100,
+    "lambda_k": 0,
+    "n_params": 1183,
+    "illumination_input": false,
+    "retraining_performed_for_editorial_adoption": false,
+    "expanded_validation_winner": 10000,
+    "retention_after_expanded_test_review": true,
+    "current_report_rows": 63,
+    "main_comparison_rows": 84,
+    "additional_missingness_rows": 42,
+    "common_entrypoint_evaluations": {
+      "natural_seed1": {
+        "test_rmse_mm": 1.003878160559413,
+        "maximum_prediction_difference_from_frozen_output": 0.0
+      },
+      "drop50_seed3": {
+        "test_rmse_mm": 1.4168793977702057,
+        "maximum_prediction_difference_from_frozen_output": 0.0
+      }
+    },
+    "common_entrypoint_cpu_smoke": {
+      "steps": 2,
+      "lambda_ode": 100,
+      "lambda_k": 0,
+      "test_scoring": false,
+      "status": "passed"
+    },
+    "temperature_dataset_configs_unchanged": true,
+    "all_five_figure_command": "passed",
+    "three_temperature_pngs_byte_identical_to_preceding_figures": true,
+    "hypocotyl_figures": "rendered and visually inspected; seven models, retained lambda100 predictions and all three missingness conditions",
+    "manuscript_assets_in_code_release": false,
+    "all_63_table_means_and_standard_deviations_match_stored_runs": true,
+    "all_9_checkpoint_hashes_match_public_defaults": true
+  },
+  "adopted_lambda100_clean_export": {
+    "git_tree_before_this_validation_record": "97ae1aa3dca9d53a636ac65f63aeb8fb5baa28ed",
+    "manifest_files_verified": 1905,
+    "current_phytoode_cpu_checkpoint_evaluation": "passed",
+    "no_light_baseline_cpu_checkpoint_evaluation": "passed",
+    "full_comparison_export": "passed",
     "local_research_files_required": false
   }
 }

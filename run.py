@@ -187,9 +187,29 @@ def main():
         parser.error("CUDA is unavailable; use --device cpu or install a matching CUDA PyTorch build")
     if args.dataset == "hypocotyl":
         sys.path.insert(0, str(ROOT / "hypocotyl/code"))
-        import forecast_trial
         if args.mask_seed is None:
             args.mask_seed = 20260910 + args.seed
+        if args.model == "phytoode":
+            import no_light_prefix_trial as trial
+            if args.mask_seed != 20260910 + args.seed:
+                parser.error("The retained PhytoODE uses mask_seed=20260910+seed")
+            profile = json.loads((ROOT / "configs/paper.json").read_text())["datasets"]["hypocotyl"]
+            args.lambda_ode = profile["lambda_ode"]
+            if args.mode == "evaluate" and args.checkpoint is None:
+                records = profile["models"]["phytoode"]["checkpoints_by_missingness"]
+                if args.drop_fraction not in [0., .25, .5]:
+                    parser.error("No bundled checkpoint for this missingness condition; pass --checkpoint")
+                record = records[str(round(100*args.drop_fraction))].get(str(args.seed))
+                if record is None:
+                    parser.error("No bundled checkpoint for this seed; pass --checkpoint")
+                args.checkpoint = ROOT / record["path"]
+                if sha(args.checkpoint) != record["sha256"]:
+                    raise ValueError("Bundled checkpoint checksum mismatch")
+            trial.run(args)
+            result = json.loads((args.output / "result.json").read_text())
+            print(json.dumps({"status": result["status"], "metrics": {k:v['rmse'] for k,v in result['metrics'].items() if 'rmse' in v}}, indent=2))
+            return
+        import forecast_trial
         if args.mode == "evaluate" and args.checkpoint is None:
             record_path = ROOT / "hypocotyl/results/prefix_forecast_20260911" / f"drop_{round(args.drop_fraction*100)}" / args.model / f"seed{args.seed}" / "checkpoint.pt"
             if args.drop_fraction not in [0., .25, .5] or not record_path.is_file():

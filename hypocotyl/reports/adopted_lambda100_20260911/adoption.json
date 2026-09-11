@@ -1,0 +1,56 @@
+{
+  "protocol": "prefix_forecast_20260911",
+  "adopted_model": "phytoode_prefix_parameters_no_light",
+  "lambda_ode": 100.0,
+  "lambda_k": 0.0,
+  "illumination_input": false,
+  "n_params": 1183,
+  "source_report": "hypocotyl/reports/prefix_parameters_no_light_20260911/comparison.csv",
+  "baseline_source": "hypocotyl/results/prefix_forecast_20260911",
+  "retention_policy": "The initial ten-coefficient validation search selected 100. The expanded 22-coefficient search selected 10000 by validation. The manuscript retains 100 after review of the expanded-search validation and test results; this is not the expanded-search validation optimum or an independent test-confirmed selection.",
+  "expanded_search": "hypocotyl/results/expanded_no_light_lambda_20260911/lambda_selection.json",
+  "checkpoint_records": {
+    "0": {
+      "1": {
+        "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_0/seed1/checkpoint.pt",
+        "sha256": "90b2f099b86b60e58956e7c50bf1e66f104fad20ba486c6d666798f48727065c"
+      },
+      "2": {
+        "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_0/seed2/checkpoint.pt",
+        "sha256": "e187d45f9d47fb0d755ed04dcb0c162298b7686419dccd7fba4b6a8ecab92d03"
+      },
+      "3": {
+        "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_0/seed3/checkpoint.pt",
+        "sha256": "2e20b074ce0f9dcf7858be4de4bbea67f0fb519a6b33588d0142d3e9559dc34d"
+      }
+    },
+    "25": {
+      "1": {
+        "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_25/seed1/checkpoint.pt",
+        "sha256": "6757a70dc10b51b830556d3fcaf6c555a6c48b6e6183f7710954f8afe5d23157"
+      },
+      "2": {
+        "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_25/seed2/checkpoint.pt",
+        "sha256": "b1e5e56e1ed7d29749bb753b50cb5e9f96d05352b159454ed2099981f7f173b9"
+      },
+      "3": {
+        "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_25/seed3/checkpoint.pt",
+        "sha256": "17dd0b5c20b8ef6efc43c36ec027934a2e0658000fad0b046c02a319a369069b"
+      }
+    },
+    "50": {
+      "1": {
+        "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_50/seed1/checkpoint.pt",
+        "sha256": "8acacde9a83cc4fe0d6b28ecca158cfee27b0abc152a8dfc9be1fd914c5aca7b"
+      },
+      "2": {
+        "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_50/seed2/checkpoint.pt",
+        "sha256": "f03c9d218ce3e2ff7a10058eeaf60fe61809d850753be6d7273b2ad9d03b9caf"
+      },
+      "3": {
+        "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_50/seed3/checkpoint.pt",
+        "sha256": "a6832836ce5c95864a420cad004ad118344f8c35ad70bc268658b3b387d18c30"
+      }
+    }
+  }
+}
