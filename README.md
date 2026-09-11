@@ -1,4 +1,19 @@
-# Genotype-conditioned latent Neural ODE for plant growth
+# PhytoODE manuscript submission
+
+The curated submission version is available on
+[`codex/submission-20260911`](https://github.com/HwijaeSon/Plant_height/tree/codex/submission-20260911),
+with the fixed tag
+[`submission-20260911`](https://github.com/HwijaeSon/Plant_height/tree/submission-20260911).
+Start with its [README](https://github.com/HwijaeSon/Plant_height/blob/submission-20260911/README.md)
+for dataset downloads, preprocessing, CPU/GPU training, checkpoint evaluation,
+and reproduction of the manuscript tables and figures. The submission includes
+the author-collected hypocotyl workbook, 943 measurements under 12L12D, and fixed
+training/validation/test partitions, alongside the three published benchmarks.
+
+This `main` branch preserves the development history and exploratory experiments.
+The remainder of this page is the historical research-workspace guide.
+
+## Genotype-conditioned latent Neural ODE for plant growth
 
 This repository contains the data, code, and audited results used for the
 wheat, maize and *Arabidopsis thaliana* experiments in the accompanying manuscript.
