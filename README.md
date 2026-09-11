@@ -91,7 +91,7 @@ The complete report includes standard deviations and train/validation scores.
 
 Omitting illumination reduces PhytoODE's mean test error under natural missingness
 and 50% additional removal, but slightly increases it at 25%. The no-light
-PhytoODE has the lowest mean at 50% removal among all evaluated models. The
+PhytoODE has the lowest mean at 50% removal among the models in that comparison. The
 differences from the strongest baselines are small relative to seed/mask variation;
 these results do not establish consistent or statistically significant superiority.
 All six baselines and the preceding genotype-head PhytoODE are reused unchanged.
@@ -116,6 +116,53 @@ python hypocotyl/code/audit_no_light_prefix.py
 
 [No-light protocol](hypocotyl/reports/prefix_parameters_no_light_20260911/README.md) ·
 [All-model train/validation/test comparison](hypocotyl/reports/prefix_parameters_no_light_20260911/comparison.md)
+
+### Expanded coefficient search
+
+The subsequent `experiment-20260911-expanded-lambda` follow-up broadens the
+no-light model's `lambda_ODE` grid from **0.01–1,000 to 0.001–10,000**, adding
+resolution near 0.1 and 100. The architecture, prefix r/K head, `lambda_K=0`,
+initialization and 1,500-epoch schedule remain unchanged. Twelve additional
+coefficients are trained with three seeds (36 new fits), and the 30 previous
+validation-only fits are reused. All **22 candidates** are ranked by 48-h
+validation RMSE; the selected coefficient is shared across missingness settings.
+
+The expanded grid selects **lambda_ODE=10,000** at its upper bound. Natural-missingness
+48-h validation RMSE decreases from **0.5807 to 0.5726 mm** (three-seed means),
+but 60/72-h test error increases in every missingness condition:
+
+| Additional prefix removal | Previous lambda=100 | Expanded selection lambda=10,000 |
+|---|---:|---:|
+| Natural missingness | **1.150 / 15.41%** | 1.579 / 21.16% |
+| 25% | **1.317 / 17.65%** | 1.524 / 20.43% |
+| 50% | **1.224 / 16.40%** | 1.549 / 20.76% |
+
+Cells are RMSE (mm) / relative RMSE (%), averaged across three seeds. The
+expanded validation search therefore does not yield improved test forecasts.
+Both configurations and their results remain available; the selected coefficient
+is recorded according to validation, without retrospective test-based reranking.
+The upper-bound selection also leaves the optimum beyond the sampled range unresolved.
+
+```bash
+git fetch origin tag experiment-20260911-expanded-lambda
+git checkout experiment-20260911-expanded-lambda
+
+# Reproduce the extended search, using the bundled original candidates.
+python hypocotyl/code/run_expanded_no_light_search.py --gpus 1 2 \
+  --output outputs/expanded-no-light-search
+
+# Export the bundled expanded search, all-model tables and prediction plots.
+python hypocotyl/code/report_expanded_no_light.py \
+  --output outputs/expanded-no-light-report --figures outputs/expanded-no-light-figures
+
+# Evaluate its selected checkpoint on CPU.
+python hypocotyl/code/expanded_no_light_trial.py evaluate \
+  --checkpoint hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed1/checkpoint.pt \
+  --output outputs/expanded-no-light-evaluation
+```
+
+[Expanded-search protocol](hypocotyl/reports/expanded_no_light_lambda_20260911/README.md) ·
+[All candidates and train/validation/test results](hypocotyl/reports/expanded_no_light_lambda_20260911/comparison.md)
 
 ## Installation
 

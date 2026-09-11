@@ -1,0 +1,494 @@
+{
+  "selected_lambda_ode": 10000.0,
+  "lambda_k": 0.0,
+  "candidates": [
+    {
+      "lambda_ode": 10000.0,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.5726481081280702,
+      "val_rmse_sd": 0.004195382816085611,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.5756608515330591,
+        0.5678563491036184,
+        0.5744271237475331
+      ],
+      "best_epochs": [
+        220,
+        200,
+        240
+      ],
+      "origin": "current"
+    },
+    {
+      "lambda_ode": 100.0,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.5806624465951076,
+      "val_rmse_sd": 0.004991153122498729,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.5805235984567554,
+        0.5857215751032345,
+        0.5757421662253328
+      ],
+      "best_epochs": [
+        280,
+        200,
+        200
+      ],
+      "origin": "previous"
+    },
+    {
+      "lambda_ode": 0.1,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.5816774598720172,
+      "val_rmse_sd": 0.0026179738017217914,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.5786597209298052,
+        0.5830322982294018,
+        0.5833403604568448
+      ],
+      "best_epochs": [
+        200,
+        200,
+        200
+      ],
+      "origin": "previous"
+    },
+    {
+      "lambda_ode": 0.03,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.5925453071785937,
+      "val_rmse_sd": 0.023228573878678802,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.5755253941151315,
+        0.5831023095266428,
+        0.6190082178940066
+      ],
+      "best_epochs": [
+        200,
+        200,
+        200
+      ],
+      "origin": "current"
+    },
+    {
+      "lambda_ode": 50.0,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.5926646042739351,
+      "val_rmse_sd": 0.013795406666607404,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.6037695322430225,
+        0.5772215550590771,
+        0.5970027255197057
+      ],
+      "best_epochs": [
+        200,
+        360,
+        200
+      ],
+      "origin": "previous"
+    },
+    {
+      "lambda_ode": 150.0,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.5934032928391826,
+      "val_rmse_sd": 0.008972749566274798,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.5895526066573802,
+        0.5869986061146484,
+        0.6036586657455191
+      ],
+      "best_epochs": [
+        200,
+        200,
+        200
+      ],
+      "origin": "current"
+    },
+    {
+      "lambda_ode": 0.003,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.5957503864051154,
+      "val_rmse_sd": 0.03188850017994558,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.5721766459655482,
+        0.5830406136917882,
+        0.6320338995580097
+      ],
+      "best_epochs": [
+        200,
+        200,
+        200
+      ],
+      "origin": "current"
+    },
+    {
+      "lambda_ode": 200.0,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.5992773374063738,
+      "val_rmse_sd": 0.01516912226313818,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.5888383599699007,
+        0.5923159771068022,
+        0.6166776751424186
+      ],
+      "best_epochs": [
+        200,
+        200,
+        200
+      ],
+      "origin": "current"
+    },
+    {
+      "lambda_ode": 5.0,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.6007295721586173,
+      "val_rmse_sd": 0.012331782775180522,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.6116200038988608,
+        0.5873394372330513,
+        0.6032292753439397
+      ],
+      "best_epochs": [
+        200,
+        220,
+        200
+      ],
+      "origin": "previous"
+    },
+    {
+      "lambda_ode": 0.3,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.6020979808498329,
+      "val_rmse_sd": 0.031028484619615875,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.6378105223930908,
+        0.5817461860489566,
+        0.5867372341074515
+      ],
+      "best_epochs": [
+        200,
+        200,
+        200
+      ],
+      "origin": "current"
+    },
+    {
+      "lambda_ode": 300.0,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.60601250870813,
+      "val_rmse_sd": 0.014369449176011571,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.5984378084430937,
+        0.597015141145559,
+        0.6225845765357372
+      ],
+      "best_epochs": [
+        200,
+        480,
+        200
+      ],
+      "origin": "current"
+    },
+    {
+      "lambda_ode": 10.0,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.606887488957572,
+      "val_rmse_sd": 0.020265145307900096,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.6257366643911226,
+        0.5854542562940623,
+        0.6094715461875312
+      ],
+      "best_epochs": [
+        200,
+        200,
+        200
+      ],
+      "origin": "previous"
+    },
+    {
+      "lambda_ode": 500.0,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.6070737158932412,
+      "val_rmse_sd": 0.006181713182296713,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.6106992053287104,
+        0.5999359878296964,
+        0.610585954521317
+      ],
+      "best_epochs": [
+        200,
+        380,
+        280
+      ],
+      "origin": "previous"
+    },
+    {
+      "lambda_ode": 0.5,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.608356034565484,
+      "val_rmse_sd": 0.021088244286490528,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.6221176709798164,
+        0.5840775995822624,
+        0.6188728331343737
+      ],
+      "best_epochs": [
+        200,
+        200,
+        200
+      ],
+      "origin": "previous"
+    },
+    {
+      "lambda_ode": 3000.0,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.6099084867174582,
+      "val_rmse_sd": 0.019896177105825818,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.5881512774243021,
+        0.6143975885463879,
+        0.6271765941816847
+      ],
+      "best_epochs": [
+        200,
+        220,
+        200
+      ],
+      "origin": "current"
+    },
+    {
+      "lambda_ode": 0.001,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.6137440063185834,
+      "val_rmse_sd": 0.026610557041030315,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.6293968483486678,
+        0.5830186082888393,
+        0.6288165623182431
+      ],
+      "best_epochs": [
+        200,
+        200,
+        200
+      ],
+      "origin": "current"
+    },
+    {
+      "lambda_ode": 1000.0,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.6148013428659178,
+      "val_rmse_sd": 0.010452151789451913,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.6188676576281432,
+        0.602927134208614,
+        0.6226092367609963
+      ],
+      "best_epochs": [
+        200,
+        480,
+        200
+      ],
+      "origin": "previous"
+    },
+    {
+      "lambda_ode": 0.2,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.620077093696377,
+      "val_rmse_sd": 0.050694928310578355,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.6773276039035991,
+        0.580880175186554,
+        0.6020235019989777
+      ],
+      "best_epochs": [
+        200,
+        200,
+        200
+      ],
+      "origin": "current"
+    },
+    {
+      "lambda_ode": 1.0,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.6203635935501661,
+      "val_rmse_sd": 0.058182272683101416,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.6875279074115679,
+        0.5881573225944303,
+        0.5854055506445002
+      ],
+      "best_epochs": [
+        200,
+        200,
+        200
+      ],
+      "origin": "previous"
+    },
+    {
+      "lambda_ode": 0.01,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.6212752036405728,
+      "val_rmse_sd": 0.036015194157902455,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.6545918878416996,
+        0.5830624391257297,
+        0.626171283954289
+      ],
+      "best_epochs": [
+        200,
+        200,
+        200
+      ],
+      "origin": "previous"
+    },
+    {
+      "lambda_ode": 75.0,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.6257160588713208,
+      "val_rmse_sd": 0.04346484269491483,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.6213401523313952,
+        0.5846046919161454,
+        0.6712033323664219
+      ],
+      "best_epochs": [
+        260,
+        200,
+        200
+      ],
+      "origin": "current"
+    },
+    {
+      "lambda_ode": 0.05,
+      "lambda_k": 0.0,
+      "val_rmse_mean": 0.6328859667347279,
+      "val_rmse_sd": 0.05675286560719863,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "validation_rmse_by_seed": [
+        0.6947043526584749,
+        0.583141882587457,
+        0.6208116649582517
+      ],
+      "best_epochs": [
+        200,
+        200,
+        200
+      ],
+      "origin": "current"
+    }
+  ],
+  "candidate_selection": "Lowest mean actual 48-h validation RMSE over all three seeds under natural missingness; ties favor smaller lambda_ode.",
+  "plan_sha256": "979203d7415f9e0eee9eb356eab001ee6f6e09b6bb80dede33d8dfcaab2c42c5",
+  "new_test_evaluations_before_selection": 0,
+  "prior_test_exposure": "The prior coefficient-100 results were reported before this expanded validation-only search."
+}

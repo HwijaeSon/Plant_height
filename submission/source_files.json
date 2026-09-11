@@ -248,14 +248,16 @@
       "source_sha256": "769f51b4c478bb35e3aed80b60e5790918b700acdaf56eb5dd4980ca907a0929"
     }
   },
-  "preceding_release": "submission-20260911-prefix-forecast",
+  "preceding_release": "experiment-20260911-prefix-parameters",
   "current_protocol": "prefix_forecast_20260911",
   "forecast_sources": "hypocotyl/results/prefix_forecast_20260911/plan.json",
   "note": "retained_sources hashes identify original development files; final release hashes are in manifest.json. Superseded hypocotyl mean-target code and results remain in tag submission-20260911-code-data. The preceding individual-prefix manuscript snapshot remains pinned in configs/paper.json; both later feature variants have separate profiles.",
   "prefix_parameter_sources": "hypocotyl/results/prefix_parameters_20260911/plan.json",
   "current_followups": [
     "prefix_parameters_20260911",
-    "prefix_parameters_no_light_20260911"
+    "prefix_parameters_no_light_20260911",
+    "expanded_no_light_lambda_20260911"
   ],
-  "no_light_prefix_parameter_sources": "hypocotyl/results/prefix_parameters_no_light_20260911/plan.json"
+  "no_light_prefix_parameter_sources": "hypocotyl/results/prefix_parameters_no_light_20260911/plan.json",
+  "expanded_no_light_sources": "hypocotyl/results/expanded_no_light_lambda_20260911/plan.json"
 }

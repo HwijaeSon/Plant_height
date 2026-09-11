@@ -29,7 +29,7 @@
       ]
     }
   },
-  "version": "experiment-20260911-prefix-parameters",
+  "version": "experiment-20260911-expanded-lambda",
   "inherited_external_verification": "submission-20260911-code-data; external inputs and their preprocessing unchanged",
   "hypocotyl_data": {
     "workbook_reextraction_exact": true,
@@ -213,6 +213,40 @@
     "light_and_no_light_checkpoint_audits": "passed",
     "no_light_cpu_evaluation": "passed",
     "full_comparison_export": "passed",
+    "local_research_files_required": false
+  },
+  "expanded_no_light_lambda_followup": {
+    "added_search_fits": 36,
+    "reused_search_fits": 30,
+    "total_candidates": 22,
+    "transfer_fits": 6,
+    "selected_lambda_ode": 10000.0,
+    "lambda_k": 0.0,
+    "new_test_evaluations": 9,
+    "reused_test_evaluations": 0,
+    "failures": [],
+    "source_hashes_verified": true,
+    "all_candidate_training_validation_only": true,
+    "minimum_three_seed_validation_selected": true,
+    "gpus": [
+      1,
+      2
+    ],
+    "n_params": 1183,
+    "all_initializations_unchanged": true,
+    "all_nine_checkpoints_reloaded": true,
+    "illumination_and_masked_placeholder_invariance": true,
+    "selected_at_search_upper_bound": true,
+    "test_error_increased_at_all_three_missingness_levels": true,
+    "audit_path": "hypocotyl/reports/expanded_no_light_lambda_20260911/artifact_audit.json",
+    "figures": "Expanded validation grid, ten-model missingness and individual trajectories; generated and visually inspected."
+  },
+  "expanded_lambda_clean_export": {
+    "git_tree_before_this_validation_record": "3464a558c881e353c8fd7f874548c0e4c34b6aed",
+    "manifest_files_verified": 1901,
+    "expanded_search_and_checkpoint_audit": "passed",
+    "cpu_checkpoint_evaluation": "passed",
+    "all_model_report_export": "passed",
     "local_research_files_required": false
   }
 }

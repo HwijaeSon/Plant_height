@@ -1,9 +1,9 @@
 {
-  "version": "experiment-20260911-prefix-parameters",
-  "branch": "codex/hypocotyl-prefix-parameters-20260911",
+  "version": "experiment-20260911-expanded-lambda",
+  "branch": "codex/hypocotyl-expanded-lambda-20260911",
   "source_development_commit": "9671ca42605ad6ab1543c527daa6466fa3e80e06",
-  "preceding_release": "submission-20260911-prefix-forecast",
-  "description": "Pinned manuscript code/data plus separate light and no-light individual-parameter PhytoODE follow-ups. Includes training configurations, checkpoints and machine-readable results; excludes manuscript assets, external downloads and local figure outputs.",
+  "preceding_release": "experiment-20260911-prefix-parameters",
+  "description": "Pinned manuscript code/data and separately recorded individual-parameter PhytoODE follow-ups, including the expanded no-light validation search. Excludes manuscript assets, external downloads and generated figures.",
   "files": {
     ".gitattributes": {
       "sha256": "34adb1002cea37c4521bd11aa8b73fbbbd35f0facef6aeae24570f996d53491e",
@@ -14,12 +14,12 @@
       "bytes": 483
     },
     "CITATION.cff": {
-      "sha256": "305fbf6dd159fc8cadb078af2c4f575e462f467193703eb6b5dd3c8806a5470e",
-      "bytes": 657
+      "sha256": "b2d4811652a2bf3c6bdc7fc5a9ad8e07c258cfcee0d31a6e8c174cc2c012f237",
+      "bytes": 653
     },
     "README.md": {
-      "sha256": "ad6faee516c1d79cd60a9a2572c1f5501addf55d772958df9b55d30c80737774",
-      "bytes": 20650
+      "sha256": "b90685850f8713e8b6dbd8f8f69027420381503ee397b3f1965604f690bcf20b",
+      "bytes": 23121
     },
     "THIRD_PARTY.md": {
       "sha256": "c8b82eea7e6c4f5f9cbba0799ca621d2e03d6edb58028b75853c50777a156c1e",
@@ -57,6 +57,10 @@
       "sha256": "2f470e5b102da1b87988df63ba60f0873060dcd23b07cd52764c219d01c1b0f9",
       "bytes": 7311
     },
+    "configs/hypocotyl_expanded_no_light_lambda_20260911.json": {
+      "sha256": "3f899a5bf4fba63d6370f2986bf828bdc90292068ee9814c9b2a7e48f0c88509",
+      "bytes": 2378
+    },
     "configs/hypocotyl_forecast.json": {
       "sha256": "fc7ae96dc2c609095a7ca992ee96309821f804a034beadb53ed332952268bdb4",
       "bytes": 1557
@@ -74,8 +78,8 @@
       "bytes": 12754
     },
     "docs/REPRODUCTION.md": {
-      "sha256": "8d76c9eb37fc93a81d518dece19693e9f3ac45df1c34ff5bcfec5b022c3cb31b",
-      "bytes": 10183
+      "sha256": "8550f951cbe031d11b9f14f99042408161a7db3656a40cf5df7e3034f72d42e4",
+      "bytes": 10817
     },
     "experiments/physics_ablation.py": {
       "sha256": "1094f8b2025428a3bd3f564c91cb0e62bc8b7635843544035da3ee6bc08884cb",
@@ -597,6 +601,10 @@
       "sha256": "9cf20970201dca7a3b2e6208a8aaf083c331a6c3018d4c3ca4e04f95178ad0b5",
       "bytes": 7584
     },
+    "hypocotyl/code/audit_expanded_no_light.py": {
+      "sha256": "7b32fbd96cce53c6158ec6371fe4e57a82a978af0d403aea8d9891c0640ad652",
+      "bytes": 7157
+    },
     "hypocotyl/code/audit_forecast.py": {
       "sha256": "622a426e611024e9a8f244e5644ecb3251af0166788a782ae55013aea602a6a7",
       "bytes": 2586
@@ -612,6 +620,10 @@
     "hypocotyl/code/audit_prefix_parameters.py": {
       "sha256": "4f01c8e560c24878e78f414a60e0ce55200e5660151fd6c2654a2d72e0559cc2",
       "bytes": 5982
+    },
+    "hypocotyl/code/expanded_no_light_trial.py": {
+      "sha256": "000a1a24a2f7544a1eea8139bdbd23842f9bf4e75ea6c6e0fa045ff9cb2330e7",
+      "bytes": 300
     },
     "hypocotyl/code/forecast_data.py": {
       "sha256": "510c81198c795f0906f453b914408c68454e2c980ddd9a4ddf21d6198af4e4b3",
@@ -641,6 +653,10 @@
       "sha256": "7a057911bdb6970d80d457c30d25d63ecb56c007a3c41fc13090ebd5bf627504",
       "bytes": 8287
     },
+    "hypocotyl/code/report_expanded_no_light.py": {
+      "sha256": "a845d431eac28e9c879efd6113bafe298cd0e92f34363b621c84264911588942",
+      "bytes": 9324
+    },
     "hypocotyl/code/report_forecast.py": {
       "sha256": "3bacbe13d570e6343c5ee212f21f0f53d23a778ead8d589d9246c949f0df1d1a",
       "bytes": 9840
@@ -652,6 +668,10 @@
     "hypocotyl/code/report_prefix_parameters.py": {
       "sha256": "13488fc1d9da4e878a2d4c3987ed7dabe86b35592dc77187e21533278e1fe769",
       "bytes": 8608
+    },
+    "hypocotyl/code/run_expanded_no_light_search.py": {
+      "sha256": "3143cc8b9093d25788732b7f105ed4b395a7edf4902fe180938819c041df08c2",
+      "bytes": 9274
     },
     "hypocotyl/code/run_forecast_benchmark.py": {
       "sha256": "bb034e1bb730642b09897d0d04390eaee2276552416830eeb3bb9120a8c5e811",
@@ -704,6 +724,30 @@
     "hypocotyl/data/raw/hypocotyl_growth_20230403.xlsx": {
       "sha256": "62b64ad2aef1467f1278b8602d56ea6c7642fabbd5fbc1409aec13e4e40277e4",
       "bytes": 72180
+    },
+    "hypocotyl/reports/expanded_no_light_lambda_20260911/README.md": {
+      "sha256": "43f07df0e5353b160e02f62286964bf00d0518546c9074a8ed23dbbee1a58f21",
+      "bytes": 5513
+    },
+    "hypocotyl/reports/expanded_no_light_lambda_20260911/artifact_audit.json": {
+      "sha256": "18d199e647d2f4690390dd93284947d4d1f85615739b9e02f02969b67d7f515f",
+      "bytes": 18674
+    },
+    "hypocotyl/reports/expanded_no_light_lambda_20260911/comparison.csv": {
+      "sha256": "cbe6ae87a098eacc8ca417e05e5e4e2b2402c02dde2b7fae676013ec4a9fe7b2",
+      "bytes": 21832
+    },
+    "hypocotyl/reports/expanded_no_light_lambda_20260911/comparison.md": {
+      "sha256": "e67047d8176b28eecf601fe00198e211631c1c5174d4b5d940a02386e39cacfa",
+      "bytes": 6458
+    },
+    "hypocotyl/reports/expanded_no_light_lambda_20260911/selected_per_seed_metrics.csv": {
+      "sha256": "e0eec7f67bbb511e0b2af9592faf081a755390761a9b83c6714c140a53bf5206",
+      "bytes": 2640
+    },
+    "hypocotyl/reports/expanded_no_light_lambda_20260911/validation_search.csv": {
+      "sha256": "11c4c53723c422a518c77696b0a890340509e63444ea9b938567400027c1d2b0",
+      "bytes": 3355
     },
     "hypocotyl/reports/prefix_forecast_20260911/artifact_audit.json": {
       "sha256": "f512c12aa796b409620bbdd1aae71224beb561307fdc2dcee59cbc12caedecdf",
@@ -788,6 +832,1662 @@
     "hypocotyl/reports/prefix_parameters_no_light_20260911/validation_search.csv": {
       "sha256": "935c5db86b1e6ec3395fa362fecdc0be66ea64263c0d5d43075626662064219f",
       "bytes": 1480
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/completion.json": {
+      "sha256": "bfa0352f0755056883873a2f9641cd92a01e33d23849266e601f8f26b74924be",
+      "bytes": 238
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/lambda_selection.json": {
+      "sha256": "cb6eb04e42059e1db550defd5676ffc0407801a68bd3689dc0bbf1a7e99b1d1a",
+      "bytes": 9919
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/plan.json": {
+      "sha256": "979203d7415f9e0eee9eb356eab001ee6f6e09b6bb80dede33d8dfcaab2c42c5",
+      "bytes": 45884
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed1.log": {
+      "sha256": "66afbc8c094fde21f1dbb1a15ea544d476e0ff556193b6b9c2d3640d4cc1bc3d",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed1/checkpoint.pt": {
+      "sha256": "2631359a5cb759cb2c22f254b801c6576206e1a4bf59989053403fffc3dfb096",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed1/config.json": {
+      "sha256": "b6343545033d35639a369f1035c598244e7074f03f3cfaa7d7044fce380a2cd4",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed1/history.csv": {
+      "sha256": "bf15ae9770f9622953b4f41a389d02526ba05822be2c30ab1e87302a4c918966",
+      "bytes": 10248
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed1/predictions.npz": {
+      "sha256": "9c869a6c5b68dbf4896d8673172b27a7993c4d85ca93b2c447d4ccbf4c250da9",
+      "bytes": 22238
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed1/progress.json": {
+      "sha256": "7c7773fc8ab41a24c91c9d61da02411f6e952ab813fc55f9cb1c7e0c4badc6e9",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed1/result.json": {
+      "sha256": "40a41af6c573653813eb8ed195d30f3c390f1278f7d00424166f6a097cbbdf5a",
+      "bytes": 11732
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed1/selection.json": {
+      "sha256": "7c8af337cb0e7186e284a5e299c7c362aed6872579e71b93dfbb4e915719dda5",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed2.log": {
+      "sha256": "e574697e99e65e37a4efd4d8da13c5b04a190b85e90618aabaae452153009261",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed2/checkpoint.pt": {
+      "sha256": "e906b071512d4389ceb275061feb0b68709e4e20dfda9936e3bfb1495dec87c9",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed2/config.json": {
+      "sha256": "08d380467618e5ee9f3fa2edd876aa7a195f5ee4381bc7b1e880bc2e6d7b5c41",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed2/history.csv": {
+      "sha256": "c3ace7ceab46b24c2771de25264686cf39beeac4996cf7d3e25924d5de34c715",
+      "bytes": 10232
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed2/predictions.npz": {
+      "sha256": "5b904ac7a94cbd739ad4762fe79089d899d94062e37514be68c617073765b673",
+      "bytes": 22166
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed2/progress.json": {
+      "sha256": "b4ceaae55932a70af2393dc3660aa0abcd339e40c1f08dbd14c511971d041d4f",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed2/result.json": {
+      "sha256": "630b7841a06d9d8c8bd034c82d503c451fd072463a56f6dc703149b411aee6b7",
+      "bytes": 11719
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed2/selection.json": {
+      "sha256": "2d4736a2150349be8bfa4937735b0e0c742ed0c5c3baaef1ac18b35a834ae57e",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed3.log": {
+      "sha256": "69fd325a2d6e4496b32a5207b523007ce43e200fcf0b3fada63c69150f24cc62",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed3/checkpoint.pt": {
+      "sha256": "485e89c58d502bf9b4a6d869952f77562a3d7534dc07898be9bb7acc23aed29a",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed3/config.json": {
+      "sha256": "968cd1bef6e89b75c571ba386c01431b4d4ea2056e0b9ddc6d491f498c09b774",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed3/history.csv": {
+      "sha256": "ecbb6b5897b4a9daeefbad47af50db7977f8978caac92e6e29732bed0688b47a",
+      "bytes": 10230
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed3/predictions.npz": {
+      "sha256": "2098a46b079044045e0a990c4888afed0a615b87b2c048491f509ba08163e56a",
+      "bytes": 22220
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed3/progress.json": {
+      "sha256": "2eaf305d97d9519ccb82322ffb40a0510170aaefe845640116f88a958f09d52c",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed3/result.json": {
+      "sha256": "6720863531e08fc513ec371ca89e521a14f3adba63b2fad9c52f1a9e0fb154d5",
+      "bytes": 11734
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p001/seed3/selection.json": {
+      "sha256": "58559b500f3629bb8831e42d595f38733cce5e52a7db9336101ce33a2a338425",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed1.log": {
+      "sha256": "fa29b8a39b1edf995d87c246772c36d3f9891030f357a393d89b314ce3ceb98d",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed1/checkpoint.pt": {
+      "sha256": "61a41aa05ef12ad246e2c887e98e3558a131711d0e58be14cc31a2a69e51aaea",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed1/config.json": {
+      "sha256": "56ff66738825cc47a8f47fbe00ac0e10987672c2069211e40b21a944ffcad646",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed1/history.csv": {
+      "sha256": "ea9fac917b92d5c40a843d909d6884b7fba5a110fde2c2e83e3d72d08f41cdf4",
+      "bytes": 10248
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed1/predictions.npz": {
+      "sha256": "ae88b24b6161c057c20b90dd1aeee05f2b55893b3b10af64640b55a08c2769ff",
+      "bytes": 22241
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed1/progress.json": {
+      "sha256": "9287ea1ff33ba4a9e76629e6489b1095211944f778f0037795d818c5d205fa93",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed1/result.json": {
+      "sha256": "1a778952b5c6783e91dc8cd3c6b487533b3b7bedc3651739e8b81267b771180b",
+      "bytes": 11746
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed1/selection.json": {
+      "sha256": "89a9ac9f22c502874f0ef461724dd876a540d397b2eca4e5684d0e5598508b8e",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed2.log": {
+      "sha256": "3227228902832f29b4bd155a96be5fdb4921e4d64c555fb92d039d8b0038c214",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed2/checkpoint.pt": {
+      "sha256": "6aab08a4e41e974282594abddcef188205cec44f543c7d8e2c1ea419aeb6f52f",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed2/config.json": {
+      "sha256": "d144a402a4ed1cbe5d68bb2796aff764f850370c7e5fe958ab05e72a777bf88d",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed2/history.csv": {
+      "sha256": "cb2b299b47abcbc89b3a2f0162521ce76372f61652b4bfb83f96e21f867b8cab",
+      "bytes": 10230
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed2/predictions.npz": {
+      "sha256": "4d6a4dcfe40f8ee13c43c98a9bb71faa04773dfbde72a5b751b54968c3af2363",
+      "bytes": 22180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed2/progress.json": {
+      "sha256": "217d75ea7ae58dc1ab939d7f7b55f658815a062747f415bdc141bf2043ea49ec",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed2/result.json": {
+      "sha256": "2e715178c9e411aa3cb51920dac014638bef3d1ffa14f1dd4bc88817a1d2c43e",
+      "bytes": 11746
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed2/selection.json": {
+      "sha256": "52b37b69d43e7f9f61ee1689ec2f22d255efe20d9e3bc1858982723270c4f936",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed3.log": {
+      "sha256": "8df3965fbc9d896e8eae9ab79b4af7ecd5cdefce86c47b35eac50cb3774f2be3",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed3/checkpoint.pt": {
+      "sha256": "04626f2398490150858eabd99f880c5de34b3de4b633f646ff4a23337f9e02fd",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed3/config.json": {
+      "sha256": "300064c0129e1fa3ab82408f8619a396a19e525433d2777935cb922a93a9bca5",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed3/history.csv": {
+      "sha256": "8595c73368faaa70fce1bfe0f4a57114a76c27e46e171b509927fdda131a6641",
+      "bytes": 10233
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed3/predictions.npz": {
+      "sha256": "4dbc456709ab6061f41aee95e517f8a6786f60516eb908623624a2e0d1577a42",
+      "bytes": 22209
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed3/progress.json": {
+      "sha256": "8aac4bd03c2b3d3ab189c2101052a45b9eeae5c1d9f6cc74d8c6eee5edef143c",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed3/result.json": {
+      "sha256": "ae8001684cfd5994443bc79173b248f3ed3d59828c0425e0aee73b9a477ef7b0",
+      "bytes": 11722
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p003/seed3/selection.json": {
+      "sha256": "3b0e1df60424638f18754247ee3272a5418fbc768bb7a37d5db517833d392dba",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed1.log": {
+      "sha256": "42ea3f0e1ae619fc06b78282be9b258b06186c9d8ce96c0a42726ceedfb84a38",
+      "bytes": 653
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed1/checkpoint.pt": {
+      "sha256": "60f9e0579206a07f614ecdbae3490ca82d887d043bcce59356cd72b0ce85d86f",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed1/config.json": {
+      "sha256": "17bd7d59466dfae2763d1fe51b32590fe579e08c44a26db4695efe74b9f0ad84",
+      "bytes": 2795
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed1/history.csv": {
+      "sha256": "322c65e74029b4607255a22d471a965f496b93ef6ae5e8b2cfab97a299abfbfa",
+      "bytes": 10272
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed1/predictions.npz": {
+      "sha256": "82fea3e2a43722886dd249695481303f4b9829f78a049c97497814c1d281c74f",
+      "bytes": 22248
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed1/progress.json": {
+      "sha256": "62efa40e17aa7a9abe36a69e4c261bae4c90d8b9febb6a4c2a931ffed5fd0dee",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed1/result.json": {
+      "sha256": "cf996423880ebf24afc16781a59d6a99d726bd3bf81f0100e5062cf44bf37133",
+      "bytes": 11732
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed1/selection.json": {
+      "sha256": "90e0aa90cffb79bbb931d15256b7776d450cc7a2fbe5c93e6b84c20db083bcfd",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed2.log": {
+      "sha256": "90fb828b3f3066f52feb50a8cced58caa4fa06f033376b89d7f7333047bd79d2",
+      "bytes": 653
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed2/checkpoint.pt": {
+      "sha256": "c4a7525176ea2b3f38ed5ab862ef8ebf06e09e9161671169306956c98e982db9",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed2/config.json": {
+      "sha256": "0d8865a7de1b724c45101682deb0cb1cf45efeaa465252a5dda1294f3650e39a",
+      "bytes": 2795
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed2/history.csv": {
+      "sha256": "da843e7f83cdb8c7f63928affd5780939b070d5bf7748b98185e16067ab6777e",
+      "bytes": 10241
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed2/predictions.npz": {
+      "sha256": "d16b9abdc41691280bcd1bbff6e0f0758cf36a26aff0352e5fc7eeb2a7e2c84d",
+      "bytes": 22166
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed2/progress.json": {
+      "sha256": "a9bd75e3a1de1c95daeff897120ea1547a66c624940a690d41765931972ac44a",
+      "bytes": 115
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed2/result.json": {
+      "sha256": "9bce1c4075b53b107c286a7a64d973e365afbd90c605de2268ddb20586e171a9",
+      "bytes": 11723
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed2/selection.json": {
+      "sha256": "e1adda2240ac62beec93ea4586d99125bcc15638fe509e3c08d28b7ba201fc5f",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed3.log": {
+      "sha256": "943410c55d389b4e651a80200159f1402525a9c3c9f8d45bcee2fdf80da5fe22",
+      "bytes": 653
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed3/checkpoint.pt": {
+      "sha256": "4c8d521921bf43720031d5f999de5f7be4db7926917f008e2780b0c7b8a1beb2",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed3/config.json": {
+      "sha256": "01fbad8d7874a3007ad3e7b65f440054732902535b871fcbfc385dc47dcbb7cf",
+      "bytes": 2795
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed3/history.csv": {
+      "sha256": "ff038c9f60f6193743beabaf537f37dc30e63148986bc16926803877a03bf04e",
+      "bytes": 10263
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed3/predictions.npz": {
+      "sha256": "0560237edc1d0b3e855124ebca87c7b8ab32faf6a4ffc0a0972e06c10e1073d6",
+      "bytes": 22222
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed3/progress.json": {
+      "sha256": "4b1ad7ea2c0ee4321bfd289ce0784ba38a4ac599e111b9c3f4a0c815d4adf9c3",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed3/result.json": {
+      "sha256": "f16fd13bc6c10328f42d71e695ea0eba1be16875cf358634f24663d0366ebe02",
+      "bytes": 11739
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p03/seed3/selection.json": {
+      "sha256": "5bc52a653262c767a482196779e57959e9005dc08acd2ac320986d9a11f317ab",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed1.log": {
+      "sha256": "7b94cff60917785f6acc2d180cd9f5c308f6dc926923790561d89891df64b25d",
+      "bytes": 653
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed1/checkpoint.pt": {
+      "sha256": "70153adab459420273ec626ed7b903df437c1814f832b9afe9e5aadb7daefa9f",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed1/config.json": {
+      "sha256": "eea3d9d391692fbdbf08870f68a1f9857b3445ccf87a58d7ef590efdd62ce566",
+      "bytes": 2795
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed1/history.csv": {
+      "sha256": "774f5c4f477a9e255a3fa2da66934f7b2baa3c31f842269f480ffc5d62029cf8",
+      "bytes": 10291
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed1/predictions.npz": {
+      "sha256": "dc11e741f4a4f1b5ed8aa8a89d9d566179e2d556e260f73c0a203e22234facf5",
+      "bytes": 22225
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed1/progress.json": {
+      "sha256": "cdb9054d5768fa9a4aff6b4e913a0d971596f216900585561f11e8d66f99b57e",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed1/result.json": {
+      "sha256": "c218f5e7688dd14c5961af2127a1e26e4f7554f40eced931874fc7136d4ed6d7",
+      "bytes": 11730
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed1/selection.json": {
+      "sha256": "f58f40f040b54bb21fe5ebeaa3ebae77f5393f2ecc8b4ba8c8280a9e04623d6b",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed2.log": {
+      "sha256": "ca8491c7d223ad0cc70f84bbfad466f01753b9746f3529f161d7c08f4b194c52",
+      "bytes": 652
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed2/checkpoint.pt": {
+      "sha256": "e6710a963a4f5a54eea388cd143b6d6dc65d48c6a4a99e4869f2b3c99d13dcf0",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed2/config.json": {
+      "sha256": "c5ae89e4e53dcb19388f74f896b54ea6a7defb85ed74dbfa8a36b9a21a51a7e4",
+      "bytes": 2795
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed2/history.csv": {
+      "sha256": "44ac393b1c8202bb3cd2803fc79c57ed4004804e88a0a6ed5d6bae901efd3d76",
+      "bytes": 10256
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed2/predictions.npz": {
+      "sha256": "49364748006ff1bc049fa38553334968fcbd295d28316cec3268e7f150c0372d",
+      "bytes": 22174
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed2/progress.json": {
+      "sha256": "f21d21dd39d2f03aedf0a166a1d7907485e96b8787915339495a7287db7902a9",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed2/result.json": {
+      "sha256": "8ae0ec569c36c418f0109a231347e8a0c1f3ec0f0211d0b8db3de7a7c69304a4",
+      "bytes": 11726
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed2/selection.json": {
+      "sha256": "68bc8b2e923770b084150023767397b76f3ba256e77a6eb4e887c577b7ebddf2",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed3.log": {
+      "sha256": "3e458a91b2682c92f97518dd15a63acce80608a85d4de4f3a6b4ad936dbc1c2f",
+      "bytes": 653
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed3/checkpoint.pt": {
+      "sha256": "43c3c6a70b23f19a362d772412905fcb4caf22d2c25b208d04665086b4f46693",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed3/config.json": {
+      "sha256": "ae0f2e13f5f7d3c5d8920df47fe85315f1ce2e274637400b936226b2de70c544",
+      "bytes": 2795
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed3/history.csv": {
+      "sha256": "f484bb4fcfcd261f5e81c1203328373f70493b8a6eaa14d2bb90e7cce1155729",
+      "bytes": 10283
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed3/predictions.npz": {
+      "sha256": "516bc02b67b75d4fea3204e9a32cb2f9c8ca61c4a2f66542f8707f2287c9e180",
+      "bytes": 22213
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed3/progress.json": {
+      "sha256": "1a9a52d27772a65eec158b09f3273045f7b4409344f4b599dc1e2fff6b819510",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed3/result.json": {
+      "sha256": "582c6be653ccdfd7468480beddbfad72fe9df38db959969c57bf26b57fde673d",
+      "bytes": 11729
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p05/seed3/selection.json": {
+      "sha256": "64c219c89e7e35a5ae446c667ca550507b25feee45826ec0abd30ff398bb46ee",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed1.log": {
+      "sha256": "84ee35053fcb8f65ed607dd13af41e0a4dfa7c84f4e3f635e2781fbd8b34875c",
+      "bytes": 638
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed1/checkpoint.pt": {
+      "sha256": "55bbeda11d220f2d6b980c2ff28067d813cdd4f8840b35b5681b7c1018abde36",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed1/config.json": {
+      "sha256": "eea3291b153371081633dc3f08f4a301476fae6b33bc64deeb7b16211a87fb78",
+      "bytes": 2794
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed1/history.csv": {
+      "sha256": "aed0f6508ff9b468ef8c99aeee7882a2fb587d27cd612e6bf0950be3f1085a55",
+      "bytes": 10336
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed1/predictions.npz": {
+      "sha256": "e81aadc6c6fd8710fbd1f9b1d786c8b45620beca22520de31d908cf513268406",
+      "bytes": 22217
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed1/progress.json": {
+      "sha256": "4dbc74914972ab9751e30ccf60e8d1c01249bbdff7829c9fd8e383792226f7d6",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed1/result.json": {
+      "sha256": "0fbc7f27742180c32e1ef94499976dec409e666f3f3284c42618cdd961602bf3",
+      "bytes": 11729
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed1/selection.json": {
+      "sha256": "cd98a656e0573eb36e54202e732bb558cc679ccd38717363981443b49c85bae9",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed2.log": {
+      "sha256": "9ec4059e289396a261b221f881f71daeee3e0c078eb099a1a9025f75894dc787",
+      "bytes": 637
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed2/checkpoint.pt": {
+      "sha256": "572cc09a0aa0e65dba0152973040d9118d632099b1368781caf1b0740687a038",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed2/config.json": {
+      "sha256": "1b63112d1d3b91c982f29c1d7529fa0a5b677b9608c838fba51e38d085bba6f8",
+      "bytes": 2794
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed2/history.csv": {
+      "sha256": "b654d10df1e3ea5e8389760517dcc583b904c69f3e15e8041ba69f3ddb4f2e4f",
+      "bytes": 10311
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed2/predictions.npz": {
+      "sha256": "997a1986b20d4ed32b3e0f19b11d44687338ed383a858f462ef2807962c830a6",
+      "bytes": 22177
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed2/progress.json": {
+      "sha256": "66caf07b9fadfd26d1b97ff65c23a31d90cbe68aca0fae7df6ed9579157ed55b",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed2/result.json": {
+      "sha256": "d310ebd4a02415637f44e73436877643cf35f408fc6f1e45a570dcbcb3eafe2f",
+      "bytes": 11720
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed2/selection.json": {
+      "sha256": "e5fad0ce8b79d341f8191f540444501aab6ac1b0e78dd5c331a6b5673d8ceac1",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed3.log": {
+      "sha256": "66f3dbb3838ea8f725d9b03dac749e1e330b839e5d3717aa00e21bf7c760ba83",
+      "bytes": 638
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed3/checkpoint.pt": {
+      "sha256": "38e0d4ca7223d92ae389eb4a8d9977202f65ee9461fcf05b5a4e1f1bc096c3c9",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed3/config.json": {
+      "sha256": "563f29533358ea938ab5aac8db20643f40d32a0149b6f2ae6f95fdf8d72d24a7",
+      "bytes": 2794
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed3/history.csv": {
+      "sha256": "4c6e0905a740af9f4e1b9a19ed9d589ee113710a4934568ae52dd50b7a1ff67a",
+      "bytes": 10325
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed3/predictions.npz": {
+      "sha256": "99f3643f33c7c82bf5fdcfc8ab9ce949c82a2408569db03263fd1f0fec38b268",
+      "bytes": 22217
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed3/progress.json": {
+      "sha256": "56fb89d12ca89628fa38196097922976c47ab2d38a585420df36b4d0489ea27a",
+      "bytes": 115
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed3/result.json": {
+      "sha256": "eec288b183c46a798b1d5e435ba33bfa487c0c2bcd17d4c0432e6b19bd5aa15a",
+      "bytes": 11730
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p2/seed3/selection.json": {
+      "sha256": "9e30f119d4d1bdc5063e73206e54894bf85e88589ad88639173d892af1b2ec77",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed1.log": {
+      "sha256": "118c66b458b2534c4e7f32168b66f3ea4c18e8cd928e13bf2a620f8708384942",
+      "bytes": 638
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed1/checkpoint.pt": {
+      "sha256": "2d163d99eafdd89a305414a169ef95f294cabe3867fb60078114ba2e152e442c",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed1/config.json": {
+      "sha256": "c4d6d6f681d0f9622e1e9acfa9a9dd5a5ff824aea1d8dc87f34375e2c4183e0f",
+      "bytes": 2794
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed1/history.csv": {
+      "sha256": "4e8301beef393c31a023eb52abe108bca19f8892906eac13b9ae38951685360c",
+      "bytes": 10310
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed1/predictions.npz": {
+      "sha256": "2ea379e70ccfa72055004abec35ae4d6fad5c8a5260c122078efa22982bc0dac",
+      "bytes": 22230
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed1/progress.json": {
+      "sha256": "cdc1534f53c081a30bad07e30b8c9348f0ef5314bc6cc177ba9409ccecf2aec3",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed1/result.json": {
+      "sha256": "f88dfc1ae2ca57fd42f813105e8ab7fea55de2e71c47ebe9409c2e637985d17a",
+      "bytes": 11742
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed1/selection.json": {
+      "sha256": "6cc666637927058239dfea923dfe42475647bd895612f137b1c8dd689ac6f569",
+      "bytes": 179
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed2.log": {
+      "sha256": "2dabd8a65c869a1f9752441d7b3d68eeb3ae835e9480b8992b911798224bf4d6",
+      "bytes": 638
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed2/checkpoint.pt": {
+      "sha256": "7918b0d18bbdabc16c6144169a347ca7e0eb44ce62a0595ff3bca959388f0cd0",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed2/config.json": {
+      "sha256": "fc633f6e98fe4b0a4816f7868d79ee784ebe394f39303e4b3c2693fc6239da63",
+      "bytes": 2794
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed2/history.csv": {
+      "sha256": "dffebba53caa86c042e855fc7077f2793fe317ed698c88d66bf5384ec3fe7e37",
+      "bytes": 10338
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed2/predictions.npz": {
+      "sha256": "1d3a459b91f77d92e5b9d3d15f69337332a321b3633ac1f4d6dc95df9c92c690",
+      "bytes": 22165
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed2/progress.json": {
+      "sha256": "0a50828b70d9e01d18cbf2af8b14b1e4fbbdf8ffa1391b444ba4abf7677870ef",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed2/result.json": {
+      "sha256": "b16aae59f747c67255e66843b03dbf40b2dc7fd07fbb0e36616f1056bb20058d",
+      "bytes": 11726
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed2/selection.json": {
+      "sha256": "23f6c1516ab2390167f824d785035a8a0bad1101c1bb28656bfebef61250582c",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed3.log": {
+      "sha256": "8e69a8d30986c3ed5c05381a761c408aa43804db4b91116543b44cd5cb598a77",
+      "bytes": 638
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed3/checkpoint.pt": {
+      "sha256": "490142108f82bf7de31d276c7f8ec1e87a67df55176e03a423d1a0a02e413110",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed3/config.json": {
+      "sha256": "21aaad4b492b74bd9cf673ab4c5b884183aeacf8ab1f7a5abe308038592c21e2",
+      "bytes": 2794
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed3/history.csv": {
+      "sha256": "880ce75a0beaf7cce93ed9eee5747206297a6ff0d35f1cdb4ce628c8c20fc9c3",
+      "bytes": 10326
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed3/predictions.npz": {
+      "sha256": "fb972b7138b8c6b04a05c430a480dbe3d9bb814586bd3254fc1a735087c98bff",
+      "bytes": 22221
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed3/progress.json": {
+      "sha256": "fd3dc02b79c531991fa54e1f2c28923c92f057b8bd5c02e0105ed9e06d6edd33",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed3/result.json": {
+      "sha256": "d2f9f4da19b8006d71f81afa1ab4dd46c8e94f72984a008be434eb0108f5cfd8",
+      "bytes": 11723
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_0p3/seed3/selection.json": {
+      "sha256": "46ddf6634566032454e0c3dc2d5d716409b45cd54b8f3089e6ec9f5e8cb6f243",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed1.log": {
+      "sha256": "65c70f46a34a65723321c916121d968d540d82bc6d18a72adddaf8d6f3ecda48",
+      "bytes": 698
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed1/checkpoint.pt": {
+      "sha256": "791b598ec9b82d0c3fc7183a0db0185aae4de736da68f5f2a01bdea3218df0d8",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed1/config.json": {
+      "sha256": "c09cde00f5b18bd5479d29f175d5006bd64c90b3473f4fe6197a32ee66561536",
+      "bytes": 2798
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed1/history.csv": {
+      "sha256": "2c818df79488ab5e3912124645eb0da7179a9bc3f48dedd61eebf5eb2586e2c3",
+      "bytes": 10252
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed1/predictions.npz": {
+      "sha256": "cb2ca6870071ca27395582b8be7fa0822afefbde8c8849282c6c2130c98bb575",
+      "bytes": 22163
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed1/progress.json": {
+      "sha256": "de6a7c965e8fdda7d06f6b8f581e5edf20593fcd7654c224da6bff795c1e97e9",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed1/result.json": {
+      "sha256": "d19301f370766ff3e7865695c96b4dace502baaef28da4f79ed1935e4831dad4",
+      "bytes": 11716
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed1/selection.json": {
+      "sha256": "c261a9a8f669a19b8b30da097ed9165c9419f39e83d0c5599fea689636d1dfb7",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed2.log": {
+      "sha256": "69c44b46aa76ae4a7f73f3123cdfc1a0e24a9a6cf11a3a68fcbc80c597b18f3c",
+      "bytes": 698
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed2/checkpoint.pt": {
+      "sha256": "0ca75ec78a0501bba40e411173cb1d64d83c19fdcc21e42e2c2acff5f4e64e8e",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed2/config.json": {
+      "sha256": "9d1af68f339b4dc6c5cf81ad989aeb1b4cf2fa26824f6db7821a0b5aa6bb2836",
+      "bytes": 2798
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed2/history.csv": {
+      "sha256": "d54c7bd4e342925f02c31f7d8580103b97675a12e47e83b510e0cadb7a1c76f3",
+      "bytes": 10297
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed2/predictions.npz": {
+      "sha256": "d5e33e918b589b22d0089b53a1e0130a00a2eb6bdcb912885684ab38d5855e2f",
+      "bytes": 22243
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed2/progress.json": {
+      "sha256": "13ba0ab7b564002afb35bcaeb82955da83cf24ece44fa7c39802b863c52e0b37",
+      "bytes": 115
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed2/result.json": {
+      "sha256": "4df79fa5dff9848cd07b803216327dc108993fb2f644edb22c6c86647c3cc1ba",
+      "bytes": 11740
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed2/selection.json": {
+      "sha256": "d8d27ffc636fef446881759a405370c5a35178f769a49ffd1514fa2d3fe42ed4",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed3.log": {
+      "sha256": "078c951a86c65a58b35eb4a1b23eaa659b03ce5625ae52738830e07835e27d79",
+      "bytes": 698
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed3/checkpoint.pt": {
+      "sha256": "2e53be45b1d2d8843951d852beadd5c94d9d9d78d9076eb0e44cfef494efe87a",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed3/config.json": {
+      "sha256": "77ed49d967a1e9f594e96522711ea89b73ada36c8daaecf798d0a1fb4c52bc38",
+      "bytes": 2798
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed3/history.csv": {
+      "sha256": "c7618befeb229501a96918b9a5a03b434755e92f8b5dd2ba8ad699766be16e34",
+      "bytes": 10269
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed3/predictions.npz": {
+      "sha256": "a2cba5c99cd48196ac617ada514e2996c8ac2a4df46e7d1116c093e9513e3537",
+      "bytes": 22193
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed3/progress.json": {
+      "sha256": "7264c253f198cdc5b4ff7aad2637979ebad549d2b3e2f7f7cb64622f584a72ed",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed3/result.json": {
+      "sha256": "e0530a5f85962aa0faf8a8b1750fa7891ce4cb930988bc4094d8b79a2ac7e92a",
+      "bytes": 11735
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_10000/seed3/selection.json": {
+      "sha256": "791f6eb96b2c8cab12a05ea7b1cacca03ca35f740dcc9f800e5086503497a9b5",
+      "bytes": 179
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed1.log": {
+      "sha256": "56539568a170bd7fe0c8a264a82fd063727512a8e4beca8b8b08277a4daa6ac9",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed1/checkpoint.pt": {
+      "sha256": "e232a10c7b43efa2e30381a284014b3e0d83f39a28f0c0bbaa8eaad15383e8c0",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed1/config.json": {
+      "sha256": "b40b54268bb51f0a5897e5e78c40ac5756b2ba464a95b2a486841afa0d722056",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed1/history.csv": {
+      "sha256": "0425633a9d758753505c659d015c2b79027bec241f89b94400f9b6c48fdddca5",
+      "bytes": 10276
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed1/predictions.npz": {
+      "sha256": "b161c449fef463951180b02de264c4ecd0c2686275723b87896634f71fd9162c",
+      "bytes": 22221
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed1/progress.json": {
+      "sha256": "941f63d4c98f8353bf185142df415afa0f0a9b9ad7751d94c3607df097c93e80",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed1/result.json": {
+      "sha256": "7b5df7949be14af697278143db407cda45be9fb522e2d31001232c844370cde8",
+      "bytes": 11740
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed1/selection.json": {
+      "sha256": "eb4bd0f6be5fbdaa189d65e042279443c8bf515317829af1ddbc0eec8a54ce7b",
+      "bytes": 179
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed2.log": {
+      "sha256": "41ecd7ca893b86799af31b48911b5739bd1c807158286a0ccf4b12e79c659f22",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed2/checkpoint.pt": {
+      "sha256": "f361d4ee28726c60cc84e5ad82b1b4f47494baf94a1c8e6100bdc94881778df9",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed2/config.json": {
+      "sha256": "e37f4ce7ab0ec1dc145bc447e2331e7111f3bec7580859d0569c9fc77f7fe171",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed2/history.csv": {
+      "sha256": "b51e9e4ff3f4c58619c9faee31ca53989893b31fe79508fc7a293e1df03a3f68",
+      "bytes": 10270
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed2/predictions.npz": {
+      "sha256": "afdb7e60c334a6c6f790d94701f8cda4a80d9204a9b95ae19530c0d71927dce1",
+      "bytes": 22217
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed2/progress.json": {
+      "sha256": "cfd3ddc7d11ef5e09f913332ec796a71600f27e0b9ab5a3459c7c709ecdfe680",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed2/result.json": {
+      "sha256": "3f2ec5f74a667eb0a865909f9fd1ba65236997de820c79c7e60bc61841f998f3",
+      "bytes": 11743
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed2/selection.json": {
+      "sha256": "c05286ce1518dbf95d8d4db52c03b0c05dfdffd4408f57befacff7e055750b99",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed3.log": {
+      "sha256": "2526856a1a56daed96fb741eefca98b29d42ade21390d200db0f47c1976b79a7",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed3/checkpoint.pt": {
+      "sha256": "8d5167cbd8159f74c74b3ce3ebc12cc35306edf4b3d949920e052304d0e86fd8",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed3/config.json": {
+      "sha256": "91b51253378ad56811ee058571055d7c64b96eab22a455d72894ea0b69f65f52",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed3/history.csv": {
+      "sha256": "ee6d0447d01e2930e002de65a081fbb1f65e726fdaa58b9532ea3d10047cc190",
+      "bytes": 10316
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed3/predictions.npz": {
+      "sha256": "5645294ea7d54657667899594932fb2cc9f98e7c05c7090f68417112eb6324b7",
+      "bytes": 22197
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed3/progress.json": {
+      "sha256": "34710272790f94e9eb8dc2cc4a82d94c706eadfe8d786c92b54812eecf890e67",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed3/result.json": {
+      "sha256": "c3783eb52d41be5e7c6090830c98a2f17dc0e317b0ee9c346e0ed09a340239ce",
+      "bytes": 11727
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_150/seed3/selection.json": {
+      "sha256": "ae9e5537d04f5958377ceb67b588bd0be8b7dbf3a66885056b01b566a60ea463",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed1.log": {
+      "sha256": "04adab8d5c925a8a181363b02596b3012d7529f7513f8f58e6c272f6599c2716",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed1/checkpoint.pt": {
+      "sha256": "e87426c61be12c4b639ec3c8d914fa9fc8d9a5944b2fb4e1319ba59d72ce47e2",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed1/config.json": {
+      "sha256": "b02124d29fab2caee974acd287da31fe224a3d9261e1ca21b973e7d2bd5abdc0",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed1/history.csv": {
+      "sha256": "9f699fb70b4c901fc0277998b878f01a99283828cb785f60976e49d8f93f522b",
+      "bytes": 10266
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed1/predictions.npz": {
+      "sha256": "dede1021a460a8ac4c31feaa81a7c2c7f1bd76b6f2c8a871f0cce6919e2e2a50",
+      "bytes": 22207
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed1/progress.json": {
+      "sha256": "2887a8735bab91e3b54cad4aa2b6f105288fe54c556c7c56431c97545ef7f95b",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed1/result.json": {
+      "sha256": "9f85a2f0445087986dd6ef67d40134160c7986b71eb949703d65168167fc9e02",
+      "bytes": 11728
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed1/selection.json": {
+      "sha256": "89d6b0802053364045aa4580a44a841dae4127a16fb67fb1a1ce71e5dbdc3db5",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed2.log": {
+      "sha256": "925bd29fd9032effdb80564bc9eefeea5d49853eeb5d808cf525a7ee83d1f146",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed2/checkpoint.pt": {
+      "sha256": "d46e672715211148738241f1c89296786bac4144878f4022e76808acd40f7fa2",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed2/config.json": {
+      "sha256": "39fb6eae235e5b9f690301b274a5729514419360508b60515406f3579d194c20",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed2/history.csv": {
+      "sha256": "cf889e439b64f60dd479197034b2d89a778f5c917587c817e911a1970be5e762",
+      "bytes": 10291
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed2/predictions.npz": {
+      "sha256": "2b8864ddf1b273b3b888be35db22a857b3b994a1c7a7cf1822385666c87a3e81",
+      "bytes": 22192
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed2/progress.json": {
+      "sha256": "3b1100e7fbf9e595777e2a0ba8271c586ff229cd590759eb1b8d0a8a4392cf44",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed2/result.json": {
+      "sha256": "18f54e57d6f0aa7b71d5fa7ef7e4ae3180262d83d9681ab3107cebe57ee1639c",
+      "bytes": 11725
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed2/selection.json": {
+      "sha256": "45c7f494420689c1aaaa75dfd42b5f80d0d0d9aacf0f0a5353beccc6918860a2",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed3.log": {
+      "sha256": "e9e2a4eef512784eff0af9fa3b131edc8177ba568967d269d9e00600a6ed2bbe",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed3/checkpoint.pt": {
+      "sha256": "632b224fc854f1116b536f0f5bde92aef18bc0f5b542f1c13c53daaa631767f5",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed3/config.json": {
+      "sha256": "d3b03a46bf26da1293f9b23c10a4fbfd25c5118f7d610a37653c156ffa295f04",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed3/history.csv": {
+      "sha256": "bce62172a58235d04201a256de3d1f3da78f20a73cb7bd2e8141843eba555f44",
+      "bytes": 10286
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed3/predictions.npz": {
+      "sha256": "e6f36801e89bfd8f8eda45ec78fb2aeaa07516dfbc20d48bc65aa01348d3b10a",
+      "bytes": 22177
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed3/progress.json": {
+      "sha256": "14ee7d5ddafafd6e7ddfc21ccf3d98b818dfa9854139d34d35250b66c672259f",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed3/result.json": {
+      "sha256": "ae3f58ec578788de7a4cf7e30884895c8ece3b43489c7ddca28c0fa0b6d7cf59",
+      "bytes": 11725
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_200/seed3/selection.json": {
+      "sha256": "51053b454223993bf33b2ce5c0af03317bfdebc18c84019215a833c2d2c81e97",
+      "bytes": 179
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed1.log": {
+      "sha256": "b19adebd3d50a616c9e52957e33a6f27c05847dbfd15fa8989084c0d87b6dca7",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed1/checkpoint.pt": {
+      "sha256": "9f1c6956cdc45eafd80f92eb1142eb2a3c528cb6991830222fc39c8765c2c142",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed1/config.json": {
+      "sha256": "7b7721970b6554f31a8cf8f49c3e9be347b461c6e1adacf682f7ca8e2cf90b6b",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed1/history.csv": {
+      "sha256": "36f90470a5f88b39536154b16f087244834d825699336295c0a5c8298a193c84",
+      "bytes": 10296
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed1/predictions.npz": {
+      "sha256": "a69d2064f3026497c77ede56325e35ef4e0130bd30606118ce93a5d260e01068",
+      "bytes": 22222
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed1/progress.json": {
+      "sha256": "cfb79ecd8126c7f06a61ffa1522bf36868d95ad858498bb795116fa753730b30",
+      "bytes": 115
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed1/result.json": {
+      "sha256": "9e22222455326ca581b643302bb78a8d61354af16b3945120dd5ed812bbd54ac",
+      "bytes": 11719
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed1/selection.json": {
+      "sha256": "b6653798e58c1ccb562e637cec54aa6d3802751e6d91fe69d49f7ac33bcbc9f8",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed2.log": {
+      "sha256": "44ea7361f6a440e50e5d401c236724a00ee30b8e9fe91f8a68885a6c6fdbb58c",
+      "bytes": 667
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed2/checkpoint.pt": {
+      "sha256": "68caf57baab07621e8b9b6a0eb957654dfcf78e4cbbb05248ad4baf648f151ef",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed2/config.json": {
+      "sha256": "ce6c54fd87c54cf2869231dec5f0eaffb1f132afc6dabeb8af21bdb7efb7ff75",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed2/history.csv": {
+      "sha256": "cda9b2180e14570f44cab5419aa3efe1126eef7c355137e31d8708beec28fb7b",
+      "bytes": 10300
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed2/predictions.npz": {
+      "sha256": "642def11e48e08a149e9a9a42aa5283ee563863a6caf14e9700196c653dfebeb",
+      "bytes": 22206
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed2/progress.json": {
+      "sha256": "05adefb57d1a84317fc3c9dfb5fb7828c01b3d44e2924d9e4149c7113a712a44",
+      "bytes": 117
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed2/result.json": {
+      "sha256": "b0e72d95e9ef14df89de944c90a9934b75e58cc64fd21ab1f565d402f9274678",
+      "bytes": 11751
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed2/selection.json": {
+      "sha256": "c04dc8a20cfa0a0dec70470fd605526bcd51ddb581c02040956ffd3ac34067d4",
+      "bytes": 178
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed3.log": {
+      "sha256": "27a9d273507afbc16ebd9a1a1af529ea8ec802ce181e83d7594c29d4c274da8b",
+      "bytes": 668
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed3/checkpoint.pt": {
+      "sha256": "f800217eaaf439d5a63c2d3ae7761556b96ba99acda7dfdc3b6daaafe126bc10",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed3/config.json": {
+      "sha256": "9756e33deaa0f7fe33dc40455d42b97ba6dc7d40b48b1182aa19610a3d44543f",
+      "bytes": 2796
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed3/history.csv": {
+      "sha256": "299646b513cce403e447e13b416fddc0eddd92989bf9de6d7fc87cf8f5b971b7",
+      "bytes": 10302
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed3/predictions.npz": {
+      "sha256": "0a0b6737edb29140e67379652de3dac4ea2b1b9107be21cd4f61a93734636e35",
+      "bytes": 22206
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed3/progress.json": {
+      "sha256": "557b21c573b24602fcd6eea18611d6df23a5adaafb2f58ed8f840a77af3986fb",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed3/result.json": {
+      "sha256": "f4197832a0824897c41e83c52a83c8e75a43e839335b7a973694aa97df37fcbf",
+      "bytes": 11730
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_300/seed3/selection.json": {
+      "sha256": "f246c4adc5d5553424c1cd36a2326381fe6c7ae1de87e9783a1bea755e172084",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed1.log": {
+      "sha256": "331b8976eac58f89863d05a9e76b2edd3cffcfc49eb26cb00d413cb1dd76047b",
+      "bytes": 683
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed1/checkpoint.pt": {
+      "sha256": "b15a8008b90eadb04947b9790276a77915241de7b55478bfdea49956bdbe5e74",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed1/config.json": {
+      "sha256": "256ac235bcb709c44e785af92eee75a51ffca8dc91f04e6ee34eb20b6e279842",
+      "bytes": 2797
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed1/history.csv": {
+      "sha256": "389143a6870dbe09ef8e3b605eae20a3d48822c72376570d282d51199060ceb0",
+      "bytes": 10288
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed1/predictions.npz": {
+      "sha256": "9dec1719283c0007724bc700a944ee0214fd62f0e223863ad3864a4979949731",
+      "bytes": 22204
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed1/progress.json": {
+      "sha256": "975374d1ab5ec118faf987ac931de03126212ede6899e0b5ace95d4dc08a4813",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed1/result.json": {
+      "sha256": "c4187793b95eee39a8ee0e7f39474cdfe07113b70a6c122fa1a0976b708ceb3a",
+      "bytes": 11727
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed1/selection.json": {
+      "sha256": "c46d1b34bab057383a2304f3db2030ed32b05b8f5fc9632f1f07e63ecd5232e5",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed2.log": {
+      "sha256": "436f106b5127d50609a087578dd0f25a750ba3e7bd2fc74a6a6f6071b6398421",
+      "bytes": 683
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed2/checkpoint.pt": {
+      "sha256": "0dc3d097d5cf4129821387de6e9fe6ac375b45e5f8d2de99e35326f0841a288b",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed2/config.json": {
+      "sha256": "f204e04e6c57dc7131bc276efc41f3308a01a087141c89a1e5666cea659d6047",
+      "bytes": 2797
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed2/history.csv": {
+      "sha256": "19cde4bbcd50a80cdf5c09518791eece7482d77ebe2aea8b573dacde90f162b2",
+      "bytes": 10276
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed2/predictions.npz": {
+      "sha256": "c9890844a44d775d6688846458f074207b3cc54c8c97ecd9a0cc120662561d61",
+      "bytes": 22196
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed2/progress.json": {
+      "sha256": "3b43372880b9254a2156b0c912afa132537cec798259f1d9b62163a128b1984c",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed2/result.json": {
+      "sha256": "6ab17092f67a5532b6f301b66c87b87ad9b5e325f4b6098e0bda7109c8bff0a3",
+      "bytes": 11721
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed2/selection.json": {
+      "sha256": "4260806ecd86ca1850feb47e721d1bd3c5c149317c1a76f2360136ad3db7b89f",
+      "bytes": 179
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed3.log": {
+      "sha256": "e97b85fe45778887522a1c63e72c76a88fe0260f9c165d241ec489ede7714781",
+      "bytes": 683
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed3/checkpoint.pt": {
+      "sha256": "4fee8be27f32c9700f2e2f9ce8325cdf7e485945051ec79b72f4560fa74bb9df",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed3/config.json": {
+      "sha256": "2a42a066f125cc81b2d7ce67bee17dab8d4568d0e3dca3284348a5d007a2ce20",
+      "bytes": 2797
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed3/history.csv": {
+      "sha256": "6256216509c5ae90e8825608da2952d7d93bdda559cb8d0577bb24b7431c0031",
+      "bytes": 10274
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed3/predictions.npz": {
+      "sha256": "42b00a237ee47a6e2d724f6d639cb40706702e05cf1dde014c75138ffe503ad3",
+      "bytes": 22167
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed3/progress.json": {
+      "sha256": "08422411b2f3c3e1f4c73114fe8cfa09895b5ae0c682ac4c6b7f5b975f1d9bdf",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed3/result.json": {
+      "sha256": "0470694de507b7565ef8e3933ddfa5a5144e20856a92a563d4223ed5d9dcc6b3",
+      "bytes": 11717
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_3000/seed3/selection.json": {
+      "sha256": "31c967c1efac8e6af8515e09658c1663c253c4c817f838692371b191fbf5797a",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed1.log": {
+      "sha256": "31c1eab26e9d7529753cf2e1f1f15baf4c731447f65601fa3f167dcb9184698d",
+      "bytes": 653
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed1/checkpoint.pt": {
+      "sha256": "f9dcae13c021e90bee00dcd882eef946089860e86d8ebaa794159779df1138f1",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed1/config.json": {
+      "sha256": "a0a039c383201109e2fd94d8bdca6039fe7f1dca8aba8f1e0e892cda5aa8c5fe",
+      "bytes": 2795
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed1/history.csv": {
+      "sha256": "b906d12d3855e141f9c6fbf9cb9273eff16f5118dc05c576d129948fab7b25c7",
+      "bytes": 10309
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed1/predictions.npz": {
+      "sha256": "609229fe41555c78db930d264f5775597fb27118dbc4d30a33a0720e7b99e23e",
+      "bytes": 22240
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed1/progress.json": {
+      "sha256": "363b79a12cbb522d73f1f1575af1041d8d59ba12c65da8994d2f86fe14d43817",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed1/result.json": {
+      "sha256": "e71f3424ca192472528ad3bbfb907bf17dd2e691682fbd6e788c9b71d391d0b4",
+      "bytes": 11741
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed1/selection.json": {
+      "sha256": "4ae7ba9ec52a0eddb67860ab3743827995e5396dda65bf0991e0492f68f2c1fd",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed2.log": {
+      "sha256": "af3f90f80f7746f09f5572bbd52492cbf4d584f81904efccd94458d31ac14e53",
+      "bytes": 653
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed2/checkpoint.pt": {
+      "sha256": "0bb89dc3cec5cba3ec44bd6b8c9fdf356ac1da12b79fe734e2bbf46c811ef83b",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed2/config.json": {
+      "sha256": "fff3bb3834bbd55add0746627398bd46fb05cf9e4a0b378d8b4dc231626d35e4",
+      "bytes": 2795
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed2/history.csv": {
+      "sha256": "57ca4dc80b88e4bc90b394c3f131b5727b4730966157bcb944b8caa5fa6eeada",
+      "bytes": 10299
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed2/predictions.npz": {
+      "sha256": "0de934a70858a5e82e1826cd5ede15bf75922949eb9213ecabe37cb12fcfe948",
+      "bytes": 22179
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed2/progress.json": {
+      "sha256": "55ba288d3b4699c42b7941aeac1c4d312534e6dae08c83b77762dd510da183c0",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed2/result.json": {
+      "sha256": "5315b5f300b376c62c2d289bcbfb2705a9047e03b759ab401e4e6fc32491e5d0",
+      "bytes": 11732
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed2/selection.json": {
+      "sha256": "670914a32ff8e4a241c3728e03a0b86a518f8588d6dbb6d6ad01a1e9e0ea5962",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed3.log": {
+      "sha256": "cf391fd89b8e4b8a5adab41d68313b1504e83a2864c9ef79b84309102c9030df",
+      "bytes": 653
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed3/checkpoint.pt": {
+      "sha256": "6e180d471a56c14534f9093c5c484d8d3a1528edb995fb013039b03bf0451f26",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed3/config.json": {
+      "sha256": "ef9bdb0fb834982437d8ad57e97191b107e91c848f4bb4178b61104985760f1f",
+      "bytes": 2795
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed3/history.csv": {
+      "sha256": "1de3659e29f684d520cfc4300a423766a3eaacc882d843604d93dad0be76b901",
+      "bytes": 10285
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed3/predictions.npz": {
+      "sha256": "32d71d2c7bbd8318abcb2da3b9eb9675967d2a35919bbcc71618b84b2fd01196",
+      "bytes": 22182
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed3/progress.json": {
+      "sha256": "40fe5cb2288f609c96bc7de14be4e94765d786343d65a62e470f691e5987549d",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed3/result.json": {
+      "sha256": "eff28253125f906c61110f2a2ced6a49a34e962c03cd57c96ccdcc442168a257",
+      "bytes": 11714
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/search/lambda_75/seed3/selection.json": {
+      "sha256": "ac4cc09628a5c6b58659cb01d47969449220c96d97d4e456a4a7ac3f8bcd4577",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed1/checkpoint.pt": {
+      "sha256": "791b598ec9b82d0c3fc7183a0db0185aae4de736da68f5f2a01bdea3218df0d8",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed1/checkpoint_selection.json": {
+      "sha256": "c261a9a8f669a19b8b30da097ed9165c9419f39e83d0c5599fea689636d1dfb7",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed1/config.json": {
+      "sha256": "c09cde00f5b18bd5479d29f175d5006bd64c90b3473f4fe6197a32ee66561536",
+      "bytes": 2798
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed1/history.csv": {
+      "sha256": "2c818df79488ab5e3912124645eb0da7179a9bc3f48dedd61eebf5eb2586e2c3",
+      "bytes": 10252
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed1/individual_parameters.csv": {
+      "sha256": "c742bb76409271e394c23892c2547909536cfd8b75481945604c1b1abcd61e32",
+      "bytes": 6562
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed1/predictions.npz": {
+      "sha256": "edb367628712ca748010fda46e699a42e3f47ccab35ac65063d4c747f158d9e3",
+      "bytes": 24047
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed1/result.json": {
+      "sha256": "db51ae74c5c5195d2b9ed23f434a84f5c4c5aaf8f5c7dba2ad56ee1f98a07857",
+      "bytes": 16096
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed1/training_result.json": {
+      "sha256": "d19301f370766ff3e7865695c96b4dace502baaef28da4f79ed1935e4831dad4",
+      "bytes": 11716
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed2/checkpoint.pt": {
+      "sha256": "0ca75ec78a0501bba40e411173cb1d64d83c19fdcc21e42e2c2acff5f4e64e8e",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed2/checkpoint_selection.json": {
+      "sha256": "d8d27ffc636fef446881759a405370c5a35178f769a49ffd1514fa2d3fe42ed4",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed2/config.json": {
+      "sha256": "9d1af68f339b4dc6c5cf81ad989aeb1b4cf2fa26824f6db7821a0b5aa6bb2836",
+      "bytes": 2798
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed2/history.csv": {
+      "sha256": "d54c7bd4e342925f02c31f7d8580103b97675a12e47e83b510e0cadb7a1c76f3",
+      "bytes": 10297
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed2/individual_parameters.csv": {
+      "sha256": "b5fa743756ad39c4b3d72be03c7b80028e00acc9ed3bf7c7f59debea1db24793",
+      "bytes": 6592
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed2/predictions.npz": {
+      "sha256": "56640dd4071a688196e66a325a710159deb646df5129cb91a73a6d4438eaf317",
+      "bytes": 24088
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed2/result.json": {
+      "sha256": "cc2862566bd752b5941bae8df0066861263482fa0853680c74de5cd71e6d142b",
+      "bytes": 16092
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed2/training_result.json": {
+      "sha256": "4df79fa5dff9848cd07b803216327dc108993fb2f644edb22c6c86647c3cc1ba",
+      "bytes": 11740
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed3/checkpoint.pt": {
+      "sha256": "2e53be45b1d2d8843951d852beadd5c94d9d9d78d9076eb0e44cfef494efe87a",
+      "bytes": 13813
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed3/checkpoint_selection.json": {
+      "sha256": "791f6eb96b2c8cab12a05ea7b1cacca03ca35f740dcc9f800e5086503497a9b5",
+      "bytes": 179
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed3/config.json": {
+      "sha256": "77ed49d967a1e9f594e96522711ea89b73ada36c8daaecf798d0a1fb4c52bc38",
+      "bytes": 2798
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed3/history.csv": {
+      "sha256": "c7618befeb229501a96918b9a5a03b434755e92f8b5dd2ba8ad699766be16e34",
+      "bytes": 10269
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed3/individual_parameters.csv": {
+      "sha256": "0a09ba52acc107a3c40b19c53012fc7c15f5d1e2b415a87aacc891d34b954a54",
+      "bytes": 6578
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed3/predictions.npz": {
+      "sha256": "b258e7c29fc81741e0869ceb4918e76fa5ac89366d59112226696aacca20aa91",
+      "bytes": 24065
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed3/result.json": {
+      "sha256": "39475453dbc0a342a68832c3ca11488167aea0471e4f698d449676965c4e9c81",
+      "bytes": 16125
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_0/seed3/training_result.json": {
+      "sha256": "e0530a5f85962aa0faf8a8b1750fa7891ce4cb930988bc4094d8b79a2ac7e92a",
+      "bytes": 11735
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed1/checkpoint.pt": {
+      "sha256": "3e938fa0667ca3672bd48df420b56f18316e418a326834b8172c8c77e190a85a",
+      "bytes": 16565
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed1/checkpoint_selection.json": {
+      "sha256": "a9153efb2ca049192d690b8794e3743f74db2ded7ee7a13df979a50ece64d190",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed1/config.json": {
+      "sha256": "19d1489568622ba2f095962390c7e0c1fc23f410048f75556a9dda122efd4c27",
+      "bytes": 5530
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed1/history.csv": {
+      "sha256": "9236ee6d064c46c783fc286c5e1c6562d978f1f69301e638a2c43230627f5917",
+      "bytes": 10289
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed1/individual_parameters.csv": {
+      "sha256": "27cd52e0f7946097b1cda53295eb263a3d74e2321d17045fed99dacfd403aea6",
+      "bytes": 6584
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed1/predictions.npz": {
+      "sha256": "c62e28ef2f96767a566eefc58d24fbe3dad93d1e23975aac3181e1bf54515e14",
+      "bytes": 23602
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed1/result.json": {
+      "sha256": "d15da9e95db077922a52632b4e2aa1c61a0ffb05df8454308cc7fb19b26a9fbf",
+      "bytes": 19118
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed1/training_result.json": {
+      "sha256": "70489fad7ef65f0675099e76978ca3e66b9f4827cb07d583d0236cf88abba0c6",
+      "bytes": 14737
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed2/checkpoint.pt": {
+      "sha256": "7c86eb73dd56e3a1c063ba73d78a14379559705fec480c76cb9082ccf57a6d70",
+      "bytes": 16565
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed2/checkpoint_selection.json": {
+      "sha256": "3225dfe4af82a710bb1a1496c76e222941d9792eca07a13bfb746ebb2be51829",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed2/config.json": {
+      "sha256": "f28bdf6ac1393618e21fe8ec6a99aba548d844bd9934be82f32494b0f3047812",
+      "bytes": 5524
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed2/history.csv": {
+      "sha256": "343718683e048091bdf444383ee3b3e86df8792d6d8ee77053aa9b13b866fa73",
+      "bytes": 10316
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed2/individual_parameters.csv": {
+      "sha256": "2300a05b09ea20c8fb5345fc5ae1ea93cb45678443c15634adfc7973d431f782",
+      "bytes": 6532
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed2/predictions.npz": {
+      "sha256": "29075b63c09142e0183e0cbc4d4d75237a01a589e44a366287973476bb23b3cf",
+      "bytes": 23604
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed2/result.json": {
+      "sha256": "b9d0a4b9fd668a90f03a912c9e7ea1a38120c49d01759ab862efce647b9794b5",
+      "bytes": 19140
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed2/training_result.json": {
+      "sha256": "310e26f1ba490c4724566cc0c4433ce30c52ffb26de254ee7e97baaa0ca01baa",
+      "bytes": 14746
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed3/checkpoint.pt": {
+      "sha256": "cc549cb8d4d3252b117452c628edd02f008d8d89813c4c02fd5493acee8158c0",
+      "bytes": 16565
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed3/checkpoint_selection.json": {
+      "sha256": "9e67572166997c1a2900411a54df2661b99950d3acda51131b9c8f9ed27177f2",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed3/config.json": {
+      "sha256": "fc0c4b33aa8c4ed4313b9736bc79be509ac1f35097cb90e0cf8b104f2afc5d2e",
+      "bytes": 5531
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed3/history.csv": {
+      "sha256": "1b7f11d179c66d17df4ea24d0a0a3357f3e4a13c537ce75f53c281ec25c63529",
+      "bytes": 10282
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed3/individual_parameters.csv": {
+      "sha256": "c14f414486b34f1d2f6816ad39dbec2b445988d23b5087b9257bae48bdd4b9cb",
+      "bytes": 6542
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed3/predictions.npz": {
+      "sha256": "d43e06dd03a88cae8660aaffe55bce5953ea49aedce2e0e3b78204fa63803567",
+      "bytes": 23557
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed3/result.json": {
+      "sha256": "cff1210a8ba412cb0c87fc241c7e71e96430ec53d74c27c329b6eadc74057d5b",
+      "bytes": 19126
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_25/seed3/training_result.json": {
+      "sha256": "d71287c8c78b0fc3cffcc8b7ba4c1d0a59534aaa23ec9f8ff65c4dfdaa4e6c4c",
+      "bytes": 14741
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed1/checkpoint.pt": {
+      "sha256": "134d17dde18d1e01ccbdd8598288bfe09182d0aaa46afc775d927b7fe646a63a",
+      "bytes": 19317
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed1/checkpoint_selection.json": {
+      "sha256": "df41b7863eb7f6e470e5e3749c9e9506c27f3d315217af2e737786fea68baf61",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed1/config.json": {
+      "sha256": "bb2bc87019840597b7f120734ad412964862158ed032f3f05764c0953b643659",
+      "bytes": 8250
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed1/history.csv": {
+      "sha256": "2419f2c4325a83f8296a858fe44ee9248e4ea8cf9d8563b42ba7f7009620a5a9",
+      "bytes": 10331
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed1/individual_parameters.csv": {
+      "sha256": "7d3f8606ace2af7a375c6c76e347164fcdc78699022ff43852986d0adf567304",
+      "bytes": 6582
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed1/predictions.npz": {
+      "sha256": "3b86550f2533f93d32a850989a2ae4129376c5db0af6dcc1b164fe75bad60b48",
+      "bytes": 22463
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed1/result.json": {
+      "sha256": "b322e1fe6f0316d0a859d7c31c50e2215d42fb2866d5f5401815846914364024",
+      "bytes": 22141
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed1/training_result.json": {
+      "sha256": "ad6988cd894bb9b817f6c169b72989d0732de4144c7f74adc7b3725f6e8b08cf",
+      "bytes": 17770
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed2/checkpoint.pt": {
+      "sha256": "95a6ccf8eb29fd0024b404fdaa52fca391aab298d8f93e09581807b20cfda42c",
+      "bytes": 19317
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed2/checkpoint_selection.json": {
+      "sha256": "02b8f30844525b67657a23772a888b2767e45c531e27559d30a99ab979410082",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed2/config.json": {
+      "sha256": "2fa3506455d23ce1140c5fd2a13fa2eb906789d77d1f40a7e2f3a351d8231f6e",
+      "bytes": 8248
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed2/history.csv": {
+      "sha256": "9ff07c244f217f81412497e97a2515843968f09e793a335b04183694c47c295b",
+      "bytes": 10328
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed2/individual_parameters.csv": {
+      "sha256": "80dba6a490121f0929dc771965aa30fbce6f5281493499608030b0f17d3af549",
+      "bytes": 6661
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed2/predictions.npz": {
+      "sha256": "eb8e3db78021102f6e65c3111ac46c013a5b846281fbe0a51e0a06ed3afd98c1",
+      "bytes": 22607
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed2/result.json": {
+      "sha256": "d66c7911969ddc16a53141d359f178206b47255fe275ffd808aae2f7cf6687f7",
+      "bytes": 22151
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed2/training_result.json": {
+      "sha256": "2718985320acf0a36a141a37c96059dcb3f93b6a252d6eb87e801941d1ebcf3f",
+      "bytes": 17764
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed3/checkpoint.pt": {
+      "sha256": "8f48502417ed31a12f68f27e6f2016a20bbb6f70175d604da13c0892d347423c",
+      "bytes": 19317
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed3/checkpoint_selection.json": {
+      "sha256": "8427cdcf8928251338ac48a6ad233fdd71ccbb5ef54d961c03f0e7936c64e239",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed3/config.json": {
+      "sha256": "cce958cf0b702e087bc3a3f01c76eebabe283c63299cb8db13bf3bc3c15a05e0",
+      "bytes": 8257
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed3/history.csv": {
+      "sha256": "f1c376eeefb29d4ea629dc208a649b0c9766fa04f7e146919691886c82143c25",
+      "bytes": 10347
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed3/individual_parameters.csv": {
+      "sha256": "458278aac269d10298dd4545d626f1e9d93dfe44a5bcfbb21191f1126ae7335c",
+      "bytes": 6571
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed3/predictions.npz": {
+      "sha256": "2d7348fc5331d60c210e81c57a5bd76aeb41b3eca7ec4937ea676c0206ae9e18",
+      "bytes": 21922
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed3/result.json": {
+      "sha256": "03c0884da2a3090253735ef1538b3edf42d29b07a6eb8f7df229b2d557301419",
+      "bytes": 22125
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/selected/drop_50/seed3/training_result.json": {
+      "sha256": "ceaea95e54b5042e8edd394b0497e171ed0a476a50d7c8854994f6a89f574039",
+      "bytes": 17764
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/test_evaluation_plan.json": {
+      "sha256": "bc56717d1a75b4ea7100c69a6cc970af66a75295d2cdec40a991650f5e37b1f3",
+      "bytes": 3312
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed1.log": {
+      "sha256": "29964d8d93c4224614c965e97b46c2e6d38587c679098a50141ee2b63844d35b",
+      "bytes": 713
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed1/checkpoint.pt": {
+      "sha256": "3e938fa0667ca3672bd48df420b56f18316e418a326834b8172c8c77e190a85a",
+      "bytes": 16565
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed1/config.json": {
+      "sha256": "19d1489568622ba2f095962390c7e0c1fc23f410048f75556a9dda122efd4c27",
+      "bytes": 5530
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed1/history.csv": {
+      "sha256": "9236ee6d064c46c783fc286c5e1c6562d978f1f69301e638a2c43230627f5917",
+      "bytes": 10289
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed1/predictions.npz": {
+      "sha256": "7a50d92451051d128111a89c136063ea07edf58dc731b63ae4b9bff3b72235a7",
+      "bytes": 21734
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed1/progress.json": {
+      "sha256": "d6e8f08f3af5300ce1ce828c4cae6e7770c9e0da44ec2522f5d26e129725e4d4",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed1/result.json": {
+      "sha256": "70489fad7ef65f0675099e76978ca3e66b9f4827cb07d583d0236cf88abba0c6",
+      "bytes": 14737
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed1/selection.json": {
+      "sha256": "a9153efb2ca049192d690b8794e3743f74db2ded7ee7a13df979a50ece64d190",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed2.log": {
+      "sha256": "46ea58d92cbd2261e0327dd3f562d672f5a9b0d82cfd255d5c342914527af1fb",
+      "bytes": 713
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed2/checkpoint.pt": {
+      "sha256": "7c86eb73dd56e3a1c063ba73d78a14379559705fec480c76cb9082ccf57a6d70",
+      "bytes": 16565
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed2/config.json": {
+      "sha256": "f28bdf6ac1393618e21fe8ec6a99aba548d844bd9934be82f32494b0f3047812",
+      "bytes": 5524
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed2/history.csv": {
+      "sha256": "343718683e048091bdf444383ee3b3e86df8792d6d8ee77053aa9b13b866fa73",
+      "bytes": 10316
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed2/predictions.npz": {
+      "sha256": "3c6d74775a2c1b6d2936e81cdad65ad35523859fd15559f81d77ae1696f50a07",
+      "bytes": 21735
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed2/progress.json": {
+      "sha256": "b3b0359808dbd81c41be740fd2b2071a8f971dc50f039b76e77159d64c223421",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed2/result.json": {
+      "sha256": "310e26f1ba490c4724566cc0c4433ce30c52ffb26de254ee7e97baaa0ca01baa",
+      "bytes": 14746
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed2/selection.json": {
+      "sha256": "3225dfe4af82a710bb1a1496c76e222941d9792eca07a13bfb746ebb2be51829",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed3.log": {
+      "sha256": "3a9bd2c5b27981daee25e6bbb169306fff42828c4f4a1cae939467727c41741b",
+      "bytes": 713
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed3/checkpoint.pt": {
+      "sha256": "cc549cb8d4d3252b117452c628edd02f008d8d89813c4c02fd5493acee8158c0",
+      "bytes": 16565
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed3/config.json": {
+      "sha256": "fc0c4b33aa8c4ed4313b9736bc79be509ac1f35097cb90e0cf8b104f2afc5d2e",
+      "bytes": 5531
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed3/history.csv": {
+      "sha256": "1b7f11d179c66d17df4ea24d0a0a3357f3e4a13c537ce75f53c281ec25c63529",
+      "bytes": 10282
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed3/predictions.npz": {
+      "sha256": "f5912f3e91f78ad6e7e3f4f3587dad1da231b41b5a5a8e8570f299a9a57691b7",
+      "bytes": 21672
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed3/progress.json": {
+      "sha256": "c4ee5da579a33dd6c3e71410574e74d7cfbe58d70a0a1ad3b60bbf934b6ab2ba",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed3/result.json": {
+      "sha256": "d71287c8c78b0fc3cffcc8b7ba4c1d0a59534aaa23ec9f8ff65c4dfdaa4e6c4c",
+      "bytes": 14741
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_25/seed3/selection.json": {
+      "sha256": "9e67572166997c1a2900411a54df2661b99950d3acda51131b9c8f9ed27177f2",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed1.log": {
+      "sha256": "38a01dd6296153116071a03f2f7413aae3c1f1e7ff3750516ab7686f57435ea5",
+      "bytes": 698
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed1/checkpoint.pt": {
+      "sha256": "134d17dde18d1e01ccbdd8598288bfe09182d0aaa46afc775d927b7fe646a63a",
+      "bytes": 19317
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed1/config.json": {
+      "sha256": "bb2bc87019840597b7f120734ad412964862158ed032f3f05764c0953b643659",
+      "bytes": 8250
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed1/history.csv": {
+      "sha256": "2419f2c4325a83f8296a858fe44ee9248e4ea8cf9d8563b42ba7f7009620a5a9",
+      "bytes": 10331
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed1/predictions.npz": {
+      "sha256": "b9fa54e720105ddd59873e2826838681dcc5e799698e3e191f399b1597fcee2a",
+      "bytes": 20611
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed1/progress.json": {
+      "sha256": "bbe5ad85f3c6cc1096b6415ca4618d394b8f5a649de99a07e84dac9157c384e0",
+      "bytes": 114
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed1/result.json": {
+      "sha256": "ad6988cd894bb9b817f6c169b72989d0732de4144c7f74adc7b3725f6e8b08cf",
+      "bytes": 17770
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed1/selection.json": {
+      "sha256": "df41b7863eb7f6e470e5e3749c9e9506c27f3d315217af2e737786fea68baf61",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed2.log": {
+      "sha256": "dc6bbc594c7d7e223c15614c4a53382ae48045d3fed61b25000bb63a7e3e8fdb",
+      "bytes": 697
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed2/checkpoint.pt": {
+      "sha256": "95a6ccf8eb29fd0024b404fdaa52fca391aab298d8f93e09581807b20cfda42c",
+      "bytes": 19317
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed2/config.json": {
+      "sha256": "2fa3506455d23ce1140c5fd2a13fa2eb906789d77d1f40a7e2f3a351d8231f6e",
+      "bytes": 8248
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed2/history.csv": {
+      "sha256": "9ff07c244f217f81412497e97a2515843968f09e793a335b04183694c47c295b",
+      "bytes": 10328
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed2/predictions.npz": {
+      "sha256": "37c7e71a9b140fd93aeb8e2f23a7be2646376b3c713d498eaadce730e4d4eb03",
+      "bytes": 20759
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed2/progress.json": {
+      "sha256": "0e1b67a3255836f46084b3489d3d2ef8e550d35e91ebdf05a85eeba5314b7ac3",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed2/result.json": {
+      "sha256": "2718985320acf0a36a141a37c96059dcb3f93b6a252d6eb87e801941d1ebcf3f",
+      "bytes": 17764
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed2/selection.json": {
+      "sha256": "02b8f30844525b67657a23772a888b2767e45c531e27559d30a99ab979410082",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed3.log": {
+      "sha256": "12c7b70f66852941e341fce921c3b507ee7d18fd4310917db2005157ad66d301",
+      "bytes": 698
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed3/checkpoint.pt": {
+      "sha256": "8f48502417ed31a12f68f27e6f2016a20bbb6f70175d604da13c0892d347423c",
+      "bytes": 19317
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed3/config.json": {
+      "sha256": "cce958cf0b702e087bc3a3f01c76eebabe283c63299cb8db13bf3bc3c15a05e0",
+      "bytes": 8257
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed3/history.csv": {
+      "sha256": "f1c376eeefb29d4ea629dc208a649b0c9766fa04f7e146919691886c82143c25",
+      "bytes": 10347
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed3/predictions.npz": {
+      "sha256": "5ee10873c23eef5e1e7106d5138648ae6b329f2850774f5944b63d882b5e1cd7",
+      "bytes": 20239
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed3/progress.json": {
+      "sha256": "a2ed7a222a44e94b84ba4eeae75e0d25a56abb50112f906dde6d687d35a087ff",
+      "bytes": 116
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed3/result.json": {
+      "sha256": "ceaea95e54b5042e8edd394b0497e171ed0a476a50d7c8854994f6a89f574039",
+      "bytes": 17764
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer/lambda_10000/drop_50/seed3/selection.json": {
+      "sha256": "8427cdcf8928251338ac48a6ad233fdd71ccbb5ef54d961c03f0e7936c64e239",
+      "bytes": 180
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/transfer_plan.json": {
+      "sha256": "98bb9350f3702e3673b244d85912b1e8875376228b40b5190c0060c7f1c325ff",
+      "bytes": 1094
+    },
+    "hypocotyl/results/expanded_no_light_lambda_20260911/validation_search.csv": {
+      "sha256": "b6cc19b7dfcc50e0082858665e95baf650cd303329214fbdff8e209c15deb1e4",
+      "bytes": 3399
     },
     "hypocotyl/results/prefix_forecast_20260911/completion.json": {
       "sha256": "090266858219eb0635dd21fa171b4b0c78d5a86883a707378930ecf9e7d096e3",
@@ -5774,12 +7474,12 @@
       "bytes": 892
     },
     "submission/source_files.json": {
-      "sha256": "a60f88b0287eca4d9da4df7b3cf6d33f70dbbb9a0a0f52c97104e9e1562ba493",
-      "bytes": 36722
+      "sha256": "49715e135f75c579b2f78f07ba1479e317ef517028a752189bdf56dde01330c4",
+      "bytes": 36861
     },
     "submission/validation.json": {
-      "sha256": "ce585c5d322968711befa4e558c455d3fae08396a6924dbf74dde2345b48440f",
-      "bytes": 6365
+      "sha256": "4d98c9238a1c469aa565f26d33e84043a72a3b8f911c5b90a997a60b686d34fb",
+      "bytes": 7688
     },
     "visualization/hypocotyl.py": {
       "sha256": "3d9dcfb86a3f4ae6a7f13311e72be6460c0e3b691586b942116b0303e05fd754",

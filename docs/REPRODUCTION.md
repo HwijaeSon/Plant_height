@@ -182,3 +182,12 @@ are evaluated across all missingness conditions, deduplicating identical fits.
 Use `report_no_light_prefix.py` to export both feature variants alongside all
 unchanged baselines, and `audit_no_light_prefix.py` to verify the artifacts.
 See [the no-light protocol](../hypocotyl/reports/prefix_parameters_no_light_20260911/README.md).
+
+The subsequent range extension uses `expanded_no_light_trial.py` and
+`run_expanded_no_light_search.py`. The wrapper selects the expanded profile while
+calling the same no-light trainer. The runner hashes and reuses the original 30
+validation-only fits, adds 36 fits, and ranks all 22 coefficients using 48-h
+validation. `report_expanded_no_light.py` exports the merged search and all-model
+comparison; `audit_expanded_no_light.py` checks the reused sources, common
+initialization, loss, validation selection and final checkpoints. See the
+[expanded-search protocol](../hypocotyl/reports/expanded_no_light_lambda_20260911/README.md).
