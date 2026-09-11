@@ -19,12 +19,11 @@ in `submission/source_files.json`; it contains the complete search histories.
 | Hypocotyl illumination-conditioned vector field and switch handling | `hypocotyl/code/light_input_model.py` |
 | Hypocotyl split-specific targets and metrics | `hypocotyl/code/single_condition_data.py` |
 | Fixed-configuration training / selected checkpoint evaluation | `run.py` |
-| Four manuscript tables | `paper/current_results.csv`, `hypocotyl/reports/light_input_20260910/comparison.csv` |
-| Temperature prediction figures | `paper/make_figures.py` |
-| Hypocotyl prediction figure | `paper/hypocotyl_figure.py: make_figure` |
+| Four manuscript tables | `results/comparison_temperature.csv`, `hypocotyl/reports/light_input_20260910/comparison.csv` |
+| Temperature prediction figures | `visualization/temperature.py` |
+| Hypocotyl prediction figure | `visualization/hypocotyl.py: make_figure` |
 
-`scripts/make_figures.py` regenerates the figures without editing manuscript
-text. The first three
+`scripts/make_figures.py` generates plots under the requested output directory. The first three
 figure panels display PhytoODE and the five baseline families; the unregularized
 latent ODE is in their tables. The hypocotyl figure also displays its unregularized
 latent ODE, as in the final manuscript.
@@ -120,8 +119,8 @@ provenance. `configs/paper.json` resolves the checkpoints used by `run.py`.
 Histories are included where present in the original selected runs; no missing
 training records have been fabricated.
 
-`scripts/report_results.py` exports the recorded main comparison, with one table
-per dataset and bold minima based on unrounded means. It does not rerank models
+`scripts/report_results.py` exports the recorded main comparison as CSV and
+Markdown, with one table per dataset and bold minima based on unrounded means. It does not rerank models
 after a new experiment. New evaluations write their own `result.json` and
 `predictions.npz`, which can be compared with the submitted values. The complete
 development history remains at the source commit identified in the submission

@@ -205,19 +205,19 @@
   ],
   "regenerated_figures": [
     {
-      "file": "paper/figures/arabidopsis_col0_no_extrapolation.png",
+      "file": "outputs/prediction-figures/arabidopsis_col0_no_extrapolation.png",
       "pixel_arrays_identical": true
     },
     {
-      "file": "paper/figures/hypocotyl_light_input.png",
+      "file": "outputs/prediction-figures/hypocotyl_light_input.png",
       "pixel_arrays_identical": true
     },
     {
-      "file": "paper/figures/maize_test_predictions.png",
+      "file": "outputs/prediction-figures/maize_test_predictions.png",
       "pixel_arrays_identical": true
     },
     {
-      "file": "paper/figures/wheat_test_curves_no_extrapolation.png",
+      "file": "outputs/prediction-figures/wheat_test_curves_no_extrapolation.png",
       "pixel_arrays_identical": true
     }
   ],
@@ -252,5 +252,23 @@
       "hypocotyl seed-1 checkpoint evaluation",
       "hypocotyl two-step training with physics backpropagation"
     ]
+  },
+  "original_validation_version": "submission-20260911",
+  "generated_artifacts": "Plots and comparison reports are generated locally under outputs/ and are excluded from the code-and-data release.",
+  "code_data_revision": {
+    "version": "submission-20260911-code-data",
+    "prior_commit": "7f8f8ffd2a72205eab63873439459dd3bb21f846",
+    "unchanged_numerical_files": 218,
+    "training_entry_point_model_implementations_and_configurations_unchanged": true,
+    "report_export_formats": [
+      "csv",
+      "markdown"
+    ],
+    "comparison_rows": 81,
+    "comparison_csv_identical": true,
+    "regenerated_png_figures_identical": 4,
+    "hypocotyl_checkpoint_reevaluation_identical": true,
+    "no_manuscript_or_figure_files_in_git_tree": true,
+    "documentation_links_valid": true
   }
 }

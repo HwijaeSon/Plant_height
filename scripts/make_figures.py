@@ -1,4 +1,4 @@
-"""Regenerate the four manuscript figures without rewriting manuscript prose."""
+"""Plot model predictions for the four study datasets."""
 import argparse
 import importlib.util
 from pathlib import Path
@@ -20,14 +20,12 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
-    temperature = load("submission_temperature_figures", ROOT / "paper/make_figures.py")
+    temperature = load("submission_temperature_figures", ROOT / "visualization/temperature.py")
     temperature.OUT = args.output.resolve()
     temperature.wheat_examples()
     temperature.arabidopsis_examples()
     temperature.maize_examples()
-    hypocotyl = load("submission_hypocotyl_figure", ROOT / "paper/hypocotyl_figure.py")
-    # The existing helper writes PAPER/figures. Point only that output root at
-    # the requested directory; data and prediction roots remain unchanged.
+    hypocotyl = load("submission_hypocotyl_figure", ROOT / "visualization/hypocotyl.py")
     hypocotyl.make_figure(output_dir=args.output.resolve())
     print(f"Saved the four manuscript figures to {args.output}")
 

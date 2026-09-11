@@ -1,10 +1,7 @@
-"""Adopt validation-selected light-input PhytoODE in the primary manuscript."""
+"""Plot selected PhytoODE and baseline hypocotyl predictions."""
 from pathlib import Path
 import hashlib
-import json
-import re
 import sys
-import zipfile
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -14,18 +11,12 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 
 ROOT=Path(__file__).resolve().parents[1]
-PAPER=ROOT/'paper'; REPORT=ROOT/'hypocotyl/reports/light_input_20260910'
 RESULTS=ROOT/'hypocotyl/results/light_input_20260910'
 PREVIOUS=ROOT/'hypocotyl/results/single_condition_20260909'
 ORDER=['phytoode_light','latent_ode','logistic_pinn','lstm','rf','logistic']
-TABLE_ORDER=['logistic','rf','lstm','logistic_pinn','latent_ode','phytoode_light']
-NAMES=dict(phytoode_light=r'\model{}',latent_ode='Latent ODE (no physics)',logistic_pinn='Logistic-PINN',
+NAMES=dict(phytoode_light='PhytoODE',latent_ode='Latent ODE (no physics)',logistic_pinn='Logistic-PINN',
     lstm='LSTM-NN',rf='Random forest',logistic='Logistic ODE')
 COLORS=dict(phytoode_light='#0072B2',latent_ode='#332288',logistic_pinn='#D55E00',lstm='#009E73',rf='#999999',logistic='#E69F00')
-
-
-def sha(path): return hashlib.sha256(path.read_bytes()).hexdigest()
-def read(path): return json.loads(path.read_text())
 
 
 def make_figure(output_dir=None):
@@ -65,7 +56,8 @@ def make_figure(output_dir=None):
         Patch(facecolor='0.90',alpha=.6,label='Dark interval (12 h)')]
     axes[-1].axis('off');axes[-1].legend(handles=handles,loc='center',frameon=False,fontsize=9.5)
     fig.tight_layout()
-    dest=(Path(output_dir) if output_dir is not None else PAPER/'figures')/'hypocotyl_light_input'
+    dest=(Path(output_dir) if output_dir is not None else ROOT/'outputs/figures')/'hypocotyl_light_input'
+    dest.parent.mkdir(parents=True,exist_ok=True)
     for ext in ['pdf','png']:fig.savefig(dest.with_suffix('.'+ext),dpi=240,bbox_inches='tight')
     plt.close(fig)
     return sources

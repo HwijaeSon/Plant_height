@@ -8,16 +8,18 @@ neural ODE dynamics with logistic derivative and carrying-capacity regularizatio
 in phenotype space. Environmental inputs are temperature for the published
 datasets and binary illumination for the hypocotyl experiment.
 
-This branch contains the experiments reported in the manuscript. The development
-history and exploratory experiments remain on the repository's `main` branch.
-The final configuration is defined by [`configs/paper.json`](configs/paper.json).
-The fixed submission version is tagged `submission-20260911`. Verification
+This snapshot contains the experiments reported in the manuscript. The complete
+development history and exploratory experiments are archived at
+[development commit `9671ca4`](https://github.com/HwijaeSon/Plant_height/tree/9671ca42605ad6ab1543c527daa6466fa3e80e06).
+This snapshot contains code, data, configurations, checkpoints, and machine-readable
+results, with README documentation for reproduction. The final configuration is defined by [`configs/paper.json`](configs/paper.json).
+The code-and-data submission version is tagged `submission-20260911-code-data`. Verification
 results are recorded in [`submission/validation.json`](submission/validation.json).
 
 ## Installation
 
 ```bash
-git clone --depth 1 --branch codex/submission-20260911 \
+git clone --depth 1 --branch submission-20260911-code-data \
   https://github.com/HwijaeSon/Plant_height.git
 cd Plant_height
 python3.12 -m venv .venv
@@ -181,7 +183,7 @@ reported physical or relative-height unit. `result.json` metrics are already in
 the reported units. These examples run on the supplied study datasets; adapting
 to a new experiment requires a data loader and a new validation design.
 
-## Baselines, tables, and figures
+## Baselines and result analysis
 
 [`docs/REPRODUCTION.md`](docs/REPRODUCTION.md) describes baseline commands, the
 manuscript-to-code mapping, and the distinction between re-evaluating saved
@@ -189,11 +191,11 @@ predictions and retraining models. Wheat LSTM-NN and Logi-PINN table entries are
 the reference authors' reported outputs, not newly trained replacements.
 
 ```bash
-# Export the manuscript's four comparison tables from recorded metrics.
-python scripts/report_results.py --output outputs/paper-tables
+# Export comparison results as CSV and Markdown.
+python scripts/report_results.py --output outputs/comparison-tables
 
 # Regenerate the manuscript prediction figures after external data preparation.
-python scripts/make_figures.py --output outputs/paper-figures
+python scripts/make_figures.py --output outputs/prediction-figures
 
 # Verify the checksums of the submitted code, data, configurations, and results.
 python scripts/verify_submission.py

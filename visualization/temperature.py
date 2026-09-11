@@ -12,8 +12,7 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = Path(__file__).resolve().parent / "figures"
-OUT.mkdir(exist_ok=True)
+OUT = ROOT / "outputs/figures"
 PROFILE = json.loads((ROOT / "experiments/phytoode_config.json").read_text())
 
 # Fixed across all three manuscript figures. The sequence is arranged so a
@@ -93,6 +92,7 @@ def draw_curves(ax, x, support, predictions):
 
 
 def save_figure(fig, stem):
+    OUT.mkdir(parents=True, exist_ok=True)
     fig.savefig(OUT / f"{stem}.pdf", bbox_inches="tight")
     fig.savefig(OUT / f"{stem}.png", dpi=220, bbox_inches="tight")
     plt.close(fig)

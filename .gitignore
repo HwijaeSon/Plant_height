@@ -17,9 +17,14 @@ arabidopsis/data/processed/
 # Locally refitted baselines and build products.
 **/results/reproduced/
 **/forest.joblib
-paper/*.aux
-paper/*.bbl
-paper/*.blg
-paper/*.log
-paper/*.out
-paper/*.pdf
+
+# Keep manuscript sources and document build products out of this release.
+*.tex
+*.bib
+*.sty
+*.cls
+*.aux
+*.bbl
+*.blg
+*.synctex.gz
+paper/

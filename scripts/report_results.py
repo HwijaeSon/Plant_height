@@ -1,4 +1,4 @@
-"""Export the submitted comparison tables from the recorded metrics."""
+"""Export recorded comparison metrics as CSV and Markdown."""
 import argparse
 from pathlib import Path
 import pandas as pd
@@ -11,7 +11,7 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
-    frame = pd.read_csv(ROOT / "paper/current_results.csv")
+    frame = pd.read_csv(ROOT / "results/comparison_temperature.csv")
     hyp = pd.read_csv(ROOT / "hypocotyl/reports/light_input_20260910/comparison.csv")
     hyp = hyp[hyp.protocol.eq("replicate") & hyp.model.isin([
         "phytoode_light", "latent_ode", "logistic_pinn", "lstm", "rf", "logistic"])].copy()
@@ -26,14 +26,9 @@ def main():
         part = frame[frame.dataset.eq(dataset)]
         decimals = {"wheat": 5, "maize": 2, "arabidopsis": 3, "hypocotyl": 3}[dataset]
         markdown += [f"## {dataset}", "", "| Model | Train | Validation | Test |", "|---|---:|---:|---:|"]
-        units = {"wheat": "m", "maize": "relative UAV-height units", "arabidopsis": "cm", "hypocotyl": "mm"}
-        latex = [r"\begin{table}[t]", r"\centering", r"\small",
-                 r"\caption{" + dataset.capitalize() + " prediction errors: RMSE (" + units[dataset] + r") / relative RMSE (\%).}",
-                 r"\resizebox{\linewidth}{!}{%", r"\begin{tabular}{lccc}", r"\toprule",
-                 r"Model & Train & Validation & Test \\", r"\midrule"]
         order = ["Logi-ODE", "Temp-ODE", "RF", "LSTM-NN", "Logi-PINN", "Logistic-PINN", "Latent ODE (no physics)", "PhytoODE"]
         for model in [name for name in order if name in set(part.model)]:
-            md_cells, tex_cells = [], []
+            md_cells = []
             for split in ["train", "val", "test"]:
                 rows = part[part.split.eq(split)]
                 row = rows[rows.model.eq(model)].iloc[0]
@@ -42,15 +37,10 @@ def main():
                     rmse += f" ± {row.rmse_sd:.{decimals}f}"
                     rel += f" ± {row.relative_error_sd:.2f}"
                 cell = rmse + " / " + rel
-                tex = cell.replace(" ± ", r"\pm").replace(" / ", r"\,/\,")
                 if row.rmse_mean == rows.rmse_mean.min():
-                    cell, tex = "**" + cell + "**", r"\mathbf{" + tex + "}"
+                    cell = "**" + cell + "**"
                 md_cells.append(cell)
-                tex_cells.append("$" + tex + "$")
             markdown.append("| " + model + " | " + " | ".join(md_cells) + " |")
-            latex.append(model + " & " + " & ".join(tex_cells) + r" \\")
-        latex += [r"\bottomrule", r"\end{tabular}}", r"\end{table}", ""]
-        (args.output / f"{dataset}.tex").write_text("\n".join(latex))
         markdown.append("")
     (args.output / "comparison.md").write_text("\n".join(markdown))
     print(f"Exported {len(frame)} model/partition rows to {args.output}")

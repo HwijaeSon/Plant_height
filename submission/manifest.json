@@ -1,24 +1,24 @@
 {
-  "version": "submission-20260911",
+  "version": "submission-20260911-code-data",
   "branch": "codex/submission-20260911",
   "source_development_commit": "9671ca42605ad6ab1543c527daa6466fa3e80e06",
   "description": "Hashes of submitted files, excluding this manifest itself, downloaded external inputs, and local execution outputs.",
   "files": {
     ".gitattributes": {
-      "sha256": "3273638924b179376f4a2aa867045ed0a5c13b87e4f489c141ffbb3a9116c265",
-      "bytes": 310
+      "sha256": "34adb1002cea37c4521bd11aa8b73fbbbd35f0facef6aeae24570f996d53491e",
+      "bytes": 274
     },
     ".gitignore": {
-      "sha256": "82e18d0bb2a7b895624eb2a73c3324fd5fb12e50173b6ce77d9822b55db45d9b",
-      "bytes": 417
+      "sha256": "566dd69738ff20d7932496b055f5703ef48580f7d27840867fbac5bb1de409d9",
+      "bytes": 483
     },
     "CITATION.cff": {
-      "sha256": "c8588dba979291da44b57c3c1b2050287d617ba481e397e4b6d5d3b5e90ddb63",
-      "bytes": 627
+      "sha256": "09b605f8b7fef2a297635a505cc364c5d50f0aa6640a310f63ee31f74aae5994",
+      "bytes": 641
     },
     "README.md": {
-      "sha256": "a31f34c91d59e343d0d352abee60f1dece8fa54b03db079d16cddec72a1a5bbe",
-      "bytes": 12738
+      "sha256": "d02119a4e5e6fd93d467eb0168903d74fa0877063de2caf2e73bfa3fac6b563f",
+      "bytes": 12990
     },
     "THIRD_PARTY.md": {
       "sha256": "c8b82eea7e6c4f5f9cbba0799ca621d2e03d6edb58028b75853c50777a156c1e",
@@ -61,8 +61,8 @@
       "bytes": 12947
     },
     "docs/REPRODUCTION.md": {
-      "sha256": "57714535d94bcd3930415a8e89928e85c4393f512d4846572f2b7280cd075f43",
-      "bytes": 7320
+      "sha256": "3987e19f96263096cb63947d3f33194f6d949834d53e10418b965980b446ea43",
+      "bytes": 7354
     },
     "experiments/physics_ablation.py": {
       "sha256": "1094f8b2025428a3bd3f564c91cb0e62bc8b7635843544035da3ee6bc08884cb",
@@ -1460,73 +1460,13 @@
       "sha256": "d0ac652269a11e5171c66af54d1531540ac6010d288872aa067d8d652dab9684",
       "bytes": 801
     },
-    "paper/current_results.csv": {
-      "sha256": "01ac353ab94703b2e39fe9f665609968ab3d34fa21cabcb52f8dca2d18d6d665",
-      "bytes": 6003
-    },
-    "paper/figures/arabidopsis_col0_no_extrapolation.pdf": {
-      "sha256": "ba6a73e9f435ce4179d5ee2583d331f5cb88241cd89591fe1ce845ee2c5c7415",
-      "bytes": 20896
-    },
-    "paper/figures/arabidopsis_col0_no_extrapolation.png": {
-      "sha256": "746c74905d75b79ab633e8b3ca7dcb8c52de3453233d4f173bdeed2f3047351b",
-      "bytes": 159552
-    },
-    "paper/figures/hypocotyl_light_input.pdf": {
-      "sha256": "4bd0e56c0c6a821c3e2c62f694874c254f30607e4d5e3679c0809a299ba83a80",
-      "bytes": 34469
-    },
-    "paper/figures/hypocotyl_light_input.png": {
-      "sha256": "52b354e28c64094b5011378ddf968079edf960ec778dd42b3c28810882949e86",
-      "bytes": 320955
-    },
-    "paper/figures/maize_test_predictions.pdf": {
-      "sha256": "04b1e330ffea807eb5d0de8fde36b6a982aa3531ed6c6589d4b34f13dad3287b",
-      "bytes": 43314
-    },
-    "paper/figures/maize_test_predictions.png": {
-      "sha256": "d9bf372f6a74b0ff333b4dea20e205dd6029f5dff7a7f703130c29e14255270c",
-      "bytes": 483846
-    },
-    "paper/figures/wheat_test_curves_no_extrapolation.pdf": {
-      "sha256": "eb38faf8adf3e4728eb32e15a0f83f7c51b45590e4cbb62e6d1aa9740fed2c63",
-      "bytes": 33194
-    },
-    "paper/figures/wheat_test_curves_no_extrapolation.png": {
-      "sha256": "55afefd34dc501b16dce6229da88a9f001db61c6f966cdf617e5bb33379d6581",
-      "bytes": 199717
-    },
-    "paper/hypocotyl_figure.py": {
-      "sha256": "f46d6a8173f93b90d8374c99f5259c42c78a9b89eba62762ab45cf70918e3638",
-      "bytes": 3971
-    },
-    "paper/hypocotyl_methods.tex": {
-      "sha256": "362d26e1254033d435524d1111509e11974893160b768b584b38428fd979208a",
-      "bytes": 12813
-    },
-    "paper/hypocotyl_results.tex": {
-      "sha256": "f34e4951857f993a4ade0e537b2bd7ca29ddff9b6aeb65b648fb30199b203ae6",
-      "bytes": 6149
-    },
-    "paper/main.tex": {
-      "sha256": "9f22cad4a8aca5a0049c3c965d915d8ae85f5f23ae7018d546cfe63f39d0fb89",
-      "bytes": 45678
-    },
-    "paper/main_standalone.tex": {
-      "sha256": "8d9e34d89f91c6bbbf070e4f7ea5508c02f7d656c1802f362b84cc0fee4094bb",
-      "bytes": 64590
-    },
-    "paper/make_figures.py": {
-      "sha256": "769f51b4c478bb35e3aed80b60e5790918b700acdaf56eb5dd4980ca907a0929",
-      "bytes": 11852
-    },
-    "paper/references.bib": {
-      "sha256": "dcc707c37d9dee65c8c514a6fe155c94541cc070d20bb1871c0428b508e6d855",
-      "bytes": 18325
-    },
     "requirements.txt": {
       "sha256": "c6946b9654c7de1f73ff8e47c2717d0f5330cbf1b636e69a3119af26957e3251",
       "bytes": 124
+    },
+    "results/comparison_temperature.csv": {
+      "sha256": "01ac353ab94703b2e39fe9f665609968ab3d34fa21cabcb52f8dca2d18d6d665",
+      "bytes": 6003
     },
     "run.py": {
       "sha256": "081d44f435cbdb7336f14b9c1bc1af2cde971c9b77c34bb7138e5f3395dad174",
@@ -1537,8 +1477,8 @@
       "bytes": 3251
     },
     "scripts/make_figures.py": {
-      "sha256": "939c813ee553c15f345e9fb440e52857f2cf9ecb65ce53dbb02412238fb4ad36",
-      "bytes": 1283
+      "sha256": "7e91b6feebf3e085927508d34a52ec72604eaf087b4083f679e22157157212dd",
+      "bytes": 1114
     },
     "scripts/prepare_data.py": {
       "sha256": "7fbe71326151aa2acddfaa86d714997daed45339eb94512fed21feaeeb92ad0a",
@@ -1549,20 +1489,28 @@
       "bytes": 3920
     },
     "scripts/report_results.py": {
-      "sha256": "24976268674db3ec45037b1cbcd1ea56ebd7c472169a54fe28afb0649d8065ba",
-      "bytes": 3596
+      "sha256": "bbe1a29868f1142181f7adfa0ee1648c7ee0870799bc5a2a2e87ad1371a4a5a5",
+      "bytes": 2744
     },
     "scripts/verify_submission.py": {
       "sha256": "c36a6da99cd8b7dcfdecd9b5d0220bbe916acf85b93f67d4abcee2e53239b3e6",
       "bytes": 892
     },
     "submission/source_files.json": {
-      "sha256": "eaa597dfac16042856628cc491b2d4fa5b4ec86e3d4a7ccff98bc7fccbfb4796",
-      "bytes": 62651
+      "sha256": "fa057225dd7c89a3e3a4667b4bba155ab73cd75fa80083f4a31f481acaf52e9a",
+      "bytes": 61391
     },
     "submission/validation.json": {
-      "sha256": "24d77d1811c4b8cca80ccf13c93f083569e8384590fa8df62274dfaaf84c8b0a",
-      "bytes": 8318
+      "sha256": "ca99b77db2394a31c2bdc36780b4d9e67c853a8eacdd3fbd098da1ef48d6f007",
+      "bytes": 9162
+    },
+    "visualization/hypocotyl.py": {
+      "sha256": "f50579bb117b6f95baf0a6669e9d9f471e265842eaf4b3b411aafc94710d2b75",
+      "bytes": 3697
+    },
+    "visualization/temperature.py": {
+      "sha256": "f4c8a1d9fa4c9d098babae5f4fc61cb5ecec975abc5f12b8ae74accfc157f0c7",
+      "bytes": 11851
     },
     "wheat/code/data.py": {
       "sha256": "bfc4ad0dfb638a860e17e9ead5a917a148cbd763e6ad9b4102be63d7f1bc2696",
@@ -1684,5 +1632,6 @@
       "sha256": "8cb8f551319844108ce34eca43553109e14c5ca8ba28dced585cc090903d4254",
       "bytes": 44134
     }
-  }
+  },
+  "default_branch": "main"
 }
