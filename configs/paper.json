@@ -1,0 +1,305 @@
+{
+  "manuscript_title": "PhytoODE: Learning plant growth dynamics across genotypes and observation regimes",
+  "source_commit": "9671ca42605ad6ab1543c527daa6466fa3e80e06",
+  "datasets": {
+    "wheat": {
+      "lambda_ode": 3.16227766,
+      "lambda_k": 0.1,
+      "models": {
+        "phytoode": {
+          "checkpoints": {
+            "1": {
+              "path": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed1/checkpoint.pt",
+              "sha256": "5d2b3cdeb30c8aefac661bf777e920ee222d69004789de92cd0600f249014e8e"
+            },
+            "2": {
+              "path": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed2/checkpoint.pt",
+              "sha256": "b2b3c0e6b68031cd8c7b0b980a4ad5bf441d79c4e938f646a09b4173d7828931"
+            },
+            "3": {
+              "path": "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed3/checkpoint.pt",
+              "sha256": "3d5925010c6277f6d0c3f634cc4ed551121c4dcbd94ca31eb86077fc56d2d3ec"
+            }
+          }
+        },
+        "latent_ode": {
+          "checkpoints": {
+            "1": {
+              "path": "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/checkpoint.pt",
+              "sha256": "77c2f910a08825113fde240de673fd1851e4ed985d83504aed5f1fd24005e279"
+            },
+            "2": {
+              "path": "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/checkpoint.pt",
+              "sha256": "a2246367d6af86188051d320c317f82e72e19cbd1e19d29528958d22592b9786"
+            },
+            "3": {
+              "path": "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/checkpoint.pt",
+              "sha256": "b20de666c67d0a209736d71777c7f31ad8022dac03170a558044d2711320b6ca"
+            }
+          }
+        }
+      }
+    },
+    "maize": {
+      "lambda_ode": 0.5,
+      "lambda_k": 0.5,
+      "models": {
+        "phytoode": {
+          "checkpoints": {
+            "1": {
+              "path": "experiments/results/physics_ablation_20260908/maize/full_seed1/checkpoint.pt",
+              "sha256": "67de3f895e4136ff9e93c704d152fdb3e049c35a611a545eb8248618aba0b95a",
+              "original_path": "experiments/results/physics_ablation_20260908/maize/full_seed1/checkpoint.pt",
+              "best_epoch": 190
+            },
+            "2": {
+              "path": "experiments/results/adopted_phytoode_20260908/maize/seed2/checkpoint.pt",
+              "sha256": "28dcbd151d72978a80c344607163223b9f3b9df2dd261dcbb47953c4bf2ba553",
+              "original_path": "maize/results/tuning_20260904/trials/l160/seed2/checkpoint.pt",
+              "best_epoch": 730
+            },
+            "3": {
+              "path": "experiments/results/adopted_phytoode_20260908/maize/seed3/checkpoint.pt",
+              "sha256": "d6c7fcc07c5329c19f3da095badfccd277407e54f00656959216e3bf7bf1c634",
+              "original_path": "maize/results/tuning_20260904/trials/l160/seed3/checkpoint.pt",
+              "best_epoch": 910
+            }
+          }
+        },
+        "latent_ode": {
+          "checkpoints": {
+            "1": {
+              "path": "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/checkpoint.pt",
+              "sha256": "4309d37160ab8e704cbf762dd58c184b63ab30c8772a96f75353164dbfe97b7a"
+            },
+            "2": {
+              "path": "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/checkpoint.pt",
+              "sha256": "64a50644569895ca510e3a09e1b56eefe1efaf150b483054555f9b3a2dbd566f"
+            },
+            "3": {
+              "path": "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/checkpoint.pt",
+              "sha256": "752e206bafc0200c39d2de9297ef946311e93197bd70c970d68cec82472cb2ee"
+            }
+          }
+        },
+        "capacity_only": {
+          "checkpoints": {
+            "1": {
+              "path": "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/checkpoint.pt",
+              "sha256": "beeea3152cad4a2760321461a71a1bc636b622adcd497acdacb02129567740be"
+            },
+            "2": {
+              "path": "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/checkpoint.pt",
+              "sha256": "254cbcd6c0afa5cf326eccb6cfdc4b4da9b0a9f3e544f5e6939ffb065123d44c"
+            },
+            "3": {
+              "path": "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/checkpoint.pt",
+              "sha256": "bc93521003a6f51cf45a910c19756cd76dd7f0aee24b1434c3b57a5d1b5fff52"
+            }
+          }
+        }
+      }
+    },
+    "arabidopsis": {
+      "lambda_ode": 0.5,
+      "lambda_k": 0.1,
+      "models": {
+        "phytoode": {
+          "checkpoints": {
+            "1": {
+              "path": "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed1/checkpoint.pt",
+              "sha256": "94185c958b3aae1fdcf70f7f70edea04575d8f288d5d72ae3f7c959ffc3a1c6d"
+            },
+            "2": {
+              "path": "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed2/checkpoint.pt",
+              "sha256": "0158c8eeaf50ea12626cf2b441fde857943427209880361b9d74b5fde0be60ca"
+            },
+            "3": {
+              "path": "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed3/checkpoint.pt",
+              "sha256": "c360222b37f644921bfc1d7f437edd0cf3c230ba03de0d28d4863cb8139bb6c5"
+            }
+          }
+        },
+        "latent_ode": {
+          "checkpoints": {
+            "1": {
+              "path": "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/checkpoint.pt",
+              "sha256": "8a3fa27b501a7554b89bf17d624d053d6581d1c059122196c4d38a5bfb6924e8"
+            },
+            "2": {
+              "path": "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/checkpoint.pt",
+              "sha256": "e8f0eca1976b4cbb828a0c19e1c644d8013e41196c8a9875b64abb2b49c986ab"
+            },
+            "3": {
+              "path": "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/checkpoint.pt",
+              "sha256": "8ed5c1cd2182b4c3541c7178a0ed8151bb40fe5c5fb70b3874e9640fc2c8623c"
+            }
+          }
+        }
+      }
+    },
+    "hypocotyl": {
+      "models": {
+        "phytoode": {
+          "config": {
+            "model": "phytoode_light",
+            "lr": 0.01,
+            "lambda_ode": 500.0,
+            "lambda_k": 0.1,
+            "weight_decay": 0.0001,
+            "epochs": 1500
+          },
+          "checkpoints": {
+            "1": {
+              "path": "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed1/checkpoint.pt",
+              "sha256": "30af71fb6e6600fa5081df9a881fcf9930dae18e485b6fc96151377669a987b3"
+            },
+            "2": {
+              "path": "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed2/checkpoint.pt",
+              "sha256": "2ff86ee8a3059dd72a6593320c72d44b26fc8d5fc6ed928cc2fbb5c090c6c67a"
+            },
+            "3": {
+              "path": "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed3/checkpoint.pt",
+              "sha256": "008d179670fc55a8c93d342e76d03135f2750bff473980725676dcccf9ec4a1f"
+            }
+          }
+        },
+        "phytoode_light_fixed": {
+          "config": {
+            "model": "phytoode_light",
+            "lr": 0.01,
+            "lambda_ode": 50.0,
+            "lambda_k": 0.01,
+            "weight_decay": 0.0001,
+            "epochs": 1500
+          },
+          "checkpoints": {
+            "1": {
+              "path": "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed1/checkpoint.pt",
+              "sha256": "bd3bad44caa1bae7bd58b2e90367b3858bfdb5b68367cc6d2ad36971eb7a83e7"
+            },
+            "2": {
+              "path": "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed2/checkpoint.pt",
+              "sha256": "24e544db95de5404da2c79ca3074034af770f5acf741fbb5336428d294d9eed1"
+            },
+            "3": {
+              "path": "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed3/checkpoint.pt",
+              "sha256": "afac4f7d5270e66eb39b3c7a6296819ad5d7136e344e02f8495a44bd021b744b"
+            }
+          }
+        },
+        "phytoode_no_light": {
+          "config": {
+            "model": "phytoode",
+            "lr": 0.01,
+            "lambda_ode": 50.0,
+            "lambda_k": 0.01,
+            "epochs": 1500,
+            "weight_decay": 0.0001
+          },
+          "checkpoints": {
+            "1": {
+              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed1/checkpoint.pt",
+              "sha256": "dc7d1df5839d1f60262d5a97f4dd9bfd3b3ff890b4ce4f2f80fbf6b21b2d14a1"
+            },
+            "2": {
+              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed2/checkpoint.pt",
+              "sha256": "99615815148ffddf74e05b50d0a18972de0c423441fac629fa30277ae3816fc1"
+            },
+            "3": {
+              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed3/checkpoint.pt",
+              "sha256": "bf55a2f7f0afb493cc9b951d9ffb626291fd96d9b0262e08ae77a1e0acf70efc"
+            }
+          }
+        },
+        "latent_ode": {
+          "config": {
+            "model": "latent_ode",
+            "lr": 0.01,
+            "lambda_ode": 0.0,
+            "lambda_k": 0.0,
+            "epochs": 1500,
+            "weight_decay": 0.0001
+          },
+          "checkpoints": {
+            "1": {
+              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1/checkpoint.pt",
+              "sha256": "123350f4a84dcdd59e8044d6d08bf9a165db86d2e5d226f443c2a8589e5f7c66"
+            },
+            "2": {
+              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2/checkpoint.pt",
+              "sha256": "da37fd7789854d69548e2adf45e267aea7af5bb3cff17691a9da072170bee7c7"
+            },
+            "3": {
+              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3/checkpoint.pt",
+              "sha256": "3ac1646cf0c2c96da8c323122eba80af418d58bc45fc21d330f9dd4740e95046"
+            }
+          }
+        },
+        "logistic_pinn": {
+          "config": {
+            "model": "logistic_pinn",
+            "lr": 0.003,
+            "lambda_ode": 50.0,
+            "lambda_k": 0.01,
+            "epochs": 1500,
+            "weight_decay": 0.0001
+          },
+          "checkpoints": {
+            "1": {
+              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed1/checkpoint.pt",
+              "sha256": "c681bd7a8cd73aff2b42adb086004243414fde83c3bc73d60b7bb258193e7c05"
+            },
+            "2": {
+              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed2/checkpoint.pt",
+              "sha256": "c9210ec02301e77f3f8f49190e375ce391880447559978c54a7f1f8c16e2b914"
+            },
+            "3": {
+              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed3/checkpoint.pt",
+              "sha256": "8c5889fe9b547ef2f08d25e2aa83863afbd85592191f728403cd84adc579c1ef"
+            }
+          }
+        },
+        "lstm": {
+          "config": {
+            "model": "lstm",
+            "lr": 0.01,
+            "lambda_ode": 0.0,
+            "lambda_k": 0.0,
+            "epochs": 1500,
+            "weight_decay": 0.0001
+          },
+          "checkpoints": {
+            "1": {
+              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed1/checkpoint.pt",
+              "sha256": "7f84b749fbdad0a265a9c168baef3a65d8bc6e208213ac85a78258eca8c12144"
+            },
+            "2": {
+              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed2/checkpoint.pt",
+              "sha256": "7734b997aca3fa87897882afede7a20e772f5ffed245fff308ca0a14acd426c0"
+            },
+            "3": {
+              "path": "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed3/checkpoint.pt",
+              "sha256": "94cfb8ee4a3aeaa384b761c477e98bd42a665e1d7cb6c38795cf73f2dc7a460d"
+            }
+          }
+        },
+        "rf": {
+          "config": {
+            "model": "rf",
+            "min_samples_leaf": 1
+          },
+          "checkpoints": {}
+        },
+        "logistic": {
+          "config": {
+            "model": "logistic"
+          },
+          "checkpoints": {}
+        }
+      },
+      "protocol": "replicate",
+      "condition": "12L12D"
+    }
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "based_on": "seed-1 validation only",
-  "lambdas": [
-    500.0,
-    223.6067977,
-    50.0
-  ]
-}

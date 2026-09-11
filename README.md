@@ -1,123 +1,249 @@
-# Genotype-conditioned latent Neural ODE for plant growth
+# PhytoODE
 
-This repository contains the data, code, and audited results used for the
-wheat, maize and *Arabidopsis thaliana* experiments in the accompanying manuscript.
-The files are organized by dataset:
+**Learning plant growth dynamics across genotypes and observation regimes**
 
-```text
-.
-├── wheat/
-│   ├── data/       # processed field data and kinship matrix
-│   ├── code/       # latent Neural ODE training and analysis
-│   └── results/    # 3-seed paper outputs, checkpoints, tables, figures
-├── arabidopsis/
-│   ├── data/       # supplementary workbook and processed stem lengths
-│   ├── code/       # preprocessing, baselines, training, plotting
-│   └── results/    # 3-seed paper outputs, fitted ODE parameters, figures
-├── maize/          # Sweet et al. (2024) data and 3-seed model comparison
-├── hypocotyl/      # author-collected snapshots and a 12L12D-only evaluation
-├── paper/          # LaTeX manuscript, bibliography, and final figures
-└── legacy/         # exploratory and superseded experiments (git-ignored)
-```
+This is the submission snapshot of the code, selected models, and author-collected
+dataset for the PhytoODE manuscript. PhytoODE combines genotype-conditioned latent
+neural ODE dynamics with logistic derivative and carrying-capacity regularization
+in phenotype space. Environmental inputs are temperature for the published
+datasets and binary illumination for the hypocotyl experiment.
 
-The prediction tasks use different generalization units. Wheat uses a
-year-held-out split across 19 genotypes. Arabidopsis uses a plant-held-out
-split across nine genotypes and two temperature regimes, with only four stem
-measurements per plant. The latter is a low-time-resolution external
-validation, not an unseen-genotype or unseen-temperature test.
-The additional [hypocotyl experiment](hypocotyl/README.md) currently uses 943
-12L12D snapshot measurements across five genotypes and seven times at 23°C.
-The cR condition is excluded. Six methods receive genotype and elapsed time only,
-with an ordinary logistic reference for PhytoODE and Logistic-PINN. Following the
-restored initial protocol, primary training and evaluation targets are replicate
-means calculated separately within each partition. Missing cells are omitted,
-and missing time groups are not imputed. Individual-length RMSE is reported
-separately. Source-row groups are not verified longitudinal plant identifiers.
-A [PhytoODE-only follow-up](hypocotyl/reports/light_input_20260910/results.md)
-adds the known binary illumination state, retains ordinary logistic physics,
-and tunes its hyperparameters while keeping all earlier baseline fits and
-evaluation targets unchanged. Both holdouts and a fixed-hyperparameter feature
-comparison are included; this follow-up has an additional tuning budget.
-The manuscript adopts its validation-selected model for the primary replicate
-holdout, with 0.3460 mm / 6.85% test error. The author-collected dataset and
-evaluation workflow are described as planned for public release with the article.
+This branch contains the experiments reported in the manuscript. The development
+history and exploratory experiments remain on the repository's `main` branch.
+The final configuration is defined by [`configs/paper.json`](configs/paper.json).
+The fixed submission version is tagged `submission-20260911`. Verification
+results are recorded in [`submission/validation.json`](submission/validation.json).
 
-## Environment
-
-Python 3.10 or newer is recommended.
+## Installation
 
 ```bash
-python -m venv .venv
+git clone --depth 1 --branch codex/submission-20260911 \
+  https://github.com/HwijaeSon/Plant_height.git
+cd Plant_height
+python3.12 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
 
-Dataset-specific commands and result provenance are documented in
-[`wheat/README.md`](wheat/README.md) and
-[`arabidopsis/README.md`](arabidopsis/README.md). The manuscript notes are in
-[`paper/README.md`](paper/README.md).
+If GitHub requires authentication for this repository, use an account with
+repository access; pushing this snapshot does not change repository visibility.
 
-The additional [maize dataset](maize/README.md) includes a completed
-year-held-out comparison: 402 shared genotypes, 3,072 plot trajectories, and
-31,894 observed targets. Its UAV heights use relative units, not metres.
-Source-file discrepancies and preprocessing are documented in the
-[maize data report](maize/reports/dataset_report.md).
-The [maize model comparison](maize/results/chronological_final_seed1_3/comparison.md)
-reports a 2021 test RMSE of `79.611 ± 13.117` relative-height units for our
-latent Neural ODE versus `98.767 ± 10.196` for LSTM-NN (seeds 1--3).
-The subsequent [ours-only maize tuning](maize/results/tuning_20260904/final/README.md)
-selected the configuration using 2020 validation only and reduced its 2021
-test rRMSE from `25.84 ± 4.26%` to `18.40 ± 1.42%`.
+The verified environment uses Python 3.12 and PyTorch 2.9.0; package versions are
+pinned in `requirements.txt`. CPU execution is supported. For a CPU-only PyTorch
+installation, install `torch==2.9.0` from the
+[official CPU wheel index](https://download.pytorch.org/whl/cpu) before installing
+the remaining requirements. GPU execution requires a compatible CUDA-enabled
+PyTorch installation. The reported models were trained with CUDA; changes in
+hardware or numerical libraries can change retraining results.
 
-The [three-dataset relative-error comparison](paper/relative_errors/README.md)
-expresses the existing RMSE and MAE as percentages of each evaluation split's
-mean target. Its main maize `Ours` row now uses that validation-selected tuned
-result; the pre-tuning row remains in the full table. It includes all available
-baselines and explicitly documents the initial fill points in the original
-wheat scoring mask.
+All commands below run from the repository root. New outputs go under the ignored
+`outputs/` directory. A run refuses to overwrite an existing output directory.
 
-The [matched physics-loss ablation](experiments/README.md) compares the same
-PhytoODE architectures and training settings with the logistic ODE residual
-removed, and with both biological loss terms removed, on all three datasets.
-It preserves paired initialization and validation-only checkpoint selection.
+## Quick start: our hypocotyl dataset
 
-The subsequent [ODE-residual coefficient search](experiments/results/lambda_ode_tuning_20260908/README.md)
-varies only the residual weight and selects it using three-seed validation
-errors. It compares the selected positive weight with the original weight,
-zero residual weight, and removal of both biological losses. All new candidate
-training runs exclude test evaluation; final follow-up scores reuse the test
-sets already inspected in the preceding ablation.
-That historical search selected weights approximately 3.162 (wheat), 500
-(maize), and 0.5 (Arabidopsis). The current manuscript subsequently retained
-maize's original `(0.5, 0.5)` pair; see the
-[adopted configurations](experiments/phytoode_config.json).
-**Latent Neural ODE without physics loss sets both the ODE-residual
-and maximum-height coefficients to zero.** Tuned PhytoODE has lower mean test
-error than this baseline on all three datasets. The K-loss-only model retains
-the maximum-height coefficient and is a separate partial ablation; it is not
-the no-physics baseline. Against that partial ablation, tuned PhytoODE improves
-wheat and Arabidopsis but worsens maize. Maize tuning also worsens test error
-relative to original PhytoODE, so the joint-loss comparison does not establish
-a uniform benefit from the ODE-residual term or from coefficient tuning.
+The author-collected data and the selected checkpoints are included; no external
+download is needed for this example.
 
-## Audited paper results
+```bash
+# Verify extraction from the workbook, partition membership, and mean targets.
+python scripts/prepare_hypocotyl.py
 
-- Wheat tuned latent Neural ODE (1,655 parameters; seeds 1--3): test RMSE
-  `0.030322 ± 0.000662 m`.
-- Maize adopted latent Neural ODE (seeds 1--3): test RMSE
-  `56.684367 ± 4.369632` relative UAV-height units.
-- Arabidopsis latent Neural ODE (seeds 1--3): test RMSE
-  `2.799668 ± 0.016346 cm`.
-- [12L12D-only hypocotyl results](hypocotyl/reports/single_condition_20260909/results.md)
-  report both holdouts, all three splits, three-seed comparisons, and a matched
-  no-physics control. The restored initial search uses previously inspected
-  partitions and unequal candidate budgets across model families.
-- Prediction figures are restricted to the observed time span; no temporal
-  extrapolation is displayed.
+# Evaluate the submitted PhytoODE checkpoint on CPU.
+python run.py evaluate --dataset hypocotyl --seed 1 \
+  --output outputs/hypocotyl-evaluation
 
-## Before public release
+# Check forward propagation, physics derivatives, and backpropagation.
+python run.py smoke --dataset hypocotyl --output outputs/hypocotyl-smoke
 
-The source datasets and baseline outputs retain their original provenance.
-Confirm redistribution terms for every included data file, add the final
-author/affiliation/funding information in the manuscript, and choose a code
-license before publishing the repository.
+# Retrain the selected configuration for its complete 1,500-epoch schedule.
+python run.py train --dataset hypocotyl --seed 1 --device cuda:0 \
+  --output outputs/hypocotyl-training
+```
+
+Replace `--device cuda:0` with `--device cpu` to train without a GPU. Smoke runs
+perform two optimizer steps, evaluate training/validation only, and are explicitly
+labelled **not paper results**. They retain the full learning-rate schedule.
+
+## Datasets and evaluation protocols
+
+| Dataset | Included observations | Evaluation unit | Environment | Reported height unit |
+|---|---|---|---|---|
+| Wheat | 19 genotypes across four field seasons | Train: 2018–2019; validation: 2022; test: 2021 | Air temperature | m |
+| Maize | 402 genotypes, 3,072 plot trajectories, 31,894 measurements | Train: 2018–2019; validation: 2020; test: 2021 | Air temperature | Relative UAV height |
+| Arabidopsis stem length | 9 genotypes, two temperature regimes, 180 plants, four measurements per plant | Plants 1–6: train; 7–8: validation; 9–10: test | Temperature regime | cm |
+| Author-collected hypocotyl length | 943 measurements, five genotypes, seven times | 547/171/225 measurements in train/validation/test; 35 mean targets per partition | Binary light under 12L12D at 23°C | mm |
+
+All evaluated genotype identities occur during training. The hypocotyl manuscript
+experiment uses **12L12D only and replicate-group holdout**. Continuous red light
+and the exploratory 36/60-hour holdout are excluded from the submission evaluation.
+Details and the data dictionary are in [`hypocotyl/README.md`](hypocotyl/README.md).
+
+### Download the published datasets
+
+```bash
+python scripts/download_data.py --dataset all
+python scripts/prepare_data.py --dataset all
+```
+
+To prepare one dataset, replace `all` with `wheat`, `maize`, or `arabidopsis` in both
+commands. To verify existing downloads without fetching anything:
+
+```bash
+python scripts/download_data.py --dataset all --verify-only
+```
+
+The downloader obtains the exact upstream inputs used in this study. Individual
+data files are checked against SHA-256 values in
+[`configs/data_sources.json`](configs/data_sources.json). Supplement archives are
+containers: their extracted workbook contents, rather than potentially variable
+ZIP metadata, are verified. Existing mismatched files are not overwritten.
+
+- **Wheat:** the aligned phenotype/environment CSV and kinship table come from
+  the [Shao et al. companion repository](https://github.com/YingjieShao/PINN_for_plant_height_forecasting/tree/3da92f51f42d3fde5e06f6fc8ce8f233490a389c),
+  pinned to commit `3da92f51f42d3fde5e06f6fc8ce8f233490a389c`.
+  These are the processed benchmark inputs, not raw ETH sensor data.
+  The model uses one-hot genotype encoding; the existing loader also reads the
+  kinship table. See [Shao et al., DOI 10.1016/j.compag.2026.111988](https://doi.org/10.1016/j.compag.2026.111988)
+  for the reference protocol. Loading performs the published alignment, cropping,
+  split, and normalization; no additional preprocessing command is required.
+- **Maize:** supplementary workbooks come from
+  [Sweet et al., DOI 10.1111/tpj.17092](https://doi.org/10.1111/tpj.17092)
+  via [Europe PMC](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11629746/supplementaryFiles).
+  Station temperature files are downloaded from the
+  [author repository](https://github.com/HirschLabUMN/WiDiv_Drone_Height/tree/8fed4415f99f7ee4f8e43fb088319622bedc81a3),
+  pinned to commit `8fed4415f99f7ee4f8e43fb088319622bedc81a3`.
+  The related original deposit is [DRUM, DOI 10.13020/SKJN-QX31](https://doi.org/10.13020/SKJN-QX31).
+  The submission downloader fetches tabular inputs needed by preprocessing, not
+  UAV rasters. The reported response has relative UAV-height units; it must not
+  be interpreted as centimetres or metres.
+- **Arabidopsis stem length:** the supplementary workbook from
+  [Ebrahimi Naghani et al., DOI 10.1186/s12870-024-05394-w](https://doi.org/10.1186/s12870-024-05394-w)
+  is obtained through [Europe PMC](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11285529/supplementaryFiles).
+  `prepare_data.py` extracts the primary inflorescence stem-length sheets into a
+  720-row table. This dataset is distinct from the hypocotyl dataset collected here.
+
+External raw and processed inputs are excluded from this submission snapshot and
+restored by the commands above. Their original terms and attribution requirements
+apply; see [`THIRD_PARTY.md`](THIRD_PARTY.md).
+
+## Train PhytoODE or evaluate the submitted models
+
+The same interface supports all four datasets:
+
+```bash
+python run.py train --dataset wheat --seed 1 --device cuda:0 \
+  --output outputs/wheat-training
+python run.py train --dataset maize --seed 1 --device cuda:0 \
+  --output outputs/maize-training
+python run.py train --dataset arabidopsis --seed 1 --device cuda:0 \
+  --output outputs/arabidopsis-training
+```
+
+Use seeds `1`, `2`, and `3` in separate output directories for the manuscript's
+three-seed evaluation. The default model is `phytoode`; `--model latent_ode` sets
+both physics coefficients to zero. For hypocotyls this baseline uses genotype and
+time without illumination, matching its manuscript input specification.
+
+| Dataset | λ_ODE | λ_K | Epochs | Parameters |
+|---|---:|---:|---:|---:|
+| Wheat | 3.16227766 | 0.1 | 1,500 | 1,655 |
+| Maize | 0.5 | 0.5 | 3,000 | 9,003 |
+| Arabidopsis stem length | 0.5 | 0.1 | 1,500 | 4,607 |
+| Hypocotyl length | 500 | 0.1 | 1,500 | 1,103 |
+
+Training uses the paper's architecture, optimizer, learning-rate schedule,
+gradient clipping, and dataset-specific validation checkpoint rule. It saves the
+selected checkpoint and its selection record before evaluating test targets.
+`history.csv`, `checkpoint.pt`, `selection.json`, `predictions.npz`, and
+`result.json` are written to the chosen directory. For temperature datasets,
+reported training metrics use replicate-averaged curves, while fitting uses
+individual plot/plant trajectories.
+
+Evaluate bundled checkpoints without retraining:
+
+```bash
+python run.py evaluate --dataset maize --seed 1 --device cpu \
+  --output outputs/maize-evaluation
+```
+
+Evaluate a newly trained checkpoint:
+
+```bash
+python run.py evaluate --dataset wheat --seed 1 \
+  --checkpoint outputs/wheat-training/checkpoint.pt \
+  --output outputs/wheat-reloaded
+```
+
+Prediction arrays are stored on each model's integration grid in training units.
+The `scale`/`height_scale_mm` definitions in the data loaders convert them to the
+reported physical or relative-height unit. `result.json` metrics are already in
+the reported units. These examples run on the supplied study datasets; adapting
+to a new experiment requires a data loader and a new validation design.
+
+## Baselines, tables, and figures
+
+[`docs/REPRODUCTION.md`](docs/REPRODUCTION.md) describes baseline commands, the
+manuscript-to-code mapping, and the distinction between re-evaluating saved
+predictions and retraining models. Wheat LSTM-NN and Logi-PINN table entries are
+the reference authors' reported outputs, not newly trained replacements.
+
+```bash
+# Export the manuscript's four comparison tables from recorded metrics.
+python scripts/report_results.py --output outputs/paper-tables
+
+# Regenerate the manuscript prediction figures after external data preparation.
+python scripts/make_figures.py --output outputs/paper-figures
+
+# Verify the checksums of the submitted code, data, configurations, and results.
+python scripts/verify_submission.py
+```
+
+Expected PhytoODE test scores are mean ± sample standard deviation over seeds 1–3:
+
+| Dataset | RMSE | Relative RMSE |
+|---|---:|---:|
+| Wheat | 0.03032 ± 0.00066 m | 10.24 ± 0.22% |
+| Maize | 56.68 ± 4.37 relative UAV-height units | 18.40 ± 1.42% |
+| Arabidopsis stem length | 2.800 ± 0.016 cm | 14.06 ± 0.08% |
+| Hypocotyl length | 0.346 ± 0.008 mm | 6.85 ± 0.15% |
+
+RMSE is averaged over trajectories. Relative RMSE is `100 × mean trajectory
+RMSE / mean scored target`, calculated separately for each partition; it is not
+MAPE. The denominator is shared by all models within a dataset and partition.
+Hypocotyl targets are partition-specific genotype/time replicate means, not
+individual lengths. The latter are reported as a separate pooled RMSE.
+
+## Interpretation and reproducibility
+
+- Wheat retains the reference initial-fill mask: 475 of 1,368 scored test
+  positions precede the first actual observation. Other datasets use observed
+  targets. Missing tensor entries with zero masks are placeholders, not imputed
+  zero-length training targets.
+- The environmental encoder uses the known environmental sequence over the
+  prediction interval. These experiments assess scenario-conditioned prediction
+  within observed time intervals, not prospective forecasting or unseen-genotype
+  prediction.
+- The coefficient studies and hypocotyl extension reused previously inspected
+  test partitions. The maize `(0.5, 0.5)` setting was retained after the later
+  search and was not that search's validation optimum. The temperature-dataset
+  unregularized controls were not independently retuned.
+- Hypocotyl PhytoODE received the illumination feature and additional tuning;
+  its retained baselines did not. This is a comparison of complete predictors,
+  not a matched isolation of the physics-loss effect. The fixed-hyperparameter
+  illumination comparison is included separately because it is discussed in the
+  manuscript.
+- Standard deviations describe training-seed variation, not uncertainty across
+  independent experiments. Retraining on another platform need not reproduce
+  every reported digit; bundled checkpoints and predictions preserve the exact
+  submitted runs.
+
+## Data and citation
+
+The submitted hypocotyl workbook, tidy observations, and fixed partitions are
+available under [`hypocotyl/data`](hypocotyl/data). No DOI has been assigned to
+this GitHub snapshot. Cite the accompanying manuscript using
+[`CITATION.cff`](CITATION.cff), and cite each original external dataset when using
+it. This snapshot does not assign an additional open-source or data-reuse licence;
+upstream rights are retained and enquiries about reuse should be directed to the
+corresponding author.

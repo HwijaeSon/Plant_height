@@ -1,7 +1,0 @@
-{
-  "status": "passed",
-  "epochs": 10,
-  "initial_state_sha256": "69eef57c83b6acfa024793f3a41f26f2f0a428ca5c21eddb3f4e6d641d600873",
-  "training_and_validation_prefix": "matches reference",
-  "test_evaluations": 0
-}

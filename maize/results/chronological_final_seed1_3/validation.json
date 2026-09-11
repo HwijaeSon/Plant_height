@@ -1,9 +1,0 @@
-{
-  "status": "passed",
-  "complete_runs": 14,
-  "source_hashes": "unchanged",
-  "metrics": "all recomputed from saved predictions",
-  "checkpoint_selection": "all 9 neural runs match validation-only rule",
-  "training_budgets": "all 9 neural runs completed configured epochs",
-  "test_metrics_in_training_history": false
-}

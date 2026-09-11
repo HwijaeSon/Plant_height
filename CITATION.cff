@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying PhytoODE manuscript and the original datasets when using this submission."
+type: software
+title: "PhytoODE: Learning plant growth dynamics across genotypes and observation regimes"
+authors:
+  - family-names: Lim
+    given-names: Yeoul
+  - family-names: You
+    given-names: Siyoung
+  - family-names: Kim
+    given-names: Hanim
+  - family-names: Son
+    given-names: Hwijae
+version: submission-20260911
+date-released: 2026-09-11
+repository-code: "https://github.com/HwijaeSon/Plant_height"
+url: "https://github.com/HwijaeSon/Plant_height/tree/codex/submission-20260911"

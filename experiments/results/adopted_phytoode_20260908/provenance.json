@@ -1,9 +1,0 @@
-{
-  "config_path": "experiments/phytoode_config.json",
-  "config_sha256": "adce6a4fb9a05bdaa030f00228b5e142b74f1f59fe9a911aa8a57dedc4cd8d0c",
-  "source_metrics": "experiments/results/joint_lambda_tuning_20260908/per_seed_metrics.csv",
-  "source_metrics_sha256": "03c866dd985c356a7874fa45e19655ec04facbf3ff3e0dc49a1f04eb5e3b7a0f",
-  "new_training_runs": 0,
-  "new_test_evaluations": 0,
-  "note": "User-directed adoption; historical validation selection is preserved."
-}

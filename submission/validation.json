@@ -1,0 +1,256 @@
+{
+  "date": "2026-09-11",
+  "device": "cpu",
+  "python": "3.12.2",
+  "platform": "Linux-4.18.0-425.3.1.el8.x86_64-x86_64-with-glibc2.28",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "torch": "2.9.0",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.5.1",
+    "matplotlib": "3.10.9",
+    "openpyxl": "3.1.5",
+    "joblib": "1.4.2"
+  },
+  "external_inputs": {
+    "scientific_files_sha256_verified": 22,
+    "downloaded_archive_containers": 2,
+    "all_preprocessing_commands_passed": true,
+    "wheat_years": {
+      "train": [
+        2018,
+        2019
+      ],
+      "validation": [
+        2022
+      ],
+      "test": [
+        2021
+      ]
+    }
+  },
+  "author_collected_data": {
+    "observations": 943,
+    "partition_counts": {
+      "train": 547,
+      "test": 225,
+      "val": 171
+    },
+    "groups_per_partition": {
+      "test": 35,
+      "train": 35,
+      "val": 35
+    },
+    "original_workbook_extraction_and_target_comparison": "passed",
+    "missing_cells_imputed": false,
+    "training_target": "training-partition genotype/time replicate means"
+  },
+  "smoke_training": {
+    "wheat": {
+      "optimizer_steps": 2,
+      "physics_backward": "passed",
+      "test_evaluations": 0
+    },
+    "maize": {
+      "optimizer_steps": 2,
+      "physics_backward": "passed",
+      "test_evaluations": 0
+    },
+    "arabidopsis": {
+      "optimizer_steps": 2,
+      "physics_backward": "passed",
+      "test_evaluations": 0
+    },
+    "hypocotyl": {
+      "optimizer_steps": 2,
+      "physics_backward": "passed",
+      "test_evaluations": 0
+    }
+  },
+  "exported_main_comparison_rows": 81,
+  "checkpoint_evaluations": [
+    {
+      "dataset": "wheat",
+      "split": "train",
+      "n_checkpoints": 3,
+      "rmse_mean": 0.022309362579660954,
+      "rmse_sd": 6.669270400334704e-05,
+      "relative_rmse_mean_percent": 7.452702006773905,
+      "maximum_mean_difference_from_recorded": 5.763500929845122e-07,
+      "maximum_sd_difference_from_recorded": 2.5389409916143357e-07,
+      "reported_precision_matches": true
+    },
+    {
+      "dataset": "wheat",
+      "split": "val",
+      "n_checkpoints": 3,
+      "rmse_mean": 0.03768041330314393,
+      "rmse_sd": 0.0007745445004429117,
+      "relative_rmse_mean_percent": 11.304841047437336,
+      "maximum_mean_difference_from_recorded": 1.7644841676656142e-07,
+      "maximum_sd_difference_from_recorded": 1.768061265478016e-06,
+      "reported_precision_matches": true
+    },
+    {
+      "dataset": "wheat",
+      "split": "test",
+      "n_checkpoints": 3,
+      "rmse_mean": 0.030321671970710586,
+      "rmse_sd": 0.0006623714669121516,
+      "relative_rmse_mean_percent": 10.237332174546937,
+      "maximum_mean_difference_from_recorded": 1.5782155582400037e-06,
+      "maximum_sd_difference_from_recorded": 3.6630008212745757e-07,
+      "reported_precision_matches": true
+    },
+    {
+      "dataset": "maize",
+      "split": "train",
+      "n_checkpoints": 3,
+      "rmse_mean": 41.897400315800674,
+      "rmse_sd": 14.37042420599382,
+      "relative_rmse_mean_percent": 13.427167636633948,
+      "maximum_mean_difference_from_recorded": 1.9811308568762342e-05,
+      "maximum_sd_difference_from_recorded": 1.3127050012329278e-05,
+      "reported_precision_matches": true
+    },
+    {
+      "dataset": "maize",
+      "split": "val",
+      "n_checkpoints": 3,
+      "rmse_mean": 47.24652391834002,
+      "rmse_sd": 2.6006053054417726,
+      "relative_rmse_mean_percent": 18.64057133036304,
+      "maximum_mean_difference_from_recorded": 2.071463453034994e-05,
+      "maximum_sd_difference_from_recorded": 1.529819229251217e-05,
+      "reported_precision_matches": true
+    },
+    {
+      "dataset": "maize",
+      "split": "test",
+      "n_checkpoints": 3,
+      "rmse_mean": 56.68434014054257,
+      "rmse_sd": 4.369678266927437,
+      "relative_rmse_mean_percent": 18.398780185912404,
+      "maximum_mean_difference_from_recorded": 2.704523128471692e-05,
+      "maximum_sd_difference_from_recorded": 4.657063380353321e-05,
+      "reported_precision_matches": true
+    },
+    {
+      "dataset": "arabidopsis",
+      "split": "train",
+      "n_checkpoints": 3,
+      "rmse_mean": 1.4210584153593517,
+      "rmse_sd": 0.029565662909070263,
+      "relative_rmse_mean_percent": 6.754317705687082,
+      "maximum_mean_difference_from_recorded": 6.256766162948679e-06,
+      "maximum_sd_difference_from_recorded": 7.769486082165322e-06,
+      "reported_precision_matches": true
+    },
+    {
+      "dataset": "arabidopsis",
+      "split": "val",
+      "n_checkpoints": 3,
+      "rmse_mean": 3.1914657481758,
+      "rmse_sd": 0.03313023124355483,
+      "relative_rmse_mean_percent": 15.849901650320867,
+      "maximum_mean_difference_from_recorded": 6.400398442352184e-06,
+      "maximum_sd_difference_from_recorded": 1.296050803792359e-05,
+      "reported_precision_matches": true
+    },
+    {
+      "dataset": "arabidopsis",
+      "split": "test",
+      "n_checkpoints": 3,
+      "rmse_mean": 2.799667789606366,
+      "rmse_sd": 0.016345282513029684,
+      "relative_rmse_mean_percent": 14.057889709769533,
+      "maximum_mean_difference_from_recorded": 1.171716187187144e-06,
+      "maximum_sd_difference_from_recorded": 5.090597042359257e-06,
+      "reported_precision_matches": true
+    },
+    {
+      "dataset": "hypocotyl",
+      "split": "train",
+      "n_checkpoints": 3,
+      "rmse_mean": 0.19038462642726117,
+      "rmse_sd": 0.007653183868897547,
+      "relative_rmse_mean_percent": 3.751079933529189,
+      "maximum_mean_difference_from_recorded": 3.497694320842015e-07,
+      "maximum_sd_difference_from_recorded": 1.2255471494859727e-06,
+      "reported_precision_matches": true
+    },
+    {
+      "dataset": "hypocotyl",
+      "split": "val",
+      "n_checkpoints": 3,
+      "rmse_mean": 0.277658885836368,
+      "rmse_sd": 0.001058759646380173,
+      "relative_rmse_mean_percent": 5.4844641709542765,
+      "maximum_mean_difference_from_recorded": 1.4971056003787453e-06,
+      "maximum_sd_difference_from_recorded": 1.1445743582430556e-06,
+      "reported_precision_matches": true
+    },
+    {
+      "dataset": "hypocotyl",
+      "split": "test",
+      "n_checkpoints": 3,
+      "rmse_mean": 0.34601846504577044,
+      "rmse_sd": 0.007692229837548771,
+      "relative_rmse_mean_percent": 6.850466811359588,
+      "maximum_mean_difference_from_recorded": 5.362477670800558e-07,
+      "maximum_sd_difference_from_recorded": 1.3580224220433035e-06,
+      "reported_precision_matches": true
+    }
+  ],
+  "regenerated_figures": [
+    {
+      "file": "paper/figures/arabidopsis_col0_no_extrapolation.png",
+      "pixel_arrays_identical": true
+    },
+    {
+      "file": "paper/figures/hypocotyl_light_input.png",
+      "pixel_arrays_identical": true
+    },
+    {
+      "file": "paper/figures/maize_test_predictions.png",
+      "pixel_arrays_identical": true
+    },
+    {
+      "file": "paper/figures/wheat_test_curves_no_extrapolation.png",
+      "pixel_arrays_identical": true
+    }
+  ],
+  "full_hypocotyl_retraining": {
+    "epochs": 1500,
+    "selected_epoch": 580,
+    "test_rmse_mm": 0.350320373597718,
+    "reloaded_predictions_identical": true,
+    "note": "CPU retraining verification only; does not replace the submitted CUDA-trained results."
+  },
+  "baseline_execution": {
+    "hypocotyl_logistic": "full fit passed",
+    "hypocotyl_random_forest": "full fit passed",
+    "hypocotyl_unregularized_latent_ode": "two optimizer steps passed; both physics coefficients zero",
+    "wheat_maize_arabidopsis_original_baseline_clis": "import and help passed; complete baseline retraining was not repeated"
+  },
+  "original_model_implementations_unchanged": [
+    "wheat/code/model.py",
+    "arabidopsis/code/models.py",
+    "arabidopsis/code/latent_ode_model.py",
+    "hypocotyl/code/single_condition_models.py",
+    "hypocotyl/code/light_input_model.py"
+  ],
+  "clean_git_archive": {
+    "status": "passed",
+    "included_files_only": true,
+    "external_inputs_present": false,
+    "environment": "Verified Python environment reused; no imports from the development repository.",
+    "checks": [
+      "submission manifest verification",
+      "workbook extraction and frozen-target comparison",
+      "hypocotyl seed-1 checkpoint evaluation",
+      "hypocotyl two-step training with physics backpropagation"
+    ]
+  }
+}

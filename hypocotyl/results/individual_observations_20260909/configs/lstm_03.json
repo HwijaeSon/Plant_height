@@ -1,8 +1,0 @@
-{
-  "model": "lstm",
-  "lr": 0.01,
-  "lambda_ode": 0.0,
-  "lambda_k": 0.0,
-  "epochs": 2000,
-  "weight_decay": 0.0001
-}

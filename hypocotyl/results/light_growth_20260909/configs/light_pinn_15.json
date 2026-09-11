@@ -1,7 +1,0 @@
-{
-  "model": "light_pinn",
-  "lr": 0.01,
-  "lambda_ode": 500.0,
-  "lambda_k": 0.1,
-  "epochs": 1500
-}

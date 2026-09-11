@@ -1,0 +1,1688 @@
+{
+  "version": "submission-20260911",
+  "branch": "codex/submission-20260911",
+  "source_development_commit": "9671ca42605ad6ab1543c527daa6466fa3e80e06",
+  "description": "Hashes of submitted files, excluding this manifest itself, downloaded external inputs, and local execution outputs.",
+  "files": {
+    ".gitattributes": {
+      "sha256": "3273638924b179376f4a2aa867045ed0a5c13b87e4f489c141ffbb3a9116c265",
+      "bytes": 310
+    },
+    ".gitignore": {
+      "sha256": "82e18d0bb2a7b895624eb2a73c3324fd5fb12e50173b6ce77d9822b55db45d9b",
+      "bytes": 417
+    },
+    "CITATION.cff": {
+      "sha256": "c8588dba979291da44b57c3c1b2050287d617ba481e397e4b6d5d3b5e90ddb63",
+      "bytes": 627
+    },
+    "README.md": {
+      "sha256": "a31f34c91d59e343d0d352abee60f1dece8fa54b03db079d16cddec72a1a5bbe",
+      "bytes": 12738
+    },
+    "THIRD_PARTY.md": {
+      "sha256": "c8b82eea7e6c4f5f9cbba0799ca621d2e03d6edb58028b75853c50777a156c1e",
+      "bytes": 2532
+    },
+    "arabidopsis/code/latent_ode_model.py": {
+      "sha256": "73d5e8fa2796c937c856926994a05b6ce137152d12c06e375a122fe00e22b271",
+      "bytes": 20588
+    },
+    "arabidopsis/code/models.py": {
+      "sha256": "ac478ae8d98c494f377f01af0d0493cc08841100a93e67941f914a0922259e19",
+      "bytes": 7023
+    },
+    "arabidopsis/code/prepare_data.py": {
+      "sha256": "cea53019d501828116197512dbb0b1047bfed376077f08b433b9a5a257d02b23",
+      "bytes": 3453
+    },
+    "arabidopsis/code/run_experiment.py": {
+      "sha256": "01fc2982aec26f4e828ef5e403616a34ffb3d019b6901ee75db375b68f996e77",
+      "bytes": 33371
+    },
+    "arabidopsis/results/all_runs_seed1_3.csv": {
+      "sha256": "aab1a207f766e2ef5b618630b4d2f66cd6926ea3778643d77d483ceb1207a528",
+      "bytes": 2582
+    },
+    "arabidopsis/results/fitted_process_parameters.json": {
+      "sha256": "d23254df9218369bbb01fa1d9310bd313cf6c30e70d1fea0cbe8c2ed59680ff6",
+      "bytes": 1129
+    },
+    "arabidopsis/results/predictions_seed1_3.csv": {
+      "sha256": "71dcfd4c07ea9518c17ce846c559d32233ca590a2612dcae65b49e693e9f19f1",
+      "bytes": 1026771
+    },
+    "configs/data_sources.json": {
+      "sha256": "2f470e5b102da1b87988df63ba60f0873060dcd23b07cd52764c219d01c1b0f9",
+      "bytes": 7311
+    },
+    "configs/paper.json": {
+      "sha256": "f0a053012fa77b2d47f0adab4c767acf86107967c7590f324cb697f08e7f0341",
+      "bytes": 12947
+    },
+    "docs/REPRODUCTION.md": {
+      "sha256": "57714535d94bcd3930415a8e89928e85c4393f512d4846572f2b7280cd075f43",
+      "bytes": 7320
+    },
+    "experiments/physics_ablation.py": {
+      "sha256": "1094f8b2025428a3bd3f564c91cb0e62bc8b7635843544035da3ee6bc08884cb",
+      "bytes": 14417
+    },
+    "experiments/phytoode_config.json": {
+      "sha256": "adce6a4fb9a05bdaa030f00228b5e142b74f1f59fe9a911aa8a57dedc4cd8d0c",
+      "bytes": 5347
+    },
+    "experiments/results/adopted_phytoode_20260908/comparison.csv": {
+      "sha256": "7d8e6b15f50a0c88189ac01d9a274fa93f27ac91b353005651cdb4744ceb79a1",
+      "bytes": 2383
+    },
+    "experiments/results/adopted_phytoode_20260908/maize/seed2/checkpoint.pt": {
+      "sha256": "28dcbd151d72978a80c344607163223b9f3b9df2dd261dcbb47953c4bf2ba553",
+      "bytes": 48704
+    },
+    "experiments/results/adopted_phytoode_20260908/maize/seed3/checkpoint.pt": {
+      "sha256": "d6c7fcc07c5329c19f3da095badfccd277407e54f00656959216e3bf7bf1c634",
+      "bytes": 48704
+    },
+    "experiments/results/adopted_phytoode_20260908/per_seed_metrics.csv": {
+      "sha256": "ec8a463dd676d15ea01ae4a9dd01e90b954c3b3a7987158506c3f2a4cb7551b0",
+      "bytes": 9735
+    },
+    "experiments/results/joint_lambda_tuning_20260908/all_baselines_per_seed.csv": {
+      "sha256": "4a17d5663c1f1bd84f2d494ed33989789aae9edd23b6e23f04e988ee5c0717ad",
+      "bytes": 18096
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/final/selected_phyto/seed1/predictions.npz": {
+      "sha256": "0cbdd07068243bba781277d18f653617b19d1382726e687e4dc07fd4f5b6ccef",
+      "bytes": 8413
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/final/selected_phyto/seed1/result.json": {
+      "sha256": "acd305d32810676a3c65123a0086e21c65a528ee875d3591ed8f0ba1f0640c4a",
+      "bytes": 1133
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/final/selected_phyto/seed2/predictions.npz": {
+      "sha256": "01eb19f328bc0d8ee3d01c83ad7b4682ecef8971bbb394ddf3d9906598325c53",
+      "bytes": 8416
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/final/selected_phyto/seed2/result.json": {
+      "sha256": "0aed4afb4df3d56dde8743c630563f64945253c5cdf01c46327b189a31686531",
+      "bytes": 1134
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/final/selected_phyto/seed3/predictions.npz": {
+      "sha256": "b0d1613bf2c63cc916d242b1730e7e27b837e12aaea3627d93f6829209d69835",
+      "bytes": 8428
+    },
+    "experiments/results/joint_lambda_tuning_20260908/arabidopsis/final/selected_phyto/seed3/result.json": {
+      "sha256": "bf448c56ec17e91dba3aedff416ad3129902aabd9a52eafd7771f68b023cbaf4",
+      "bytes": 1132
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/final/selected_phyto/seed1/predictions.npz": {
+      "sha256": "666e871ed2df3360bb84847a1e7ed28075b5f6786b6a6fbc14930bc81b7be286",
+      "bytes": 77067
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/final/selected_phyto/seed1/result.json": {
+      "sha256": "102335be1b70a9868933f08257895156f3a0f88f0425e5220c43f7211205a196",
+      "bytes": 1151
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/final/selected_phyto/seed2/predictions.npz": {
+      "sha256": "697befd2f9d8225ac342dc32e572ed646482e92c683c82b3082d88fe446fe44c",
+      "bytes": 77173
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/final/selected_phyto/seed2/result.json": {
+      "sha256": "3405cac75042c5c852ab46bba19a3f3933e7e064089ab99e83387b5ea9b5801f",
+      "bytes": 1149
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/final/selected_phyto/seed3/predictions.npz": {
+      "sha256": "3e75e8e3c47203a8ea1356ee0b277dc5b8d3c1acd817c3690536782e8b5471bb",
+      "bytes": 77183
+    },
+    "experiments/results/joint_lambda_tuning_20260908/wheat/final/selected_phyto/seed3/result.json": {
+      "sha256": "db2c7e5efe53f5139a985845750f008fc1216da93e1f8d40176c5e57c6600f5c",
+      "bytes": 1152
+    },
+    "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed1/checkpoint.pt": {
+      "sha256": "94185c958b3aae1fdcf70f7f70edea04575d8f288d5d72ae3f7c959ffc3a1c6d",
+      "bytes": 26694
+    },
+    "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed1/history.csv": {
+      "sha256": "9cfa9ee1a5c41dc3e2c9226e38a65d0ea11b89f4f2649cc4a34ea87a188cb633",
+      "bytes": 22666
+    },
+    "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed2/checkpoint.pt": {
+      "sha256": "0158c8eeaf50ea12626cf2b441fde857943427209880361b9d74b5fde0be60ca",
+      "bytes": 26694
+    },
+    "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed2/history.csv": {
+      "sha256": "31befac2d5ad0931e586ed54557b8a9d88485610330a219622a819afae41e1dd",
+      "bytes": 22611
+    },
+    "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed3/checkpoint.pt": {
+      "sha256": "c360222b37f644921bfc1d7f437edd0cf3c230ba03de0d28d4863cb8139bb6c5",
+      "bytes": 26694
+    },
+    "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed3/history.csv": {
+      "sha256": "715b9eb01432fdbe5fb545e0ac925949fba0fea3c280e80dca8fb7817ac66166",
+      "bytes": 22624
+    },
+    "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed1/checkpoint.pt": {
+      "sha256": "5d2b3cdeb30c8aefac661bf777e920ee222d69004789de92cd0600f249014e8e",
+      "bytes": 14272
+    },
+    "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed1/history.csv": {
+      "sha256": "7bbb0c5907e422d53dcbe4508bf84d2c1cce912d8aab182e5520282f682eaba5",
+      "bytes": 23015
+    },
+    "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed2/checkpoint.pt": {
+      "sha256": "b2b3c0e6b68031cd8c7b0b980a4ad5bf441d79c4e938f646a09b4173d7828931",
+      "bytes": 14272
+    },
+    "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed2/history.csv": {
+      "sha256": "66e8ab24450b44df817de126abc6aa7e82438a1d2e6e1356c87edd2ffaca1bac",
+      "bytes": 23011
+    },
+    "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed3/checkpoint.pt": {
+      "sha256": "3d5925010c6277f6d0c3f634cc4ed551121c4dcbd94ca31eb86077fc56d2d3ec",
+      "bytes": 14272
+    },
+    "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed3/history.csv": {
+      "sha256": "0270ff4f1626f0e126b90e81337dd7993a8cd6a3eafa4fa36c2bd41301c0af13",
+      "bytes": 22984
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/checkpoint.pt": {
+      "sha256": "8a3fa27b501a7554b89bf17d624d053d6581d1c059122196c4d38a5bfb6924e8",
+      "bytes": 26613
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/config.json": {
+      "sha256": "7c1b410a766346326df43d34247acc663cd4f58c29bdd1ee35d68e68bd958961",
+      "bytes": 1095
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/history.csv": {
+      "sha256": "7c140dc7ff08cb2797c537b80593cb4c7a8007f4dba844b902962a91ed362d96",
+      "bytes": 15251
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/per_curve_metrics.csv": {
+      "sha256": "f4f65f2c5f425fe43847eef7a08d1e772bc571f167f666a0ca31216c4aba4be2",
+      "bytes": 1901
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/predictions.npz": {
+      "sha256": "471a8b71388297aa234efddce12a771563c2b6cc489e6cee3c2b80c63ecb27cd",
+      "bytes": 8416
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/progress.json": {
+      "sha256": "4af8e5251260a4ad0389dc8c71690cb78fcaa49d0f9d2c1023b10bcae7866e83",
+      "bytes": 115
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/result.json": {
+      "sha256": "b6eaa455680130657426bcfbefa4f5127a5e02f9ed1acea14f7d66b0728470a0",
+      "bytes": 1135
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/selection_frozen.json": {
+      "sha256": "bab919b337b59a45f4f7dacf8d38620ffbff43ec9fb71eba089fa648cda574dc",
+      "bytes": 180
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/checkpoint.pt": {
+      "sha256": "e8f0eca1976b4cbb828a0c19e1c644d8013e41196c8a9875b64abb2b49c986ab",
+      "bytes": 26613
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/config.json": {
+      "sha256": "aff678e52dd744fc8c363f2ef89c36a630361b8ffc2db5487fbc09b16b3b3f95",
+      "bytes": 1095
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/history.csv": {
+      "sha256": "866a65c464e6152cd3c0a24aa0a82f6d255149789269f37c7875460f7241cbc7",
+      "bytes": 15208
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/per_curve_metrics.csv": {
+      "sha256": "bf27d47011f9e3fd5f05998fd9869c50f0777f8503d00613c31863e3a79829b4",
+      "bytes": 1904
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/predictions.npz": {
+      "sha256": "0502e6e1597962c2e8cdac2bb3a5e87f089494d98d85a5a480e74dcbb0942537",
+      "bytes": 8437
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/progress.json": {
+      "sha256": "020c195dc99350782b3dee065eef602c296aa55b793c7f959ea1db139d2a5447",
+      "bytes": 116
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/result.json": {
+      "sha256": "ec37ae1f896717139f4c32a69ed47a3e1a49af56ebd3bd59edf5d2d495926f91",
+      "bytes": 1136
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/selection_frozen.json": {
+      "sha256": "608ee93b9c2de2a58b4cf7bc472cce872800c7d3f616951531780c8ba1460a27",
+      "bytes": 180
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/checkpoint.pt": {
+      "sha256": "8ed5c1cd2182b4c3541c7178a0ed8151bb40fe5c5fb70b3874e9640fc2c8623c",
+      "bytes": 26613
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/config.json": {
+      "sha256": "8aacf4efc8a937011de93e87570c2c8a0beb4c58b73714c90a61c7a38d09a2fb",
+      "bytes": 1095
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/history.csv": {
+      "sha256": "201bba76b1b282eabab2ff50694cfaaa1e4148a79478a62b325672e5e4e3d441",
+      "bytes": 15236
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/per_curve_metrics.csv": {
+      "sha256": "d42342e75b3b87c983ffbaba660c2e2755ba6abb7caf02c9a0aadb571d88c755",
+      "bytes": 1904
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/predictions.npz": {
+      "sha256": "87180e4e4cb36126d3129c1efd6b5397372c40649aadc742241395198fab9d19",
+      "bytes": 8407
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/progress.json": {
+      "sha256": "f20f51f068862c732e893f6dca7a6b0bd0ad4695d6cf0dfd107f7cb059ff7ddb",
+      "bytes": 116
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/result.json": {
+      "sha256": "e767d56ca0d564f352a5c3f3c4a58230e637f15c5e9957191e6f836ee251ffed",
+      "bytes": 1135
+    },
+    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/selection_frozen.json": {
+      "sha256": "c5a1527fe9be9baacf0cb7422a4e0232de38173733bdce5736497699b18854aa",
+      "bytes": 180
+    },
+    "experiments/results/physics_ablation_20260908/maize/full_seed1/checkpoint.pt": {
+      "sha256": "67de3f895e4136ff9e93c704d152fdb3e049c35a611a545eb8248618aba0b95a",
+      "bytes": 43573
+    },
+    "experiments/results/physics_ablation_20260908/maize/full_seed1/history.csv": {
+      "sha256": "9041627e4d1dcb2b182d2a080e4dc5d24efe714b0da41aa7316375db1a3be64d",
+      "bytes": 45541
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/checkpoint.pt": {
+      "sha256": "4309d37160ab8e704cbf762dd58c184b63ab30c8772a96f75353164dbfe97b7a",
+      "bytes": 43573
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/config.json": {
+      "sha256": "c8bf3816b4827f19159de1c86ded98b564b40530a44496ba700b71f71511484c",
+      "bytes": 1082
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/history.csv": {
+      "sha256": "24e17e285fd695ceeda1b0317459454dcac9b7da2e07e182e7750e0868e25109",
+      "bytes": 31309
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/per_curve_metrics.csv": {
+      "sha256": "94201fc4a78ed51d1f3161ca888c913e6e60f95a935afcc47bc9ab536e1637ae",
+      "bytes": 57864
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/predictions.npz": {
+      "sha256": "63720af63d956f9df4b374e57e41d9f841374ea8a5c9eacd8bc1a32d4ae9c138",
+      "bytes": 666032
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/progress.json": {
+      "sha256": "fe13b95ed3fc97b2ae494bb2aed056b89022141593dfb9e0c2076a58a574b553",
+      "bytes": 117
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/result.json": {
+      "sha256": "5bdf38bef8292b4a26c92f14f6f57d505159405ea846187a57d2b40e147d37e5",
+      "bytes": 1154
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/selection_frozen.json": {
+      "sha256": "23c10df6deecbefd35819389c4f45b05ee7a90242e2e76047cc2f76542d6e3cb",
+      "bytes": 179
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/checkpoint.pt": {
+      "sha256": "64a50644569895ca510e3a09e1b56eefe1efaf150b483054555f9b3a2dbd566f",
+      "bytes": 43573
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/config.json": {
+      "sha256": "31d6bbb4285fb80504ac9e7082468df5097c220fa6dd8704308229c86bb18c3e",
+      "bytes": 1082
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/history.csv": {
+      "sha256": "ea74389ecc3bea6c747c234e9d3036114a3aafc2fc1e397a4b577c74989667e1",
+      "bytes": 30986
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/per_curve_metrics.csv": {
+      "sha256": "6484d8bb14b13a7d1055efc6d980cdf1fec0b5102d7f6892fba559d89d0f8841",
+      "bytes": 57800
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/predictions.npz": {
+      "sha256": "b4c46ec4fe65cbf04a7696cbbe185b3830924546cc6c802cbc29918bbe4d7528",
+      "bytes": 666268
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/progress.json": {
+      "sha256": "c4d0dd6279a367d3a89a4bad8f8275772bc8f0278866a1b0e33383ff800af881",
+      "bytes": 115
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/result.json": {
+      "sha256": "7760c84843e2b88bd943819b75f77a928984f3d8f2ca31ad50954f9bc0e4662b",
+      "bytes": 1158
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/selection_frozen.json": {
+      "sha256": "6619eb99fc0af056d83de378319e8e72011bc87c108cefae493268c0944f80d1",
+      "bytes": 178
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/checkpoint.pt": {
+      "sha256": "752e206bafc0200c39d2de9297ef946311e93197bd70c970d68cec82472cb2ee",
+      "bytes": 43573
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/config.json": {
+      "sha256": "193216e0bd9b1f98a9671e6ee2028e432c5d1d93b1586f06e1dc146d157aae5f",
+      "bytes": 1082
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/history.csv": {
+      "sha256": "7b6abb69439a500bd5be6a117555ef1588d6d5544a144eea9dde92552d3d3e1a",
+      "bytes": 31340
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/per_curve_metrics.csv": {
+      "sha256": "0aaafd91df2b5640db2d7aa19d4ec88851ae0e42126c7ba68bc042918b7e129c",
+      "bytes": 57830
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/predictions.npz": {
+      "sha256": "02890cc5297936da17fc81254e1add73abdcbafc41cb5b2097bb2604d968bb83",
+      "bytes": 664891
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/progress.json": {
+      "sha256": "ad5a6741c35c1f73958fdd2451dc3838d5c1ff3967aa34b60900679084fe83bf",
+      "bytes": 116
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/result.json": {
+      "sha256": "f39056fd1002a6711527e32549208b1f005afe3ee29a595ddbb3c55f189796a9",
+      "bytes": 1160
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/selection_frozen.json": {
+      "sha256": "67b715afa585669a138d9133510cb0abf20642e3c8d6d06d3368552a5c234110",
+      "bytes": 179
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/checkpoint.pt": {
+      "sha256": "beeea3152cad4a2760321461a71a1bc636b622adcd497acdacb02129567740be",
+      "bytes": 43573
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/config.json": {
+      "sha256": "2ee5b967280056c1e11a7ddaf6bd20d87148c918cbce0aae13e600958de1389d",
+      "bytes": 1079
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/history.csv": {
+      "sha256": "5d75e442d3c61250cda0783083cebdd7f8dbe0ba96e440272b065770ff085fa9",
+      "bytes": 40180
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/per_curve_metrics.csv": {
+      "sha256": "e94242b362377d01294b3e88d880ec4af816be969968ee48b7c472a1a801d2e9",
+      "bytes": 57804
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/predictions.npz": {
+      "sha256": "9cd88a8bf75c77f0beca04b3d93820bee29c240328e78cbc28d1fdbe7da588e5",
+      "bytes": 666712
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/progress.json": {
+      "sha256": "38301e90582d137b10c2048c710a8608035642b58cbc0611a5c253a3f2d1c080",
+      "bytes": 117
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/result.json": {
+      "sha256": "e2009c1431feb7b53292aee66787643f9fd10c39d85c79acab73d3c2c35e1ada",
+      "bytes": 1157
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/selection_frozen.json": {
+      "sha256": "a75946c5f9cea6e0e76136285a8da4e50290444291802e745d123f6697523d6e",
+      "bytes": 179
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/checkpoint.pt": {
+      "sha256": "254cbcd6c0afa5cf326eccb6cfdc4b4da9b0a9f3e544f5e6939ffb065123d44c",
+      "bytes": 43573
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/config.json": {
+      "sha256": "d371c9bde499be3c2cf3a359e14a585025a4e2bbc9790b0b7fd2e1af01a441ef",
+      "bytes": 1079
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/history.csv": {
+      "sha256": "bad864e07267110eeda928ded73b585b99c252c5e4d77bbdab367628f8a91e2b",
+      "bytes": 40100
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/per_curve_metrics.csv": {
+      "sha256": "df7cb8c59d13d178c01930bb13ad0007b7b0500149823914aacbb59d23956ec1",
+      "bytes": 58035
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/predictions.npz": {
+      "sha256": "052c82e3bb0ec971bf45316d3e5da70e8e55854c3f21e51e788b70c062e88e66",
+      "bytes": 664242
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/progress.json": {
+      "sha256": "1609132ee21bcdadc73ed061e257fbd94b2e790ea978076edf80906a6ae4a307",
+      "bytes": 116
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/result.json": {
+      "sha256": "2b23c4b5d8a01c3452a51459794d165fe867180f682db961073edcbee6baf2cd",
+      "bytes": 1153
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/selection_frozen.json": {
+      "sha256": "15b50b13497d23c73daad109574ff542b0bdb078e80d7b3acaebc2d4c69f145b",
+      "bytes": 179
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/checkpoint.pt": {
+      "sha256": "bc93521003a6f51cf45a910c19756cd76dd7f0aee24b1434c3b57a5d1b5fff52",
+      "bytes": 43573
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/config.json": {
+      "sha256": "21a438663ea762cf74a4962001afbe755d454626dcdb059d0d4fb8a6de462b1b",
+      "bytes": 1079
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/history.csv": {
+      "sha256": "664acc6289d004a09f430e04c334f3248c0820407d2e150857613ce2bdb08168",
+      "bytes": 39855
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/per_curve_metrics.csv": {
+      "sha256": "5790b68ce0f976578c533337c186b6b5fae6074d9af580120c15e8c84be446b1",
+      "bytes": 57993
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/predictions.npz": {
+      "sha256": "4d3f9fedd7e04b21be62db40c6069b3c3b317681be16174879da4083fb64d963",
+      "bytes": 662862
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/progress.json": {
+      "sha256": "736be96c6eb9fdc0f3e625a2268c1e8d08a36053364c87dbc5a61c180f4565e2",
+      "bytes": 117
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/result.json": {
+      "sha256": "32f6f50f5a01567a3ba4227fd85165f14a6d574635636fd822cc976011cdb532",
+      "bytes": 1155
+    },
+    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/selection_frozen.json": {
+      "sha256": "4fb9c73016f60647c15257050cc7836811de269910b1c6b0cbf892b30b3cff95",
+      "bytes": 179
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/checkpoint.pt": {
+      "sha256": "77c2f910a08825113fde240de673fd1851e4ed985d83504aed5f1fd24005e279",
+      "bytes": 14197
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/config.json": {
+      "sha256": "61e73539c5f01609a96c3454507718c73e1b582c8e9931ffa59c0f6d1f4ec474",
+      "bytes": 1085
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/history.csv": {
+      "sha256": "8074fd434ee8896fe4033a91b45e5c53f58783ec5cb631fdc6a8de18fee28bbf",
+      "bytes": 15458
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/per_curve_metrics.csv": {
+      "sha256": "ca4a7eab4a995bb017e98fb10a007e273673cc8b7df94ee2ac78e6dd81defefe",
+      "bytes": 2694
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/predictions.npz": {
+      "sha256": "f56a0a6d2e014fe2b6e13d248fc09e635cf0247867ce04ce55ba5280b68834c0",
+      "bytes": 77090
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/progress.json": {
+      "sha256": "c1ffb18d4c209cd0bbf2e6c8c52a363e37c3ee8876d6cf7209fa7d5068391f77",
+      "bytes": 117
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/result.json": {
+      "sha256": "4b514754aa5df9f8db919a0adf1b304cb09a73597247f63d0c0c90baf64e890d",
+      "bytes": 1152
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/selection_frozen.json": {
+      "sha256": "291d6919fb92a6fa64f37adb69f2fa3381bac30c690fdc25f056d487435f5a7a",
+      "bytes": 182
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/checkpoint.pt": {
+      "sha256": "a2246367d6af86188051d320c317f82e72e19cbd1e19d29528958d22592b9786",
+      "bytes": 14197
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/config.json": {
+      "sha256": "08d9e95d8e3eaa7d01ae1408e364822b2150c53bf5763c58ec6d9be7e23109e6",
+      "bytes": 1085
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/history.csv": {
+      "sha256": "8d84eb640c594b3a16625944d72d0100c190c8f829bf14435c246594f76e177c",
+      "bytes": 15478
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/per_curve_metrics.csv": {
+      "sha256": "d8b6ffccbcef9ea5425d48adb5dbae40f81b3939f7c696ef6d39588b06cc0252",
+      "bytes": 2691
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/predictions.npz": {
+      "sha256": "cd1325f6070b574f92c895c20d06400c0c3665a106e6e18b35bb026e0197f7ba",
+      "bytes": 77145
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/progress.json": {
+      "sha256": "68d4e36b5f49d9168dc94dfad7067affe9fd8bb08531506c146b8283e411a574",
+      "bytes": 116
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/result.json": {
+      "sha256": "d42cc2a8a5bb4b5b4ba52764468e3c19e906abdec374b15dd2fcde4475818f91",
+      "bytes": 1151
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/selection_frozen.json": {
+      "sha256": "c0adb0034b32d4b1e1fde6abd5186a562505c2280641a16057a151cb9ce0aaa8",
+      "bytes": 182
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/checkpoint.pt": {
+      "sha256": "b20de666c67d0a209736d71777c7f31ad8022dac03170a558044d2711320b6ca",
+      "bytes": 14197
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/config.json": {
+      "sha256": "d1a8ca5565b997c7739b3f238f98b08b9d89cbdabfe20170b04e70cda2e2ac07",
+      "bytes": 1085
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/history.csv": {
+      "sha256": "273767afda0d1602c3ceb22d9706a9d9028238dc447c3133f79cf3f0a7845b2a",
+      "bytes": 15416
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/per_curve_metrics.csv": {
+      "sha256": "f98144a63b89b3375e0c188d89ac0c01a53fd6d7cc3a54398edd6f774f1f9fa3",
+      "bytes": 2688
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/predictions.npz": {
+      "sha256": "60b119cb5a0d93b64f54b18935b1d0e40604c1b5183e53a54669f5e59e8cde04",
+      "bytes": 77180
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/progress.json": {
+      "sha256": "b2a77496fd3f8363f1fb020368770c77889c7c3cac60416cd57714dc9368a04a",
+      "bytes": 116
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/result.json": {
+      "sha256": "df695d9906d0aae134aa57e368bf1ba199cb9f6422db786ebe984d2350369d7f",
+      "bytes": 1153
+    },
+    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/selection_frozen.json": {
+      "sha256": "7b3961e2933eb0dc785c56a42d8aea0576d93694f24ca8ca408694e5dc0dc530",
+      "bytes": 182
+    },
+    "hypocotyl/README.md": {
+      "sha256": "34774bf872f160c74a195361d97809b2f4b2a0d1e43134704ddc6a14dee4bc08",
+      "bytes": 5272
+    },
+    "hypocotyl/code/light_input_model.py": {
+      "sha256": "d710f6db9799e97cda8627dbb7c72ba7ede906c6ff2b6afaed89224020e8d003",
+      "bytes": 2811
+    },
+    "hypocotyl/code/prepare_data.py": {
+      "sha256": "d1b11485a6ceb67dadf964c2b64d5665cea07174d9254e5871c5c81ebaa5716e",
+      "bytes": 3017
+    },
+    "hypocotyl/code/single_condition_baselines.py": {
+      "sha256": "f9d8a438c768e64116a2781ffa27de279984c5f7df47c00c6a10c05351ae3f38",
+      "bytes": 1916
+    },
+    "hypocotyl/code/single_condition_data.py": {
+      "sha256": "a57cb1b7b47ea816988b24bc58b2137f46a8b7ffe6b43fe001a96aa2a0498251",
+      "bytes": 2921
+    },
+    "hypocotyl/code/single_condition_models.py": {
+      "sha256": "8116c31a537ee6f1c7dd2fdd8689c2d0483c636ce56c36660b8657f04e869ca2",
+      "bytes": 4186
+    },
+    "hypocotyl/data/metadata.json": {
+      "sha256": "7026b1027b06758b60d79471a8999c542a0cb80c46f6fa491c26adddaec612b7",
+      "bytes": 1181
+    },
+    "hypocotyl/data/observations_12L12D.csv": {
+      "sha256": "b6e58d2330a7357830b1b03c94c7ccc5dc00055ec0fa00e552fa1663ed98dace",
+      "bytes": 44362
+    },
+    "hypocotyl/data/processed/single_condition_20260909/replicate/config.json": {
+      "sha256": "f0bfeac257851ed184d9f2b9e97493d0f23e9ec0ffc2e709c809e778c30521cc",
+      "bytes": 592
+    },
+    "hypocotyl/data/processed/single_condition_20260909/replicate/test.csv": {
+      "sha256": "be3200c7cb39ddc7d6183057d34efb19387566379edef41e6170bfcbc003e9b0",
+      "bytes": 10536
+    },
+    "hypocotyl/data/processed/single_condition_20260909/replicate/test_means.csv": {
+      "sha256": "b90d1ec71a986cac4ca0b6cc55ec6fe3034a5d116fa7f17c665eed3a58c8a1c9",
+      "bytes": 838
+    },
+    "hypocotyl/data/processed/single_condition_20260909/replicate/train.csv": {
+      "sha256": "0af70919d2757ee882e6be5c4333835e72f3d101e7314056706724680c91b5b8",
+      "bytes": 26097
+    },
+    "hypocotyl/data/processed/single_condition_20260909/replicate/train_means.csv": {
+      "sha256": "d65a810ef8a6ed0f67b26ded6460535204c58f6920009e555ce130a2f7e68231",
+      "bytes": 997
+    },
+    "hypocotyl/data/processed/single_condition_20260909/replicate/val.csv": {
+      "sha256": "595853bb649856643a4fd76609748207353cd3f6003d85dac51d0608f542f096",
+      "bytes": 7917
+    },
+    "hypocotyl/data/processed/single_condition_20260909/replicate/val_means.csv": {
+      "sha256": "d9c379ae2eb936e5520086869ea4fbed62bbbc3b21cd764310a672339e6e2e54",
+      "bytes": 829
+    },
+    "hypocotyl/data/raw/hypocotyl_growth_20230403.xlsx": {
+      "sha256": "62b64ad2aef1467f1278b8602d56ea6c7642fabbd5fbc1409aec13e4e40277e4",
+      "bytes": 72180
+    },
+    "hypocotyl/data/split_assignments.csv": {
+      "sha256": "0f8409077c10d32bd4b2e992cc15b326d55e697d7ee90f0476f63dda14d1dbad",
+      "bytes": 15508
+    },
+    "hypocotyl/reports/light_input_20260910/comparison.csv": {
+      "sha256": "19f2ce923b39968c252686dc63d370b936b86f4c34e6e8854fb64d9ffc24a1a6",
+      "bytes": 4023
+    },
+    "hypocotyl/reports/light_input_20260910/integration_refinement.csv": {
+      "sha256": "7502856a29735e50d3f9db1dce5537a11e056181939b4130f28f6016465c484e",
+      "bytes": 517
+    },
+    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light/seed1/predictions.npz": {
+      "sha256": "95b338ef90e94f4d0a56949d476c61754d57b184d83e18804053bb1e10332a68",
+      "bytes": 2995
+    },
+    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light/seed1/result.json": {
+      "sha256": "cfa8e5a030abf98a9e5d5daa60f2b4b75bedafe0e61ad0266603b2c81ce629f4",
+      "bytes": 1692
+    },
+    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light/seed2/predictions.npz": {
+      "sha256": "8adaf5a4be4e88bd33061500d7a77e3a839ca07968481cac3cf9db280cdde2b1",
+      "bytes": 3004
+    },
+    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light/seed2/result.json": {
+      "sha256": "6d104966460ba550023a774506aa4dd2b799609fe3c928aab0aa7a8812aac244",
+      "bytes": 1693
+    },
+    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light/seed3/predictions.npz": {
+      "sha256": "ae85ddd6800fddb857c26914a435e119a255d7316842954773a2bb8014948c67",
+      "bytes": 2997
+    },
+    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light/seed3/result.json": {
+      "sha256": "b29901b34256a2b6c25857b84d39f60a82e2010c5dedb63fef48a1eb6bb77aa2",
+      "bytes": 1692
+    },
+    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light_anchor/seed1/predictions.npz": {
+      "sha256": "5b20d582472f6d85e4dc4bea9da2d0b53f7a567568f396e02105ab1da20202bf",
+      "bytes": 2998
+    },
+    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light_anchor/seed1/result.json": {
+      "sha256": "0c4344d416add9149d198457a2954c36769316c84ea42da3776954007fefdc98",
+      "bytes": 1703
+    },
+    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light_anchor/seed2/predictions.npz": {
+      "sha256": "c679a1588eec276701596bac9a6cab5111bd108651725860b2afc9ab505e241c",
+      "bytes": 2999
+    },
+    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light_anchor/seed2/result.json": {
+      "sha256": "ade2363f4706a04e29b2bda7b5c1d07550b973017be897c3fdcd48e448f47f75",
+      "bytes": 1702
+    },
+    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light_anchor/seed3/predictions.npz": {
+      "sha256": "d938774699638839264fe6164873494225b1fad5f19326a35fbfc4fd785d4843",
+      "bytes": 2997
+    },
+    "hypocotyl/results/light_input_20260910/replicate/final/phytoode_light_anchor/seed3/result.json": {
+      "sha256": "623bf9a7c16fde8ec0b2adf2697e251e4c70e6134c742191179a25771edd16cc",
+      "bytes": 1702
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed1/checkpoint.pt": {
+      "sha256": "bd3bad44caa1bae7bd58b2e90367b3858bfdb5b68367cc6d2ad36971eb7a83e7",
+      "bytes": 10997
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed1/history.csv": {
+      "sha256": "3659ea01fbc4a610d1cad9bb68338d072d5f18f01c9e0b0912c52cbc1351af0f",
+      "bytes": 12848
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed1/predictions.npz": {
+      "sha256": "6ebf93879170e7b73a86b8521dc2f6896e61615d4b4f529bd6799cdc43845827",
+      "bytes": 2239
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed1/progress.json": {
+      "sha256": "3584e00b836b5ca5145b7ea981e56fb18d6ea9ddded86a2fae14a3c391776824",
+      "bytes": 116
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed1/result.json": {
+      "sha256": "211882afe819c1bbaac7981da531e298ce9427106c6132a82cc0d5b55e8b0621",
+      "bytes": 1781
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed2/checkpoint.pt": {
+      "sha256": "24e544db95de5404da2c79ca3074034af770f5acf741fbb5336428d294d9eed1",
+      "bytes": 10997
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed2/history.csv": {
+      "sha256": "f50ae25a541a170ebe68166dc3bc295ffd9bed7927723cf18aef0b99bbb0c7d8",
+      "bytes": 12870
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed2/predictions.npz": {
+      "sha256": "3a1f9fd1a19db08284c65e1390bdf9fe90d0d6126bdcb96f3a7194c234208628",
+      "bytes": 2240
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed2/progress.json": {
+      "sha256": "cc07147d02766cb22011d91c8cedc3432b8efd7609826543286e6a47b839b0fc",
+      "bytes": 116
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed2/result.json": {
+      "sha256": "e7811e83efecbbcc0937a4331af257cac863e0c910031a077a1b888f820ea2c6",
+      "bytes": 1778
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed3/checkpoint.pt": {
+      "sha256": "afac4f7d5270e66eb39b3c7a6296819ad5d7136e344e02f8495a44bd021b744b",
+      "bytes": 10997
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed3/history.csv": {
+      "sha256": "87e02068f3e0a2a867e6cb87e9711c2ed44a7312951a1fe85fdcfd276048f6f5",
+      "bytes": 12849
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed3/predictions.npz": {
+      "sha256": "03c62e04f99d901367ceb868f1ad3a99a4d210c9f4d9e0f35d85e05debf18a9a",
+      "bytes": 2238
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed3/progress.json": {
+      "sha256": "8c221d03c5c0193b88a906918af2d48a68341b57d55aca1a346965380aba0f84",
+      "bytes": 117
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_12/seed3/result.json": {
+      "sha256": "0b41e35e71f461b4cea0f8adb2e9d6a90dfd662d6643c28863303d5eea6c201f",
+      "bytes": 1777
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed1/checkpoint.pt": {
+      "sha256": "30af71fb6e6600fa5081df9a881fcf9930dae18e485b6fc96151377669a987b3",
+      "bytes": 10997
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed1/history.csv": {
+      "sha256": "2aa85a463e0918a101ba06eedcf7f799f7861ecd6152fec83a91b0a483f2220e",
+      "bytes": 12802
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed1/predictions.npz": {
+      "sha256": "219e73159d1360732cd4f6502abaec3664b7726f8c2fed27e069d1b3e0ab709a",
+      "bytes": 2236
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed1/progress.json": {
+      "sha256": "ccb8b36b5dc2d0761503c7cf1cc9daf52c42b74cfe1e559bb456bbefeb86be51",
+      "bytes": 116
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed1/result.json": {
+      "sha256": "9822529352202a97a5730f493c7409488a4a818330c94ba92f9fa5adc62b0662",
+      "bytes": 1776
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed2/checkpoint.pt": {
+      "sha256": "2ff86ee8a3059dd72a6593320c72d44b26fc8d5fc6ed928cc2fbb5c090c6c67a",
+      "bytes": 10997
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed2/history.csv": {
+      "sha256": "05e091492368692f5bc09f9123285858490c50ccd06d5b68c812ffc779f7fcec",
+      "bytes": 12772
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed2/predictions.npz": {
+      "sha256": "8f2f5e1f727fd94412d206c35a37f8625a05588ca8e3a3762afcbf2c4a508488",
+      "bytes": 2245
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed2/progress.json": {
+      "sha256": "476dc1397eeae9c1fd33f5784eb02b36fc96939daa6ba312bf34a7101867060e",
+      "bytes": 116
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed2/result.json": {
+      "sha256": "bb7de98935724f13756eb308cf7b47cdce9df6e37599827086cb6331ef121526",
+      "bytes": 1778
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed3/checkpoint.pt": {
+      "sha256": "008d179670fc55a8c93d342e76d03135f2750bff473980725676dcccf9ec4a1f",
+      "bytes": 10997
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed3/history.csv": {
+      "sha256": "3595730cb454953a7eb55c2554fb8f89ad80114aaf088bd858cec3c24b98f890",
+      "bytes": 12768
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed3/predictions.npz": {
+      "sha256": "dc7ae9c32f592ea42986a084206e26d506aa06eefce9af6cfd324be963f66e98",
+      "bytes": 2238
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed3/progress.json": {
+      "sha256": "9ee451e064a9e1d04f77e8a2ba0d23ee685ad9a8108b88935482c4cb038993fc",
+      "bytes": 115
+    },
+    "hypocotyl/results/light_input_20260910/replicate/trials/light_15/seed3/result.json": {
+      "sha256": "fe276bc013f253a02f10c9bfb9a9f99787c378e6cad503cb453bbfc4f83b1ca2",
+      "bytes": 1775
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed1/predictions.npz": {
+      "sha256": "18acfceb08141bbe6dd0b71829aa8c007263dc16c83e854e294da4525cca0703",
+      "bytes": 2996
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed1/result.json": {
+      "sha256": "2d1fecdd0c1e5ae894638511b1e2fa3c21f63d77438dee9d0c132e34ffa94f7e",
+      "bytes": 1685
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed2/predictions.npz": {
+      "sha256": "80b51de22f5e959d2d7eb9a32e0737b2204d678a30bd25f6839809267fdec6fd",
+      "bytes": 3002
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed2/result.json": {
+      "sha256": "7219d7c29cefff0f0db48c5fc229f84c8beac6fc1909febacf59d124186bce50",
+      "bytes": 1688
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed3/predictions.npz": {
+      "sha256": "4e6aca8e55be7c3cddcc7fb66be71ae837445ca9fc1d9882e8e6ec40b3b78753",
+      "bytes": 2996
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/latent_ode/seed3/result.json": {
+      "sha256": "b5105bec4c39e62171c72436ba468ba0d5a076ee752bcc8190e817625bd52173",
+      "bytes": 1689
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic/seed1/predictions.npz": {
+      "sha256": "85b15d33f38cc3d3714d6643eb0adcdebc604011c9bb5098cd6469e150748b87",
+      "bytes": 3496
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic/seed1/result.json": {
+      "sha256": "7e26fd85f7abddd956f3bd1a54caad5bbbe16a1b784f0e2a3609043f53c099ae",
+      "bytes": 1684
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed1/predictions.npz": {
+      "sha256": "eb84dbd2f7c9a422f97a634b2c7719c9827935f8f7df981ef44c34e588b665cf",
+      "bytes": 2995
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed1/result.json": {
+      "sha256": "b24b6afd230398c7ee6b8373da7c9126e58729852e4b772123ef00f8ae28519a",
+      "bytes": 1689
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed2/predictions.npz": {
+      "sha256": "de5da63445cbc24598b66e548d0c366e288b24931190cd2ecc0dedeb7d5b6d09",
+      "bytes": 3000
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed2/result.json": {
+      "sha256": "9e36d88085ef57ca7b045822ab97760751253842d95090f63c676e4f2dc6d61d",
+      "bytes": 1692
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed3/predictions.npz": {
+      "sha256": "53630f38d6747f86effcd44103cc73653530658a8ca0af188b87b72f5dfddfd7",
+      "bytes": 3001
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/logistic_pinn/seed3/result.json": {
+      "sha256": "b040ea27a851e95d90b304467bb42c5cf994ea8ded4515a86141871e777892af",
+      "bytes": 1686
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed1/predictions.npz": {
+      "sha256": "0fb8d6f3b0bd7bcd6d951277af04c21a1d86fa996e69003f62ff0645552a32a0",
+      "bytes": 3001
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed1/result.json": {
+      "sha256": "56a577f9ed7ba178887a52de3af9f942541d0f6d7779f06ab92cc4e4f07d913b",
+      "bytes": 1684
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed2/predictions.npz": {
+      "sha256": "d355290b89ae5c9daafb00bef0c3efa28352a5d6cca07b0637b58bc46f3b0ad6",
+      "bytes": 2999
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed2/result.json": {
+      "sha256": "1f2710bfce1f6f20488576134fc800bbc13d652bf48128a39f7f3e19e029e524",
+      "bytes": 1682
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed3/predictions.npz": {
+      "sha256": "b6a1eb146d1be415c89d2a135fc4ed45a6753409973b1c21ff71f4ef078156ea",
+      "bytes": 2994
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/lstm/seed3/result.json": {
+      "sha256": "7d0f4b60b25227409226e4fd996b93a082012baf6e8ef836b38db8ddc0e063ac",
+      "bytes": 1682
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed1/predictions.npz": {
+      "sha256": "916077e5a25ee6e849caae4095ba1f7990ab104df145325eb493272e093ac5b2",
+      "bytes": 3000
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed1/result.json": {
+      "sha256": "6b547cf512355b4cd23ec6053da7c5cac90e36b786eb892a5efd4b4190c84a97",
+      "bytes": 1682
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed2/predictions.npz": {
+      "sha256": "5d9468c783b8af39c6877d0ed3c0255bd666da2421f5d6562669fe870b14a731",
+      "bytes": 3003
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed2/result.json": {
+      "sha256": "2c5dac825658b9fbe6f281d38457ada3d4d487d81af043644d9783fd61d4d154",
+      "bytes": 1690
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed3/predictions.npz": {
+      "sha256": "b5a1f539a94ee70541626279bc65b35adf1a7c7d99108b80407f384685e195fb",
+      "bytes": 2998
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/phytoode/seed3/result.json": {
+      "sha256": "1801a85d40ff2b39f7bd76d59d70f79ec00d8847eb15b1f54ad183e77aa24333",
+      "bytes": 1687
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed1/predictions.npz": {
+      "sha256": "63b95d55b0504873b10a29951a86eb2ebe146fb83d7d9aad2e09df3deb37534a",
+      "bytes": 2995
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed1/result.json": {
+      "sha256": "2fc41e99e9ddc6c0ff14243bef556792eec16bb028380971a42ace51a448ddaa",
+      "bytes": 1680
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed2/predictions.npz": {
+      "sha256": "9b3ac00de35cddec687d5e5f1b87d1ad5d268895b05ab9b877234d68773a9a01",
+      "bytes": 3031
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed2/result.json": {
+      "sha256": "3c6f400c04067cebf0094a1ae9d0027361c9dfe4f0a40000a4e54032244eea53",
+      "bytes": 1675
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed3/predictions.npz": {
+      "sha256": "80814d2c132db76974e558471167169c527d62cf1106d2506e9b44cce01f6fa4",
+      "bytes": 3016
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/final/rf/seed3/result.json": {
+      "sha256": "f083b05de99ea68093facc1609b387d7b0faf116674979ffbf4e8701f443af26",
+      "bytes": 1672
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1/checkpoint.pt": {
+      "sha256": "123350f4a84dcdd59e8044d6d08bf9a165db86d2e5d226f443c2a8589e5f7c66",
+      "bytes": 10805
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1/history.csv": {
+      "sha256": "5bcd5cf708b5b807fc48c42539e01e9eb6d58606a05751bb269eabc7bc351cea",
+      "bytes": 6532
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1/predictions.npz": {
+      "sha256": "9b34325c4d5245387ed63aaea87a69647ac8faf1561a3c9eb1626f822382b5c7",
+      "bytes": 2237
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1/progress.json": {
+      "sha256": "d95d050bb5235504557f8aaba6e1fb98952dc50e5ca3f22d6d4f480c21d2b4d8",
+      "bytes": 95
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed1/result.json": {
+      "sha256": "f79ae1d660a5be38ae7c4aa0b810e071aaa30e58f6a0d41a8b6bd15a29835e9d",
+      "bytes": 1501
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2/checkpoint.pt": {
+      "sha256": "da37fd7789854d69548e2adf45e267aea7af5bb3cff17691a9da072170bee7c7",
+      "bytes": 10805
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2/history.csv": {
+      "sha256": "c0bbc38cc220547a54bbc1f625648b759b82b660905e459cad230c8904e4dd88",
+      "bytes": 6540
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2/predictions.npz": {
+      "sha256": "caae0e5987e7575c94c49c3bcf877a9ea708d053ab0fedf94d777a3b2b58258d",
+      "bytes": 2243
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2/progress.json": {
+      "sha256": "1b8d7376ba075c43795de2d900c4ce5e25732652087a4c3dc8bed65b565bfe97",
+      "bytes": 95
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed2/result.json": {
+      "sha256": "50c12f2adb5ceb2fe7929a4ca3d5e54a8a37157d274ff6a6de482fcbca020fcb",
+      "bytes": 1505
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3/checkpoint.pt": {
+      "sha256": "3ac1646cf0c2c96da8c323122eba80af418d58bc45fc21d330f9dd4740e95046",
+      "bytes": 10805
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3/history.csv": {
+      "sha256": "13ab969d7e6108c0ee4d4d9b2501d0341f9152b5e2333f251227f0796754c925",
+      "bytes": 6545
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3/predictions.npz": {
+      "sha256": "b49ac3eeff114f57fadef31988bb64ecfa4511e52fc91f1b566f295f93e8c020",
+      "bytes": 2237
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3/progress.json": {
+      "sha256": "7e2be946554763990c0a654f1211772f877a3586c0971cccff28f4e77e675036",
+      "bytes": 95
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/latent_ode_01/seed3/result.json": {
+      "sha256": "d11f4116973876ec60f25ffad2a73a62674bd39b29b2d9efdfd67a43174f08ca",
+      "bytes": 1504
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_00/seed1/parameters.json": {
+      "sha256": "abf1140e41b76d50f28a9da91be32ab2e0120a0e1e5ab3a47b10c1105c6214ed",
+      "bytes": 1187
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_00/seed1/predictions.npz": {
+      "sha256": "fe35e955757fc32e5d8d517042fb08df57f685912df8524c3dd8cca4a8396ba3",
+      "bytes": 2737
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_00/seed1/result.json": {
+      "sha256": "ece3147aae55f297093b4fc9b5b946516f9e494d31c8cc477fc25f1acd33ef76",
+      "bytes": 1266
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed1/checkpoint.pt": {
+      "sha256": "c681bd7a8cd73aff2b42adb086004243414fde83c3bc73d60b7bb258193e7c05",
+      "bytes": 9845
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed1/history.csv": {
+      "sha256": "5d7d44c50569cbe8fcc29ccd0d5722f4e14a51666996bbc2eae792a59df707ac",
+      "bytes": 9003
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed1/predictions.npz": {
+      "sha256": "86674ab2f9ebc0d3734cd647aaf59de05c74d69126b7ed42419d06cebc04f1cf",
+      "bytes": 2236
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed1/progress.json": {
+      "sha256": "b9a541d9b514d02af36c6ee7d779b758b2dfceda53ebf56ddc65b711356df632",
+      "bytes": 94
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed1/result.json": {
+      "sha256": "15a05d1bd7e2a84f6d67d6eec9c44b57b32dd23afa88e7cc99dacc5febd9d3b5",
+      "bytes": 1512
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed2/checkpoint.pt": {
+      "sha256": "c9210ec02301e77f3f8f49190e375ce391880447559978c54a7f1f8c16e2b914",
+      "bytes": 9845
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed2/history.csv": {
+      "sha256": "e13f5d28e3c57986ff60071ba9b4603db8d7e5d8b4d6b7c64d89102f0bd5f754",
+      "bytes": 8931
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed2/predictions.npz": {
+      "sha256": "a7d304db4e439b66f477a2f794570bda49cfa007cb595c17e1a2aa44ee953593",
+      "bytes": 2241
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed2/progress.json": {
+      "sha256": "8074b070dc35990e180f7b5c3d1d18472927f88dbe1ab7aaa14a27f3e0aad3bf",
+      "bytes": 95
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed2/result.json": {
+      "sha256": "b371d6145453d1294460cea155b0df0911cfb7120b0bf170c0e846c5008667d4",
+      "bytes": 1515
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed3/checkpoint.pt": {
+      "sha256": "8c5889fe9b547ef2f08d25e2aa83863afbd85592191f728403cd84adc579c1ef",
+      "bytes": 9845
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed3/history.csv": {
+      "sha256": "1e7649ab0f7e526828eea54baba5c303067ade9072bfea729c4b532bda545ce8",
+      "bytes": 8918
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed3/predictions.npz": {
+      "sha256": "14e50426aaf40e4c55353c8e7e4cc3373a79f83f3dddecadb23b18b96e718dbc",
+      "bytes": 2242
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed3/progress.json": {
+      "sha256": "e3991d8ade4beed611c135f23053e2701a9d50b453a3ed7089d83eaa4b4f1704",
+      "bytes": 96
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/logistic_pinn_04/seed3/result.json": {
+      "sha256": "f5f25e9373ced048d66e6c676254a00eccf62e04ab8dc98650dacc455a6a2645",
+      "bytes": 1511
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed1/checkpoint.pt": {
+      "sha256": "7f84b749fbdad0a265a9c168baef3a65d8bc6e208213ac85a78258eca8c12144",
+      "bytes": 14133
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed1/history.csv": {
+      "sha256": "64438accfac98dec713b7f0f654fc47d9044f7e7dd986f40ef76c12b54d617aa",
+      "bytes": 6542
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed1/predictions.npz": {
+      "sha256": "66c2060942631c90cf8423acad6fe5b82eb17822e265aa8c1a6d5cde2cc4c235",
+      "bytes": 2242
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed1/progress.json": {
+      "sha256": "dd97c7148b8f9d83ac9b0104c23d3d4be20e481e88afedd64585e5230afab186",
+      "bytes": 95
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed1/result.json": {
+      "sha256": "0d1c5c9265162be02aeee849d84f9fd725cd26c1597b4a190c99a28ec9abe31c",
+      "bytes": 1494
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed2/checkpoint.pt": {
+      "sha256": "7734b997aca3fa87897882afede7a20e772f5ffed245fff308ca0a14acd426c0",
+      "bytes": 14133
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed2/history.csv": {
+      "sha256": "9fc610e94313b785702b65fd568ab88bd44a14a2a1ff17cad5bbfb5c9a87544d",
+      "bytes": 6539
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed2/predictions.npz": {
+      "sha256": "771f819a11142a60d481ca2a195ca757be4568d1acbd8372b0f4419d232bc852",
+      "bytes": 2240
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed2/progress.json": {
+      "sha256": "b8d65dc93b2935a229b17df4981dac74d932500d207cf6ba6a211a9e28e43425",
+      "bytes": 95
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed2/result.json": {
+      "sha256": "c6eaed5ef2e2ebfdef3bc23bd3934680268e6db50d2ebe339213c7e00995a082",
+      "bytes": 1494
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed3/checkpoint.pt": {
+      "sha256": "94cfb8ee4a3aeaa384b761c477e98bd42a665e1d7cb6c38795cf73f2dc7a460d",
+      "bytes": 14133
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed3/history.csv": {
+      "sha256": "ebe949af7a1ff51ed5e4bfe764360fd83e98c841644eed8eba4f5e980326edd4",
+      "bytes": 6585
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed3/predictions.npz": {
+      "sha256": "d327bfe27b2602ec43adceb87e6dccbe9f188cc2bdbc7b6b3d2cd3b96591477e",
+      "bytes": 2235
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed3/progress.json": {
+      "sha256": "dfda710dc64b84fbd2c202ad405ed57e03a36016f90a9d20a9815c76e8a6c60f",
+      "bytes": 96
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/lstm_01/seed3/result.json": {
+      "sha256": "2ef292c5c0d32bdbd2cefa84de5f6d7faeb921315b424cd6a69815738abaa9a9",
+      "bytes": 1494
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed1/checkpoint.pt": {
+      "sha256": "dc7d1df5839d1f60262d5a97f4dd9bfd3b3ff890b4ce4f2f80fbf6b21b2d14a1",
+      "bytes": 10805
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed1/history.csv": {
+      "sha256": "f65238a9a5ceb57c5ec4e0fef24428522f66e54bc9f9073b82a3f85b86b03a2b",
+      "bytes": 9039
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed1/predictions.npz": {
+      "sha256": "ac12db569707959a5045db15e643c2e1c735ba8d421277264f864c12aec3da49",
+      "bytes": 2241
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed1/progress.json": {
+      "sha256": "72fd78c3bcbc7631e21c2e3885550b7c1e9fc36f05b57decad00a4d888f2648e",
+      "bytes": 96
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed1/result.json": {
+      "sha256": "b8749173e1c7f5056016763d5d91c5564f5bb1cca74bcc3486164f9d337c6756",
+      "bytes": 1500
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed2/checkpoint.pt": {
+      "sha256": "99615815148ffddf74e05b50d0a18972de0c423441fac629fa30277ae3816fc1",
+      "bytes": 10805
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed2/history.csv": {
+      "sha256": "5dc48af0b201e601ce9b0854a846a800e60936165aea7acdb9eefba7f3e1a447",
+      "bytes": 9030
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed2/predictions.npz": {
+      "sha256": "b1278fda788b652fb479697a37e6a96781508626945eeff36bc803843ed8aca2",
+      "bytes": 2244
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed2/progress.json": {
+      "sha256": "3e11b286f7f9be908afeb202d52bab86ec5dc0b6a6ca517a5f2bfc82eff216ec",
+      "bytes": 95
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed2/result.json": {
+      "sha256": "fa63d0d0f1bd1407a408680ccd4a6a527be519dabbb285174639fc0d35906a9e",
+      "bytes": 1507
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed3/checkpoint.pt": {
+      "sha256": "bf55a2f7f0afb493cc9b951d9ffb626291fd96d9b0262e08ae77a1e0acf70efc",
+      "bytes": 10805
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed3/history.csv": {
+      "sha256": "d67881e8e4d9425ab0ed9c29a40e4d0ef1c43aa86f959d29fea7691e3d3c7856",
+      "bytes": 9022
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed3/predictions.npz": {
+      "sha256": "4afe259282a390427a0481e80d8fc57e0fc5e0338dafac519b482b11596438f3",
+      "bytes": 2239
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed3/progress.json": {
+      "sha256": "c530de607b1c756c20fe57072d8ba4053f78c05e0b48afabc55c6d5194f206c3",
+      "bytes": 96
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/phytoode_12/seed3/result.json": {
+      "sha256": "2fb54011136f89404184838b4a86fb5d3a03309fd7b816a7e9a9c67de55960e9",
+      "bytes": 1503
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed1/predictions.npz": {
+      "sha256": "9dcd1b099e4daf4a3e559af76377d550f7a2e6cfa07995b14ea429071d96f2b1",
+      "bytes": 2236
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed1/result.json": {
+      "sha256": "7c71b294c27fadeaf6189ac14b7634fc7455e22afc3e8e1a2be08438f6a0f447",
+      "bytes": 1284
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed2/predictions.npz": {
+      "sha256": "3a5ca7c6015c3b18cde49669a8bd76df9376d54bbe184ae1aabf04cd64c53d7a",
+      "bytes": 2272
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed2/result.json": {
+      "sha256": "f272711e11c329006c3849674aad72d3f0c0bada398e6e482cea2e9a1c77d2b7",
+      "bytes": 1279
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed3/predictions.npz": {
+      "sha256": "1078a69d6d35b677ce29cc701617af6c72b33172463978942be9a490023274c3",
+      "bytes": 2257
+    },
+    "hypocotyl/results/single_condition_20260909/replicate/trials/rf_00/seed3/result.json": {
+      "sha256": "18442ae0fee82718a8235665c9d7f1420c6055ad60ca92dc6362e1c59b514e72",
+      "bytes": 1280
+    },
+    "maize/code/data.py": {
+      "sha256": "bd731ba5a43ae8b3ece742b7ecc70747d502ca14c4e8740065bdba168da96360",
+      "bytes": 8381
+    },
+    "maize/code/download_data.py": {
+      "sha256": "9b8866810f1bc3a4c4ed4104c350fd2278e60b38609108b2c3662111b5b29792",
+      "bytes": 5431
+    },
+    "maize/code/prepare_data.py": {
+      "sha256": "25e5c470b62e59b9cf4576775ee8cf7b86faabf07aa3da831134cac3e4c80361",
+      "bytes": 14673
+    },
+    "maize/code/run_experiment.py": {
+      "sha256": "8b4c35919c21956045c273137b90bbf8ee61c659add34ed629784980ee6752c3",
+      "bytes": 22069
+    },
+    "maize/code/summarize_results.py": {
+      "sha256": "58d0b020e017f3b48360749984711fd2ec0592a82e9673cd3bb03c021da0b4e5",
+      "bytes": 15465
+    },
+    "maize/code/tune_trial.py": {
+      "sha256": "f6e2f5d31d507d8c63f00a99c1d9f1ae742968ab00148540f86a32ff917142eb",
+      "bytes": 7005
+    },
+    "maize/data/download_manifest.json": {
+      "sha256": "852cfba8d7ababe1404dcfdf87acc4009f9483367a10c5b6d19315671183c3d6",
+      "bytes": 21140
+    },
+    "maize/reports/dataset_summary.json": {
+      "sha256": "903c2f88dda6c0e4f96f055b8308e2f8a8515b21e9fc10579755c7c52ce3d4db",
+      "bytes": 3429
+    },
+    "maize/reports/exclusions.csv": {
+      "sha256": "8f021a77b8b513ee45f88ad06513e37b2782daa1daa9a029177833bb2fcbff10",
+      "bytes": 698
+    },
+    "maize/reports/gdd_discrepancies.csv": {
+      "sha256": "f90e92cda558eafa09268bed1f7539db2a686cb93ff17876e06d09fc6a7b8bf3",
+      "bytes": 194
+    },
+    "maize/reports/yearly_counts.csv": {
+      "sha256": "09f8be1cd7e6af75887cb7d1da286daf77e79b774c4f0bdf4039e4f2e1fb84f6",
+      "bytes": 704
+    },
+    "maize/results/chronological_final_seed1_3/figures/selected_genotypes.csv": {
+      "sha256": "2c0670bc9054aed7faf6b1193d67e6d4c0630d8495a22346e2a1c47c4d2f681c",
+      "bytes": 644
+    },
+    "maize/results/chronological_final_seed1_3/runs/logistic_seed0/per_curve_metrics.csv": {
+      "sha256": "e6c4f9ba44321a39bc9aed23d02f005e17f09a2abadf7a949e5f332731a2e7de",
+      "bytes": 107187
+    },
+    "maize/results/chronological_final_seed1_3/runs/logistic_seed0/predictions.npz": {
+      "sha256": "4e959f9b98183d20b536f2306fa09979d743d67e68f18734753ead3fb0e44f9b",
+      "bytes": 1134831
+    },
+    "maize/results/chronological_final_seed1_3/runs/logistic_seed0/result.json": {
+      "sha256": "0ec3acbcd2348fcd38be37489cc5490e6c6deefa456e9d15977cbc92280ba5fb",
+      "bytes": 603
+    },
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed1/history.csv": {
+      "sha256": "9c3c6806da8afc432d5b22068700a90f52ffa0b4c2c9459ae4387e3a24fa5487",
+      "bytes": 25516
+    },
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed1/per_curve_metrics.csv": {
+      "sha256": "fdfc03c61c1ae260346a271c7b85d67c39fd1b4965c5c5fdebfd87eb07bc48d8",
+      "bytes": 105574
+    },
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed1/predictions.npz": {
+      "sha256": "c5c005bd1c123966020de5ed3d0cb1d5a22143b1f9bfb4afcd1aae3d0da09aa2",
+      "bytes": 552864
+    },
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed1/result.json": {
+      "sha256": "8883846fa9cc4e9b4ad304919841e04168d3f1ffcfa618a85d90bc32a0f897f7",
+      "bytes": 808
+    },
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed2/history.csv": {
+      "sha256": "b8ddc6c27f42e32680a4649cde92d51579ba54d57db93eee95f881e86b6ec11d",
+      "bytes": 25485
+    },
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed2/per_curve_metrics.csv": {
+      "sha256": "311318a69598c023c7877fedf9024ab5ed7960a795e50ad6163db07e42dc24e5",
+      "bytes": 105652
+    },
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed2/predictions.npz": {
+      "sha256": "0ffef94d1823013c1b69cb242acbf12f76bc85beeb02cf4bd7d3c40d589f5b8a",
+      "bytes": 546345
+    },
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed2/result.json": {
+      "sha256": "9d722570a0b154e4ce036788d4dad7d19e511e18ff2dc60a1c2c3c226cc43a19",
+      "bytes": 809
+    },
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed3/history.csv": {
+      "sha256": "70a3c6b225a53c38707bdfcea91d0a7a22090619c23b87cc4bdff6b9584b2b04",
+      "bytes": 25393
+    },
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed3/per_curve_metrics.csv": {
+      "sha256": "9aabe23c98df39f29ad724fcc6a9d83f7c199c0f5e1779fd48d9418ca544b640",
+      "bytes": 105413
+    },
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed3/predictions.npz": {
+      "sha256": "58b9e1269656856424bfc0dacc68865c549d6569e85994d0b0aac6410f704adc",
+      "bytes": 558213
+    },
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed3/result.json": {
+      "sha256": "6d9ffc0ce9cd0b9c60e1f21c3102d18129fab42e9758cc8b8840df28f6b811a5",
+      "bytes": 807
+    },
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed1/history.csv": {
+      "sha256": "20ef0659e2ac0e4670a31bbe61e9d5f3d3188dd37cbb7292886f5f626ccf4fcb",
+      "bytes": 25338
+    },
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed1/per_curve_metrics.csv": {
+      "sha256": "6bdad5c117ad56d9e89079372590be85008aaa07e9653d60fb9b6a880aa4e590",
+      "bytes": 108954
+    },
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed1/predictions.npz": {
+      "sha256": "fadd866f315336e440ce25731c4ccfc73c1a7f61866a1868b8b13bd762bf9e28",
+      "bytes": 558230
+    },
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed1/result.json": {
+      "sha256": "b199854347e078988e35bf84bf25b2d7aa55e8c0840d2ed5121fae72b0257c32",
+      "bytes": 803
+    },
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed2/history.csv": {
+      "sha256": "d136aca9a1a460c62c010077a7dfb0db0837871a4363d3114c6f414f8e1c9992",
+      "bytes": 25296
+    },
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed2/per_curve_metrics.csv": {
+      "sha256": "56b5b50f56785bd791adef6b0d2efdaa088a9289b0794130f3e90874039f1049",
+      "bytes": 109336
+    },
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed2/predictions.npz": {
+      "sha256": "750488d032dd9535097095cbc11cf41f042a20f913f208880d657c00901aac2b",
+      "bytes": 538392
+    },
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed2/result.json": {
+      "sha256": "dc8d599a3424f2b0a304f4ca0665c9e45dc83985de772c471997422c12697f02",
+      "bytes": 809
+    },
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed3/history.csv": {
+      "sha256": "fdbc063077446819854bf0b91df5ae7d86a0879fc45721bddd827e026ae19f70",
+      "bytes": 25139
+    },
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed3/per_curve_metrics.csv": {
+      "sha256": "24e6b7140f0a235d0f4923b9baa30a251d9cc632909113b912c31e7bd1b8496a",
+      "bytes": 108959
+    },
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed3/predictions.npz": {
+      "sha256": "d455bcf82493e9dd6bc0ba925b126dff9dc3968a5af71eabb3dd988ee6e6e45c",
+      "bytes": 553931
+    },
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed3/result.json": {
+      "sha256": "720019fa310f7373b0223c51ca7a623b7eac78f847cd07e0792be66118f320e6",
+      "bytes": 810
+    },
+    "maize/results/chronological_final_seed1_3/runs/rf_seed1/per_curve_metrics.csv": {
+      "sha256": "9e3b046e765d2912c73bca1580c6b2763c90dc524eda1db133d7a60beebbf2f9",
+      "bytes": 97814
+    },
+    "maize/results/chronological_final_seed1_3/runs/rf_seed1/predictions.npz": {
+      "sha256": "90465661aa59e9bc70a223d59d9b13838d7aadb93a118d46a643c2d3a1cf67ac",
+      "bytes": 698961
+    },
+    "maize/results/chronological_final_seed1_3/runs/rf_seed1/result.json": {
+      "sha256": "a14ffe8e779ef30fda2a23edc62fef8e461f1a5316ad77d727eab66c05673b55",
+      "bytes": 564
+    },
+    "maize/results/chronological_final_seed1_3/runs/rf_seed2/per_curve_metrics.csv": {
+      "sha256": "ff22081a9123bcff04cdd4518c2f77894c4d4cf158d318939b3067c39baf85db",
+      "bytes": 97788
+    },
+    "maize/results/chronological_final_seed1_3/runs/rf_seed2/predictions.npz": {
+      "sha256": "6f708eeebf33361ddece38a69294d7b7129d0527705a71e39192e5424e05a55b",
+      "bytes": 700131
+    },
+    "maize/results/chronological_final_seed1_3/runs/rf_seed2/result.json": {
+      "sha256": "978839b23a0ac6c6e5a18027d9708c4cb135a60cc1f23a6271456c407720d8c2",
+      "bytes": 561
+    },
+    "maize/results/chronological_final_seed1_3/runs/rf_seed3/per_curve_metrics.csv": {
+      "sha256": "7fd94173d0ec42c7eca6302588ee73844a85402c28f640b702b11fd1386b84b0",
+      "bytes": 97770
+    },
+    "maize/results/chronological_final_seed1_3/runs/rf_seed3/predictions.npz": {
+      "sha256": "e351bc939870ea31e2ce4b889f531cffe4f3802dcda87d3846921535d78eb959",
+      "bytes": 658191
+    },
+    "maize/results/chronological_final_seed1_3/runs/rf_seed3/result.json": {
+      "sha256": "ebf787e04e741a3ce36e47ceb5da961fc48577307a671242f6a36f47bca873f9",
+      "bytes": 563
+    },
+    "maize/results/chronological_final_seed1_3/runs/temperature_seed0/per_curve_metrics.csv": {
+      "sha256": "3ae69a130fffd1913da2abb33972d194735300285a4957de588080fc4ebc9385",
+      "bytes": 106903
+    },
+    "maize/results/chronological_final_seed1_3/runs/temperature_seed0/predictions.npz": {
+      "sha256": "5a74ca03e450dce7955e92cb7698fe1b82e68c3688a37fb2da27c8914a99e472",
+      "bytes": 1137518
+    },
+    "maize/results/chronological_final_seed1_3/runs/temperature_seed0/result.json": {
+      "sha256": "cbed43eb98a3489bc0da4f7c2863d89238cb1c722ae2fdf9b01ede4fa9f64294",
+      "bytes": 594
+    },
+    "maize/results/tuning_20260904/final/runs/latent_seed1/predictions.npz": {
+      "sha256": "8f7c0d941cb3cc7de7e3a1dc1405586e244dec4fc9d3c163368536d5d9adacb6",
+      "bytes": 565600
+    },
+    "maize/results/tuning_20260904/final/runs/latent_seed1/result.json": {
+      "sha256": "a9ed38cbf972eca461e58e90188fe22d1f5e7783df2dd5c154e21387e4396162",
+      "bytes": 547
+    },
+    "maize/results/tuning_20260904/final/runs/latent_seed2/predictions.npz": {
+      "sha256": "7cdfbf02df591ba7aef805908ad211f9538ca823cfa0a5497c4310d7cabac633",
+      "bytes": 561827
+    },
+    "maize/results/tuning_20260904/final/runs/latent_seed2/result.json": {
+      "sha256": "e852154ff2a78ce52cb01c633abdc1874cff097d0f2f2b990ccda771cff6bb43",
+      "bytes": 551
+    },
+    "maize/results/tuning_20260904/final/runs/latent_seed3/predictions.npz": {
+      "sha256": "b424f8a15f85b74fd948c71036e65c394e7a6c60049bc45bf78b292fe397a9fe",
+      "bytes": 562320
+    },
+    "maize/results/tuning_20260904/final/runs/latent_seed3/result.json": {
+      "sha256": "076e9e53490eac35472b64f5e180d8f091de4b2c771b03a24626beb6e9c1de66",
+      "bytes": 552
+    },
+    "maize/results/tuning_20260904/selected.json": {
+      "sha256": "d0ac652269a11e5171c66af54d1531540ac6010d288872aa067d8d652dab9684",
+      "bytes": 801
+    },
+    "paper/current_results.csv": {
+      "sha256": "01ac353ab94703b2e39fe9f665609968ab3d34fa21cabcb52f8dca2d18d6d665",
+      "bytes": 6003
+    },
+    "paper/figures/arabidopsis_col0_no_extrapolation.pdf": {
+      "sha256": "ba6a73e9f435ce4179d5ee2583d331f5cb88241cd89591fe1ce845ee2c5c7415",
+      "bytes": 20896
+    },
+    "paper/figures/arabidopsis_col0_no_extrapolation.png": {
+      "sha256": "746c74905d75b79ab633e8b3ca7dcb8c52de3453233d4f173bdeed2f3047351b",
+      "bytes": 159552
+    },
+    "paper/figures/hypocotyl_light_input.pdf": {
+      "sha256": "4bd0e56c0c6a821c3e2c62f694874c254f30607e4d5e3679c0809a299ba83a80",
+      "bytes": 34469
+    },
+    "paper/figures/hypocotyl_light_input.png": {
+      "sha256": "52b354e28c64094b5011378ddf968079edf960ec778dd42b3c28810882949e86",
+      "bytes": 320955
+    },
+    "paper/figures/maize_test_predictions.pdf": {
+      "sha256": "04b1e330ffea807eb5d0de8fde36b6a982aa3531ed6c6589d4b34f13dad3287b",
+      "bytes": 43314
+    },
+    "paper/figures/maize_test_predictions.png": {
+      "sha256": "d9bf372f6a74b0ff333b4dea20e205dd6029f5dff7a7f703130c29e14255270c",
+      "bytes": 483846
+    },
+    "paper/figures/wheat_test_curves_no_extrapolation.pdf": {
+      "sha256": "eb38faf8adf3e4728eb32e15a0f83f7c51b45590e4cbb62e6d1aa9740fed2c63",
+      "bytes": 33194
+    },
+    "paper/figures/wheat_test_curves_no_extrapolation.png": {
+      "sha256": "55afefd34dc501b16dce6229da88a9f001db61c6f966cdf617e5bb33379d6581",
+      "bytes": 199717
+    },
+    "paper/hypocotyl_figure.py": {
+      "sha256": "f46d6a8173f93b90d8374c99f5259c42c78a9b89eba62762ab45cf70918e3638",
+      "bytes": 3971
+    },
+    "paper/hypocotyl_methods.tex": {
+      "sha256": "362d26e1254033d435524d1111509e11974893160b768b584b38428fd979208a",
+      "bytes": 12813
+    },
+    "paper/hypocotyl_results.tex": {
+      "sha256": "f34e4951857f993a4ade0e537b2bd7ca29ddff9b6aeb65b648fb30199b203ae6",
+      "bytes": 6149
+    },
+    "paper/main.tex": {
+      "sha256": "9f22cad4a8aca5a0049c3c965d915d8ae85f5f23ae7018d546cfe63f39d0fb89",
+      "bytes": 45678
+    },
+    "paper/main_standalone.tex": {
+      "sha256": "8d9e34d89f91c6bbbf070e4f7ea5508c02f7d656c1802f362b84cc0fee4094bb",
+      "bytes": 64590
+    },
+    "paper/make_figures.py": {
+      "sha256": "769f51b4c478bb35e3aed80b60e5790918b700acdaf56eb5dd4980ca907a0929",
+      "bytes": 11852
+    },
+    "paper/references.bib": {
+      "sha256": "dcc707c37d9dee65c8c514a6fe155c94541cc070d20bb1871c0428b508e6d855",
+      "bytes": 18325
+    },
+    "requirements.txt": {
+      "sha256": "c6946b9654c7de1f73ff8e47c2717d0f5330cbf1b636e69a3119af26957e3251",
+      "bytes": 124
+    },
+    "run.py": {
+      "sha256": "081d44f435cbdb7336f14b9c1bc1af2cde971c9b77c34bb7138e5f3395dad174",
+      "bytes": 13500
+    },
+    "scripts/download_data.py": {
+      "sha256": "c8a2a8fb8d5c87e0deb486ee68068a9835c26fe1c5c9a60f8b73c5f294d17999",
+      "bytes": 3251
+    },
+    "scripts/make_figures.py": {
+      "sha256": "939c813ee553c15f345e9fb440e52857f2cf9ecb65ce53dbb02412238fb4ad36",
+      "bytes": 1283
+    },
+    "scripts/prepare_data.py": {
+      "sha256": "7fbe71326151aa2acddfaa86d714997daed45339eb94512fed21feaeeb92ad0a",
+      "bytes": 1614
+    },
+    "scripts/prepare_hypocotyl.py": {
+      "sha256": "34a3c2da39679be378e8d1eeab383363e585610c924e8ca5d07446026170cdc2",
+      "bytes": 3920
+    },
+    "scripts/report_results.py": {
+      "sha256": "24976268674db3ec45037b1cbcd1ea56ebd7c472169a54fe28afb0649d8065ba",
+      "bytes": 3596
+    },
+    "scripts/verify_submission.py": {
+      "sha256": "c36a6da99cd8b7dcfdecd9b5d0220bbe916acf85b93f67d4abcee2e53239b3e6",
+      "bytes": 892
+    },
+    "submission/source_files.json": {
+      "sha256": "eaa597dfac16042856628cc491b2d4fa5b4ec86e3d4a7ccff98bc7fccbfb4796",
+      "bytes": 62651
+    },
+    "submission/validation.json": {
+      "sha256": "24d77d1811c4b8cca80ccf13c93f083569e8384590fa8df62274dfaaf84c8b0a",
+      "bytes": 8318
+    },
+    "wheat/code/data.py": {
+      "sha256": "bfc4ad0dfb638a860e17e9ead5a917a148cbd763e6ad9b4102be63d7f1bc2696",
+      "bytes": 20733
+    },
+    "wheat/code/model.py": {
+      "sha256": "73d5e8fa2796c937c856926994a05b6ce137152d12c06e375a122fe00e22b271",
+      "bytes": 20588
+    },
+    "wheat/code/run_additional_baselines.py": {
+      "sha256": "fc9fe427db60bc7b082412b1bc959dc2cc793f39066b7b863f6219972048d0dd",
+      "bytes": 12629
+    },
+    "wheat/results/additional_baselines_seed1_3/all_runs.csv": {
+      "sha256": "ce7d50828b3bfffb1dc43cbcb841b6d29aaf503544d73636e6643c740c834c78",
+      "bytes": 1360
+    },
+    "wheat/results/additional_baselines_seed1_3/logistic_parameters.json": {
+      "sha256": "969cf0c72871efc583aa6480faed8a27069d44e4c1bd06c23af95d33311cf81f",
+      "bytes": 3279
+    },
+    "wheat/results/additional_baselines_seed1_3/per_curve_metrics.csv": {
+      "sha256": "a3061518399c427e41a026402c5779d677f240e0179d4336c8a2f7f98cbc295f",
+      "bytes": 24791
+    },
+    "wheat/results/additional_baselines_seed1_3/protocol.json": {
+      "sha256": "8a88a2601bea72ba75667465972a10e5b431578dfaa7dc1b97063953b75ed110",
+      "bytes": 2151
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/logistic_seed0/per_curve_metrics.csv": {
+      "sha256": "b29f577a8778bf1591e6280251b0527a6a13aabec471ca4f46de0b458509f63b",
+      "bytes": 5209
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/logistic_seed0/predictions.npz": {
+      "sha256": "18fccea8092b2789fa078bfa455929ae9e943b3b4f9e4e04b9ff4753981fd325",
+      "bytes": 72360
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/logistic_seed0/result.json": {
+      "sha256": "83bc2c0f8c2f91406321e5377af474b71f606d1439f3fe359e807355aa183f92",
+      "bytes": 503
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/rf_seed1/per_curve_metrics.csv": {
+      "sha256": "319cce4035dfdff0f34cdf57c62b229c9cfea2afb632c205370e32d67f842a72",
+      "bytes": 4850
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/rf_seed1/predictions.npz": {
+      "sha256": "1b16052cef552eb6288760006e217d2466c45ab2b461882161a797da7de5f3f3",
+      "bytes": 77266
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/rf_seed1/result.json": {
+      "sha256": "c06e19b2b0f4ee58fb268483d467ff753e4983cb777b7e199c6207a4736d80fe",
+      "bytes": 519
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/rf_seed2/per_curve_metrics.csv": {
+      "sha256": "acd7b8873276c00a55091679275a63d3fb9f6aa3a0fd470292b38eb94d1a172a",
+      "bytes": 4866
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/rf_seed2/predictions.npz": {
+      "sha256": "84784ad4d8d6b4b59ce2a5afbefcb9ed499328eab17e88560142d03491917bb9",
+      "bytes": 76172
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/rf_seed2/result.json": {
+      "sha256": "5bd3d09e8374f7d993f9b6a6cc866de3e63704b3ec15bf2a434e6d0e0af06117",
+      "bytes": 516
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/rf_seed3/per_curve_metrics.csv": {
+      "sha256": "ed02d10683f141ffbdf5158ed53aa85a6136652781cc4b417bd4e0d7de02f286",
+      "bytes": 4853
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/rf_seed3/predictions.npz": {
+      "sha256": "595c59288747f410dc17fd179b1aea90d35e4b67af7848f4a24dc044601e7f36",
+      "bytes": 76962
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/rf_seed3/result.json": {
+      "sha256": "8969aff40a9017476c6967f57d7eaca3bb7ed4d546c92d7d74a3edc2256a4c36",
+      "bytes": 517
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/temperature_seed0/per_curve_metrics.csv": {
+      "sha256": "6a475e4c40c9940f92eae84bab3e11f18699913b44ab737edef57a245896ca53",
+      "bytes": 5209
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/temperature_seed0/predictions.npz": {
+      "sha256": "a681b585a286ca021ddd79e69a8df464b11bf3c159e2b04c9aeb47c9050ce1b3",
+      "bytes": 95352
+    },
+    "wheat/results/additional_baselines_seed1_3/runs/temperature_seed0/result.json": {
+      "sha256": "4ef747f0aade32c37b33f43b6b5d8274e392f75eaa17a59ab3c562cf0faba0a8",
+      "bytes": 521
+    },
+    "wheat/results/additional_baselines_seed1_3/temperature_parameters.json": {
+      "sha256": "c4c16d61960d302a5c1b90198768a4c46d9aa19a7c1f5d4679f1c7f953caed20",
+      "bytes": 1378
+    },
+    "wheat/results/additional_baselines_seed1_3/validation.json": {
+      "sha256": "c32c5eca24eba1a7e0656fd227830063d312344a73efc9a38ac090f462e82d1e",
+      "bytes": 369
+    },
+    "wheat/results/final_config.json": {
+      "sha256": "e374457952001c089e5317462e02307bff80a5903c2956b0adb790c6f87d927c",
+      "bytes": 1034
+    },
+    "wheat/results/reference/logi_pinn_onehot_original.csv": {
+      "sha256": "144fa51e95e76c8631b7080c1eb1f3f1ac087150b966f88417f703e617841a85",
+      "bytes": 664
+    },
+    "wheat/results/reference/lstm_nn_onehot_original.csv": {
+      "sha256": "b5bfe9e037218e9a11d4c0bcf8c4d1003e05de2b1e295b19e5f7f173b926b33b",
+      "bytes": 679
+    },
+    "wheat/results/reference/test_predictions_seed1_3.npz": {
+      "sha256": "73ec5badb7c83d1a0a34a6a80db5d197991efc350417a0ae8d810dd64f61545a",
+      "bytes": 147341
+    },
+    "wheat/results/reference/test_predictions_seed1_3_provenance.json": {
+      "sha256": "d9117c2ea2e6704871559b9def6332758e0c1529f2d404b2fab0fa1077864c63",
+      "bytes": 2775
+    },
+    "wheat/results/test_predictions_seed1_3.npz": {
+      "sha256": "8cb8f551319844108ce34eca43553109e14c5ca8ba28dced585cc090903d4254",
+      "bytes": 44134
+    }
+  }
+}

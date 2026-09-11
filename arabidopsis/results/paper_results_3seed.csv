@@ -1,7 +1,0 @@
-dataset,model,n_seeds,parameters,train_rmse_mean,train_rmse_sd,val_rmse_mean,val_rmse_sd,test_rmse_mean,test_rmse_sd,test_mae_mean,test_mae_sd,unit
-arabidopsis,Latent Neural ODE,3,4607.0,1.4013,0.087857,3.245537,0.005841,2.86598,0.092808,2.463437,0.087914,cm
-arabidopsis,Random forest,3,,0.152794,0.017501,3.216621,0.008028,2.877543,0.009633,2.347192,0.001269,cm
-arabidopsis,Logi-PINN,3,419.0,1.721406,0.034144,3.315906,0.074569,2.987346,0.125709,2.523014,0.063144,cm
-arabidopsis,LSTM-NN,3,401.0,1.701359,0.121635,3.342755,0.102575,2.950816,0.064478,2.500553,0.026066,cm
-arabidopsis,Temperature-informed ODE,1,20.0,3.677781,,4.174323,,4.121227,,3.499899,,cm
-arabidopsis,Logistic ODE,1,18.0,4.944207,,5.274416,,5.17876,,4.501671,,cm

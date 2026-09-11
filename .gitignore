@@ -1,40 +1,25 @@
 .venv/
-legacy/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .DS_Store
-*.egg-info/
+outputs/
+*.part
 
-# Generated training outputs (the audited paper outputs under */results stay tracked).
+# External inputs are downloaded from pinned upstream sources.
+wheat/data/*.csv
+maize/data/raw/
+maize/data/processed/
+maize/reports/
+arabidopsis/data/raw/
+arabidopsis/data/processed/
+
+# Locally refitted baselines and build products.
 **/results/reproduced/
-**/code/results/
-**/code/figures/
-
-# LaTeX build products.
+**/forest.joblib
 paper/*.aux
 paper/*.bbl
 paper/*.blg
 paper/*.log
 paper/*.out
 paper/*.pdf
-
-# Reproducible large/intermediate experiment artifacts. Compact metrics,
-# configurations, predictions, checkpoints, and final figures remain tracked.
-**/results/**/forest.joblib
-**/results/**/logs/
-hypocotyl/results/*_runtime/
-maize/results/smoke*/
-maize/results/smoke*.log
-maize/results/chronological_seed1_3/
-maize/results/chronological_common_selection_seed1_3/
-maize/results/tuning_20260904/trials/
-experiments/results/**/diagnostics/
-# Local optimizer/RNG snapshots used to resume in-progress joint-search trials.
-experiments/results/**/resume_state.pt
-experiments/results/**/*.pt.part
-
-# Third-party repository snapshots without an explicit redistribution license.
-# download_data.py fetches these locally when needed.
-maize/data/raw/github/
-maize/data/raw/source/WiDiv_analysis.Rmd
