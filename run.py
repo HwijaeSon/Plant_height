@@ -211,7 +211,7 @@ def main():
             return
         import forecast_trial
         if args.mode == "evaluate" and args.checkpoint is None:
-            record_path = ROOT / "hypocotyl/results/prefix_forecast_20260911" / f"drop_{round(args.drop_fraction*100)}" / args.model / f"seed{args.seed}" / "checkpoint.pt"
+            record_path = ROOT / "hypocotyl/results/four_genotypes_20260915" / f"drop_{round(args.drop_fraction*100)}" / args.model / f"seed{args.seed}" / "checkpoint.pt"
             if args.drop_fraction not in [0., .25, .5] or not record_path.is_file():
                 parser.error("No bundled neural checkpoint for this model, seed, or missingness condition; pass --checkpoint")
             manifest = json.loads((ROOT / "submission/manifest.json").read_text())

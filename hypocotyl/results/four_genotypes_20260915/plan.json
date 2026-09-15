@@ -1,0 +1,332 @@
+{
+  "protocol": "four_genotypes_20260915",
+  "jobs": [
+    {
+      "model": "phytoode",
+      "seed": 1,
+      "drop": 0.0,
+      "path": "drop_0/phytoode/seed1"
+    },
+    {
+      "model": "phytoode",
+      "seed": 2,
+      "drop": 0.0,
+      "path": "drop_0/phytoode/seed2"
+    },
+    {
+      "model": "phytoode",
+      "seed": 3,
+      "drop": 0.0,
+      "path": "drop_0/phytoode/seed3"
+    },
+    {
+      "model": "latent_ode",
+      "seed": 1,
+      "drop": 0.0,
+      "path": "drop_0/latent_ode/seed1"
+    },
+    {
+      "model": "latent_ode",
+      "seed": 2,
+      "drop": 0.0,
+      "path": "drop_0/latent_ode/seed2"
+    },
+    {
+      "model": "latent_ode",
+      "seed": 3,
+      "drop": 0.0,
+      "path": "drop_0/latent_ode/seed3"
+    },
+    {
+      "model": "logistic_pinn",
+      "seed": 1,
+      "drop": 0.0,
+      "path": "drop_0/logistic_pinn/seed1"
+    },
+    {
+      "model": "logistic_pinn",
+      "seed": 2,
+      "drop": 0.0,
+      "path": "drop_0/logistic_pinn/seed2"
+    },
+    {
+      "model": "logistic_pinn",
+      "seed": 3,
+      "drop": 0.0,
+      "path": "drop_0/logistic_pinn/seed3"
+    },
+    {
+      "model": "lstm",
+      "seed": 1,
+      "drop": 0.0,
+      "path": "drop_0/lstm/seed1"
+    },
+    {
+      "model": "lstm",
+      "seed": 2,
+      "drop": 0.0,
+      "path": "drop_0/lstm/seed2"
+    },
+    {
+      "model": "lstm",
+      "seed": 3,
+      "drop": 0.0,
+      "path": "drop_0/lstm/seed3"
+    },
+    {
+      "model": "rf",
+      "seed": 1,
+      "drop": 0.0,
+      "path": "drop_0/rf/seed1"
+    },
+    {
+      "model": "rf",
+      "seed": 2,
+      "drop": 0.0,
+      "path": "drop_0/rf/seed2"
+    },
+    {
+      "model": "rf",
+      "seed": 3,
+      "drop": 0.0,
+      "path": "drop_0/rf/seed3"
+    },
+    {
+      "model": "logistic",
+      "seed": 1,
+      "drop": 0.0,
+      "path": "drop_0/logistic/seed1"
+    },
+    {
+      "model": "phytoode",
+      "seed": 1,
+      "drop": 0.25,
+      "path": "drop_25/phytoode/seed1"
+    },
+    {
+      "model": "phytoode",
+      "seed": 2,
+      "drop": 0.25,
+      "path": "drop_25/phytoode/seed2"
+    },
+    {
+      "model": "phytoode",
+      "seed": 3,
+      "drop": 0.25,
+      "path": "drop_25/phytoode/seed3"
+    },
+    {
+      "model": "latent_ode",
+      "seed": 1,
+      "drop": 0.25,
+      "path": "drop_25/latent_ode/seed1"
+    },
+    {
+      "model": "latent_ode",
+      "seed": 2,
+      "drop": 0.25,
+      "path": "drop_25/latent_ode/seed2"
+    },
+    {
+      "model": "latent_ode",
+      "seed": 3,
+      "drop": 0.25,
+      "path": "drop_25/latent_ode/seed3"
+    },
+    {
+      "model": "logistic_pinn",
+      "seed": 1,
+      "drop": 0.25,
+      "path": "drop_25/logistic_pinn/seed1"
+    },
+    {
+      "model": "logistic_pinn",
+      "seed": 2,
+      "drop": 0.25,
+      "path": "drop_25/logistic_pinn/seed2"
+    },
+    {
+      "model": "logistic_pinn",
+      "seed": 3,
+      "drop": 0.25,
+      "path": "drop_25/logistic_pinn/seed3"
+    },
+    {
+      "model": "lstm",
+      "seed": 1,
+      "drop": 0.25,
+      "path": "drop_25/lstm/seed1"
+    },
+    {
+      "model": "lstm",
+      "seed": 2,
+      "drop": 0.25,
+      "path": "drop_25/lstm/seed2"
+    },
+    {
+      "model": "lstm",
+      "seed": 3,
+      "drop": 0.25,
+      "path": "drop_25/lstm/seed3"
+    },
+    {
+      "model": "rf",
+      "seed": 1,
+      "drop": 0.25,
+      "path": "drop_25/rf/seed1"
+    },
+    {
+      "model": "rf",
+      "seed": 2,
+      "drop": 0.25,
+      "path": "drop_25/rf/seed2"
+    },
+    {
+      "model": "rf",
+      "seed": 3,
+      "drop": 0.25,
+      "path": "drop_25/rf/seed3"
+    },
+    {
+      "model": "logistic",
+      "seed": 1,
+      "drop": 0.25,
+      "path": "drop_25/logistic/seed1"
+    },
+    {
+      "model": "logistic",
+      "seed": 2,
+      "drop": 0.25,
+      "path": "drop_25/logistic/seed2"
+    },
+    {
+      "model": "logistic",
+      "seed": 3,
+      "drop": 0.25,
+      "path": "drop_25/logistic/seed3"
+    },
+    {
+      "model": "phytoode",
+      "seed": 1,
+      "drop": 0.5,
+      "path": "drop_50/phytoode/seed1"
+    },
+    {
+      "model": "phytoode",
+      "seed": 2,
+      "drop": 0.5,
+      "path": "drop_50/phytoode/seed2"
+    },
+    {
+      "model": "phytoode",
+      "seed": 3,
+      "drop": 0.5,
+      "path": "drop_50/phytoode/seed3"
+    },
+    {
+      "model": "latent_ode",
+      "seed": 1,
+      "drop": 0.5,
+      "path": "drop_50/latent_ode/seed1"
+    },
+    {
+      "model": "latent_ode",
+      "seed": 2,
+      "drop": 0.5,
+      "path": "drop_50/latent_ode/seed2"
+    },
+    {
+      "model": "latent_ode",
+      "seed": 3,
+      "drop": 0.5,
+      "path": "drop_50/latent_ode/seed3"
+    },
+    {
+      "model": "logistic_pinn",
+      "seed": 1,
+      "drop": 0.5,
+      "path": "drop_50/logistic_pinn/seed1"
+    },
+    {
+      "model": "logistic_pinn",
+      "seed": 2,
+      "drop": 0.5,
+      "path": "drop_50/logistic_pinn/seed2"
+    },
+    {
+      "model": "logistic_pinn",
+      "seed": 3,
+      "drop": 0.5,
+      "path": "drop_50/logistic_pinn/seed3"
+    },
+    {
+      "model": "lstm",
+      "seed": 1,
+      "drop": 0.5,
+      "path": "drop_50/lstm/seed1"
+    },
+    {
+      "model": "lstm",
+      "seed": 2,
+      "drop": 0.5,
+      "path": "drop_50/lstm/seed2"
+    },
+    {
+      "model": "lstm",
+      "seed": 3,
+      "drop": 0.5,
+      "path": "drop_50/lstm/seed3"
+    },
+    {
+      "model": "rf",
+      "seed": 1,
+      "drop": 0.5,
+      "path": "drop_50/rf/seed1"
+    },
+    {
+      "model": "rf",
+      "seed": 2,
+      "drop": 0.5,
+      "path": "drop_50/rf/seed2"
+    },
+    {
+      "model": "rf",
+      "seed": 3,
+      "drop": 0.5,
+      "path": "drop_50/rf/seed3"
+    },
+    {
+      "model": "logistic",
+      "seed": 1,
+      "drop": 0.5,
+      "path": "drop_50/logistic/seed1"
+    },
+    {
+      "model": "logistic",
+      "seed": 2,
+      "drop": 0.5,
+      "path": "drop_50/logistic/seed2"
+    },
+    {
+      "model": "logistic",
+      "seed": 3,
+      "drop": 0.5,
+      "path": "drop_50/logistic/seed3"
+    }
+  ],
+  "settings": "Manuscript settings fixed before retraining; no previous weights reused.",
+  "code_data_sha256": {
+    "hypocotyl/code/single_condition_models.py": "8116c31a537ee6f1c7dd2fdd8689c2d0483c636ce56c36660b8657f04e869ca2",
+    "wheat/code/model.py": "73d5e8fa2796c937c856926994a05b6ce137152d12c06e375a122fe00e22b271",
+    "run.py": "edc3aea0811fe74fe11af0e2c6d7abc27d689993fa30eafc80ab6d394d30fc30",
+    "hypocotyl/code/forecast_data.py": "a797dc33eb2ca7666b33292d287962b0aca21b59961f6c3116f77a4588deab49",
+    "hypocotyl/code/forecast_models.py": "19d138b9dffdb1a0d37ee4a81e40b3282dbd3f898b639a319c789da6b7054490",
+    "hypocotyl/code/forecast_trial.py": "a17bd8c0087e369347fe7f2b0fd41241c85d90e0da669002d440aa6649bc33f3",
+    "hypocotyl/code/no_light_prefix_model.py": "23bf073dbd8abd5b9a6b56cb801e1b605b2dc393081c4f43ddc30789e53069f3",
+    "hypocotyl/code/no_light_prefix_trial.py": "6d6c73ce1aa57635e97d6734ed8694108d730cd3698acf52d0d86c311bae0f76",
+    "hypocotyl/code/prefix_parameter_model.py": "5a9e3e88de06b62f4be6510f735f53a3778222a1e0b7eb85f17e30772272723b",
+    "configs/hypocotyl_forecast.json": "1f251be7df95c80c4688bd8d5746e6ee56a5f91b3bd0aac492d5a7f6bcc7ae59",
+    "configs/hypocotyl_prefix_parameters_no_light_20260911.json": "db0a16f6052cd995d4a7a4df790c277fadcbe518b6b9979ac3f17d81b25a448e",
+    "hypocotyl/data/processed/four_genotypes_20260915/config.json": "e1e2463e9f644a7a3dfbc244c0435b33cbe2eaf8635af7a8e9ad402352593501"
+  }
+}

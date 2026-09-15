@@ -1,6 +1,6 @@
 {
-  "protocol": "prefix_forecast_20260911",
-  "configuration_selection": "Hyperparameters retained from the preceding experiment; no new hyperparameter search. Checkpoint epochs selected with 48 h validation only.",
+  "protocol": "four_genotypes_20260915",
+  "configuration_selection": "Existing manuscript settings retained; all models retrained from scratch on four approved genotypes; checkpoint epochs selected with 48-h validation only.",
   "common": {
     "epochs": 1500,
     "weight_decay": 0.0001,
@@ -9,11 +9,6 @@
     "val_smooth": 3
   },
   "models": {
-    "phytoode": {
-      "lr": 0.01,
-      "lambda_ode": 500.0,
-      "lambda_k": 0.1
-    },
     "latent_ode": {
       "lr": 0.01,
       "lambda_ode": 0.0,
@@ -38,11 +33,6 @@
       "lr": 0.0,
       "lambda_ode": 0.0,
       "lambda_k": 0.0
-    },
-    "latent_ode_light": {
-      "lr": 0.01,
-      "lambda_ode": 0.0,
-      "lambda_k": 0.0
     }
   },
   "conditions": [
@@ -58,5 +48,5 @@
   "mask_seed_rule": "20260910 + training seed; shared across all models; nested removals across severity levels",
   "physics": "ordinary logistic with genotype-specific r and capacity; prefix-conditioned individual latent state; all 23 interior nodes",
   "data_loss": "mean per-plant masked RMSE on observed 0--36 h targets",
-  "input": "genotype, four prefix lengths, four masks, time; PhytoODE and matched Latent ODE also receive prescribed binary illumination"
+  "input": "genotype, available early lengths, their masks, and elapsed time; no explicit environmental input"
 }

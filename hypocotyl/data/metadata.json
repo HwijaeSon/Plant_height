@@ -28,7 +28,6 @@
     "Col-0": "Columbia-0 wild type",
     "hy5": "hy5 mutant; allele not specified",
     "MLB": "ML1promoter::phyB-GFP/phyB-9",
-    "EMS57": "EMS57 line; molecular lesion not specified",
     "phyAB": "phyA/phyB double mutant; alleles not specified"
   },
   "age_at_zero": "Unconfirmed; the contributor recalls approximately three days, so only elapsed hours are used.",
@@ -36,5 +35,10 @@
   "biological_batches": "Not recorded in the supplied workbook",
   "light_intensity": "Not recorded in the supplied workbook",
   "confirmation": "Contributor clarified units, first light interval, cR meaning, and MLB construct on 2026-09-09. Longitudinal identity and prefix-forecast protocol confirmed on 2026-09-11.",
-  "current_protocol": "prefix_forecast_20260911; 0--36 h input/training, 48 h validation, 60/72 h test; individual measured lengths only"
+  "current_protocol": "four_genotypes_20260915; 0--36 h input/training, 48 h validation, 60/72 h test; four approved genotypes",
+  "workbook_description": "Measurement-only extract for the approved genotypes, retaining original sheet and cell coordinates. Other columns and all summary charts are omitted.",
+  "released_measurements_by_condition": {
+    "12L12D": 849,
+    "cR": 802
+  }
 }

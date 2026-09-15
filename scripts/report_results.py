@@ -12,7 +12,7 @@ def main():
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     frame = pd.read_csv(ROOT / "results/comparison_temperature.csv")
-    hyp = pd.read_csv(ROOT / "hypocotyl/reports/adopted_lambda100_20260911/comparison.csv")
+    hyp = pd.read_csv(ROOT / "hypocotyl/reports/four_genotypes_20260915/comparison.csv")
     hyp[hyp.additional_prefix_drop.ne(0)].to_csv(args.output / "hypocotyl_missingness.csv", index=False)
     hyp = hyp[hyp.additional_prefix_drop.eq(0)].copy()
     hyp["model"] = hyp.model.replace(dict(phytoode="PhytoODE", latent_ode="Latent ODE",

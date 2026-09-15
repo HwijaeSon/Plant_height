@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "protocol": "four_genotypes_20260915",
+  "genotypes": [
+    "Col-0",
+    "hy5",
+    "MLB",
+    "phyAB"
+  ],
+  "n_plants": 141,
+  "retained_observations": 848,
+  "checked_runs": 52,
+  "checked_neural_checkpoints": 36,
+  "raw_workbook_approved_cells_only": true,
+  "source_cell_extraction_identical": true,
+  "masks_shared_nested_and_training_only": true,
+  "all_saved_scores_recomputed": true,
+  "all_checkpoints_use_current_cohort": true
+}

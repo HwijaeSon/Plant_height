@@ -1,6 +1,5 @@
 {
   "manuscript_title": "PhytoODE: Learning plant growth dynamics across genotypes and observation regimes",
-  "source_commit": "9671ca42605ad6ab1543c527daa6466fa3e80e06",
   "datasets": {
     "wheat": {
       "lambda_ode": 3.16227766,
@@ -139,7 +138,7 @@
       }
     },
     "hypocotyl": {
-      "protocol": "prefix_forecast_20260911",
+      "protocol": "four_genotypes_20260915",
       "lambda_ode": 100.0,
       "lambda_k": 0.0,
       "configuration_file": "configs/hypocotyl_prefix_parameters_no_light_20260911.json",
@@ -155,63 +154,63 @@
             "lambda_ode": 100.0,
             "lambda_k": 0.0,
             "model": "phytoode_prefix_parameters_no_light",
-            "n_params": 1183
+            "n_params": 1179
           },
           "checkpoints": {
             "1": {
-              "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_0/seed1/checkpoint.pt",
-              "sha256": "90b2f099b86b60e58956e7c50bf1e66f104fad20ba486c6d666798f48727065c"
+              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/checkpoint.pt",
+              "sha256": "d58281f3e4f73de5f533ebcd6c3210c71a6411101e55fae46b341aba69c7ce81"
             },
             "2": {
-              "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_0/seed2/checkpoint.pt",
-              "sha256": "e187d45f9d47fb0d755ed04dcb0c162298b7686419dccd7fba4b6a8ecab92d03"
+              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/checkpoint.pt",
+              "sha256": "3cd1fd57079b75ac97252ff8defc9849d021488e93a712b21ab9ba26bfc34ab8"
             },
             "3": {
-              "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_0/seed3/checkpoint.pt",
-              "sha256": "2e20b074ce0f9dcf7858be4de4bbea67f0fb519a6b33588d0142d3e9559dc34d"
+              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/checkpoint.pt",
+              "sha256": "c1b8bb38cae543a26db51165ff3ad5af6b2abce81ab54e7b0473834c3c74c725"
             }
           },
           "checkpoints_by_missingness": {
             "0": {
               "1": {
-                "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_0/seed1/checkpoint.pt",
-                "sha256": "90b2f099b86b60e58956e7c50bf1e66f104fad20ba486c6d666798f48727065c"
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/checkpoint.pt",
+                "sha256": "d58281f3e4f73de5f533ebcd6c3210c71a6411101e55fae46b341aba69c7ce81"
               },
               "2": {
-                "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_0/seed2/checkpoint.pt",
-                "sha256": "e187d45f9d47fb0d755ed04dcb0c162298b7686419dccd7fba4b6a8ecab92d03"
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/checkpoint.pt",
+                "sha256": "3cd1fd57079b75ac97252ff8defc9849d021488e93a712b21ab9ba26bfc34ab8"
               },
               "3": {
-                "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_0/seed3/checkpoint.pt",
-                "sha256": "2e20b074ce0f9dcf7858be4de4bbea67f0fb519a6b33588d0142d3e9559dc34d"
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/checkpoint.pt",
+                "sha256": "c1b8bb38cae543a26db51165ff3ad5af6b2abce81ab54e7b0473834c3c74c725"
               }
             },
             "25": {
               "1": {
-                "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_25/seed1/checkpoint.pt",
-                "sha256": "6757a70dc10b51b830556d3fcaf6c555a6c48b6e6183f7710954f8afe5d23157"
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed1/checkpoint.pt",
+                "sha256": "f35ace86c530b50e581292d8260fba97bf42b7bce69d49d48854742f77f2e1ab"
               },
               "2": {
-                "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_25/seed2/checkpoint.pt",
-                "sha256": "b1e5e56e1ed7d29749bb753b50cb5e9f96d05352b159454ed2099981f7f173b9"
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed2/checkpoint.pt",
+                "sha256": "b29ab5de9b7e100373f2890ca4a2a3e51837607f80fba55c6d110f61a18471ff"
               },
               "3": {
-                "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_25/seed3/checkpoint.pt",
-                "sha256": "17dd0b5c20b8ef6efc43c36ec027934a2e0658000fad0b046c02a319a369069b"
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed3/checkpoint.pt",
+                "sha256": "98eb2a10be1bd2c368b11af6340ea0a4f8163a9c639191363c16f746d665d669"
               }
             },
             "50": {
               "1": {
-                "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_50/seed1/checkpoint.pt",
-                "sha256": "8acacde9a83cc4fe0d6b28ecca158cfee27b0abc152a8dfc9be1fd914c5aca7b"
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed1/checkpoint.pt",
+                "sha256": "c31ec984c84d4024ffc87a3ed1223d4a75abddbf11a06e54dcda8ad06dc6b2f7"
               },
               "2": {
-                "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_50/seed2/checkpoint.pt",
-                "sha256": "f03c9d218ce3e2ff7a10058eeaf60fe61809d850753be6d7273b2ad9d03b9caf"
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed2/checkpoint.pt",
+                "sha256": "baeded61c4cafa7014e2ae816f286a90bfc610858758eb8260a8a057b3e4eb6c"
               },
               "3": {
-                "path": "hypocotyl/results/prefix_parameters_no_light_20260911/evaluated/lambda_100/drop_50/seed3/checkpoint.pt",
-                "sha256": "a6832836ce5c95864a420cad004ad118344f8c35ad70bc268658b3b387d18c30"
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed3/checkpoint.pt",
+                "sha256": "6f7e6e01e5c08fc55be7c45157bd7f0eaa7ea468d7b3cef6f2426b1245abb1d1"
               }
             }
           }
@@ -226,20 +225,65 @@
             "lr": 0.01,
             "lambda_ode": 0.0,
             "lambda_k": 0.0,
-            "model": "latent_ode"
+            "model": "latent_ode",
+            "n_params": 1115
           },
           "checkpoints": {
             "1": {
-              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed1/checkpoint.pt",
-              "sha256": "92357ae897845e839c5f65d33a29b14b1f4a168a18be20937bc93c725d25d6bf"
+              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed1/checkpoint.pt",
+              "sha256": "60aef07b52818757ad70361a872a9df78a0f5398bc1eec321ab7cfc23139063f"
             },
             "2": {
-              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed2/checkpoint.pt",
-              "sha256": "257554d0d1f598998a5bd0f4d733532f9de7c9d4b44e92edeec8a387ecd4c656"
+              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed2/checkpoint.pt",
+              "sha256": "276bfb2bebe25b5d230982022d1562dc906bb29ebebaa833f7911417dbd00e14"
             },
             "3": {
-              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/latent_ode/seed3/checkpoint.pt",
-              "sha256": "a2d28feb9822594cabca4ffa224eedb9a74ba38433b8ed996961e57a2884e54d"
+              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed3/checkpoint.pt",
+              "sha256": "006f2107ae69153014e7f4c87dbe4f21d02f4d806d7674ff1a351d122bd9642f"
+            }
+          },
+          "checkpoints_by_missingness": {
+            "0": {
+              "1": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed1/checkpoint.pt",
+                "sha256": "60aef07b52818757ad70361a872a9df78a0f5398bc1eec321ab7cfc23139063f"
+              },
+              "2": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed2/checkpoint.pt",
+                "sha256": "276bfb2bebe25b5d230982022d1562dc906bb29ebebaa833f7911417dbd00e14"
+              },
+              "3": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed3/checkpoint.pt",
+                "sha256": "006f2107ae69153014e7f4c87dbe4f21d02f4d806d7674ff1a351d122bd9642f"
+              }
+            },
+            "25": {
+              "1": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed1/checkpoint.pt",
+                "sha256": "e728c1b99bc79caa575701f74cb306c978e7c6d70a3b845b2583d0bc62021985"
+              },
+              "2": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed2/checkpoint.pt",
+                "sha256": "676c8be00cc187aeb870a048e28b572243c262a05067fa74c87c31def1e2c2fd"
+              },
+              "3": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed3/checkpoint.pt",
+                "sha256": "41d59654794c85275f67de9acc979ce1695367d1664e08e45b15cee58d495877"
+              }
+            },
+            "50": {
+              "1": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed1/checkpoint.pt",
+                "sha256": "c484050a75e7084d89f5808fabe9eb05e61a73501ec94f01284dd79628d0541a"
+              },
+              "2": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed2/checkpoint.pt",
+                "sha256": "789e55d551f2d00dc9c75a601dd1d70df4b059c9c82b20b18dd35ce32e3aab52"
+              },
+              "3": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed3/checkpoint.pt",
+                "sha256": "92369c0b411076469d1d2fb72527b90ad4bf86fd6e978cbbb23317a231150b14"
+              }
             }
           }
         },
@@ -253,20 +297,65 @@
             "lr": 0.003,
             "lambda_ode": 50.0,
             "lambda_k": 0.01,
-            "model": "logistic_pinn"
+            "model": "logistic_pinn",
+            "n_params": 1611
           },
           "checkpoints": {
             "1": {
-              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed1/checkpoint.pt",
-              "sha256": "927e3af94a9010307e302c2867432bb53ae33ecfbeb27c479cb471e2c1dbcd11"
+              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed1/checkpoint.pt",
+              "sha256": "17abf96e486669c2450c37ea424a18401536c5e154d036f5f2cbac280d63db25"
             },
             "2": {
-              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed2/checkpoint.pt",
-              "sha256": "ba944278b31b79a4066c31a780a382ccbcfcc2ae03f94b971e698afaca6cad4a"
+              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed2/checkpoint.pt",
+              "sha256": "4d48323b21b470c7dd160d72ecaba6145dc94c45eaf6bd5734c2c1a2ba4af3c7"
             },
             "3": {
-              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/logistic_pinn/seed3/checkpoint.pt",
-              "sha256": "79230397de56b43886760d4fccebeee5cb1030091c733256658f401d0aec8570"
+              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed3/checkpoint.pt",
+              "sha256": "6b9159731e1d0ec903e2f2343a3fb04f888d1f085f268a89e9a0a74f74b3ec64"
+            }
+          },
+          "checkpoints_by_missingness": {
+            "0": {
+              "1": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed1/checkpoint.pt",
+                "sha256": "17abf96e486669c2450c37ea424a18401536c5e154d036f5f2cbac280d63db25"
+              },
+              "2": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed2/checkpoint.pt",
+                "sha256": "4d48323b21b470c7dd160d72ecaba6145dc94c45eaf6bd5734c2c1a2ba4af3c7"
+              },
+              "3": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed3/checkpoint.pt",
+                "sha256": "6b9159731e1d0ec903e2f2343a3fb04f888d1f085f268a89e9a0a74f74b3ec64"
+              }
+            },
+            "25": {
+              "1": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed1/checkpoint.pt",
+                "sha256": "baec38ff9d891582f241b913cebc76e855271dca788788e15e4195aa6c8bb6b0"
+              },
+              "2": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed2/checkpoint.pt",
+                "sha256": "d7e69a286c69173b52d98392a5d159f7c17a4d5c92e9704b8011abdea34530f6"
+              },
+              "3": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed3/checkpoint.pt",
+                "sha256": "63d845b4e9cbabc67db3c06fed9a44e2775ee59e278e15c64f3f16695a8b9f0c"
+              }
+            },
+            "50": {
+              "1": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed1/checkpoint.pt",
+                "sha256": "d22e197b4d3322a4155d3f4230f6d9f10976c60c8eabc61ccc7866aa35c03633"
+              },
+              "2": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed2/checkpoint.pt",
+                "sha256": "2af473b6b39e5dc0f6253e5242f3165d068c579aeabd859ba39f237bb752ff43"
+              },
+              "3": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed3/checkpoint.pt",
+                "sha256": "211737dd4cb6b01942d9b265826639431d50a445870609749498141f2d8c78e9"
+              }
             }
           }
         },
@@ -280,20 +369,65 @@
             "lr": 0.01,
             "lambda_ode": 0.0,
             "lambda_k": 0.0,
-            "model": "lstm"
+            "model": "lstm",
+            "n_params": 2801
           },
           "checkpoints": {
             "1": {
-              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed1/checkpoint.pt",
-              "sha256": "9e1e4bb2fcddef5cb63ee531f06c6b7ee7c111a64f5a08ffe591e22954582d6c"
+              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed1/checkpoint.pt",
+              "sha256": "b20ed11cf39232e0858c4fd39304c6cd4936d2d767b2afb27c8716f0b6f0dcc4"
             },
             "2": {
-              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed2/checkpoint.pt",
-              "sha256": "16a5f24d27a45002133e22665ea710baf23bee2ef70ad74be8b2d23ff08264d3"
+              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed2/checkpoint.pt",
+              "sha256": "f88b50450a0b1c70edfe041b5c6ee9178b646e84bb0d2871664ed1dec7d3da3c"
             },
             "3": {
-              "path": "hypocotyl/results/prefix_forecast_20260911/drop_0/lstm/seed3/checkpoint.pt",
-              "sha256": "cd89b61c492769639dd00d0ad066636a330d1c67f6f338ebeaf51853e8dd1a97"
+              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed3/checkpoint.pt",
+              "sha256": "ba5d6caec811364a9e50e0ed951d3bac663e8b45049f146ff09e40b5663df962"
+            }
+          },
+          "checkpoints_by_missingness": {
+            "0": {
+              "1": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed1/checkpoint.pt",
+                "sha256": "b20ed11cf39232e0858c4fd39304c6cd4936d2d767b2afb27c8716f0b6f0dcc4"
+              },
+              "2": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed2/checkpoint.pt",
+                "sha256": "f88b50450a0b1c70edfe041b5c6ee9178b646e84bb0d2871664ed1dec7d3da3c"
+              },
+              "3": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed3/checkpoint.pt",
+                "sha256": "ba5d6caec811364a9e50e0ed951d3bac663e8b45049f146ff09e40b5663df962"
+              }
+            },
+            "25": {
+              "1": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed1/checkpoint.pt",
+                "sha256": "21603af306dd845d875e9386d639d1c6890518f1270030cec602220e92d8f24a"
+              },
+              "2": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed2/checkpoint.pt",
+                "sha256": "b0d55a3bfdd1a5f94a01fc999fa222d7175e4d67f899a335e685f53dfca1bd9f"
+              },
+              "3": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed3/checkpoint.pt",
+                "sha256": "0473e5d5df8982419aa4551a99bcf1ff931728c095cef2ee81f9cee85fcfc2a3"
+              }
+            },
+            "50": {
+              "1": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed1/checkpoint.pt",
+                "sha256": "63f7f5e27bffd8e553a0757713192bba3f514ae1438cf8d0a04735e056d7995a"
+              },
+              "2": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed2/checkpoint.pt",
+                "sha256": "7f269a7e1e0ad3fb50c7bfbbba723afa44894d54d434517c929d6866dd497c99"
+              },
+              "3": {
+                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed3/checkpoint.pt",
+                "sha256": "7d7c53ca25bf30a14a46426bcab7203c67c304be726b11a4775839447a96e7c4"
+              }
             }
           }
         },
@@ -328,8 +462,8 @@
       },
       "illumination_input": false,
       "parameter_head_inputs": "genotype embedding, masked 0--36 h lengths, presence masks",
-      "result_report": "hypocotyl/reports/adopted_lambda100_20260911/comparison.csv",
-      "adoption_record": "hypocotyl/reports/adopted_lambda100_20260911/adoption.json",
+      "result_report": "hypocotyl/reports/four_genotypes_20260915/comparison.csv",
+      "adoption_record": "hypocotyl/results/four_genotypes_20260915/plan.json",
       "comparison_models": [
         "logistic",
         "rf",
@@ -337,7 +471,15 @@
         "logistic_pinn",
         "latent_ode",
         "phytoode"
-      ]
+      ],
+      "genotypes": [
+        "Col-0",
+        "hy5",
+        "MLB",
+        "phyAB"
+      ],
+      "rerun_note": "All six models retrained from scratch with existing manuscript settings on the four approved genotypes."
     }
-  }
+  },
+  "release_version": "submission-20260915-four-genotypes"
 }

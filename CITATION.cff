@@ -3,15 +3,15 @@ message: "Please cite the accompanying PhytoODE manuscript and the original data
 type: software
 title: "PhytoODE: Learning plant growth dynamics across genotypes and observation regimes"
 authors:
-  - family-names: Lim
+  - family-names: Im
     given-names: Yeoul
-  - family-names: You
-    given-names: Siyoung
   - family-names: Kim
     given-names: Hanim
+  - family-names: Yoo
+    given-names: Siyoung
   - family-names: Son
     given-names: Hwijae
-version: submission-20260911-logistic-forecast
-date-released: 2026-09-11
+version: submission-20260915-four-genotypes
+date-released: 2026-09-15
 repository-code: "https://github.com/HwijaeSon/Plant_height"
-url: "https://github.com/HwijaeSon/Plant_height/tree/submission-20260911-logistic-forecast"
+url: "https://github.com/HwijaeSon/Plant_height/tree/submission-20260915-four-genotypes"

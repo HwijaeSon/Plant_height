@@ -68,7 +68,7 @@ def run(args):
         for name,value in model.named_parameters():
             if 'lstm' in name and 'weight' in name and value.ndim>=2:torch.nn.init.orthogonal_(value)
         cfg.update(n_params=sum(p.numel() for p in model.parameters()),initial_state_sha256=state_sha(model))
-    else:cfg['n_params']=len(plants)+10 if args.model=='logistic' else None
+    else:cfg['n_params']=len(plants)+2*len(data.GENOTYPES) if args.model=='logistic' else None
     out.mkdir(parents=True);write(out/'config.json',cfg)
     started=time.monotonic()
     if args.mode=='evaluate':

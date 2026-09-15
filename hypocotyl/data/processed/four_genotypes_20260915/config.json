@@ -1,0 +1,65 @@
+{
+  "protocol": "four_genotypes_20260915",
+  "genotypes": [
+    "Col-0",
+    "hy5",
+    "MLB",
+    "phyAB"
+  ],
+  "source_description": "Approved measurement extract preserving source-cell coordinates; empty columns contain no released genotype",
+  "source_workbook_sha256": "b4e1973ebc0cf0b25c11c411ed7cc94ac606652a6aaaf5b65c8cbd547c38cd05",
+  "condition": "12L12D",
+  "temperature_c": 23.0,
+  "observation_unit": "longitudinal plant; genotype and source row identify the same plant across times, as confirmed by contributor",
+  "source_measurements": 849,
+  "retained_measurements": 848,
+  "n_plants": 141,
+  "minimum_prefix_observations": 1,
+  "exclusion_rule": "Exclude only plants with no observed length at 0,12,24,36 h; no future-length or future-availability filtering.",
+  "excluded_observations": [
+    {
+      "observation_id": "12L12D:V37",
+      "plant_id": "Col-0:row37",
+      "genotype": "Col-0",
+      "source_row": 37,
+      "source_cell": "V37",
+      "elapsed_hours": 48,
+      "length_mm": 1.899
+    }
+  ],
+  "prefix_hours": [
+    0.0,
+    12.0,
+    24.0,
+    36.0
+  ],
+  "validation_hours": [
+    48
+  ],
+  "test_hours": [
+    60,
+    72
+  ],
+  "counts": {
+    "test": 232,
+    "train": 500,
+    "val": 116
+  },
+  "plants_with_observations": {
+    "test": 120,
+    "train": 141,
+    "val": 116
+  },
+  "prefix_count_distribution": {
+    "1": 7,
+    "2": 15,
+    "3": 13,
+    "4": 106
+  },
+  "height_scale_mm": 9.602,
+  "scale_fit_on": "0--36 h observed training lengths only",
+  "phenotype_means_used": false,
+  "target_type": "individual_plant_lengths",
+  "normalization": "training maximum",
+  "split_rule": "same plants across temporal partitions; no 48/60/72 h phenotype enters the encoder"
+}

@@ -9,11 +9,11 @@ from openpyxl import load_workbook
 
 ROOT=Path(__file__).resolve().parents[2]
 DATA=ROOT/'hypocotyl/data'
-PREPARED=DATA/'processed/prefix_forecast_20260911'
-GENOTYPES=['Col-0','hy5','MLB','EMS57','phyAB']
+PREPARED=DATA/'processed/four_genotypes_20260915'
+GENOTYPES=['Col-0','hy5','MLB','phyAB']
 HOURS=np.arange(0.,73.,3.)
 PREFIX_HOURS=np.array([0.,12.,24.,36.])
-PROTOCOL='prefix_forecast_20260911'
+PROTOCOL='four_genotypes_20260915'
 
 
 def sha(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -25,9 +25,11 @@ def prepare(workbook=None,output=PREPARED):
     rows=[]
     for block,hour in enumerate(range(0,73,12)):
         assert sheet.cell(1,2+5*block).value==f'{hour}hr'
-        for offset,g in enumerate(GENOTYPES):
-            col=2+5*block+offset
-            assert sheet.cell(2,col).value==g
+        columns={sheet.cell(2,c).value:c for c in range(2+5*block,7+5*block) if sheet.cell(2,c).value is not None}
+        if set(columns)!=set(GENOTYPES):
+            raise ValueError('Workbook contains a genotype outside the approved cohort')
+        for g in GENOTYPES:
+            col=columns[g]
             for row in range(3,45):
                 cell=sheet.cell(row,col)
                 if cell.value is None: continue
@@ -36,7 +38,8 @@ def prepare(workbook=None,output=PREPARED):
                 rows.append(dict(observation_id=f'12L12D:{cell.coordinate}',plant_id=f'{g}:row{row}',
                     genotype=g,source_row=row,source_cell=cell.coordinate,elapsed_hours=hour,length_mm=float(cell.value)))
     frame=pd.DataFrame(rows)
-    assert len(frame)==943 and frame.observation_id.is_unique
+    assert len(frame)==849 and frame.observation_id.is_unique
+    assert set(frame.genotype)==set(GENOTYPES)
     assert np.isfinite(frame.length_mm).all() and (frame.length_mm>0).all()
     eligible=set(frame.loc[frame.elapsed_hours<=36,'plant_id'])
     excluded=frame[~frame.plant_id.isin(eligible)].copy()
@@ -49,7 +52,7 @@ def prepare(workbook=None,output=PREPARED):
     retained=retained.merge(plants[['plant_id','plant_index']],on='plant_id',validate='many_to_one')
     retained=retained.sort_values(['plant_index','elapsed_hours']).reset_index(drop=True)
     prefix=retained[retained.split.eq('train')]
-    config=dict(protocol=PROTOCOL,source_workbook_sha256=sha(workbook),condition='12L12D',temperature_c=23.,
+    config=dict(protocol=PROTOCOL,genotypes=GENOTYPES,source_description='Approved measurement extract preserving source-cell coordinates; empty columns contain no released genotype',source_workbook_sha256=sha(workbook),condition='12L12D',temperature_c=23.,
         observation_unit='longitudinal plant; genotype and source row identify the same plant across times, as confirmed by contributor',
         source_measurements=len(frame),retained_measurements=len(retained),n_plants=len(plants),
         minimum_prefix_observations=1,exclusion_rule='Exclude only plants with no observed length at 0,12,24,36 h; no future-length or future-availability filtering.',
@@ -60,7 +63,7 @@ def prepare(workbook=None,output=PREPARED):
         height_scale_mm=float(prefix.length_mm.max()),scale_fit_on='0--36 h observed training lengths only',
         phenotype_means_used=False,target_type='individual_plant_lengths',
         normalization='training maximum',split_rule='same plants across temporal partitions; no 48/60/72 h phenotype enters the encoder')
-    assert config['counts']=={'test':263,'train':551,'val':128} and len(plants)==157
+    assert config['retained_measurements']==848 and set(plants.genotype)==set(GENOTYPES)
     output=Path(output); output.mkdir(parents=True,exist_ok=True)
     for name,part in [('observations',retained),('plants',plants),('excluded_observations',excluded)]:
         (output/f'{name}.csv').write_text(part.to_csv(index=False))

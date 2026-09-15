@@ -1,4 +1,4 @@
-"""Verify original-cell extraction and the longitudinal prefix forecast partitions."""
+"""Verify approved-cell extraction and the longitudinal prefix forecast partitions."""
 import argparse
 from pathlib import Path
 import sys
@@ -17,6 +17,6 @@ def main():
         config=prepare(output=output)
         for path in output.iterdir():
             if path.read_bytes()!=(PREPARED/path.name).read_bytes():raise ValueError(f'Extraction differs: {path.name}')
-    print(f"Verified 943 raw cells; 157 plants, 942 retained observations, train/val/test=551/128/263. No averaging or imputation.")
+    print(f"Verified {config['source_measurements']} released cells; {config['n_plants']} plants and {config['retained_measurements']} retained observations. No averaging or imputation.")
 
 if __name__=='__main__':main()

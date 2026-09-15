@@ -22,7 +22,7 @@ class PrefixEncoder(CORE.EnvEncoder):
 
 class PrefixLatentODE(CORE.LatentODEHeightModel):
     def __init__(self,light=True):
-        super().__init__(n_genotypes=5,env_dim=int(light),latent_dim=8,g_embed_dim=4,
+        super().__init__(n_genotypes=len(GENOTYPES),env_dim=int(light),latent_dim=8,g_embed_dim=4,
             ode_hidden=16,ode_layers=1,dec_hidden=16,enc_hidden=8,use_physics=False,days_per_tau=72.)
         self.light=light
         self.encoder=PrefixEncoder(light)
@@ -46,7 +46,7 @@ class PrefixLatentODE(CORE.LatentODEHeightModel):
 
 class PrefixPINN(nn.Module):
     def __init__(self):
-        super().__init__();self.embedding=nn.Embedding(5,4)
+        super().__init__();self.embedding=nn.Embedding(len(GENOTYPES),4)
         self.head=CORE.mlp([13,32,32,1]);self.output=nn.LeakyReLU(.01)
         self.ode_param_head=LogisticParameterHead()
     def forward(self,g_idx,time,env,prefix_y,prefix_mask,prefix_time):
@@ -60,7 +60,7 @@ class PrefixPINN(nn.Module):
 
 class PrefixLSTM(nn.Module):
     def __init__(self):
-        super().__init__();self.embedding=nn.Embedding(5,4)
+        super().__init__();self.embedding=nn.Embedding(len(GENOTYPES),4)
         self.lstm1=nn.LSTM(9,16,batch_first=True);self.lstm2=nn.LSTM(16,8,batch_first=True)
         self.head=nn.Sequential(nn.Linear(12,16),nn.LeakyReLU(.01),nn.Linear(16,1),nn.LeakyReLU(.01))
     def forward(self,g_idx,time,env,prefix_y,prefix_mask,prefix_time):
@@ -89,9 +89,9 @@ def physics_losses(model,out,x):
 
 def forest_features(x):
     g=x['g_idx'].cpu().numpy();prefix=(x['prefix_y']*x['prefix_mask']).cpu().numpy();mask=x['prefix_mask'].cpu().numpy()
-    context=np.concatenate([np.eye(5)[g],prefix,mask],1)
+    context=np.concatenate([np.eye(len(GENOTYPES))[g],prefix,mask],1)
     time=x['time'].cpu().numpy()
-    return np.concatenate([np.broadcast_to(context[:,None,:],(len(g),len(time),13)),
+    return np.concatenate([np.broadcast_to(context[:,None,:],(len(g),len(time),context.shape[1])),
                            np.broadcast_to(time[None,:,None],(len(g),len(time),1))],2)
 
 

@@ -1,7 +1,7 @@
 # Sources, attribution, and scope of distribution
 
 This submission contains the authors' model implementation, analysis scripts,
-selected experiment outputs, and original hypocotyl dataset. It does not assign
+selected experiment outputs, and approved hypocotyl dataset extract. It does not assign
 a blanket licence to third-party work or grant additional reuse rights.
 The original authors and data providers retain their respective rights.
 
@@ -34,9 +34,9 @@ provenance JSON. These data are scientific result records, not a claim of owners
 of the reference authors' work. `paper/references.bib` contains the full research
 citations, including foundational Neural ODE and physics-informed learning papers.
 
-## Original hypocotyl data and code
+## Author-collected hypocotyl data and code
 
-The workbook was supplied by the study authors and is included with their
+The approved measurement extract was supplied by the study authors and is included with their
 authorization for this submission. Its original bytes, cell identifiers, missing
 metadata, and fixed partitions are preserved. No DOI or additional code/data
 licence has been assigned in this snapshot. Public availability of these files

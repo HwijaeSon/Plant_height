@@ -1,6 +1,6 @@
 {
-  "source_commit": "9671ca42605ad6ab1543c527daa6466fa3e80e06",
-  "retained_sources": {
+  "release_version": "submission-20260915-four-genotypes",
+  "retained_temperature_sources": {
     ".gitattributes": "3273638924b179376f4a2aa867045ed0a5c13b87e4f489c141ffbb3a9116c265",
     "arabidopsis/code/latent_ode_model.py": "73d5e8fa2796c937c856926994a05b6ce137152d12c06e375a122fe00e22b271",
     "arabidopsis/code/models.py": "ac478ae8d98c494f377f01af0d0493cc08841100a93e67941f914a0922259e19",
@@ -138,9 +138,6 @@
     "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/progress.json": "b2a77496fd3f8363f1fb020368770c77889c7c3cac60416cd57714dc9368a04a",
     "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/result.json": "df695d9906d0aae134aa57e368bf1ba199cb9f6422db786ebe984d2350369d7f",
     "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/selection_frozen.json": "7b3961e2933eb0dc785c56a42d8aea0576d93694f24ca8ca408694e5dc0dc530",
-    "hypocotyl/code/single_condition_models.py": "8116c31a537ee6f1c7dd2fdd8689c2d0483c636ce56c36660b8657f04e869ca2",
-    "hypocotyl/data/metadata.json": "7026b1027b06758b60d79471a8999c542a0cb80c46f6fa491c26adddaec612b7",
-    "hypocotyl/data/raw/hypocotyl_growth_20230403.xlsx": "62b64ad2aef1467f1278b8602d56ea6c7642fabbd5fbc1409aec13e4e40277e4",
     "maize/code/data.py": "bd731ba5a43ae8b3ece742b7ecc70747d502ca14c4e8740065bdba168da96360",
     "maize/code/download_data.py": "9b8866810f1bc3a4c4ed4104c350fd2278e60b38609108b2c3662111b5b29792",
     "maize/code/prepare_data.py": "25e5c470b62e59b9cf4576775ee8cf7b86faabf07aa3da831134cac3e4c80361",
@@ -227,39 +224,7 @@
     "wheat/results/reference/test_predictions_seed1_3_provenance.json": "d9117c2ea2e6704871559b9def6332758e0c1529f2d404b2fab0fa1077864c63",
     "wheat/results/test_predictions_seed1_3.npz": "8cb8f551319844108ce34eca43553109e14c5ca8ba28dced585cc090903d4254"
   },
-  "description": "SHA-256 values recorded from the development working tree at source_commit before submission packaging. Git line-ending normalization can change CSV byte hashes without changing data values. Current submitted bytes are recorded separately in manifest.json.",
-  "modified_retained_files": [
-    ".gitattributes",
-    "arabidopsis/code/run_experiment.py",
-    "requirements.txt",
-    "wheat/results/reference/logi_pinn_onehot_original.csv",
-    "wheat/results/reference/lstm_nn_onehot_original.csv"
-  ],
-  "derived_files": {
-    "visualization/hypocotyl.py": "Wrapper around the retained coefficient-100 report and figure exporter, hypocotyl/code/report_adopted_hypocotyl.py."
-  },
-  "renamed_sources": {
-    "results/comparison_temperature.csv": {
-      "original_path": "paper/current_results.csv",
-      "source_sha256": "01ac353ab94703b2e39fe9f665609968ab3d34fa21cabcb52f8dca2d18d6d665"
-    },
-    "visualization/temperature.py": {
-      "original_path": "paper/make_figures.py",
-      "source_sha256": "769f51b4c478bb35e3aed80b60e5790918b700acdaf56eb5dd4980ca907a0929"
-    }
-  },
-  "preceding_release": "submission-20260911-lambda100",
-  "current_protocol": "prefix_forecast_20260911",
-  "forecast_sources": "hypocotyl/results/prefix_forecast_20260911/plan.json",
-  "note": "retained_sources hashes identify original development files; final release hashes are in manifest.json. Superseded hypocotyl mean-target code and results remain in tag submission-20260911-code-data. The original individual-prefix manuscript snapshot remains at submission-20260911-prefix-forecast. configs/paper.json now uses the retained no-light coefficient 100 with individual prefix-conditioned r/K and lambda_K=0. All three subsequent coefficient-search records are preserved; 100 is not the expanded-search validation optimum.",
-  "prefix_parameter_sources": "hypocotyl/results/prefix_parameters_20260911/plan.json",
-  "current_followups": [
-    "prefix_parameters_20260911",
-    "prefix_parameters_no_light_20260911",
-    "expanded_no_light_lambda_20260911"
-  ],
-  "no_light_prefix_parameter_sources": "hypocotyl/results/prefix_parameters_no_light_20260911/plan.json",
-  "expanded_no_light_sources": "hypocotyl/results/expanded_no_light_lambda_20260911/plan.json",
-  "manuscript_configuration": "hypocotyl/reports/adopted_lambda100_20260911/adoption.json",
-  "current_comparison": "Six hypocotyl predictors using genotype, masked initial phenotype and elapsed time. Illumination-conditioned comparator and phase annotations are excluded from current manuscript tables and figures; historical experimental artifacts remain archived."
+  "hypocotyl_sources": "hypocotyl/results/four_genotypes_20260915/plan.json",
+  "hypocotyl_data": "hypocotyl/data/processed/four_genotypes_20260915/config.json",
+  "note": "Temperature experiment files retained. Hypocotyl workbook is an approved measurement extract; all six predictors retrained on the four released genotypes. Complete current file hashes are in manifest.json."
 }

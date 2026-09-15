@@ -1,0 +1,31 @@
+logistic_pinn/drop0.25/seed1: 100/1500 val=1.3115
+logistic_pinn/drop0.25/seed1: 200/1500 val=0.8620
+logistic_pinn/drop0.25/seed1: 300/1500 val=0.7670
+logistic_pinn/drop0.25/seed1: 400/1500 val=0.6714
+logistic_pinn/drop0.25/seed1: 500/1500 val=0.6510
+logistic_pinn/drop0.25/seed1: 600/1500 val=0.6138
+logistic_pinn/drop0.25/seed1: 700/1500 val=0.5997
+logistic_pinn/drop0.25/seed1: 800/1500 val=0.5765
+logistic_pinn/drop0.25/seed1: 900/1500 val=0.5657
+logistic_pinn/drop0.25/seed1: 1000/1500 val=0.5577
+logistic_pinn/drop0.25/seed1: 1100/1500 val=0.5482
+logistic_pinn/drop0.25/seed1: 1200/1500 val=0.5455
+logistic_pinn/drop0.25/seed1: 1300/1500 val=0.5427
+logistic_pinn/drop0.25/seed1: 1400/1500 val=0.5416
+logistic_pinn/drop0.25/seed1: 1500/1500 val=0.5415
+{
+  "status": "complete",
+  "metrics": {
+    "train": 0.280806080022126,
+    "val": 0.541526544850962,
+    "test": 1.251981925576121
+  }
+}
+{
+  "status": "complete",
+  "metrics": {
+    "train": 0.280806080022126,
+    "val": 0.541526544850962,
+    "test": 1.251981925576121
+  }
+}
