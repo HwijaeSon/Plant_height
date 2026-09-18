@@ -3,13 +3,26 @@
 **Learning plant growth dynamics across genotypes and observation regimes**
 
 Code, data access, fitted models, evaluation and visualization for the manuscript
-version dated **18 September 2026** (`submission-20260918`). This snapshot contains
+version dated **18 September 2026** (`submission-20260918-v2`). This snapshot contains
 only the reported temperature benchmarks, the final individual hypocotyl
 forecasting experiment, their baselines and reported loss ablations. Search runs,
 previous hypocotyl experiments and manuscript source/build files are excluded.
 
-[Reproduction guide](docs/REPRODUCTION.md) · [Hypocotyl dataset](hypocotyl/README.md) ·
-[Model inventory](submission/models.csv) · [Data sources and attribution](THIRD_PARTY.md)
+[Reproduction guide](REPRODUCTION.md) · [Hypocotyl dataset](data/hypocotyl/README.md) ·
+[Model inventory](checkpoints/inventory.csv) · [Data sources and attribution](THIRD_PARTY.md)
+
+## Repository layout
+
+```text
+src/           Model implementations, data preparation, evaluation, plotting and configs
+data/          Author-collected data; external data are downloaded here
+checkpoints/   Fitted neural models, forests and ODE parameters, grouped by dataset
+results/       Recorded predictions, metrics and provenance, grouped by dataset
+```
+
+`run.py` is the training/evaluation entry point. The four directories contain no
+date-based experiment trees. Generated outputs go to the ignored `outputs/`
+directory. Detailed commands are in [REPRODUCTION.md](REPRODUCTION.md).
 
 ## Data and prediction tasks
 
@@ -41,19 +54,19 @@ PyTorch installation. GPU indices in commands refer to visible devices.
 ```bash
 git clone https://github.com/HwijaeSon/Plant_height.git
 cd Plant_height
-git checkout submission-20260918
+git checkout submission-20260918-v2
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-python scripts/verify_submission.py
-python scripts/download_data.py --dataset all
-python scripts/prepare_data.py --dataset all
+python src/scripts/verify_submission.py
+python src/scripts/download_data.py --dataset all
+python src/scripts/prepare_data.py --dataset all
 ```
 
 Download/preparation can be restricted to `wheat`, `maize`, or `arabidopsis`.
-Hypocotyl data need no download: `python scripts/prepare_hypocotyl.py` verifies
+Hypocotyl data need no download: `python src/scripts/prepare_hypocotyl.py` verifies
 that extracting the released workbook reproduces the supplied CSVs. External
-file URLs and SHA-256 checksums are in `configs/data_sources.json`.
+file URLs and SHA-256 checksums are in `src/configs/data_sources.json`.
 
 ## Evaluate trained PhytoODE models
 
@@ -78,11 +91,11 @@ prefix missingness of 11.35%, 33.51%, and 55.67%. The two final models retain th
 original training normalization scale across removals. The earlier reference
 baselines retain their original per-mask normalization and settings.
 
-`configs/paper.json` indexes checkpoint paths and hashes. The historical directory
-names of temperature result files preserve provenance; only selected fits are
-included. Some older baseline weights were never saved: all available weights,
-process parameters and prediction archives are included, and
-[the inventory](submission/models.csv) states availability explicitly.
+`src/configs/paper.json` indexes checkpoint paths and hashes. Fitted files are
+named by model, seed and (for hypocotyl) removal percentage. For example,
+`checkpoints/hypocotyl/phytoode_seed101_drop25.pt` has its predictions and metrics
+under the same stem in `results/hypocotyl/`. Some older baseline weights were
+never saved; [the inventory](checkpoints/inventory.csv) states availability.
 
 ## Train a model
 
@@ -100,15 +113,15 @@ Training uses the retained configuration and validation-based checkpoint
 selection. Hypocotyl PhytoODE/control training scores train/validation only;
 future test evaluation is a separate command. Use `--model latent_ode` for the
 unregularized architecture. Baseline training/evaluation commands and the
-complete seed/removal protocol are in [docs/REPRODUCTION.md](docs/REPRODUCTION.md).
+complete seed/removal protocol are in [REPRODUCTION.md](REPRODUCTION.md).
 Every command requires a new output directory.
 
 ## Tables, figures and verification
 
 ```bash
-python scripts/report_results.py --output outputs/tables
-python scripts/make_figures.py --output outputs/figures
-python scripts/verify_models.py --dataset all --output outputs/restored-models
+python src/scripts/report_results.py --output outputs/tables
+python src/scripts/make_figures.py --output outputs/figures
+python src/scripts/verify_models.py --dataset all --output outputs/restored-models
 ```
 
 The report exports train/validation/test **RMSE / relative RMSE (%)** with the
@@ -119,7 +132,7 @@ figures stay in the local output directory.
 
 The verification command restores all indexed PhytoODE/control checkpoints and
 all hypocotyl reference fits and compares predictions with the recorded arrays.
-See `scripts/evaluate_baselines.py` for additional fitted temperature baselines.
+See `src/scripts/evaluate_baselines.py` for additional fitted temperature baselines.
 CPU/CUDA arithmetic can differ slightly; retraining is not guaranteed to be
 bitwise identical. Standard deviations describe seed/mask variation, not
 independent biological replication.

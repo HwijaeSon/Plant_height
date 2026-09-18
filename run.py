@@ -28,7 +28,7 @@ def write_json(path, value):
 class Problem:
     def __init__(self, dataset, name, device, seed):
         self.dataset, self.name, self.device = dataset, name, device
-        profile = json.loads((ROOT / "configs/paper.json").read_text())["datasets"][dataset]
+        profile = json.loads((ROOT / "src/configs/paper.json").read_text())["datasets"][dataset]
         if name not in profile["models"]:
             raise ValueError(f"{dataset}: choose a model from {list(profile['models'])}")
         self.reference = profile["models"][name]
@@ -36,8 +36,8 @@ class Problem:
         np.random.seed(seed)
         torch.manual_seed(seed)
         torch.cuda.manual_seed_all(seed)
-        sys.path.insert(0, str(ROOT / "experiments"))
-        import physics_ablation as original
+        sys.path.insert(0, str(ROOT / "src"))
+        import temperature as original
         self.original = original
         self.core, self.loss_fn, model_args, self.config, self.raw, self.batches = original.setup(dataset, device)
         self.scale = self.config["scale"]
@@ -186,12 +186,12 @@ def main():
     if device.type == "cuda" and not torch.cuda.is_available():
         parser.error("CUDA is unavailable; use --device cpu or install a matching CUDA PyTorch build")
     if args.dataset == "hypocotyl":
-        sys.path.insert(0, str(ROOT / "hypocotyl/code"))
+        sys.path.insert(0, str(ROOT / "src/hypocotyl"))
         if args.mask_seed is None:
             args.mask_seed = 20260910 + args.seed
         if args.model in ["phytoode", "latent_ode"]:
             import selected_trial as trial
-            profile = json.loads((ROOT / "configs/paper.json").read_text())["datasets"]["hypocotyl"]
+            profile = json.loads((ROOT / "src/configs/paper.json").read_text())["datasets"]["hypocotyl"]
             record = profile["models"][args.model]
             if args.mask_seed != 20260910 + args.seed:
                 parser.error("Use mask_seed=20260910+seed for the manuscript model")
@@ -209,7 +209,7 @@ def main():
                 expected = 300. if args.model == "phytoode" else 0.
                 if saved['config']['lambda_ode'] != expected:
                     parser.error("Checkpoint physics coefficient differs from requested model")
-                trial.score(args.checkpoint, args.output, ROOT / "configs/paper.json")
+                trial.score(args.checkpoint, args.output, ROOT / "src/configs/paper.json")
             elif args.mode == "train":
                 trial.train(ROOT / record["configuration_file"], args.seed, args.drop_fraction, args.output, args.device)
             else:
@@ -234,10 +234,14 @@ def main():
             return
         import forecast_trial
         if args.mode == "evaluate" and args.checkpoint is None:
-            record_path = ROOT / "hypocotyl/results/four_genotypes_20260915" / f"drop_{round(args.drop_fraction*100)}" / args.model / f"seed{args.seed}" / ({"rf": "forest.joblib", "logistic": "parameters.json"}.get(args.model, "checkpoint.pt"))
+            profile = json.loads((ROOT / "src/configs/paper.json").read_text())["datasets"]["hypocotyl"]
+            record = profile["models"][args.model]["checkpoints_by_missingness"].get(str(round(100*args.drop_fraction)), {}).get(str(args.seed))
+            if record is None:
+                parser.error("No bundled fitted model for this seed and missingness condition")
+            record_path = ROOT / record['path']
             if args.drop_fraction not in [0., .25, .5] or not record_path.is_file():
                 parser.error("No bundled fitted model for this model, seed, or missingness condition; pass --checkpoint")
-            manifest = json.loads((ROOT / "submission/manifest.json").read_text())
+            manifest = json.loads((ROOT / "manifest.json").read_text())
             record = manifest["files"].get(str(record_path.relative_to(ROOT)))
             if record and sha(record_path) != record["sha256"]:
                 raise ValueError("Bundled checkpoint checksum mismatch")

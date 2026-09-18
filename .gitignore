@@ -7,12 +7,12 @@ outputs/
 *.part
 
 # External inputs are downloaded from pinned upstream sources.
-wheat/data/*.csv
-maize/data/raw/
-maize/data/processed/
-maize/reports/
-arabidopsis/data/raw/
-arabidopsis/data/processed/
+data/wheat/*.csv
+data/maize/raw/
+data/maize/processed/
+outputs/maize-data-report/
+data/arabidopsis/raw/
+data/arabidopsis/processed/
 
 # Locally refitted baselines and build products.
 **/results/reproduced/

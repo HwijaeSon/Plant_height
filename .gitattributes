@@ -12,6 +12,6 @@
 *.pdf binary
 
 # Preserve downloaded source files byte-for-byte for manifest verification.
-maize/data/raw/** binary
+data/maize/raw/** binary
 
 *.joblib binary

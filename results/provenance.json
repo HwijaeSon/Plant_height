@@ -1,0 +1,26 @@
+{
+  "manuscript_version": "2026-09-18",
+  "manuscript_sha256": "ba03147d33fdbe4f457294bee19026388688fa08ba03cf05fc444a9b54a0f5b0",
+  "release": "submission-20260918-v2",
+  "hypocotyl_selected_profile": "refine_factor_L1_rgenotype_Kindividual_lr0.0015_p300_d0.25",
+  "hypocotyl_final_seeds": [
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "hypocotyl_reference_seeds": [
+    1,
+    2,
+    3
+  ],
+  "temperature_seeds": [
+    1,
+    2,
+    3
+  ],
+  "scope": "Reported comparisons and loss ablations only; original research directories preserved outside this release.",
+  "historical_metadata": "Checkpoint/config metadata preserve original provenance; historical paths are not runtime dependencies.",
+  "layout": "Four top-level directories: src, data, checkpoints, results; fitted files named by model/seed/missingness."
+}
