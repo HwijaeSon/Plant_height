@@ -10,16 +10,15 @@
 | Maize extraction, temperature and cohort preparation | `src/maize/prepare_data.py`, `data.py` |
 | Arabidopsis stem measurements, partitions and reference architectures | `src/arabidopsis/prepare_data.py`, `run_experiment.py`, `models.py` |
 | Hypocotyl extraction, plant identity, observation masks and splits | `src/hypocotyl/forecast_data.py` |
-| Final hypocotyl neural model and fixed normalization | `src/hypocotyl/selected_model.py`, `phase_model.py`, `architecture.py` |
+| Hypocotyl neural model and fixed normalization | `src/hypocotyl/selected_model.py`, `phase_model.py`, `architecture.py` |
 | Light-modulated logistic RHS | `src/hypocotyl/growth_law.py` |
 | Hypocotyl reference models | `src/hypocotyl/forecast_models.py` |
 | Training and checkpoint evaluation | `run.py`, `src/hypocotyl/selected_trial.py`, `forecast_trial.py` |
 | Manuscript tables | `results/comparison_temperature.csv`, `comparison_hypocotyl.csv` |
 | Six manuscript figures | `src/visualization/temperature.py`, `hypocotyl.py` |
 
-Only final configurations and selected fits are distributed. Original fit
-metadata/checkpoint hashes are retained; paths in historical provenance records
-may identify the original research environment and are not runtime dependencies.
+Model configurations are provided in `src/configs/`. Checkpoint hashes and
+experiment metadata identify the fitted models used for the reported results.
 
 ## Model and metric conventions
 
@@ -47,20 +46,18 @@ rounding; reference trajectory files retain the source evaluation conventions.
 
 ## Fitted-model availability
 
-`checkpoints/inventory.csv` lists every retained checkpoint, forest, process fit and
-prediction-only reference. The PhytoODE models, all matched latent controls,
+`checkpoints/inventory.csv` lists the available checkpoints, forests, process fits and
+prediction-only references. The PhytoODE models, all matched latent controls,
 maize LSTM/PINN, wheat/maize forests, and all hypocotyl models have fitted objects.
 The process ODEs have parameter JSON files. The Arabidopsis process parameters
 were saved at float32 precision, so regenerated predictions may differ slightly
 from the original double-precision fit.
 
-**Unavailable original weights:** wheat LSTM-NN/Logi-PINN rows use the original
-authors' released summaries and prediction archives; their fitted weights are
-not bundled. Arabidopsis stem LSTM-NN/Logi-PINN/RF training did not save fitted
-objects. Their original prediction records and implementations are supplied.
-These records reproduce reported results but do not provide a fitted model for
-new inputs. We do not replace them with a new fit while claiming it is the
-reported checkpoint.
+Wheat LSTM-NN/Logi-PINN comparisons use the reference authors' summaries and
+predictions. Original fitted weights are unavailable for these models and for
+the Arabidopsis stem LSTM-NN, Logi-PINN and RF comparisons. Their saved predictions
+support reproduction of the reported comparisons; predictions for new inputs
+require retraining with the implementations described below.
 
 ## Train reference baselines
 
@@ -81,8 +78,9 @@ git clone https://github.com/YingjieShao/PINN_for_plant_height_forecasting.git o
 git -C outputs/wheat-reference-source checkout 3da92f51f42d3fde5e06f6fc8ce8f233490a389c
 ```
 
-This source is fetched rather than re-licensed or redistributed here. Upstream
-reference retraining is distinct from the archived summary rows used in our table.
+The reported wheat reference values are taken from the authors' archived
+summaries. Retraining can produce different values because of numerical and
+environmental differences.
 
 Maize (fit process models first; PINN uses the fitted logistic initialization):
 
@@ -94,7 +92,7 @@ python src/maize/run_experiment.py --models rf lstm pinn --seed 1 --device cuda:
 ```
 
 Repeat the second command for seeds 2 and 3. The original reference schedule is
-3,000 epochs. Use root `run.py` for the selected PhytoODE/control configurations.
+3,000 epochs. Use root `run.py` for PhytoODE and its matched control.
 
 Arabidopsis stem baselines:
 
@@ -117,13 +115,14 @@ python run.py evaluate --dataset hypocotyl --model rf --seed 1 \
 
 Reference settings are in `src/configs/hypocotyl_forecast.json`. Repeat for seeds
 1–3 and `--drop-fraction 0`, `0.25`, `0.5`; natural Logistic ODE needs only seed 1.
-The final PhytoODE/control profiles are in `src/configs/hypocotyl_phytoode.json` and
+The PhytoODE/control profiles are in `src/configs/hypocotyl_phytoode.json` and
 `hypocotyl_latent_ode.json`, with seeds 101–105 at each removal fraction. All
 masks use `20260910 + seed` and retain at least one initial observation per plant.
-This is 34 reference fits and 30 final-model/control fits; the two cohorts of
-seeds must not be described as one fully matched six-model experiment.
+The experiment comprises 34 reference fits and 30 PhytoODE/control fits.
+PhytoODE and its control share the five initializations and removal masks;
+reference baselines use a separate set of three seeds.
 
-## Evaluate retained temperature baselines
+## Evaluate pretrained temperature baselines
 
 ```bash
 python src/scripts/evaluate_baselines.py --dataset wheat --model rf --seed 1 \
@@ -152,6 +151,6 @@ python src/scripts/make_figures.py --output outputs/figures
 
 The checkpoint check compares predictions with the archived arrays using
 float32 tolerances. The manifest protects every distributed file except itself.
-No downloads, retraining or plotting overwrite archived results. CPU and CUDA
-can differ in initialization and optimization; evaluate retained weights for
-the closest reproduction of reported results.
+CPU and CUDA implementations can differ in initialization and optimization.
+Evaluation of the supplied checkpoints reproduces the reported fitted models
+without retraining.

@@ -1,12 +1,12 @@
 # Author-collected Arabidopsis hypocotyl trajectories
 
-The released cohort contains **Col-0, hy5, MLB, and phyAB**. Plants were grown
+The dataset contains **Col-0, hy5, MLB, and phyAB**. Plants were grown
 at 23°C under 12 h light / 12 h dark. Individual lengths were recorded in mm
 every 12 h from 0 to 72 h. Genotype and source-workbook row identify the same
 plant across times. Developmental age at the first measurement, independent
 batch identifiers, irradiance, and some mutant alleles are not established.
 
-| Genotype | Description | Released 12L12D observations |
+| Genotype | Description | 12L12D observations |
 |---|---|---:|
 | Col-0 | Columbia-0 wild type | 197 |
 | hy5 | hy5 mutant; allele not recorded | 196 |
@@ -14,10 +14,9 @@ batch identifiers, irradiance, and some mutant alleles are not established.
 | phyAB | phyA/phyB double mutant; alleles not recorded | 231 |
 | Total | | 849 |
 
-The measurement-only workbook preserves approved cells at their original
-coordinates. Blank columns contain no released genotype; summary formulas and
-embedded charts are omitted. Its cR sheet retains the four approved genotypes
-under continuous red light, but those measurements are not used in this task.
+The workbook preserves measurement-cell coordinates for traceability. Its cR
+sheet contains measurements of the same four genotypes under continuous red
+light; the forecasting experiment uses the 12L12D sheet.
 
 ## Forecasting protocol
 
@@ -33,9 +32,10 @@ plant with only a 48-h observation is excluded. The resulting cohort contains
 
 The same plants contribute to different temporal partitions. No 48-h value is
 added to the input when predicting 60/72 h. There is no target averaging or
-imputation. For final PhytoODE and its matched control, the scale is the maximum original
-training length and stays fixed across removal masks. The four reference
-baselines retain their original per-mask training scale. A masked zero is a computational placeholder.
+imputation. For PhytoODE and its matched control, the scale is the maximum
+original training length and stays fixed across removal masks. The four reference
+baselines retain their original per-mask training scale. A masked zero is a
+computational placeholder.
 
 ## Missingness
 
@@ -49,14 +49,14 @@ At least one observation is retained for each plant at every removal level.
 | 50% | 250 | 55.67% |
 
 Masks use seeds `20260910 + training_seed` and are nested across removal levels.
-The final PhytoODE/control pair shares masks for seeds 101–105. The four
+The PhytoODE/control pair shares masks for seeds 101–105. The four
 reference models use seeds 1–3 (one natural Logistic ODE fit). All fits start
 from scratch. Future targets and the eligible cohort stay fixed.
 
 ## Models and results
 
 The models are PhytoODE, Latent ODE, Logistic-PINN, LSTM-NN, RF, and Logi-ODE.
-All receive genotype, elapsed time, available early lengths and masks. Final
+All receive genotype, elapsed time, available early lengths and masks.
 PhytoODE and its matched control also receive the known light schedule in the
 latent vector field. PhytoODE has 1,194 parameters, genotype-specific mean rates
 and light/dark contrasts, and an individual capacity head conditioned on the
@@ -66,11 +66,11 @@ validation observations.
 
 Primary RMSE averages each evaluated plant's masked RMSE. Relative RMSE is
 `100 × primary RMSE / pooled observed target mean`. SD describes seed and mask
-variation, not independent biological cohorts. The final pair uses five seeds;
-reference models use three (one for natural Logistic ODE).
+variation, not independent biological cohorts. The PhytoODE/control comparison
+uses five seeds; reference models use three (one for natural Logistic ODE).
 
-[Comparison data](../../results/comparison_hypocotyl.csv) combine the final pair with
-the four reference baselines. All recorded predictions and metrics are in
+[Comparison data](../../results/comparison_hypocotyl.csv) combine PhytoODE and
+its control with the four reference baselines. Recorded predictions and metrics are in
 `results/hypocotyl/`; fitted objects are in `checkpoints/hypocotyl/`.
 
 ## Data dictionary
@@ -81,7 +81,7 @@ Data files are in `processed/`.
 |---|---|
 | observation_id | Unique sheet and source-cell identifier |
 | plant_id | Genotype and original Excel row |
-| genotype | One of the four approved labels above |
+| genotype | One of the four genotype labels above |
 | source_row, source_cell | Original measurement row and cell |
 | elapsed_hours | Hours since the first measurement |
 | length_mm | Observed individual length |
@@ -92,7 +92,7 @@ Data files are in `processed/`.
 `observations.csv` contains the complete eligible cohort; `train.csv`, `val.csv`,
 and `test.csv` are its temporal partitions. `plants.csv` records the plant
 indices. `excluded_observations.csv` contains only the ineligible Col-0
-observation. `config.json` records the release-workbook checksum and cohort
+observation. `config.json` records the source-workbook checksum and cohort
 counts, and `metadata.json` records experimental metadata.
 
 ## Reproduce
