@@ -26,8 +26,9 @@ def main():
     temperature.arabidopsis_examples()
     temperature.maize_examples()
     hypocotyl = load("submission_hypocotyl_figure", ROOT / "visualization/hypocotyl.py")
-    hypocotyl.make_figure(output_dir=args.output.resolve())
-    print(f"Saved the five manuscript figures to {args.output}")
+    hypocotyl.HERE = args.output.resolve()
+    hypocotyl.run()
+    print(f"Saved the six manuscript figures to {args.output}")
 
 
 if __name__ == "__main__":

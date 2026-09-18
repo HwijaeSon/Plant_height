@@ -665,7 +665,7 @@ def markdown_table(summary: pd.DataFrame) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--skip-latent", action="store_true", help="Run manuscript baselines only; use run.py for PhytoODE")
+    parser.add_argument("--skip-latent", action="store_true", default=True, help="Compatibility flag; selected latent models are trained with run.py")
     parser.add_argument("--data", type=Path, default=DEFAULT_DATA)
     parser.add_argument("--output", type=Path, default=DEFAULT_RESULTS)
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")

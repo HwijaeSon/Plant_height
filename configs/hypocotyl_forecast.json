@@ -9,11 +9,6 @@
     "val_smooth": 3
   },
   "models": {
-    "latent_ode": {
-      "lr": 0.01,
-      "lambda_ode": 0.0,
-      "lambda_k": 0.0
-    },
     "logistic_pinn": {
       "lr": 0.003,
       "lambda_ode": 50.0,
@@ -45,7 +40,7 @@
     2,
     3
   ],
-  "mask_seed_rule": "20260910 + training seed; shared across all models; nested removals across severity levels",
+  "mask_seed_rule": "20260910 + training seed; shared across the four reference models",
   "physics": "ordinary logistic with genotype-specific r and capacity; prefix-conditioned individual latent state; all 23 interior nodes",
   "data_loss": "mean per-plant masked RMSE on observed 0--36 h targets",
   "input": "genotype, available early lengths, their masks, and elapsed time; no explicit environmental input"

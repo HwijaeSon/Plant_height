@@ -16,7 +16,6 @@ arabidopsis/data/processed/
 
 # Locally refitted baselines and build products.
 **/results/reproduced/
-**/forest.joblib
 
 # Keep manuscript sources and document build products out of this release.
 *.tex
@@ -28,3 +27,8 @@ arabidopsis/data/processed/
 *.blg
 *.synctex.gz
 paper/
+
+# Generated figures are regenerated, not distributed as paper assets.
+*.pdf
+*.png
+*.svg

@@ -12,7 +12,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from download_data import ROOT, RAW, TABLE_FILES
+ROOT = Path(__file__).resolve().parents[1]
+RAW = ROOT / "data/raw"
+# Supplement table number to publisher attachment number.
+TABLE_FILES = {1: 11, 2: 5, 3: 9, 4: 3, 5: 13, 6: 14, 7: 6, 8: 10,
+               9: 8, 10: 4, 11: 12, 12: 16, 13: 1, 14: 2, 15: 15}
 
 OUT = ROOT / "data/processed"
 REPORTS = ROOT / "reports"

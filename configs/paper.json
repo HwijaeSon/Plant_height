@@ -138,155 +138,17 @@
       }
     },
     "hypocotyl": {
-      "protocol": "four_genotypes_20260915",
-      "lambda_ode": 100.0,
+      "protocol": "individual_prefix_forecast",
+      "genotypes": [
+        "Col-0",
+        "hy5",
+        "MLB",
+        "phyAB"
+      ],
+      "lambda_ode": 300.0,
       "lambda_k": 0.0,
-      "configuration_file": "configs/hypocotyl_prefix_parameters_no_light_20260911.json",
+      "illumination_input": true,
       "models": {
-        "phytoode": {
-          "config": {
-            "epochs": 1500,
-            "weight_decay": 0.0001,
-            "eval_every": 20,
-            "min_epoch": 200,
-            "val_smooth": 3,
-            "lr": 0.01,
-            "lambda_ode": 100.0,
-            "lambda_k": 0.0,
-            "model": "phytoode_prefix_parameters_no_light",
-            "n_params": 1179
-          },
-          "checkpoints": {
-            "1": {
-              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/checkpoint.pt",
-              "sha256": "d58281f3e4f73de5f533ebcd6c3210c71a6411101e55fae46b341aba69c7ce81"
-            },
-            "2": {
-              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/checkpoint.pt",
-              "sha256": "3cd1fd57079b75ac97252ff8defc9849d021488e93a712b21ab9ba26bfc34ab8"
-            },
-            "3": {
-              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/checkpoint.pt",
-              "sha256": "c1b8bb38cae543a26db51165ff3ad5af6b2abce81ab54e7b0473834c3c74c725"
-            }
-          },
-          "checkpoints_by_missingness": {
-            "0": {
-              "1": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/checkpoint.pt",
-                "sha256": "d58281f3e4f73de5f533ebcd6c3210c71a6411101e55fae46b341aba69c7ce81"
-              },
-              "2": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/checkpoint.pt",
-                "sha256": "3cd1fd57079b75ac97252ff8defc9849d021488e93a712b21ab9ba26bfc34ab8"
-              },
-              "3": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/checkpoint.pt",
-                "sha256": "c1b8bb38cae543a26db51165ff3ad5af6b2abce81ab54e7b0473834c3c74c725"
-              }
-            },
-            "25": {
-              "1": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed1/checkpoint.pt",
-                "sha256": "f35ace86c530b50e581292d8260fba97bf42b7bce69d49d48854742f77f2e1ab"
-              },
-              "2": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed2/checkpoint.pt",
-                "sha256": "b29ab5de9b7e100373f2890ca4a2a3e51837607f80fba55c6d110f61a18471ff"
-              },
-              "3": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed3/checkpoint.pt",
-                "sha256": "98eb2a10be1bd2c368b11af6340ea0a4f8163a9c639191363c16f746d665d669"
-              }
-            },
-            "50": {
-              "1": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed1/checkpoint.pt",
-                "sha256": "c31ec984c84d4024ffc87a3ed1223d4a75abddbf11a06e54dcda8ad06dc6b2f7"
-              },
-              "2": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed2/checkpoint.pt",
-                "sha256": "baeded61c4cafa7014e2ae816f286a90bfc610858758eb8260a8a057b3e4eb6c"
-              },
-              "3": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed3/checkpoint.pt",
-                "sha256": "6f7e6e01e5c08fc55be7c45157bd7f0eaa7ea468d7b3cef6f2426b1245abb1d1"
-              }
-            }
-          }
-        },
-        "latent_ode": {
-          "config": {
-            "epochs": 1500,
-            "weight_decay": 0.0001,
-            "eval_every": 20,
-            "min_epoch": 200,
-            "val_smooth": 3,
-            "lr": 0.01,
-            "lambda_ode": 0.0,
-            "lambda_k": 0.0,
-            "model": "latent_ode",
-            "n_params": 1115
-          },
-          "checkpoints": {
-            "1": {
-              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed1/checkpoint.pt",
-              "sha256": "60aef07b52818757ad70361a872a9df78a0f5398bc1eec321ab7cfc23139063f"
-            },
-            "2": {
-              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed2/checkpoint.pt",
-              "sha256": "276bfb2bebe25b5d230982022d1562dc906bb29ebebaa833f7911417dbd00e14"
-            },
-            "3": {
-              "path": "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed3/checkpoint.pt",
-              "sha256": "006f2107ae69153014e7f4c87dbe4f21d02f4d806d7674ff1a351d122bd9642f"
-            }
-          },
-          "checkpoints_by_missingness": {
-            "0": {
-              "1": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed1/checkpoint.pt",
-                "sha256": "60aef07b52818757ad70361a872a9df78a0f5398bc1eec321ab7cfc23139063f"
-              },
-              "2": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed2/checkpoint.pt",
-                "sha256": "276bfb2bebe25b5d230982022d1562dc906bb29ebebaa833f7911417dbd00e14"
-              },
-              "3": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed3/checkpoint.pt",
-                "sha256": "006f2107ae69153014e7f4c87dbe4f21d02f4d806d7674ff1a351d122bd9642f"
-              }
-            },
-            "25": {
-              "1": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed1/checkpoint.pt",
-                "sha256": "e728c1b99bc79caa575701f74cb306c978e7c6d70a3b845b2583d0bc62021985"
-              },
-              "2": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed2/checkpoint.pt",
-                "sha256": "676c8be00cc187aeb870a048e28b572243c262a05067fa74c87c31def1e2c2fd"
-              },
-              "3": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed3/checkpoint.pt",
-                "sha256": "41d59654794c85275f67de9acc979ce1695367d1664e08e45b15cee58d495877"
-              }
-            },
-            "50": {
-              "1": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed1/checkpoint.pt",
-                "sha256": "c484050a75e7084d89f5808fabe9eb05e61a73501ec94f01284dd79628d0541a"
-              },
-              "2": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed2/checkpoint.pt",
-                "sha256": "789e55d551f2d00dc9c75a601dd1d70df4b059c9c82b20b18dd35ce32e3aab52"
-              },
-              "3": {
-                "path": "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed3/checkpoint.pt",
-                "sha256": "92369c0b411076469d1d2fb72527b90ad4bf86fd6e978cbbb23317a231150b14"
-              }
-            }
-          }
-        },
         "logistic_pinn": {
           "config": {
             "epochs": 1500,
@@ -458,28 +320,198 @@
             "model": "logistic"
           },
           "checkpoints": {}
+        },
+        "phytoode": {
+          "configuration_file": "configs/hypocotyl_phytoode.json",
+          "checkpoints_by_missingness": {
+            "0": {
+              "101": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_0/seed101/checkpoint.pt",
+                "sha256": "6738ce0a6a4ed70d3b2b81330cd469e8c3bcd402cd264c729bdec81eacca0ab6"
+              },
+              "102": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_0/seed102/checkpoint.pt",
+                "sha256": "fde4cd7627b8e1dacdffa4d30eef6a487c5f0f05916c5b7e55913f0ae42fbbf1"
+              },
+              "103": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_0/seed103/checkpoint.pt",
+                "sha256": "b5035ad0f2fe635dac6abc97c82441adde1597827cd18d8e9961ceaaf2fef0a2"
+              },
+              "104": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_0/seed104/checkpoint.pt",
+                "sha256": "7d081298767e733f403085e2c04f6da302a48e8a4e471fc88da9070ac9fd0edf"
+              },
+              "105": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_0/seed105/checkpoint.pt",
+                "sha256": "5f26a9c8796bd211006b0ae893e472208e5a98cdeed032fabf879b4aeb44d3ec"
+              }
+            },
+            "25": {
+              "101": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_25/seed101/checkpoint.pt",
+                "sha256": "46d8a13d9e41412d7614116c3b806882bad860963266d33019344c4f828b818b"
+              },
+              "102": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_25/seed102/checkpoint.pt",
+                "sha256": "ca786667b7168a6a1df73406838f475bae8546f5b6efca2ab258eb5703ad5b73"
+              },
+              "103": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_25/seed103/checkpoint.pt",
+                "sha256": "240d68da387554870c483b2083209160c9d64e47fcf19ef03de52e69aaf11ed3"
+              },
+              "104": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_25/seed104/checkpoint.pt",
+                "sha256": "16ab38df6eef558d2c653f4371ffdc21cdf9462f294b4f370442c1fb0a586b8e"
+              },
+              "105": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_25/seed105/checkpoint.pt",
+                "sha256": "7137419e87e2beeef7895245e44be081ebf5d9530eefbef1e5637d5b30e586a2"
+              }
+            },
+            "50": {
+              "101": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_50/seed101/checkpoint.pt",
+                "sha256": "3b29b41cd525e05ef8ac178c694453b6407e25eee393582d2929f4d05db2dfc7"
+              },
+              "102": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_50/seed102/checkpoint.pt",
+                "sha256": "6ce9a00ed7d98b6dcd49671f7c90bfbf250854e636702cae9430082dd88d7ef4"
+              },
+              "103": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_50/seed103/checkpoint.pt",
+                "sha256": "b53322b0ee35d59cc67a08258953f9ced3e4eaf782c9a124d2cf2111010ecfd7"
+              },
+              "104": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_50/seed104/checkpoint.pt",
+                "sha256": "de7e9398ecd6d4158cd0b774e3a39089661cbcded43268d33695169a2fd5f815"
+              },
+              "105": {
+                "path": "hypocotyl/results/manuscript/phytoode/drop_50/seed105/checkpoint.pt",
+                "sha256": "72cd65aeaaf845fde22dbec8058b7e6e7dbcfca1345b7b2e6e0206b221dc7197"
+              }
+            }
+          },
+          "n_params": 1194,
+          "checkpoints": {
+            "101": {
+              "path": "hypocotyl/results/manuscript/phytoode/drop_0/seed101/checkpoint.pt",
+              "sha256": "6738ce0a6a4ed70d3b2b81330cd469e8c3bcd402cd264c729bdec81eacca0ab6"
+            },
+            "102": {
+              "path": "hypocotyl/results/manuscript/phytoode/drop_0/seed102/checkpoint.pt",
+              "sha256": "fde4cd7627b8e1dacdffa4d30eef6a487c5f0f05916c5b7e55913f0ae42fbbf1"
+            },
+            "103": {
+              "path": "hypocotyl/results/manuscript/phytoode/drop_0/seed103/checkpoint.pt",
+              "sha256": "b5035ad0f2fe635dac6abc97c82441adde1597827cd18d8e9961ceaaf2fef0a2"
+            },
+            "104": {
+              "path": "hypocotyl/results/manuscript/phytoode/drop_0/seed104/checkpoint.pt",
+              "sha256": "7d081298767e733f403085e2c04f6da302a48e8a4e471fc88da9070ac9fd0edf"
+            },
+            "105": {
+              "path": "hypocotyl/results/manuscript/phytoode/drop_0/seed105/checkpoint.pt",
+              "sha256": "5f26a9c8796bd211006b0ae893e472208e5a98cdeed032fabf879b4aeb44d3ec"
+            }
+          }
+        },
+        "latent_ode": {
+          "configuration_file": "configs/hypocotyl_latent_ode.json",
+          "checkpoints_by_missingness": {
+            "0": {
+              "101": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_0/seed101/checkpoint.pt",
+                "sha256": "8f91c2cc9c2f942c7eaacd044d657672ff22e4da87f4c42e2a8d061e35cba406"
+              },
+              "102": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_0/seed102/checkpoint.pt",
+                "sha256": "648baca9a6cdc0c0cbc71ca2f697c008e77921e3e8e5db5f0032a89842b5c4df"
+              },
+              "103": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_0/seed103/checkpoint.pt",
+                "sha256": "f31fb0d9cf1a506a6d68091d1b2fde4cc3e25fac58ab59ad901ea4b76f3eede0"
+              },
+              "104": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_0/seed104/checkpoint.pt",
+                "sha256": "4668bf50747f3691a0f264772438fcb6e8e20590f8044760f263ac9af5202a23"
+              },
+              "105": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_0/seed105/checkpoint.pt",
+                "sha256": "961381fd78bfd8c0b3be3c965d40bce304af7b638a0778670af1bf085db45834"
+              }
+            },
+            "25": {
+              "101": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_25/seed101/checkpoint.pt",
+                "sha256": "d3f074fda72d14ff659c8bcbd90cea723365fd3187d85d1446c76c44d769d2c8"
+              },
+              "102": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_25/seed102/checkpoint.pt",
+                "sha256": "96ba0e86d48212b3d8dd67452f6c6c7e05f4fcf7bc143f16f2f32826c6ed0f01"
+              },
+              "103": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_25/seed103/checkpoint.pt",
+                "sha256": "d52102837a2f40616745e5607875cc1fe098a288315b24f5c713b44a1b162c87"
+              },
+              "104": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_25/seed104/checkpoint.pt",
+                "sha256": "c68f0cac4dfc9dab6a870be5a7a3db0439c0ea3ef36cd9a10c91278b0d1c34fa"
+              },
+              "105": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_25/seed105/checkpoint.pt",
+                "sha256": "157edff5cc885217164f357117c664485268b4adb76f39944e7171281598e655"
+              }
+            },
+            "50": {
+              "101": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_50/seed101/checkpoint.pt",
+                "sha256": "cc4e1a5d8f77663211ed81ac60e838fb23e62a4c3807993f3cef695ef9f55f8a"
+              },
+              "102": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_50/seed102/checkpoint.pt",
+                "sha256": "bdfa9bea58bcdf7e7268efcd963756780ad47a0648a32c5b49235bdef7cb8019"
+              },
+              "103": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_50/seed103/checkpoint.pt",
+                "sha256": "dbce3c84bd38c98c9af6fb1aa5b1658cc75b324f7f918c6be587dee40ed60168"
+              },
+              "104": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_50/seed104/checkpoint.pt",
+                "sha256": "703054e409acad2f209d837e04b20403c8829d8575451ceceb3cb7cafdb7788e"
+              },
+              "105": {
+                "path": "hypocotyl/results/manuscript/latent_ode/drop_50/seed105/checkpoint.pt",
+                "sha256": "958db5466e98b98884a74461c6f3d16221a51fecdfe85a60fae9faaf47440cc8"
+              }
+            }
+          },
+          "n_params": 1194,
+          "checkpoints": {
+            "101": {
+              "path": "hypocotyl/results/manuscript/latent_ode/drop_0/seed101/checkpoint.pt",
+              "sha256": "8f91c2cc9c2f942c7eaacd044d657672ff22e4da87f4c42e2a8d061e35cba406"
+            },
+            "102": {
+              "path": "hypocotyl/results/manuscript/latent_ode/drop_0/seed102/checkpoint.pt",
+              "sha256": "648baca9a6cdc0c0cbc71ca2f697c008e77921e3e8e5db5f0032a89842b5c4df"
+            },
+            "103": {
+              "path": "hypocotyl/results/manuscript/latent_ode/drop_0/seed103/checkpoint.pt",
+              "sha256": "f31fb0d9cf1a506a6d68091d1b2fde4cc3e25fac58ab59ad901ea4b76f3eede0"
+            },
+            "104": {
+              "path": "hypocotyl/results/manuscript/latent_ode/drop_0/seed104/checkpoint.pt",
+              "sha256": "4668bf50747f3691a0f264772438fcb6e8e20590f8044760f263ac9af5202a23"
+            },
+            "105": {
+              "path": "hypocotyl/results/manuscript/latent_ode/drop_0/seed105/checkpoint.pt",
+              "sha256": "961381fd78bfd8c0b3be3c965d40bce304af7b638a0778670af1bf085db45834"
+            }
+          }
         }
       },
-      "illumination_input": false,
-      "parameter_head_inputs": "genotype embedding, masked 0--36 h lengths, presence masks",
-      "result_report": "hypocotyl/reports/four_genotypes_20260915/comparison.csv",
-      "adoption_record": "hypocotyl/results/four_genotypes_20260915/plan.json",
-      "comparison_models": [
-        "logistic",
-        "rf",
-        "lstm",
-        "logistic_pinn",
-        "latent_ode",
-        "phytoode"
-      ],
-      "genotypes": [
-        "Col-0",
-        "hy5",
-        "MLB",
-        "phyAB"
-      ],
-      "rerun_note": "All six models retrained from scratch with existing manuscript settings on the four approved genotypes."
+      "result_report": "results/comparison_hypocotyl.csv"
     }
   },
-  "release_version": "submission-20260915-four-genotypes"
+  "release_version": "submission-20260918"
 }

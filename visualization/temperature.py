@@ -13,7 +13,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs/figures"
-PROFILE = json.loads((ROOT / "experiments/phytoode_config.json").read_text())
+PROFILE = json.loads((ROOT / "configs/paper.json").read_text())
 
 # Fixed across all three manuscript figures. The sequence is arranged so a
 # four-column Matplotlib legend has the same two-row order as the paper legend.
@@ -101,13 +101,14 @@ def save_figure(fig, stem):
 def adopted_test_predictions(dataset):
     """Read the audited predictions attached to the adopted checkpoint seeds."""
     config = PROFILE["datasets"][dataset]
-    trials = ROOT / Path(config["historical_joint_selection"]).parent / "final/selected_phyto"
+    trials = ROOT / f"experiments/results/joint_lambda_tuning_20260908/{dataset}/final/selected_phyto"
+    checkpoints = config["models"]["phytoode"]["checkpoints"]
     arrays = []
     metadata = None
-    for seed in config["seeds"]:
+    for seed in sorted(checkpoints, key=int):
         result = json.loads((trials / f"seed{seed}/result.json").read_text())
         assert (result["lambda_ode"], result["lambda_k"]) == (config["lambda_ode"], config["lambda_k"])
-        assert result["checkpoint_sha256"] == config["checkpoints"][str(seed)]["sha256"]
+        assert result["checkpoint_sha256"] == checkpoints[str(seed)]["sha256"]
         with np.load(trials / f"seed{seed}/predictions.npz", allow_pickle=False) as saved:
             current = {key: saved[key] for key in ("test_target", "test_mask", "test_genotype")}
             if metadata is not None:
@@ -225,6 +226,7 @@ def arabidopsis_examples():
                 .predicted_length_m.mean()
             )
             if name == "Latent Neural ODE":
+                curve = pd.DataFrame({"day_after_sowing": np.arange(first, last+1)})
                 observed_mask = np.isin(np.arange(27, 50), observed.day_after_sowing)
                 matches = ((metadata["test_genotype"] == "Col-0")
                            & np.all(metadata["test_mask"].astype(bool) == observed_mask, axis=1))

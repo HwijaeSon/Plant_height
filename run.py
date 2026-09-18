@@ -189,31 +189,54 @@ def main():
         sys.path.insert(0, str(ROOT / "hypocotyl/code"))
         if args.mask_seed is None:
             args.mask_seed = 20260910 + args.seed
-        if args.model == "phytoode":
-            import no_light_prefix_trial as trial
-            if args.mask_seed != 20260910 + args.seed:
-                parser.error("The retained PhytoODE uses mask_seed=20260910+seed")
+        if args.model in ["phytoode", "latent_ode"]:
+            import selected_trial as trial
             profile = json.loads((ROOT / "configs/paper.json").read_text())["datasets"]["hypocotyl"]
-            args.lambda_ode = profile["lambda_ode"]
-            if args.mode == "evaluate" and args.checkpoint is None:
-                records = profile["models"]["phytoode"]["checkpoints_by_missingness"]
-                if args.drop_fraction not in [0., .25, .5]:
-                    parser.error("No bundled checkpoint for this missingness condition; pass --checkpoint")
-                record = records[str(round(100*args.drop_fraction))].get(str(args.seed))
-                if record is None:
-                    parser.error("No bundled checkpoint for this seed; pass --checkpoint")
-                args.checkpoint = ROOT / record["path"]
-                if sha(args.checkpoint) != record["sha256"]:
-                    raise ValueError("Bundled checkpoint checksum mismatch")
-            trial.run(args)
-            result = json.loads((args.output / "result.json").read_text())
-            print(json.dumps({"status": result["status"], "metrics": {k:v['rmse'] for k,v in result['metrics'].items() if 'rmse' in v}}, indent=2))
+            record = profile["models"][args.model]
+            if args.mask_seed != 20260910 + args.seed:
+                parser.error("Use mask_seed=20260910+seed for the manuscript model")
+            if args.mode == "evaluate":
+                if args.checkpoint is None:
+                    selected = record["checkpoints_by_missingness"].get(str(round(100*args.drop_fraction)), {}).get(str(args.seed))
+                    if args.drop_fraction not in [0., .25, .5] or selected is None:
+                        parser.error("No bundled checkpoint: use seeds 101–105, or supply --checkpoint")
+                    args.checkpoint = ROOT / selected["path"]
+                    if sha(args.checkpoint) != selected["sha256"]:
+                        raise ValueError("Checkpoint checksum mismatch")
+                saved = torch.load(args.checkpoint, map_location="cpu", weights_only=False)
+                if saved['config']['additional_prefix_drop'] != args.drop_fraction:
+                    parser.error("Checkpoint missingness differs from --drop-fraction")
+                expected = 300. if args.model == "phytoode" else 0.
+                if saved['config']['lambda_ode'] != expected:
+                    parser.error("Checkpoint physics coefficient differs from requested model")
+                trial.score(args.checkpoint, args.output, ROOT / "configs/paper.json")
+            elif args.mode == "train":
+                trial.train(ROOT / record["configuration_file"], args.seed, args.drop_fraction, args.output, args.device)
+            else:
+                from selected_model import initialize, load, augment_inputs
+                torch.set_num_threads(2)
+                cfg = json.loads((ROOT / record["configuration_file"]).read_text())
+                _, _, x, batches, _ = load(device=args.device, drop_fraction=args.drop_fraction, mask_seed=args.mask_seed)
+                model = initialize(cfg, args.seed, args.device)
+                optimizer = torch.optim.Adam(model.parameters(), lr=cfg['lr'])
+                rng = torch.Generator(device=args.device).manual_seed(710000+args.seed)
+                for _ in range(args.steps):
+                    inputs = augment_inputs(x, cfg['input_dropout'], rng)
+                    output = model(**inputs)
+                    loss = trial.fitloss(output['pred'], batches['train'], 'rmse') + cfg['lambda_ode']*model.physics_loss(output, inputs)
+                    optimizer.zero_grad(); loss.backward()
+                    torch.nn.utils.clip_grad_norm_(model.parameters(), 1., error_if_nonfinite=True)
+                    optimizer.step()
+                args.output.mkdir(parents=True)
+                write_json(args.output / 'result.json', dict(status='smoke_only_not_a_paper_result', steps=args.steps, objective=float(loss.detach()), test_evaluations=0))
+            result = json.loads((args.output / 'result.json').read_text())
+            print(json.dumps(dict(status=result['status'], rmse={k:v['rmse'] for k,v in result.get('metrics', {}).items() if 'rmse' in v}), indent=2))
             return
         import forecast_trial
         if args.mode == "evaluate" and args.checkpoint is None:
-            record_path = ROOT / "hypocotyl/results/four_genotypes_20260915" / f"drop_{round(args.drop_fraction*100)}" / args.model / f"seed{args.seed}" / "checkpoint.pt"
+            record_path = ROOT / "hypocotyl/results/four_genotypes_20260915" / f"drop_{round(args.drop_fraction*100)}" / args.model / f"seed{args.seed}" / ({"rf": "forest.joblib", "logistic": "parameters.json"}.get(args.model, "checkpoint.pt"))
             if args.drop_fraction not in [0., .25, .5] or not record_path.is_file():
-                parser.error("No bundled neural checkpoint for this model, seed, or missingness condition; pass --checkpoint")
+                parser.error("No bundled fitted model for this model, seed, or missingness condition; pass --checkpoint")
             manifest = json.loads((ROOT / "submission/manifest.json").read_text())
             record = manifest["files"].get(str(record_path.relative_to(ROOT)))
             if record and sha(record_path) != record["sha256"]:

@@ -33,8 +33,9 @@ plant with only a 48-h observation is excluded. The resulting cohort contains
 
 The same plants contribute to different temporal partitions. No 48-h value is
 added to the input when predicting 60/72 h. There is no target averaging or
-imputation. The scale is the maximum retained training length, fitted again
-for each removal mask. A masked zero is a computational placeholder.
+imputation. For final PhytoODE and its matched control, the scale is the maximum original
+training length and stays fixed across removal masks. The four reference
+baselines retain their original per-mask training scale. A masked zero is a computational placeholder.
 
 ## Missingness
 
@@ -48,27 +49,29 @@ At least one observation is retained for each plant at every removal level.
 | 50% | 250 | 55.67% |
 
 Masks use seeds `20260910 + training_seed` and are nested across removal levels.
-All six predictors use the same mask within each seed and are retrained from
-scratch. Future targets and the eligible cohort stay fixed.
+The final PhytoODE/control pair shares masks for seeds 101–105. The four
+reference models use seeds 1–3 (one natural Logistic ODE fit). All fits start
+from scratch. Future targets and the eligible cohort stay fixed.
 
 ## Models and results
 
 The models are PhytoODE, Latent ODE, Logistic-PINN, LSTM-NN, RF, and Logi-ODE.
-All receive genotype, elapsed time, the available early lengths, and their masks.
-PhytoODE has 1,179 parameters and a network that estimates individual constant
-logistic rates and capacities. Its logistic coefficient is fixed at 100, with
-no capacity penalty. Other manuscript settings are retained. Checkpoint epochs
-are selected using validation only; no previous fitted models are reused.
+All receive genotype, elapsed time, available early lengths and masks. Final
+PhytoODE and its matched control also receive the known light schedule in the
+latent vector field. PhytoODE has 1,194 parameters, genotype-specific mean rates
+and light/dark contrasts, and an individual capacity head conditioned on the
+initial observations. It uses `lambda_ode=300`, `lambda_k=0`; the otherwise
+identical control changes only `lambda_ode` to zero. Epoch selection uses 48-h
+validation observations.
 
 Primary RMSE averages each evaluated plant's masked RMSE. Relative RMSE is
-`100 × primary RMSE / pooled observed target mean`. Sample SD uses three
-initializations and, for added missingness, their paired masks. This describes
-training variation rather than uncertainty across biological cohorts.
+`100 × primary RMSE / pooled observed target mean`. SD describes seed and mask
+variation, not independent biological cohorts. The final pair uses five seeds;
+reference models use three (one for natural Logistic ODE).
 
-[Comparison tables](reports/four_genotypes_20260915/comparison.md) and
-[per-run metrics](reports/four_genotypes_20260915/per_run_metrics.csv) are generated
-from the bundled predictions. Results and checkpoints are under
-`results/four_genotypes_20260915/`.
+[Comparison data](../results/comparison_hypocotyl.csv) combine the final pair with
+the four reference baselines. Their result folders are `results/manuscript/`
+and `results/four_genotypes_20260915/`, respectively.
 
 ## Data dictionary
 
@@ -98,11 +101,8 @@ From the repository root:
 
 ```bash
 python scripts/prepare_hypocotyl.py
-python hypocotyl/code/audit_approved_benchmark.py
-python hypocotyl/code/run_approved_benchmark.py --gpus 0 \
-  --output outputs/retrained-hypocotyl
-python hypocotyl/code/report_approved_benchmark.py \
-  --output outputs/hypocotyl-report --figures outputs/hypocotyl-figures
+python run.py evaluate --dataset hypocotyl --seed 101 --output outputs/hypocotyl
+python scripts/verify_models.py --dataset hypocotyl --output outputs/hypocotyl-check
 ```
 
 See the root README for individual-model training and checkpoint evaluation.

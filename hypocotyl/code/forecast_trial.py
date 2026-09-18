@@ -72,7 +72,23 @@ def run(args):
     out.mkdir(parents=True);write(out/'config.json',cfg)
     started=time.monotonic()
     if args.mode=='evaluate':
-        if not neural or not args.checkpoint:raise ValueError('Evaluation requires a neural checkpoint')
+        if not args.checkpoint:raise ValueError('Evaluation requires a fitted model')
+        if not neural:
+            if args.model=='rf':
+                import joblib
+                forest=joblib.load(args.checkpoint)
+                features=models.forest_features(x)
+                pred=forest.predict(features.reshape(-1,features.shape[-1])).reshape(features.shape[:2])
+            else:
+                params=json.loads(Path(args.checkpoint).read_text())['parameters']
+                hours=x['time'].cpu().numpy().astype(float)*72.
+                pred=np.empty((len(x['g_idx']),len(hours)),dtype=float)
+                for group in params:
+                    indices=np.asarray(group['plant_indices']); initial=np.asarray(group['initial_fractions'])
+                    pred[indices]=group['K_scaled']/(1+(1/initial[:,None]-1)*np.exp(-group['r_per_hour']*hours[None,:]))
+            metrics=evaluate(None,x,cfg,out,fixed_prediction=pred)
+            write(out/'result.json',dict(config=cfg,status='evaluated',metrics=metrics,checkpoint_sha256=sha(args.checkpoint)))
+            return
         saved=torch.load(args.checkpoint,map_location=device,weights_only=False)
         if saved['config']['protocol']!=data.PROTOCOL or saved['config']['model']!=args.model:raise ValueError('Incompatible checkpoint')
         for key in ['additional_prefix_drop','mask_seed','height_scale_mm']:

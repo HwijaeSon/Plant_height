@@ -12,10 +12,11 @@ def main():
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     frame = pd.read_csv(ROOT / "results/comparison_temperature.csv")
-    hyp = pd.read_csv(ROOT / "hypocotyl/reports/four_genotypes_20260915/comparison.csv")
+    hyp = pd.read_csv(ROOT / "results/comparison_hypocotyl.csv")
     hyp[hyp.additional_prefix_drop.ne(0)].to_csv(args.output / "hypocotyl_missingness.csv", index=False)
     hyp = hyp[hyp.additional_prefix_drop.eq(0)].copy()
-    hyp["model"] = hyp.model.replace(dict(phytoode="PhytoODE", latent_ode="Latent ODE",
+    hyp["dataset"] = "hypocotyl"
+    hyp["model"] = hyp.model.replace(dict(phytoode2="PhytoODE", no_ode_loss="Latent ODE (unregularized)",
          logistic_pinn="Logistic-PINN", lstm="LSTM-NN", rf="RF", logistic="Logi-ODE"))
     columns = ["dataset", "model", "split", "rmse_mean", "rmse_sd", "relative_error_mean", "relative_error_sd", "n_seeds"]
     frame = pd.concat([frame[columns], hyp[columns]], ignore_index=True)
@@ -25,7 +26,7 @@ def main():
         part = frame[frame.dataset.eq(dataset)]
         decimals = {"wheat": 5, "maize": 2, "arabidopsis": 3, "hypocotyl": 3}[dataset]
         markdown += [f"## {dataset}", "", "| Model | Train | Validation | Test |", "|---|---:|---:|---:|"]
-        order = ["Logi-ODE", "Temp-ODE", "RF", "LSTM-NN", "Logi-PINN", "Logistic-PINN", "Latent ODE (no physics)", "Latent ODE", "PhytoODE"]
+        order = ["Logi-ODE", "Temp-ODE", "RF", "LSTM-NN", "Logi-PINN", "Logistic-PINN", "Latent ODE (no physics)", "Latent ODE (unregularized)", "PhytoODE"]
         for model in [name for name in order if name in set(part.model)]:
             md_cells = []
             for split in ["train", "val", "test"]:

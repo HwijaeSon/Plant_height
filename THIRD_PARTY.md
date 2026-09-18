@@ -31,8 +31,7 @@ Logi-PINN and LSTM reference architectures follow Shao et al.; process models an
 baseline adaptations are described in the manuscript. Wheat reference summaries
 and compact figure predictions retain source-file attribution in the adjacent
 provenance JSON. These data are scientific result records, not a claim of ownership
-of the reference authors' work. `paper/references.bib` contains the full research
-citations, including foundational Neural ODE and physics-informed learning papers.
+of the reference authors' work. The accompanying manuscript gives the full research citations.
 
 ## Author-collected hypocotyl data and code
 

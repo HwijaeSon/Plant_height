@@ -378,7 +378,7 @@ def protocol(args, ds):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=ROOT / "results/chronological_final_seed1_3")
-    parser.add_argument("--models", nargs="+", choices=["process", "rf", "lstm", "pinn", "latent"], default=["process", "rf", "lstm", "pinn", "latent"])
+    parser.add_argument("--models", nargs="+", choices=["process", "rf", "lstm", "pinn"], default=["process", "rf", "lstm", "pinn"])
     parser.add_argument("--seed", type=int, default=1)
     parser.add_argument("--split", default="chronological")
     parser.add_argument("--device", default="cuda")

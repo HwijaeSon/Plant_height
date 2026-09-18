@@ -1,27 +1,25 @@
 {
-  "version": "submission-20260915-four-genotypes",
-  "branch": "main",
-  "description": "Approved four-genotype hypocotyl data and newly retrained models; original temperature experiment files retained.",
+  "release": "submission-20260918",
   "files": {
     ".gitattributes": {
-      "sha256": "34adb1002cea37c4521bd11aa8b73fbbbd35f0facef6aeae24570f996d53491e",
-      "bytes": 274
+      "sha256": "27d9f60d561e24ea65ff96e1cd8ff4faedd906b4346cc59d70c0881ed9821191",
+      "bytes": 291
     },
     ".gitignore": {
-      "sha256": "566dd69738ff20d7932496b055f5703ef48580f7d27840867fbac5bb1de409d9",
-      "bytes": 483
+      "sha256": "8f1bfc6e5fde80822da18cb0936498a8428ca4169071ad7633e3a8777bfd6b59",
+      "bytes": 555
     },
     "CITATION.cff": {
-      "sha256": "77451a0b72655efc06f5d1b086735121a48232ad72cb5e6bf73580bbb88d3f04",
-      "bytes": 650
+      "sha256": "e6a8f8e5f12d747ff6687df48dbcbdc5d86dc136b779c61094a53e698e0192d3",
+      "bytes": 620
     },
     "README.md": {
-      "sha256": "b6a81ff5c3d36e5106c87c5aed23588a8637115f129695160ab1571745f781bf",
-      "bytes": 5396
+      "sha256": "d5b75c29c8e74337d9d5e11fb05c7327c532c87bc37d807795e8c16a826fd268",
+      "bytes": 6655
     },
     "THIRD_PARTY.md": {
-      "sha256": "383887d162c7754b2f3b81104c564eee6ac6eb0037999d23aa2ac03c2993063e",
-      "bytes": 2568
+      "sha256": "a366bf60519430ad323d1a0683bc903d084a1c1a41d0d82776788b3c32294c8a",
+      "bytes": 2498
     },
     "arabidopsis/code/latent_ode_model.py": {
       "sha256": "73d5e8fa2796c937c856926994a05b6ce137152d12c06e375a122fe00e22b271",
@@ -36,52 +34,48 @@
       "bytes": 3453
     },
     "arabidopsis/code/run_experiment.py": {
-      "sha256": "01fc2982aec26f4e828ef5e403616a34ffb3d019b6901ee75db375b68f996e77",
-      "bytes": 33371
+      "sha256": "1e0741cd10a828858defd3286daca7a52da1867cbef147b758ff637c48fc441a",
+      "bytes": 33397
     },
     "arabidopsis/results/all_runs_seed1_3.csv": {
-      "sha256": "aab1a207f766e2ef5b618630b4d2f66cd6926ea3778643d77d483ceb1207a528",
-      "bytes": 2582
+      "sha256": "898e8788bc52e958f667c128452ad68ff5e8d4c4770af7c318b4cce8ce55167a",
+      "bytes": 2063
     },
     "arabidopsis/results/fitted_process_parameters.json": {
       "sha256": "d23254df9218369bbb01fa1d9310bd313cf6c30e70d1fea0cbe8c2ed59680ff6",
       "bytes": 1129
     },
     "arabidopsis/results/predictions_seed1_3.csv": {
-      "sha256": "71dcfd4c07ea9518c17ce846c559d32233ca590a2612dcae65b49e693e9f19f1",
-      "bytes": 1026771
+      "sha256": "9a3b3fae9645014d58dd3bbe27c5041c6c4eaf02fd29b67e2ffc8c3d574ceae0",
+      "bytes": 754938
     },
     "configs/data_sources.json": {
       "sha256": "2f470e5b102da1b87988df63ba60f0873060dcd23b07cd52764c219d01c1b0f9",
       "bytes": 7311
     },
     "configs/hypocotyl_forecast.json": {
-      "sha256": "1f251be7df95c80c4688bd8d5746e6ee56a5f91b3bd0aac492d5a7f6bcc7ae59",
-      "bytes": 1354
+      "sha256": "2ce389783fa7193281ec7a5c98c90c05c6d504a422250b570448cf36454bba54",
+      "bytes": 1237
     },
-    "configs/hypocotyl_prefix_parameters_no_light_20260911.json": {
-      "sha256": "db0a16f6052cd995d4a7a4df790c277fadcbe518b6b9979ac3f17d81b25a448e",
-      "bytes": 1597
+    "configs/hypocotyl_latent_ode.json": {
+      "sha256": "c3c7e8818837e16f8034012c36e5604215b2e9adc76687012a1880cdbec87644",
+      "bytes": 1119
+    },
+    "configs/hypocotyl_phytoode.json": {
+      "sha256": "faa96e8cac09659db82e4d43d141bbffd9f2b0d275a565881f0c2e5d27730374",
+      "bytes": 1101
     },
     "configs/paper.json": {
-      "sha256": "13763971ef40b6df75318fb9e7ee27f8e9362973a2fb7bdfcfef76776dd13f43",
-      "bytes": 21641
+      "sha256": "eabc2ce286b04c9a012a5d8aa9d057843c650d4cf745cef718ef09157abf1ab2",
+      "bytes": 23961
     },
     "docs/REPRODUCTION.md": {
-      "sha256": "05c32a1722f771c205c7519447e082ad0ba22d0910e663d4c255a6498e18c058",
-      "bytes": 7697
+      "sha256": "ac6b217871c33d01f1e0f5ddf1c97855948cbc17af3250bd5326a9166439dd09",
+      "bytes": 7933
     },
     "experiments/physics_ablation.py": {
-      "sha256": "1094f8b2025428a3bd3f564c91cb0e62bc8b7635843544035da3ee6bc08884cb",
-      "bytes": 14417
-    },
-    "experiments/phytoode_config.json": {
-      "sha256": "adce6a4fb9a05bdaa030f00228b5e142b74f1f59fe9a911aa8a57dedc4cd8d0c",
-      "bytes": 5347
-    },
-    "experiments/results/adopted_phytoode_20260908/comparison.csv": {
-      "sha256": "7d8e6b15f50a0c88189ac01d9a274fa93f27ac91b353005651cdb4744ceb79a1",
-      "bytes": 2383
+      "sha256": "5da30c5b713ed2bb6c46b2ef0dce873a0344bcf697f73d90d54611db0915e811",
+      "bytes": 6346
     },
     "experiments/results/adopted_phytoode_20260908/maize/seed2/checkpoint.pt": {
       "sha256": "28dcbd151d72978a80c344607163223b9f3b9df2dd261dcbb47953c4bf2ba553",
@@ -90,14 +84,6 @@
     "experiments/results/adopted_phytoode_20260908/maize/seed3/checkpoint.pt": {
       "sha256": "d6c7fcc07c5329c19f3da095badfccd277407e54f00656959216e3bf7bf1c634",
       "bytes": 48704
-    },
-    "experiments/results/adopted_phytoode_20260908/per_seed_metrics.csv": {
-      "sha256": "ec8a463dd676d15ea01ae4a9dd01e90b954c3b3a7987158506c3f2a4cb7551b0",
-      "bytes": 9735
-    },
-    "experiments/results/joint_lambda_tuning_20260908/all_baselines_per_seed.csv": {
-      "sha256": "4a17d5663c1f1bd84f2d494ed33989789aae9edd23b6e23f04e988ee5c0717ad",
-      "bytes": 18096
     },
     "experiments/results/joint_lambda_tuning_20260908/arabidopsis/final/selected_phyto/seed1/predictions.npz": {
       "sha256": "0cbdd07068243bba781277d18f653617b19d1382726e687e4dc07fd4f5b6ccef",
@@ -151,73 +137,33 @@
       "sha256": "94185c958b3aae1fdcf70f7f70edea04575d8f288d5d72ae3f7c959ffc3a1c6d",
       "bytes": 26694
     },
-    "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed1/history.csv": {
-      "sha256": "9cfa9ee1a5c41dc3e2c9226e38a65d0ea11b89f4f2649cc4a34ea87a188cb633",
-      "bytes": 22666
-    },
     "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed2/checkpoint.pt": {
       "sha256": "0158c8eeaf50ea12626cf2b441fde857943427209880361b9d74b5fde0be60ca",
       "bytes": 26694
-    },
-    "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed2/history.csv": {
-      "sha256": "31befac2d5ad0931e586ed54557b8a9d88485610330a219622a819afae41e1dd",
-      "bytes": 22611
     },
     "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed3/checkpoint.pt": {
       "sha256": "c360222b37f644921bfc1d7f437edd0cf3c230ba03de0d28d4863cb8139bb6c5",
       "bytes": 26694
     },
-    "experiments/results/lambda_ode_tuning_20260908/arabidopsis/trials/lambda_0p5/seed3/history.csv": {
-      "sha256": "715b9eb01432fdbe5fb545e0ac925949fba0fea3c280e80dca8fb7817ac66166",
-      "bytes": 22624
-    },
     "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed1/checkpoint.pt": {
       "sha256": "5d2b3cdeb30c8aefac661bf777e920ee222d69004789de92cd0600f249014e8e",
       "bytes": 14272
-    },
-    "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed1/history.csv": {
-      "sha256": "7bbb0c5907e422d53dcbe4508bf84d2c1cce912d8aab182e5520282f682eaba5",
-      "bytes": 23015
     },
     "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed2/checkpoint.pt": {
       "sha256": "b2b3c0e6b68031cd8c7b0b980a4ad5bf441d79c4e938f646a09b4173d7828931",
       "bytes": 14272
     },
-    "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed2/history.csv": {
-      "sha256": "66e8ab24450b44df817de126abc6aa7e82438a1d2e6e1356c87edd2ffaca1bac",
-      "bytes": 23011
-    },
     "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed3/checkpoint.pt": {
       "sha256": "3d5925010c6277f6d0c3f634cc4ed551121c4dcbd94ca31eb86077fc56d2d3ec",
       "bytes": 14272
-    },
-    "experiments/results/lambda_ode_tuning_20260908/wheat/trials/lambda_3p16227766/seed3/history.csv": {
-      "sha256": "0270ff4f1626f0e126b90e81337dd7993a8cd6a3eafa4fa36c2bd41301c0af13",
-      "bytes": 22984
     },
     "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/checkpoint.pt": {
       "sha256": "8a3fa27b501a7554b89bf17d624d053d6581d1c059122196c4d38a5bfb6924e8",
       "bytes": 26613
     },
-    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/config.json": {
-      "sha256": "7c1b410a766346326df43d34247acc663cd4f58c29bdd1ee35d68e68bd958961",
-      "bytes": 1095
-    },
-    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/history.csv": {
-      "sha256": "7c140dc7ff08cb2797c537b80593cb4c7a8007f4dba844b902962a91ed362d96",
-      "bytes": 15251
-    },
-    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/per_curve_metrics.csv": {
-      "sha256": "f4f65f2c5f425fe43847eef7a08d1e772bc571f167f666a0ca31216c4aba4be2",
-      "bytes": 1901
-    },
     "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/predictions.npz": {
       "sha256": "471a8b71388297aa234efddce12a771563c2b6cc489e6cee3c2b80c63ecb27cd",
       "bytes": 8416
-    },
-    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/progress.json": {
-      "sha256": "4af8e5251260a4ad0389dc8c71690cb78fcaa49d0f9d2c1023b10bcae7866e83",
-      "bytes": 115
     },
     "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed1/result.json": {
       "sha256": "b6eaa455680130657426bcfbefa4f5127a5e02f9ed1acea14f7d66b0728470a0",
@@ -231,25 +177,9 @@
       "sha256": "e8f0eca1976b4cbb828a0c19e1c644d8013e41196c8a9875b64abb2b49c986ab",
       "bytes": 26613
     },
-    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/config.json": {
-      "sha256": "aff678e52dd744fc8c363f2ef89c36a630361b8ffc2db5487fbc09b16b3b3f95",
-      "bytes": 1095
-    },
-    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/history.csv": {
-      "sha256": "866a65c464e6152cd3c0a24aa0a82f6d255149789269f37c7875460f7241cbc7",
-      "bytes": 15208
-    },
-    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/per_curve_metrics.csv": {
-      "sha256": "bf27d47011f9e3fd5f05998fd9869c50f0777f8503d00613c31863e3a79829b4",
-      "bytes": 1904
-    },
     "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/predictions.npz": {
       "sha256": "0502e6e1597962c2e8cdac2bb3a5e87f089494d98d85a5a480e74dcbb0942537",
       "bytes": 8437
-    },
-    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/progress.json": {
-      "sha256": "020c195dc99350782b3dee065eef602c296aa55b793c7f959ea1db139d2a5447",
-      "bytes": 116
     },
     "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed2/result.json": {
       "sha256": "ec37ae1f896717139f4c32a69ed47a3e1a49af56ebd3bd59edf5d2d495926f91",
@@ -263,25 +193,9 @@
       "sha256": "8ed5c1cd2182b4c3541c7178a0ed8151bb40fe5c5fb70b3874e9640fc2c8623c",
       "bytes": 26613
     },
-    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/config.json": {
-      "sha256": "8aacf4efc8a937011de93e87570c2c8a0beb4c58b73714c90a61c7a38d09a2fb",
-      "bytes": 1095
-    },
-    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/history.csv": {
-      "sha256": "201bba76b1b282eabab2ff50694cfaaa1e4148a79478a62b325672e5e4e3d441",
-      "bytes": 15236
-    },
-    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/per_curve_metrics.csv": {
-      "sha256": "d42342e75b3b87c983ffbaba660c2e2755ba6abb7caf02c9a0aadb571d88c755",
-      "bytes": 1904
-    },
     "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/predictions.npz": {
       "sha256": "87180e4e4cb36126d3129c1efd6b5397372c40649aadc742241395198fab9d19",
       "bytes": 8407
-    },
-    "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/progress.json": {
-      "sha256": "f20f51f068862c732e893f6dca7a6b0bd0ad4695d6cf0dfd107f7cb059ff7ddb",
-      "bytes": 116
     },
     "experiments/results/physics_ablation_20260908/arabidopsis/no_biological_loss_seed3/result.json": {
       "sha256": "e767d56ca0d564f352a5c3f3c4a58230e637f15c5e9957191e6f836ee251ffed",
@@ -295,33 +209,13 @@
       "sha256": "67de3f895e4136ff9e93c704d152fdb3e049c35a611a545eb8248618aba0b95a",
       "bytes": 43573
     },
-    "experiments/results/physics_ablation_20260908/maize/full_seed1/history.csv": {
-      "sha256": "9041627e4d1dcb2b182d2a080e4dc5d24efe714b0da41aa7316375db1a3be64d",
-      "bytes": 45541
-    },
     "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/checkpoint.pt": {
       "sha256": "4309d37160ab8e704cbf762dd58c184b63ab30c8772a96f75353164dbfe97b7a",
       "bytes": 43573
     },
-    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/config.json": {
-      "sha256": "c8bf3816b4827f19159de1c86ded98b564b40530a44496ba700b71f71511484c",
-      "bytes": 1082
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/history.csv": {
-      "sha256": "24e17e285fd695ceeda1b0317459454dcac9b7da2e07e182e7750e0868e25109",
-      "bytes": 31309
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/per_curve_metrics.csv": {
-      "sha256": "94201fc4a78ed51d1f3161ca888c913e6e60f95a935afcc47bc9ab536e1637ae",
-      "bytes": 57864
-    },
     "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/predictions.npz": {
       "sha256": "63720af63d956f9df4b374e57e41d9f841374ea8a5c9eacd8bc1a32d4ae9c138",
       "bytes": 666032
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/progress.json": {
-      "sha256": "fe13b95ed3fc97b2ae494bb2aed056b89022141593dfb9e0c2076a58a574b553",
-      "bytes": 117
     },
     "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed1/result.json": {
       "sha256": "5bdf38bef8292b4a26c92f14f6f57d505159405ea846187a57d2b40e147d37e5",
@@ -335,25 +229,9 @@
       "sha256": "64a50644569895ca510e3a09e1b56eefe1efaf150b483054555f9b3a2dbd566f",
       "bytes": 43573
     },
-    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/config.json": {
-      "sha256": "31d6bbb4285fb80504ac9e7082468df5097c220fa6dd8704308229c86bb18c3e",
-      "bytes": 1082
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/history.csv": {
-      "sha256": "ea74389ecc3bea6c747c234e9d3036114a3aafc2fc1e397a4b577c74989667e1",
-      "bytes": 30986
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/per_curve_metrics.csv": {
-      "sha256": "6484d8bb14b13a7d1055efc6d980cdf1fec0b5102d7f6892fba559d89d0f8841",
-      "bytes": 57800
-    },
     "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/predictions.npz": {
       "sha256": "b4c46ec4fe65cbf04a7696cbbe185b3830924546cc6c802cbc29918bbe4d7528",
       "bytes": 666268
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/progress.json": {
-      "sha256": "c4d0dd6279a367d3a89a4bad8f8275772bc8f0278866a1b0e33383ff800af881",
-      "bytes": 115
     },
     "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed2/result.json": {
       "sha256": "7760c84843e2b88bd943819b75f77a928984f3d8f2ca31ad50954f9bc0e4662b",
@@ -367,25 +245,9 @@
       "sha256": "752e206bafc0200c39d2de9297ef946311e93197bd70c970d68cec82472cb2ee",
       "bytes": 43573
     },
-    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/config.json": {
-      "sha256": "193216e0bd9b1f98a9671e6ee2028e432c5d1d93b1586f06e1dc146d157aae5f",
-      "bytes": 1082
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/history.csv": {
-      "sha256": "7b6abb69439a500bd5be6a117555ef1588d6d5544a144eea9dde92552d3d3e1a",
-      "bytes": 31340
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/per_curve_metrics.csv": {
-      "sha256": "0aaafd91df2b5640db2d7aa19d4ec88851ae0e42126c7ba68bc042918b7e129c",
-      "bytes": 57830
-    },
     "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/predictions.npz": {
       "sha256": "02890cc5297936da17fc81254e1add73abdcbafc41cb5b2097bb2604d968bb83",
       "bytes": 664891
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/progress.json": {
-      "sha256": "ad5a6741c35c1f73958fdd2451dc3838d5c1ff3967aa34b60900679084fe83bf",
-      "bytes": 116
     },
     "experiments/results/physics_ablation_20260908/maize/no_biological_loss_seed3/result.json": {
       "sha256": "f39056fd1002a6711527e32549208b1f005afe3ee29a595ddbb3c55f189796a9",
@@ -399,25 +261,9 @@
       "sha256": "beeea3152cad4a2760321461a71a1bc636b622adcd497acdacb02129567740be",
       "bytes": 43573
     },
-    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/config.json": {
-      "sha256": "2ee5b967280056c1e11a7ddaf6bd20d87148c918cbce0aae13e600958de1389d",
-      "bytes": 1079
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/history.csv": {
-      "sha256": "5d75e442d3c61250cda0783083cebdd7f8dbe0ba96e440272b065770ff085fa9",
-      "bytes": 40180
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/per_curve_metrics.csv": {
-      "sha256": "e94242b362377d01294b3e88d880ec4af816be969968ee48b7c472a1a801d2e9",
-      "bytes": 57804
-    },
     "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/predictions.npz": {
       "sha256": "9cd88a8bf75c77f0beca04b3d93820bee29c240328e78cbc28d1fdbe7da588e5",
       "bytes": 666712
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/progress.json": {
-      "sha256": "38301e90582d137b10c2048c710a8608035642b58cbc0611a5c253a3f2d1c080",
-      "bytes": 117
     },
     "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed1/result.json": {
       "sha256": "e2009c1431feb7b53292aee66787643f9fd10c39d85c79acab73d3c2c35e1ada",
@@ -431,25 +277,9 @@
       "sha256": "254cbcd6c0afa5cf326eccb6cfdc4b4da9b0a9f3e544f5e6939ffb065123d44c",
       "bytes": 43573
     },
-    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/config.json": {
-      "sha256": "d371c9bde499be3c2cf3a359e14a585025a4e2bbc9790b0b7fd2e1af01a441ef",
-      "bytes": 1079
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/history.csv": {
-      "sha256": "bad864e07267110eeda928ded73b585b99c252c5e4d77bbdab367628f8a91e2b",
-      "bytes": 40100
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/per_curve_metrics.csv": {
-      "sha256": "df7cb8c59d13d178c01930bb13ad0007b7b0500149823914aacbb59d23956ec1",
-      "bytes": 58035
-    },
     "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/predictions.npz": {
       "sha256": "052c82e3bb0ec971bf45316d3e5da70e8e55854c3f21e51e788b70c062e88e66",
       "bytes": 664242
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/progress.json": {
-      "sha256": "1609132ee21bcdadc73ed061e257fbd94b2e790ea978076edf80906a6ae4a307",
-      "bytes": 116
     },
     "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed2/result.json": {
       "sha256": "2b23c4b5d8a01c3452a51459794d165fe867180f682db961073edcbee6baf2cd",
@@ -463,25 +293,9 @@
       "sha256": "bc93521003a6f51cf45a910c19756cd76dd7f0aee24b1434c3b57a5d1b5fff52",
       "bytes": 43573
     },
-    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/config.json": {
-      "sha256": "21a438663ea762cf74a4962001afbe755d454626dcdb059d0d4fb8a6de462b1b",
-      "bytes": 1079
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/history.csv": {
-      "sha256": "664acc6289d004a09f430e04c334f3248c0820407d2e150857613ce2bdb08168",
-      "bytes": 39855
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/per_curve_metrics.csv": {
-      "sha256": "5790b68ce0f976578c533337c186b6b5fae6074d9af580120c15e8c84be446b1",
-      "bytes": 57993
-    },
     "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/predictions.npz": {
       "sha256": "4d3f9fedd7e04b21be62db40c6069b3c3b317681be16174879da4083fb64d963",
       "bytes": 662862
-    },
-    "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/progress.json": {
-      "sha256": "736be96c6eb9fdc0f3e625a2268c1e8d08a36053364c87dbc5a61c180f4565e2",
-      "bytes": 117
     },
     "experiments/results/physics_ablation_20260908/maize/no_ode_residual_seed3/result.json": {
       "sha256": "32f6f50f5a01567a3ba4227fd85165f14a6d574635636fd822cc976011cdb532",
@@ -495,25 +309,9 @@
       "sha256": "77c2f910a08825113fde240de673fd1851e4ed985d83504aed5f1fd24005e279",
       "bytes": 14197
     },
-    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/config.json": {
-      "sha256": "61e73539c5f01609a96c3454507718c73e1b582c8e9931ffa59c0f6d1f4ec474",
-      "bytes": 1085
-    },
-    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/history.csv": {
-      "sha256": "8074fd434ee8896fe4033a91b45e5c53f58783ec5cb631fdc6a8de18fee28bbf",
-      "bytes": 15458
-    },
-    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/per_curve_metrics.csv": {
-      "sha256": "ca4a7eab4a995bb017e98fb10a007e273673cc8b7df94ee2ac78e6dd81defefe",
-      "bytes": 2694
-    },
     "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/predictions.npz": {
       "sha256": "f56a0a6d2e014fe2b6e13d248fc09e635cf0247867ce04ce55ba5280b68834c0",
       "bytes": 77090
-    },
-    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/progress.json": {
-      "sha256": "c1ffb18d4c209cd0bbf2e6c8c52a363e37c3ee8876d6cf7209fa7d5068391f77",
-      "bytes": 117
     },
     "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed1/result.json": {
       "sha256": "4b514754aa5df9f8db919a0adf1b304cb09a73597247f63d0c0c90baf64e890d",
@@ -527,25 +325,9 @@
       "sha256": "a2246367d6af86188051d320c317f82e72e19cbd1e19d29528958d22592b9786",
       "bytes": 14197
     },
-    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/config.json": {
-      "sha256": "08d9e95d8e3eaa7d01ae1408e364822b2150c53bf5763c58ec6d9be7e23109e6",
-      "bytes": 1085
-    },
-    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/history.csv": {
-      "sha256": "8d84eb640c594b3a16625944d72d0100c190c8f829bf14435c246594f76e177c",
-      "bytes": 15478
-    },
-    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/per_curve_metrics.csv": {
-      "sha256": "d8b6ffccbcef9ea5425d48adb5dbae40f81b3939f7c696ef6d39588b06cc0252",
-      "bytes": 2691
-    },
     "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/predictions.npz": {
       "sha256": "cd1325f6070b574f92c895c20d06400c0c3665a106e6e18b35bb026e0197f7ba",
       "bytes": 77145
-    },
-    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/progress.json": {
-      "sha256": "68d4e36b5f49d9168dc94dfad7067affe9fd8bb08531506c146b8283e411a574",
-      "bytes": 116
     },
     "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed2/result.json": {
       "sha256": "d42cc2a8a5bb4b5b4ba52764468e3c19e906abdec374b15dd2fcde4475818f91",
@@ -559,25 +341,9 @@
       "sha256": "b20de666c67d0a209736d71777c7f31ad8022dac03170a558044d2711320b6ca",
       "bytes": 14197
     },
-    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/config.json": {
-      "sha256": "d1a8ca5565b997c7739b3f238f98b08b9d89cbdabfe20170b04e70cda2e2ac07",
-      "bytes": 1085
-    },
-    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/history.csv": {
-      "sha256": "273767afda0d1602c3ceb22d9706a9d9028238dc447c3133f79cf3f0a7845b2a",
-      "bytes": 15416
-    },
-    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/per_curve_metrics.csv": {
-      "sha256": "f98144a63b89b3375e0c188d89ac0c01a53fd6d7cc3a54398edd6f774f1f9fa3",
-      "bytes": 2688
-    },
     "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/predictions.npz": {
       "sha256": "60b119cb5a0d93b64f54b18935b1d0e40604c1b5183e53a54669f5e59e8cde04",
       "bytes": 77180
-    },
-    "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/progress.json": {
-      "sha256": "b2a77496fd3f8363f1fb020368770c77889c7c3cac60416cd57714dc9368a04a",
-      "bytes": 116
     },
     "experiments/results/physics_ablation_20260908/wheat/no_biological_loss_seed3/result.json": {
       "sha256": "df695d9906d0aae134aa57e368bf1ba199cb9f6422db786ebe984d2350369d7f",
@@ -588,12 +354,12 @@
       "bytes": 182
     },
     "hypocotyl/README.md": {
-      "sha256": "ed78f59ac4c222aec5b51bfa8d67724e38df028001ad53a05389328d7b0194ea",
-      "bytes": 4829
+      "sha256": "8abcfb4602a0c609c0b7b0c41163a2dc25fcdf3f68fbdeca7ea2d13ac254bc39",
+      "bytes": 4980
     },
-    "hypocotyl/code/audit_approved_benchmark.py": {
-      "sha256": "2634a7e40bcea258b9de3906329170192656bbc24417de545f453eccf209c36e",
-      "bytes": 5616
+    "hypocotyl/code/architecture.py": {
+      "sha256": "4dee24b98afd82ab8a5a8882c7cab1d59a3da1445501ba14b2d8fadc2a9db5f7",
+      "bytes": 2904
     },
     "hypocotyl/code/forecast_data.py": {
       "sha256": "a797dc33eb2ca7666b33292d287962b0aca21b59961f6c3116f77a4588deab49",
@@ -604,28 +370,32 @@
       "bytes": 7281
     },
     "hypocotyl/code/forecast_trial.py": {
-      "sha256": "a17bd8c0087e369347fe7f2b0fd41241c85d90e0da669002d440aa6649bc33f3",
-      "bytes": 9228
+      "sha256": "30d08d7d2629f910900d3c9c42f525a8000d5102ea5de3ec44a3fe5ae3221a01",
+      "bytes": 10223
+    },
+    "hypocotyl/code/growth_law.py": {
+      "sha256": "335fafe9480c2bd84b9934023f9de27f0ba78293101932f178be5068decdf905",
+      "bytes": 2656
     },
     "hypocotyl/code/no_light_prefix_model.py": {
       "sha256": "23bf073dbd8abd5b9a6b56cb801e1b605b2dc393081c4f43ddc30789e53069f3",
       "bytes": 1150
     },
-    "hypocotyl/code/no_light_prefix_trial.py": {
-      "sha256": "6d6c73ce1aa57635e97d6734ed8694108d730cd3698acf52d0d86c311bae0f76",
-      "bytes": 8327
+    "hypocotyl/code/phase_model.py": {
+      "sha256": "136724a62b1b011dcad2e4f3d2d0e77c7de09d449901acbc438badeb4e3513a7",
+      "bytes": 4700
     },
     "hypocotyl/code/prefix_parameter_model.py": {
       "sha256": "5a9e3e88de06b62f4be6510f735f53a3778222a1e0b7eb85f17e30772272723b",
       "bytes": 2324
     },
-    "hypocotyl/code/report_approved_benchmark.py": {
-      "sha256": "6a2af9457e13fea529430fa9d9cff5264edc4e3796948d55e22550a8133e299c",
-      "bytes": 9189
+    "hypocotyl/code/selected_model.py": {
+      "sha256": "334ef5aeca8da7668ae599e134ad7c6e588fac28d893594b13d3b020f45759cd",
+      "bytes": 8276
     },
-    "hypocotyl/code/run_approved_benchmark.py": {
-      "sha256": "ff038e20bbde4196bb6824ada45ce201467937d5ebe35642e0b95811253902c9",
-      "bytes": 4465
+    "hypocotyl/code/selected_trial.py": {
+      "sha256": "286c81b435abbcde5859e0b249575362c4aeba1fd6f4952de7e49b6ff394940d",
+      "bytes": 7705
     },
     "hypocotyl/code/single_condition_models.py": {
       "sha256": "8116c31a537ee6f1c7dd2fdd8689c2d0483c636ce56c36660b8657f04e869ca2",
@@ -668,124 +438,8 @@
       "bytes": 15792
     },
     "hypocotyl/reports/four_genotypes_20260915/comparison.csv": {
-      "sha256": "f3b05595ed9e327e948f59bd536f4b12626aaf1e2b21ea59632b3331f9a9650a",
-      "bytes": 12845
-    },
-    "hypocotyl/reports/four_genotypes_20260915/comparison.md": {
-      "sha256": "b8bfca9d18281b549b4b30ba2278ed52a1d2180f07d4286a1e19234b7b72a243",
-      "bytes": 2832
-    },
-    "hypocotyl/reports/four_genotypes_20260915/per_run_metrics.csv": {
-      "sha256": "3f72427d6a47a8ae32203097e773a0439b5882e88a3205fb7cc547882385c780",
-      "bytes": 16122
-    },
-    "hypocotyl/results/four_genotypes_20260915/completion.json": {
-      "sha256": "e98c11c0a34bf3935e85c7cf099086393c356da53753e45906a43c7fdd0d402d",
-      "bytes": 44
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed1.log": {
-      "sha256": "aa1794d87c68249773b7f704aa2e6f7a4d801c47ecf4c0853532388289ebd1cb",
-      "bytes": 980
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed1/checkpoint.pt": {
-      "sha256": "60aef07b52818757ad70361a872a9df78a0f5398bc1eec321ab7cfc23139063f",
-      "bytes": 13557
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed1/config.json": {
-      "sha256": "09603a8922233bfcf6fc58f476d75be9aec349194186cd492c1cd6a7c8b9c38f",
-      "bytes": 2793
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed1/history.csv": {
-      "sha256": "7d89dc7661467293c11a29900474c395eecbf6079994dc6df5b6316e30f73800",
-      "bytes": 7278
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed1/predictions.npz": {
-      "sha256": "dac7fa1557af56fee1ddba5a911e933cf6ade07f63c47744bbc377407acfc9f2",
-      "bytes": 21890
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed1/progress.json": {
-      "sha256": "f3b220b0f0cd0736dec5978c30f5d6b436c6de5815ee2b1abb1d7e9a695cc662",
-      "bytes": 117
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed1/result.json": {
-      "sha256": "9450304f36672a9083ebd1b9148c6c50748d454e72a6398fddf8d49ffc4c312e",
-      "bytes": 14782
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed1/selection.json": {
-      "sha256": "cdaaa238fc20f52222a2da5ddf448f7c175210588964a7d541180a2ac753ce33",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed2.log": {
-      "sha256": "8f8abef545b060e82ea00c3e829c0b3dd3134ef51fb4836dd3e20a5a21301826",
-      "bytes": 982
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed2/checkpoint.pt": {
-      "sha256": "276bfb2bebe25b5d230982022d1562dc906bb29ebebaa833f7911417dbd00e14",
-      "bytes": 13557
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed2/config.json": {
-      "sha256": "c09d17e426184d4ccb60ebdbc7b0f881ea817bbaa9b131bd85343fc06fac636e",
-      "bytes": 2793
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed2/history.csv": {
-      "sha256": "b9f7f1edc9823446ef54f8e7e6350c0d788a125bc398c6b106bee22be1a5f973",
-      "bytes": 7283
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed2/predictions.npz": {
-      "sha256": "0f6796a558a3a138ff648145cd4eef6101137939e93281d6b379ec49e2078d49",
-      "bytes": 21909
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed2/progress.json": {
-      "sha256": "bd13fed2b498a0b4be1f43ed75e7880be7e08b2c67be7144c4ce8dd7915dc548",
-      "bytes": 115
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed2/result.json": {
-      "sha256": "1c68e1998151e0e2809edb432b40d053651ec058a340c6546198b51923e6240a",
-      "bytes": 14798
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed2/selection.json": {
-      "sha256": "66b350ca001b9bafe4abce8d094d2f58441c9eb0488ea8b7034b68fb025a6bbc",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed3.log": {
-      "sha256": "805814a4562aa5f694e83ede12de86158cfec537b468e6dfd1087d6c5e7e3acc",
-      "bytes": 982
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed3/checkpoint.pt": {
-      "sha256": "006f2107ae69153014e7f4c87dbe4f21d02f4d806d7674ff1a351d122bd9642f",
-      "bytes": 13557
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed3/config.json": {
-      "sha256": "6fdfdb60edb96e7ed10519510036ecd23cc566b933f2f7469b7d48df1a44158a",
-      "bytes": 2793
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed3/history.csv": {
-      "sha256": "e306a39968e663bb7242ab0a5363843e3506c8774962711be60010dab9b31abe",
-      "bytes": 7281
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed3/predictions.npz": {
-      "sha256": "6898b84dd35ab08b44569caa3c3fa2ef3815a1e996d1176ae38dc2f4dd9a9960",
-      "bytes": 21887
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed3/progress.json": {
-      "sha256": "f9d81891d1e27d9e7b756358a7f5bef28a78588591d2cffeb5cf9aae7c7b2caf",
-      "bytes": 116
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed3/result.json": {
-      "sha256": "963facc4f87e99baf8e6825522b996668c9be39ce905f7ed03f22a098f99c43c",
-      "bytes": 14784
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/latent_ode/seed3/selection.json": {
-      "sha256": "0da4cc2df8c4fe082b8d77d2e53947a3da83ee0155e677930636d681a7f0beca",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic/seed1.log": {
-      "sha256": "82d757dfb062d7b5d493372deaf11c5310c437c606dbbb342133cfd86f309f75",
-      "bytes": 141
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic/seed1/config.json": {
-      "sha256": "56d610ca62460488feb98fceb4de1ab61d05ada8a2ba3a1864742b621386769b",
-      "bytes": 2691
+      "sha256": "7a1bd72c58562274416f425dbc4888471153f53bc009b42db30f87dc18eb74c2",
+      "bytes": 8532
     },
     "hypocotyl/results/four_genotypes_20260915/drop_0/logistic/seed1/parameters.json": {
       "sha256": "ccfb77f74e4e8f8603aae078cc0186ad142294aaeb39c3260d6dc513fe586ee1",
@@ -803,29 +457,13 @@
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed1.log": {
-      "sha256": "ed564381edf46a6b80599606d45f07959f3c5b05160f125f227cf4df05381f16",
-      "bytes": 1027
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed1/checkpoint.pt": {
       "sha256": "17abf96e486669c2450c37ea424a18401536c5e154d036f5f2cbac280d63db25",
       "bytes": 13365
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed1/config.json": {
-      "sha256": "84a3ff99bae750f8bc4229a1e91541e49ae0fe761330d5f202e2d6781662009d",
-      "bytes": 2799
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed1/history.csv": {
-      "sha256": "cc1da2078ecd0b766a825097fdcf921bc86913a25aebbf3daa1ccc0101437aa3",
-      "bytes": 9846
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed1/predictions.npz": {
       "sha256": "ad7b91f1dbc15c5102607ec7c0c21496e9609c7bd97fef5637718e04321331d1",
       "bytes": 21883
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed1/progress.json": {
-      "sha256": "37cdfa02c7cab9dfcf8ac2f02fa9f43d3073ecdbebc2dfe9c64d0c8ef80370c0",
-      "bytes": 117
     },
     "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed1/result.json": {
       "sha256": "6011d6a2bfde5a286aa58463e3b465a8dfd767c339ba03e7d1293e43ff1599c2",
@@ -835,29 +473,13 @@
       "sha256": "9951f7b5e42ba6898c58eed48492aad29c1cb4f5432c70b948864835ab3cd9ea",
       "bytes": 181
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed2.log": {
-      "sha256": "3827241bc999fee02c9d6a06d4fcf70a48b69a54d9f312ce0b2450642d37a985",
-      "bytes": 1027
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed2/checkpoint.pt": {
       "sha256": "4d48323b21b470c7dd160d72ecaba6145dc94c45eaf6bd5734c2c1a2ba4af3c7",
       "bytes": 13365
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed2/config.json": {
-      "sha256": "1a20fbebabc53c7fd56645cba5fd9e37de9bc7e2be09813d5c5f4dcc4bf752e0",
-      "bytes": 2799
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed2/history.csv": {
-      "sha256": "c16bc89c2cffb54034c3e6176cb32365dcfd2067342ff0d095e477132ae370dc",
-      "bytes": 9832
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed2/predictions.npz": {
       "sha256": "7824050ae11198342ea6d975d54e41dd2b4a56b6d5168b7cbf04ae238918ace6",
       "bytes": 21851
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed2/progress.json": {
-      "sha256": "db5fb3a21ed9a37a6a14089998a86bd2f44b423011a117c35ae2d673061be65f",
-      "bytes": 117
     },
     "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed2/result.json": {
       "sha256": "6757b699f473abac8099f3b3383d583a52b24595d072a52cf5b907fd3a970684",
@@ -867,29 +489,13 @@
       "sha256": "fc97034e9061085177a8e3918d78d6a4433dc1af05f5d9cac60dd22918b49f13",
       "bytes": 180
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed3.log": {
-      "sha256": "a7ba15b6cd86615e66b3ce8fd7f671d50dca351da561b62299a39deb07814b8e",
-      "bytes": 1023
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed3/checkpoint.pt": {
       "sha256": "6b9159731e1d0ec903e2f2343a3fb04f888d1f085f268a89e9a0a74f74b3ec64",
       "bytes": 13365
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed3/config.json": {
-      "sha256": "f70eeecbe1147d1d5a2f41f238a443f677253bbbed02d7d2a7faa41aab3d502a",
-      "bytes": 2799
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed3/history.csv": {
-      "sha256": "10b8a1e2ee5865344b110caee027e2ab7817c2bbb9f00ba2c222e56d75c0a740",
-      "bytes": 9864
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed3/predictions.npz": {
       "sha256": "3e1a9a6c4e0b0b3595a91e5d77f233bec8d94683ade89646e888fd57f55c2803",
       "bytes": 21889
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed3/progress.json": {
-      "sha256": "e2cfaa311e0e0fe3ea2f260f65a539c10b19fc31e6dab287ad1259b09692e27a",
-      "bytes": 118
     },
     "hypocotyl/results/four_genotypes_20260915/drop_0/logistic_pinn/seed3/result.json": {
       "sha256": "e184d8826c85d2d90745ddcaa01c22bf77ae5b2b3fb1badfc90a2199a484fac5",
@@ -899,29 +505,13 @@
       "sha256": "0a51732aa25b3800953d99277ace856827a7dc34cc11a0a849485a30c0271ecb",
       "bytes": 181
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed1.log": {
-      "sha256": "ee74a760ca3100938218596d1ceadd8cabffb0c3e447a48713b6143400e507f5",
-      "bytes": 890
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed1/checkpoint.pt": {
       "sha256": "b20ed11cf39232e0858c4fd39304c6cd4936d2d767b2afb27c8716f0b6f0dcc4",
       "bytes": 18677
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed1/config.json": {
-      "sha256": "13bc4b742816d8d54df552ed1a690ef02593fbafcf2fa14b7b72ea330ce04ef9",
-      "bytes": 2787
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed1/history.csv": {
-      "sha256": "e8abacc5f17a2c60d37128d90313feb446f1a2be41d584fe7107458b9e679350",
-      "bytes": 7330
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed1/predictions.npz": {
       "sha256": "4278f28b19fdbf2ed64e42663aceca488fc6e186f91ae4144a57ded74a6ed095",
       "bytes": 21887
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed1/progress.json": {
-      "sha256": "0abddff2753af13237be30d89ef18fb3602801e7adf01d4bef0bde0966527d48",
-      "bytes": 116
     },
     "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed1/result.json": {
       "sha256": "10fbecdec60cd730472be44c1be3150debb2f0e7597d006ea9c695ef94e081fc",
@@ -931,29 +521,13 @@
       "sha256": "21e46602c7ab16547e7648bac63a65825290774e35f57f50280e7a6f4d25fd22",
       "bytes": 180
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed2.log": {
-      "sha256": "1736e896904acabe1f6ddf185577810615a1dbfae36a36f4b4e0d532e597d076",
-      "bytes": 892
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed2/checkpoint.pt": {
       "sha256": "f88b50450a0b1c70edfe041b5c6ee9178b646e84bb0d2871664ed1dec7d3da3c",
       "bytes": 18677
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed2/config.json": {
-      "sha256": "14029bbeb765d8d85d873f2218d81d9a918e72b8da36d8867aeae28c948ff950",
-      "bytes": 2787
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed2/history.csv": {
-      "sha256": "5256218dfc2b7efc58e6d79d59d111b0bdec56d5270296a6386d921edfc2be1a",
-      "bytes": 7319
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed2/predictions.npz": {
       "sha256": "e6ad2910c12bb9eeced6a817863a2f62fc40cab079f98a64ee63408a8d909ff8",
       "bytes": 21888
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed2/progress.json": {
-      "sha256": "2b24a8bc82c3b5c93be4d94e56ba26ce1efdaa45ad29bd431ab4f89956c79dcf",
-      "bytes": 117
     },
     "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed2/result.json": {
       "sha256": "669f137c0de6a03a0f20578a8ffe0d6f907e9648f7fde455b2ef23982bd8b087",
@@ -963,29 +537,13 @@
       "sha256": "640cbd51355fad1783f9f273e760d217514ef5df339f6efa4de8d215e54aa22e",
       "bytes": 180
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed3.log": {
-      "sha256": "240ea9ac490313f1b6fd7989db9ec12065cf284a12f3259ad2f3653f4345445b",
-      "bytes": 890
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed3/checkpoint.pt": {
       "sha256": "ba5d6caec811364a9e50e0ed951d3bac663e8b45049f146ff09e40b5663df962",
       "bytes": 18677
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed3/config.json": {
-      "sha256": "a43ae2762d9ce00020919c47f9a8433df5fac03a70103ffafb9cd582bcdffdfa",
-      "bytes": 2787
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed3/history.csv": {
-      "sha256": "ac7fd5b163976028f4e955392906b4235cfa74d7df5393e7552bdf17c9112877",
-      "bytes": 7316
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed3/predictions.npz": {
       "sha256": "1b2f087ac96f89d99ef299db74725e7abbf70b38309615a49b71a8a783cea13a",
       "bytes": 21877
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed3/progress.json": {
-      "sha256": "47df3425fb88d2be119a18a5f4ae60a3875e3d20f89514bfb6b9e6ad323061a1",
-      "bytes": 117
     },
     "hypocotyl/results/four_genotypes_20260915/drop_0/lstm/seed3/result.json": {
       "sha256": "5582b067edcb1de8b770b5d3a4d96b37f0580061edf11e838d7ebe83d0f06c10",
@@ -995,145 +553,9 @@
       "sha256": "3e7633abf7cd5b55669e8860c0b0f7858cde2f36159f0b37cf1d530e662eb69b",
       "bytes": 180
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1.log": {
-      "sha256": "563424b8f66f296e4385d5f3f06b69f5bf5a71e31aa43cd1c3326d8d951f1c23",
-      "bytes": 934
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/checkpoint.pt": {
-      "sha256": "d58281f3e4f73de5f533ebcd6c3210c71a6411101e55fae46b341aba69c7ce81",
-      "bytes": 14069
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/config.json": {
-      "sha256": "2a0ddb1789bb119d0ecbd03f6b299f49a87314bc8d2c503dd827b92e52e8d525",
-      "bytes": 3003
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/evaluation/individual_parameters.csv": {
-      "sha256": "08eab6ff1c2ab17421284ef8ea47d8cb2352c95587866ff8ca692a6a0192e80e",
-      "bytes": 5964
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/evaluation/predictions.npz": {
-      "sha256": "20cc82ca98f40d7684abe1078c5bad5ee092a6a20da82c0e9d56c605a34e86c2",
-      "bytes": 21878
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/evaluation/result.json": {
-      "sha256": "c8347ad4b5bd5bc5f501314bd687c4ab7d6240abf1d2d1ade4c811dab7be298d",
-      "bytes": 15054
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/history.csv": {
-      "sha256": "dc47ab1eeb51e55c54629db4756d4a070eb374761b9844e537bf7b1f4dcffbb8",
-      "bytes": 10355
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/predictions.npz": {
-      "sha256": "574b7d141ea6ceebe5143d09303d746c4df77f0684b959d43d760f0ab225598c",
-      "bytes": 20169
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/progress.json": {
-      "sha256": "382b5e0b676e95956871291185071efb9bec217520bbf7a958f8061a58699f09",
-      "bytes": 116
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/result.json": {
-      "sha256": "5a659fb7e6ce38fc94d243391343e1dc8b024d443d0c49cac8802b511501bce1",
-      "bytes": 11166
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed1/selection.json": {
-      "sha256": "c787061f5033ec5f5f9f863b9ff2c145a112573f03bb7448fe0b4b3880d32f4d",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2.log": {
-      "sha256": "75929f108f6c31b52592c86e614bb3733f4c386b61e34f561195ee3ff224219f",
-      "bytes": 935
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/checkpoint.pt": {
-      "sha256": "3cd1fd57079b75ac97252ff8defc9849d021488e93a712b21ab9ba26bfc34ab8",
-      "bytes": 14069
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/config.json": {
-      "sha256": "40c882d53275c626e0c6333fdb7ab161800ecce150d19f06cc24b2dacd0cb005",
-      "bytes": 3003
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/evaluation/individual_parameters.csv": {
-      "sha256": "f8c4d9ddff01267f430ff706530888353c94608c5930a539e555118b78a7bdf6",
-      "bytes": 5943
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/evaluation/predictions.npz": {
-      "sha256": "08b0347dd013141e8599917cdb721d354eb632fffe211ad4aafec43d9c9f8053",
-      "bytes": 21902
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/evaluation/result.json": {
-      "sha256": "37eb5436ac39f74fb795bc6847367a616d8b128ba63dd372cd2741a18f2286fe",
-      "bytes": 15053
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/history.csv": {
-      "sha256": "51090f7471e189a81a4e62deb0744127891273d57bf995267b9a4cd7750db371",
-      "bytes": 10290
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/predictions.npz": {
-      "sha256": "af71c32036f928d0de9a44baa532915f73a3aa01543324fa46c850dae560f4e3",
-      "bytes": 20193
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/progress.json": {
-      "sha256": "a69ca4701b2d2501c5e504359dcaa24931e64d05fb4b385e286c6ac98cf44b5f",
-      "bytes": 115
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/result.json": {
-      "sha256": "41b2afcaf4bccf537562394afa897b7f857bac47c39ed046d5cbddaa5eca47fe",
-      "bytes": 11167
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed2/selection.json": {
-      "sha256": "15d63ffce66f6a54e5c57f33bedfc6ce43891278fcea04f5b759717ac7d0ce36",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3.log": {
-      "sha256": "50a8e15d5bb89a5ac8053a636ccb54e3f40483255f6bec23cc7c106c056b9f25",
-      "bytes": 935
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/checkpoint.pt": {
-      "sha256": "c1b8bb38cae543a26db51165ff3ad5af6b2abce81ab54e7b0473834c3c74c725",
-      "bytes": 14069
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/config.json": {
-      "sha256": "cceee8d383bafd4e4c88fc0cf7ab8dda9325b9f2d34a098de5d1dbd938decef7",
-      "bytes": 3003
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/evaluation/individual_parameters.csv": {
-      "sha256": "e931f4cd0a7ffc715f397a2f886d03e70f6d17066ae53c29a40cf81772a2bfa6",
-      "bytes": 5898
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/evaluation/predictions.npz": {
-      "sha256": "132878e6c3baa64111b434ad78a8d5daa071caeb11d84b150d0f928493d5e8a2",
-      "bytes": 21873
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/evaluation/result.json": {
-      "sha256": "9a97f40beb624e39d39f21d8e2955430a69f80b2de957e1c6c15034d9fa21b01",
-      "bytes": 15049
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/history.csv": {
-      "sha256": "8d56aefa6e5bafcef496d1e28f3aaa7a70576061e2880359e4d85f94f1bc54ed",
-      "bytes": 10307
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/predictions.npz": {
-      "sha256": "43348ff88ab1a5266017cf568745ab9d56f615b11d779d7d18d173313bcc7e5c",
-      "bytes": 20164
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/progress.json": {
-      "sha256": "ec81fe6699724b335b59cceaaf8881d03534dde48e54d6fb2048b44f0c3d0f01",
-      "bytes": 117
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/result.json": {
-      "sha256": "2563fd6bd66151eb6b550faffb625c674dcd10206701590fe52971e94d4a0822",
-      "bytes": 11161
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/phytoode/seed3/selection.json": {
-      "sha256": "c4937d61b4febc02a628a5cc5167163ea3666550f352e9497791ffec4c4d4d02",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/rf/seed1.log": {
-      "sha256": "0bc96c65db088ca631858a433e7648041d91dc326d77dfa598b702d47b407ddd",
-      "bytes": 143
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/rf/seed1/config.json": {
-      "sha256": "100834231a325155f7e8748362011ab34ebeb697a780568d805b5d00a384e0f1",
-      "bytes": 2686
+    "hypocotyl/results/four_genotypes_20260915/drop_0/rf/seed1/forest.joblib": {
+      "sha256": "c824e3f4a60e1d511a6b31184253cdc1b1aaf29f2d4197c5a76a782eb60129fc",
+      "bytes": 3140635
     },
     "hypocotyl/results/four_genotypes_20260915/drop_0/rf/seed1/predictions.npz": {
       "sha256": "8e85b8220143618d4f3e6d91c1a19b97cb624076cb7b7c0ba19abbf1076e4242",
@@ -1147,13 +569,9 @@
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/rf/seed2.log": {
-      "sha256": "b8fd0bb03f049305461ea36094e7758e9cd47afad670d720ab211b2affc93014",
-      "bytes": 144
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/rf/seed2/config.json": {
-      "sha256": "6df304b4e6708ca40af49b0f7747bbf2961b98b270764c7173cbb15341a0d2b4",
-      "bytes": 2686
+    "hypocotyl/results/four_genotypes_20260915/drop_0/rf/seed2/forest.joblib": {
+      "sha256": "fde780a7c54da207f7144ca177bd795b237f3ec95bad9602e3e6c8a96a248729",
+      "bytes": 3286113
     },
     "hypocotyl/results/four_genotypes_20260915/drop_0/rf/seed2/predictions.npz": {
       "sha256": "1fd04cee8b888bff2dc6e19dcb6d5367ca00bf95c112f5d3471e870a04a24367",
@@ -1167,13 +585,9 @@
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/rf/seed3.log": {
-      "sha256": "9b2c763be745772bb03163c63477b6b5071844e2d7816172024da34d9307498c",
-      "bytes": 143
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_0/rf/seed3/config.json": {
-      "sha256": "f711ad6a4dfebea41aa8c5f177bad4561787724922a1ee4a30330902c1f26d79",
-      "bytes": 2686
+    "hypocotyl/results/four_genotypes_20260915/drop_0/rf/seed3/forest.joblib": {
+      "sha256": "af1cf789f9f4fc3d354bafd33e274c51510a7be1a54a880d165598b5017976d1",
+      "bytes": 3463217
     },
     "hypocotyl/results/four_genotypes_20260915/drop_0/rf/seed3/predictions.npz": {
       "sha256": "20b4f680b25d3bff4d7d396524d68bdad42cfb888c165c6fb7c4be9a05d73a24",
@@ -1186,110 +600,6 @@
     "hypocotyl/results/four_genotypes_20260915/drop_0/rf/seed3/selection.json": {
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed1.log": {
-      "sha256": "f117e7316434921ad2f72c936aa72fe0ce6fcbe8760847d2044618fd5a5ff5b2",
-      "bytes": 995
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed1/checkpoint.pt": {
-      "sha256": "e728c1b99bc79caa575701f74cb306c978e7c6d70a3b845b2583d0bc62021985",
-      "bytes": 16053
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed1/config.json": {
-      "sha256": "be88fb424787049d1ee779e963d936fec87e5dc5a4a68ae5bbb12da1c5821176",
-      "bytes": 5271
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed1/history.csv": {
-      "sha256": "f45649ca326af51dab764e323d8c9e732cc3fa3196c864c112e9223a51932d82",
-      "bytes": 7293
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed1/predictions.npz": {
-      "sha256": "f3f4ebce331de9925b00eabcb4f3b79c0cdeff592d6546753631ec20f178c1eb",
-      "bytes": 21435
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed1/progress.json": {
-      "sha256": "7db04f7687f2e9b026317965a28227a0b5be124cdebfe9a1ea7a126ba534057e",
-      "bytes": 117
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed1/result.json": {
-      "sha256": "ed2ad14ff13f8cd400f129ac4489928b789b4c975e844498ecb785f68b3e6c1c",
-      "bytes": 17526
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed1/selection.json": {
-      "sha256": "2d8e37744b1eb0f9c8305cb7bff734ab7de9577b33fd428329bc0ee9ac4daa46",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed2.log": {
-      "sha256": "9b6699ab32892ea9cea45d850f94fec73c6c043b989b56213e0eb9e62842431a",
-      "bytes": 997
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed2/checkpoint.pt": {
-      "sha256": "676c8be00cc187aeb870a048e28b572243c262a05067fa74c87c31def1e2c2fd",
-      "bytes": 16053
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed2/config.json": {
-      "sha256": "da4dbeb7f10eb4c89568e66d4390a7c030a81e526c0219b041eb2cd7c144b411",
-      "bytes": 5266
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed2/history.csv": {
-      "sha256": "7e418df85cb0ad5f0cc1fc492db272680944f34179f12583e690864a0d276539",
-      "bytes": 7292
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed2/predictions.npz": {
-      "sha256": "0c7a970d5663e69811549777a751e6ad7b2f03ae4178a8427b64b4d79d6b0fd2",
-      "bytes": 21439
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed2/progress.json": {
-      "sha256": "30247897517087c891bdb38482923cfa95b3880a2d1c5a0d9cd97da360f724fa",
-      "bytes": 116
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed2/result.json": {
-      "sha256": "85ed30a802f048a63aa27cbb5de0ff97c4b10c83435b7eef1ffc5c065c41799b",
-      "bytes": 17510
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed2/selection.json": {
-      "sha256": "7eb697e941449c06d4314b4e0d330921255b84d84e224faa6ee2bebe4da5f32a",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed3.log": {
-      "sha256": "3830fb27623f88c2b1487e0fb30991874c8c7ec5f5f611ef0cc2143b4fb123e2",
-      "bytes": 997
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed3/checkpoint.pt": {
-      "sha256": "41d59654794c85275f67de9acc979ce1695367d1664e08e45b15cee58d495877",
-      "bytes": 16053
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed3/config.json": {
-      "sha256": "3f5783579324cca095ea953b946d152e8fe0bba0ec5200e8f8436d95e038a11c",
-      "bytes": 5272
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed3/history.csv": {
-      "sha256": "b4ba4ce697ac301552fa91fecf848dd2ad1b8a75cde0e1ccda76abd99091a7b6",
-      "bytes": 7270
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed3/predictions.npz": {
-      "sha256": "c818792d58adf7c47630aa0ed7bce281c3918799c9932037c41f1af700a12468",
-      "bytes": 21458
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed3/progress.json": {
-      "sha256": "302c3767c535ca1f60e382150e3cee1cfcc96514435b7d136e2c830c0f5ee8f5",
-      "bytes": 116
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed3/result.json": {
-      "sha256": "7d01ffd19db5af2dbd83b1811048018b0d508ca6adb1cb9e31ca29cd0eb328b2",
-      "bytes": 17536
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/latent_ode/seed3/selection.json": {
-      "sha256": "863ab76ee917d7b48591c724f2287d8dae9c254ca5d8d879686805977c096b4d",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic/seed1.log": {
-      "sha256": "ac0c2ef24d60df604efc641e5c4e3b0b7be30f6b7b42f56143538ff5d06e065f",
-      "bytes": 142
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic/seed1/config.json": {
-      "sha256": "a1d1333936bb67d7d6ceb6e4b48c8539747e6bdfc29e8973b509b564ba28f8b9",
-      "bytes": 5169
     },
     "hypocotyl/results/four_genotypes_20260915/drop_25/logistic/seed1/parameters.json": {
       "sha256": "bbda07140af9de29a8f3eb9d9a0e4c3b27b587c2bfc8501a962f07fc15e552e1",
@@ -1307,14 +617,6 @@
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic/seed2.log": {
-      "sha256": "258f6147c7c3c03848af7554d9264bdd705c2011de7e9e94031d24c399770f0b",
-      "bytes": 143
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic/seed2/config.json": {
-      "sha256": "d4bd129d268a31bf6fcf5b5302b872513482da945f9dd89cf15729c36eb8261f",
-      "bytes": 5164
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_25/logistic/seed2/parameters.json": {
       "sha256": "35ce11d930f05527c56f1f039ab149700317880e24184576c993850b36ec494e",
       "bytes": 6763
@@ -1330,14 +632,6 @@
     "hypocotyl/results/four_genotypes_20260915/drop_25/logistic/seed2/selection.json": {
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic/seed3.log": {
-      "sha256": "df7b2efcdc0bbe5f5512b15c8ca81f23cf14e65b9de6df775a7d4f0e5dbe54bd",
-      "bytes": 142
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic/seed3/config.json": {
-      "sha256": "13da4b36e62066dd103bc893741dcf0bd75c9b41349981758ebd640e77fffe19",
-      "bytes": 5170
     },
     "hypocotyl/results/four_genotypes_20260915/drop_25/logistic/seed3/parameters.json": {
       "sha256": "f89dc2b1d507c51c2479fdfeafa19d9a50cc42901f7c65554205de833d96ece0",
@@ -1355,29 +649,13 @@
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed1.log": {
-      "sha256": "13137fc45f0f63513121dce7a992c4fbc5166c9c2844ee9b4e09ca16b4bba063",
-      "bytes": 1034
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed1/checkpoint.pt": {
       "sha256": "baec38ff9d891582f241b913cebc76e855271dca788788e15e4195aa6c8bb6b0",
       "bytes": 15669
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed1/config.json": {
-      "sha256": "5447d5e1d9f848060741dc1a92ca26e8dea3091f45fb0a36a885b945cb274225",
-      "bytes": 5277
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed1/history.csv": {
-      "sha256": "93118911c9463b2b8abe3ac6d5431172c055aece6d3cf8b17b434016b700e594",
-      "bytes": 9896
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed1/predictions.npz": {
       "sha256": "44022bbd9fdd39c46534d44cf262aef0b6c1ba4d785c024ce7a987992440a1a1",
       "bytes": 21451
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed1/progress.json": {
-      "sha256": "fc3ba62d02ff866c9bf1d4c98352744a2e2381872e23058cda04e582e8d790f0",
-      "bytes": 118
     },
     "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed1/result.json": {
       "sha256": "51a82d2d75b0e826d4a6a021aad41ab73d953a2b1d7bfd4c8c9e5774a6d5ef1f",
@@ -1387,29 +665,13 @@
       "sha256": "6327672a1eaa44b20930761dbb17681320ebed2d337886f0295f48dd426eff6e",
       "bytes": 181
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed2.log": {
-      "sha256": "b3484ae74faf8c1f5ec268f75c9cef6fb8f20f2c64c45e02da2dc0f693e9eb18",
-      "bytes": 1042
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed2/checkpoint.pt": {
       "sha256": "d7e69a286c69173b52d98392a5d159f7c17a4d5c92e9704b8011abdea34530f6",
       "bytes": 15669
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed2/config.json": {
-      "sha256": "061f4f5c0f10f37dae4ea568a160708de2f43ff8520d54dc239889a99830bb4e",
-      "bytes": 5272
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed2/history.csv": {
-      "sha256": "a3b58e78250cddeaf123e0b446fe0ea918bff4993816d4aaf69b6266a8c1c0b6",
-      "bytes": 9876
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed2/predictions.npz": {
       "sha256": "83aa0a7f8eec28763a5e1d30ca249794861177489ff839edcd1722ae8335e7a0",
       "bytes": 21409
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed2/progress.json": {
-      "sha256": "b56b6a3165a934612f7257d77fac4638b75071d0f871ab36e05aca86aca6336a",
-      "bytes": 118
     },
     "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed2/result.json": {
       "sha256": "6b91b0c8db3ec1485240a882a3b485d557ac10d0c0246d7712a960de08636db7",
@@ -1419,29 +681,13 @@
       "sha256": "56712b83616fb316c1797be9ce064f6a31327a05b25a6610d74b688e3454bf61",
       "bytes": 180
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed3.log": {
-      "sha256": "a3a107033705f2851232b9f765af9339bfcad3c2c05ddb4f042be546e6073db0",
-      "bytes": 1040
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed3/checkpoint.pt": {
       "sha256": "63d845b4e9cbabc67db3c06fed9a44e2775ee59e278e15c64f3f16695a8b9f0c",
       "bytes": 15669
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed3/config.json": {
-      "sha256": "edbdf61b4754bbd246d6d52fb0c497431637df671d10c8eb92ed9ec371c64529",
-      "bytes": 5278
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed3/history.csv": {
-      "sha256": "de3704bfab82d2f73f11584c859ba1f1cad2503f77e88291f285e9300e837733",
-      "bytes": 9837
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed3/predictions.npz": {
       "sha256": "7ee7ff4193d6f4869adb965beaa199c78431068ad7b0aaa03ea47d861ecea45f",
       "bytes": 21497
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed3/progress.json": {
-      "sha256": "e03d1f9b6f0b0f876c36e04e013168f8b2bc1a69965415dc646b8b38700b5652",
-      "bytes": 118
     },
     "hypocotyl/results/four_genotypes_20260915/drop_25/logistic_pinn/seed3/result.json": {
       "sha256": "ce8b623019cc3967d3422719e66c94e9d99ebc8e84c7806feeb9ef9f73834905",
@@ -1451,29 +697,13 @@
       "sha256": "0ed3b7c355595dbb204e405bd122d4d70a741c102d28a03bf19130efd074cec1",
       "bytes": 181
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed1.log": {
-      "sha256": "817112e8972559b74a07a3bb967b77679092773555bc2bc17670d961807acde6",
-      "bytes": 903
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed1/checkpoint.pt": {
       "sha256": "21603af306dd845d875e9386d639d1c6890518f1270030cec602220e92d8f24a",
       "bytes": 21045
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed1/config.json": {
-      "sha256": "82f396a0a844eb72a369a8923394c8aaffa7dba0f0994b35caad9350fbff88cd",
-      "bytes": 5265
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed1/history.csv": {
-      "sha256": "f6b1247ec70a2d53d5d813152ee4ebbc0e48dcaadde0de29ecdefcc73f0c4ed5",
-      "bytes": 7318
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed1/predictions.npz": {
       "sha256": "b16a21ecff235d62ab78e62bef725d537a54a077cd32dd67e7ce9014ff85b0c2",
       "bytes": 21402
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed1/progress.json": {
-      "sha256": "89dcade5bbe35ce4dece38251595c9a838cd97f358e3ba0b52f855877b03083c",
-      "bytes": 117
     },
     "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed1/result.json": {
       "sha256": "a67ffd6e7709551de1458cfef406940ee1170eab02faad18eeb4f24d49a7b782",
@@ -1483,29 +713,13 @@
       "sha256": "1e897eb142f109888710bee01c569f88725b3ebc3adbf50732900f183efbebe6",
       "bytes": 180
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed2.log": {
-      "sha256": "b8fe0d9e0e7b6fa34de2867012c3480fdb84e5c716aa2a66a1a6580a0bb0a2af",
-      "bytes": 903
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed2/checkpoint.pt": {
       "sha256": "b0d55a3bfdd1a5f94a01fc999fa222d7175e4d67f899a335e685f53dfca1bd9f",
       "bytes": 21045
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed2/config.json": {
-      "sha256": "22a1e8c43b48e73d08b9b06536496877bcf4a3bca2518348cd60f8eb9ea0b9ed",
-      "bytes": 5260
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed2/history.csv": {
-      "sha256": "462b4a14b5219ea4a818f06090166c7efea329f202395f99ca67c0c7055ca540",
-      "bytes": 7333
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed2/predictions.npz": {
       "sha256": "ea5cc227e0f4994f6f6c57d9a3ce2c3bd2da1cec13ee432da89e18c9b51be472",
       "bytes": 21416
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed2/progress.json": {
-      "sha256": "18aa3df669c652ad7e212a9046035442ba5f6199c1a319c4ceb0077068034b6a",
-      "bytes": 117
     },
     "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed2/result.json": {
       "sha256": "3d7848fbd30772c7e082603207da4a241cb6c8617f22f7b16256cc5dff9fed49",
@@ -1515,29 +729,13 @@
       "sha256": "f8a4ba3d39e0e61ef0455010c0408b52079eca11a49b54bed93384a6399bb389",
       "bytes": 180
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed3.log": {
-      "sha256": "9e2fa4cb6d322f8f7793a40319ac63ed4849f897fe8e9243e47e8249ace5b5c0",
-      "bytes": 907
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed3/checkpoint.pt": {
       "sha256": "0473e5d5df8982419aa4551a99bcf1ff931728c095cef2ee81f9cee85fcfc2a3",
       "bytes": 21045
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed3/config.json": {
-      "sha256": "c067e7b06fc4a83aec9c04bbb732f5d181a5edccb533ed87abf3f2dcf5980d53",
-      "bytes": 5266
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed3/history.csv": {
-      "sha256": "5a9e04e0a2724c4442244cdc757e7747c3ce7d3e71c3534fd71026187d91fef8",
-      "bytes": 7328
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed3/predictions.npz": {
       "sha256": "095e608c301613739b38da3c2f9f467ae957004a659e318ed517ced53854bd1a",
       "bytes": 21426
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed3/progress.json": {
-      "sha256": "957aa5f9ba18f0cb4bb9aa5956b2bf73b3cd23adade5972b276a1d7ea138f1d1",
-      "bytes": 117
     },
     "hypocotyl/results/four_genotypes_20260915/drop_25/lstm/seed3/result.json": {
       "sha256": "89ddb1536df4c9ba08d1571c4b4df6d6086720b7152966c0d39f0d2e47f0e39d",
@@ -1547,145 +745,9 @@
       "sha256": "037882152e943646ef92c30f1d4765675aa20ef5607b557d5969183c2040bc08",
       "bytes": 180
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed1.log": {
-      "sha256": "7f048aa57a0fb6227c6dd479d18a85b1ca13fa4a240650eb87d465940ef63484",
-      "bytes": 953
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed1/checkpoint.pt": {
-      "sha256": "f35ace86c530b50e581292d8260fba97bf42b7bce69d49d48854742f77f2e1ab",
-      "bytes": 16501
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed1/config.json": {
-      "sha256": "403b36a8828583c3c82fcfbd466dc2f9473f375f7f6bd7ddd820aabbb70eec72",
-      "bytes": 5481
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed1/evaluation/individual_parameters.csv": {
-      "sha256": "6771186ef45eda1bab40bf01eaff9d2792731b9fafb40ce191a98c8b03013809",
-      "bytes": 6000
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed1/evaluation/predictions.npz": {
-      "sha256": "735b2f8e897c496efc16b8c274c1c0b66dd0602fc3df82496973a229faf26f69",
-      "bytes": 21447
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed1/evaluation/result.json": {
-      "sha256": "28b36f51bf46a2f66ce80a3310f15ec49f12d7aa6982159873d3b179a4efbb87",
-      "bytes": 17820
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed1/history.csv": {
-      "sha256": "eabf8d9255ee227274fc9a26a393fba876e146a26a352e007adef36e211db373",
-      "bytes": 10332
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed1/predictions.npz": {
-      "sha256": "f7ad81e42abb794598e2c66990df729dc0d62f3dfaa9be027bde1c581b562de4",
-      "bytes": 19738
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed1/progress.json": {
-      "sha256": "33c0bada1002d721deb6626533517a9da09f5366d552cec77cb5faf135979aef",
-      "bytes": 117
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed1/result.json": {
-      "sha256": "08f5697255c4b967307543e033a0d990a03ebf8a503c6644ac5f85ae9d87a94b",
-      "bytes": 13934
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed1/selection.json": {
-      "sha256": "fcc2e24f04a59d10b37e0f98ddfee70629a365932cae2d64e37b45894c9ca7a7",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed2.log": {
-      "sha256": "4ca7a6bbe7f2ab72d6ebb824597bc32051d3e7fbfa16c7ac3aa01d8c3a8a241d",
-      "bytes": 952
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed2/checkpoint.pt": {
-      "sha256": "b29ab5de9b7e100373f2890ca4a2a3e51837607f80fba55c6d110f61a18471ff",
-      "bytes": 16501
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed2/config.json": {
-      "sha256": "375b233062e4d41b4f18a9353534b1a469747240e6041a0d0695311d68074985",
-      "bytes": 5476
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed2/evaluation/individual_parameters.csv": {
-      "sha256": "e8402683521d4518d383c4a86e12a3cb57b5b576334f95224990db26b7d9439a",
-      "bytes": 5973
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed2/evaluation/predictions.npz": {
-      "sha256": "cee1d7ec0764395d6c2faf530456365d0ee48a43ad9c9372fe96f1daa50af2f5",
-      "bytes": 21420
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed2/evaluation/result.json": {
-      "sha256": "fe3ea632ecdb1f946907eafcac4d258ded4201558e2f2e1706d359ea77aa6c58",
-      "bytes": 17808
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed2/history.csv": {
-      "sha256": "e24970ff5c003dcb2b1cd19a55cdea8195abca0f1b53daa17af9ff528f2fec4d",
-      "bytes": 10329
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed2/predictions.npz": {
-      "sha256": "f05713b0014b8f184c319fc076738fb906f4a091a0ed82f795ac934fe50cac62",
-      "bytes": 19711
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed2/progress.json": {
-      "sha256": "1b1311c2b8a7f8213f54f974b67855a40221a1d32b1dcef8a08ce3528e551bc6",
-      "bytes": 116
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed2/result.json": {
-      "sha256": "063788b497ec1373e5ceac7510ab48ad35de38c66c89f3979cf4f27fca157877",
-      "bytes": 13915
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed2/selection.json": {
-      "sha256": "8863b386f19551067de376abfc6280234f32b534deab879fb7fc557f9983262c",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed3.log": {
-      "sha256": "26c36a4fb56e24e9cd915a9ab0910ccee50e95778798f37326c9a2363511c453",
-      "bytes": 950
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed3/checkpoint.pt": {
-      "sha256": "98eb2a10be1bd2c368b11af6340ea0a4f8163a9c639191363c16f746d665d669",
-      "bytes": 16565
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed3/config.json": {
-      "sha256": "69fae4ece319f388edd984e16cf6990d2ce53954000478c5e5a4205165392f89",
-      "bytes": 5482
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed3/evaluation/individual_parameters.csv": {
-      "sha256": "2bf19f55a11b15a99c42557e5e4e34ae587e0b6a49bfae2814c61eb3ff70ea70",
-      "bytes": 6017
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed3/evaluation/predictions.npz": {
-      "sha256": "29ee54e52400c9e836704056d3bb2cb495ba119a6ac417fc85bcea8ebd3cb088",
-      "bytes": 21496
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed3/evaluation/result.json": {
-      "sha256": "96fd6126cd0af065a3bf198802f6357c48f55776a4cecec2a6514eeb50d33ea7",
-      "bytes": 17790
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed3/history.csv": {
-      "sha256": "8c4d5a82c9ef13055101d296c790085b2001022136d41bff560412c5657b8add",
-      "bytes": 10303
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed3/predictions.npz": {
-      "sha256": "1f5a19b963e6bf55fdc49bf87014c5dd1a1f2f6da3b27e3e8c16b81607f48684",
-      "bytes": 19787
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed3/progress.json": {
-      "sha256": "1835a8df42ee0b6ce8de28f02b3d8583ceb31dc8c7c060bffe0f3ba2964488f9",
-      "bytes": 116
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed3/result.json": {
-      "sha256": "dac687c3505a30c742f248938da32772d45b31024f12aa02d49be8816ef40549",
-      "bytes": 13901
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/phytoode/seed3/selection.json": {
-      "sha256": "95444162e70c5a431f112a97fe56c50e9243d1d2163d1f19deb06fd397308a0c",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/rf/seed1.log": {
-      "sha256": "6c26bbdcb7851a4977bd5e667e325d1cd6ce8202444fc019283f580256c6c626",
-      "bytes": 144
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/rf/seed1/config.json": {
-      "sha256": "7fdee5d2c0423a0360f65799130e7a80d1924225d8f1ac6fc6dc0aa461727be5",
-      "bytes": 5164
+    "hypocotyl/results/four_genotypes_20260915/drop_25/rf/seed1/forest.joblib": {
+      "sha256": "ef52a73cc3f921185533c2adc535d7fe74c1fcd1fe0f5021a11bf33c214c84e1",
+      "bytes": 2625759
     },
     "hypocotyl/results/four_genotypes_20260915/drop_25/rf/seed1/predictions.npz": {
       "sha256": "25b6102109ae9d0db259bc551d95a701e043a1a9057a800e683a6f00b8f1a2b4",
@@ -1699,13 +761,9 @@
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/rf/seed2.log": {
-      "sha256": "5d372dcc00e6aceafffe625342e25d9a1c879996c1d1c0d9d13c3343e3af8ec9",
-      "bytes": 142
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/rf/seed2/config.json": {
-      "sha256": "5b6f317daca683203463dae27b77e584e884d41b9e36fe5adbcf18964b26c080",
-      "bytes": 5159
+    "hypocotyl/results/four_genotypes_20260915/drop_25/rf/seed2/forest.joblib": {
+      "sha256": "ca8193b2a996b003ff81b456ac7b75d97fede9fc66c8e4e89f4a633b9a97124c",
+      "bytes": 2649418
     },
     "hypocotyl/results/four_genotypes_20260915/drop_25/rf/seed2/predictions.npz": {
       "sha256": "353c98f2639f66df8062ff97bf7a442ddb7d4c7b852c740838fc18685aa356aa",
@@ -1719,13 +777,9 @@
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/rf/seed3.log": {
-      "sha256": "e9454c9820c0ec8c901a892fd17eedbaed13c3aa0e288e6b116a2a140a5eb60c",
-      "bytes": 142
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_25/rf/seed3/config.json": {
-      "sha256": "ea57c9d5fa27163ba29a544d1419749980f1d43d1d0df74ae8d2cf1475fc591a",
-      "bytes": 5165
+    "hypocotyl/results/four_genotypes_20260915/drop_25/rf/seed3/forest.joblib": {
+      "sha256": "3c8599222125843ab942c7e6bbf6a029b1efd6a1e46bd599e37575f6b4797309",
+      "bytes": 2670609
     },
     "hypocotyl/results/four_genotypes_20260915/drop_25/rf/seed3/predictions.npz": {
       "sha256": "1df02f6683a3fdaa3c655ddbe78f9072b69599000d30a90e8ffb7bb2be26ceb2",
@@ -1738,110 +792,6 @@
     "hypocotyl/results/four_genotypes_20260915/drop_25/rf/seed3/selection.json": {
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed1.log": {
-      "sha256": "a3beb113d0c4cc149cd3909b68dd6c504a525ab4ffd771eb2b8bdf921e34c867",
-      "bytes": 978
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed1/checkpoint.pt": {
-      "sha256": "c484050a75e7084d89f5808fabe9eb05e61a73501ec94f01284dd79628d0541a",
-      "bytes": 18485
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed1/config.json": {
-      "sha256": "b3d3f2455e02156b4dedf3effb8a83b489ea8432ad52db588bc02bc624a6ac70",
-      "bytes": 7739
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed1/history.csv": {
-      "sha256": "0b20d036683169ec5f9d86e7b7f72c9e8278c033d2f8dae986c2af0978dabd0a",
-      "bytes": 7310
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed1/predictions.npz": {
-      "sha256": "e4b3ab7409bb3798710fea4ec89c2a50159e0a296b2348efe42ea906318bc1c6",
-      "bytes": 20456
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed1/progress.json": {
-      "sha256": "be39b06a3ac169f6dacb22646ff63172aad74befc9c642c74878543494354c71",
-      "bytes": 116
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed1/result.json": {
-      "sha256": "af0d5952f07c5eb2fd877d84c29d58ff2545fc99cf040cea1887b926878dac0a",
-      "bytes": 20223
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed1/selection.json": {
-      "sha256": "bf97037ff302814d6b2f245dd4a4465feb7bb79130acfe9221ee0e031eeef12e",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed2.log": {
-      "sha256": "2b3d3eb2b4e4adc52fa67d79a418b1bfa6a3ac8225eb45f9672ac3cec9474c6f",
-      "bytes": 982
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed2/checkpoint.pt": {
-      "sha256": "789e55d551f2d00dc9c75a601dd1d70df4b059c9c82b20b18dd35ce32e3aab52",
-      "bytes": 18485
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed2/config.json": {
-      "sha256": "0e4b5eecb90711514dc15eff42a1cf8d0607d7455ea331a159509440e1723885",
-      "bytes": 7737
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed2/history.csv": {
-      "sha256": "f73a9b563fa4e1c71c047929f5ed71a5713fb1b5fb2cdf8a5ec7d422064d37ed",
-      "bytes": 7324
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed2/predictions.npz": {
-      "sha256": "12febe5e29a2c1be50e4f74a1b97c287166e23ca9f73a72d92bc7245ed186a5d",
-      "bytes": 20581
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed2/progress.json": {
-      "sha256": "2a9a0ff7ce4276bad8a971c4355f4b9fd8d863640ae74711ccf873db08e01126",
-      "bytes": 116
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed2/result.json": {
-      "sha256": "c883d3a22ae991a6ee4eac83b2938059845c0567d4ed4ac115d0b0bf1cb5bc29",
-      "bytes": 20254
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed2/selection.json": {
-      "sha256": "8db6c0585978a02f527bbaa0a7ac4df801ed1cbfeaa9efbad494cd0c16174afd",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed3.log": {
-      "sha256": "f1dfd6671533688cb30b9d0d48d272e23f77f64fe35c3755cab1f50376f1df7a",
-      "bytes": 980
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed3/checkpoint.pt": {
-      "sha256": "92369c0b411076469d1d2fb72527b90ad4bf86fd6e978cbbb23317a231150b14",
-      "bytes": 18549
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed3/config.json": {
-      "sha256": "abc266af7507e17241c23a3ba9809fa54c4ac8dda269e8aa52b160448d89ed88",
-      "bytes": 7746
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed3/history.csv": {
-      "sha256": "7d18678f81371e63304848d6889973b51ced54e23e0592d9f24be5975ce5c5d3",
-      "bytes": 7275
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed3/predictions.npz": {
-      "sha256": "cd8a1a7a1f618c52a76494c61c92d92411e6feb117f23ff180589f1dcc522a03",
-      "bytes": 20477
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed3/progress.json": {
-      "sha256": "53c2f7ea711fa86d27c01b15e9924c4bf5dfab0d1a50b842f8c11bf6ad821b80",
-      "bytes": 117
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed3/result.json": {
-      "sha256": "d2fc742849df5c18d4087c3bf55885fc66b36146eab80f7fb0cc44d32c6f50cc",
-      "bytes": 20261
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/latent_ode/seed3/selection.json": {
-      "sha256": "3f853b7eb532cb9937f148b707ca1119521a9287146b45ddb47d70a6c0f6c87d",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic/seed1.log": {
-      "sha256": "079040e420db1148efd135712da3922f1809829e39d705b679ff7280cdc6b8a5",
-      "bytes": 143
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic/seed1/config.json": {
-      "sha256": "34fd90310c84661cd2d1dbbf94e6ec87009881331827f8e92481bbb9fbf157ad",
-      "bytes": 7637
     },
     "hypocotyl/results/four_genotypes_20260915/drop_50/logistic/seed1/parameters.json": {
       "sha256": "989a8bd7f72bd3eecc33b923c671c7d60f55d03c707dd5bc7e07c22886515567",
@@ -1859,14 +809,6 @@
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic/seed2.log": {
-      "sha256": "1ed0708ace0f342851792042213bd477409fc909fc9b750b58ae3934c435d62b",
-      "bytes": 142
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic/seed2/config.json": {
-      "sha256": "99d9e6d045d44e9ca71d29e8539305f53c033b169cd6b4aa38ad8f619841a752",
-      "bytes": 7635
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_50/logistic/seed2/parameters.json": {
       "sha256": "11fbd8b2159272ef29fc64a04a47ae8865c69851696666124415c5a66c28c9ca",
       "bytes": 6742
@@ -1882,14 +824,6 @@
     "hypocotyl/results/four_genotypes_20260915/drop_50/logistic/seed2/selection.json": {
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic/seed3.log": {
-      "sha256": "caaa9e3bf385fab1ec6bdac5bb2dbbae1c6ae01f70f9db9b32971c3816c2e43e",
-      "bytes": 143
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic/seed3/config.json": {
-      "sha256": "3a51bb88ef4fceef2dfe77ce943fdfd811c9cb451e727c919d8925093d6d07c8",
-      "bytes": 7644
     },
     "hypocotyl/results/four_genotypes_20260915/drop_50/logistic/seed3/parameters.json": {
       "sha256": "47c7be7d6c3fa8b0b0a7aba6e59636e9343d94bc1e1cebf828c43d11704fb4d2",
@@ -1907,29 +841,13 @@
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed1.log": {
-      "sha256": "baa56cac2143f9175ffbd4c4005b65e3bf74dd978aea0daa3e5b964bed3ad42b",
-      "bytes": 1023
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed1/checkpoint.pt": {
       "sha256": "d22e197b4d3322a4155d3f4230f6d9f10976c60c8eabc61ccc7866aa35c03633",
       "bytes": 18165
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed1/config.json": {
-      "sha256": "9daa4feb269cf5fcf0035aea21c5968126a7cfa6720041bab2533ffedbe0adee",
-      "bytes": 7745
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed1/history.csv": {
-      "sha256": "7c716c3bd19c2547ce4ec7158c81a0f1e9b02f82f9c8f2b55baf1c5efe9ee517",
-      "bytes": 9885
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed1/predictions.npz": {
       "sha256": "a4e898e52cdf5787db2e6d1093090711b53dc97786958e125eb65a18bf207c4b",
       "bytes": 20518
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed1/progress.json": {
-      "sha256": "51638043853568a8138656eab7193e5bbe13739289ba39ec288f518c928df87f",
-      "bytes": 118
     },
     "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed1/result.json": {
       "sha256": "53a856ea37a9ec0f4a9fac52967c29abdb7052f06d2cbeed9c19cca52061e054",
@@ -1939,29 +857,13 @@
       "sha256": "7b2aa1ec59d57d4c3fc7e340fc5e929194c389bacd95409db1f87ae9882b4955",
       "bytes": 181
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed2.log": {
-      "sha256": "9776a9e88b27c46a59ecb5e251f6e3f18723dfb1ae90135260ff53ea83162b08",
-      "bytes": 1027
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed2/checkpoint.pt": {
       "sha256": "2af473b6b39e5dc0f6253e5242f3165d068c579aeabd859ba39f237bb752ff43",
       "bytes": 18165
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed2/config.json": {
-      "sha256": "9a88d5e714d7be0074aa067971c2f048671d2c316bb16fed9b242fba443ad113",
-      "bytes": 7743
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed2/history.csv": {
-      "sha256": "9c331ab751bfc9b0516c3b22bea8b43228dacd1818da775a13d4d67d1d90dec3",
-      "bytes": 9890
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed2/predictions.npz": {
       "sha256": "75063c731223e2eea0540fdef96cb5a98a132473486c9aaa1214adcbb7077d3f",
       "bytes": 20615
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed2/progress.json": {
-      "sha256": "1d244b535c58464bc1fd171cf9b36efcab5bc136c9a0bde3242640f4ee5dbb4b",
-      "bytes": 118
     },
     "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed2/result.json": {
       "sha256": "86fb1d3dbbd0f02ce33ae1e1366b8c0111bddc9417337829b1dcf5d3c8d5e6df",
@@ -1971,29 +873,13 @@
       "sha256": "545c6564e57fc1d2690926449a96e9ce3597c25fd151d2a63874f47511745a63",
       "bytes": 181
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed3.log": {
-      "sha256": "f4efa38c8eca6371825fd10deb1523b025703d08ce3310e570c83a513021c089",
-      "bytes": 1027
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed3/checkpoint.pt": {
       "sha256": "211737dd4cb6b01942d9b265826639431d50a445870609749498141f2d8c78e9",
       "bytes": 18165
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed3/config.json": {
-      "sha256": "6ea538e6540e096ef29f64c4d906103e4b713fa6346312a98aebf21111c34f11",
-      "bytes": 7752
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed3/history.csv": {
-      "sha256": "01d934bc46030ae9cf81e7efb3e245ff28b9ac3d65bf71be64fd4191c3456b69",
-      "bytes": 9881
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed3/predictions.npz": {
       "sha256": "adc33fc01d4b2f080be5942fcdcdea477540c70acb9e9b66cafe5256253408bc",
       "bytes": 20575
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed3/progress.json": {
-      "sha256": "71f86cef49ae337d312b1296a1b3a7b4baf764f88aaa5a9cbd2a247397c140bc",
-      "bytes": 118
     },
     "hypocotyl/results/four_genotypes_20260915/drop_50/logistic_pinn/seed3/result.json": {
       "sha256": "97cabd1338efbaaa7818e1ac546ccf2caddefa22e109e1ae538fe7b40654112b",
@@ -2003,29 +889,13 @@
       "sha256": "95dc16f0b8d50e63c0b73c1f65ee37c8d3e3fee1fd3876d2ec5acd39712dd4ff",
       "bytes": 181
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed1.log": {
-      "sha256": "6074bf407fd4cf2e606d590f56a9986e3c07bed99168210099bbaa70f80d849b",
-      "bytes": 890
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed1/checkpoint.pt": {
       "sha256": "63f7f5e27bffd8e553a0757713192bba3f514ae1438cf8d0a04735e056d7995a",
       "bytes": 23477
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed1/config.json": {
-      "sha256": "ade8c33db9150cee60c8928bc7091c6d065310918f0400aad13241c50c8400bd",
-      "bytes": 7733
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed1/history.csv": {
-      "sha256": "e96514b8b6ba0793774a60dfbe41e8b9726efa8507c261cc02e5326cc2143f3c",
-      "bytes": 7330
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed1/predictions.npz": {
       "sha256": "b61c7fcab7f19585bba430c127d623d508e97465a2955e82d4acc50f20258349",
       "bytes": 20517
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed1/progress.json": {
-      "sha256": "f7285357a0087b674637eee6471b0c73a410e190a42d77250aff19109076f8a7",
-      "bytes": 117
     },
     "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed1/result.json": {
       "sha256": "1fd4b740519afa31b2cce7a3b46b3010aaedde67d97aefd02357399d8b4176db",
@@ -2035,29 +905,13 @@
       "sha256": "9037e12f710634449d422128f1054d98785ff414f27c977fe13dcc12b8e39adc",
       "bytes": 179
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed2.log": {
-      "sha256": "cf87cf788d611c1fc3c3e563f0968c289b907f2ea734ce0a76c5995569b6e42c",
-      "bytes": 892
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed2/checkpoint.pt": {
       "sha256": "7f269a7e1e0ad3fb50c7bfbbba723afa44894d54d434517c929d6866dd497c99",
       "bytes": 23477
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed2/config.json": {
-      "sha256": "fb75f93e934127eb8653e2d7776e64821e85179c2eb889f9e557fbc82d501dd2",
-      "bytes": 7731
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed2/history.csv": {
-      "sha256": "1de37314a031f838f07ced8bbddedb0753da5b1d0f38f15b5f23a5fc1407c96c",
-      "bytes": 7299
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed2/predictions.npz": {
       "sha256": "9bf14a31b2978bb4b505602a84aba3e51b0fb1645373e9abd52cbf5333247cdb",
       "bytes": 20510
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed2/progress.json": {
-      "sha256": "a9a79add9c00b8f61700316820dcd2635b0a7c99432103461c9b70ca94ca7f71",
-      "bytes": 117
     },
     "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed2/result.json": {
       "sha256": "899ac5f762d9113fdd08bd38baaf29952897fe8c51db63a7769d3364d0a06858",
@@ -2067,29 +921,13 @@
       "sha256": "dd82f889b8ba822c4e5b8a75a719faf4339bf061b8342418a0d00184008ed70e",
       "bytes": 180
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed3.log": {
-      "sha256": "83991f33df50ba34db8ee0b5e334299aecf7204a74cba9b45135aec5b28efaf9",
-      "bytes": 890
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed3/checkpoint.pt": {
       "sha256": "7d7c53ca25bf30a14a46426bcab7203c67c304be726b11a4775839447a96e7c4",
       "bytes": 23541
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed3/config.json": {
-      "sha256": "91caf20c4fbb1ec5a2ee1a4c7ed70ed6870c506f27b80c770b43b02ea9ee160a",
-      "bytes": 7740
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed3/history.csv": {
-      "sha256": "4584b871758de684b3af499f236f6021cd012fe2ffea8aa2d54b5131be16bb27",
-      "bytes": 7341
-    },
     "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed3/predictions.npz": {
       "sha256": "b9b8093616c89444331fb710f96751f975c4b3865b1dcd3d84c11eb8db0bb399",
       "bytes": 20484
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed3/progress.json": {
-      "sha256": "a9507ecfa3437a14ddd0a95315156fb3bc69dff021a80087757d1ce4d6801b72",
-      "bytes": 117
     },
     "hypocotyl/results/four_genotypes_20260915/drop_50/lstm/seed3/result.json": {
       "sha256": "78088f46dc24804115ed8489d69140910fa78bc1e7cdfacda8a5dca8c723b4ff",
@@ -2099,145 +937,9 @@
       "sha256": "f32f18987463b0ccd7b2b51c3547de5cc68321dafe26b38b7bb7d83069e8ff97",
       "bytes": 180
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed1.log": {
-      "sha256": "7be507c619117f6f3fa585d6751067e416b43b8a36c3ad99e2af8212860aa83b",
-      "bytes": 935
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed1/checkpoint.pt": {
-      "sha256": "c31ec984c84d4024ffc87a3ed1223d4a75abddbf11a06e54dcda8ad06dc6b2f7",
-      "bytes": 18997
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed1/config.json": {
-      "sha256": "c6d386b575aeb31c8734d94e267dee51139ba6b890d78a7f3057f5b64ed50c15",
-      "bytes": 7949
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed1/evaluation/individual_parameters.csv": {
-      "sha256": "9df2389577eee4efb782d4becd83d767868d91973f35a852065bc78d0b0a4557",
-      "bytes": 6036
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed1/evaluation/predictions.npz": {
-      "sha256": "e50398ffbdbbe5c334c01b70465606b6d85249fb68a6ad435a0e10cbbdd71b4b",
-      "bytes": 20503
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed1/evaluation/result.json": {
-      "sha256": "4c7d5915786df63a4659c7636ae306d4b39f32dd90668fac9032872a6d8e1ff0",
-      "bytes": 20534
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed1/history.csv": {
-      "sha256": "9e1db1397e5d67a00c0e3d3e9aa59ac87d89dee2962312d9c009308081f47925",
-      "bytes": 10316
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed1/predictions.npz": {
-      "sha256": "7ec427b5ff683a3903220305a8c69269bf162b3f88005508c55ee306b20d9955",
-      "bytes": 18788
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed1/progress.json": {
-      "sha256": "de550f5a3ff7ff472ee2938f6ea2be6d18b7a87914feea65cc89cf2d798d4fb2",
-      "bytes": 117
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed1/result.json": {
-      "sha256": "c859bfc98caebd7b3d616b5b29fbf5ab2d50f86c186d185ca1d66e2d3e27826e",
-      "bytes": 16636
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed1/selection.json": {
-      "sha256": "14421e67c8b68208f3d29458bbe4bc56dc6a765fc390f722713d9a849adb6867",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed2.log": {
-      "sha256": "f9b12ce7f85226627daeeebc460edc471171b75081001a7c31b4e7d94f88b20b",
-      "bytes": 933
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed2/checkpoint.pt": {
-      "sha256": "baeded61c4cafa7014e2ae816f286a90bfc610858758eb8260a8a057b3e4eb6c",
-      "bytes": 18997
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed2/config.json": {
-      "sha256": "b879d70ab3a7f7b2f411f52d4f8456de47bfed745e06d3bb0151ee0eaf0e2b93",
-      "bytes": 7947
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed2/evaluation/individual_parameters.csv": {
-      "sha256": "dd2660694a7caad79cca55d0a518895560b8f18f09da34908119a26ce9b964a1",
-      "bytes": 6014
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed2/evaluation/predictions.npz": {
-      "sha256": "777a3112eddde8d1fdca18a946dd30d4e9ad6833a81455ae74a2f0fea3b92507",
-      "bytes": 20608
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed2/evaluation/result.json": {
-      "sha256": "0965de05cb48317b442f2c57bc130c666c1002a9a5437d777e36a62a2d3b70b5",
-      "bytes": 20523
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed2/history.csv": {
-      "sha256": "a279733915c28c3234f72be23b2025f5a61e9bb686785f5821845418c122ceb9",
-      "bytes": 10297
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed2/predictions.npz": {
-      "sha256": "8262b9abe871ef54635fda347358d19f1c0646793b9fe84b263c07a368e41f97",
-      "bytes": 18899
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed2/progress.json": {
-      "sha256": "cfea3f50d5cca9a105e32994d0d2f7f608fd9643830f0bd259bf7ea90fa48f47",
-      "bytes": 117
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed2/result.json": {
-      "sha256": "110177c39660f13fedba3552b1d4e88072f06cf9457156c619970963009b9662",
-      "bytes": 16641
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed2/selection.json": {
-      "sha256": "acedaee3513d3ddd71fdae67ec015d5be17bfd56642aaac255f4436a1c989c0f",
-      "bytes": 179
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed3.log": {
-      "sha256": "fd5c7bb2e78fab130d01e8c9a8de7645f65a018f3c267bb8309d44de63331483",
-      "bytes": 934
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed3/checkpoint.pt": {
-      "sha256": "6f7e6e01e5c08fc55be7c45157bd7f0eaa7ea468d7b3cef6f2426b1245abb1d1",
-      "bytes": 18997
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed3/config.json": {
-      "sha256": "7cab1e527d2c7d9eea6a779744eed5926e25d0c370294ae38f14947fa6919b48",
-      "bytes": 7956
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed3/evaluation/individual_parameters.csv": {
-      "sha256": "0c4e3fc5333b6b379f513236063c074713c7f196ae51e08cae4ed3c534054e0b",
-      "bytes": 6027
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed3/evaluation/predictions.npz": {
-      "sha256": "56e1200ca2df7b69731631423ce39830bdb4e5a16b744663807e961e095725d1",
-      "bytes": 20488
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed3/evaluation/result.json": {
-      "sha256": "ae5fc6694c5acedcebeb53603520601eca6d9266787b326439347c03eba6f808",
-      "bytes": 20539
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed3/history.csv": {
-      "sha256": "a5bb7a0481f9cea70c7641329ff8d987fa7b6c813cd87142441ca98e03f12907",
-      "bytes": 10283
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed3/predictions.npz": {
-      "sha256": "e4b329ac3b1b63f6a9d98b3b7e602f10e1fb87497e0c120e008f2452acdfab88",
-      "bytes": 18777
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed3/progress.json": {
-      "sha256": "e837bb0eed002f48c77edab24933e7641b969013261bdc623c0a168912c5a14a",
-      "bytes": 117
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed3/result.json": {
-      "sha256": "867c6aeed97d58d7ae0f974185990b6271f2ab70ef32e0970914a0ae94c84231",
-      "bytes": 16655
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/phytoode/seed3/selection.json": {
-      "sha256": "5d1b938af2a27852a888c5d04a8f7df1918674afba5376852902d7ae96f577fd",
-      "bytes": 180
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/rf/seed1.log": {
-      "sha256": "c637afecbc4626b45f52af06bcb7474b76fce6daf1bf6f5177099e66cedaeb56",
-      "bytes": 143
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/rf/seed1/config.json": {
-      "sha256": "7cf7d24c73ac934644ff194b7f1312d76357fe45a4450ebf839faa868d987732",
-      "bytes": 7632
+    "hypocotyl/results/four_genotypes_20260915/drop_50/rf/seed1/forest.joblib": {
+      "sha256": "b73c1e4da433c9bc806fd1d34ab696c676e6c961169981bdc31a1682465ba4e0",
+      "bytes": 1693392
     },
     "hypocotyl/results/four_genotypes_20260915/drop_50/rf/seed1/predictions.npz": {
       "sha256": "b21347c39cca1fd8f5e44cf71a0307a7cde519433b7e6b6169bc02d583b8ec24",
@@ -2251,13 +953,9 @@
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/rf/seed2.log": {
-      "sha256": "7e7ca610f7440bb6041dd1f3c53223dad1034e42996d939bb1ab04b9460e457b",
-      "bytes": 140
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/rf/seed2/config.json": {
-      "sha256": "bb7f2cec335e795756ea8801fbab22e19d5402a4c7f48dab6acfd224464df9eb",
-      "bytes": 7630
+    "hypocotyl/results/four_genotypes_20260915/drop_50/rf/seed2/forest.joblib": {
+      "sha256": "a74eac5d12eaedbb8ed15a75e8dc799a3d3b77778604b211ebb0e2ff22605816",
+      "bytes": 1672124
     },
     "hypocotyl/results/four_genotypes_20260915/drop_50/rf/seed2/predictions.npz": {
       "sha256": "a01dc7cb9d02a00ed82b0219c0d3afe9aad8c4a81247f8486add45b40cb40c7c",
@@ -2271,13 +969,9 @@
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
     },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/rf/seed3.log": {
-      "sha256": "f43d2f598a13428615d90fa3f63fcfcef081ce79a3948d953a6c3f4eb89f3848",
-      "bytes": 141
-    },
-    "hypocotyl/results/four_genotypes_20260915/drop_50/rf/seed3/config.json": {
-      "sha256": "e93afa81764641171a2af96fbb15d0711796fdda340b0e7f94e9d06a32ba7436",
-      "bytes": 7639
+    "hypocotyl/results/four_genotypes_20260915/drop_50/rf/seed3/forest.joblib": {
+      "sha256": "99bd6893863147063587dd59419fd2e50674bf1cd46689b9c9fdb50baf667309",
+      "bytes": 1703262
     },
     "hypocotyl/results/four_genotypes_20260915/drop_50/rf/seed3/predictions.npz": {
       "sha256": "c3d6c7fddd2bcb183e9ef6584d77f87283918dfad83a7e6fd3ed66f44ffe1784",
@@ -2291,37 +985,617 @@
       "sha256": "89ade28089f269576b984be48ba4ec740960d639cb78689b41bb5f312c89e078",
       "bytes": 72
     },
-    "hypocotyl/results/four_genotypes_20260915/plan.json": {
-      "sha256": "46ccc4224af2fd7272a2a35214ee08dc0a459f19b1f9ff6bf72f9f654a92787a",
-      "bytes": 7447
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed101/checkpoint.pt": {
+      "sha256": "8f91c2cc9c2f942c7eaacd044d657672ff22e4da87f4c42e2a8d061e35cba406",
+      "bytes": 16181
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed101/individual_parameters.csv": {
+      "sha256": "5baefe23decc1735051ca8498464e82900d8d412187e1fe63e9dc444761b46e1",
+      "bytes": 9658
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed101/predictions.npz": {
+      "sha256": "32efc7847b54e77caf541703d35166427d1822a0c0a588ee10081c051ff875ba",
+      "bytes": 21859
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed101/result.json": {
+      "sha256": "d1a590fa5424c7e2360fc6b73f647cd11a16cb6650744784388a24949dc4e228",
+      "bytes": 15943
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed101/selection.json": {
+      "sha256": "54ae7a2911caf84e5d2f93e144cfbccf5a4bc3892c7b54acc44f3d8473c1d81b",
+      "bytes": 181
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed102/checkpoint.pt": {
+      "sha256": "648baca9a6cdc0c0cbc71ca2f697c008e77921e3e8e5db5f0032a89842b5c4df",
+      "bytes": 16181
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed102/individual_parameters.csv": {
+      "sha256": "32c6799c378b21ad69f71ec0de93a4f2f531a152b6008254de74a22fb2fa9480",
+      "bytes": 9724
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed102/predictions.npz": {
+      "sha256": "422c4efe216e8bfab409138d8e8bc3662c04c87d27b4cd4fcaa855b87941b02b",
+      "bytes": 21933
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed102/result.json": {
+      "sha256": "972335ac00714febbd6c97befdb424f82dc1eed20a596c7ef2c008d34460c43b",
+      "bytes": 15931
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed102/selection.json": {
+      "sha256": "afe2dbfe4a137df9b7632123f0291d788279903c76a8ec1e23123992351fec92",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed103/checkpoint.pt": {
+      "sha256": "f31fb0d9cf1a506a6d68091d1b2fde4cc3e25fac58ab59ad901ea4b76f3eede0",
+      "bytes": 16181
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed103/individual_parameters.csv": {
+      "sha256": "988e4492edddd6739e5be1666c2ca7dcacd5441dc7b9f468dc97a3165717a6eb",
+      "bytes": 9653
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed103/predictions.npz": {
+      "sha256": "ff04507eb2663c7a76f79525bdfbb665c22360b44161e0bb20ba55dab44f06b8",
+      "bytes": 21895
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed103/result.json": {
+      "sha256": "f1277627f1b2202609e5ce0e72e43b306bc7d2d61b263b4dc32e4fca45e1dbf7",
+      "bytes": 15916
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed103/selection.json": {
+      "sha256": "643d38d615768bde7803fd71e7ea4184c15b381abc666c5a80cce033a015923e",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed104/checkpoint.pt": {
+      "sha256": "4668bf50747f3691a0f264772438fcb6e8e20590f8044760f263ac9af5202a23",
+      "bytes": 16181
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed104/individual_parameters.csv": {
+      "sha256": "4f91fa7e3a735e923465faf1bd852e57fa254a3c088eac5a8203578655ac11e4",
+      "bytes": 9616
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed104/predictions.npz": {
+      "sha256": "532a829dec8ec8de4e969f1867fdfee9b96bb3b9bc02bf20da235bad3da0d9e4",
+      "bytes": 21816
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed104/result.json": {
+      "sha256": "797385b77ac9fff1d9af1f90eeb3b580187e2585d049c8f3af0d6b6ffcad1b78",
+      "bytes": 15928
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed104/selection.json": {
+      "sha256": "84bfaff4e0a1d036ed79ce4c2e07710f50b270151fe6a19309860869d8db9412",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed105/checkpoint.pt": {
+      "sha256": "961381fd78bfd8c0b3be3c965d40bce304af7b638a0778670af1bf085db45834",
+      "bytes": 16181
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed105/individual_parameters.csv": {
+      "sha256": "ffbd182e379319c112609108479880db1eb65bb5af1ecfaa22a46af8d4bb685d",
+      "bytes": 9650
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed105/predictions.npz": {
+      "sha256": "b96d96957eb0b0eb2808d64ed21e196eca210cf509d07e330b173a900f5acd7a",
+      "bytes": 21872
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed105/result.json": {
+      "sha256": "f85e20a877432dea3119da0024ab23965d49aea5d00abbe8700a5c40cda263b5",
+      "bytes": 15921
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_0/seed105/selection.json": {
+      "sha256": "bb6bc682612b68ac57b5e4dd5f57c2293cad6bf62d8a75b0aa8d86592bef6ffb",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed101/checkpoint.pt": {
+      "sha256": "d3f074fda72d14ff659c8bcbd90cea723365fd3187d85d1446c76c44d769d2c8",
+      "bytes": 18677
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed101/individual_parameters.csv": {
+      "sha256": "2ccad45abc81c224347a2b484212562a66ed2a31ac8f26d00a4421fa4abab24c",
+      "bytes": 9583
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed101/predictions.npz": {
+      "sha256": "89e340877096ea8abd814f826cc9436352fe4dd5773e6f1ca95b7061a0a5d0e3",
+      "bytes": 21440
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed101/result.json": {
+      "sha256": "73b560fdecb00b941453299882e0e5c07336d19ec0a7de5bb3d3787cce6fb3d5",
+      "bytes": 18673
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed101/selection.json": {
+      "sha256": "09d3fd7501dda7d20c3f11cbd0873b0c93569403de43c6dd960de977f318973a",
+      "bytes": 179
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed102/checkpoint.pt": {
+      "sha256": "96ba0e86d48212b3d8dd67452f6c6c7e05f4fcf7bc143f16f2f32826c6ed0f01",
+      "bytes": 18677
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed102/individual_parameters.csv": {
+      "sha256": "86cb9a253be4062290d44c1539b13dc70541693047ebc58873bcff5789b4ddd5",
+      "bytes": 9658
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed102/predictions.npz": {
+      "sha256": "2799222cccb9407b5483940859876360e083e37d0ea8f63f526e8f8b8961d800",
+      "bytes": 21380
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed102/result.json": {
+      "sha256": "a9f93a4f406ef28feb579d67a475dbfb8afc540216212f88a9c548324f88e59e",
+      "bytes": 18676
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed102/selection.json": {
+      "sha256": "e0f0181d4651a75658b956de1bc44e2ec8804f6f6b1e0a26baf87a09e8714663",
+      "bytes": 179
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed103/checkpoint.pt": {
+      "sha256": "d52102837a2f40616745e5607875cc1fe098a288315b24f5c713b44a1b162c87",
+      "bytes": 18677
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed103/individual_parameters.csv": {
+      "sha256": "90faf6b9fa8e85ffa8384838624930721b76ee0c9f0c79d300d06f4c08a8827f",
+      "bytes": 9583
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed103/predictions.npz": {
+      "sha256": "9e8be5a17ad22e0221aa309da34ab009224bffee9a3cd43258ea5f5c36d0783b",
+      "bytes": 21472
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed103/result.json": {
+      "sha256": "323ff7ab1bad247d837295fd9f4449ddaf49b8ac4961a940fedda5b1a0a841eb",
+      "bytes": 18650
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed103/selection.json": {
+      "sha256": "b59d3602403d0695d0a54777556b0548549a573357087e41151e3878142fdfaf",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed104/checkpoint.pt": {
+      "sha256": "c68f0cac4dfc9dab6a870be5a7a3db0439c0ea3ef36cd9a10c91278b0d1c34fa",
+      "bytes": 18677
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed104/individual_parameters.csv": {
+      "sha256": "353b529537f9475e249808e15ebe3719704f8acd6979d2bb39e68050acf6b8f4",
+      "bytes": 9621
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed104/predictions.npz": {
+      "sha256": "bf7c7b22ca6f653337cd25947389e93f3633efd717d4dd044178f12d75e7a7ed",
+      "bytes": 21431
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed104/result.json": {
+      "sha256": "8ab3b591d553980a92d9157771f992dd185bfa85c9f88fcec4bc9cfba4c5c310",
+      "bytes": 18657
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed104/selection.json": {
+      "sha256": "22111cca10926883a024cc52751ea63a98c0a56329ebeb8fe159707ac9d18ef1",
+      "bytes": 181
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed105/checkpoint.pt": {
+      "sha256": "157edff5cc885217164f357117c664485268b4adb76f39944e7171281598e655",
+      "bytes": 18677
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed105/individual_parameters.csv": {
+      "sha256": "f63ea1f80b06a1ddcbdf345344806b4e21c3b4c98c1e197e9fe3e46ad1cfcb8c",
+      "bytes": 9691
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed105/predictions.npz": {
+      "sha256": "7efe4b3163079bda44fe25c65f54759ec14648d72fb50c2a75df5afd3a6edec1",
+      "bytes": 21501
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed105/result.json": {
+      "sha256": "053f3abe3deef268ba6c547f6118aa6b25e213603b2ebfc38365f00c725f1249",
+      "bytes": 18652
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_25/seed105/selection.json": {
+      "sha256": "137c1978d599cb2f011aa894f74ca5c244b3f2e57f0bfdce5007c81ae7e7d1ed",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed101/checkpoint.pt": {
+      "sha256": "cc4e1a5d8f77663211ed81ac60e838fb23e62a4c3807993f3cef695ef9f55f8a",
+      "bytes": 21173
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed101/individual_parameters.csv": {
+      "sha256": "47b85cec36592ef25c88c685887ff97becdaae6329bdfb2d353ae1548ddcc4a2",
+      "bytes": 9691
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed101/predictions.npz": {
+      "sha256": "eae57b9e921e2af0ff25204e384e062a34a0c9c5da0e048973128a0b32d83f24",
+      "bytes": 20595
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed101/result.json": {
+      "sha256": "f1187aaa371c6fb39d9146c40500c840ee624c2f32801c7ffd8a09cc55b27425",
+      "bytes": 21369
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed101/selection.json": {
+      "sha256": "a4e2d5dbfa84e1e67b6b7e49cde660c9717fedb937ab09edeb770790b4c90a22",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed102/checkpoint.pt": {
+      "sha256": "bdfa9bea58bcdf7e7268efcd963756780ad47a0648a32c5b49235bdef7cb8019",
+      "bytes": 21173
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed102/individual_parameters.csv": {
+      "sha256": "04870b0fa5fedcba3ee76a5ac2baea51d8af4461985fce9d6f9537dd25b56a3c",
+      "bytes": 9724
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed102/predictions.npz": {
+      "sha256": "8e2d4e39ecde47f03ed1dcc3fd3b64e5b260fa2e4bcdf44026c03ea5cdc15879",
+      "bytes": 20489
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed102/result.json": {
+      "sha256": "a6578237114572d8524c65295c7e6b6345d92f4d50d3731d2b17c5821c38079c",
+      "bytes": 21413
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed102/selection.json": {
+      "sha256": "109468ca8d812101e929ebd9beed49955a7ff7336d169d88bb20e080c4e2e6e5",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed103/checkpoint.pt": {
+      "sha256": "dbce3c84bd38c98c9af6fb1aa5b1658cc75b324f7f918c6be587dee40ed60168",
+      "bytes": 21173
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed103/individual_parameters.csv": {
+      "sha256": "9a3dd2fa57080a1aad94363de96d420f48021fb4916596189ad48c700320aee1",
+      "bytes": 9584
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed103/predictions.npz": {
+      "sha256": "93f6e05bed84529352f61846d180f03377c3ef17f559f0ff7b5bfc9a8614aa9f",
+      "bytes": 20610
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed103/result.json": {
+      "sha256": "2cd946c4ea2d1e1daf88e3fbdb8cd41a853a8dc4d8a0a9bb3f79b9c4de0ea33a",
+      "bytes": 21377
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed103/selection.json": {
+      "sha256": "c3afd8ef93c870b9adce902a3f65a3dd4d9839b3383336ecf490af2c60ef213d",
+      "bytes": 179
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed104/checkpoint.pt": {
+      "sha256": "703054e409acad2f209d837e04b20403c8829d8575451ceceb3cb7cafdb7788e",
+      "bytes": 21109
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed104/individual_parameters.csv": {
+      "sha256": "ec30efb81b9271ff6fe8db781059c1afa8de206444a8735f4f3523d9d5111f5b",
+      "bytes": 9678
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed104/predictions.npz": {
+      "sha256": "abb36fb2a6428f648d7f76ef82f130e6edc21d194a497fd5237cad8fd7934ee9",
+      "bytes": 20498
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed104/result.json": {
+      "sha256": "76a6eca933727b8b62879f1526db20182a271e929031aee5ec04a04a6b4c18e5",
+      "bytes": 21346
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed104/selection.json": {
+      "sha256": "c4d39292eaa9cf84a5b750f1d683a9a5acf3307628227d117859ea57c84cfd09",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed105/checkpoint.pt": {
+      "sha256": "958db5466e98b98884a74461c6f3d16221a51fecdfe85a60fae9faaf47440cc8",
+      "bytes": 21173
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed105/individual_parameters.csv": {
+      "sha256": "e2594b051e7efc54b6703920c26122c3d09a6fced8dd09873b45eaa0903bdc42",
+      "bytes": 9616
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed105/predictions.npz": {
+      "sha256": "09bea09b3441a7592bff689b1e9033d8e84e23fc7eab7fe35858310a93c01577",
+      "bytes": 20665
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed105/result.json": {
+      "sha256": "d8e33f1992e0484f112d261f3bfb28b6d5026e64ef2b1cc5aba3bf2d79998332",
+      "bytes": 21358
+    },
+    "hypocotyl/results/manuscript/latent_ode/drop_50/seed105/selection.json": {
+      "sha256": "d5d2c71929d1779e62bbf208e80bdb51a3a6cf911baa645029f3e5351bd97bac",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed101/checkpoint.pt": {
+      "sha256": "6738ce0a6a4ed70d3b2b81330cd469e8c3bcd402cd264c729bdec81eacca0ab6",
+      "bytes": 16181
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed101/individual_parameters.csv": {
+      "sha256": "1dfb8b0354fe42f9536e32210449051f7835852b6adde18fa4d62388973a9e68",
+      "bytes": 10433
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed101/predictions.npz": {
+      "sha256": "36093b6eb99074fb9eb7da248013829e39f12ad4103c13f8b0603800b2365e39",
+      "bytes": 21891
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed101/result.json": {
+      "sha256": "8b97f9afc8a55a0a422f738fd97b6246d29b41fc1dbc65ebb8e903a4017f1711",
+      "bytes": 23227
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed101/selection.json": {
+      "sha256": "33dfe6ad35d529976976eb642fe10d96816390877c2bd16ed0d1530bcfd0c0c8",
+      "bytes": 181
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed102/checkpoint.pt": {
+      "sha256": "fde4cd7627b8e1dacdffa4d30eef6a487c5f0f05916c5b7e55913f0ae42fbbf1",
+      "bytes": 16181
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed102/individual_parameters.csv": {
+      "sha256": "419f6528a5ece451197c1c4ca5a677facd69ee5ba976faebc949f3e42b344420",
+      "bytes": 10441
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed102/predictions.npz": {
+      "sha256": "68d44b2f5ac631b7ae45a0e67931a6116a0f301a6472d04c82a389ded58a5b87",
+      "bytes": 21904
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed102/result.json": {
+      "sha256": "e3dc7ea6410dfa95967ab28548a1f591f079306144d6314ed5cf13c362c47d22",
+      "bytes": 23249
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed102/selection.json": {
+      "sha256": "ebabe740f2c34a91643cd7e6cb8053e7b4da0c5d5e427ea7ee1030eac1638f35",
+      "bytes": 181
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed103/checkpoint.pt": {
+      "sha256": "b5035ad0f2fe635dac6abc97c82441adde1597827cd18d8e9961ceaaf2fef0a2",
+      "bytes": 16181
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed103/individual_parameters.csv": {
+      "sha256": "ea23796223b44c99fa1307d88573b296bbb203bfd2a134b570f5c7b60e2a1424",
+      "bytes": 10451
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed103/predictions.npz": {
+      "sha256": "102044cc751de84bd2fe1f45a1a9a2e3fc387b8e27e0fd1ceeca6983d5854f62",
+      "bytes": 21914
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed103/result.json": {
+      "sha256": "b3b39135091f959abfe24947278f7a5fb56bdd4460daadc67b1c1950a0131076",
+      "bytes": 23241
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed103/selection.json": {
+      "sha256": "f590ecfc2c681147a3ad658bf01ff10d2bfff2575d62cc6e9efe6518d6de62d2",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed104/checkpoint.pt": {
+      "sha256": "7d081298767e733f403085e2c04f6da302a48e8a4e471fc88da9070ac9fd0edf",
+      "bytes": 16181
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed104/individual_parameters.csv": {
+      "sha256": "a7188cbad68c9317fbae0c2461f980d8bf65da91c36073ecf32e7460ffec195d",
+      "bytes": 10461
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed104/predictions.npz": {
+      "sha256": "82404541be6ed69bcd393eb5aecea313f4db41af4fe17bf0aaa385f1a0888961",
+      "bytes": 21890
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed104/result.json": {
+      "sha256": "27e3c087d63fe92379320cdac838688aebf769614765c09cbe9d2b0f49c97fb3",
+      "bytes": 23221
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed104/selection.json": {
+      "sha256": "f8d4909bd970c59eec2a7822891ebf1871320bfbef24ce748dded1b781aa25c3",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed105/checkpoint.pt": {
+      "sha256": "5f26a9c8796bd211006b0ae893e472208e5a98cdeed032fabf879b4aeb44d3ec",
+      "bytes": 16181
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed105/individual_parameters.csv": {
+      "sha256": "83017a955d008977626e600653ddc4de6ad20f72c787f18d6098dbb900198283",
+      "bytes": 10420
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed105/predictions.npz": {
+      "sha256": "cb7142831df0ca6114f64921aac33b7b437fdf1928a4506f1927c4c77d3bf7de",
+      "bytes": 21888
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed105/result.json": {
+      "sha256": "784fe4bb440157104d4520fa58ebe45b7b991bb5ae6431fe32f13c16b5145240",
+      "bytes": 23233
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_0/seed105/selection.json": {
+      "sha256": "d7b5f0a62259f264d96b463a0de2760cf61785657eeebe3391a0392ac7340033",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed101/checkpoint.pt": {
+      "sha256": "46d8a13d9e41412d7614116c3b806882bad860963266d33019344c4f828b818b",
+      "bytes": 18677
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed101/individual_parameters.csv": {
+      "sha256": "85593a7c18d037b3beb86f2238ac62886943c3a0a4b2c7c3bff8451681920c95",
+      "bytes": 10271
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed101/predictions.npz": {
+      "sha256": "ee934e2b9f22edea269b59483d1f794847d1cfe1396f8a0b1f91baaa298d15b4",
+      "bytes": 21478
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed101/result.json": {
+      "sha256": "0d5a28b6a0a5664e27d462dcc8de53aa8d3e30dc13c9e37d6100210d1c20e5ea",
+      "bytes": 25959
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed101/selection.json": {
+      "sha256": "5041118c801dddb1225eeca99e58c8a368c3d6ed34f9f2b3d88b219bd808864f",
+      "bytes": 179
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed102/checkpoint.pt": {
+      "sha256": "ca786667b7168a6a1df73406838f475bae8546f5b6efca2ab258eb5703ad5b73",
+      "bytes": 18677
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed102/individual_parameters.csv": {
+      "sha256": "e18c7755dae4c6f19c0dfac6607f462e1b6cd0c6cfee79e8c9db8a921cf3e9b1",
+      "bytes": 10343
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed102/predictions.npz": {
+      "sha256": "3195ba40b3d9f2d3a051d0ee60307af1b164c0ab334f18880d7aa88593cac773",
+      "bytes": 21413
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed102/result.json": {
+      "sha256": "949a7471dd8827b0be0bc2ef872c88310f0f54e3d7f73b76459cd9dcd7393d4a",
+      "bytes": 25960
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed102/selection.json": {
+      "sha256": "86679749175bca07b37e315a8b6db2e800cb209a9057ce47055ca767c33b9dd6",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed103/checkpoint.pt": {
+      "sha256": "240d68da387554870c483b2083209160c9d64e47fcf19ef03de52e69aaf11ed3",
+      "bytes": 18677
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed103/individual_parameters.csv": {
+      "sha256": "2b31e704d8fe64ee597801385678e2331a276b8836afc953ad768b6ce26c6056",
+      "bytes": 10339
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed103/predictions.npz": {
+      "sha256": "47af03f516f876485617dfbcc633af8a8c6041683a1ba878aeaabbf5e406871b",
+      "bytes": 21517
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed103/result.json": {
+      "sha256": "30f10676e77e2e851fdbfc18a3d2f9c31b1f5f22b7144015a6f98f267d188e45",
+      "bytes": 25991
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed103/selection.json": {
+      "sha256": "dedcf4829c715b0164b806cb8fa6f3b7a721bee875ecc54ee14fcdef4a607868",
+      "bytes": 181
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed104/checkpoint.pt": {
+      "sha256": "16ab38df6eef558d2c653f4371ffdc21cdf9462f294b4f370442c1fb0a586b8e",
+      "bytes": 18613
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed104/individual_parameters.csv": {
+      "sha256": "16237081356700cef9327d340cfda2897e9cfedbaec9ac4cf793662ddeff21e0",
+      "bytes": 10296
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed104/predictions.npz": {
+      "sha256": "52427966143d8a663b57a787c50b55dd945344bf6cdb6a294e1b927697fcb3ee",
+      "bytes": 21422
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed104/result.json": {
+      "sha256": "3174478188079b5ce66d78d3a391eb194c19efc2403402b7d33c54d0d8bddd7c",
+      "bytes": 25934
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed104/selection.json": {
+      "sha256": "6212cd00b066b104cad3dcdf154360b6d5ba9ceb5bc48e355adb2359d72b8264",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed105/checkpoint.pt": {
+      "sha256": "7137419e87e2beeef7895245e44be081ebf5d9530eefbef1e5637d5b30e586a2",
+      "bytes": 18677
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed105/individual_parameters.csv": {
+      "sha256": "c0c7e06de256b97b5ce904a084960583f4e0c31de8e9256bdc99694bb4a16750",
+      "bytes": 10282
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed105/predictions.npz": {
+      "sha256": "4cb9f85f8782a537d4f77c7d7d8d7f5f0003e83e8aa63608a898a909ee38c08e",
+      "bytes": 21443
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed105/result.json": {
+      "sha256": "740476b702d45bef326330e02943ebeb8ce0ae35a4b048f14a6eb7374684727d",
+      "bytes": 25999
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_25/seed105/selection.json": {
+      "sha256": "feb18a19eb5c7423c0e9df100b7c4bc77b0e5dba2a1e5fd8d5e288d32966911e",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed101/checkpoint.pt": {
+      "sha256": "3b29b41cd525e05ef8ac178c694453b6407e25eee393582d2929f4d05db2dfc7",
+      "bytes": 21109
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed101/individual_parameters.csv": {
+      "sha256": "df75a82cbb9718cfb296439c37dae4b01b8a703dd327dfe426bc2c62015a6c1d",
+      "bytes": 10234
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed101/predictions.npz": {
+      "sha256": "2e742d1d1cd78dd97ee46b6a11d37d72dbdb73c8cf8014871186f4d00c047f45",
+      "bytes": 20601
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed101/result.json": {
+      "sha256": "475d8abf6be1d5300b81c4e5efe5ad6d5d44ea8278ace5fdbd6732e6d97d4018",
+      "bytes": 28689
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed101/selection.json": {
+      "sha256": "c89dc0b5f0491a82e2e613da7e1d406695647c5e792b0d93a07ffcbaa717e239",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed102/checkpoint.pt": {
+      "sha256": "6ce9a00ed7d98b6dcd49671f7c90bfbf250854e636702cae9430082dd88d7ef4",
+      "bytes": 21109
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed102/individual_parameters.csv": {
+      "sha256": "85549b1cb37a9fe0ee667475047ac2efb753034406504e2c34da6460f289c753",
+      "bytes": 10484
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed102/predictions.npz": {
+      "sha256": "c513f97581134ccf975eb3b1c7403c3ad0e61a6a47c122a8df3a435438eb8e91",
+      "bytes": 20532
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed102/result.json": {
+      "sha256": "c0091885be82d94a3ec9c68c18ed62d66e558c361e8990aad0c9cf1015d3bfcd",
+      "bytes": 28671
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed102/selection.json": {
+      "sha256": "e9d1999aec5b5112cecdccc6ac96bce8f39c5de6d4fdd32282ac5298e51785a9",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed103/checkpoint.pt": {
+      "sha256": "b53322b0ee35d59cc67a08258953f9ced3e4eaf782c9a124d2cf2111010ecfd7",
+      "bytes": 21109
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed103/individual_parameters.csv": {
+      "sha256": "d4bf9b0944d52d64ee784c62b72aaf7b4ae0402062ec30187b4bca32b9fe8376",
+      "bytes": 10513
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed103/predictions.npz": {
+      "sha256": "053becdd0a4019e711fde72bd4c937bf35a0e02290b4573629873661b8bd8bef",
+      "bytes": 20621
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed103/result.json": {
+      "sha256": "2e36f34d4a3d7704ec250ac6933fd0c6becbfcd26c6b9bd5996e15d58d191a79",
+      "bytes": 28679
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed103/selection.json": {
+      "sha256": "1f63eb4dbee7a8d494db1f20d44492f282b925a309e1b2342030236b2e05814c",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed104/checkpoint.pt": {
+      "sha256": "de7e9398ecd6d4158cd0b774e3a39089661cbcded43268d33695169a2fd5f815",
+      "bytes": 21109
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed104/individual_parameters.csv": {
+      "sha256": "f05cbb8fcb48e13eca98c6561eb7e7c80ca07a65911db76172445739cf7d33c7",
+      "bytes": 10385
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed104/predictions.npz": {
+      "sha256": "8dbb3fb782ba99cb0e2771df28ee8618ca535164f825958ec261d83e3502fc35",
+      "bytes": 20551
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed104/result.json": {
+      "sha256": "9075b983f441e6a639f0dd29d289c556cbab1926058714a5b4fe061d979e10a0",
+      "bytes": 28674
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed104/selection.json": {
+      "sha256": "628003dc60cdf6a095cdf603bc161c838befe2e45aaa1cf358dac19e24917fe7",
+      "bytes": 180
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed105/checkpoint.pt": {
+      "sha256": "72cd65aeaaf845fde22dbec8058b7e6e7dbcfca1345b7b2e6e0206b221dc7197",
+      "bytes": 21109
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed105/individual_parameters.csv": {
+      "sha256": "4e4bf92659af9ac647f7d3da5fb13ac5e8874b87ab3d1b7e564de280f86f0a5f",
+      "bytes": 10543
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed105/predictions.npz": {
+      "sha256": "2136ffd119dd2c1d0b2e72c1c80a0ce11070dcfe47cea172233e0cc8d3b1b5d3",
+      "bytes": 20603
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed105/result.json": {
+      "sha256": "394e0fb3967bf57a9b2832b75e025f7963861718c7794fae5efa6e38488aa3eb",
+      "bytes": 28709
+    },
+    "hypocotyl/results/manuscript/phytoode/drop_50/seed105/selection.json": {
+      "sha256": "498040e852a46a289cabbc2ce79a4891ab871f2fbf90d71b39948ead577550bf",
+      "bytes": 180
     },
     "maize/code/data.py": {
       "sha256": "bd731ba5a43ae8b3ece742b7ecc70747d502ca14c4e8740065bdba168da96360",
       "bytes": 8381
     },
-    "maize/code/download_data.py": {
-      "sha256": "9b8866810f1bc3a4c4ed4104c350fd2278e60b38609108b2c3662111b5b29792",
-      "bytes": 5431
-    },
     "maize/code/prepare_data.py": {
-      "sha256": "25e5c470b62e59b9cf4576775ee8cf7b86faabf07aa3da831134cac3e4c80361",
-      "bytes": 14673
+      "sha256": "936659ffc5cf444671be81cf705226b7d8bf990717a6212bc81023e975e05a38",
+      "bytes": 14882
     },
     "maize/code/run_experiment.py": {
-      "sha256": "8b4c35919c21956045c273137b90bbf8ee61c659add34ed629784980ee6752c3",
-      "bytes": 22069
-    },
-    "maize/code/summarize_results.py": {
-      "sha256": "58d0b020e017f3b48360749984711fd2ec0592a82e9673cd3bb03c021da0b4e5",
-      "bytes": 15465
-    },
-    "maize/code/tune_trial.py": {
-      "sha256": "f6e2f5d31d507d8c63f00a99c1d9f1ae742968ab00148540f86a32ff917142eb",
-      "bytes": 7005
-    },
-    "maize/data/download_manifest.json": {
-      "sha256": "852cfba8d7ababe1404dcfdf87acc4009f9483367a10c5b6d19315671183c3d6",
-      "bytes": 21140
+      "sha256": "7164cc190bb7785796672b68256b63d25873e02d2cbcdea321a14f4a0bbd439b",
+      "bytes": 22049
     },
     "maize/reports/dataset_summary.json": {
       "sha256": "903c2f88dda6c0e4f96f055b8308e2f8a8515b21e9fc10579755c7c52ce3d4db",
@@ -2343,9 +1617,9 @@
       "sha256": "2c0670bc9054aed7faf6b1193d67e6d4c0630d8495a22346e2a1c47c4d2f681c",
       "bytes": 644
     },
-    "maize/results/chronological_final_seed1_3/runs/logistic_seed0/per_curve_metrics.csv": {
-      "sha256": "e6c4f9ba44321a39bc9aed23d02f005e17f09a2abadf7a949e5f332731a2e7de",
-      "bytes": 107187
+    "maize/results/chronological_final_seed1_3/logistic_parameters.json": {
+      "sha256": "d89cb53927760fa5a289833b3a7a39ffe3175fbf98e80dbe24779562c854bc01",
+      "bytes": 71474
     },
     "maize/results/chronological_final_seed1_3/runs/logistic_seed0/predictions.npz": {
       "sha256": "4e959f9b98183d20b536f2306fa09979d743d67e68f18734753ead3fb0e44f9b",
@@ -2355,13 +1629,9 @@
       "sha256": "0ec3acbcd2348fcd38be37489cc5490e6c6deefa456e9d15977cbc92280ba5fb",
       "bytes": 603
     },
-    "maize/results/chronological_final_seed1_3/runs/lstm_seed1/history.csv": {
-      "sha256": "9c3c6806da8afc432d5b22068700a90f52ffa0b4c2c9459ae4387e3a24fa5487",
-      "bytes": 25516
-    },
-    "maize/results/chronological_final_seed1_3/runs/lstm_seed1/per_curve_metrics.csv": {
-      "sha256": "fdfc03c61c1ae260346a271c7b85d67c39fd1b4965c5c5fdebfd87eb07bc48d8",
-      "bytes": 105574
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed1/checkpoint.pt": {
+      "sha256": "c46fddd8adc40c8f2ee98bb0afd86cd5696b6731104e00bf662fc15fcf6bb455",
+      "bytes": 19957
     },
     "maize/results/chronological_final_seed1_3/runs/lstm_seed1/predictions.npz": {
       "sha256": "c5c005bd1c123966020de5ed3d0cb1d5a22143b1f9bfb4afcd1aae3d0da09aa2",
@@ -2371,13 +1641,9 @@
       "sha256": "8883846fa9cc4e9b4ad304919841e04168d3f1ffcfa618a85d90bc32a0f897f7",
       "bytes": 808
     },
-    "maize/results/chronological_final_seed1_3/runs/lstm_seed2/history.csv": {
-      "sha256": "b8ddc6c27f42e32680a4649cde92d51579ba54d57db93eee95f881e86b6ec11d",
-      "bytes": 25485
-    },
-    "maize/results/chronological_final_seed1_3/runs/lstm_seed2/per_curve_metrics.csv": {
-      "sha256": "311318a69598c023c7877fedf9024ab5ed7960a795e50ad6163db07e42dc24e5",
-      "bytes": 105652
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed2/checkpoint.pt": {
+      "sha256": "5bedc1ff200d86cf7e35ed809de3ab52c930318bbc076cdc8d07b589bf0a5d4d",
+      "bytes": 19957
     },
     "maize/results/chronological_final_seed1_3/runs/lstm_seed2/predictions.npz": {
       "sha256": "0ffef94d1823013c1b69cb242acbf12f76bc85beeb02cf4bd7d3c40d589f5b8a",
@@ -2387,13 +1653,9 @@
       "sha256": "9d722570a0b154e4ce036788d4dad7d19e511e18ff2dc60a1c2c3c226cc43a19",
       "bytes": 809
     },
-    "maize/results/chronological_final_seed1_3/runs/lstm_seed3/history.csv": {
-      "sha256": "70a3c6b225a53c38707bdfcea91d0a7a22090619c23b87cc4bdff6b9584b2b04",
-      "bytes": 25393
-    },
-    "maize/results/chronological_final_seed1_3/runs/lstm_seed3/per_curve_metrics.csv": {
-      "sha256": "9aabe23c98df39f29ad724fcc6a9d83f7c199c0f5e1779fd48d9418ca544b640",
-      "bytes": 105413
+    "maize/results/chronological_final_seed1_3/runs/lstm_seed3/checkpoint.pt": {
+      "sha256": "b121a5422507eab4d5d53177c741d324386b43dcbd77e46ef474af624a51d083",
+      "bytes": 19957
     },
     "maize/results/chronological_final_seed1_3/runs/lstm_seed3/predictions.npz": {
       "sha256": "58b9e1269656856424bfc0dacc68865c549d6569e85994d0b0aac6410f704adc",
@@ -2403,13 +1665,9 @@
       "sha256": "6d9ffc0ce9cd0b9c60e1f21c3102d18129fab42e9758cc8b8840df28f6b811a5",
       "bytes": 807
     },
-    "maize/results/chronological_final_seed1_3/runs/pinn_seed1/history.csv": {
-      "sha256": "20ef0659e2ac0e4670a31bbe61e9d5f3d3188dd37cbb7292886f5f626ccf4fcb",
-      "bytes": 25338
-    },
-    "maize/results/chronological_final_seed1_3/runs/pinn_seed1/per_curve_metrics.csv": {
-      "sha256": "6bdad5c117ad56d9e89079372590be85008aaa07e9653d60fb9b6a880aa4e590",
-      "bytes": 108954
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed1/checkpoint.pt": {
+      "sha256": "0201834992b4f0cdff62bec688909b36463be98af2f8710d6569e61df8db26b1",
+      "bytes": 23733
     },
     "maize/results/chronological_final_seed1_3/runs/pinn_seed1/predictions.npz": {
       "sha256": "fadd866f315336e440ce25731c4ccfc73c1a7f61866a1868b8b13bd762bf9e28",
@@ -2419,13 +1677,9 @@
       "sha256": "b199854347e078988e35bf84bf25b2d7aa55e8c0840d2ed5121fae72b0257c32",
       "bytes": 803
     },
-    "maize/results/chronological_final_seed1_3/runs/pinn_seed2/history.csv": {
-      "sha256": "d136aca9a1a460c62c010077a7dfb0db0837871a4363d3114c6f414f8e1c9992",
-      "bytes": 25296
-    },
-    "maize/results/chronological_final_seed1_3/runs/pinn_seed2/per_curve_metrics.csv": {
-      "sha256": "56b5b50f56785bd791adef6b0d2efdaa088a9289b0794130f3e90874039f1049",
-      "bytes": 109336
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed2/checkpoint.pt": {
+      "sha256": "f7184c0483e6b493b9a3296a35e367efa9d0af8be019d687049bdd347f39cd4d",
+      "bytes": 23733
     },
     "maize/results/chronological_final_seed1_3/runs/pinn_seed2/predictions.npz": {
       "sha256": "750488d032dd9535097095cbc11cf41f042a20f913f208880d657c00901aac2b",
@@ -2435,13 +1689,9 @@
       "sha256": "dc8d599a3424f2b0a304f4ca0665c9e45dc83985de772c471997422c12697f02",
       "bytes": 809
     },
-    "maize/results/chronological_final_seed1_3/runs/pinn_seed3/history.csv": {
-      "sha256": "fdbc063077446819854bf0b91df5ae7d86a0879fc45721bddd827e026ae19f70",
-      "bytes": 25139
-    },
-    "maize/results/chronological_final_seed1_3/runs/pinn_seed3/per_curve_metrics.csv": {
-      "sha256": "24e6b7140f0a235d0f4923b9baa30a251d9cc632909113b912c31e7bd1b8496a",
-      "bytes": 108959
+    "maize/results/chronological_final_seed1_3/runs/pinn_seed3/checkpoint.pt": {
+      "sha256": "6ab472f4b78a2b529bbc49cae6b0808be23d2b80b31f28d9cea73dbdca526a8b",
+      "bytes": 23733
     },
     "maize/results/chronological_final_seed1_3/runs/pinn_seed3/predictions.npz": {
       "sha256": "d455bcf82493e9dd6bc0ba925b126dff9dc3968a5af71eabb3dd988ee6e6e45c",
@@ -2451,9 +1701,9 @@
       "sha256": "720019fa310f7373b0223c51ca7a623b7eac78f847cd07e0792be66118f320e6",
       "bytes": 810
     },
-    "maize/results/chronological_final_seed1_3/runs/rf_seed1/per_curve_metrics.csv": {
-      "sha256": "9e3b046e765d2912c73bca1580c6b2763c90dc524eda1db133d7a60beebbf2f9",
-      "bytes": 97814
+    "maize/results/chronological_final_seed1_3/runs/rf_seed1/forest.joblib": {
+      "sha256": "810da56de41ae1e9fcfb5d9993972095c82401c1d5ccc10a63a2b201a33ea4bf",
+      "bytes": 38019040
     },
     "maize/results/chronological_final_seed1_3/runs/rf_seed1/predictions.npz": {
       "sha256": "90465661aa59e9bc70a223d59d9b13838d7aadb93a118d46a643c2d3a1cf67ac",
@@ -2463,9 +1713,9 @@
       "sha256": "a14ffe8e779ef30fda2a23edc62fef8e461f1a5316ad77d727eab66c05673b55",
       "bytes": 564
     },
-    "maize/results/chronological_final_seed1_3/runs/rf_seed2/per_curve_metrics.csv": {
-      "sha256": "ff22081a9123bcff04cdd4518c2f77894c4d4cf158d318939b3067c39baf85db",
-      "bytes": 97788
+    "maize/results/chronological_final_seed1_3/runs/rf_seed2/forest.joblib": {
+      "sha256": "8f01c7c8490ff83c6aba3605e421a6ebd36b46d02de148538abf58da77880d0d",
+      "bytes": 38021666
     },
     "maize/results/chronological_final_seed1_3/runs/rf_seed2/predictions.npz": {
       "sha256": "6f708eeebf33361ddece38a69294d7b7129d0527705a71e39192e5424e05a55b",
@@ -2475,9 +1725,9 @@
       "sha256": "978839b23a0ac6c6e5a18027d9708c4cb135a60cc1f23a6271456c407720d8c2",
       "bytes": 561
     },
-    "maize/results/chronological_final_seed1_3/runs/rf_seed3/per_curve_metrics.csv": {
-      "sha256": "7fd94173d0ec42c7eca6302588ee73844a85402c28f640b702b11fd1386b84b0",
-      "bytes": 97770
+    "maize/results/chronological_final_seed1_3/runs/rf_seed3/forest.joblib": {
+      "sha256": "586a1400de0d2563a1bd2a473a14d2601adda40cf7ee77b7e1dcde8c196ec67a",
+      "bytes": 38016307
     },
     "maize/results/chronological_final_seed1_3/runs/rf_seed3/predictions.npz": {
       "sha256": "e351bc939870ea31e2ce4b889f531cffe4f3802dcda87d3846921535d78eb959",
@@ -2487,10 +1737,6 @@
       "sha256": "ebf787e04e741a3ce36e47ceb5da961fc48577307a671242f6a36f47bca873f9",
       "bytes": 563
     },
-    "maize/results/chronological_final_seed1_3/runs/temperature_seed0/per_curve_metrics.csv": {
-      "sha256": "3ae69a130fffd1913da2abb33972d194735300285a4957de588080fc4ebc9385",
-      "bytes": 106903
-    },
     "maize/results/chronological_final_seed1_3/runs/temperature_seed0/predictions.npz": {
       "sha256": "5a74ca03e450dce7955e92cb7698fe1b82e68c3688a37fb2da27c8914a99e472",
       "bytes": 1137518
@@ -2498,6 +1744,10 @@
     "maize/results/chronological_final_seed1_3/runs/temperature_seed0/result.json": {
       "sha256": "cbed43eb98a3489bc0da4f7c2863d89238cb1c722ae2fdf9b01ede4fa9f64294",
       "bytes": 594
+    },
+    "maize/results/chronological_final_seed1_3/temperature_parameters.json": {
+      "sha256": "ced7fd25fbc79ddd66a710b95f8d718bed16ce401d7dd896bada3bb862354dad",
+      "bytes": 24892
     },
     "maize/results/tuning_20260904/final/runs/latent_seed1/predictions.npz": {
       "sha256": "8f7c0d941cb3cc7de7e3a1dc1405586e244dec4fc9d3c163368536d5d9adacb6",
@@ -2531,21 +1781,33 @@
       "sha256": "c6946b9654c7de1f73ff8e47c2717d0f5330cbf1b636e69a3119af26957e3251",
       "bytes": 124
     },
+    "results/comparison_hypocotyl.csv": {
+      "sha256": "9428f5dc60266aec4329e718f4301569bebd30eaf13b7b9e4de3731de4a55643",
+      "bytes": 10946
+    },
     "results/comparison_temperature.csv": {
       "sha256": "01ac353ab94703b2e39fe9f665609968ab3d34fa21cabcb52f8dca2d18d6d665",
       "bytes": 6003
     },
+    "results/light_dark_parameters.csv": {
+      "sha256": "6bb322ba488d757efbd231ba0bd150eb25f136a66ce053d57dec8983b3b7af87",
+      "bytes": 5619
+    },
     "run.py": {
-      "sha256": "edc3aea0811fe74fe11af0e2c6d7abc27d689993fa30eafc80ab6d394d30fc30",
-      "bytes": 13776
+      "sha256": "fc3a6d54d96ab14c65f46412e013b5830d8cacadf367734485f213cd6bb8c487",
+      "bytes": 15736
     },
     "scripts/download_data.py": {
       "sha256": "c8a2a8fb8d5c87e0deb486ee68068a9835c26fe1c5c9a60f8b73c5f294d17999",
       "bytes": 3251
     },
+    "scripts/evaluate_baselines.py": {
+      "sha256": "26917b804926b09306fc0c8f2614d05ea598942dbf38dff723f105d1ea42bb29",
+      "bytes": 5374
+    },
     "scripts/make_figures.py": {
-      "sha256": "56a4f416179699cc2c089f5aa179c8d38e454822c837e7c35761578d9decc31f",
-      "bytes": 1114
+      "sha256": "f57a5d651cdf8f3ddc87b588c011e702c96c1840d96d92dbd41401e814592ac3",
+      "bytes": 1116
     },
     "scripts/prepare_data.py": {
       "sha256": "7fbe71326151aa2acddfaa86d714997daed45339eb94512fed21feaeeb92ad0a",
@@ -2556,32 +1818,32 @@
       "bytes": 1092
     },
     "scripts/report_results.py": {
-      "sha256": "a19ceeddfde9b51faa687e45ef53a5b50375072375419efcf07ad032c5a835f3",
-      "bytes": 2716
+      "sha256": "14cc801e5b919973481acaf9b37ba3fdd7fa052050630a9a33b89f57b650bdc3",
+      "bytes": 2759
+    },
+    "scripts/verify_models.py": {
+      "sha256": "264bc0b84c391a24b1ce1244477fb4bf6661501559fff5f81572e0d745c9a6ca",
+      "bytes": 3021
     },
     "scripts/verify_submission.py": {
       "sha256": "c36a6da99cd8b7dcfdecd9b5d0220bbe916acf85b93f67d4abcee2e53239b3e6",
       "bytes": 892
     },
-    "submission/hypocotyl_validation.json": {
-      "sha256": "771e5bc9f8718e32ad881fb99df2f4001f507c0e8f70790600ca537aa7fee789",
-      "bytes": 466
+    "submission/models.csv": {
+      "sha256": "16540fca0a3fe2e78ca01c9862939f6c9154949f5d61f2e58e4d953ce99c15ed",
+      "bytes": 17966
     },
-    "submission/source_files.json": {
-      "sha256": "d0a7fe7638b37be94ddafa3af9e6a857416c0f1f7a3c6d454bb5b110f8547aa8",
-      "bytes": 34817
-    },
-    "submission/validation.json": {
-      "sha256": "c18638645070719f3926cd372dc0e7cbc92aee61f9001354c2d220a091d3f5d6",
-      "bytes": 820
+    "submission/provenance.json": {
+      "sha256": "a312e2ea3409a97ad754a24fa08c60098d071e1e73104b0a6b2747cad9f91756",
+      "bytes": 702
     },
     "visualization/hypocotyl.py": {
-      "sha256": "1bbc378449d679f434226b12ce2cf95686d4af401c253b68f33447cbfdca3663",
-      "bytes": 336
+      "sha256": "593daa5443d5b9cf3f77669ec3871a52ed27b5b1635638ff45607885a8cc1965",
+      "bytes": 8928
     },
     "visualization/temperature.py": {
-      "sha256": "f4c8a1d9fa4c9d098babae5f4fc61cb5ecec975abc5f12b8ae74accfc157f0c7",
-      "bytes": 11851
+      "sha256": "c7ac31d6787c920b5624943a27a08761fb9583c30497bd61c1ad43af140e947a",
+      "bytes": 11995
     },
     "wheat/code/data.py": {
       "sha256": "bfc4ad0dfb638a860e17e9ead5a917a148cbd763e6ad9b4102be63d7f1bc2696",
@@ -2603,17 +1865,9 @@
       "sha256": "969cf0c72871efc583aa6480faed8a27069d44e4c1bd06c23af95d33311cf81f",
       "bytes": 3279
     },
-    "wheat/results/additional_baselines_seed1_3/per_curve_metrics.csv": {
-      "sha256": "a3061518399c427e41a026402c5779d677f240e0179d4336c8a2f7f98cbc295f",
-      "bytes": 24791
-    },
     "wheat/results/additional_baselines_seed1_3/protocol.json": {
       "sha256": "8a88a2601bea72ba75667465972a10e5b431578dfaa7dc1b97063953b75ed110",
       "bytes": 2151
-    },
-    "wheat/results/additional_baselines_seed1_3/runs/logistic_seed0/per_curve_metrics.csv": {
-      "sha256": "b29f577a8778bf1591e6280251b0527a6a13aabec471ca4f46de0b458509f63b",
-      "bytes": 5209
     },
     "wheat/results/additional_baselines_seed1_3/runs/logistic_seed0/predictions.npz": {
       "sha256": "18fccea8092b2789fa078bfa455929ae9e943b3b4f9e4e04b9ff4753981fd325",
@@ -2623,9 +1877,9 @@
       "sha256": "83bc2c0f8c2f91406321e5377af474b71f606d1439f3fe359e807355aa183f92",
       "bytes": 503
     },
-    "wheat/results/additional_baselines_seed1_3/runs/rf_seed1/per_curve_metrics.csv": {
-      "sha256": "319cce4035dfdff0f34cdf57c62b229c9cfea2afb632c205370e32d67f842a72",
-      "bytes": 4850
+    "wheat/results/additional_baselines_seed1_3/runs/rf_seed1/forest.joblib": {
+      "sha256": "b402b625f92e84eddff238fe76a6257a446a28e6e21472b06f254f897eeae568",
+      "bytes": 8593327
     },
     "wheat/results/additional_baselines_seed1_3/runs/rf_seed1/predictions.npz": {
       "sha256": "1b16052cef552eb6288760006e217d2466c45ab2b461882161a797da7de5f3f3",
@@ -2635,9 +1889,9 @@
       "sha256": "c06e19b2b0f4ee58fb268483d467ff753e4983cb777b7e199c6207a4736d80fe",
       "bytes": 519
     },
-    "wheat/results/additional_baselines_seed1_3/runs/rf_seed2/per_curve_metrics.csv": {
-      "sha256": "acd7b8873276c00a55091679275a63d3fb9f6aa3a0fd470292b38eb94d1a172a",
-      "bytes": 4866
+    "wheat/results/additional_baselines_seed1_3/runs/rf_seed2/forest.joblib": {
+      "sha256": "7991ef0127625c06fb3525c32a7e016fcc7351e5ae3e36c9f008350f07621027",
+      "bytes": 8601319
     },
     "wheat/results/additional_baselines_seed1_3/runs/rf_seed2/predictions.npz": {
       "sha256": "84784ad4d8d6b4b59ce2a5afbefcb9ed499328eab17e88560142d03491917bb9",
@@ -2647,9 +1901,9 @@
       "sha256": "5bd3d09e8374f7d993f9b6a6cc866de3e63704b3ec15bf2a434e6d0e0af06117",
       "bytes": 516
     },
-    "wheat/results/additional_baselines_seed1_3/runs/rf_seed3/per_curve_metrics.csv": {
-      "sha256": "ed02d10683f141ffbdf5158ed53aa85a6136652781cc4b417bd4e0d7de02f286",
-      "bytes": 4853
+    "wheat/results/additional_baselines_seed1_3/runs/rf_seed3/forest.joblib": {
+      "sha256": "b074c81122f9f5a3d8f61051acd4e342a17fb4d74c50481f98a10d2b3b4770f0",
+      "bytes": 8607815
     },
     "wheat/results/additional_baselines_seed1_3/runs/rf_seed3/predictions.npz": {
       "sha256": "595c59288747f410dc17fd179b1aea90d35e4b67af7848f4a24dc044601e7f36",
@@ -2658,10 +1912,6 @@
     "wheat/results/additional_baselines_seed1_3/runs/rf_seed3/result.json": {
       "sha256": "8969aff40a9017476c6967f57d7eaca3bb7ed4d546c92d7d74a3edc2256a4c36",
       "bytes": 517
-    },
-    "wheat/results/additional_baselines_seed1_3/runs/temperature_seed0/per_curve_metrics.csv": {
-      "sha256": "6a475e4c40c9940f92eae84bab3e11f18699913b44ab737edef57a245896ca53",
-      "bytes": 5209
     },
     "wheat/results/additional_baselines_seed1_3/runs/temperature_seed0/predictions.npz": {
       "sha256": "a681b585a286ca021ddd79e69a8df464b11bf3c159e2b04c9aeb47c9050ce1b3",
@@ -2674,10 +1924,6 @@
     "wheat/results/additional_baselines_seed1_3/temperature_parameters.json": {
       "sha256": "c4c16d61960d302a5c1b90198768a4c46d9aa19a7c1f5d4679f1c7f953caed20",
       "bytes": 1378
-    },
-    "wheat/results/additional_baselines_seed1_3/validation.json": {
-      "sha256": "c32c5eca24eba1a7e0656fd227830063d312344a73efc9a38ac090f462e82d1e",
-      "bytes": 369
     },
     "wheat/results/final_config.json": {
       "sha256": "e374457952001c089e5317462e02307bff80a5903c2956b0adb790c6f87d927c",
@@ -2700,8 +1946,12 @@
       "bytes": 2775
     },
     "wheat/results/test_predictions_seed1_3.npz": {
-      "sha256": "8cb8f551319844108ce34eca43553109e14c5ca8ba28dced585cc090903d4254",
-      "bytes": 44134
+      "sha256": "36e1405b66c704fbf94793e38f48e8d3dc2743bf23ef363bdabf3a3a0cead1f7",
+      "bytes": 8106
+    },
+    "submission/validation.json": {
+      "sha256": "17f7c7f9cf38c75637db915bf83702a770032fc6120505849010d307b427d080",
+      "bytes": 1363
     }
   }
 }

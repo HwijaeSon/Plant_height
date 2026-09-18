@@ -1,20 +1,36 @@
 {
-  "version": "submission-20260915-four-genotypes",
   "status": "passed",
-  "hypocotyl_validation": "submission/hypocotyl_validation.json",
-  "hypocotyl_rerun_plan": "hypocotyl/results/four_genotypes_20260915/plan.json",
-  "hypocotyl_expected_fits": 52,
-  "hypocotyl_failed_fits": 0,
-  "temperature_experiment_files_unchanged": true,
-  "manuscript_assets_in_code_release": false,
-  "scope": "Current approved cohort, fixed-setting retraining, source-cell fidelity, shared masks, and saved prediction metrics. Repository history retirement is a separate operation.",
-  "release_content_scan": {
-    "scanned_files": 676,
-    "unapproved_label_matches": [],
-    "unchanged_temperature_files": 225
+  "date": "2026-09-18",
+  "environment": {
+    "python": "3.12.2",
+    "torch": "2.9.0+cu128",
+    "evaluation_device": "cpu"
   },
-  "bundled_entry_point_checks": [
-    "phytoode natural missingness seed 1",
-    "latent_ode 50% removal seed 1"
-  ]
+  "external_input_files_hash_verified": 22,
+  "archive_containers": 2,
+  "checkpoint_and_hypocotyl_fit_checks": {
+    "wheat": {
+      "fits": 6,
+      "max_absolute_prediction_difference": 9.834766387939453e-07
+    },
+    "maize": {
+      "fits": 9,
+      "max_absolute_prediction_difference": 1.341104507446289e-06
+    },
+    "arabidopsis": {
+      "fits": 6,
+      "max_absolute_prediction_difference": 8.866190910339355e-07
+    },
+    "hypocotyl": {
+      "fits": 64,
+      "max_absolute_prediction_difference": 7.092952728271484e-06
+    }
+  },
+  "additional_temperature_baseline_fits": 18,
+  "arabidopsis_process_parameter_rounding_max_difference_m": 4.470348363705412e-08,
+  "table_check": "All final hypocotyl five-seed means and sample SDs equal aggregated recorded metrics.",
+  "training_smoke": "Final hypocotyl PhytoODE: two optimizer steps, finite gradients, no test targets.",
+  "figures": 6,
+  "standalone_export": "Staged-files-only export passed integrity, downloaded-input checks, all dataset preparation, hypocotyl checkpoint evaluation, table generation and all six figures.",
+  "scope": "No full neural retraining performed. Missing original baseline weights are listed in models.csv."
 }
